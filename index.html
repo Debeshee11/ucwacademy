@@ -947,7 +947,7 @@ html.gate-open{overflow:hidden}
       if(rec.role==='admin') localStorage.setItem('uc_owner','1');
       else localStorage.removeItem('uc_owner');
     }catch(e){}
-    document.getElementById('ucw-login').style.display='none';
+    window.location.reload();
   };
   try{ if(sessionStorage.getItem('ucw_auth')==='1') document.getElementById('ucw-login').style.display='none'; }catch(e){}
 })();
