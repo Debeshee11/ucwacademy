@@ -2341,6 +2341,150 @@ const GLOSSARY = [
 /* ===== content/indices.js — sectoral/thematic indices from official NSE Indices factsheets.
    snapshots: newest first; top = [[company key, weight %]]; official = taken from an NSE factsheet (directly or as quoted by an AMC citing NSE). ===== */
 const INDICES = [
+{ id: "nifty50", name: "Nifty 50", kind: "Broad market", tags: ["equity"], color: "var(--p1)",
+  about: "The Nifty 50 index is a well-diversified 50 companies index reflecting overall market conditions. Nifty 50 Index is computed using free float market capitalization method.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 22 Apr 1996; base date 3 Nov 1995."],
+  stats: { pe: 19.36, pb: 2.78, dy: 1.22, r1y: -8.09, r5y: 5.13, ytd: -13.43 },
+  sectors: [["Financial Services", 37.45], ["Oil, Gas & Consumable Fuels", 9.39], ["Information Technology", 7.52], ["Automobile & Auto Components", 6.65], ["Fast Moving Consumer Goods", 5.5], ["Telecommunication", 5.1], ["Metals & Mining", 4.86], ["Healthcare", 4.74], ["Construction", 4.2], ["Consumer Services", 3.05], ["Consumer Durables", 2.85], ["Power", 2.59], ["Services", 2.42], ["Construction Materials", 2.34], ["Capital Goods", 1.33]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty50.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 50, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 10.38], ["x:ICICI Bank Ltd.", 9.05], ["reliance", 7.58], ["airtel", 5.10], ["lt", 4.20], ["x:State Bank of India", 3.79], ["x:Axis Bank Ltd.", 3.37], ["infy", 3.35], ["x:Kotak Mahindra Bank Ltd.", 2.93], ["x:Mahindra & Mahindra Ltd.", 2.52]] }] },
+{ id: "next50", name: "Nifty Next 50", kind: "Broad market", tags: ["equity"], color: "var(--p2)",
+  about: "The Nifty Next 50 Index represents 50 companies from Nifty 100 after excluding the Nifty 50 companies.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 24 Dec 1996; base date 4 Nov 1996."],
+  stats: { pe: 18.28, pb: 3.35, dy: 1.04, r1y: 2.8, r5y: 10.48, ytd: 0.55 },
+  sectors: [["Capital Goods", 20.25], ["Financial Services", 17.65], ["Automobile & Auto Components", 9.76], ["Power", 9.46], ["Healthcare", 8.91], ["Metals & Mining", 7.57], ["Oil, Gas & Consumable Fuels", 6.44], ["Fast Moving Consumer Goods", 6.15], ["Chemicals", 3.83], ["Information Technology", 3.3], ["Consumer Services", 2.51], ["Realty", 1.77], ["Telecommunication", 1.46], ["Construction Materials", 0.95]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_next50.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 50, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Divi's Laboratories Ltd.", 4.84], ["x:TVS Motor Company Ltd.", 3.95], ["hal", 3.63], ["x:Tata Motors Ltd.", 3.61], ["x:Adani Power Ltd.", 3.48], ["x:Samvardhana Motherson International Ltd.", 2.95], ["x:Torrent Pharmaceuticals Ltd.", 2.89], ["x:Cholamandalam Investment and Finance Company Ltd.", 2.88], ["vedal", 2.87], ["x:Cummins India Ltd.", 2.63]] }] },
+{ id: "nifty100", name: "Nifty 100", kind: "Broad market", tags: ["equity"], color: "var(--p3)",
+  about: "Nifty 100 represents top 100 companies based on full market capitalisation from Nifty 500. This index intends to measure the performance of large market capitalisation companies. The Nifty 100 tracks the behavior of combined portfolio of two indices viz. Nifty 50 and Nifty Next 50.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 1 Dec 2005; base date 1 Jan 2003."],
+  stats: { pe: 19.14, pb: 2.87, dy: 1.19, r1y: -6.17, r5y: 5.87, ytd: -11.07 },
+  sectors: [["Financial Services", 33.7], ["Oil, Gas & Consumable Fuels", 8.83], ["Automobile & Auto Components", 7.24], ["Information Technology", 6.72], ["Fast Moving Consumer Goods", 5.62], ["Healthcare", 5.53], ["Metals & Mining", 5.37], ["Capital Goods", 4.91], ["Telecommunication", 4.42], ["Power", 3.89], ["Construction", 3.41], ["Consumer Services", 2.95], ["Consumer Durables", 2.31], ["Construction Materials", 2.08], ["Services", 1.97], ["Chemicals", 0.72], ["Realty", 0.33]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_100.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 100, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 8.41], ["x:ICICI Bank Ltd.", 7.34], ["reliance", 6.15], ["airtel", 4.14], ["lt", 3.41], ["x:State Bank of India", 3.07], ["x:Axis Bank Ltd.", 2.73], ["infy", 2.72], ["x:Kotak Mahindra Bank Ltd.", 2.38], ["x:Mahindra & Mahindra Ltd.", 2.04]] }] },
+{ id: "nifty200", name: "Nifty 200", kind: "Broad market", tags: ["equity"], color: "var(--p4)",
+  about: "The Nifty 200 Index is designed to reflect the behaviour and performance of the large and mid market capitalization companies. Nifty 200 includes all companies forming part of Nifty 100 and Nifty Midcap 100 Index.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 19 Jul 2011; base date 1 Jan 2004."],
+  stats: { pe: 20.45, pb: 3.02, dy: 1.08, r1y: -4.15, r5y: 7.16, ytd: -9.38 },
+  sectors: [["Financial Services", 32.53], ["Oil, Gas & Consumable Fuels", 7.51], ["Automobile & Auto Components", 6.96], ["Information Technology", 6.43], ["Capital Goods", 6.4], ["Healthcare", 6.28], ["Fast Moving Consumer Goods", 5.61], ["Metals & Mining", 4.91], ["Consumer Services", 4.35], ["Telecommunication", 3.94], ["Power", 3.52], ["Consumer Durables", 2.85], ["Construction", 2.79], ["Services", 1.87], ["Construction Materials", 1.66], ["Realty", 1.12], ["Chemicals", 1.1], ["Textiles", 0.14]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_200.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 200, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 6.72], ["x:ICICI Bank Ltd.", 5.86], ["reliance", 4.91], ["airtel", 3.30], ["lt", 2.72], ["x:State Bank of India", 2.45], ["x:Axis Bank Ltd.", 2.18], ["infy", 2.17], ["x:Kotak Mahindra Bank Ltd.", 1.90], ["x:Mahindra & Mahindra Ltd.", 1.63]] }] },
+{ id: "nifty500", name: "Nifty 500", kind: "Broad market", tags: ["equity"], color: "var(--p5)",
+  about: "The Nifty 500 index represents top 500 companies selected based on full market capitalization from the eligible universe.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Base date 1 Jan 1995."],
+  stats: { pe: 21.77, pb: 3.09, dy: 1.02, r1y: -2.91, r5y: 7.96, ytd: -7.54 },
+  sectors: [["Financial Services", 30.58], ["Capital Goods", 7.5], ["Automobile & Auto Components", 7.42], ["Healthcare", 7.31], ["Oil, Gas & Consumable Fuels", 6.77], ["Information Technology", 6.02], ["Fast Moving Consumer Goods", 5.26], ["Metals & Mining", 4.55], ["Consumer Services", 4.07], ["Telecommunication", 3.69], ["Power", 3.41], ["Consumer Durables", 2.8], ["Construction", 2.72], ["Services", 2.16], ["Chemicals", 1.99], ["Construction Materials", 1.88], ["Realty", 1.47], ["Textiles", 0.26], ["Media, Entertainment & Publication", 0.13], ["Diversified", 0.02]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_500.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 501, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 5.66], ["x:ICICI Bank Ltd.", 4.93], ["reliance", 4.13], ["airtel", 2.78], ["lt", 2.29], ["x:State Bank of India", 2.07], ["x:Axis Bank Ltd.", 1.84], ["infy", 1.83], ["x:Kotak Mahindra Bank Ltd.", 1.60], ["x:Mahindra & Mahindra Ltd.", 1.37]] }] },
+{ id: "totalmarket", name: "Nifty Total Market", kind: "Broad market", tags: ["equity"], color: "var(--p6)",
+  about: "The Nifty Total Market Index will track the performance of 750 stocks covering large, mid, small and microcap segments. All stocks that are part of Nifty 500 index and Nifty Microcap 250 index form part of the Nifty Total Market index. The weight of the stocks in the index is based on their free-float market capitalization.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 13 Oct 2021; base date 1 Apr 2005."],
+  stats: { pe: 21.96, pb: 3.1, dy: 1.0, r1y: -2.19, r5y: 8.37, ytd: -6.63 },
+  sectors: [["Financial Services", 29.77], ["Capital Goods", 8.14], ["Healthcare", 7.48], ["Automobile & Auto Components", 7.31], ["Oil, Gas & Consumable Fuels", 6.47], ["Information Technology", 5.95], ["Fast Moving Consumer Goods", 5.23], ["Metals & Mining", 4.44], ["Consumer Services", 4.25], ["Telecommunication", 3.53], ["Power", 3.31], ["Consumer Durables", 3.04], ["Construction", 2.72], ["Services", 2.23], ["Chemicals", 2.16], ["Construction Materials", 1.8], ["Realty", 1.46], ["Textiles", 0.38], ["Media, Entertainment & Publication", 0.21], ["Utilities", 0.08]],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_NiftyTotalMarket.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 755, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 5.41], ["x:ICICI Bank Ltd.", 4.71], ["reliance", 3.95], ["airtel", 2.66], ["lt", 2.19], ["x:State Bank of India", 1.97], ["x:Axis Bank Ltd.", 1.75], ["infy", 1.75], ["x:Kotak Mahindra Bank Ltd.", 1.53], ["x:Mahindra & Mahindra Ltd.", 1.31]] }] },
+{ id: "largemidcap250", name: "Nifty LargeMidcap 250", kind: "Broad market", tags: ["equity"], color: "var(--p1)",
+  about: "The Nifty LargeMidcap 250 reflects the performance of a portfolio of 100 large cap and 150 mid cap companies listed on NSE, represented through the Nifty 100 and the Nifty Midcap 150 index respectively. The aggregate weight of large cap stocks and mid cap stocks is 50% each and are reset on a quarterly basis.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annual.", "Launched 30 Nov 2017; base date 1 Apr 2005."],
+  stats: { pe: 22.86, pb: 3.28, dy: 0.95, r1y: -1.18, r5y: 9.97, ytd: -6.51 },
+  sectors: [["Financial Services", 30.23], ["Healthcare", 8.36], ["Capital Goods", 7.86], ["Automobile & Auto Components", 6.75], ["Information Technology", 5.68], ["Consumer Services", 5.68], ["Oil, Gas & Consumable Fuels", 5.6], ["Fast Moving Consumer Goods", 5.16], ["Metals & Mining", 4.54], ["Consumer Durables", 3.32], ["Power", 3.17], ["Telecommunication", 3.17], ["Realty", 2.33], ["Chemicals", 2.12], ["Construction", 1.85], ["Services", 1.84], ["Construction Materials", 1.84], ["Textiles", 0.43], ["Diversified", 0.06]],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_NIFTY_LargeMidcap_250_Index.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 250, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 4.21], ["x:ICICI Bank Ltd.", 3.68], ["reliance", 3.08], ["airtel", 2.07], ["lt", 1.71], ["x:State Bank of India", 1.54], ["x:Axis Bank Ltd.", 1.37], ["infy", 1.36], ["x:Kotak Mahindra Bank Ltd.", 1.19], ["x:Multi Commodity Exchange of India Ltd.", 1.04]] }] },
+{ id: "midsmallcap400", name: "Nifty MidSmallcap 400", kind: "Broad market", tags: ["equity"], color: "var(--p2)",
+  about: "The Nifty MidSmallcap 400 Index is designed to reflect the behaviour and performance of the mid and small market capitalisation companies. The index includes all companies forming part of Nifty Midcap 150 and Nifty Smallcap 250 Index.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 1 Apr 2016; base date 1 Apr 2005."],
+  stats: { pe: 30.28, pb: 3.68, dy: 0.68, r1y: 4.79, r5y: 13.91, ytd: 0.98 },
+  sectors: [["Financial Services", 24.17], ["Capital Goods", 12.81], ["Healthcare", 10.96], ["Automobile & Auto Components", 7.8], ["Consumer Services", 6.38], ["Chemicals", 4.58], ["Information Technology", 4.58], ["Fast Moving Consumer Goods", 4.52], ["Consumer Durables", 3.8], ["Realty", 3.79], ["Metals & Mining", 2.86], ["Services", 2.55], ["Oil, Gas & Consumable Fuels", 2.55], ["Power", 2.41], ["Telecommunication", 2.2], ["Construction Materials", 1.46], ["Construction", 1.32], ["Textiles", 0.8], ["Media, Entertainment & Publication", 0.39], ["Diversified", 0.07]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_Nifty_MidSmallcap_400.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 401, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Multi Commodity Exchange of India Ltd.", 1.34], ["x:Federal Bank Ltd.", 1.25], ["x:Laurus Labs Ltd.", 1.23], ["x:One 97 Communications Ltd.", 1.15], ["x:Hero MotoCorp Ltd.", 1.08], ["x:Indian Hotels Co. Ltd.", 1.02], ["coforge", 0.97], ["x:Bharat Heavy Electricals Ltd.", 0.96], ["x:IndusInd Bank Ltd.", 0.94], ["x:AU Small Finance Bank Ltd.", 0.93]] }] },
+{ id: "midcap50", name: "Nifty Midcap 50", kind: "Mid cap", tags: ["equity", "risk"], color: "var(--p3)",
+  about: "The primary objective of the Nifty Midcap 50 Index is to capture the movement of the midcap segment of the market.It includes top 50 companies selected based on 6 month average free float market capitalization from the top 100 companies selected based on both average daily full market capitalization and average daily turnover based on previous six months data from the Nifty Midcap 150 index. A preference is given to companies that are available for trading in NSE’s Futures & Options segment at the time of final selection. Nifty Midcap 50 Index is computed using free float market capitalization method, wherein the level of the index reflects the total free float market value of all the stocks in the index relative to particular base market capitalization value.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Base date 1 Jan 2004."],
+  stats: { pe: 30.14, pb: 3.69, dy: 0.67, r1y: 6.79, r5y: 15.52, ytd: -1.31 },
+  sectors: [["Financial Services", 27.62], ["Healthcare", 12.85], ["Capital Goods", 12.43], ["Consumer Services", 10.27], ["Automobile & Auto Components", 6.83], ["Fast Moving Consumer Goods", 4.84], ["Realty", 3.87], ["Consumer Durables", 3.73], ["Chemicals", 3.08], ["Oil, Gas & Consumable Fuels", 2.7], ["Power", 2.69], ["Information Technology", 2.67], ["Metals & Mining", 2.65], ["Telecommunication", 2.23], ["Services", 1.54]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_midcap50.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 50, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Multi Commodity Exchange of India Ltd.", 3.91], ["x:Federal Bank Ltd.", 3.65], ["x:Laurus Labs Ltd.", 3.59], ["x:One 97 Communications Ltd.", 3.36], ["x:Hero MotoCorp Ltd.", 3.16], ["x:Indian Hotels Co. Ltd.", 2.98], ["x:Bharat Heavy Electricals Ltd.", 2.81], ["x:IndusInd Bank Ltd.", 2.76], ["x:AU Small Finance Bank Ltd.", 2.73], ["persistent", 2.67]] }] },
+{ id: "midcap100", name: "Nifty Midcap 100", kind: "Mid cap", tags: ["equity", "risk"], color: "var(--p4)",
+  about: "The Nifty Midcap 100 Index is designed to capture the movement of the midcap segment of the market.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 18 Jul 2005; base date 1 Jan 2003."],
+  stats: { pe: 27.98, pb: 3.77, dy: 0.65, r1y: 4.96, r5y: 14.32, ytd: -1.91 },
+  sectors: [["Financial Services", 27.91], ["Capital Goods", 12.32], ["Consumer Services", 9.92], ["Healthcare", 9.26], ["Automobile & Auto Components", 5.86], ["Fast Moving Consumer Goods", 5.57], ["Information Technology", 5.28], ["Consumer Durables", 5.0], ["Realty", 4.22], ["Metals & Mining", 3.11], ["Chemicals", 2.6], ["Oil, Gas & Consumable Fuels", 2.29], ["Telecommunication", 2.07], ["Power", 2.06], ["Services", 1.49], ["Textiles", 0.7], ["Construction", 0.35]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_niftymidcap100.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 100, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Multi Commodity Exchange of India Ltd.", 2.58], ["x:Federal Bank Ltd.", 2.40], ["x:Laurus Labs Ltd.", 2.36], ["x:One 97 Communications Ltd.", 2.21], ["x:Hero MotoCorp Ltd.", 2.09], ["x:Indian Hotels Co. Ltd.", 1.96], ["coforge", 1.87], ["x:Bharat Heavy Electricals Ltd.", 1.86], ["x:IndusInd Bank Ltd.", 1.82], ["x:AU Small Finance Bank Ltd.", 1.80]] }] },
+{ id: "midcap150", name: "Nifty Midcap 150", kind: "Mid cap", tags: ["equity", "risk"], color: "var(--p5)",
+  about: "Nifty Midcap 150 represents the next 150 companies (companies ranked 101-250) based on full market capitalisation from Nifty 500. This index intends to measure the performance of mid market capitalisation companies.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 1 Apr 2016; base date 1 Apr 2005."],
+  stats: { pe: 28.4, pb: 3.83, dy: 0.71, r1y: 3.94, r5y: 13.99, ytd: -1.84 },
+  sectors: [["Financial Services", 26.75], ["Healthcare", 11.2], ["Capital Goods", 10.82], ["Consumer Services", 8.43], ["Automobile & Auto Components", 6.27], ["Fast Moving Consumer Goods", 4.69], ["Information Technology", 4.64], ["Consumer Durables", 4.34], ["Realty", 4.33], ["Metals & Mining", 3.71], ["Chemicals", 3.51], ["Power", 2.46], ["Oil, Gas & Consumable Fuels", 2.36], ["Telecommunication", 1.93], ["Services", 1.72], ["Construction Materials", 1.59], ["Textiles", 0.87], ["Construction", 0.28], ["Diversified", 0.11]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_Nifty_Midcap_150.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 150, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Multi Commodity Exchange of India Ltd.", 2.07], ["x:Federal Bank Ltd.", 1.93], ["x:Laurus Labs Ltd.", 1.90], ["x:One 97 Communications Ltd.", 1.78], ["x:Hero MotoCorp Ltd.", 1.68], ["x:Indian Hotels Co. Ltd.", 1.58], ["coforge", 1.50], ["x:Bharat Heavy Electricals Ltd.", 1.49], ["x:IndusInd Bank Ltd.", 1.46], ["x:AU Small Finance Bank Ltd.", 1.45]] }] },
+{ id: "midcapselect", name: "Nifty Midcap Select", kind: "Mid cap", tags: ["equity", "risk"], color: "var(--p6)",
+  about: "The Nifty Midcap Select index aims to track the performance of a portfolio of 25 liquid midcap stocks. Stocks are selected from the Nifty Midcap 150 index based on availability for trading in the F&O segment, market cap and average daily turnover. Stock weights are based on free-float market capitalization.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 14 Sep 2021; base date 3 Oct 2005."],
+  stats: { pe: 29.1, pb: 4.12, dy: 0.49, r1y: 8.98, r5y: 13.16, ytd: -0.33 },
+  sectors: [["Financial Services", 38.51], ["Capital Goods", 15.58], ["Consumer Services", 11.32], ["Automobile & Auto Components", 9.25], ["Healthcare", 7.27], ["Information Technology", 4.37], ["Consumer Durables", 4.15], ["Telecommunication", 3.66], ["Fast Moving Consumer Goods", 3.17], ["Chemicals", 2.73]],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_NiftyMidcapSelect.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 25, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Multi Commodity Exchange of India Ltd.", 6.41], ["x:Federal Bank Ltd.", 5.96], ["x:One 97 Communications Ltd.", 5.50], ["x:Hero MotoCorp Ltd.", 5.18], ["x:Indian Hotels Co. Ltd.", 4.87], ["x:Bharat Heavy Electricals Ltd.", 4.61], ["x:IndusInd Bank Ltd.", 4.52], ["x:AU Small Finance Bank Ltd.", 4.47], ["persistent", 4.37], ["x:Dixon Technologies (India) Ltd.", 4.15]] }] },
+{ id: "smallcap50", name: "Nifty Smallcap 50", kind: "Small cap", tags: ["equity", "risk"], color: "var(--p1)",
+  about: "The primary objective of the Nifty Smallcap 50 Index is to capture the movement of the smallcap segment of the market. The index represents top 50 companies selected based on 6 month average free-float market capitalization from the top 150 companies selected based on both average daily full market capitalization and average daily turnover based on previous six months period data from the Nifty Smallcap 250 Index. Nifty Smallcap 50 Index is computed using free float market capitalization method, wherein the level of the index reflects the total free float market value of all the stocks in the index relative to particular base market capitalization value.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 1 Apr 2016; base date 1 Apr 2005."],
+  stats: { pe: 35.06, pb: 3.83, dy: 0.59, r1y: 14.74, r5y: 12.52, ytd: 11.93 },
+  sectors: [["Financial Services", 29.39], ["Healthcare", 17.82], ["Capital Goods", 12.6], ["Automobile & Auto Components", 10.17], ["Services", 7.55], ["Chemicals", 6.56], ["Information Technology", 4.78], ["Consumer Durables", 4.23], ["Oil, Gas & Consumable Fuels", 3.23], ["Telecommunication", 2.73], ["Construction", 0.95]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_niftysmallcap_50.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 50, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Sona BLW Precision Forgings Ltd.", 4.38], ["x:Welspun Corp Ltd.", 4.18], ["x:Karur Vysya Bank Ltd.", 3.60], ["x:Navin Fluorine International Ltd.", 3.56], ["x:Ather Energy Ltd.", 3.18], ["x:RBL Bank Ltd.", 2.93], ["x:Delhivery Ltd.", 2.89], ["x:Redington Ltd.", 2.84], ["x:HFCL Ltd.", 2.73], ["x:Gland Pharma Ltd.", 2.71]] }] },
+{ id: "smallcap100", name: "Nifty Smallcap 100", kind: "Small cap", tags: ["equity", "risk"], color: "var(--p2)",
+  about: "The Nifty Smallcap 100 Index is designed to reflect the behaviour and performance of the small cap segment of the financial market. The Nifty Smallcap 100 Index comprises 100 tradable stocks listed at the National Stock Exchange (NSE).",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 30 Mar 2011; base date 1 Jan 2004."],
+  stats: { pe: 37.71, pb: 3.73, dy: 0.53, r1y: 9.58, r5y: 12.06, ytd: 8.65 },
+  sectors: [["Financial Services", 26.01], ["Capital Goods", 15.46], ["Healthcare", 12.79], ["Automobile & Auto Components", 9.64], ["Chemicals", 6.01], ["Services", 6.01], ["Information Technology", 5.52], ["Telecommunication", 4.2], ["Oil, Gas & Consumable Fuels", 3.13], ["Consumer Durables", 2.9], ["Fast Moving Consumer Goods", 1.92], ["Realty", 1.59], ["Construction", 1.58], ["Consumer Services", 1.47], ["Power", 1.13], ["Metals & Mining", 0.34], ["Construction Materials", 0.29]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_niftysmallcap100.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 100, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Sona BLW Precision Forgings Ltd.", 3.00], ["x:Welspun Corp Ltd.", 2.86], ["x:Karur Vysya Bank Ltd.", 2.47], ["x:Navin Fluorine International Ltd.", 2.44], ["x:Ather Energy Ltd.", 2.18], ["x:Sterlite Technologies Ltd.", 2.14], ["x:RBL Bank Ltd.", 2.01], ["x:Delhivery Ltd.", 1.98], ["x:Redington Ltd.", 1.95], ["x:HFCL Ltd.", 1.87]] }] },
+{ id: "smallcap250", name: "Nifty Smallcap 250", kind: "Small cap", tags: ["equity", "risk"], color: "var(--p3)",
+  about: "Nifty Smallcap 250 represents the balance 250 companies (companies ranked 251-500) from Nifty 500. This index intends to measure the performance of small market capitalisation companies.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annually.", "Launched 1 Apr 2016; base date 1 Apr 2005."],
+  stats: { pe: 34.45, pb: 3.42, dy: 0.61, r1y: 6.63, r5y: 13.71, ytd: 6.68 },
+  sectors: [["Financial Services", 19.46], ["Capital Goods", 16.45], ["Automobile & Auto Components", 10.57], ["Healthcare", 10.54], ["Chemicals", 6.53], ["Information Technology", 4.45], ["Fast Moving Consumer Goods", 4.21], ["Services", 4.06], ["Construction", 3.2], ["Oil, Gas & Consumable Fuels", 2.88], ["Realty", 2.82], ["Consumer Durables", 2.82], ["Telecommunication", 2.7], ["Consumer Services", 2.66], ["Power", 2.33], ["Metals & Mining", 1.32], ["Construction Materials", 1.21], ["Media, Entertainment & Publication", 1.11], ["Textiles", 0.68]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_Nifty_Smallcap_250.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 251, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Sona BLW Precision Forgings Ltd.", 1.67], ["x:Welspun Corp Ltd.", 1.59], ["x:Karur Vysya Bank Ltd.", 1.37], ["x:Navin Fluorine International Ltd.", 1.36], ["x:Ather Energy Ltd.", 1.21], ["x:Sterlite Technologies Ltd.", 1.19], ["x:RBL Bank Ltd.", 1.12], ["x:Delhivery Ltd.", 1.10], ["x:Redington Ltd.", 1.08], ["x:HFCL Ltd.", 1.04]] }] },
+{ id: "microcap250", name: "Nifty Microcap 250", kind: "Small cap", tags: ["equity", "risk"], color: "var(--p4)",
+  about: "NSE Indices has developed the Nifty Microcap 250 Index which aims to track the performance of microcap stocks listed or permitted to trade on NSE. The index includes the top 250 companies beyond the Nifty 500 index constituents, selected based on their average full market capitalization. A stock’s weight is based on its free-float market capitalization.",
+  method: ["Weights follow free float market capitalization.", "Rebalanced semi-annual.", "Launched 10 May 2021; base date 1 Apr 2005."],
+  stats: { pe: 27.28, pb: 3.17, dy: 0.45, r1y: 14.7, r5y: 21.06, ytd: 16.43 },
+  sectors: [["Capital Goods", 21.95], ["Financial Services", 12.48], ["Healthcare", 11.1], ["Consumer Durables", 8.2], ["Consumer Services", 8.01], ["Chemicals", 5.8], ["Automobile & Auto Components", 4.93], ["Fast Moving Consumer Goods", 4.65], ["Information Technology", 4.61], ["Services", 3.69], ["Textiles", 2.95], ["Construction", 2.55], ["Metals & Mining", 2.07], ["Media, Entertainment & Publication", 1.92], ["Utilities", 1.73], ["Power", 1.36], ["Realty", 1.3], ["Forest Materials", 0.34], ["Construction Materials", 0.27], ["Telecommunication", 0.08]],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Microcap_250_Index.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 254, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["astramicro", 1.56], ["x:Ujjivan Small Finance Bank Ltd.", 1.43], ["x:Sundram Fasteners Ltd.", 1.41], ["x:South Indian Bank Ltd.", 1.41], ["x:Karnataka Bank Ltd.", 1.40], ["x:Shilpa Medicare Ltd.", 1.37], ["x:Tamilnad Mercantile Bank Ltd.", 1.15], ["x:Va Tech Wabag Ltd.", 1.06], ["x:Grindwell Norton Ltd.", 1.04], ["x:Edelweiss Financial Services Ltd.", 1.03]] }] },
 { id: "defence", name: "Nifty India Defence", kind: "Thematic", tags: ["defence"], color: "var(--p3)",
   about: "Tracks listed companies in India's defence theme. From the Nifty Total Market index, it includes stocks from eligible defence-related industries, or members of the Society of Indian Defence Manufacturers that earn at least 10% of revenue from defence.",
   method: ["Weights follow free-float market capitalisation, capped at 20% per stock.", "Reconstituted twice a year with the Nifty broad-based indices; minimum 10 stocks.", "Launched 19 Jan 2022; base date 2 Apr 2018."],
@@ -2379,7 +2523,196 @@ const INDICES = [
   factsheet: "https://archives.nseindia.com/content/indices/ind_nifty_infra.pdf",
   snapshots: [
    { date: "2026-09-30", count: 30, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
-     top: [["reliance", 19.86], ["airtel", 14.50], ["lt", 11.94], ["ntpc", 4.16], ["adaniports", 3.82], ["ultratech", 3.52], ["powergrid", 3.20], ["grasim", 3.14], ["indigo", 3.06], ["ongc", 2.38]] }] }
+     top: [["reliance", 19.86], ["airtel", 14.50], ["lt", 11.94], ["ntpc", 4.16], ["adaniports", 3.82], ["ultratech", 3.52], ["powergrid", 3.20], ["grasim", 3.14], ["indigo", 3.06], ["ongc", 2.38]] }] },
+{ id: "bank", name: "Nifty Bank", kind: "Sectoral", tags: ["equity"], color: "var(--p5)",
+  about: "The Nifty Bank Index comprises of the most liquid and large Indian Banking stocks. It provides investors and market intermediaries a benchmark that captures the capital market performance of the Indian banks. The Index comprises of maximum 14 companies listed on National Stock Exchange of India (NSE).",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 15 Sep 2003; base date 1 Jan 2000."],
+  stats: { pe: 12.95, pb: 1.65, dy: 0.72, r1y: -0.01, r5y: 7.86, ytd: -8.31 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_bank.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 14, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 18.61], ["x:ICICI Bank Ltd.", 14.18], ["x:Kotak Mahindra Bank Ltd.", 10.20], ["x:Axis Bank Ltd.", 10.06], ["x:State Bank of India", 9.93], ["x:Federal Bank Ltd.", 6.56], ["x:IndusInd Bank Ltd.", 4.97], ["x:AU Small Finance Bank Ltd.", 4.85], ["x:IDFC First Bank Ltd.", 4.54], ["x:Bank of Baroda", 3.59]] }] },
+{ id: "finserv", name: "Nifty Financial Services", kind: "Sectoral", tags: ["equity"], color: "var(--p6)",
+  about: "The Nifty Financial Services Index is designed to reflect the behaviour and performance of the Indian financial market which includes banks, financial institutions, housing finance, insurance companies and other financial services companies. The Nifty Finance Index comprises of 20 stocks that are listed on the National Stock Exchange (NSE).",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 7 Sep 2011; base date 1 Jan 2004."],
+  stats: { pe: 15.11, pb: 2.28, dy: 1.01, r1y: -5.27, r5y: 6.13, ytd: -10.73 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_Nifty_Financial_Services.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 20, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:HDFC Bank Ltd.", 18.63], ["x:ICICI Bank Ltd.", 14.20], ["x:Axis Bank Ltd.", 10.18], ["x:Kotak Mahindra Bank Ltd.", 10.11], ["x:State Bank of India", 9.94], ["x:Bajaj Finance Ltd.", 8.62], ["x:Shriram Finance Ltd.", 4.53], ["x:BSE Ltd.", 4.16], ["x:Bajaj Finserv Ltd.", 3.31], ["x:SBI Life Insurance Company Ltd.", 2.51]] }] },
+{ id: "finexbank", name: "Nifty Financial Services Ex-Bank", kind: "Sectoral", tags: ["equity"], color: "var(--p1)",
+  about: "The Nifty Financial Services Ex-Bank Index which aims to track the performance of portfolio of stocks from the Financial Services sector other than Banks. The largest 30 stocks from eligible basic industries are chosen based on 6 month average free-float market capitalisation. Index stock weights are based on their free-float market capitalization. Stock weights are capped at 25% each.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 2 Feb 2022; base date 1 Apr 2005."],
+  stats: { pe: 19.73, pb: 3.6, dy: 0.8, r1y: 0.22, r5y: 9.23, ytd: -7.82 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_NiftyFinancialServicesExBank.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 30, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Bajaj Finance Ltd.", 15.82], ["x:Shriram Finance Ltd.", 8.32], ["x:BSE Ltd.", 7.63], ["x:Bajaj Finserv Ltd.", 6.08], ["x:Multi Commodity Exchange of India Ltd.", 5.09], ["x:SBI Life Insurance Company Ltd.", 4.61], ["x:One 97 Communications Ltd.", 4.36], ["x:Jio Financial Services Ltd.", 4.30], ["x:Cholamandalam Investment and Finance Company Ltd.", 4.24], ["x:HDFC Life Insurance Company Ltd.", 3.39]] }] },
+{ id: "privatebank", name: "Nifty Private Bank", kind: "Sectoral", tags: ["equity"], color: "var(--p2)",
+  about: "The Nifty Private Bank Index is designed to reflect the performance of the banks from private sector.",
+  method: ["Weights follow periodic capped free float mcap.", "Rebalanced semi-annually.", "Launched 5 Jan 2016; base date 1 Apr 2005."],
+  stats: { pe: 16.49, pb: 1.91, dy: 0.68, r1y: 0.88, r5y: 6.54, ytd: -7.05 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_private_bank.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 10, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:ICICI Bank Ltd.", 21.53], ["x:HDFC Bank Ltd.", 20.83], ["x:Kotak Mahindra Bank Ltd.", 19.84], ["x:Axis Bank Ltd.", 19.28], ["x:Federal Bank Ltd.", 5.35], ["x:IndusInd Bank Ltd.", 4.06], ["x:IDFC First Bank Ltd.", 3.69], ["x:Yes Bank Ltd.", 2.51], ["x:RBL Bank Ltd.", 1.71], ["x:Bandhan Bank Ltd.", 1.20]] }] },
+{ id: "psubank", name: "Nifty PSU Bank", kind: "Sectoral", tags: ["equity"], color: "var(--p3)",
+  about: "The Nifty PSU Bank Index captures the performance of the PSU Banks. All Public Sector Banks that are traded (listed & traded and not listed but permitted to trade) at the National Stock Exchange (NSE) are eligible for inclusion in the index subject to fulfilment of other inclusion criteria namely listing history and trading frequency.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 30 Aug 2007; base date 1 Jan 2004."],
+  stats: { pe: 7.22, pb: 1.11, dy: 0.8, r1y: 6.5, r5y: 26.41, ytd: -6.06 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_psu_bank.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 12, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:State Bank of India", 33.33], ["x:Bank of Baroda", 12.47], ["x:Canara Bank", 11.71], ["x:Punjab National Bank", 11.36], ["x:Union Bank of India", 9.64], ["x:Indian Bank", 8.31], ["x:Bank of Maharashtra", 4.71], ["x:Bank of India", 4.60], ["x:Central Bank of India", 1.52], ["x:Indian Overseas Bank", 1.32]] }] },
+{ id: "nbfc", name: "Nifty NBFC", kind: "Sectoral", tags: ["equity"], color: "var(--p4)",
+  about: "Nifty NBFC Index aims to track the performance of all the Non-Banking Financial Company stocks from the Nifty Total Market Index. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 15 Jun 2026; base date 1 Apr 2005."],
+  stats: { pe: 20.77, pb: 3.24, dy: 0.59, r1y: 9.37, r5y: 11.98, ytd: -8.67 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_NBFC.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 21, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Shriram Finance Ltd.", 20.42], ["x:Bajaj Finance Ltd.", 19.88], ["x:Cholamandalam Investment and Finance Company Ltd.", 12.27], ["x:Sundaram Finance Ltd.", 5.24], ["x:Muthoot Finance Ltd.", 5.12], ["x:Piramal Finance Ltd.", 4.66], ["x:L&T Finance Ltd.", 3.95], ["x:Mahindra & Mahindra Financial Services Ltd.", 3.75], ["x:Tata Capital Ltd.", 3.15], ["x:Manappuram Finance Ltd.", 3.03]] }] },
+{ id: "insurance", name: "Nifty Insurance", kind: "Sectoral", tags: ["equity"], color: "var(--p5)",
+  about: "Nifty Insurance aims to track the performance of all the Insurance stocks within the Nifty Total Market Index. All the stocks from eligible basic industries from the Nifty Total Market index form part of the Index. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 15 Jun 2026; base date 27 Sep 2019."],
+  stats: { pe: 24.71, pb: 7.46, dy: 0.26, r1y: -15.3, r5y: 2.38, ytd: -18.92 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Insurance.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 11, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:SBI Life Insurance Company Ltd.", 19.99], ["x:HDFC Life Insurance Company Ltd.", 18.79], ["x:Life Insurance Corporation of India", 16.80], ["x:ICICI Lombard General Insurance Company Ltd.", 12.98], ["x:Max Financial Services Ltd.", 12.21], ["x:ICICI Prudential Life Insurance Company Ltd.", 5.90], ["x:General Insurance Corporation of India", 4.41], ["x:Star Health and Allied Insurance Company Ltd.", 4.20], ["x:Canara HSBC Life Insurance Company Ltd.", 1.78], ["x:Niva Bupa Health Insurance Company Ltd.", 1.60]] }] },
+{ id: "auto", name: "Nifty Auto", kind: "Sectoral", tags: ["equity"], color: "var(--p6)",
+  about: "The Nifty Auto Index is designed to reflect the behaviour and performance of the Automobiles segment of the financial market. The Nifty Auto Index comprises 15 tradable, exchange listed companies. The index represents auto related sectors like Automobiles 4 wheelers, Automobiles 2 & 3 wheelers, Auto Ancillaries and Tyres.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 12 Jul 2011; base date 1 Jan 2004."],
+  stats: { pe: 30.56, pb: 4.11, dy: 1.11, r1y: -0.94, r5y: 19.93, ytd: -6.72 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_auto.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 15, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Mahindra & Mahindra Ltd.", 22.26], ["x:Maruti Suzuki India Ltd.", 13.15], ["x:Bajaj Auto Ltd.", 10.02], ["x:Eicher Motors Ltd.", 8.33], ["x:TVS Motor Company Ltd.", 8.15], ["x:Samvardhana Motherson International Ltd.", 6.09], ["x:Hero MotoCorp Ltd.", 5.75], ["x:Tata Motors Passenger Vehicles Ltd.", 5.01], ["bharatforge", 4.52], ["x:Ashok Leyland Ltd.", 3.73]] }] },
+{ id: "fmcg", name: "Nifty FMCG", kind: "Sectoral", tags: ["equity"], color: "var(--p1)",
+  about: "The Nifty FMCG Index is designed to reflect the behaviour and performance of FMCGs (Fast Moving Consumer Goods) which are non-durable, mass consumption products and available off the shelf. The Nifty FMCG Index comprises of 15 stocks from FMCG sector listed on the National Stock Exchange (NSE).",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 22 Sep 1999; base date 1 Jan 1996."],
+  stats: { pe: 30.87, pb: 7.39, dy: 1.06, r1y: -18.65, r5y: 1.94, ytd: -19.77 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_FMCG.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 15, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:ITC Ltd.", 27.65], ["x:Hindustan Unilever Ltd.", 18.20], ["x:Nestle India Ltd.", 10.25], ["x:Tata Consumer Products Ltd.", 6.75], ["x:Varun Beverages Ltd.", 6.45], ["x:Britannia Industries Ltd.", 6.21], ["x:Marico Ltd.", 4.55], ["x:United Spirits Ltd.", 4.37], ["x:Radico Khaitan Ltd", 3.74], ["x:Godrej Consumer Products Ltd.", 3.73]] }] },
+{ id: "pharma", name: "Nifty Pharma", kind: "Sectoral", tags: ["equity"], color: "var(--p2)",
+  about: "Nifty Pharma Index captures the performance of the pharmaceutical sector. The Index comprises of 20 companies listed on National Stock Exchange of India (NSE).",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 1 Jul 2005; base date 1 Jan 2001."],
+  stats: { pe: 40.9, pb: 4.98, dy: 0.54, r1y: 23.23, r5y: 12.82, ytd: 16.35 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_pharma.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 20, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Sun Pharmaceutical Industries Ltd.", 19.51], ["x:Divi's Laboratories Ltd.", 11.98], ["x:Laurus Labs Ltd.", 7.82], ["x:Cipla Ltd.", 7.68], ["x:Dr. Reddy's Laboratories Ltd.", 7.63], ["x:Torrent Pharmaceuticals Ltd.", 7.17], ["x:Lupin Ltd.", 5.00], ["x:Aurobindo Pharma Ltd.", 4.69], ["x:Glenmark Pharmaceuticals Ltd.", 3.57], ["x:Alkem Laboratories Ltd.", 3.16]] }] },
+{ id: "healthcare", name: "Nifty Healthcare", kind: "Sectoral", tags: ["equity"], color: "var(--p3)",
+  about: "The Nifty Healthcare Index is designed to reflect the behaviour and performance of the Healthcare companies. The Nifty Healthcare Index comprises of maximum of 20 tradable, exchange listed companies. Nifty Healthcare Index is computed using free float market capitalization method, wherein the level of the index reflects the total free float market value of all the stocks in the index relative to particular base market capitalization value.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 18 Nov 2020; base date 1 Apr 2005."],
+  stats: { pe: 42.02, pb: 5.33, dy: 0.48, r1y: 14.14, r5y: 12.44, ytd: 10.23 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Healthcare_Index.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 20, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Sun Pharmaceutical Industries Ltd.", 17.00], ["x:Divi's Laboratories Ltd.", 10.44], ["x:Apollo Hospitals Enterprise Ltd.", 7.43], ["x:Laurus Labs Ltd.", 6.82], ["x:Cipla Ltd.", 6.70], ["x:Dr. Reddy's Laboratories Ltd.", 6.65], ["x:Torrent Pharmaceuticals Ltd.", 6.24], ["x:Max Healthcare Institute Ltd.", 6.12], ["x:Lupin Ltd.", 4.36], ["x:Aurobindo Pharma Ltd.", 4.08]] }] },
+{ id: "realty", name: "Nifty Realty", kind: "Sectoral", tags: ["equity"], color: "var(--p4)",
+  about: "Nifty Realty Index is designed to reflect the behaviour and performance of Real Estate companies. The Index comprises of 10 companies listed on National Stock Exchange of India (NSE).",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 30 Aug 2007; base date 29 Dec 2006."],
+  stats: { pe: 35.88, pb: 3.7, dy: 0.49, r1y: -2.33, r5y: 10.52, ytd: -3.49 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_realty.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 10, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:DLF Ltd.", 20.38], ["x:Phoenix Mills Ltd.", 17.05], ["x:Lodha Developers Ltd.", 15.90], ["x:Prestige Estates Projects Ltd.", 11.79], ["x:Godrej Properties Ltd.", 10.38], ["x:Oberoi Realty Ltd.", 9.80], ["x:Brigade Enterprises Ltd.", 5.03], ["x:Anant Raj Ltd.", 4.31], ["x:Aditya Birla Real Estate Ltd.", 2.81], ["x:Sobha Ltd.", 2.56]] }] },
+{ id: "media", name: "Nifty Media", kind: "Sectoral", tags: ["equity"], color: "var(--p5)",
+  about: "The Nifty Media Index is designed to reflect the behaviour and performance of the Media & Entertainment sector including printing and publishing. The Nifty Media Index comprises of maximum 15 stocks from Media & Entertainment sector that are listed on the National Stock Exchange (NSE).",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 19 Jul 2011; base date 30 Dec 2005."],
+  stats: { pe: 41.77, pb: 1.72, dy: 0.47, r1y: 2.61, r5y: -5.83, ytd: 9.59 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_media.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 10, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:PVR INOX Ltd.", 20.11], ["x:Nazara Technologies Ltd.", 19.86], ["x:Zee Entertainment Enterprises Ltd.", 15.49], ["x:Sun TV Network Ltd.", 13.56], ["x:Saregama India Ltd", 8.30], ["x:Prime Focus Ltd.", 6.94], ["x:Tips Music Ltd.", 6.86], ["x:Network18 Media & Investments Ltd.", 3.84], ["x:MPS Ltd.", 3.23], ["x:D.B.Corp Ltd.", 1.81]] }] },
+{ id: "consdur", name: "Nifty Consumer Durables", kind: "Sectoral", tags: ["equity"], color: "var(--p6)",
+  about: "The Nifty Consumer Durables Index is designed to reflect the behaviour and performance of the companies belonging to Consumer Durables industry. The Nifty Consumer Durables Index comprises of maximum of 15 tradable, exchange listed companies. Nifty Consumer Durables Index is computed using free float market capitalization method, wherein the level of the index reflects the total free float market value of all the stocks in the index relative to particular base market capitalization value. Nifty Consumer Durables Index can be used for a variety of purposes such as benchmarking fund portfolios, launching of index funds, ETFs and structured products.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 15 Jan 2020; base date 1 Apr 2005."],
+  stats: { pe: 58.85, pb: 9.44, dy: 0.41, r1y: -1.31, r5y: 6.22, ytd: -0.35 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_nifty_consumer_durables.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 14, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Titan Company Ltd.", 32.35], ["x:Dixon Technologies (India) Ltd.", 16.33], ["x:Havells India Ltd.", 7.66], ["x:Voltas Ltd.", 7.30], ["x:Kalyan Jewellers India Ltd.", 6.36], ["x:Blue Star Ltd.", 5.89], ["x:LG Electronics India Ltd.", 5.27], ["x:Amber Enterprises India Ltd.", 4.37], ["x:Crompton Greaves Consumer Electricals Ltd.", 4.02], ["x:Kajaria Ceramics Ltd.", 3.02]] }] },
+{ id: "oilgas", name: "Nifty Oil & Gas", kind: "Sectoral", tags: ["equity"], color: "var(--p1)",
+  about: "The Nifty Oil & Gas Index is designed to reflect the behaviour and performance of the companies belonging to Oil, Gas and Petroleum industry. The Nifty Oil & Gas Index comprises of maximum of 15 tradable, exchange listed companies.",
+  method: ["Weights follow periodic capped free float.", "Rebalanced semi-annually.", "Launched 15 Jan 2020; base date 1 Apr 2005."],
+  stats: { pe: 10.58, pb: 1.31, dy: 1.84, r1y: -5.9, r5y: 6.43, ytd: -13.22 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_nifty_oil_and_gas.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 15, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["reliance", 32.70], ["ongc", 14.94], ["x:Bharat Petroleum Corporation Ltd.", 10.36], ["x:Indian Oil Corporation Ltd.", 8.59], ["x:GAIL (India) Ltd.", 7.83], ["x:Hindustan Petroleum Corporation Ltd.", 5.73], ["x:Oil India Ltd.", 4.17], ["x:Petronet LNG Ltd.", 3.63], ["x:Aegis Logistics Ltd.", 2.95], ["x:Adani Total Gas Ltd.", 2.81]] }] },
+{ id: "power", name: "Nifty Power", kind: "Sectoral", tags: ["equity"], color: "var(--p2)",
+  about: "Nifty Power aims to track the performance of stocks from the Power sector within the Nifty Total Market. All the stocks from eligible basic industries from the Nifty Total Market form part of the Index. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 12 Jun 2026; base date 1 Apr 2005."],
+  stats: { pe: 19.06, pb: 2.32, dy: 1.56, r1y: 1.74, r5y: 10.05, ytd: 5.25 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Power.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 23, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["ntpc", 20.11], ["powergrid", 18.38], ["x:Adani Power Ltd.", 13.23], ["x:Tata Power Co. Ltd.", 9.40], ["x:Adani Energy Solutions Ltd.", 6.68], ["x:Adani Green Energy Ltd.", 6.68], ["x:JSW Energy Ltd.", 4.73], ["x:NHPC Ltd.", 4.28], ["x:Torrent Power Ltd.", 3.69], ["x:NLC India Ltd.", 1.48]] }] },
+{ id: "capgoods", name: "Nifty Capital Goods", kind: "Sectoral", tags: ["equity"], color: "var(--p3)",
+  about: "Nifty Capital Goods Index aims to track the performance of stocks from the Nifty Total Market Index which form a part of the Capital Goods sector. The top 50 stocks from eligible basic industries are selected based on a 6-month average free-float market capitalization from the Nifty Total Market Index, with a preference to stocks available for trading in the derivatives segment at NSE. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 15 Jun 2026; base date 1 Apr 2005."],
+  stats: { pe: 44.23, pb: 8.96, dy: 0.6, r1y: 9.69, r5y: 24.6, ytd: 10.89 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Capital_Goods.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 50, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["bel", 10.32], ["hal", 6.57], ["x:Tata Motors Ltd.", 6.54], ["x:Cummins India Ltd.", 4.77], ["x:Bharat Heavy Electricals Ltd.", 4.49], ["x:CG Power and Industrial Solutions Ltd.", 4.35], ["x:GE Vernova T&D India Ltd.", 3.86], ["x:Suzlon Energy Ltd.", 3.56], ["x:Ashok Leyland Ltd.", 3.27], ["x:Polycab India Ltd.", 3.18]] }] },
+{ id: "chemicals", name: "Nifty Chemicals", kind: "Sectoral", tags: ["equity"], color: "var(--p4)",
+  about: "Nifty Chemicals Index aims to track the performance of stocks from the Nifty 500 Index which form a part of the Chemicals sector. The top 20 stocks from eligible basic industries are selected based on a 6-month average free-float market capitalization from the Nifty 500, with a preference to stocks available for trading in the derivatives segment at NSE. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 11 Mar 2025; base date 1 Apr 2005."],
+  stats: { pe: 42.48, pb: 3.74, dy: 0.57, r1y: -0.87, r5y: 4.88, ytd: -2.36 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Chemicals.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 20, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["solar", 13.61], ["x:Pidilite Industries Ltd.", 12.91], ["x:SRF Ltd.", 10.19], ["x:Navin Fluorine International Ltd.", 8.61], ["x:UPL Ltd.", 8.59], ["x:Coromandel International Ltd.", 5.96], ["x:PI Industries Ltd.", 5.30], ["x:Gujarat Fluorochemicals Ltd.", 5.27], ["x:Himadri Speciality Chemical Ltd.", 4.53], ["x:Linde India Ltd.", 3.78]] }] },
+{ id: "cement", name: "Nifty Cement", kind: "Sectoral", tags: ["equity"], color: "var(--p5)",
+  about: "The Nifty Cement Index aims to track the performance of stocks from the Nifty Total Market that belong to the ‘Cement & Cement products’ industry. A maximum of 20 stocks are selected based on 6-month average free float market capitalization from the Nifty Total Market. Stocks available for trading in the derivatives segment at NSE are selected first, followed by non-F&O stocks if required, to complete the selection. The weight of each stock in the index is based on its free-float market capitalization subject to a cap of 15%.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 16 Feb 2026; base date 1 Apr 2005."],
+  stats: { pe: 26.13, pb: 2.0, dy: 0.41, r1y: -18.47, r5y: 2.21, ytd: -14.67 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Cement.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 12, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["x:Shree Cement Ltd.", 15.14], ["ultratech", 14.98], ["x:Ambuja Cements Ltd.", 14.74], ["grasim", 14.64], ["x:J.K. Cement Ltd.", 13.43], ["x:Dalmia Bharat Ltd.", 8.47], ["x:The Ramco Cements Ltd.", 6.76], ["x:ACC Ltd.", 4.56], ["x:JSW Cement Ltd.", 2.32], ["x:Nuvoco Vistas Corporation Ltd.", 2.14]] }] },
+{ id: "telecom", name: "Nifty Telecommunications", kind: "Sectoral", tags: ["equity"], color: "var(--p6)",
+  about: "Nifty Telecommunications aims to track the performance of stocks from the Telecommunications sector within the Nifty Total Market index. All the stocks from eligible basic industries from the Nifty Total Market index form part of the Index. The weight of each stock in the index is based on its free-float market capitalization.",
+  method: ["Weights follow periodic capped free-float.", "Rebalanced semi-annually.", "Launched 15 Jun 2026; base date 1 Apr 2005."],
+  stats: { pe: 14.48, pb: 7.78, dy: 0.48, r1y: 36.42, r5y: 11.18, ytd: 19.64 },
+  sectors: [],
+  factsheet: "https://www.niftyindices.com/Factsheet/Factsheet_Nifty_Telecommunications.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 12, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["airtel", 22.80], ["x:Indus Towers Ltd.", 21.21], ["x:Vodafone Idea Ltd.", 15.74], ["x:Sterlite Technologies Ltd.", 11.75], ["x:HFCL Ltd.", 10.26], ["x:Tata Communications Ltd.", 8.59], ["x:Bharti Hexacom Ltd.", 4.73], ["x:Tejas Networks Ltd.", 1.78], ["x:ITI Ltd.", 1.05], ["x:Railtel Corporation Of India Ltd.", 1.02]] }] },
+{ id: "commodities", name: "Nifty Commodities", kind: "Thematic", tags: ["equity", "economy"], color: "var(--p1)",
+  about: "The Nifty Commodities Index is designed to reflect the behaviour and performance of a diversified portfolio of companies representing the commodities segment which includes sectors like Oil, Petroleum Products, Cement, Power, Chemical, Sugar, Metals and Mining. The Nifty Commodities Index comprises of 30 companies that are listed on the National Stock Exchange (NSE).",
+  method: ["Weights follow periodic capped free float mcap.", "Rebalanced semi-annually.", "Launched 7 Sep 2011; base date 1 Jan 2004."],
+  stats: { pe: 14.89, pb: 1.92, dy: 1.51, r1y: 3.61, r5y: 10.31, ytd: -2.16 },
+  sectors: [["Metals & Mining", 28.64], ["Oil, Gas & Consumable Fuels", 27.21], ["Power", 22.45], ["Construction Materials", 14.39], ["Chemicals", 5.38], ["Capital Goods", 1.92]],
+  factsheet: "https://www.niftyindices.com/Factsheet/ind_nifty_commodities.pdf",
+  snapshots: [
+   { date: "2026-09-30", count: 30, official: true, src: "NSE Indices factsheet, 30 Sep 2026",
+     top: [["reliance", 9.91], ["ntpc", 7.39], ["tatasteel", 7.37], ["hindalco", 6.57], ["ultratech", 6.25], ["jswsteel", 5.82], ["grasim", 5.57], ["x:Coal India Ltd.", 4.91], ["ongc", 4.23], ["x:Adani Power Ltd.", 4.09]] }] }
 ];
 
 /* ===== content/companies.js — plain-language company profiles for RMs (what the company does, not stock views) ===== */
@@ -4194,7 +4527,7 @@ const IndexData = (() => {
         wrong: opts3.map(v => v === c3 ? null : t("ixq_c3_wrong")), big: t("ixq_c3_big", { c: c3 }), client: t("ixq_c3_client", { c: Math.round(c3) }), remember: t("ixq_c3_rem") }));
     }
     const keys = top.map(x => x[0]).filter(k => COMPANIES[k]);
-    keys.forEach(k => {
+    (keys.length >= 4 ? keys : []).forEach(k => {
       const others = stable(keys.filter(x => x !== k), k).slice(0, 3), opts = stable([k, ...others], k + ix.id);
       out.push(mk({ id: `ix-${ix.id}-co-${k}`, tags: ix.tags, types: [7], prompt: t("ixq_co", { co: COMPANIES[k].name }),
         options: opts.map(short), answer: opts.indexOf(k), why: loc ? `${COMPANIES[k].name}: ${short(k)}.` : COMPANIES[k].what,
@@ -5653,8 +5986,9 @@ const ixText = ix => I18N.tx("X" + ix.id, { about: ix.about, method: ix.method |
 const coText = k => { const base = I18N.tx("C" + k, COMPANIES[k]); const sh = CO_TX[I18N.lang]?.[k]; return sh ? { ...base, short: sh } : base; };
 
 function IndexHubView(go) {
-  const st = Store.get(), list = h("div", { class: "tiles ix-tiles" });
-  const render = () => list.replaceChildren(...IndexData.all().map(ix => {
+  const st = Store.get(), list = h("div", { class: "tiles ix-tiles" }), bar = h("div", { class: "filters" });
+  let kind = "All";
+  const render = () => list.replaceChildren(...IndexData.all().filter(ix => kind === "All" || ix.kind === kind).map(ix => {
     const snap = IndexData.latest(ix), r = st.tests["idx-" + ix.id], mastered = r && r.of && r.first / r.of >= .8;
     return h("button", { class: "tile ix-tile", style: `--c:${ix.color || "var(--gold)"}`, on: { click: () => go("index", ix.id) } },
       h("div", { class: "row" }, h("span", { class: "eyebrow" }, ix.kind || ""), st.focus === ix.id ? h("span", { class: "pill warn" }, t("my_focus")) : null, mastered ? h("span", { class: "pill ok" }, t("specialist")) : null),
@@ -5666,11 +6000,14 @@ function IndexHubView(go) {
         h("span", {}, h("b", {}, ix.snapshots[0]?.count ?? "—"), " " + t("stocks"))),
       h("span", { class: "muted sm" }, r ? t("best_first", { f: r.first, b: r.best, n: r.of, a: r.runs.length }) : t("not_taken")));
   }));
-  const unsub = IndexData.subscribe(render); render();
+  const KINDS = ["All", "Broad market", "Mid cap", "Small cap", "Sectoral", "Thematic"];
+  const drawBar = () => bar.replaceChildren(...KINDS.filter(k => k === "All" || IndexData.all().some(ix => ix.kind === k)).map(k =>
+    h("button", { class: "fchip", "aria-pressed": String(k === kind), on: { click: () => { kind = k; render(); drawBar(); } } }, k)));
+  const unsub = IndexData.subscribe(() => { render(); drawBar(); }); render(); drawBar();
   const root = h("div", { class: "stack" },
     h("header", { class: "desk-head" }, h("div", {}, h("h1", {}, t("ix_title")), h("p", { class: "desk-sub" }, t("ix_sub"))),
       h("div", { class: "desk-meta" }, h("span", {}, t("ix_source")))),
-    list, h("p", { class: "ai-note" }, t("ix_note")));
+    bar, list, h("p", { class: "ai-note" }, t("ix_note")));
   root._cleanup = unsub;
   return root;
 }
@@ -5680,7 +6017,7 @@ function IndexView(go, arg) {
   const ix = IndexData.byId(id); if (!ix) return h("p", { class: "muted" }, t("loading"));
   const st = Store.get(), snap = IndexData.latest(ix), txt = ixText(ix);
   if (I18N.lang !== "en" && Store.ctx.isOwner && !I18N.has("X" + ix.id)) I18N.ensure("X" + ix.id, { about: ix.about, method: ix.method || [] }).then(ok => ok && go("index", arg));
-  const TABS = [["overview", t("ix_overview")], ["weights", t("ix_weights")], ["changes", t("ix_changes")], ["companies", t("ix_companies")], ["quiz", t("ix_quiz")]];
+  const TABS = [["overview", t("ix_overview")], ["weights", t("ix_weights")], ["changes", t("ix_changes")], ["companies", t("ix_companies")], ["quiz", t("ix_quiz")]].filter(([k]) => k !== "companies" || (snap?.top || []).some(x => COMPANIES[x[0]]));
   const focusBtn = h("button", { class: "btn " + (st.focus === id ? "ghost" : "brass"), disabled: st.focus === id, on: { click: () => { Store.setFocus(id); focusBtn.disabled = true; focusBtn.textContent = t("my_focus"); toast(t("focus_set", { x: ix.name })); } } }, st.focus === id ? t("my_focus") : t("set_focus"));
   const src = snap ? h("p", { class: "source" }, `${t("source_lbl")}: ${snap.src} · `, h("a", { href: ix.factsheet, target: "_blank", rel: "noopener" }, t("factsheet"))) : null;
   const bars = rows => h("div", { class: "wbars" }, rows.map(([k, w]) => h("button", { class: "wbar", on: { click: () => COMPANIES[k] && go("index", id + ":companies") } },
