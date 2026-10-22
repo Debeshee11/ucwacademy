@@ -5125,8 +5125,7 @@ const Login = (() => {
           h("p", { class: "gs-lead" }, "Market intelligence, product depth and client conversation practice for UpperCrust Wealth relationship managers."),
           h("ul", { class: "gs-points" },
             h("li", {}, "A short daily lesson grounded in this week's markets"),
-            h("li", {}, "Assessments and progress reporting for the team"),
-            h("li", {}, "An AI tutor for client questions, available on demand"))),
+            h("li", {}, "Assessments and progress reporting for the team"))),
         h("p", { class: "gs-foot" }, `© ${yr} UpperCrust Wealth · For internal use only`)),
       h("main", { class: "gate-main" }, form));
     document.documentElement.classList.add("gate-open");
@@ -5618,9 +5617,8 @@ function PortalHome(go) {
     h("header", { class: "portal-head" },
       h("p", { class: "eyebrow" }, "UpperCrust Academy"),
       h("h1", {}, first ? `${greet}, ${first}.` : `${greet}.`),
-      h("p", { class: "muted" }, "Ask about markets, mutual funds or a client conversation. Every lesson and tool from the mission stays open to you.")),
-    h("div", { class: "portal" },
-      h("div", { class: "portal-main" }, TutorView()),
+      h("p", { class: "muted" }, "Every lesson and tool from the mission stays open to you.")),
+    h("div", { class: "stack" },
       h("aside", { class: "portal-side stack" },
         s.rm ? h("section", { class: "panel stack" }, h("p", { class: "eyebrow", style: "margin:0;color:var(--muted)" }, "75 Days · 80 Lacs · Mission complete"),
           Game.tierCard(fin), rankEl,
@@ -6822,41 +6820,6 @@ function FundQuizView(go, gid) {
       onDone: () => { Store.recordTest("fq-" + g.id, score, qs.length); end.replaceChildren(h("section", { class: "panel stack" }, h("h2", {}, t("scored", { s: score, n: qs.length })), h("button", { class: "btn", on: { click: () => go("funds") } }, t("back")))); } })), end);
 }
 
-/* ===== app/tutor.js — ask Claude; answers in the chosen language ===== */
-function TutorView() {
-  const history = [];
-  const chat = h("div", { class: "chat", "aria-live": "polite" });
-  const input = h("textarea", { placeholder: t("tutor_ph"), "aria-label": t("ask") });
-  const send = h("button", { class: "btn brass", on: { click: ask } }, t("ask"));
-  const slot = h("div", {}, h("p", { class: "muted" }, t("loading")));
-  let sample = null;
-  const root = h("div", { class: "stack" }, h("h1", {}, t("tutor_title")), h("p", { class: "muted" }, t("tutor_sub")), slot);
-  const off = () => slot.replaceChildren(h("section", { class: "panel" }, h("p", {}, t("tutor_off"))));
-  const p = window.claude?.use?.("sample");
-  if (!p) off(); else p.then(sm => { if (!sm) return off(); sample = sm; slot.replaceChildren(h("section", { class: "panel stack" }, chat, input, h("div", { class: "row" }, send))); });
-  input.addEventListener("keydown", e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) ask(); });
-  async function ask() {
-    const text = input.value.trim(); if (!text || !sample) return;
-    input.value = ""; send.disabled = true;
-    chat.append(h("div", { class: "msg u" }, text));
-    const out = h("div", { class: "msg a" }, t("thinking")); chat.append(out); chat.scrollTop = chat.scrollHeight;
-    history.push(["RM", text]);
-    const desk = News.all.slice(0, 6).map(s => `${s.date}: ${s.headline} (${s.source.name})`).join("\n");
-    const prompt = `You are a sharp, patient tutor for mutual fund distributor RMs at UpperCrust Wealth${Mission.over() ? "" : ' during the "75 Days 80 Lacs" challenge'}. RMs explain the financial world to clients; they do not build portfolios or pick stocks. Answer in ${I18N.langName()}, keeping finance acronyms in English. Use Indian examples and ₹. Under 180 words, plain text. Be accurate on SEBI/AMFI rules; say clearly when something may have changed since the data below. Distinguish facts from interpretation. Never promise returns.
-Verified reference: ${DATA_AS_OF}. Recent Market Desk stories:
-${desk}
-Conversation:
-${history.map(([w, m]) => `${w}: ${m}`).join("\n")}
-Tutor:`;
-    try {
-      const r = await sample(prompt, { cache: false, onText: ({ text: x }) => { out.textContent = x; chat.scrollTop = chat.scrollHeight; } });
-      out.textContent = r.text; history.push(["Tutor", r.text]);
-    } catch (e) { history.pop(); out.textContent = e?.code === "rate_limited" ? t("tutor_rate") : t("tutor_err"); }
-    send.disabled = false;
-  }
-  return root;
-}
-
 /* ===== app/admin.js — owner console shell: Team · Market Desk editor · Lesson Studio · Fund library · Languages ===== */
 function AdminView(go, tab = "team") {
   const { db, isOwner } = Store.ctx;
@@ -7274,7 +7237,7 @@ function AdminLang() {
 /* ===== app/main.js — router, header, language switch, startup ===== */
 (() => {
   const ROUTES = { pick: PickerView, home: (go, arg) => Mission.over() ? PortalHome(go, arg) : HomeView(go, arg), library: LibraryView, day: DayView, desk: DeskView, story: StoryView, weekly: WeeklyQuizView, lab: LabView, sim: SimView, indices: IndexHubView, index: IndexView, fund: FundView, fcompare: FundCompareView, fquiz: FundQuizView,
-    tests: TestsView, test: TestRun, puzzles: PuzzlesView, lightning: LightningView, board: LeaderboardView, funds: FundsView, tutor: TutorView, admin: AdminView };
+    tests: TestsView, test: TestRun, puzzles: PuzzlesView, lightning: LightningView, board: LeaderboardView, funds: FundsView, admin: AdminView };
   const TAB_OF = { day: "home", test: "tests", story: "desk", weekly: "desk", sim: "lab", index: "indices", fund: "funds", fcompare: "funds", fquiz: "funds", lightning: "tests", puzzles: "tests" };
   const main = $("main .wrap"), nav = $(".nav"), langSel = $("#lang"), who = $("#who");
   let current = null, route = ["home"], booted = false;
@@ -7307,7 +7270,7 @@ function AdminLang() {
       ["grp_team", [["board", "nav_standings"], ...admin]]] : [
       [null, [["home", "nav_today"], ["desk", "nav_desk"]]],
       ["grp_learn", [["lab", "nav_lab"], ["funds", "nav_funds"], ["indices", "nav_indices"], ["tests", "nav_tests"]]],
-      ["grp_team", [["board", "nav_board"], ["tutor", "nav_tutor"], ...admin]]];
+      ["grp_team", [["board", "nav_board"], ...admin]]];
     const TSUBS = [["lightning", "Rapid Fire"], ["puzzles", "Puzzles"], ["tests", "Practice"]];
     nav.replaceChildren(...groups.flatMap(([g, items]) => [g ? h("span", { class: "nav-grp" }, t(g)) : null,
       ...items.flatMap(([r, key]) => { const b = h("button", { "data-r": r, on: { click: () => go(r) } }); b.innerHTML = NAV_ICONS[r] || ""; b.append(t(key));
