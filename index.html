@@ -3729,7 +3729,7 @@ const debounce = (fn, ms) => { let tm; return (...a) => { clearTimeout(tm); tm =
 
 /* ===== app/store.js — per-RM progress in players/<viewerId> (shared db), localStorage fallback ===== */
 const Store = (() => {
-  const LS_KEY = "uc90:progress";
+  let LS_KEY = "uc90:progress";
   const PUZZLE_DAILY_CAP = 5, LOG_MAX = 600, RUNS_MAX = 12;
   /* Mission-report fields: act = actions per calendar day, qa = every quiz attempt (n) and every correct one (c),
      rf = Rapid Fire totals, rewards = days the full daily brief was completed, final = standing frozen when the mission ends */
@@ -3786,30 +3786,33 @@ const Store = (() => {
   window.addEventListener("pagehide", flushIfPending);
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushIfPending(); });
 
-  async function init() {
+  /* who = the signed-in user from Login ({ role, id, name, uid }); their uid is the fixed document id players/<uid> */
+  async function init(who) {
+    if (who) LS_KEY = "uc90:progress:" + who.uid;
+    ctx.isOwner = who?.role === "admin";
     try { state = migrate(JSON.parse(localStorage.getItem(LS_KEY) || "{}")); } catch {}
     emit();
-    if (window.__firebase_config) {
+    if (window.__firebase_config && who) {
       try {
         if (!firebase.apps.length) firebase.initializeApp(window.__firebase_config);
         const db = firebase.firestore();
         ctx.db = db;
-        let uid = null;
-        try { uid = localStorage.getItem("uc_uid"); } catch {}
-        if (!uid) { uid = "u" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); try { localStorage.setItem("uc_uid", uid); } catch {} }
-        ctx.uid = uid;
-        let ownerFlag = false; try { ownerFlag = localStorage.getItem("uc_owner") === "1"; } catch {}
-        ctx.isOwner = ownerFlag;
-        if (ctx.uid) {
-          ref = db.doc("players/" + ctx.uid);
-          try {
-            const snap = await ref.get();
-            if (snap.exists) { state = migrate(JSON.parse(JSON.stringify(snap.data()))); saveLocal(); }
-            else { state = migrate({}); saveLocal(); }
-          } catch { ref = null; }
-        }
+        ctx.uid = who.uid;
+        ref = db.doc("players/" + ctx.uid);
+        try {
+          const snap = await ref.get();
+          if (snap.exists) { state = migrate(JSON.parse(JSON.stringify(snap.data()))); saveLocal(); }
+          else {
+            /* First sign-in on a fixed account: adopt the progress this RM saved earlier under a random per-browser id, so nothing is lost or listed twice */
+            let old = null;
+            if (who.role === "rm") (await db.collection("players").where("rm", "==", who.id).get()).docs.forEach(d => { if (!old || (d.data().points || 0) > (old.data().points || 0)) old = d; });
+            state = migrate(old ? JSON.parse(JSON.stringify(old.data())) : {}); saveLocal();
+            if (old) { await ref.set(JSON.parse(JSON.stringify(state))); await old.ref.delete(); }
+          }
+        } catch { ref = null; }
       } catch (e) { console.warn("Firebase init failed:", e); }
     }
+    if (who?.role === "rm" && state.rm !== who.id) { state.rm = who.id; state.rmName = who.name; activity({ k: "join" }); persist({ quiet: true }); }
     ready = true; emit();
   }
 
@@ -4491,112 +4494,91 @@ const Game = (() => {
     answered, hud, team, soundBtn, tick, tierCard, medal, icon, homeSeen, shimmer };
 })();
 
-/* ===== app/login.js — sign-in: work email + an Academy password each RM creates (never their email password).
-   The password is kept only as a salted PBKDF2 hash in the RM's private storage (data/users/<id>/login), which nobody else can read.
-   The claude.ai sign-in still decides who the viewer is; this adds a personal lock on top. Laid out like a private-bank client portal. ===== */
+/* ===== app/login.js — sign-in gate: work email + a password issued by the administrator, one fixed account per RM plus the admin.
+   Only salted SHA-256 hashes ship in the page. This is a client-side gate: it keeps casual visitors out, it is not server-side security. ===== */
 const Login = (() => {
-  const DOMAIN = "uppercrustwealth.com", FLAG = "uc:auth", LOCAL = "uc:acct", ITER = 150000, DAYS = 30;
+  const FLAG = "uc:auth", DAYS = 30, SALT = "uc-academy|";
+  /* id matches RMS[].id; passwords are compared lower-case. To change a login, hash SHA-256(SALT + email + "|" + password.toLowerCase()). */
+  const ACCOUNTS = [
+    { id: "manoj-rohit", email: "manojrohit@uppercrustwealth.com", h: "7ee88b68a2b0506ce2872102b624ee35cdf8b59a014c512a048d8b7dd49afd38" },
+    { id: "roshan-shah", email: "roshanshah@uppercrustwealth.com", h: "f0b24f7ce48f5464c48b3371011aa8b3a4e5db0651cf3296c8500c4c2fd2c044" },
+    { id: "hemant-patel", email: "hemantpatel@uppercrustwealth.com", h: "da57e3fb2e5eb5682c407ed965c2c22e61d0b96d19833dbfdc811a343415173a" },
+    { id: "savan-dalsaniya", email: "savan@uppercrustwealth.com", h: "1cbfbd9a563bd967435c374b5283804da95d496396da521a36c877c5f3aae684" },
+    { id: "palak-shah", email: "palakshah@uppercrustwealth.com", h: "ac39426bff2daaabae10c8bcac2298ceadb2d6e78d4ab9214657efc7927568ed" },
+    { id: "harshil-patel", email: "harshil_patel@uppercrustwealth.com", h: "a5bba99d77948fb8fb1fb8788383844e0ed068b3b8e96fec95c57aff1c1b5b28" },
+    { id: "navin-jangir", email: "navin@uppercrustwealth.com", h: "2cc76bf7aa40802c2416249235a0e3a6205fcdbbb2e6b97ec6b478ba1e554b69" },
+    { id: "kanchan-bhagwat", email: "kanchanbhagwat@uppercrustwealth.com", h: "f2aaf5d240eb959afaf8b51d36c15e7ab63c113ab0b61a515b85f77abdd6ac83" },
+    { id: "omkar-deo", email: "omkar@uppercrustwealth.com", h: "aae3f7d60d67c22d4c1c40829428b7f97eae49e7682f0b3f03a43b83f0e07954" },
+    { id: "prakash-patel", email: "prakashpatel@uppercrustwealth.com", h: "d4d1cf03fe5ac596c5596f653195087a520ddbf633dbfa830ae06819267776cb" },
+    { id: "khusboo-modi", email: "ops@uppercrustwealth.com", h: "4c0b3f292c745faa50d1d1fbb21765848a63990d5acb32048b9ecc813325174a" },
+    { id: "sudheer-kumar", email: "sudheerkumar@uppercrustwealth.com", h: "76809db6c68b4381c02433dba06d16e891262eae202dce440a41e98a9547ff23" },
+    { id: "sandeep-rathod", email: "sandeep@uppercrustwealth.com", h: "d1e13ec1116fe125f5c9d791c1b751ca7dc9d43d0d3cf4ec0da8265346c4e34f" },
+    { id: "yuvrajsinh-solanki", email: "yuvraj@uppercrustwealth.com", h: "cf6ef7d8d38ee9da4c6f3bad07152f7c628f56c91bab7077af70eef8f56b1dfd" },
+    { id: "pranjal-more", email: "equity@uppercrustwealth.com", h: "62030bcc17d73fba7bcd2a7cfbc7a14dbcced1556d603bf83ea795ff1cd60d4c" },
+    { id: "manvi-agarwal", email: "crm@uppercrustwealth.com", h: "a50cbf626c2c669384a38812a1fd858deac8fbaf84a6936e0bd10a7a074a1536" },
+    { id: "isha-gil", email: "ishagil@uppercrustwealth.com", h: "057f8f3cf92ee5ba90b020f1e248e8781bf17ca161e51cce36fea0167875a040" },
+    { id: "bijal-mehta", email: "bijalmehta@uppercrustwealth.com", h: "0aeb9f409a43b6e21137d478f01034dbb948d2948e4fc271dd0dd410bb60efb0" },
+    { id: "aastha-panwar", email: "aasthapanwar@uppercrustwealth.com", h: "8126ca3934b4f2164a23c127e16c79687d136ce726e50758ec9700be194016c2" },
+    { id: "lakshmi-achutharam", email: "happy@uppercrustwealth.com", h: "e7aea2530a418262f18d27fd47b2fcd9b7dfdcd1672e42b9d2014ae5ff30e410" },
+    { id: "dhruv-pawashe", email: "dhruvpawashe@uppercrustwealth.com", h: "1c83cf774be1e589bd5ee5869577f505d4a0e285d23bd150cbba8100c11510cf" },
+    { id: "admin", email: "admin", admin: true, h: "180d75774e8a5c6eb58ccc6a66c665ff724f93bb9bdea2f81f70c0b3a3fe10bf" }
+  ];
   const enc = new TextEncoder();
-  const b64 = buf => btoa(String.fromCharCode(...new Uint8Array(buf)));
-  const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-  async function derive(pw, salt, iter) {
-    const key = await crypto.subtle.importKey("raw", enc.encode(pw), "PBKDF2", false, ["deriveBits"]);
-    return b64(await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt, iterations: iter }, key, 256));
-  }
-  const whenReady = () => new Promise(res => { if (Store.ready) return res(); const un = Store.subscribe(() => { if (Store.ready) { un?.(); res(); } }); });
-  const uidNow = () => Store.ctx.uid || "local";
-  const ref = () => Store.ctx.db && Store.ctx.uid ? Store.ctx.db.collection("data/users/" + Store.ctx.uid).doc("login") : null;
-  const readLocal = () => { try { return JSON.parse(localStorage.getItem(LOCAL) || "null"); } catch { return null; } };
-  async function load() {
-    const r = ref();
-    if (r) { const s = await r.get(); if (s.exists) return s.data(); }
-    return readLocal();
-  }
-  async function save(rec) {
-    const r = ref();
-    if (r) { try { await r.set(rec); return; } catch {} }
-    try { localStorage.setItem(LOCAL, JSON.stringify(rec)); } catch {}
-  }
+  const digest = async (email, pw) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", enc.encode(SALT + email + "|" + pw.toLowerCase()))), b => b.toString(16).padStart(2, "0")).join("");
+  /* uid is the fixed Firestore document id, so an RM's progress follows them to any browser or device */
+  const who = a => a.admin ? { role: "admin", id: "admin", name: "Admin", uid: "admin" } : { role: "rm", id: a.id, name: RMS.find(r => r.id === a.id)?.name || a.id, uid: "rm-" + a.id };
+  const LOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
   /* Signed-in flag: this tab, or 30 days on this device when "Keep me signed in" is ticked */
-  function readFlag() {
-    try { const s = JSON.parse(session.get(FLAG) || "null"); if (s?.uid) return s; } catch {}
-    try { const r = JSON.parse(localStorage.getItem(FLAG) || "null"); if (r?.uid && r.until > Date.now()) return r; } catch {}
-    return null;
+  function saved() {
+    let f = null;
+    try { f = JSON.parse(session.get(FLAG) || "null"); } catch {}
+    if (!f?.id) { try { const r = JSON.parse(localStorage.getItem(FLAG) || "null"); if (r?.until > Date.now()) f = r; } catch {} }
+    const a = f && ACCOUNTS.find(x => x.id === f.id);
+    return a ? who(a) : null;
   }
-  function setFlag(remember) {
-    const f = { uid: uidNow() };
-    session.set(FLAG, JSON.stringify(f));
-    try { remember ? localStorage.setItem(FLAG, JSON.stringify({ ...f, until: Date.now() + DAYS * 864e5 })) : localStorage.removeItem(FLAG); } catch {}
+  function remember(a, keep) {
+    session.set(FLAG, JSON.stringify({ id: a.id }));
+    try { keep ? localStorage.setItem(FLAG, JSON.stringify({ id: a.id, until: Date.now() + DAYS * 864e5 })) : localStorage.removeItem(FLAG); } catch {}
   }
   function signOut() {
     session.set(FLAG, "");
     try { localStorage.removeItem(FLAG); } catch {}
-    mount();
+    location.reload();
   }
-  const mask = e => { const [a, d] = (e || "").split("@"); return a ? `${a[0]}${"•".repeat(Math.max(2, a.length - 1))}@${d}` : "another email"; };
-  const LOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
 
   let root = null;
-  function mount() {
-    if (root) return;
-    let mode = "loading", rec, busy = false, tries = 0, lockUntil = 0;
+  function mount(done) {
+    let busy = false, tries = 0, lockUntil = 0;
     const field = (label, input, extra) => h("label", { class: "g-field" }, h("span", {}, label), extra ? h("span", { class: "g-pw" }, input, extra) : input);
-    const email = h("input", { type: "email", autocomplete: "username", inputmode: "email", placeholder: `name@${DOMAIN}`, spellcheck: "false" });
-    const pw = h("input", { type: "password", autocomplete: "current-password" });
-    const pw2 = h("input", { type: "password", autocomplete: "new-password" });
+    const email = h("input", { type: "text", autocomplete: "username", autocapitalize: "off", spellcheck: "false", placeholder: "name@uppercrustwealth.com" });
+    const pw = h("input", { type: "password", autocomplete: "current-password", autocapitalize: "off" });
     const eye = h("button", { type: "button", class: "g-eye", "aria-label": "Show password", on: { click: () => {
-      const show = pw.type === "password"; pw.type = pw2.type = show ? "text" : "password"; eye.textContent = show ? "Hide" : "Show"; eye.setAttribute("aria-label", show ? "Hide password" : "Show password"); } } }, "Show");
-    const pw2Wrap = field("Confirm password", pw2);
-    const remember = h("input", { type: "checkbox" });
-    const head = h("h2", { class: "g-head" }), sub = h("p", { class: "g-sub" }), msg = h("p", { class: "g-msg", role: "alert" });
+      const show = pw.type === "password"; pw.type = show ? "text" : "password"; eye.textContent = show ? "Hide" : "Show"; eye.setAttribute("aria-label", show ? "Hide password" : "Show password"); } } }, "Show");
+    const keep = h("input", { type: "checkbox" });
+    const msg = h("p", { class: "g-msg", role: "alert" });
     const btn = h("button", { class: "g-btn", type: "submit" }, "Sign in");
-    const forgot = h("button", { type: "button", class: "g-link", on: { click: () => setMode("reset") } }, "Forgot your Academy password?");
-    const back = h("button", { type: "button", class: "g-link", on: { click: () => setMode("signin") } }, "Back to sign in");
-    const lockNote = h("p", { class: "g-secure" }); lockNote.innerHTML = LOCK; lockNote.append(h("span", {}, "Use your Academy password, not your email password. It is stored only in encrypted form and is visible to no one, including administrators."));
+    const lockNote = h("p", { class: "g-secure" }); lockNote.innerHTML = LOCK; lockNote.append(h("span", {}, "Your login was issued by the Academy administrator. If it doesn't work, ask them to check it."));
     const form = h("form", { class: "g-form", novalidate: true, on: { submit: onSubmit } },
-      head, sub, field("Work email", email), field("Academy password", pw, eye), pw2Wrap,
-      h("div", { class: "g-row" }, h("label", { class: "g-check" }, remember, "Keep me signed in for 30 days"), forgot, back),
-      msg, btn, lockNote,
-      Store.ctx.isOwner ? h("p", { class: "g-admin" }, "You're viewing this as the portal owner. ",
-        h("button", { type: "button", class: "g-link", on: { click: () => leave() } }, "Close preview")) : null);
+      h("h2", { class: "g-head" }, "Sign in"), h("p", { class: "g-sub" }, "Enter your work email and the password you were given."),
+      field("Work email", email), field("Password", pw, eye),
+      h("div", { class: "g-row" }, h("label", { class: "g-check" }, keep, "Keep me signed in for 30 days")),
+      msg, btn, lockNote);
 
-    function setMode(m) {
-      mode = m; msg.textContent = "";
-      const making = m === "create" || m === "reset";
-      head.textContent = m === "create" ? "Set up your access" : m === "reset" ? "Reset your password" : "Sign in";
-      sub.textContent = m === "create" ? "First sign-in. Create an Academy password of at least 8 characters."
-        : m === "reset" ? "Your organisation sign-in confirms your identity. Choose a new Academy password."
-        : m === "loading" ? "Connecting…" : "Enter your work email and Academy password.";
-      pw2Wrap.hidden = !making; pw.autocomplete = making ? "new-password" : "current-password";
-      forgot.hidden = m !== "signin"; back.hidden = m !== "reset";
-      btn.disabled = m === "loading"; btn.textContent = making ? "Save and continue" : "Sign in";
-    }
     const fail = (text, el) => { msg.textContent = text; el?.focus(); };
-    const miss = (text, el) => { if (++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fail(text, el); };
-
     async function onSubmit(e) {
-      e.preventDefault(); if (busy || mode === "loading") return;
-      const em = email.value.trim().toLowerCase();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return fail("Enter your work email address.", email);
-      if (!em.endsWith("@" + DOMAIN)) return fail(`Use your @${DOMAIN} email address.`, email);
+      e.preventDefault(); if (busy) return;
+      const em = email.value.trim().toLowerCase(), p = pw.value;
+      if (!em || !p) return fail("Enter your email and password.", em ? pw : email);
       if (Date.now() < lockUntil) return fail(`Too many attempts. Try again in ${Math.ceil((lockUntil - Date.now()) / 1000)} seconds.`);
-      if (pw.value.length < 8) return fail("The Academy password must be at least 8 characters.", pw);
-      busy = true; btn.disabled = true; const label = btn.textContent; btn.textContent = "Verifying…";
+      if (!crypto?.subtle) return fail("Sign-in needs a secure (https) connection.");
+      busy = true; btn.disabled = true; btn.textContent = "Verifying…";
       try {
-        if (mode === "signin") {
-          if (em !== rec.email) return miss(`This account is registered to ${mask(rec.email)}.`, email);
-          if (await derive(pw.value, unb64(rec.salt), rec.iter || ITER) !== rec.hash) return miss("The password is incorrect. Try again or reset it.", pw);
-        } else {
-          if (mode === "reset" && rec && em !== rec.email) return fail(`Use the email this account was set up with: ${mask(rec.email)}.`, email);
-          if (pw.value !== pw2.value) return fail("The passwords do not match.", pw2);
-          if (pw.value.toLowerCase().includes(em.split("@")[0])) return fail("The password must not contain your email name.", pw);
-          const salt = crypto.getRandomValues(new Uint8Array(16));
-          rec = { email: em, salt: b64(salt), hash: await derive(pw.value, salt, ITER), iter: ITER, at: Date.now() };
-          await save(rec);
-        }
-        setFlag(remember.checked); leave();
-      } catch { fail("The service could not be reached. Check your connection and try again."); }
-      finally { busy = false; if (root) { btn.disabled = false; btn.textContent = label; } }
+        const a = ACCOUNTS.find(x => x.email === em);
+        if (!a || await digest(em, p) !== a.h) { if (++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } return fail("Incorrect email or password.", pw); }
+        remember(a, keep.checked); leave(); done(who(a));
+      } catch { fail("Couldn't sign in. Reload the page and try again."); }
+      finally { busy = false; btn.disabled = false; btn.textContent = "Sign in"; }
     }
 
     const yr = new Date().getFullYear();
@@ -4615,9 +4597,7 @@ const Login = (() => {
       h("main", { class: "gate-main" }, form));
     document.documentElement.classList.add("gate-open");
     document.body.append(root);
-    setMode("loading"); email.focus();
-    whenReady().then(load).then(r => { rec = r; setMode(r ? "signin" : "create"); })
-      .catch(() => { setMode("signin"); btn.disabled = true; msg.textContent = "The service could not be reached. Reload the page to try again."; });
+    email.focus();
   }
   function leave() {
     if (!root) return;
@@ -4631,17 +4611,12 @@ const Login = (() => {
     b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 17l-5-5 5-5M5 12h11"/></svg>';
     hud.append(b);
   }
-  /* The artifact's owner (the admin building the portal) is never asked to sign in; the sign-out button lets them preview the screen.
-     Everyone else signs in unless this tab (or a remembered device) is already signed in as this viewer. */
+  /* Resolves with the signed-in user ({ role, id, name, uid }) — straight away if this tab or device is already signed in, otherwise after the gate is passed */
   function start() {
-    whenReady().then(() => {
-      addSignOut();
-      if (Store.ctx.isOwner) { const b = $("#hud-out"); if (b) { b.title = "Preview the sign-in screen"; b.setAttribute("aria-label", "Preview the sign-in screen"); } return; }
-      const f = readFlag();
-      if (!f || f.uid !== uidNow()) mount();
-    });
+    const u = saved();
+    return u ? Promise.resolve(u) : new Promise(done => mount(done));
   }
-  return { start, signOut };
+  return { start, signOut, addSignOut };
 })();
 
 /* ===== app/lightning.js — Rapid Fire: 90 seconds, two choices, a 5-second penalty for a miss ===== */
@@ -5124,7 +5099,9 @@ function LibraryView(go) {
 /* ===== app/roster.js — RM team list ===== */
 const RMS = [
   "Manoj Rohit", "Roshan Shah", "Hemant Patel", "Savan Dalsaniya", "Palak Shah",
-  "Harshil Patel", "Navin Jangir", "Kanchan Bhagwat", "Omkar Deo", "Prakash Patel"
+  "Harshil Patel", "Navin Jangir", "Kanchan Bhagwat", "Omkar Deo", "Prakash Patel",
+  "Khusboo Modi", "Sudheer Kumar", "Sandeep Rathod", "Yuvrajsinh Solanki", "Pranjal More", "Manvi Agarwal",
+  "Isha Gil", "Bijal Mehta", "Aastha Panwar", "Lakshmi Achutharam", "Dhruv Pawashe"
 ].map(name => ({ name, id: name.toLowerCase().replace(/[^a-z]+/g, "-") }));
 
 /* ===== app/qflow.js — one question at a time, submit, then the full learning explanation (A–G) ===== */
@@ -6755,7 +6732,7 @@ function AdminLang() {
     if (booted) buildNav();
   });
   I18N.setLang(I18N.lang); buildNav(); go("home");
-  /* Login.start(); — sign-in is switched off for now */
-  Store.init();
+  /* Nothing loads until the user has signed in; an RM goes straight to Today, the admin to the console */
+  Login.start().then(who => { Login.addSignOut(); if (who.role === "rm") pickedThisLoad = who.id; Store.init(who); });
 })();
 </script>
