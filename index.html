@@ -980,6 +980,7 @@ main{padding:var(--sp-6) 0 72px}
 .hl{margin-top:var(--sp-5)}
 .hl-card{text-decoration:none;color:var(--ink)}
 .hl-card:hover h3{text-decoration:underline}
+.hl-day{display:flex;align-items:center;gap:var(--sp-3)}
 </style>
 <header class="top">
   <div class="top-row">
@@ -4080,6 +4081,7 @@ en: {
  hl_read: "Read on {s} →", hl_more: "Show more", hl_loading: "Loading headlines…", hl_empty: "No headlines in this topic yet.",
  hl_err: "Headlines are unavailable right now. Try again in a few minutes.",
  hl_note: "Headlines and short summaries from ET, Mint, Business Standard and SEBI, refreshed about every 30 minutes. Each one links to the original article.",
+  hl_archive: "Archive", hl_day: "Day", hl_archive_note: "Older headlines are kept in the archive for about 90 days.", hl_archive_empty: "No archived days yet.", hl_archive_err: "The archive is unavailable right now. Try again in a few minutes.",
  save: "Save", unsave: "Saved ★", read: "Read ✓", mark_read: "Mark as read", data_period: "Data period", official_ref: "Official reference", checked_on: "Verified against source on {d}",
  facts: "The facts", why_matters: "Why it matters", who_care: "Who should care", mfd_understand: "What an MFD should understand", client_ask: "A client may ask", suggested: "Suggested response",
  not_conclude: "What not to conclude", connected: "Connected lessons", connected_sub: "Concepts from the curriculum that explain this development.", studied_day: "You studied this on {n}", upcoming_day: "Coming up: {n}",
@@ -4129,6 +4131,7 @@ hi: {
  hl_read: "{s} पर पढ़ें →", hl_more: "और दिखाएँ", hl_loading: "सुर्ख़ियाँ लोड हो रही हैं…", hl_empty: "इस विषय में अभी कोई सुर्ख़ी नहीं।",
  hl_err: "सुर्ख़ियाँ अभी उपलब्ध नहीं हैं। कुछ मिनट बाद फिर कोशिश करें।",
  hl_note: "ET, Mint, Business Standard और SEBI की सुर्ख़ियाँ और संक्षिप्त सारांश, लगभग हर 30 मिनट में अपडेट। हर खबर मूल लेख से जुड़ी है।",
+  hl_archive: "आर्काइव", hl_day: "दिन", hl_archive_note: "पुरानी सुर्ख़ियाँ लगभग 90 दिन तक आर्काइव में रखी जाती हैं।", hl_archive_empty: "अभी कोई आर्काइव किया हुआ दिन नहीं।", hl_archive_err: "आर्काइव अभी उपलब्ध नहीं है। कुछ मिनट बाद फिर कोशिश करें।",
  save: "सेव करें", unsave: "सेव ★", read: "पढ़ लिया ✓", mark_read: "पढ़ा हुआ मार्क करें", data_period: "डेटा अवधि", official_ref: "आधिकारिक संदर्भ", checked_on: "{d} को स्रोत से जाँचा गया",
  facts: "तथ्य", why_matters: "यह क्यों मायने रखता है", who_care: "किसे ध्यान देना चाहिए", mfd_understand: "MFD को क्या समझना चाहिए", client_ask: "क्लाइंट पूछ सकता है", suggested: "सुझाया गया जवाब",
  not_conclude: "क्या निष्कर्ष न निकालें", connected: "जुड़े हुए पाठ", connected_sub: "पाठ्यक्रम की वे अवधारणाएँ जो इस खबर को समझाती हैं।", studied_day: "आपने यह {n} पर पढ़ा", upcoming_day: "आगे: {n}",
@@ -4178,6 +4181,7 @@ gu: {
  hl_read: "{s} પર વાંચો →", hl_more: "વધુ બતાવો", hl_loading: "હેડલાઇન્સ લોડ થઈ રહી છે…", hl_empty: "આ વિષયમાં હજુ કોઈ હેડલાઇન નથી.",
  hl_err: "હેડલાઇન્સ હાલ ઉપલબ્ધ નથી. થોડી મિનિટ પછી ફરી પ્રયાસ કરો.",
  hl_note: "ET, Mint, Business Standard અને SEBI ની હેડલાઇન્સ અને ટૂંકા સારાંશ, લગભગ દર 30 મિનિટે અપડેટ. દરેક સમાચાર મૂળ લેખ સાથે જોડાયેલા છે.",
+  hl_archive: "આર્કાઇવ", hl_day: "દિવસ", hl_archive_note: "જૂની હેડલાઇન્સ લગભગ 90 દિવસ સુધી આર્કાઇવમાં રાખવામાં આવે છે.", hl_archive_empty: "હજુ કોઈ આર્કાઇવ કરેલો દિવસ નથી.", hl_archive_err: "આર્કાઇવ હાલ ઉપલબ્ધ નથી. થોડી મિનિટ પછી ફરી પ્રયાસ કરો.",
  save: "સેવ કરો", unsave: "સેવ ★", read: "વાંચ્યું ✓", mark_read: "વાંચેલું માર્ક કરો", data_period: "ડેટા સમયગાળો", official_ref: "સત્તાવાર સંદર્ભ", checked_on: "{d} ના રોજ સ્ત્રોત સાથે ચકાસ્યું",
  facts: "તથ્યો", why_matters: "આ કેમ મહત્વનું છે", who_care: "કોણે ધ્યાન આપવું જોઈએ", mfd_understand: "MFD એ શું સમજવું જોઈએ", client_ask: "ક્લાયન્ટ પૂછી શકે", suggested: "સૂચવેલો જવાબ",
  not_conclude: "શું તારણ ન કાઢવું", connected: "જોડાયેલા પાઠ", connected_sub: "અભ્યાસક્રમના એવા ખ્યાલો જે આ ઘટનાને સમજાવે છે.", studied_day: "તમે આ {n} પર શીખ્યા", upcoming_day: "આગળ: {n}",
@@ -6003,23 +6007,40 @@ function DayView(go, n) {
 }
 
 /* ===== app/desk.js — THE MARKET DESK: curated, explained, verified ===== */
-/* ===== app/headlines.js — "Latest headlines" on the Market Desk. news.json is rebuilt every 30 minutes by .github/workflows/update-headlines.yml
-   from the public RSS feeds of ET, Mint, Business Standard and SEBI. Only the headline, a short summary and a link to the original article are shown. ===== */
+/* ===== app/headlines.js — "Latest headlines" on the Market Desk. The news-data branch is rebuilt every 30 minutes by .github/workflows/update-headlines.yml
+   from the public RSS feeds of ET, Mint, Business Standard and SEBI: news.json (last 7 days), archive/YYYY-MM-DD.json (every day, kept 90 days) and archive/index.json.
+   Only the headline, a short summary and a link to the original article are shown. ===== */
 const Headlines = (() => {
-  const URL_JSON = "https://raw.githubusercontent.com/Debeshee11/ucwacademy/news-data/news.json";
-  let data = null, state = "idle", loadedAt = 0;
+  const BASE = "https://raw.githubusercontent.com/Debeshee11/ucwacademy/news-data/";
+  let data = null, state = "idle", loadedAt = 0, arcDays = null, arcState = "idle";
+  const arcItems = {};                                  /* "2026-10-21" -> { state, items } */
   const subs = new Set(), emit = () => subs.forEach(fn => fn());
+  const get = async path => { const r = await fetch(BASE + path + "?t=" + Math.floor(Date.now() / 6e5)); if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); };
   async function load() {
     if (state === "loading" || (data && Date.now() - loadedAt < 10 * 60e3)) return;
     state = "loading"; emit();
     try {
-      const r = await fetch(URL_JSON + "?t=" + Math.floor(Date.now() / 6e5));
-      const j = r.ok ? await r.json() : null;
-      if (!j || !Array.isArray(j.items)) throw new Error("bad headlines file");
+      const j = await get("news.json");
+      if (!Array.isArray(j.items)) throw new Error("bad headlines file");
       data = j; loadedAt = Date.now(); state = "ok";
     } catch { state = data ? "ok" : "error"; }
     emit();
   }
+  async function loadArchiveIndex() {
+    if (arcState === "loading" || arcDays) return;
+    arcState = "loading"; emit();
+    try { const j = await get("archive/index.json"); if (!Array.isArray(j.days)) throw new Error("bad index"); arcDays = j.days; arcState = "ok"; }
+    catch { arcState = "error"; }
+    emit();
+  }
+  async function loadDay(date) {
+    const d = arcItems[date]; if (d && (d.state === "loading" || d.state === "ok")) return;
+    arcItems[date] = { state: "loading", items: [] }; emit();
+    try { const j = await get("archive/" + date + ".json"); if (!Array.isArray(j.items)) throw new Error("bad day"); arcItems[date] = { state: "ok", items: j.items }; }
+    catch { arcItems[date] = { state: "error", items: [] }; }
+    emit();
+  }
+  const locale = () => ({ hi: "hi-IN", gu: "gu-IN" }[I18N.lang] || "en-IN");
   const ago = iso => {
     const s = Math.round((Date.now() - new Date(iso)) / 1000); if (isNaN(s)) return "";
     const rtf = new Intl.RelativeTimeFormat(I18N.lang, { numeric: "auto" });
@@ -6028,8 +6049,11 @@ const Headlines = (() => {
     if (s < 7 * 86400) return rtf.format(-Math.round(s / 86400), "day");
     return fmtLong(iso);
   };
-  return { load, ago, subscribe: fn => { subs.add(fn); return () => subs.delete(fn); },
-    get state() { return state; }, get items() { return data?.items || []; }, get updated() { return data?.updated || ""; } };
+  const at = iso => new Date(iso).toLocaleString(locale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const dayLabel = (date, count) => new Date(date + "T00:00:00").toLocaleDateString(locale(), { weekday: "short", day: "numeric", month: "short", year: "numeric" }) + " · " + count;
+  return { load, ago, at, dayLabel, subscribe: fn => { subs.add(fn); return () => subs.delete(fn); },
+    get state() { return state; }, get items() { return data?.items || []; }, get updated() { return data?.updated || ""; },
+    archive: { loadIndex: loadArchiveIndex, loadDay, get days() { return arcDays || []; }, get state() { return arcState; }, day: date => arcItems[date] || { state: "idle", items: [] } } };
 })();
 
 function DeskView(go) {
@@ -6074,25 +6098,37 @@ function DeskView(go) {
         h("p", { class: "ai-note" }, t("weekly_sub"))));
     list.replaceChildren(...(items.length ? items.map(s => card(s)) : [h("p", { class: "muted" }, t("no_match"))]));
   }
-  /* Latest headlines (RSS): headline, short summary, link out */
-  let hlTopic = "all", hlShown = 30;
+  /* Latest headlines (RSS): headline, short summary, link out. "Archive" switches to the saved days (about 90). */
+  let hlTopic = "all", hlShown = 30, hlArchive = false, hlDay = "";
   const hl = h("section", { class: "stack hl" });
   const HL_TOPICS = [["all", t("hl_all")], ["mf", t("hl_t_mf")], ["markets", t("hl_t_markets")], ["ipo", t("hl_t_ipo")], ["sebi", t("hl_t_sebi")]];
   function renderHL() {
-    const all = Headlines.items, items = hlTopic === "all" ? all : all.filter(x => x.topics.includes(hlTopic)), shown = items.slice(0, hlShown);
-    const chips = h("div", { class: "filters", role: "tablist" }, HL_TOPICS.map(([k, label]) => h("button", { class: "fchip", "aria-pressed": String(k === hlTopic), on: { click: () => { hlTopic = k; hlShown = 30; renderHL(); } } }, label)));
-    const body = Headlines.state === "error" && !all.length ? h("p", { class: "muted" }, t("hl_err"))
-      : !all.length ? h("p", { class: "muted" }, t("hl_loading"))
-      : !items.length ? h("p", { class: "muted" }, t("hl_empty"))
-      : h("div", { class: "desk-list" }, shown.map(x => h("a", { class: "story-card hl-card", href: x.link, target: "_blank", rel: "noopener noreferrer" },
-          h("div", { class: "meta" }, h("span", { class: "cat" }, x.source), h("span", {}, Headlines.ago(x.date)), ...x.topics.slice(0, 2).map(tp => h("span", { class: "chip-sm" }, t("hl_t_" + tp)))),
-          h("h3", {}, x.title), x.summary ? h("p", { class: "muted clamp" }, x.summary) : null,
-          h("span", { class: "src" }, t("hl_read", { s: x.source })))));
+    const A = Headlines.archive;
+    if (hlArchive && !hlDay && A.days.length) { hlDay = (A.days.find(d => d.date < todayStr()) || A.days[0]).date; A.loadDay(hlDay); }   /* newest day before today by default */
+    const dayState = hlArchive && hlDay ? A.day(hlDay) : null;
+    const all = hlArchive ? (dayState ? dayState.items : []) : Headlines.items;
+    const items = hlTopic === "all" ? all : all.filter(x => x.topics.includes(hlTopic)), shown = items.slice(0, hlShown);
+    const chips = h("div", { class: "filters", role: "tablist" },
+      ...HL_TOPICS.map(([k, label]) => h("button", { class: "fchip", "aria-pressed": String(k === hlTopic), on: { click: () => { hlTopic = k; hlShown = 30; renderHL(); } } }, label)),
+      h("button", { class: "fchip", "aria-pressed": String(hlArchive), on: { click: () => { hlArchive = !hlArchive; hlShown = 30; if (hlArchive) A.loadIndex(); renderHL(); } } }, t("hl_archive")));
+    const picker = hlArchive && A.days.length ? h("label", { class: "hl-day" }, h("span", { class: "ai-note" }, t("hl_day")),
+      h("select", { "aria-label": t("hl_day"), on: { change: e => { hlDay = e.target.value; hlShown = 30; A.loadDay(hlDay); renderHL(); } } },
+        A.days.map(d => h("option", { value: d.date, selected: d.date === hlDay }, Headlines.dayLabel(d.date, d.count))))) : null;
+    const card = x => h("a", { class: "story-card hl-card", href: x.link, target: "_blank", rel: "noopener noreferrer" },
+      h("div", { class: "meta" }, h("span", { class: "cat" }, x.source), h("span", {}, hlArchive ? Headlines.at(x.date) : Headlines.ago(x.date)), ...x.topics.slice(0, 2).map(tp => h("span", { class: "chip-sm" }, t("hl_t_" + tp)))),
+      h("h3", {}, x.title), x.summary ? h("p", { class: "muted clamp" }, x.summary) : null,
+      h("span", { class: "src" }, t("hl_read", { s: x.source })));
+    let msg = "";
+    if (hlArchive) msg = A.state === "error" && !A.days.length ? t("hl_archive_err") : !A.days.length ? (A.state === "ok" ? t("hl_archive_empty") : t("hl_loading"))
+      : dayState.state === "error" ? t("hl_archive_err") : dayState.state !== "ok" ? t("hl_loading") : !items.length ? t("hl_empty") : "";
+    else msg = Headlines.state === "error" && !all.length ? t("hl_err") : !all.length ? t("hl_loading") : !items.length ? t("hl_empty") : "";
     hl.replaceChildren(...[
-      h("div", { class: "row" }, h("h2", { style: "flex:1" }, t("hl_title")), Headlines.updated ? h("span", { class: "ai-note" }, t("hl_updated", { t: Headlines.ago(Headlines.updated) })) : null),
-      chips, body,
-      items.length > shown.length ? h("button", { class: "btn ghost", on: { click: () => { hlShown += 30; renderHL(); } } }, t("hl_more")) : null,
-      h("p", { class: "ai-note" }, t("hl_note"))].filter(Boolean));
+      h("div", { class: "row" }, h("h2", { style: "flex:1" }, t("hl_title")),
+        !hlArchive && Headlines.updated ? h("span", { class: "ai-note" }, t("hl_updated", { t: Headlines.ago(Headlines.updated) })) : null),
+      chips, picker,
+      msg ? h("p", { class: "muted" }, msg) : h("div", { class: "desk-list" }, shown.map(card)),
+      !msg && items.length > shown.length ? h("button", { class: "btn ghost", on: { click: () => { hlShown += 30; renderHL(); } } }, t("hl_more")) : null,
+      h("p", { class: "ai-note" }, hlArchive ? t("hl_archive_note") : t("hl_note"))].filter(Boolean));
   }
   const hlUnsub = Headlines.subscribe(renderHL); Headlines.load();
   const unsub = News.subscribe(render);

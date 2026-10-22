@@ -1,7 +1,10 @@
 name: Update headlines
 
-# Every 30 minutes: read the public RSS feeds (ET, Mint, Business Standard, SEBI), build news.json,
+# Every 30 minutes: read the public RSS feeds (ET, Mint, Business Standard, SEBI), add the new headlines to the archive
 # and publish it on the "news-data" branch. The Market Desk page reads it from there.
+#   news.json                 the newest headlines (last 7 days)
+#   archive/YYYY-MM-DD.json   every headline of that day, kept for 90 days
+#   archive/index.json        the list of archived days
 # Scheduled runs only start once this file is on the default branch (main). Run it by hand from the Actions tab to test.
 on:
   schedule:
@@ -25,32 +28,25 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v4
 
-      - name: Get the previous headlines, if any
+      - name: Get the current headlines and archive, if any
         run: |
+          mkdir "$RUNNER_TEMP/data"
           if git fetch --depth=1 origin "$DATA_BRANCH"; then
-            git show FETCH_HEAD:news.json > "$RUNNER_TEMP/prev.json" || echo '{}' > "$RUNNER_TEMP/prev.json"
-          else
-            echo '{}' > "$RUNNER_TEMP/prev.json"
+            git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/data"
           fi
 
-      - name: Fetch the feeds and build news.json
-        run: |
-          rm -f "$RUNNER_TEMP/news.json"
-          python3 scripts/fetch_news.py --prev "$RUNNER_TEMP/prev.json" --out "$RUNNER_TEMP/news.json"
+      - name: Add the new headlines
+        id: build
+        run: python3 scripts/fetch_news.py --dir "$RUNNER_TEMP/data"
 
       - name: Publish to the data branch
+        if: steps.build.outputs.changed == 'true'
         run: |
-          if [ ! -s "$RUNNER_TEMP/news.json" ]; then
-            echo "Nothing new to publish."
-            exit 0
-          fi
-          mkdir "$RUNNER_TEMP/data"
           cd "$RUNNER_TEMP/data"
           git init -q -b "$DATA_BRANCH"
-          cp "$RUNNER_TEMP/news.json" news.json
           git config user.name "ucwacademy-bot"
           git config user.email "ucwacademy-bot@users.noreply.github.com"
-          git add news.json
+          git add -A
           git commit -q -m "Update headlines"
-          # one commit only: the branch is replaced each time so the repository does not grow
+          # one commit only: the branch is replaced each time, and unchanged files are not uploaded again
           git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$DATA_BRANCH"
