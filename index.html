@@ -903,7 +903,10 @@ h3,h4{font-family:var(--font-sans)} h3{font-weight:600;letter-spacing:0}
 .top{background:var(--paper);border-top:3px solid var(--gold);border-bottom:1px solid var(--line)}
 .brand{font:500 .72rem var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .brand-name{align-items:baseline;gap:.5em}
-.brand-uc{font:600 1.6rem/1 var(--font-display);letter-spacing:0;text-transform:none;color:var(--gold-dark);margin-right:0}
+.brand{flex-direction:row;align-items:center;gap:var(--sp-3)}
+.brand-logo{display:block;height:40px;width:auto}
+.brand-name{display:block;padding-left:var(--sp-3);border-left:1px solid var(--line)}
+@media (max-width:480px){.brand-logo{height:30px}}
 .welcome{font-style:normal;font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted)}
 .welcome b{font-style:normal;font-weight:600;color:var(--ink)}
 .hud .hud-chip,.hud .icon-btn,.hud #lang{background-color:var(--surface);border:1px solid var(--line);box-shadow:none}
@@ -957,8 +960,10 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);bo
 .gate{background:var(--bg)}
 .gate-side{background:linear-gradient(160deg,var(--paper),#ebe3d0);color:var(--ink)}
 .gate-side::after{background:linear-gradient(transparent,rgba(var(--gold-rgb),.4),transparent)}
-.gs-brand{font-family:var(--font-display);font-weight:600}
-.gs-mark{font-family:var(--font-display)}
+.gs-brand{gap:var(--sp-4)}
+.gs-logo{display:block;height:64px;width:auto}
+.gs-academy{padding-left:var(--sp-4);border-left:1px solid var(--line);font:500 .8rem var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.gs-logo{height:48px}}
 .g-head,.gs-body h1{font-family:var(--font-display);font-weight:600;color:var(--ink)}
 .g-sub,.g-field,.g-row,.g-secure{color:var(--muted)}
 .g-field input{background:var(--surface);border-color:var(--line)}
@@ -984,7 +989,7 @@ main{padding:var(--sp-6) 0 72px}
 </style>
 <header class="top">
   <div class="top-row">
-    <div class="brand"><span class="brand-name"><span class="brand-uc">UpperCrust</span> Academy</span></div>
+    <div class="brand"><img class="brand-logo" src="assets/logo-uppercrust.png" alt="UpperCrust, The Wealth Company" width="162" height="40"><span class="brand-name">Academy</span></div>
     <p class="welcome" id="welcome" hidden>Welcome back, <b id="who"></b></p>
     <div class="stats" aria-hidden="true">
       <div><b id="st-mastery">—</b><span id="lbl-mastery">mastery</span></div>
@@ -5119,7 +5124,7 @@ const Login = (() => {
     const yr = new Date().getFullYear();
     root = h("div", { class: "gate", role: "dialog", "aria-modal": "true", "aria-label": "Sign in to UpperCrust Academy" },
       h("aside", { class: "gate-side" },
-        h("div", { class: "gs-brand" }, h("span", { class: "gs-mark", "aria-hidden": "true" }, "UC"), h("span", {}, "UpperCrust Academy")),
+        h("div", { class: "gs-brand" }, h("img", { class: "gs-logo", src: "assets/logo-uppercrust.png", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "gs-academy" }, "Academy")),
         h("div", { class: "gs-body" },
           h("h1", {}, "Ready to level up?"),
           h("p", { class: "gs-lead" }, "Market intelligence, product depth and client conversation practice for UpperCrust Wealth relationship managers."),
