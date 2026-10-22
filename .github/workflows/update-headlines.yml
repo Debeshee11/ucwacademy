@@ -1,0 +1,56 @@
+name: Update headlines
+
+# Every 30 minutes: read the public RSS feeds (ET, Mint, Business Standard, SEBI), build news.json,
+# and publish it on the "news-data" branch. The Market Desk page reads it from there.
+# Scheduled runs only start once this file is on the default branch (main). Run it by hand from the Actions tab to test.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-headlines
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      DATA_BRANCH: news-data
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Get the previous headlines, if any
+        run: |
+          if git fetch --depth=1 origin "$DATA_BRANCH"; then
+            git show FETCH_HEAD:news.json > "$RUNNER_TEMP/prev.json" || echo '{}' > "$RUNNER_TEMP/prev.json"
+          else
+            echo '{}' > "$RUNNER_TEMP/prev.json"
+          fi
+
+      - name: Fetch the feeds and build news.json
+        run: |
+          rm -f "$RUNNER_TEMP/news.json"
+          python3 scripts/fetch_news.py --prev "$RUNNER_TEMP/prev.json" --out "$RUNNER_TEMP/news.json"
+
+      - name: Publish to the data branch
+        run: |
+          if [ ! -s "$RUNNER_TEMP/news.json" ]; then
+            echo "Nothing new to publish."
+            exit 0
+          fi
+          mkdir "$RUNNER_TEMP/data"
+          cd "$RUNNER_TEMP/data"
+          git init -q -b "$DATA_BRANCH"
+          cp "$RUNNER_TEMP/news.json" news.json
+          git config user.name "ucwacademy-bot"
+          git config user.email "ucwacademy-bot@users.noreply.github.com"
+          git add news.json
+          git commit -q -m "Update headlines"
+          # one commit only: the branch is replaced each time so the repository does not grow
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$DATA_BRANCH"

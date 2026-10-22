@@ -977,6 +977,9 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);bo
 .modal-bg{background:rgba(28,24,18,.5)}
 .toast{background:var(--ink);color:#fff}
 main{padding:var(--sp-6) 0 72px}
+.hl{margin-top:var(--sp-5)}
+.hl-card{text-decoration:none;color:var(--ink)}
+.hl-card:hover h3{text-decoration:underline}
 </style>
 <header class="top">
   <div class="top-row">
@@ -4073,6 +4076,10 @@ en: {
  desk_policy: "Curated and verified. Every story links to its original source.", featured: "Featured", daily_brief: "Daily briefing", weekly_quiz: "Weekly news quiz",
  weekly_sub: "Questions from this week's stories. First attempts count towards mastery.", search_ph: "Search stories", all_cats: "All", unread: "Unread", saved: "Saved", archive: "Archive",
  no_stories: "No stories published yet.", desk_offline: "The Market Desk needs you signed in to claude.ai with access to this page.", no_match: "No stories match.",
+ hl_title: "Latest headlines", hl_updated: "Updated {t}", hl_all: "All", hl_t_mf: "Mutual funds", hl_t_markets: "Markets", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
+ hl_read: "Read on {s} →", hl_more: "Show more", hl_loading: "Loading headlines…", hl_empty: "No headlines in this topic yet.",
+ hl_err: "Headlines are unavailable right now. Try again in a few minutes.",
+ hl_note: "Headlines and short summaries from ET, Mint, Business Standard and SEBI, refreshed about every 30 minutes. Each one links to the original article.",
  save: "Save", unsave: "Saved ★", read: "Read ✓", mark_read: "Mark as read", data_period: "Data period", official_ref: "Official reference", checked_on: "Verified against source on {d}",
  facts: "The facts", why_matters: "Why it matters", who_care: "Who should care", mfd_understand: "What an MFD should understand", client_ask: "A client may ask", suggested: "Suggested response",
  not_conclude: "What not to conclude", connected: "Connected lessons", connected_sub: "Concepts from the curriculum that explain this development.", studied_day: "You studied this on {n}", upcoming_day: "Coming up: {n}",
@@ -4118,6 +4125,10 @@ hi: {
  desk_policy: "चुनी और जाँची गई खबरें। हर खबर मूल स्रोत से जुड़ी है।", featured: "मुख्य खबर", daily_brief: "दैनिक ब्रीफ़िंग", weekly_quiz: "साप्ताहिक न्यूज़ क्विज़",
  weekly_sub: "इस हफ़्ते की खबरों से सवाल। पहला प्रयास महारत में गिना जाता है।", search_ph: "खबरें खोजें", all_cats: "सभी", unread: "अपठित", saved: "सेव की गई", archive: "पुरानी खबरें",
  no_stories: "अभी कोई खबर प्रकाशित नहीं।", desk_offline: "मार्केट डेस्क के लिए claude.ai पर साइन-इन ज़रूरी है।", no_match: "कोई खबर नहीं मिली।",
+ hl_title: "ताज़ा सुर्ख़ियाँ", hl_updated: "अपडेट: {t}", hl_all: "सभी", hl_t_mf: "म्यूचुअल फंड", hl_t_markets: "बाज़ार", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
+ hl_read: "{s} पर पढ़ें →", hl_more: "और दिखाएँ", hl_loading: "सुर्ख़ियाँ लोड हो रही हैं…", hl_empty: "इस विषय में अभी कोई सुर्ख़ी नहीं।",
+ hl_err: "सुर्ख़ियाँ अभी उपलब्ध नहीं हैं। कुछ मिनट बाद फिर कोशिश करें।",
+ hl_note: "ET, Mint, Business Standard और SEBI की सुर्ख़ियाँ और संक्षिप्त सारांश, लगभग हर 30 मिनट में अपडेट। हर खबर मूल लेख से जुड़ी है।",
  save: "सेव करें", unsave: "सेव ★", read: "पढ़ लिया ✓", mark_read: "पढ़ा हुआ मार्क करें", data_period: "डेटा अवधि", official_ref: "आधिकारिक संदर्भ", checked_on: "{d} को स्रोत से जाँचा गया",
  facts: "तथ्य", why_matters: "यह क्यों मायने रखता है", who_care: "किसे ध्यान देना चाहिए", mfd_understand: "MFD को क्या समझना चाहिए", client_ask: "क्लाइंट पूछ सकता है", suggested: "सुझाया गया जवाब",
  not_conclude: "क्या निष्कर्ष न निकालें", connected: "जुड़े हुए पाठ", connected_sub: "पाठ्यक्रम की वे अवधारणाएँ जो इस खबर को समझाती हैं।", studied_day: "आपने यह {n} पर पढ़ा", upcoming_day: "आगे: {n}",
@@ -4163,6 +4174,10 @@ gu: {
  desk_policy: "પસંદ કરેલા અને ચકાસેલા સમાચાર. દરેક સમાચાર મૂળ સ્ત્રોત સાથે જોડાયેલા છે.", featured: "મુખ્ય સમાચાર", daily_brief: "દૈનિક બ્રીફિંગ", weekly_quiz: "સાપ્તાહિક ન્યૂઝ ક્વિઝ",
  weekly_sub: "આ અઠવાડિયાના સમાચારમાંથી પ્રશ્નો. પહેલો પ્રયાસ નિપુણતામાં ગણાય છે.", search_ph: "સમાચાર શોધો", all_cats: "બધા", unread: "વાંચ્યા વગરના", saved: "સેવ કરેલા", archive: "જૂના સમાચાર",
  no_stories: "હજુ કોઈ સમાચાર પ્રકાશિત નથી.", desk_offline: "માર્કેટ ડેસ્ક માટે claude.ai પર સાઇન-ઇન જરૂરી છે.", no_match: "કોઈ સમાચાર મળ્યા નહીં.",
+ hl_title: "તાજી હેડલાઇન્સ", hl_updated: "અપડેટ: {t}", hl_all: "બધા", hl_t_mf: "મ્યુચ્યુઅલ ફંડ", hl_t_markets: "બજાર", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
+ hl_read: "{s} પર વાંચો →", hl_more: "વધુ બતાવો", hl_loading: "હેડલાઇન્સ લોડ થઈ રહી છે…", hl_empty: "આ વિષયમાં હજુ કોઈ હેડલાઇન નથી.",
+ hl_err: "હેડલાઇન્સ હાલ ઉપલબ્ધ નથી. થોડી મિનિટ પછી ફરી પ્રયાસ કરો.",
+ hl_note: "ET, Mint, Business Standard અને SEBI ની હેડલાઇન્સ અને ટૂંકા સારાંશ, લગભગ દર 30 મિનિટે અપડેટ. દરેક સમાચાર મૂળ લેખ સાથે જોડાયેલા છે.",
  save: "સેવ કરો", unsave: "સેવ ★", read: "વાંચ્યું ✓", mark_read: "વાંચેલું માર્ક કરો", data_period: "ડેટા સમયગાળો", official_ref: "સત્તાવાર સંદર્ભ", checked_on: "{d} ના રોજ સ્ત્રોત સાથે ચકાસ્યું",
  facts: "તથ્યો", why_matters: "આ કેમ મહત્વનું છે", who_care: "કોણે ધ્યાન આપવું જોઈએ", mfd_understand: "MFD એ શું સમજવું જોઈએ", client_ask: "ક્લાયન્ટ પૂછી શકે", suggested: "સૂચવેલો જવાબ",
  not_conclude: "શું તારણ ન કાઢવું", connected: "જોડાયેલા પાઠ", connected_sub: "અભ્યાસક્રમના એવા ખ્યાલો જે આ ઘટનાને સમજાવે છે.", studied_day: "તમે આ {n} પર શીખ્યા", upcoming_day: "આગળ: {n}",
@@ -5988,6 +6003,35 @@ function DayView(go, n) {
 }
 
 /* ===== app/desk.js — THE MARKET DESK: curated, explained, verified ===== */
+/* ===== app/headlines.js — "Latest headlines" on the Market Desk. news.json is rebuilt every 30 minutes by .github/workflows/update-headlines.yml
+   from the public RSS feeds of ET, Mint, Business Standard and SEBI. Only the headline, a short summary and a link to the original article are shown. ===== */
+const Headlines = (() => {
+  const URL_JSON = "https://raw.githubusercontent.com/Debeshee11/ucwacademy/news-data/news.json";
+  let data = null, state = "idle", loadedAt = 0;
+  const subs = new Set(), emit = () => subs.forEach(fn => fn());
+  async function load() {
+    if (state === "loading" || (data && Date.now() - loadedAt < 10 * 60e3)) return;
+    state = "loading"; emit();
+    try {
+      const r = await fetch(URL_JSON + "?t=" + Math.floor(Date.now() / 6e5));
+      const j = r.ok ? await r.json() : null;
+      if (!j || !Array.isArray(j.items)) throw new Error("bad headlines file");
+      data = j; loadedAt = Date.now(); state = "ok";
+    } catch { state = data ? "ok" : "error"; }
+    emit();
+  }
+  const ago = iso => {
+    const s = Math.round((Date.now() - new Date(iso)) / 1000); if (isNaN(s)) return "";
+    const rtf = new Intl.RelativeTimeFormat(I18N.lang, { numeric: "auto" });
+    if (s < 3600) return rtf.format(-Math.max(1, Math.round(s / 60)), "minute");
+    if (s < 86400) return rtf.format(-Math.round(s / 3600), "hour");
+    if (s < 7 * 86400) return rtf.format(-Math.round(s / 86400), "day");
+    return fmtLong(iso);
+  };
+  return { load, ago, subscribe: fn => { subs.add(fn); return () => subs.delete(fn); },
+    get state() { return state; }, get items() { return data?.items || []; }, get updated() { return data?.updated || ""; } };
+})();
+
 function DeskView(go) {
   const st = Store.get();
   let filter = "all", query = "";
@@ -6030,13 +6074,34 @@ function DeskView(go) {
         h("p", { class: "ai-note" }, t("weekly_sub"))));
     list.replaceChildren(...(items.length ? items.map(s => card(s)) : [h("p", { class: "muted" }, t("no_match"))]));
   }
+  /* Latest headlines (RSS): headline, short summary, link out */
+  let hlTopic = "all", hlShown = 30;
+  const hl = h("section", { class: "stack hl" });
+  const HL_TOPICS = [["all", t("hl_all")], ["mf", t("hl_t_mf")], ["markets", t("hl_t_markets")], ["ipo", t("hl_t_ipo")], ["sebi", t("hl_t_sebi")]];
+  function renderHL() {
+    const all = Headlines.items, items = hlTopic === "all" ? all : all.filter(x => x.topics.includes(hlTopic)), shown = items.slice(0, hlShown);
+    const chips = h("div", { class: "filters", role: "tablist" }, HL_TOPICS.map(([k, label]) => h("button", { class: "fchip", "aria-pressed": String(k === hlTopic), on: { click: () => { hlTopic = k; hlShown = 30; renderHL(); } } }, label)));
+    const body = Headlines.state === "error" && !all.length ? h("p", { class: "muted" }, t("hl_err"))
+      : !all.length ? h("p", { class: "muted" }, t("hl_loading"))
+      : !items.length ? h("p", { class: "muted" }, t("hl_empty"))
+      : h("div", { class: "desk-list" }, shown.map(x => h("a", { class: "story-card hl-card", href: x.link, target: "_blank", rel: "noopener noreferrer" },
+          h("div", { class: "meta" }, h("span", { class: "cat" }, x.source), h("span", {}, Headlines.ago(x.date)), ...x.topics.slice(0, 2).map(tp => h("span", { class: "chip-sm" }, t("hl_t_" + tp)))),
+          h("h3", {}, x.title), x.summary ? h("p", { class: "muted clamp" }, x.summary) : null,
+          h("span", { class: "src" }, t("hl_read", { s: x.source })))));
+    hl.replaceChildren(...[
+      h("div", { class: "row" }, h("h2", { style: "flex:1" }, t("hl_title")), Headlines.updated ? h("span", { class: "ai-note" }, t("hl_updated", { t: Headlines.ago(Headlines.updated) })) : null),
+      chips, body,
+      items.length > shown.length ? h("button", { class: "btn ghost", on: { click: () => { hlShown += 30; renderHL(); } } }, t("hl_more")) : null,
+      h("p", { class: "ai-note" }, t("hl_note"))].filter(Boolean));
+  }
+  const hlUnsub = Headlines.subscribe(renderHL); Headlines.load();
   const unsub = News.subscribe(render);
   const root = h("div", { class: "desk stack" },
     h("header", { class: "desk-head" },
       h("div", {}, h("h1", {}, t("desk_title")), h("p", { class: "desk-sub" }, t("desk_sub"))),
       h("div", { class: "desk-meta" }, h("span", {}, t("last_updated", { d: fmtLong(News.lastUpdated()) || "—" })), h("span", { class: "ai-note" }, t("desk_policy")))),
-    top, h("div", { class: "row desk-tools" }, search), filters, list);
-  root._cleanup = unsub; render();
+    top, h("div", { class: "row desk-tools" }, search), filters, list, hl);
+  root._cleanup = () => { unsub(); hlUnsub(); }; render(); renderHL();
   return root;
 }
 
