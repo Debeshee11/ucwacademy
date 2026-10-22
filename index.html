@@ -6662,8 +6662,8 @@ function FundView(go, arg) {
   else if (tab === "port") body = h("div", { class: "stack" },
     h("div", { class: "split" },
       h("section", { class: "panel stack" }, h("h3", {}, t("fd_alloc")), bars(f.alloc, 100), f.allocNote ? h("p", { class: "ai-note" }, f.allocNote) : null),
-      h("section", { class: "panel stack" }, h("h3", {}, t("fd_mcap")), kv([[t("fd_avgmcap"), "₹" + f.mcap.avg + " " + t("fd_cr")], [t("fd_large"), fmtP(f.mcap.large)], [t("fd_mid"), fmtP(f.mcap.mid)], [t("fd_small"), fmtP(f.mcap.small || null)]]),
-        h("h3", {}, t("fd_conc")), kv([[t("fd_stocks"), f.conc.stocks], [t("fd_top3"), f.conc.top3 + "%"], [t("fd_top5"), f.conc.top5 + "%"], [t("fd_top10"), f.conc.top10 + "%"], ["P/E", f.conc.pe], ["P/B", f.conc.pb]]))),
+      h("section", { class: "panel stack" }, h("h3", {}, t("fd_mcap")), kv([[t("fd_avgmcap"), f.mcap.avg === "—" ? "—" : "₹" + f.mcap.avg + " " + t("fd_cr")], [t("fd_large"), fmtP(f.mcap.large)], [t("fd_mid"), fmtP(f.mcap.mid)], [t("fd_small"), fmtP(f.mcap.small || null)]]),
+        h("h3", {}, t("fd_conc")), kv([[t("fd_stocks"), f.conc.stocks], [t("fd_top3"), f.conc.top3 != null ? f.conc.top3 + "%" : "—"], [t("fd_top5"), f.conc.top5 != null ? f.conc.top5 + "%" : "—"], [t("fd_top10"), f.conc.top10 != null ? f.conc.top10 + "%" : "—"], ["P/E", f.conc.pe], ["P/B", f.conc.pb]]))),
     h("section", { class: "panel stack" }, h("h3", {}, t("fd_holdings")), bars(f.holdings),
       f.index ? h("button", { class: "btn ghost sm", on: { click: () => go("index", f.index + ":weights") } }, t("fd_index_link")) : null));
   else if (tab === "debt") body = h("div", { class: "split" },
@@ -6695,7 +6695,7 @@ function FundCompareView(go, gid) {
     row(t("fd_rank") + " 1Y", fs.map(([, f]) => f.ret.rank[2])), row(t("fd_rank") + " 3Y", fs.map(([, f]) => f.ret.rank[3] ?? null)),
     ...(gid === "ma" ? [row(t("pf_equity") + " %", fs.map(([, f]) => (f.alloc.find(a => /Equity/.test(a[0])) || [])[1] ?? null)), row(t("pf_debt") + " %", fs.map(([, f]) => (f.alloc.find(a => /^Debt/.test(a[0])) || [])[1] ?? null)),
       row(t("fd_ytm") + " %", fs.map(([, f]) => f.debt?.ytm ?? null)), row(t("fd_md") + " (" + t("fd_yrs") + ")", fs.map(([, f]) => f.debt?.md ?? null)),
-      row("AAA + Sovereign %", fs.map(([, f]) => Math.round(f.credit.filter(c => /AAA|Sovereign/.test(c[0])).reduce((a, c) => a + c[1], 0) * 100) / 100)), row("AA %", fs.map(([, f]) => (f.credit.find(c => c[0] === "AA") || [])[1] ?? null))] : []),
+      row("AAA + Sovereign %", fs.map(([, f]) => f.credit ? Math.round(f.credit.filter(c => /AAA|Sovereign/.test(c[0])).reduce((a, c) => a + c[1], 0) * 100) / 100 : null)), row("AA %", fs.map(([, f]) => (f.credit?.find(c => c[0] === "AA") || [])[1] ?? null))] : []),
     row(t("fd_stocks"), fs.map(([, f]) => f.conc.stocks)), row(t("fd_top3") + " %", fs.map(([, f]) => f.conc.top3)), row(t("fd_top10") + " %", fs.map(([, f]) => f.conc.top10)),
     row(t("fd_small") + " %", fs.map(([, f]) => f.mcap.small || null)), row("P/E", fs.map(([, f]) => f.conc.pe)), row(t("fd_top_holding"), fs.map(([, f]) => `${f.holdings[0][0]} ${f.holdings[0][1]}%`))];
   return h("div", { class: "stack" },
