@@ -977,7 +977,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);bo
 .modal-bg{background:rgba(28,24,18,.5)}
 .toast{background:var(--ink);color:#fff}
 main{padding:var(--sp-6) 0 72px}
-.hl{margin-top:var(--sp-5)}
+.hl{margin-top:var(--sp-5);padding-top:var(--sp-5);border-top:1px solid var(--line)}
 .hl-card{text-decoration:none;color:var(--ink)}
 .hl-card:hover h3{text-decoration:underline}
 .hl-day{display:flex;align-items:center;gap:var(--sp-3)}
@@ -4080,7 +4080,8 @@ en: {
  hl_title: "Latest headlines", hl_updated: "Updated {t}", hl_all: "All", hl_t_mf: "Mutual funds", hl_t_markets: "Markets", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
  hl_read: "Read on {s} →", hl_more: "Show more", hl_loading: "Loading headlines…", hl_empty: "No headlines in this topic yet.",
  hl_err: "Headlines are unavailable right now. Try again in a few minutes.",
- hl_note: "Headlines and short summaries from ET, Mint, Business Standard and SEBI, refreshed about every 30 minutes. Each one links to the original article.",
+ hl_note: "Headlines and short summaries from ET, Mint, Business Standard, SEBI and the RBI, refreshed about every 30 minutes. Each one links to the original article.",
+ hl_t_rbi: "RBI & policy", cs_title: "Curated stories",
   hl_archive: "Archive", hl_day: "Day", hl_archive_note: "Older headlines are kept in the archive for about 90 days.", hl_archive_empty: "No archived days yet.", hl_archive_err: "The archive is unavailable right now. Try again in a few minutes.",
  save: "Save", unsave: "Saved ★", read: "Read ✓", mark_read: "Mark as read", data_period: "Data period", official_ref: "Official reference", checked_on: "Verified against source on {d}",
  facts: "The facts", why_matters: "Why it matters", who_care: "Who should care", mfd_understand: "What an MFD should understand", client_ask: "A client may ask", suggested: "Suggested response",
@@ -4130,7 +4131,8 @@ hi: {
  hl_title: "ताज़ा सुर्ख़ियाँ", hl_updated: "अपडेट: {t}", hl_all: "सभी", hl_t_mf: "म्यूचुअल फंड", hl_t_markets: "बाज़ार", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
  hl_read: "{s} पर पढ़ें →", hl_more: "और दिखाएँ", hl_loading: "सुर्ख़ियाँ लोड हो रही हैं…", hl_empty: "इस विषय में अभी कोई सुर्ख़ी नहीं।",
  hl_err: "सुर्ख़ियाँ अभी उपलब्ध नहीं हैं। कुछ मिनट बाद फिर कोशिश करें।",
- hl_note: "ET, Mint, Business Standard और SEBI की सुर्ख़ियाँ और संक्षिप्त सारांश, लगभग हर 30 मिनट में अपडेट। हर खबर मूल लेख से जुड़ी है।",
+ hl_note: "ET, Mint, Business Standard, SEBI और RBI की सुर्ख़ियाँ और संक्षिप्त सारांश, लगभग हर 30 मिनट में अपडेट। हर खबर मूल लेख से जुड़ी है।",
+ hl_t_rbi: "RBI और नीति", cs_title: "चुनिंदा खबरें",
   hl_archive: "आर्काइव", hl_day: "दिन", hl_archive_note: "पुरानी सुर्ख़ियाँ लगभग 90 दिन तक आर्काइव में रखी जाती हैं।", hl_archive_empty: "अभी कोई आर्काइव किया हुआ दिन नहीं।", hl_archive_err: "आर्काइव अभी उपलब्ध नहीं है। कुछ मिनट बाद फिर कोशिश करें।",
  save: "सेव करें", unsave: "सेव ★", read: "पढ़ लिया ✓", mark_read: "पढ़ा हुआ मार्क करें", data_period: "डेटा अवधि", official_ref: "आधिकारिक संदर्भ", checked_on: "{d} को स्रोत से जाँचा गया",
  facts: "तथ्य", why_matters: "यह क्यों मायने रखता है", who_care: "किसे ध्यान देना चाहिए", mfd_understand: "MFD को क्या समझना चाहिए", client_ask: "क्लाइंट पूछ सकता है", suggested: "सुझाया गया जवाब",
@@ -4180,7 +4182,8 @@ gu: {
  hl_title: "તાજી હેડલાઇન્સ", hl_updated: "અપડેટ: {t}", hl_all: "બધા", hl_t_mf: "મ્યુચ્યુઅલ ફંડ", hl_t_markets: "બજાર", hl_t_ipo: "IPO", hl_t_sebi: "SEBI",
  hl_read: "{s} પર વાંચો →", hl_more: "વધુ બતાવો", hl_loading: "હેડલાઇન્સ લોડ થઈ રહી છે…", hl_empty: "આ વિષયમાં હજુ કોઈ હેડલાઇન નથી.",
  hl_err: "હેડલાઇન્સ હાલ ઉપલબ્ધ નથી. થોડી મિનિટ પછી ફરી પ્રયાસ કરો.",
- hl_note: "ET, Mint, Business Standard અને SEBI ની હેડલાઇન્સ અને ટૂંકા સારાંશ, લગભગ દર 30 મિનિટે અપડેટ. દરેક સમાચાર મૂળ લેખ સાથે જોડાયેલા છે.",
+ hl_note: "ET, Mint, Business Standard, SEBI અને RBI ની હેડલાઇન્સ અને ટૂંકા સારાંશ, લગભગ દર 30 મિનિટે અપડેટ. દરેક સમાચાર મૂળ લેખ સાથે જોડાયેલા છે.",
+ hl_t_rbi: "RBI અને નીતિ", cs_title: "પસંદ કરેલા સમાચાર",
   hl_archive: "આર્કાઇવ", hl_day: "દિવસ", hl_archive_note: "જૂની હેડલાઇન્સ લગભગ 90 દિવસ સુધી આર્કાઇવમાં રાખવામાં આવે છે.", hl_archive_empty: "હજુ કોઈ આર્કાઇવ કરેલો દિવસ નથી.", hl_archive_err: "આર્કાઇવ હાલ ઉપલબ્ધ નથી. થોડી મિનિટ પછી ફરી પ્રયાસ કરો.",
  save: "સેવ કરો", unsave: "સેવ ★", read: "વાંચ્યું ✓", mark_read: "વાંચેલું માર્ક કરો", data_period: "ડેટા સમયગાળો", official_ref: "સત્તાવાર સંદર્ભ", checked_on: "{d} ના રોજ સ્ત્રોત સાથે ચકાસ્યું",
  facts: "તથ્યો", why_matters: "આ કેમ મહત્વનું છે", who_care: "કોણે ધ્યાન આપવું જોઈએ", mfd_understand: "MFD એ શું સમજવું જોઈએ", client_ask: "ક્લાયન્ટ પૂછી શકે", suggested: "સૂચવેલો જવાબ",
@@ -6062,7 +6065,7 @@ function DeskView(go) {
   const list = h("div", { class: "desk-list" }), top = h("div", { class: "desk-top" });
   const search = h("input", { type: "search", placeholder: t("search_ph"), "aria-label": t("search_ph") });
   search.addEventListener("input", debounce(() => { query = search.value.trim().toLowerCase(); render(); }, 200));
-  const filters = h("div", { class: "filters", role: "tablist" });
+  const filters = h("div", { class: "filters", role: "tablist" }), tools = h("div", { class: "row desk-tools" }, search);
   const FILTERS = [["all", t("all_cats")], ["unread", t("unread")], ["saved", t("saved")], ["archive", t("archive")], ...News.CATS.map(c => [c, t("cat_" + c)])];
 
   function card(s, big) {
@@ -6079,6 +6082,7 @@ function DeskView(go) {
   }
   function render() {
     const cut = todayStr(new Date(Date.now() - 30 * 864e5));
+    tools.style.display = filters.style.display = News.loaded && !News.all.length ? "none" : "";     /* no stories yet: nothing to search or filter */
     let items = News.all;
     if (filter === "unread") items = items.filter(s => !st.news.read[s.id]);
     else if (filter === "saved") items = items.filter(s => st.news.saved.includes(s.id));
@@ -6101,7 +6105,7 @@ function DeskView(go) {
   /* Latest headlines (RSS): headline, short summary, link out. "Archive" switches to the saved days (about 90). */
   let hlTopic = "all", hlShown = 30, hlArchive = false, hlDay = "";
   const hl = h("section", { class: "stack hl" });
-  const HL_TOPICS = [["all", t("hl_all")], ["mf", t("hl_t_mf")], ["markets", t("hl_t_markets")], ["ipo", t("hl_t_ipo")], ["sebi", t("hl_t_sebi")]];
+  const HL_TOPICS = [["all", t("hl_all")], ["mf", t("hl_t_mf")], ["markets", t("hl_t_markets")], ["ipo", t("hl_t_ipo")], ["sebi", t("hl_t_sebi")], ["rbi", t("hl_t_rbi")]];
   function renderHL() {
     const A = Headlines.archive;
     if (hlArchive && !hlDay && A.days.length) { hlDay = (A.days.find(d => d.date < todayStr()) || A.days[0]).date; A.loadDay(hlDay); }   /* newest day before today by default */
@@ -6136,7 +6140,7 @@ function DeskView(go) {
     h("header", { class: "desk-head" },
       h("div", {}, h("h1", {}, t("desk_title")), h("p", { class: "desk-sub" }, t("desk_sub"))),
       h("div", { class: "desk-meta" }, h("span", {}, t("last_updated", { d: fmtLong(News.lastUpdated()) || "—" })), h("span", { class: "ai-note" }, t("desk_policy")))),
-    top, h("div", { class: "row desk-tools" }, search), filters, list, hl);
+    h("section", { class: "stack" }, h("h2", {}, t("cs_title")), top, tools, filters, list), hl);
   root._cleanup = () => { unsub(); hlUnsub(); }; render(); renderHL();
   return root;
 }

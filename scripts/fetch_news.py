@@ -35,6 +35,15 @@ SEBI_NOISE = re.compile(
     r"^appeal no|in the matter of|confirmatory order|^order in|adjudication|settlement|show cause|defaulter|"
     r"corrigendum|demand notice|^order against|^orders? passed", re.I)
 
+# The RBI's press-release feed is mostly routine paperwork (government securities auctions, repo operations, T-bills, money market data)
+# and penalties on small co-operative banks. Keep policy: MPC minutes, directions and regulation, speeches.
+RBI_PRESS_NOISE = re.compile(
+    r"auction|underwriting|money market operations|variable rate (repo|reverse repo)|\bVRR\b|\bVRRR\b|treasury bills?|t-bill|cut-off|"
+    r"reserve money|weekly statistical|ways and means|liquidity adjustment|standing deposit|result of|monetary penalty|"
+    r"directions under section 35 ?a|licen[cs]e|co-?operative (urban )?bank|state development loans?|sovereign green bonds?|"
+    r"issue of .*(bonds?|securities)|conversion|switch", re.I)
+RBI_NOTIF_NOISE = re.compile(r"UAPA|section 51A|sanctions list|\bUNSC\b|ISIL|al-?qaida|taliban", re.I)
+
 FEEDS = [
     {"id": "et-markets", "source": "Economic Times", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms", "topics": ["markets"]},
     {"id": "et-mf", "source": "Economic Times", "url": "https://economictimes.indiatimes.com/mf/rssfeeds/359241701.cms", "topics": ["mf"]},
@@ -42,6 +51,10 @@ FEEDS = [
     {"id": "mint-money", "source": "Mint", "url": "https://www.livemint.com/rss/money", "topics": []},
     {"id": "bs-markets", "source": "Business Standard", "url": "https://www.business-standard.com/rss/markets-106.rss", "topics": ["markets"]},
     {"id": "sebi", "source": "SEBI", "url": "https://www.sebi.gov.in/sebirss.xml", "topics": ["sebi"], "skip": SEBI_NOISE},
+    # RBI feed descriptions are whole circulars, so only the headline is kept (no summary)
+    {"id": "rbi-press", "source": "RBI", "url": "https://www.rbi.org.in/pressreleases_rss.xml", "topics": ["rbi"], "skip": RBI_PRESS_NOISE, "no_summary": True},
+    {"id": "rbi-notifications", "source": "RBI", "url": "https://rbi.org.in/notifications_rss.xml", "topics": ["rbi"], "skip": RBI_NOTIF_NOISE, "no_summary": True},
+    {"id": "rbi-speeches", "source": "RBI", "url": "https://www.rbi.org.in/speeches_rss.xml", "topics": ["rbi"], "no_summary": True},
 ]
 
 # topic tags found in the headline or summary (a feed's own topic is always added)
@@ -49,6 +62,7 @@ RULES = [
     ("mf", re.compile(r"\b(mutual funds?|SIPs?|NFOs?|AMFI|fund houses?|AMCs?|ETFs?|flexi[- ]?cap|index funds?|debt funds?|hybrid funds?|ELSS|SWP|STP|fund managers?)\b", re.I)),
     ("ipo", re.compile(r"\b(IPOs?|DRHP|RHP|GMP|anchor investors?|public issue|listing gains?|subscription status|share allotment)\b", re.I)),
     ("sebi", re.compile(r"\bSEBI\b")),
+    ("rbi", re.compile(r"\b(RBI|Reserve Bank|repo rate|policy rate|monetary policy|MPC|rate (cut|hike)s?|CRR|SLR|fiscal deficit|Union Budget|GST Council|Finance Ministry)\b", re.I)),
     ("markets", re.compile(r"\b(Sensex|Nifty|stocks?|shares?|FIIs?|FPIs?|rupee|bond yields?|crude oil|gold prices?|Dalal Street)\b", re.I)),
 ]
 MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
@@ -122,7 +136,7 @@ def parse_feed(feed, raw, now):
     root = ET.fromstring(raw)
     out = []
     for item in root.iter("item"):
-        title = clean(child_text(item, "title"))
+        title = clean(child_text(item, "title")).rstrip(" -–—")
         link = child_text(item, "link").strip()
         if len(title) < 12 or not link.startswith("http"):
             continue
@@ -131,7 +145,7 @@ def parse_feed(feed, raw, now):
         date = parse_date(child_text(item, "pubDate")) or now
         if now - date > dt.timedelta(days=MAX_AGE_DAYS):
             continue
-        summary = clean(child_text(item, "description"))
+        summary = "" if feed.get("no_summary") else clean(child_text(item, "description"))
         if norm_title(summary) == norm_title(title) or summary.lower().startswith(title.lower()[:60]):
             summary = ""
         summary = shorten(summary, SUMMARY_MAX)
