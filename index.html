@@ -903,10 +903,7 @@ h3,h4{font-family:var(--font-sans)} h3{font-weight:600;letter-spacing:0}
 .top{background:var(--paper);border-top:3px solid var(--gold);border-bottom:1px solid var(--line)}
 .brand{font:500 .72rem var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .brand-name{align-items:baseline;gap:.5em}
-.brand{flex-direction:row;align-items:center;gap:var(--sp-3)}
-.brand-logo{display:block;height:40px;width:auto}
-.brand-name{display:block;padding-left:var(--sp-3);border-left:1px solid var(--line)}
-@media (max-width:480px){.brand-logo{height:30px}}
+.brand-uc{font:600 1.6rem/1 var(--font-display);letter-spacing:0;text-transform:none;color:var(--gold-dark);margin-right:0}
 .welcome{font-style:normal;font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted)}
 .welcome b{font-style:normal;font-weight:600;color:var(--ink)}
 .hud .hud-chip,.hud .icon-btn,.hud #lang{background-color:var(--surface);border:1px solid var(--line);box-shadow:none}
@@ -989,7 +986,7 @@ main{padding:var(--sp-6) 0 72px}
 </style>
 <header class="top">
   <div class="top-row">
-    <div class="brand"><img class="brand-logo" src="assets/logo-uppercrust.png" alt="UpperCrust, The Wealth Company" width="162" height="40"><span class="brand-name">Academy</span></div>
+    <div class="brand"><span class="brand-name"><span class="brand-uc">UpperCrust</span> Academy</span></div>
     <p class="welcome" id="welcome" hidden>Welcome back, <b id="who"></b></p>
     <div class="stats" aria-hidden="true">
       <div><b id="st-mastery">—</b><span id="lbl-mastery">mastery</span></div>
