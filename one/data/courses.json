@@ -1,0 +1,294 @@
+{
+ "levels": [
+  {
+   "id": "foundation",
+   "name": "Foundation",
+   "alias": "Beginner",
+   "blurb": "Learn the language. Spot the myths."
+  },
+  {
+   "id": "practitioner",
+   "name": "Practitioner",
+   "alias": "Intermediate",
+   "blurb": "Apply ideas to a real client situation."
+  },
+  {
+   "id": "expert",
+   "name": "Expert",
+   "alias": "Pro",
+   "blurb": "Judge trade-offs. Defend your advice."
+  }
+ ],
+ "courses": [
+  {
+   "id": "mf-foundations",
+   "level": "foundation",
+   "title": "Mutual fund foundations",
+   "blurb": "How the industry works, what an SIP can and cannot promise, why costs and rules matter, and how to talk honestly when markets fall.",
+   "modules": [
+    {
+     "title": "How the industry and investors behave",
+     "lessons": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "title": "Products, costs and why returns differ",
+     "lessons": [
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "title": "Selling responsibly",
+     "lessons": [
+      11,
+      12,
+      13,
+      14,
+      15
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "MF"
+  },
+  {
+   "id": "economy-markets",
+   "level": "practitioner",
+   "title": "Indian economy and markets",
+   "blurb": "Growth, rates, inflation, flows and valuation, and how to turn the macro picture into a simple story for a client.",
+   "modules": [
+    {
+     "title": "Growth, rates and inflation",
+     "lessons": [
+      16,
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    {
+     "title": "Flows, budgets and valuation",
+     "lessons": [
+      21,
+      22,
+      23,
+      24,
+      25
+     ]
+    },
+    {
+     "title": "Sectors, global links and the client story",
+     "lessons": [
+      26,
+      27,
+      28,
+      29,
+      30
+     ]
+    }
+   ],
+   "topic": "Markets and economy",
+   "tag": "GDP"
+  },
+  {
+   "id": "defence",
+   "level": "practitioner",
+   "title": "Defence and manufacturing",
+   "blurb": "The budget, production, exports and order pipeline behind the theme, and how to pitch it without overpromising.",
+   "modules": [
+    {
+     "title": "Budget, production and orders",
+     "lessons": [
+      31,
+      32,
+      33,
+      34,
+      35
+     ]
+    },
+    {
+     "title": "Players and policy",
+     "lessons": [
+      36,
+      37,
+      38,
+      39,
+      40
+     ]
+    },
+    {
+     "title": "Valuation and the client pitch",
+     "lessons": [
+      41,
+      42,
+      43,
+      44,
+      45
+     ]
+    }
+   ],
+   "topic": "Markets and economy",
+   "tag": "DEF"
+  },
+  {
+   "id": "gold-silver",
+   "level": "practitioner",
+   "title": "Gold and silver for client portfolios",
+   "blurb": "What drives precious metals, which product fits which client, how much is enough, and how to keep expectations honest.",
+   "modules": [
+    {
+     "title": "Gold: the run and the buyers",
+     "lessons": [
+      46,
+      47,
+      48,
+      49,
+      50
+     ]
+    },
+    {
+     "title": "Gold today and silver's breakout",
+     "lessons": [
+      51,
+      52,
+      53,
+      54,
+      55
+     ]
+    },
+    {
+     "title": "Sizing, volatility and the pitch",
+     "lessons": [
+      56,
+      57,
+      58,
+      59,
+      60
+     ]
+    }
+   ],
+   "topic": "Gold and silver",
+   "tag": "Au · Ag"
+  },
+  {
+   "id": "multi-asset",
+   "level": "practitioner",
+   "title": "Multi-asset and allocation",
+   "blurb": "Why allocation drives outcomes, how multi-asset funds work, and how to handle rebalancing, retirees and objections.",
+   "modules": [
+    {
+     "title": "The category and why it works",
+     "lessons": [
+      61,
+      62,
+      63,
+      64,
+      65
+     ]
+    },
+    {
+     "title": "Rebalancing, income and construction",
+     "lessons": [
+      66,
+      67,
+      68,
+      69,
+      70
+     ]
+    },
+    {
+     "title": "Behaviour, objections and the pitch",
+     "lessons": [
+      71,
+      72,
+      73,
+      74,
+      75
+     ]
+    }
+   ],
+   "topic": "Asset allocation",
+   "tag": "60/40"
+  },
+  {
+   "id": "fund-analysis",
+   "level": "expert",
+   "title": "Fund analysis and client conversations",
+   "blurb": "Read a factsheet like an analyst, test a fund under stress, handle hard objections and stay inside the rules.",
+   "modules": [
+    {
+     "title": "Reading a fund",
+     "lessons": [
+      76,
+      77,
+      78,
+      79,
+      80
+     ]
+    },
+    {
+     "title": "Stress, NFOs and client moments",
+     "lessons": [
+      81,
+      82,
+      83,
+      84,
+      85
+     ]
+    },
+    {
+     "title": "Compliance, numbers and revision",
+     "lessons": [
+      86,
+      87,
+      88,
+      89,
+      90
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "Fact·Sheet"
+  }
+ ],
+ "soon": [
+  {
+   "title": "Financial maths for advisers",
+   "level": "foundation",
+   "blurb": "Time value, CAGR, XIRR and SIP maths.",
+   "tag": "CAGR",
+   "topic": "Mutual funds"
+  },
+  {
+   "title": "Fixed income and debt funds",
+   "level": "practitioner",
+   "blurb": "Duration, credit risk and the yield curve.",
+   "tag": "Debt",
+   "topic": "Fixed income"
+  },
+  {
+   "title": "PMS, AIF and SIF structures",
+   "level": "expert",
+   "blurb": "Who they suit and how they are taxed.",
+   "tag": "PMS·AIF",
+   "topic": "Client conversations"
+  },
+  {
+   "title": "Tax and retirement planning",
+   "level": "expert",
+   "blurb": "Capital gains, switching costs and goals.",
+   "tag": "Tax",
+   "topic": "Client conversations"
+  }
+ ]
+}
