@@ -1,10 +1,11 @@
 /* Course content: courses.json (structure), lessons.json (90 lessons), sims.json (client scenarios), tx-*.json (Hindi and Gujarati questions). */
-export const D = { levels: [], courses: [], soon: [], lessons: {}, sims: [], tx: {} };
+export const D = { levels: [], courses: [], soon: [], lessons: {}, sims: [], tx: {}, fundGroups: [], funds: {}, fundSource: "", fundqs: [], indices: [], companies: { en: {}, tx: {} }, indexqs: [] };
 
 const j = async path => { const r = await fetch(path); if (!r.ok) throw new Error(path + " " + r.status); return r.json(); };
 
 export async function loadData() {
-  const [c, l, s] = await Promise.all([j("one/data/courses.json"), j("one/data/lessons.json"), j("one/data/sims.json")]);
+  const [c, l, s, f, fq, ix, co, iq] = await Promise.all(["courses", "lessons", "sims", "funds", "fundqs", "indices", "companies", "indexqs"].map(n => j(`one/data/${n}.json`)));
+  D.fundGroups = f.groups; D.funds = f.funds; D.fundSource = f.source; D.fundqs = fq; D.indices = ix; D.companies = co; D.indexqs = iq;
   D.levels = c.levels; D.courses = c.courses; D.soon = c.soon; D.sims = s;
   for (const x of l) D.lessons[x.n] = x;
   for (const co of D.courses) co.lessons = co.modules.flatMap(m => m.lessons);
@@ -14,6 +15,9 @@ export async function loadTx(lang) {
   if (lang === "en" || D.tx[lang]) return;
   try { D.tx[lang] = await j(`one/data/tx-${lang}.json`); } catch { D.tx[lang] = {}; }
 }
+
+/* Text that may be a plain string or {en,hi,gu}. */
+export const t3 = (v, lang) => (v && typeof v === "object" ? v[lang] || v.en : v) || "";
 
 export const level = id => D.levels.find(l => l.id === id);
 export const course = id => D.courses.find(c => c.id === id);

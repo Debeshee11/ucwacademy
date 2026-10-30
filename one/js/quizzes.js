@@ -35,7 +35,7 @@ export function exam(root, cid) {
   const c = course(cid);
   if (!c) return void (location.hash = "#/courses");
   if (!Store.courseProgress(c).examReady) {
-    root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Finish the modules first."), h("p", { class: "lead" }, "The exam opens when you have passed all three module quizzes."), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
+    root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Finish the modules first."), h("p", { class: "lead" }, "The exam opens when you have passed every module quiz."), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
     return;
   }
   runQuiz(root, {
@@ -106,4 +106,23 @@ export function placement(root) {
       return { head: `Start at ${lv.name}.`, sub: `That is the ${lv.alias.toLowerCase()} level. You can still open any course.`, actions: [h("a", { class: "btn primary", href: "#/" }, "See my path")] };
     }
   });
+}
+
+/* ——— Mutual fund and market quizzes ——— */
+const finish = (title, again, exit) => res => ({
+  head: res.right / res.total >= .8 ? "Sharp." : "Keep going.", sub: `${res.right} of ${res.total} right. Missed ones return in Revise.`,
+  actions: [h("a", { class: "btn primary", href: again }, "Another round"), h("a", { class: "btn ghost", href: exit }, "Back")]
+});
+export function fundQuiz(root, group) {
+  const qs = D.fundqs.filter(q => !group || q.group === group);
+  runQuiz(root, { title: "Fund quiz", questions: pick(qs, 10), record: true, exit: "#/funds", done: finish("Fund quiz", "#/quiz/fund" + (group ? "/" + group : ""), "#/funds") });
+}
+export function marketQuiz(root) {
+  const econ = questionsFor(course("economy-markets")?.lessons || []);
+  runQuiz(root, { title: "Market quiz", questions: pick([...econ, ...D.indexqs], 12), record: true, exit: "#/practice", done: finish("Market quiz", "#/quiz/market", "#/practice") });
+}
+export function indexQuiz(root, id) {
+  const ix = D.indices.find(x => x.id === id);
+  const own = D.indexqs.filter(q => q.scope === id), gen = D.indexqs.filter(q => q.scope === "general");
+  runQuiz(root, { title: ix ? ix.name + " quiz" : "Index quiz", questions: pick([...own, ...gen], 6), record: true, exit: ix ? "#/index/" + id : "#/indices", done: finish("Index quiz", "#/quiz/index/" + id, ix ? "#/index/" + id : "#/indices") });
 }

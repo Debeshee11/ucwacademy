@@ -6,7 +6,7 @@ import * as Store from "./store.js";
 /* Every question in the course by id, so revision can find the ones that are due. */
 let byId = null;
 export function questionById(id) {
-  if (!byId) { byId = {}; for (const l of Object.values(D.lessons)) for (const q of l.qs) byId[q.id] = { ...q, n: l.n }; }
+  if (!byId) { byId = {}; for (const l of Object.values(D.lessons)) for (const q of l.qs) byId[q.id] = { ...q, n: l.n }; for (const q of [...D.fundqs, ...D.indexqs]) byId[q.id] = q; }
   return byId[id] || null;
 }
 

@@ -4,7 +4,7 @@ import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { isoDay, dayMs } from "./dom.js";
 
-export const LABEL = { "mf-industry": "MF industry", flows: "Fund flows", returns: "Reading returns", sip: "SIP and systematic investing", behaviour: "Investor behaviour", costs: "Costs and plans", regulation: "SEBI and regulation", products: "Products", risk: "Risk and suitability", communication: "Client communication", equity: "Equity", debt: "Debt", tax: "Taxation", silver: "Silver", gold: "Gold" };
+export const LABEL = { "mf-industry": "MF industry", flows: "Fund flows", returns: "Reading returns", sip: "SIP and systematic investing", behaviour: "Investor behaviour", costs: "Costs and plans", regulation: "SEBI and regulation", products: "Products", risk: "Risk and suitability", communication: "Client communication", equity: "Equity", debt: "Debt", tax: "Taxation", silver: "Silver", gold: "Gold", reit: "REITs", invit: "InvITs", realty: "Real estate", infra: "Infrastructure", "multi-asset": "Multi-asset" };
 export const skillsOf = c => { const n = {}; for (const x of c.lessons) for (const t of lesson(x)?.tags || []) n[t] = (n[t] || 0) + 1; return Object.keys(n).sort((a, b) => n[b] - n[a]).map(t => LABEL[t] || t); };
 export const questionCount = c => c.lessons.reduce((a, n) => a + (lesson(n)?.qs.length || 0), 0);
 

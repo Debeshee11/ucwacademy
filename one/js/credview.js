@@ -2,12 +2,26 @@
 import { ORG } from "./config.js";
 import { h, icon, fmtDate, toast, plural, pct } from "./dom.js";
 import { D, level, course } from "./data.js";
-import { skillsOf } from "./progress.js";
+import { skillsOf, LABEL } from "./progress.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
+import { questionById } from "./quiz.js";
 import { page, widePage, notFound, bar } from "./ui.js";
 
 const stand = c => { const s = Creds.standing(c); return s === "valid" ? h("span", { class: "pill ok" }, "Valid") : s === "soon" ? h("span", { class: "pill gold" }, "Expires soon") : h("span", { class: "pill" }, "Expired"); };
+
+/* First-try accuracy by topic, from every question answered so far. */
+function masteryMap() {
+  const T = {};
+  for (const [id, e] of Object.entries(Store.get().q)) {
+    if (e.f == null) continue; const q = questionById(id); if (!q) continue;
+    for (const t of q.tags || (q.n && D.lessons[q.n]?.tags) || []) { const o = T[t] = T[t] || { r: 0, n: 0 }; o.n++; o.r += e.f; }
+  }
+  const rows = Object.entries(T).filter(([, o]) => o.n >= 3).map(([t, o]) => [LABEL[t] || t, pct(o.r, o.n), o.n]).sort((a, b) => b[1] - a[1]);
+  return h("section", { class: "stack" }, h("h2", { class: "h2" }, "Mastery map"),
+    rows.length ? h("div", { class: "stack" }, rows.map(([t, p, n]) => h("div", { class: "stack stack-xxs" }, h("div", { class: "row-flex between small" }, h("span", {}, t), h("b", {}, p + "%")), bar(p, p >= 80))))
+      : h("p", { class: "mute" }, "Answer a few quiz questions. Your strong and weak topics show here."));
+}
 
 export function me() {
   const s = Store.get(), creds = Creds.all(), n = Object.keys(s.done).length, m = Store.mastery();
@@ -15,6 +29,7 @@ export function me() {
   return widePage(
     h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Credentials"),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy"))),
+    masteryMap(),
     h("section", { class: "stack" },
       creds.length ? h("div", { class: "divide" }, creds.map(c => h("div", { class: "list-row" },
         h("span", { class: "check on" }, icon("award", 14)),

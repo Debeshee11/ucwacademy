@@ -1,5 +1,5 @@
 /* Sign in (Firebase email and password; accounts are created by the administrator) and the one-time welcome. */
-import { ADMIN_EMAIL } from "./config.js";
+import { ADMIN_EMAIL, STAFF_DOMAIN } from "./config.js";
 import { auth } from "./fb.js";
 import { h, $ } from "./dom.js";
 import { D } from "./data.js";
@@ -16,42 +16,86 @@ export function start() {
   });
 }
 
+let pending = null;
+export const takeProfile = () => { const p = pending; pending = null; return p; };
+
+const errMsg = e => {
+  const c = e?.code || "";
+  if (/network/.test(c)) return "No connection. Check your internet and try again.";
+  if (/too-many/.test(c)) return "Too many tries. Wait a few minutes and try again.";
+  if (/email-already/.test(c)) return "This email already has an account. Use Sign in.";
+  if (/weak-password/.test(c)) return "Password is too short. Use at least 6 characters.";
+  if (/invalid-email/.test(c)) return "That email does not look right.";
+  if (/operation-not-allowed/.test(c)) return "Sign-up is not switched on yet. Contact UpperCrust.";
+  return "That email or password is not right.";
+};
+
 function mount(a, startMsg) {
   return new Promise(resolve => {
-    const email = h("input", { class: "input", type: "text", inputmode: "email", autocomplete: "username", autocapitalize: "off", spellcheck: "false", id: "em", placeholder: "name@uppercrustwealth.com" });
-    const pw = h("input", { class: "input", type: "password", autocomplete: "current-password", id: "pw" });
-    const keep = h("input", { type: "checkbox", id: "keep", checked: true });
-    const err = h("p", { class: "error", role: "alert" }, startMsg || "");
-    const btn = h("button", { class: "btn primary block", type: "submit" }, "Sign in");
-    let tries = 0, lockUntil = 0;
-    const fail = m => { err.textContent = m; btn.disabled = false; btn.textContent = "Sign in"; };
+    let tab = "staff", tries = 0, lockUntil = 0;
+    const box = h("div", { class: "gate-card stack" });
+    const field = (id, label, attrs = {}) => { const i = h("input", { class: "input", id, ...attrs }); return [h("div", { class: "field" }, h("label", { for: id }, label), i), i]; };
+    const finish = u => { resolve(u); document.querySelector(".gate")?.remove(); };
+    const tabs = () => h("div", { class: "ltabs", role: "tablist" }, [["staff", "UpperCrust employee"], ["public", "New learner"]].map(([id, t]) =>
+      h("button", { type: "button", role: "tab", class: "ltab", "aria-selected": String(tab === id), on: { click: () => { tab = id; paint(); } } }, t)));
 
-    const form = h("form", { class: "gate-card stack", novalidate: true, on: { submit: async ev => {
-      ev.preventDefault();
-      if (!a) return;
-      if (Date.now() < lockUntil) return fail("Too many tries. Wait a few seconds and try again.");
-      let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
-      if (!em || !pw.value) return fail("Enter your email and password.");
-      btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
-      try {
-        await a.setPersistence(keep.checked ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION);
-        const cred = await a.signInWithEmailAndPassword(em, pw.value);
-        resolve(cred.user); document.querySelector(".gate")?.remove();
-      } catch (e) {
-        const c = e?.code || "";
-        if (/network/.test(c)) fail("No connection. Check your internet and try again.");
-        else if (/too-many/.test(c)) fail("Too many tries. Wait a few minutes and try again.");
-        else { if (++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fail("That email or password is not right."); }
+    function paint() {
+      box.replaceChildren();
+      const err = h("p", { class: "error", role: "alert" }, startMsg || "");
+      const btn = h("button", { class: "btn primary block", type: "submit" }, tab === "staff" ? "Sign in" : "Create my account");
+      const fail = m => { err.textContent = m; btn.disabled = false; btn.textContent = tab === "staff" ? "Sign in" : "Create my account"; };
+      const keep = h("input", { type: "checkbox", id: "keep", checked: true });
+      const keepRow = h("label", { class: "row-flex small mute", for: "keep", style: "gap:10px" }, keep, "Keep me signed in on this device");
+      const persist = () => a.setPersistence(keep.checked ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION);
+      let form;
+      if (tab === "staff") {
+        const [fe, email] = field("em", "Work email", { type: "text", inputmode: "email", autocomplete: "username", autocapitalize: "off", spellcheck: "false", placeholder: "name@uppercrustwealth.com" });
+        const [fp, pw] = field("pw", "Password", { type: "password", autocomplete: "current-password" });
+        const forgot = h("button", { type: "button", class: "link small", on: { click: async () => {
+          let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
+          if (!em) return fail("Type your work email first.");
+          try { await a.sendPasswordResetEmail(em); err.style.color = "var(--ink)"; err.textContent = "Reset link sent. Check your inbox."; } catch (e) { fail(errMsg(e)); }
+        } } }, "Forgot password?");
+        form = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
+          ev.preventDefault(); if (!a) return;
+          if (Date.now() < lockUntil) return fail("Too many tries. Wait a few seconds and try again.");
+          let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
+          if (!em || !pw.value) return fail("Enter your email and password.");
+          btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
+          try { await persist(); finish((await a.signInWithEmailAndPassword(em, pw.value)).user); }
+          catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fail(errMsg(e)); }
+        } } }, fe, fp, keepRow, err, btn, forgot);
+        setTimeout(() => email.focus());
+      } else {
+        const [fn, nm] = field("rn", "Full name", { type: "text", autocomplete: "name", placeholder: "Your full name" });
+        const [fm, mo] = field("rm", "Mobile number", { type: "tel", inputmode: "numeric", autocomplete: "tel-national", placeholder: "10-digit mobile number", maxlength: "18" });
+        const [fe, em] = field("re", "Email", { type: "text", inputmode: "email", autocomplete: "email", autocapitalize: "off", spellcheck: "false", placeholder: "you@example.com" });
+        const [fp, pw] = field("rp", "Create a password", { type: "password", autocomplete: "new-password", placeholder: "At least 6 characters" });
+        form = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
+          ev.preventDefault(); if (!a) return;
+          const name = nm.value.trim(), mob = mo.value.replace(/[\s-]/g, "").replace(/^(\+91|91|0)(?=\d{10}$)/, ""), mail = em.value.trim().toLowerCase();
+          if (name.length < 2) return fail("Enter your name.");
+          if (!/^[6-9]\d{9}$/.test(mob)) return fail("Enter a valid 10-digit Indian mobile number.");
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) return fail("Enter a valid email.");
+          if (mail.endsWith(STAFF_DOMAIN)) return fail("Employees: use the UpperCrust employee tab.");
+          if (pw.value.length < 6) return fail("Password needs at least 6 characters.");
+          btn.disabled = true; btn.textContent = "Creating…"; err.textContent = "";
+          try {
+            await persist();
+            const u = (await a.createUserWithEmailAndPassword(mail, pw.value)).user;
+            try { await u.updateProfile({ displayName: name }); u.sendEmailVerification(); } catch {}
+            pending = { name, mobile: mob }; finish(u);
+          } catch (e) { fail(errMsg(e)); }
+        } } }, fn, fm, fe, fp, keepRow, err, btn);
+        setTimeout(() => nm.focus());
       }
-    } } },
-      brand(),
-      h("div", {}, h("h1", { class: "h1" }, "Welcome back."), h("p", { class: "mute", style: "margin-top:8px" }, "Sign in with the work email and password you were given.")),
-      h("div", { class: "field" }, h("label", { for: "em" }, "Work email"), email),
-      h("div", { class: "field" }, h("label", { for: "pw" }, "Password"), pw),
-      h("label", { class: "row-flex small mute", for: "keep", style: "gap:10px" }, keep, "Keep me signed in on this device"),
-      err, btn);
-    document.body.append(h("div", { class: "gate" }, form));
-    email.focus();
+      box.append(brand(),
+        h("div", {}, h("h1", { class: "h1" }, tab === "staff" ? "Welcome back." : "Become a master of mutual funds."),
+          h("p", { class: "mute", style: "margin-top:8px" }, tab === "staff" ? "Sign in with your UpperCrust work email." : "Free lessons, fund factsheets, quizzes and certificates.")),
+        tabs(), form);
+    }
+    paint();
+    document.body.append(h("div", { class: "gate" }, box));
   });
 }
 
@@ -63,7 +107,7 @@ export async function signOut() {
 /* First visit: ask what to call the learner and where to start. Resolves with "place" when they want a placement test. */
 export function welcome() {
   return new Promise(resolve => {
-    let step = 0, choice = null;
+    let step = Store.get().name ? 1 : 0, choice = null;
     const box = h("div", { class: "gate-card stack stack-l" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust One" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "given-name", id: "nm", placeholder: "First name" });

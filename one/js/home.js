@@ -52,7 +52,7 @@ export function home() {
   trail.push(h("div", { class: "trail" }, stepEl(0, cred
     ? h("a", { class: "node gold", href: `#/cert/${cred.id}`, "aria-label": "Certificate" }, icon("trophy"))
     : ready ? h("a", { class: "node gold" + (isExam ? " now" : ""), href: `#/quiz/exam/${c.id}`, "aria-label": "Course exam" }, icon("trophy"))
-      : h("button", { class: "node lock", "aria-label": "Course exam, locked", on: { click: () => toast("Pass all three unit quizzes first") } }, icon("lock")),
+      : h("button", { class: "node lock", "aria-label": "Course exam, locked", on: { click: () => toast("Pass every module quiz first") } }, icon("lock")),
     cred ? "Your certificate" : "Course exam", isExam ? "START" : null, c.level, cred ? "Earned" : "20 questions · 80% to pass")));
 
   const goals = [
@@ -160,7 +160,7 @@ export function coursePage(id) {
     : h("div", { class: "list-row", style: "color:var(--mute)" }, h("span", { class: "check" }, icon("lock")), h("div", { class: "grow" }, h("div", {}, `Module ${mi + 1} quiz`), h("div", { class: "small" }, "Opens when all five lessons are done")));
   const examBlock = () => p.examReady
     ? h("a", { class: "card link row-flex between", href: `#/quiz/exam/${id}` }, h("div", {}, h("div", { class: "list-title" }, p.exam?.passed ? "Retake the course exam" : "Take the course exam"), h("div", { class: "small mute" }, p.exam ? `Best ${p.exam.best}%` : "20 questions · 80% to pass · certificate on pass")), chev())
-    : h("div", { class: "card row-flex", style: "color:var(--mute)" }, icon("lock", 20), h("span", {}, "The exam opens when all three module quizzes are passed."));
+    : h("div", { class: "card row-flex", style: "color:var(--mute)" }, icon("lock", 20), h("span", {}, "The exam opens when every module quiz is passed."));
 
   function paint() {
     strip.replaceChildren(...TABS.map(([k, t]) => h("button", { role: "tab", "aria-selected": String(tab === k), on: { click: () => { tab = k; paint(); } } }, t)));
