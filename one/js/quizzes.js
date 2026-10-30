@@ -94,7 +94,7 @@ export function revise(root) {
 /* 24 questions, 8 per level. Where the learner stops getting most right is where they should start. */
 export function placement(root) {
   const per = (ids, n) => pick(questionsFor(ids.flatMap(id => course(id).lessons)), n);
-  const f = per(["mf-foundations"], 8), p = per(D.courses.filter(c => c.level === "practitioner").map(c => c.id), 8), x = per(["fund-analysis"], 8);
+  const f = per(["mf-foundations"], 8), p = per(D.courses.filter(c => c.level === "practitioner" && !c.optional).map(c => c.id), 8), x = per(["fund-analysis"], 8);
   const tag = (qs, lv) => qs.map(q => ({ ...q, lv }));
   runQuiz(root, {
     title: "Placement test", questions: [...tag(f, "foundation"), ...tag(p, "practitioner"), ...tag(x, "expert")], record: false, exit: "#/",
