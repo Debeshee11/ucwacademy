@@ -280,3 +280,22 @@ body.focus .shell { margin-left: 0; }
 a.card.link,a.card.link *{color:#1D1B2E}a.card.link .mute,a.card.link .tiny.mute,a.card.link .small.mute{color:#6B6B80}
 .chips a.chip{display:inline-flex;align-items:center;justify-content:center;line-height:1}
 a.card.link b[style*="1FA45B"]{color:#1FA45B}a.card.link b[style*="D43B3B"]{color:#D43B3B}
+
+/* ——— Fund list: one card per fund, 3Y return as the headline, the rest as a quiet meta line ——— */
+.fund-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.fund-row { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: #fff; border: 2px solid var(--line); border-radius: var(--r); color: var(--ink); transition: border-color .15s var(--ease), transform .15s var(--ease); }
+.fund-row:active { background: var(--soft); }
+.fr-head { display: flex; align-items: center; gap: 12px; }
+.fr-title { flex: 1; min-width: 0; }
+.fr-house { font: 900 18px/1.25 var(--font); }
+.fr-scheme { margin-top: 2px; font-size: 13px; line-height: 1.35; color: var(--mute); }
+.fr-hero { flex: none; text-align: right; }
+.fr-big { font: 900 22px/1.1 var(--font); font-variant-numeric: tabular-nums; }
+.fr-cap { font-size: 12px; font-weight: 700; color: var(--mute); }
+.fr-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding-top: 12px; border-top: 2px solid var(--soft); }
+.fr-meta span { display: block; font-size: 12px; font-weight: 700; color: var(--mute); }
+.fr-meta b { display: block; font-size: 15px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fund-row .up, .fr-meta b.up { color: var(--ok-d); } .fund-row .down, .fr-meta b.down { color: var(--bad-d); }
+@media (hover: hover) { .fund-row:hover { border-color: var(--line2); transform: translateY(-2px); } }
+/* touch screens: no sticky hover tint on tapped cards */
+@media (hover: none) { .card.link:hover { background: #fff; transform: none; } }
