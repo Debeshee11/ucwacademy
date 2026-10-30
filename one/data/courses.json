@@ -221,6 +221,36 @@
    "tag": "60/40"
   },
   {
+   "id": "reit-invit",
+   "level": "practitioner",
+   "title": "REITs and InvITs: real-asset income",
+   "blurb": "How listed trusts own offices, malls, roads and power lines, how payouts and tax work, the risks, and how SEBI's 2026 changes affect mutual funds.",
+   "modules": [
+    {
+     "title": "REITs: owning rent",
+     "lessons": [
+      91,
+      92,
+      93,
+      94,
+      95
+     ]
+    },
+    {
+     "title": "InvITs, risks and selling responsibly",
+     "lessons": [
+      96,
+      97,
+      98,
+      99,
+      100
+     ]
+    }
+   ],
+   "topic": "Real assets",
+   "tag": "REIT"
+  },
+  {
    "id": "fund-analysis",
    "level": "expert",
    "title": "Fund analysis and client conversations",
