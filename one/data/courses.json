@@ -58,7 +58,35 @@
     }
    ],
    "topic": "Mutual funds",
-   "tag": "MF"
+   "tag": "MF",
+   "sec": "start"
+  },
+  {
+   "id": "regulation",
+   "level": "foundation",
+   "title": "SEBI, AMFI and the rules of the road",
+   "blurb": "Who runs a mutual fund, how funds are classified, what costs mean, and what you may and may not say to a client.",
+   "modules": [
+    {
+     "title": "Who is who, and how funds are sorted",
+     "lessons": [
+      301,
+      302,
+      303
+     ]
+    },
+    {
+     "title": "Selling by the rules",
+     "lessons": [
+      304,
+      305,
+      306
+     ]
+    }
+   ],
+   "topic": "Regulation",
+   "tag": "SEBI",
+   "sec": "start"
   },
   {
    "id": "financial-maths",
@@ -88,7 +116,62 @@
     }
    ],
    "topic": "Mutual funds",
-   "tag": "CAGR"
+   "tag": "CAGR",
+   "sec": "start"
+  },
+  {
+   "id": "sip-planning",
+   "level": "foundation",
+   "title": "SIP, SWP, STP and goal investing",
+   "blurb": "Start, step up, transfer and withdraw: the systematic plans that turn goals into monthly habits.",
+   "modules": [
+    {
+     "title": "Investing regularly",
+     "lessons": [
+      331,
+      332,
+      333
+     ]
+    },
+    {
+     "title": "Withdrawing, goals and discipline",
+     "lessons": [
+      334,
+      335,
+      336
+     ]
+    }
+   ],
+   "topic": "Planning",
+   "tag": "SIP",
+   "sec": "plan"
+  },
+  {
+   "id": "equity-funds",
+   "level": "foundation",
+   "title": "Equity fund categories",
+   "blurb": "Large, mid, small, flexi, ELSS, sectoral and style funds: what each must hold and who each suits.",
+   "modules": [
+    {
+     "title": "The market-cap ladder and ELSS",
+     "lessons": [
+      311,
+      312,
+      313
+     ]
+    },
+    {
+     "title": "Themes, styles and choosing well",
+     "lessons": [
+      314,
+      315,
+      316
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "EQ",
+   "sec": "funds"
   },
   {
    "id": "economy-markets",
@@ -128,87 +211,93 @@
     }
    ],
    "topic": "Markets and economy",
-   "tag": "GDP"
+   "tag": "GDP",
+   "sec": "markets"
   },
   {
-   "id": "defence",
+   "id": "hybrid-funds",
    "level": "practitioner",
-   "title": "Defence and manufacturing",
-   "blurb": "The budget, production, exports and order pipeline behind the theme, and how to pitch it without overpromising.",
+   "title": "Hybrid funds: balanced, arbitrage and equity savings",
+   "blurb": "Aggressive, conservative, balanced advantage, arbitrage and equity savings: how each works, how it is taxed, and who it fits.",
    "modules": [
     {
-     "title": "Budget, production and orders",
+     "title": "The hybrid family",
      "lessons": [
-      31,
-      32,
-      33,
-      34,
-      35
+      321,
+      322,
+      323
      ]
     },
     {
-     "title": "Players and policy",
+     "title": "Income, tax and matching to clients",
      "lessons": [
-      36,
-      37,
-      38,
-      39,
-      40
-     ]
-    },
-    {
-     "title": "Valuation and the client pitch",
-     "lessons": [
-      41,
-      42,
-      43,
-      44,
-      45
+      324,
+      325,
+      326
      ]
     }
    ],
-   "topic": "Markets and economy",
-   "tag": "DEF"
+   "topic": "Mutual funds",
+   "tag": "HY",
+   "sec": "funds"
   },
   {
-   "id": "gold-silver",
+   "id": "passive-etf",
    "level": "practitioner",
-   "title": "Gold and silver for client portfolios",
-   "blurb": "What drives precious metals, which product fits which client, how much is enough, and how to keep expectations honest.",
+   "title": "Index funds and ETFs: passive investing",
+   "blurb": "Index funds, ETFs, tracking error, smart beta and how to build a low-cost core.",
    "modules": [
     {
-     "title": "Gold: the run and the buyers",
+     "title": "How passive funds work",
      "lessons": [
-      46,
-      47,
-      48,
-      49,
-      50
+      341,
+      342,
+      343
      ]
     },
     {
-     "title": "Gold today and silver's breakout",
+     "title": "Smart beta and building a core",
      "lessons": [
-      51,
-      52,
-      53,
-      54,
-      55
-     ]
-    },
-    {
-     "title": "Sizing, volatility and the pitch",
-     "lessons": [
-      56,
-      57,
-      58,
-      59,
-      60
+      344,
+      345,
+      346
      ]
     }
    ],
-   "topic": "Gold and silver",
-   "tag": "Au · Ag"
+   "topic": "Mutual funds",
+   "tag": "ETF",
+   "sec": "funds"
+  },
+  {
+   "id": "debt-funds",
+   "level": "practitioner",
+   "title": "Fixed income and debt funds",
+   "blurb": "Bond maths, duration, credit risk, the yield curve, SEBI categories, tax, and matching debt funds to goals honestly.",
+   "modules": [
+    {
+     "title": "How bonds and rates work",
+     "lessons": [
+      111,
+      112,
+      113,
+      114,
+      115
+     ]
+    },
+    {
+     "title": "Categories, risk, tax and selling",
+     "lessons": [
+      116,
+      117,
+      118,
+      119,
+      120
+     ]
+    }
+   ],
+   "topic": "Fixed income",
+   "tag": "Debt",
+   "sec": "funds"
   },
   {
    "id": "multi-asset",
@@ -248,7 +337,117 @@
     }
    ],
    "topic": "Asset allocation",
-   "tag": "60/40"
+   "tag": "60/40",
+   "sec": "funds"
+  },
+  {
+   "id": "behaviour",
+   "level": "practitioner",
+   "title": "Investor behaviour and psychology",
+   "blurb": "Loss aversion, herding, anchoring and the behaviour gap, plus a script for the hard conversation.",
+   "modules": [
+    {
+     "title": "The biases",
+     "lessons": [
+      351,
+      352,
+      353
+     ]
+    },
+    {
+     "title": "Acting on them",
+     "lessons": [
+      354,
+      355,
+      356
+     ]
+    }
+   ],
+   "topic": "Behaviour",
+   "tag": "BEH",
+   "sec": "plan"
+  },
+  {
+   "id": "gold-silver",
+   "level": "practitioner",
+   "title": "Gold and silver for client portfolios",
+   "blurb": "What drives precious metals, which product fits which client, how much is enough, and how to keep expectations honest.",
+   "modules": [
+    {
+     "title": "Gold: the run and the buyers",
+     "lessons": [
+      46,
+      47,
+      48,
+      49,
+      50
+     ]
+    },
+    {
+     "title": "Gold today and silver's breakout",
+     "lessons": [
+      51,
+      52,
+      53,
+      54,
+      55
+     ]
+    },
+    {
+     "title": "Sizing, volatility and the pitch",
+     "lessons": [
+      56,
+      57,
+      58,
+      59,
+      60
+     ]
+    }
+   ],
+   "topic": "Gold and silver",
+   "tag": "Au · Ag",
+   "sec": "markets"
+  },
+  {
+   "id": "defence",
+   "level": "practitioner",
+   "title": "Defence and manufacturing",
+   "blurb": "The budget, production, exports and order pipeline behind the theme, and how to pitch it without overpromising.",
+   "modules": [
+    {
+     "title": "Budget, production and orders",
+     "lessons": [
+      31,
+      32,
+      33,
+      34,
+      35
+     ]
+    },
+    {
+     "title": "Players and policy",
+     "lessons": [
+      36,
+      37,
+      38,
+      39,
+      40
+     ]
+    },
+    {
+     "title": "Valuation and the client pitch",
+     "lessons": [
+      41,
+      42,
+      43,
+      44,
+      45
+     ]
+    }
+   ],
+   "topic": "Markets and economy",
+   "tag": "DEF",
+   "sec": "markets"
   },
   {
    "id": "reit-invit",
@@ -278,37 +477,8 @@
     }
    ],
    "topic": "Real assets",
-   "tag": "REIT"
-  },
-  {
-   "id": "debt-funds",
-   "level": "practitioner",
-   "title": "Fixed income and debt funds",
-   "blurb": "Bond maths, duration, credit risk, the yield curve, SEBI categories, tax, and matching debt funds to goals honestly.",
-   "modules": [
-    {
-     "title": "How bonds and rates work",
-     "lessons": [
-      111,
-      112,
-      113,
-      114,
-      115
-     ]
-    },
-    {
-     "title": "Categories, risk, tax and selling",
-     "lessons": [
-      116,
-      117,
-      118,
-      119,
-      120
-     ]
-    }
-   ],
-   "topic": "Fixed income",
-   "tag": "Debt"
+   "tag": "REIT",
+   "sec": "alts"
   },
   {
    "id": "fund-analysis",
@@ -342,13 +512,13 @@
       86,
       87,
       88,
-      89,
       90
      ]
     }
    ],
    "topic": "Client conversations",
-   "tag": "Fact·Sheet"
+   "tag": "Fact·Sheet",
+   "sec": "funds"
   },
   {
    "id": "pms-aif-sif",
@@ -378,7 +548,8 @@
     }
    ],
    "topic": "Client conversations",
-   "tag": "PMS·AIF"
+   "tag": "PMS·AIF",
+   "sec": "alts"
   },
   {
    "id": "tax-retirement",
@@ -408,7 +579,8 @@
     }
    ],
    "topic": "Client conversations",
-   "tag": "Tax"
+   "tag": "Tax",
+   "sec": "plan"
   },
   {
    "id": "idx-broad",
@@ -437,7 +609,8 @@
    ],
    "topic": "Indices",
    "tag": "Broad",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   },
   {
    "id": "idx-midsmall",
@@ -466,7 +639,8 @@
    ],
    "topic": "Indices",
    "tag": "Mid·Small",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   },
   {
    "id": "idx-banking",
@@ -494,7 +668,8 @@
    ],
    "topic": "Indices",
    "tag": "Banks",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   },
   {
    "id": "idx-consumer",
@@ -522,7 +697,8 @@
    ],
    "topic": "Indices",
    "tag": "Consumer",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   },
   {
    "id": "idx-tech-infra",
@@ -548,7 +724,8 @@
    ],
    "topic": "Indices",
    "tag": "Tech·Infra",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   },
   {
    "id": "idx-energy",
@@ -575,8 +752,40 @@
    ],
    "topic": "Indices",
    "tag": "Energy",
-   "optional": true
+   "optional": true,
+   "sec": "idx"
   }
  ],
- "soon": []
+ "sections": [
+  {
+   "id": "start",
+   "name": "Start here",
+   "blurb": "the language, the maths and the rules"
+  },
+  {
+   "id": "funds",
+   "name": "Mutual fund mastery",
+   "blurb": "every fund type, how to read and compare them"
+  },
+  {
+   "id": "markets",
+   "name": "Markets and economy",
+   "blurb": "the big picture behind fund returns"
+  },
+  {
+   "id": "alts",
+   "name": "Real assets and alternatives",
+   "blurb": "REITs, PMS, AIF and SIF"
+  },
+  {
+   "id": "plan",
+   "name": "Planning, tax and behaviour",
+   "blurb": "goals, retirement, tax and the human side"
+  },
+  {
+   "id": "idx",
+   "name": "Index courses",
+   "blurb": "all 41 NSE indices, optional"
+  }
+ ]
 }
