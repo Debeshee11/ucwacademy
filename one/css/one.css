@@ -192,7 +192,6 @@ textarea.input { height: auto; padding: 14px 18px; line-height: 1.6; resize: ver
 .tile::before, .tile::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .14); }
 .tile::before { width: 170px; height: 170px; right: -40px; top: -60px; } .tile::after { width: 110px; height: 110px; left: -30px; bottom: -50px; }
 .tile.foundation { --c: var(--lv-foundation); } .tile.practitioner { --c: var(--lv-practitioner); } .tile.expert { --c: var(--lv-expert); } .tile.open { --c: #6B4EE6; }
-.tile.soon { filter: grayscale(.85); opacity: .55; }
 .tile span { position: relative; z-index: 1; }
 
 /* ——— Course page hero ——— */
@@ -330,7 +329,7 @@ a.card.link b[style*="1FA45B"]{color:#1FA45B}a.card.link b[style*="D43B3B"]{colo
 .lib-note i,.lib-ret i.c,.lib-ret i.f{display:inline-block}
 .lib-note i{width:12px;height:12px;border-radius:4px;background:var(--ok)}.lib-note i.c{background:#C9C8D8;margin-left:10px}
 .lib-ret{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:10px;overflow-x:auto;padding-bottom:4px}
-.lib-ret-col{display:grid;justify-items:center;gap:3px;min-width:88px;text-align:center}
+.lib-ret-col{display:grid;justify-items:center;gap:3px;min-width:62px;text-align:center}
 .lib-ret-col b{font:900 15px var(--font)}.lib-ret-col span{font-size:11px;color:var(--mute);font-weight:700}
 .lib-ret-col small{font:900 13px var(--font);color:var(--ink);margin-top:2px}.lib-ret-col em{font:700 11px var(--font);color:var(--mute);font-style:normal}
 .lib-ret-bars{height:130px;display:flex;align-items:flex-end;gap:6px}
@@ -357,3 +356,20 @@ a.card.link b[style*="1FA45B"]{color:#1FA45B}a.card.link b[style*="D43B3B"]{colo
 .lib-co{display:grid}.lib-co li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:2px solid var(--soft)}.lib-co li:last-child{border:0}
 .lib-co b{font-weight:800}.lib-co p{font-size:13px;color:var(--mute);margin-top:2px}.lib-co span{font:900 16px var(--font);white-space:nowrap}
 @media(max-width:640px){.lib-hero{padding:20px}.lib-panel{padding:18px}.lib-big{font-size:28px}}
+.lib-big.sm{font-size:19px;line-height:1.25}
+.lib-sub{font:900 14px var(--font);color:var(--ink2);margin-bottom:8px}
+.lib-chg{display:grid;gap:8px}.lib-chg li{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink2);font-weight:700}.lib-chg b{font-weight:900;white-space:nowrap}
+
+/* syllabus and course sections */
+.syl-l { gap: 12px; }
+.syl-q { font: 700 18px/1.45 var(--font); font-style: italic; }
+.syl-tab { padding: 14px 14px; font: 800 15px var(--font); letter-spacing: .04em; text-transform: uppercase; color: var(--mute); border-bottom: 4px solid transparent; margin-bottom: -2px; white-space: nowrap; }
+.syl-tab[aria-selected="true"] { color: var(--blue-d); border-color: var(--blue); }
+.sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.sec-h p { margin: 0; }
+.exam-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .exam-trio { grid-template-columns: 1fr; } }
+.exam-card { display: flex; flex-direction: column; gap: 6px; padding: 16px; border: 2px solid var(--line); border-radius: 16px; background: #fff; }
+.exam-card.locked { opacity: .65; }
+.exam-card b { font: 900 18px var(--font); }
+.exam-card .row-flex { margin-top: 6px; }
