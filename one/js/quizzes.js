@@ -1,6 +1,6 @@
 /* The kinds of quiz: module, exam, refresher, daily, revision and placement. Each picks questions and decides what happens after. */
 import { RULES } from "./config.js";
-import { D, course, level, questionsFor } from "./data.js";
+import { D, course, level, questionsFor, TIERS, examPool } from "./data.js";
 import { h, pick, shuffle } from "./dom.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
@@ -20,8 +20,8 @@ export function moduleQuiz(root, cid, mi) {
       const all = Store.courseProgress(c).examReady;
       const nextModule = mi + 1 < c.modules.length;
       return res.passed ? {
-        head: "Module passed.", sub: `${res.score}%. ` + (all ? "Every module is done. The course exam is open." : nextModule ? "Next module is ready." : ""),
-        actions: [all ? h("a", { class: "btn primary", href: `#/quiz/exam/${cid}` }, "Take the course exam") : nextModule ? h("a", { class: "btn primary", href: `#/lesson/${c.modules[mi + 1].lessons[0]}` }, "Start next module") : null,
+        head: "Module passed.", sub: `${res.score}%. ` + (all ? "Every module is done. The Beginner exam is open." : nextModule ? "Next module is ready." : ""),
+        actions: [all ? h("a", { class: "btn primary", href: `#/quiz/exam/${cid}` }, "Take the Beginner exam") : nextModule ? h("a", { class: "btn primary", href: `#/lesson/${c.modules[mi + 1].lessons[0]}` }, "Start next module") : null,
           h("a", { class: "btn ghost", href: back(c) }, "Back to course")]
       } : {
         head: "Not yet.", sub: `${res.score}%. You need ${RULES.modulePass}%. Read the lessons again, then try once more.`,
@@ -31,22 +31,28 @@ export function moduleQuiz(root, cid, mi) {
   });
 }
 
-export function exam(root, cid) {
-  const c = course(cid);
-  if (!c) return void (location.hash = "#/courses");
-  if (!Store.courseProgress(c).examReady) {
-    root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Finish the modules first."), h("p", { class: "lead" }, "The exam opens when you have passed every module quiz."), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
+const TIER_KEY = { b: "x:", i: "x2:", h: "x3:" };
+export function exam(root, cid, tier = "b") {
+  const c = course(cid), T = TIERS().find(t => t.id === tier);
+  if (!c || !T) return void (location.hash = "#/courses");
+  const P = Store.courseProgress(c), gate = tier === "b" ? P.examReady : P.exams[tier === "i" ? "b" : "i"]?.passed;
+  if (!gate) {
+    root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Not open yet."), h("p", { class: "lead" }, tier === "b" ? "The Beginner exam opens when you have passed every module quiz." : `The ${T.name} exam opens when you pass the ${tier === "i" ? "Beginner" : "Intermediate"} exam.`), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
     return;
   }
+  const pass = RULES.tierPass[tier], pool = examPool(c, tier);
   runQuiz(root, {
-    title: `${c.title} · Exam`, questions: pick(questionsFor(c.lessons), RULES.examQuestions), pass: RULES.examPass, exit: back(c),
+    title: `${c.title} · ${T.name} exam`, questions: pick(pool, RULES.examQuestions), pass, exit: back(c),
     done: res => {
-      Store.recordQuiz("x:" + cid, res.score, res.passed);
-      if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${RULES.examPass}%. Revise, then try again. A new set of questions is drawn each time.`, actions: [h("a", { class: "btn primary", href: back(c) }, "Back to course")] };
+      Store.recordQuiz(TIER_KEY[tier] + cid, res.score, res.passed);
+      const next = tier === "b" ? "i" : tier === "i" ? "h" : null, nextT = TIERS().find(t => t.id === next);
+      const nextBtn = nextT ? h("a", { class: "btn " + (res.passed ? "primary" : "ghost"), href: `#/syllabus/${cid}/${next}` }, `${nextT.name} syllabus`) : null;
+      if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${pass}%. Read the syllabus again, then retry. A new set of questions is drawn each time.`, actions: [h("a", { class: "btn primary", href: `#/syllabus/${cid}/${tier}` }, "Open the syllabus"), h("a", { class: "btn ghost", href: back(c) }, "Back to course")] };
+      if (tier !== "b") return { head: `${T.name} exam passed.`, sub: `${res.score}%. ` + (nextT ? `${nextT.name} is now open.` : "That is every exam in this course. Outstanding."), actions: [res.passed && nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
       const r = Creds.awardCourse(cid, res.score);
       const extra = r.extra.map(x => h("p", { class: "pill gold" }, x.title + " earned"));
-      return { head: "You passed.", sub: `${res.score}%. Your certificate is ready.`, body: extra.length ? h("div", { class: "row-flex", style: "justify-content:center" }, extra) : null,
-        actions: [h("a", { class: "btn primary", href: `#/cert/${r.cred.id}` }, "View certificate"), h("a", { class: "btn ghost", href: back(c) }, "Back to course")] };
+      return { head: "You passed.", sub: `${res.score}%. Your certificate is ready, and the Intermediate exam is open.`, body: extra.length ? h("div", { class: "row-flex", style: "justify-content:center" }, extra) : null,
+        actions: [h("a", { class: "btn primary", href: `#/cert/${r.cred.id}` }, "View certificate"), nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
     }
   });
 }
@@ -114,7 +120,7 @@ const finish = (title, again, exit) => res => ({
   actions: [h("a", { class: "btn primary", href: again }, "Another round"), h("a", { class: "btn ghost", href: exit }, "Back")]
 });
 export function fundQuiz(root, group) {
-  const qs = D.fundqs.filter(q => !group || q.group === group);
+  const qs = [...D.fundqs.filter(q => !group || q.group === group), ...(group ? [] : D.holdQs.filter(q => q.tags.includes("returns")))];
   runQuiz(root, { title: "Fund quiz", questions: pick(qs, 10), record: true, exit: "#/funds", done: finish("Fund quiz", "#/quiz/fund" + (group ? "/" + group : ""), "#/funds") });
 }
 export function marketQuiz(root) {
@@ -125,4 +131,10 @@ export function indexQuiz(root, id) {
   const ix = D.indices.find(x => x.id === id);
   const own = D.indexqs.filter(q => q.scope === id), gen = D.indexqs.filter(q => q.scope === "general");
   runQuiz(root, { title: ix ? ix.name + " quiz" : "Index quiz", questions: pick([...own, ...gen], 6), record: true, exit: ix ? "#/index/" + id : "#/indices", done: finish("Index quiz", "#/quiz/index/" + id, ix ? "#/index/" + id : "#/indices") });
+}
+export function holdingsQuiz(root, fundId) {
+  const qs = D.holdQs.filter(q => (!fundId || q.fund === fundId) && q.tags.includes("holdings"));
+  if (qs.length < 3) { location.hash = "#/funds"; return; }
+  const again = "#/quiz/holdings" + (fundId ? "/" + fundId : "");
+  runQuiz(root, { title: "Holdings quiz", questions: pick(qs, 10), record: true, exit: "#/funds", done: finish("Holdings quiz", again, "#/funds") });
 }

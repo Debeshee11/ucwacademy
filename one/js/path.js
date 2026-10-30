@@ -37,6 +37,6 @@ export const labelFor = step => {
   if (!step) return "Browse courses";
   const s = Store.get();
   if (step.kind === "lesson") return s.done[step.n] ? "Review lesson" : (s.part[step.n] || 0) > 0 ? "Continue lesson" : "Start lesson";
-  return step.kind === "module" ? "Take the module quiz" : "Take the course exam";
+  return step.kind === "module" ? "Take the module quiz" : "Take the Beginner exam";
 };
 export const moduleOf = n => { const c = courseOf(n); return { course: c, index: moduleIndexOf(c, n) }; };

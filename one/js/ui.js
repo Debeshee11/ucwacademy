@@ -7,7 +7,7 @@ import { signOut } from "./auth.js";
 
 export const NAV = [
   ["#/", "Learn", "home", "home"],
-  ["#/courses", "Explore", "search", "courses"],
+  ["#/courses", "Courses", "search", "courses"],
   ["#/practice", "Practice", "bolt", "practice"],
   ["#/funds", "Library", "book", "library"],
   ["#/me", "Awards", "award", "me"]
@@ -39,8 +39,8 @@ export function frame(onLang) {
       menuHost.append(h("div", { class: "menu", role: "menu", on: { click: ev => ev.stopPropagation() } },
         h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
         h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Quiz language", lang),
-        Store.isStaff() && h("a", { href: "classic/", role: "menuitem" }, icon("book", 20), "Classic tools"),
         Store.isStaff() && h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
+        isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
     }

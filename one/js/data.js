@@ -1,12 +1,12 @@
 /* Course content: courses.json (structure), lessons.json (90 lessons), sims.json (client scenarios), tx-*.json (Hindi and Gujarati questions). */
-export const D = { levels: [], courses: [], soon: [], lessons: {}, sims: [], tx: {}, fundGroups: [], funds: {}, fundSource: "", fundqs: [], indices: [], companies: { en: {}, tx: {} }, indexqs: [] };
+export const D = { levels: [], courses: [], lessons: {}, sims: [], tx: {}, live: { funds: {}, months: {} }, auto: { groups: [], funds: {}, updated: "" }, holdQs: [], sections: [], exams: { tiers: [], courses: {} }, fundGroups: [], funds: {}, fundSource: "", fundqs: [], indices: [], companies: { en: {}, tx: {} }, indexqs: [] };
 
 const j = async path => { const r = await fetch(path); if (!r.ok) throw new Error(path + " " + r.status); return r.json(); };
 
 export async function loadData() {
-  const [c, l, s, f, fq, ix, co, iq] = await Promise.all(["courses", "lessons", "sims", "funds", "fundqs", "indices", "companies", "indexqs"].map(n => j(`one/data/${n}.json`)));
-  D.fundGroups = f.groups; D.funds = f.funds; D.fundSource = f.source; D.fundqs = fq; D.indices = ix; D.companies = co; D.indexqs = iq;
-  D.levels = c.levels; D.courses = c.courses; D.soon = c.soon; D.sims = s;
+  const [c, l, s, f, fq, ix, co, iq, ex] = await Promise.all(["courses", "lessons", "sims", "funds", "fundqs", "indices", "companies", "indexqs", "exams"].map(n => j(`one/data/${n}.json`)));
+  D.fundGroups = f.groups; D.funds = f.funds; D.fundSource = f.source; D.fundqs = fq; D.indices = ix; D.companies = co; D.indexqs = iq; D.exams = ex;
+  D.levels = c.levels; D.sections = c.sections || []; D.courses = c.courses; D.sims = s;
   for (const x of l) D.lessons[x.n] = x;
   for (const co of D.courses) co.lessons = co.modules.flatMap(m => m.lessons);
 }
@@ -47,3 +47,10 @@ export function partsOf(l) {
   if (l.remember?.length) out.push({ k: "remember", title: "Remember" });
   return out;
 }
+
+/* The three exams of a course: Beginner, Intermediate, Hard. */
+export const TIERS = () => D.exams.tiers;
+export const examPool = (c, tier) => tier === "b"
+  ? [...questionsFor(c.lessons), ...(D.exams.courses[c.id]?.qs?.b || [])]
+  : (D.exams.courses[c.id]?.qs?.[tier] || []);
+export const examMeta = cid => D.exams.courses[cid] || {};

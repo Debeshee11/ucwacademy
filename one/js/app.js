@@ -7,9 +7,12 @@ import { frame, isAdmin, notFound } from "./ui.js";
 import { renderLesson } from "./lesson.js";
 import * as Q from "./quizzes.js";
 import * as Home from "./home.js";
+import * as Syl from "./syllabus.js";
 import * as P from "./practice.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
+import { fundData } from "./funddata.js";
+import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
 import { team } from "./team.js";
 
@@ -22,6 +25,7 @@ const ROUTES = [
   [/^$/, () => Home.home(), "home", "Home"],
   [/^courses$/, () => Home.courses(), "courses", "Courses"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
+  [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
   [/^board$/, () => board(), "me", "Leaderboard"],
   [/^funds$/, () => Lib.funds(), "library", "Funds"],
   [/^fund\/([\w-]+)$/, id => Lib.fund(id), "library", "Fund"],
@@ -37,11 +41,13 @@ const ROUTES = [
   /* full-screen routes draw into the root themselves */
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],
   [/^quiz\/module\/([\w-]+)\/(\d+)$/, (c, i) => Q.moduleQuiz(root, c, +i), "", "Quiz", true],
-  [/^quiz\/exam\/([\w-]+)$/, c => Q.exam(root, c), "", "Exam", true],
+  [/^quiz\/exam\/([\w-]+)(?:\/([bih]))?$/, (c, t) => Q.exam(root, c, t || "b"), "", "Exam", true],
+  [/^syllabus\/([\w-]+)\/([bih])$/, (c, t) => Syl.syllabus(c, t), "courses", "Syllabus"],
   [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true],
   [/^quiz\/daily$/, () => Q.daily(root), "", "Daily five", true],
   [/^quiz\/revise$/, () => Q.revise(root), "", "Revise", true],
   [/^quiz\/fund(?:\/(ma|def))?$/, g => Q.fundQuiz(root, g), "", "Fund quiz", true],
+  [/^quiz\/holdings(?:\/([\w-]+))?$/, f => Q.holdingsQuiz(root, f), "", "Holdings quiz", true],
   [/^quiz\/market$/, () => Q.marketQuiz(root), "", "Market quiz", true],
   [/^quiz\/index\/([\w-]+)$/, i => Q.indexQuiz(root, i), "", "Index quiz", true],
   [/^quiz\/place$/, () => Q.placement(root), "", "Placement test", true]
@@ -80,6 +86,7 @@ async function boot() {
   root.replaceChildren(h("main", { class: "wrap page" }, h("p", { class: "mute" }, "Loading your courses…")));
   try {
     await Promise.all([loadData(), Store.init(user)]);
+    await loadLive();
   } catch (e) {
     console.error(e);
     root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load."), h("p", { class: "mute" }, "Check your connection and reload."), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));

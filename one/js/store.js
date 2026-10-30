@@ -8,7 +8,7 @@ const blank = () => ({
   done: {},            /* lesson number -> time completed */
   part: {},            /* lesson number -> part last reached */
   q: {},               /* question id -> { b: box 0-4, d: due time, n: tries, r: right, f: first try right 1/0 } */
-  quiz: {},            /* "m:course:0" module quiz, "x:course" exam, "r:course" refresher -> { best, n, last, passed } */
+  quiz: {},            /* "m:course:0" module quiz, "x:course" Beginner exam, "x2:course" Intermediate, "x3:course" Hard, "r:course" refresher -> { best, n, last, passed } */
   creds: {},           /* credential id -> credential */
   lab: {},             /* scenario id -> { score, n, last } */
   act: {},             /* YYYY-MM-DD -> { l: lessons finished, r: revision done, d: daily quiz done } */
@@ -154,8 +154,8 @@ export function courseProgress(c) {
     done: m.lessons.filter(n => state.done[n]).length, total: m.lessons.length,
     quiz: state.quiz["m:" + c.id + ":" + i] || null
   }));
-  const exam = state.quiz["x:" + c.id] || null;
-  return { done, total: c.lessons.length, pct: pct(done, c.lessons.length), modules, exam,
+  const exam = state.quiz["x:" + c.id] || null, exams = { b: exam, i: state.quiz["x2:" + c.id] || null, h: state.quiz["x3:" + c.id] || null };
+  return { done, total: c.lessons.length, pct: pct(done, c.lessons.length), modules, exam, exams,
     examReady: modules.every(m => m.quiz?.passed) };
 }
 

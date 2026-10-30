@@ -6,6 +6,7 @@ import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { page, checkMark, notFound } from "./ui.js";
 import { stories, storyCard } from "./home.js";
+import { newsFeed } from "./news.js";
 
 const row = (href, title, sub, done) => h("a", { class: "list-row", href },
   checkMark(done ? "done" : ""), h("div", { class: "grow" }, h("div", { class: "list-title" }, title), h("div", { class: "small mute" }, sub)), h("span", { class: "chev" }, icon("chev", 18)));
@@ -18,6 +19,7 @@ export function practice() {
     h("div", { class: "divide" },
       row("#/quiz/daily", "Daily five", a.d ? "Done today" : "Five questions, about two minutes", a.d),
       row("#/quiz/revise", "Revise", due ? plural(due, "question") + " due for review" : "Nothing due right now", a.r),
+      D.holdQs.some(q => q.tags.includes("holdings")) ? row("#/quiz/holdings", "Holdings quiz", "New questions every month from the latest portfolios") : null,
       row("#/quiz/fund", "Fund quiz", "Factsheets, returns, risk and tax across real funds"),
       row("#/quiz/market", "Market quiz", "Indices, economy and how markets work"),
       row("#/desk", "Market desk", "Headlines and stories to teach from"),
@@ -25,33 +27,12 @@ export function practice() {
       row("#/lab", "Client lab", `${D.sims.length} real client questions · ${labN} tried`),
       row("#/quiz/place", "Placement test", "24 questions to find your level")),
     renew.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Refreshers"),
-      h("div", { class: "divide" }, renew.map(c => row(`#/quiz/refresh/${c.key}`, c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null,
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "More tools"),
-      h("p", { class: "mute" }, "Fund library and index pages are now in Library."),
-      Store.isStaff() ? h("a", { class: "btn ghost", href: "classic/", style: "align-self:flex-start" }, "Open classic tools") : null));
+      h("div", { class: "divide" }, renew.map(c => row(`#/quiz/refresh/${c.key}`, c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null);
 }
 
 /* ——— Market desk ——— */
-const TOPICS = [["all", "All"], ["markets", "Markets"], ["mf", "Funds"], ["rbi", "RBI"], ["sebi", "SEBI"]];
 export function desk() {
-  let items = null, topic = "all", err = "";
-  const list = h("div", { class: "divide" });
-  const seg = h("div", { class: "seg", role: "group", "aria-label": "Topic" });
-  const note = h("p", { class: "tiny mute" });
-  function paint() {
-    seg.replaceChildren(...TOPICS.map(([id, t]) => h("button", { "aria-pressed": String(topic === id), on: { click: () => { topic = id; paint(); } } }, t)));
-    list.replaceChildren();
-    if (err) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, err));
-    if (!items) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, "Loading headlines…"));
-    const shown = items.filter(i => topic === "all" || (i.topics || []).includes(topic)).slice(0, 25);
-    if (!shown.length) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, "No headlines on this topic yet."));
-    for (const i of shown) list.append(h("a", { class: "list-row", href: i.link, target: "_blank", rel: "noopener noreferrer", style: "align-items:flex-start" },
-      h("div", { class: "grow stack stack-xxs" }, h("div", { class: "list-title" }, i.title), i.summary ? h("div", { class: "small mute" }, i.summary) : null, h("div", { class: "tiny mute" }, `${i.source} · ${ago(new Date(i.date).getTime())}`))));
-  }
-  paint();
-  fetch(NEWS_BASE + "news.json", { cache: "no-cache" }).then(r => { if (!r.ok) throw 0; return r.json(); })
-    .then(d => { items = (d.items || []).sort((a, b) => new Date(b.date) - new Date(a.date)); note.textContent = d.updated ? "Updated " + ago(new Date(d.updated).getTime()) + ". Opens the publisher's site." : ""; paint(); })
-    .catch(() => { err = "Headlines could not be loaded. Check your connection, or that the headlines workflow has run at least once."; paint(); });
+  const { seg, list, note } = newsFeed();
   return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Market Desk"), h("p", { class: "lead mute" }, "What matters. Why it matters. What to tell clients."), note),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Teach from the story"), h("div", { class: "divide" }, stories(5).map(storyCard))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), seg, list));

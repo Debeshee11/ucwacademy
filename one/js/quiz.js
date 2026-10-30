@@ -6,8 +6,8 @@ import * as Store from "./store.js";
 /* Every question in the course by id, so revision can find the ones that are due. */
 let byId = null;
 export function questionById(id) {
-  if (!byId) { byId = {}; for (const l of Object.values(D.lessons)) for (const q of l.qs) byId[q.id] = { ...q, n: l.n }; for (const q of [...D.fundqs, ...D.indexqs]) byId[q.id] = q; }
-  return byId[id] || null;
+  if (!byId) { byId = {}; for (const l of Object.values(D.lessons)) for (const q of l.qs) byId[q.id] = { ...q, n: l.n }; for (const q of [...D.fundqs, ...D.indexqs]) byId[q.id] = q; for (const cx of Object.values(D.exams.courses)) for (const t of Object.values(cx.qs || {})) for (const q of t) byId[q.id] = q; }
+  return byId[id] || D.holdQs.find(q => q.id === id) || null;
 }
 
 /* Put the options in a random order and carry the answer and the reasons along. */
