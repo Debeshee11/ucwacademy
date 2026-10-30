@@ -271,3 +271,12 @@ textarea.input { height: auto; padding: 14px 18px; line-height: 1.6; resize: ver
 body.focus .side, body.focus .bar-top, body.focus .tabs { display: none; }
 body.focus .shell { margin-left: 0; }
 @media (max-width: 520px) { .bar-top .brand img { height: 22px; } .bar-top .brand .one { font-size: 22px; } .pillstat.xp { display: none; } .pillstat { padding: 0 10px; height: 36px; } .me { gap: 8px; } .bar-top { padding: 0 12px; } }
+
+/* login tabs */
+.ltabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border:2px solid var(--line,#E5E7EB);border-radius:14px;background:#F6F6FA}
+.ltab{font:inherit;font-weight:800;font-size:14px;border:0;background:transparent;border-radius:10px;padding:10px 6px;cursor:pointer;color:#6B6B80}
+.ltab[aria-selected="true"]{background:#fff;color:#1D1B2E;box-shadow:0 1px 0 #D9D9E3,0 0 0 2px #1D1B2E inset}
+.link{background:none;border:0;color:#2F7CF6;font-weight:700;cursor:pointer;padding:4px 0;text-align:left}
+a.card.link,a.card.link *{color:#1D1B2E}a.card.link .mute,a.card.link .tiny.mute,a.card.link .small.mute{color:#6B6B80}
+.chips a.chip{display:inline-flex;align-items:center;justify-content:center;line-height:1}
+a.card.link b[style*="1FA45B"]{color:#1FA45B}a.card.link b[style*="D43B3B"]{color:#D43B3B}
