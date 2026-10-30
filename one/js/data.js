@@ -24,7 +24,7 @@ export const course = id => D.courses.find(c => c.id === id);
 export const lesson = n => D.lessons[n];
 export const courseOf = n => D.courses.find(c => c.lessons.includes(n));
 export const moduleIndexOf = (c, n) => c.modules.findIndex(m => m.lessons.includes(n));
-export const coursesIn = lv => D.courses.filter(c => c.level === lv);
+export const coursesIn = lv => D.courses.filter(c => c.level === lv && !c.optional);
 
 /* Questions for a set of lessons, each tagged with its lesson number. */
 export const questionsFor = nums => nums.flatMap(n => (D.lessons[n]?.qs || []).map(q => ({ ...q, n })));
