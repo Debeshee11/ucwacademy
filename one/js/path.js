@@ -4,9 +4,10 @@ import * as Store from "./store.js";
 
 /* Courses in the order this learner should meet them: from their starting level onward, then the rest. */
 export function orderedCourses() {
-  const s = Store.get().start, i = s ? D.courses.findIndex(c => c.level === s) : 0;
+  const core = D.courses.filter(c => !c.optional);
+  const s = Store.get().start, i = s ? core.findIndex(c => c.level === s) : 0;
   const k = i < 0 ? 0 : i;
-  return [...D.courses.slice(k), ...D.courses.slice(0, k)];
+  return [...core.slice(k), ...core.slice(0, k)];
 }
 
 /* The single best next step. { kind: "lesson"|"module"|"exam", course, n?, module? } or null when everything is done. */
