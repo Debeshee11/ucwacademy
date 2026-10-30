@@ -61,6 +61,36 @@
    "tag": "MF"
   },
   {
+   "id": "financial-maths",
+   "level": "foundation",
+   "title": "Financial maths for advisers",
+   "blurb": "Time value, CAGR, XIRR, SIP maths, inflation and costs: the numbers behind every client conversation.",
+   "modules": [
+    {
+     "title": "Growth and returns",
+     "lessons": [
+      101,
+      102,
+      103,
+      104,
+      105
+     ]
+    },
+    {
+     "title": "Goals, risk and costs",
+     "lessons": [
+      106,
+      107,
+      108,
+      109,
+      110
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "CAGR"
+  },
+  {
    "id": "economy-markets",
    "level": "practitioner",
    "title": "Indian economy and markets",
@@ -251,6 +281,36 @@
    "tag": "REIT"
   },
   {
+   "id": "debt-funds",
+   "level": "practitioner",
+   "title": "Fixed income and debt funds",
+   "blurb": "Bond maths, duration, credit risk, the yield curve, SEBI categories, tax, and matching debt funds to goals honestly.",
+   "modules": [
+    {
+     "title": "How bonds and rates work",
+     "lessons": [
+      111,
+      112,
+      113,
+      114,
+      115
+     ]
+    },
+    {
+     "title": "Categories, risk, tax and selling",
+     "lessons": [
+      116,
+      117,
+      118,
+      119,
+      120
+     ]
+    }
+   ],
+   "topic": "Fixed income",
+   "tag": "Debt"
+  },
+  {
    "id": "fund-analysis",
    "level": "expert",
    "title": "Fund analysis and client conversations",
@@ -289,36 +349,234 @@
    ],
    "topic": "Client conversations",
    "tag": "Fact·Sheet"
+  },
+  {
+   "id": "pms-aif-sif",
+   "level": "expert",
+   "title": "PMS, AIF and SIF structures",
+   "blurb": "How PMS, AIFs and SIFs work, who they suit, how they are costed and taxed, and how to sell them without crossing a line.",
+   "modules": [
+    {
+     "title": "The structures",
+     "lessons": [
+      121,
+      122,
+      123,
+      124,
+      125
+     ]
+    },
+    {
+     "title": "Suitability, track records and selling",
+     "lessons": [
+      126,
+      127,
+      128,
+      129,
+      130
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "PMS·AIF"
+  },
+  {
+   "id": "tax-retirement",
+   "level": "expert",
+   "title": "Tax and retirement planning",
+   "blurb": "Capital gains, switching and harvesting, IDCW and regimes, then retirement corpus maths, withdrawals and honest planning.",
+   "modules": [
+    {
+     "title": "Taxes on mutual funds",
+     "lessons": [
+      131,
+      132,
+      133,
+      134,
+      135
+     ]
+    },
+    {
+     "title": "Retirement planning",
+     "lessons": [
+      136,
+      137,
+      138,
+      139,
+      140
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "Tax"
+  },
+  {
+   "id": "idx-broad",
+   "level": "foundation",
+   "title": "Broad market indices",
+   "blurb": "Nifty 50 to Total Market: what each index holds, how it is weighted and what it says about the market.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      201,
+      202,
+      203,
+      204
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      205,
+      206,
+      207,
+      208
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Broad",
+   "optional": true
+  },
+  {
+   "id": "idx-midsmall",
+   "level": "practitioner",
+   "title": "Mid and small cap indices",
+   "blurb": "Midcap, smallcap and microcap indices: valuation, concentration and how they behave.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      209,
+      210,
+      211,
+      212
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      213,
+      214,
+      215,
+      216
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Mid·Small",
+   "optional": true
+  },
+  {
+   "id": "idx-banking",
+   "level": "practitioner",
+   "title": "Banking and financial indices",
+   "blurb": "Bank, private bank, PSU bank, financial services, NBFC and insurance indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      217,
+      218,
+      219,
+      220
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      221,
+      222,
+      223
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Banks",
+   "optional": true
+  },
+  {
+   "id": "idx-consumer",
+   "level": "practitioner",
+   "title": "Consumer, health and realty indices",
+   "blurb": "Auto, FMCG, pharma, healthcare, consumer durables, media and realty indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      224,
+      225,
+      226,
+      227
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      228,
+      229,
+      230
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Consumer",
+   "optional": true
+  },
+  {
+   "id": "idx-tech-infra",
+   "level": "practitioner",
+   "title": "Technology and infrastructure indices",
+   "blurb": "IT, telecom, capital goods, infrastructure and cement indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      231,
+      232,
+      233
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      234,
+      235
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Tech·Infra",
+   "optional": true
+  },
+  {
+   "id": "idx-energy",
+   "level": "practitioner",
+   "title": "Energy, materials and defence indices",
+   "blurb": "Metal, chemicals, oil and gas, power, commodities and defence indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      236,
+      237,
+      238
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      239,
+      240,
+      241
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Energy",
+   "optional": true
   }
  ],
- "soon": [
-  {
-   "title": "Financial maths for advisers",
-   "level": "foundation",
-   "blurb": "Time value, CAGR, XIRR and SIP maths.",
-   "tag": "CAGR",
-   "topic": "Mutual funds"
-  },
-  {
-   "title": "Fixed income and debt funds",
-   "level": "practitioner",
-   "blurb": "Duration, credit risk and the yield curve.",
-   "tag": "Debt",
-   "topic": "Fixed income"
-  },
-  {
-   "title": "PMS, AIF and SIF structures",
-   "level": "expert",
-   "blurb": "Who they suit and how they are taxed.",
-   "tag": "PMS·AIF",
-   "topic": "Client conversations"
-  },
-  {
-   "title": "Tax and retirement planning",
-   "level": "expert",
-   "blurb": "Capital gains, switching costs and goals.",
-   "tag": "Tax",
-   "topic": "Client conversations"
-  }
- ]
+ "soon": []
 }
