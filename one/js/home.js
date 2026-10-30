@@ -100,15 +100,16 @@ function stepEl(off, node, label, bubble, level, sub) {
 /* ——— Explore ——— */
 export function courses() {
   const q = new URLSearchParams(location.hash.split("?")[1] || "");
-  const f = { level: q.get("level") || "all", text: "" };
+  const f = { level: q.get("level") || "all", text: "", topic: "all" };
   const grid = h("div", { class: "grid3" }), cont = h("section", { class: "stack" });
-  const chips = h("div", { class: "chips", role: "group", "aria-label": "Level" });
+  const chips = h("div", { class: "chips", role: "group", "aria-label": "Level" }), topics = h("div", { class: "chips", role: "group", "aria-label": "Topic" });
   const search = h("input", { class: "input", type: "search", placeholder: "Search courses: SIP, gold, SEBI…", "aria-label": "Search courses", on: { input: ev => { f.text = ev.target.value.trim().toLowerCase(); paint(); } } });
 
   function paint() {
     const all = [...D.courses.map(c => ({ ...c, soon: false })), ...D.soon.map(c => ({ ...c, soon: true }))];
     chips.replaceChildren(...[["all", "All"], ...D.levels.map(l => [l.id, l.name])].map(([id, t]) => h("button", { class: "chip", "aria-pressed": String(f.level === id), on: { click: () => { f.level = id; paint(); } } }, t)));
-    const match = c => (f.level === "all" || c.level === f.level) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
+    const match = c => (f.level === "all" || c.level === f.level) && (f.topic === "all" || (f.topic === "Indices") === (c.topic === "Indices")) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
+    topics.replaceChildren(...[["all", "All topics"], ["Indices", "Index courses"], ["core", "Core courses"]].map(([id, t]) => h("button", { class: "chip", "aria-pressed": String(f.topic === (id === "core" ? "core" : id)), on: { click: () => { f.topic = id; paint(); } } }, t)));
     const shown = all.filter(match);
     const started = D.courses.filter(c => Store.courseProgress(c).done > 0 && !Creds.find("course", c.id));
     cont.replaceChildren(); cont.hidden = !started.length || !!f.text || f.level !== "all";
@@ -119,7 +120,7 @@ export function courses() {
   paint();
   return widePage(
     h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "What do you want to learn today?"), h("p", { class: "lead" }, "Every course ends in a quiz and a verifiable certificate."),),
-    h("div", { class: "search" }, icon("search"), search), cont, h("div", { class: "stack stack-s" }, chips, grid));
+    h("div", { class: "search" }, icon("search"), search), cont, h("div", { class: "stack stack-s" }, chips, topics, grid));
 }
 
 function card(c) {
