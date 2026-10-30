@@ -1,0 +1,39 @@
+{
+  "_help": "Which funds the Library lists. A fund joins a group when its AMFI category contains 'category' or its name contains every word in 'name_has'. 'all_categories' then adds one group for every remaining AMFI category, so every fund is listed. 'max' caps a group's size.",
+  "groups": [
+    {
+      "id": "ma",
+      "name": {
+        "en": "Multi Asset Allocation funds",
+        "hi": "मल्टी एसेट एलोकेशन फंड",
+        "gu": "મલ્ટી એસેટ એલોકેશન ફંડ"
+      },
+      "category": "Multi Asset Allocation",
+      "max": 40,
+      "type": "Hybrid"
+    },
+    {
+      "id": "def",
+      "name": {
+        "en": "Defence funds",
+        "hi": "डिफेंस फंड",
+        "gu": "ડિફેન્સ ફંડ"
+      },
+      "name_has": [
+        "defence"
+      ],
+      "max": 20,
+      "type": "Equity"
+    }
+  ],
+  "_aliases": "Words some fund houses abbreviate in funds.json, spelled out so names can be matched.",
+  "aliases": {
+    "woc": "whiteoak capital",
+    "absl": "aditya birla sun life",
+    "sl": "sun life",
+    "multi-asset": "multi asset"
+  },
+  "all_categories": {
+    "max": 400
+  }
+}
