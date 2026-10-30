@@ -4,13 +4,13 @@ import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { isoDay, dayMs } from "./dom.js";
 
-export const LABEL = { "mf-industry": "MF industry", flows: "Fund flows", returns: "Reading returns", sip: "SIP and systematic investing", behaviour: "Investor behaviour", costs: "Costs and plans", regulation: "SEBI and regulation", products: "Products", risk: "Risk and suitability", communication: "Client communication", equity: "Equity", debt: "Debt", tax: "Taxation", silver: "Silver", gold: "Gold", reit: "REITs", invit: "InvITs", realty: "Real estate", infra: "Infrastructure", "multi-asset": "Multi-asset" };
+export const LABEL = { "mf-industry": "MF industry", flows: "Fund flows", returns: "Reading returns", sip: "SIP and systematic investing", behaviour: "Investor behaviour", costs: "Costs and plans", regulation: "SEBI and regulation", products: "Products", risk: "Risk and suitability", communication: "Client communication", equity: "Equity", debt: "Debt", tax: "Taxation", silver: "Silver", index: "Indices", maths: "Financial maths", sip: "SIP and systematic investing", pms: "PMS", aif: "AIF", sif: "SIF", retirement: "Retirement", planning: "Planning", markets: "Markets", gold: "Gold", reit: "REITs", invit: "InvITs", realty: "Real estate", infra: "Infrastructure", "multi-asset": "Multi-asset" };
 export const skillsOf = c => { const n = {}; for (const x of c.lessons) for (const t of lesson(x)?.tags || []) n[t] = (n[t] || 0) + 1; return Object.keys(n).sort((a, b) => n[b] - n[a]).map(t => LABEL[t] || t); };
 export const questionCount = c => c.lessons.reduce((a, n) => a + (lesson(n)?.qs.length || 0), 0);
 
 /* One level: lessons, module quizzes, exams across its courses, and whether the level credential is earned. */
 export function levelStats(lv) {
-  const s = Store.get(), cs = D.courses.filter(c => c.level === lv.id);
+  const s = Store.get(), cs = D.courses.filter(c => c.level === lv.id && !c.optional);
   let lessons = 0, doneL = 0, mods = 0, doneM = 0, exams = 0, doneE = 0;
   for (const c of cs) {
     lessons += c.lessons.length; doneL += c.lessons.filter(n => s.done[n]).length;
