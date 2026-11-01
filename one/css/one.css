@@ -652,3 +652,22 @@ body { background: var(--bg); font-weight: 500; }
 .nm-rv { border-left: 3px solid #D9D0BA; } .nm-rv.ok { border-left-color: #3E8E63; } .nm-rv.bad { border-left-color: #A5412D; } .nm-qt2 { font-weight: 600; margin: 0; }
 .nm-ro { display: flex; gap: 10px; padding: 8px 10px; font-size: 14px; background: #FBF8F1; } .nm-ro.right { background: #E7F3EC; outline: 1px solid #3E8E63; } .nm-ro.wrong { background: #FBEAE5; outline: 1px solid #A5412D; }
 @media (max-width: 860px) { .nm-body { grid-template-columns: 1fr; padding: 16px; } .nm-side { position: static; } .nm-wr { grid-template-columns: 1fr 70px 40px; } .nm-prog { display: none; } .nm-pal { grid-template-columns: repeat(10, 1fr); } }
+
+/* admin dashboard */
+.ad-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.ad-tile{background:var(--card,#fff);border:1px solid var(--line,#E7E1D3);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:2px}
+.ad-tile b{font-family:var(--serif,Georgia,serif);font-size:30px;line-height:1.1;color:var(--navy,#0B1F3A)}
+.ad-tile span{font-size:13px;font-weight:600}.ad-tile small{font-size:12px;color:var(--mute,#6B7280)}
+.ad-spark{display:flex;align-items:flex-end;gap:3px;height:110px;padding:8px;background:var(--card,#fff);border:1px solid var(--line,#E7E1D3);border-radius:14px}
+.ad-spark i{flex:1;background:var(--gold,#C9A24B);border-radius:3px 3px 0 0;min-width:3px}
+.ad-tbl{overflow-x:auto}.ad-tbl table{width:100%;border-collapse:collapse;font-size:14px}
+.ad-tbl th,.ad-tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line,#E7E1D3);white-space:nowrap}
+.ad-key{padding:8px 0;border-bottom:1px solid var(--line,#E7E1D3);gap:12px;flex-wrap:wrap}
+.pill.bad{background:#F6DCD6;color:#8A2D1E}
+/* phone sign-in */
+.otp{letter-spacing:.5em;text-align:center;font-size:22px}
+.lg-alt{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* case study passage in the mock runner */
+.nm-case{background:#F4EFE0;border-left:4px solid var(--gold,#C9A24B);border-radius:10px;padding:14px 16px;margin-bottom:6px}
+.nm-case p{margin:6px 0 0;font-size:15px;line-height:1.55}
