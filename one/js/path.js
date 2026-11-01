@@ -32,7 +32,7 @@ export const nextLessonAfter = n => {
   const c = courseOf(n), i = c.lessons.indexOf(n);
   return c.lessons[i + 1] || null;
 };
-export const hrefFor = step => !step ? "#/courses" : step.kind === "lesson" ? `#/lesson/${step.n}` : step.kind === "module" ? `#/quiz/module/${step.course.id}/${step.module}` : `#/quiz/exam/${step.course.id}`;
+export const hrefFor = step => !step ? "#/courses" : step.kind === "lesson" ? `#/lesson/${step.n}` : step.kind === "module" ? `#/quiz/module/${step.course.id}/${step.module}` : `#/assess/${step.course.id}`;
 export const labelFor = step => {
   if (!step) return "Browse courses";
   const s = Store.get();

@@ -1,4 +1,4 @@
-/* UpperCrust One — settings. Everything you may need to change lives in this one file. */
+/* UpperCrust Academy — settings. Everything you may need to change lives in this one file. */
 
 /* Firebase project settings. These values are public identifiers, not secrets. */
 export const FIREBASE = {

@@ -18,7 +18,7 @@ function levelOf(L) {
 }
 function summarize(L) {
   const ft = firstTry(L), done = Object.keys(L.done || {}).length, certs = Object.values(L.creds || {});
-  return { id: L.id, name: L.name || "(no name)", email: L.email || "", kind: L.kind || (/@uppercrustwealth\.com$/i.test(L.email || "") ? "staff" : "public"), mobile: L.mobile || "", lessons: done, progress: pct(done, Object.keys(D.lessons).length), level: levelOf(L),
+  return { id: L.id, name: L.name || "(no name)", email: L.email || "", kind: L.kind || (/@uppercrustwealth\.com$/i.test(L.email || "") ? "staff" : "public"), mobile: L.mobile || "", door: L.door || "", prov: L.prov || "", joined: L.created || 0, lessons: done, progress: pct(done, Object.keys(D.lessons).length), level: levelOf(L),
     mastery: ft.length >= 5 ? pct(ft.filter(([, e]) => e.f === 1).length, ft.length) : null, streak: L.streak?.n || 0, certs: certs.length, updated: L.updated || 0,
     status: certs.length ? "Certified" : done >= 15 ? "Exam ready" : done ? "In progress" : "Not started" };
 }
@@ -59,18 +59,19 @@ export function team() {
           h("h3", { class: "h3", style: "margin-top:12px" }, "Question quality"),
           h("p", { class: "small" }, h("b", {}, plural(easy, "question")), " answered right by over 95%. Retire or make harder."),
           h("p", { class: "small" }, h("b", {}, plural(hard, "question")), " answered right by under 30%. Review the wording."))),
+      signups(rows),
       roster(rows),
       h("section", { class: "stack" },
         h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "All learners"), h("button", { class: "btn ghost", style: "height:40px", on: { click: () => {
-          const text = csv([["Name", "Email", "Mobile", "Type", "Level", "Lessons", "Progress %", "First-try accuracy %", "Streak", "Credentials", "Status", "Last active"], ...rows.map(r => [r.name, r.email, r.mobile, r.kind, r.level, r.lessons, r.progress, r.mastery ?? "", r.streak, r.certs, r.status, r.updated ? new Date(r.updated).toISOString() : ""])]);
+          const text = csv([["Name", "Email", "Mobile", "Type", "Door", "Signed up with", "Joined", "Level", "Lessons", "Progress %", "First-try accuracy %", "Streak", "Credentials", "Status", "Last active"], ...rows.map(r => [r.name, r.email, r.mobile, r.kind, r.door, r.prov, r.joined ? new Date(r.joined).toISOString() : "", r.level, r.lessons, r.progress, r.mastery ?? "", r.streak, r.certs, r.status, r.updated ? new Date(r.updated).toISOString() : ""])]);
           const a = h("a", { href: URL.createObjectURL(new Blob([text], { type: "text/csv" })), download: "uppercrust-one-team.csv" }); document.body.append(a); a.click(); a.remove(); toast("Exported");
         } } }, "Export CSV")),
         h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:760px" },
           h("thead", {}, h("tr", {}, ["Learner", "Level", "Progress", "Mastery", "Streak", "Last active", "Credential"].map(th))),
           h("tbody", {}, rows.map(r => h("tr", {}, [
-            h("td", { style: "padding:14px 8px;border-bottom:1px solid var(--line)" }, h("div", { style: "font-weight:500" }, r.name), h("div", { class: "tiny mute" }, r.email + (r.mobile ? " · " + r.mobile : "") + " · " + (r.kind === "staff" ? "Employee" : "Public"))),
+            h("td", { style: "padding:14px 8px;border-bottom:1px solid var(--line)" }, h("div", { style: "font-weight:500" }, r.name), h("div", { class: "tiny mute" }, r.email + (r.mobile ? " · " + r.mobile : "") + " · " + (r.kind === "staff" ? "Employee" : "Public") + (r.door ? " · " + r.door : "") + (r.prov ? " · via " + r.prov : "") + (r.joined ? " · joined " + new Date(r.joined).toLocaleDateString("en-IN") : ""))),
             ...[r.level, r.progress + "%", r.mastery == null ? "–" : r.mastery + "%", r.streak ? r.streak + " days" : "0", r.updated ? ago(r.updated) : "–", r.status].map(v => h("td", { style: "padding:14px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap" }, v))])))),
-          !rows.length ? h("p", { class: "mute", style: "padding:20px 0" }, "No learner has opened UpperCrust One yet.") : null)));
+          !rows.length ? h("p", { class: "mute", style: "padding:20px 0" }, "No learner has opened UpperCrust Academy yet.") : null)));
   }).catch(() => host.replaceChildren(h("p", { class: "error" }, "Could not load the team. Publish the new firestore.rules and check you are signed in as the administrator.")));
   return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Team learning"), h("p", { class: "lead mute" }, "Is learning happening, is it sticking, and where do people need help?")), host);
 }
@@ -94,4 +95,19 @@ function roster(rows) {
         h("td", { style: "padding:12px 8px;border-bottom:1px solid var(--line);font-weight:800;color:" + col(x.st) }, x.st),
         h("td", { style: "padding:12px 8px;border-bottom:1px solid var(--line);text-align:right" }, x.t ? ago(x.t) : "–"),
         h("td", { style: "padding:12px 8px;border-bottom:1px solid var(--line);text-align:right" }, x.progress + "%")))))));
+}
+
+/* New learners: who signed up, how, which door, and the details we hold. */
+function signups(rows) {
+  const pub = rows.filter(r => r.kind !== "staff").sort((a, b) => b.joined - a.joined), day = 86400e3, now = Date.now();
+  const n = ms => pub.filter(r => now - r.joined < ms).length;
+  const doors = {}; for (const r of pub) doors[r.door || "not chosen"] = (doors[r.door || "not chosen"] || 0) + 1;
+  const th2 = t => h("th", { style: "text-align:left;padding:10px 8px;border-bottom:1px solid var(--line2);font-weight:600;color:var(--mute);font-size:13px;white-space:nowrap" }, t);
+  return h("section", { class: "stack" }, h("h2", { class: "h2" }, "New learners"),
+    h("p", { class: "mute" }, `${pub.length} public learners · ${n(day)} today · ${n(7 * day)} this week · ` + Object.entries(doors).map(([k, v]) => `${k} ${v}`).join(", ")),
+    h("p", { class: "tiny mute" }, "Details we collect: name, email, optional mobile, door, sign-up method, join date and learning progress. Use Export CSV below for the full list."),
+    h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:720px" },
+      h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Door", "Via", "Lessons"].map(th2))),
+      h("tbody", {}, pub.slice(0, 25).map(r => h("tr", {}, [r.joined ? new Date(r.joined).toLocaleDateString("en-IN") : "–", r.name, r.email, r.mobile || "–", r.door || "–", r.prov || "–", r.lessons].map(v => h("td", { style: "padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap" }, v))))))),
+    !pub.length ? h("p", { class: "mute" }, "No public sign-ups yet.") : null);
 }

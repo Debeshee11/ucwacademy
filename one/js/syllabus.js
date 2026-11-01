@@ -35,7 +35,7 @@ export function syllabus(cid, tier) {
       h("h1", { class: "h1", style: "font-size:clamp(30px,5vw,44px)" }, `${T.name} syllabus: ${S.verb}`),
       h("p", { class: "lead" }, meta.hook || c.blurb),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, RULES.examQuestions), " questions"), h("span", {}, h("b", {}, pass + "%"), " to pass"), h("span", {}, h("b", {}, c.lessons.length), " lessons covered"), h("span", {}, h("b", {}, Math.min(examPool(c, tier).length, 99)), " in the question bank")),
-      h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/quiz/exam/${cid}/${tier}` }, mine ? "Retake the exam" : "Start the exam") : h("span", { class: "pill" }, tier === "b" ? "Opens after every module quiz" : `Opens after the ${tier === "i" ? "Beginner" : "Intermediate"} exam`))),
+      h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to the Assessment Centre") : h("span", { class: "pill" }, tier === "b" ? "Opens after every module quiz" : `Opens after the ${tier === "i" ? "Beginner" : "Intermediate"} exam`))),
     h("div", { class: "cols" },
       h("div", { class: "stack stack-l" }, tabs,
         h("section", { class: "stack" }, h("h2", { class: "h2" }, `${S.emoji} What this exam is about`), h("p", { class: "lead" }, T.blurb), h("p", {}, S.intro)),
@@ -46,5 +46,5 @@ export function syllabus(cid, tier) {
         tier !== "b" && cheat.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "🧾 One-page cheat sheet"), h("ul", { class: "facts" }, cheat.map(t => h("li", {}, t)))) : null),
       h("aside", {}, h("div", { class: "card stack" }, h("h3", { class: "h3" }, "How to prepare"),
         h("div", { class: "stack stack-s small" }, ["Read the study map once, slowly.", "Close it and say each “Remember” line from memory.", "Check the traps list. Most wrong answers are traps.", "Take the exam. A new set of questions is drawn each time."].map((t, i) => h("div", { class: "row-flex", style: "gap:10px;align-items:flex-start;flex-wrap:nowrap" }, h("b", {}, i + 1 + "."), h("span", {}, t)))),
-        open ? h("a", { class: "btn primary", href: `#/quiz/exam/${cid}/${tier}` }, "Start the exam") : null))));
+        open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to the Assessment Centre") : null))));
 }

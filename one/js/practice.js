@@ -23,7 +23,7 @@ export function practice() {
       row("#/quiz/fund", "Fund quiz", "Factsheets, returns, risk and tax across real funds"),
       row("#/quiz/market", "Market quiz", "Indices, economy and how markets work"),
       row("#/desk", "Market desk", "Headlines and stories to teach from"),
-      Store.isStaff() ? row("#/board", "Leaderboard", "See how the team is doing") : null,
+      row("#/board", "The Roll", "Standings across the Academy"),
       row("#/lab", "Client lab", `${D.sims.length} real client questions · ${labN} tried`),
       row("#/quiz/place", "Placement test", "24 questions to find your level")),
     renew.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Refreshers"),
@@ -33,7 +33,9 @@ export function practice() {
 /* ——— Market desk ——— */
 export function desk() {
   const { seg, list, note } = newsFeed();
-  return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Market Desk"), h("p", { class: "lead mute" }, "What matters. Why it matters. What to tell clients."), note),
+  return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Desk"), h("p", { class: "lead mute" }, "What matters. Why it matters. What to tell clients."), note),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Tools"), h("div", { class: "divide" },
+      row("#/funds", "Fund library", "Every mutual fund: returns, risk, holdings"), row("#/indices", "Index library", "All NSE indices"), row("#/practice", "Practice", "Daily five, revision, fund and market quizzes"), row("#/lab", "Client lab", "Real client questions and model answers"), row("#/board", "The Roll", "Standings across the Academy"))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Teach from the story"), h("div", { class: "divide" }, stories(5).map(storyCard))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), seg, list));
 }

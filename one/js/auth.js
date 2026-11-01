@@ -4,8 +4,9 @@ import { auth } from "./fb.js";
 import { h, $ } from "./dom.js";
 import { D } from "./data.js";
 import * as Store from "./store.js";
+import { doorPicker } from "./academy.js";
 
-const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/logo-uppercrust.png", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "one" }, "One"));
+const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "acad" }, "Academy"));
 
 /* Resolves with the signed-in user. Resolves at once when a session is restored. */
 export function start() {
@@ -92,7 +93,7 @@ function mount(a, startMsg) {
         const [fe, em] = field("re", "Email", { type: "text", inputmode: "email", autocomplete: "email", autocapitalize: "off", spellcheck: "false", placeholder: "you@example.com" });
         const [fm, mo] = field("rm", "Mobile number (optional)", { type: "tel", inputmode: "numeric", autocomplete: "tel-national", placeholder: "10-digit mobile number", maxlength: "18" });
         const [fp, pw] = pwField("rp", "Create a password", { autocomplete: "new-password", placeholder: "At least 6 characters" });
-        const fine = h("p", { class: "tiny mute" }, "By creating an account you agree to learn for education only. Nothing here is investment advice.");
+        const fine = h("p", { class: "tiny mute" }, "We store your name, email, optional mobile number, your door and your learning progress to run your account. Learning content is for education only, not investment advice.");
         fields = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
           ev.preventDefault(); if (!a) return;
           const name = nm.value.trim(), raw = mo.value.replace(/[\s-]/g, ""), mob = raw.replace(/^(\+91|91|0)(?=\d{10}$)/, ""), mail = em.value.trim().toLowerCase();
@@ -138,7 +139,7 @@ function mount(a, startMsg) {
     paint();
 
     const side = h("aside", { class: "lg-side", "aria-hidden": "false" },
-      h("div", { class: "lg-mark" }, h("span", { class: "lg-crest" }, "U"), h("span", {}, "UpperCrust ", h("em", {}, "Academy"))),
+      h("div", { class: "lg-mark" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "lg-acad" }, "Academy")),
       h("div", { class: "lg-pitch" },
         h("p", { class: "lg-eyebrow" }, "The Wealth Company"),
         h("h2", { class: "lg-big" }, "Money knowledge,", h("br"), h("em", {}, "for every household.")),
@@ -148,7 +149,7 @@ function mount(a, startMsg) {
           h("li", {}, h("b", {}, "Built for you."), " Students, homemakers, teachers, professionals, retirees."))),
       h("p", { class: "lg-foot" }, "For education only. Not investment advice."));
     document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" },
-      h("div", { class: "lg-top" }, h("img", { src: "assets/logo-uppercrust.png", alt: "UpperCrust, The Wealth Company" })), form))));
+      h("div", { class: "lg-top" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" })), form))));
   });
 }
 
@@ -160,19 +161,25 @@ export async function signOut() {
 /* First visit: ask what to call the learner and where to start. Resolves with "place" when they want a placement test. */
 export function welcome() {
   return new Promise(resolve => {
-    let step = Store.get().name ? 1 : 0, choice = null;
-    const box = h("div", { class: "gate-card stack stack-l" });
-    const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust One" }, box);
+    const staff = Store.isStaff();
+    let step = Store.get().name ? 1 : 0, choice = null, door = Store.get().door || null;
+    const box = h("div", { class: "gate-card stack stack-l wide" });
+    const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "given-name", id: "nm", placeholder: "First name" });
+    const logo = h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust", style: "height:34px;margin:0 auto" });
 
     function paint() {
       box.replaceChildren();
       if (step === 0) {
-        box.append(brand(),
+        box.append(logo,
           h("div", {}, h("h1", { class: "h1" }, "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, "What should we call you?")),
           h("div", { class: "field" }, h("label", { for: "nm" }, "Your name"), name),
           h("button", { class: "btn primary block", on: { click: () => { if (!name.value.trim()) return name.focus(); Store.setName(name.value); step = 1; paint(); } } }, "Continue"));
         name.focus();
+      } else if (!staff) {
+        const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); scrim.remove(); resolve(null); } } }, "Open my Academy");
+        box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which door fits you best? It sets where you start and the examples you see. You can change it any time.")),
+          doorPicker(door, id => { door = id; go.disabled = false; }), go);
       } else {
         const opts = [
           ["foundation", "I'm new to this", "Start with the basics. Best if you joined recently."],

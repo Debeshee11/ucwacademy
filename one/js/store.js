@@ -4,7 +4,7 @@ import { db } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
 
 const blank = () => ({
-  v: 1, name: "", mobile: "", kind: "", onb: 0, lang: "en", start: null,
+  v: 1, name: "", mobile: "", kind: "", door: "", prov: "", consent: 0, show: 1, onb: 0, lang: "en", start: null,
   done: {},            /* lesson number -> time completed */
   part: {},            /* lesson number -> part last reached */
   q: {},               /* question id -> { b: box 0-4, d: due time, n: tries, r: right, f: first try right 1/0 } */
@@ -43,6 +43,9 @@ export async function init(user) {
     } catch (e) { console.warn("Could not read progress", e); }
   }
   if (!state.kind) state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
+  const pid = user.providerData?.[0]?.providerId || "";
+  state.prov = pid === "google.com" ? "google" : pid === "password" ? "email" : (pid || state.prov || "");
+  if (!state.consent) state.consent = Date.now();
   emit();
 }
 
@@ -54,7 +57,7 @@ function persist() {
 export async function flush() {
   clearTimeout(timer); timer = null;
   const d = db(); if (!d || !uid) return;
-  try { await d.doc("learners/" + uid).set({ ...JSON.parse(JSON.stringify(state)), email }); warned = false; await writeBoard(d); }
+  try { await d.doc("learners/" + uid).set({ ...JSON.parse(JSON.stringify(state)), email }); warned = false; await writeBoard(d); await writeRoll(d); }
   catch (e) { console.warn("Could not save progress", e); if (!warned) { warned = true; document.dispatchEvent(new CustomEvent("one:syncerror")); } }
 }
 /* Employees only: a small public-to-staff scoreboard record, board/<uid>. */
@@ -62,6 +65,22 @@ async function writeBoard(d) {
   if (!email.endsWith(STAFF_DOMAIN) || !state.name) return;
   let wk = 0; for (let i = 0; i < 7; i++) wk += state.act[isoDay(new Date(Date.now() - i * dayMs))]?.l || 0;
   try { await d.doc("board/" + uid).set({ name: state.name, email, xp: xp(), wk, streak: state.streak?.n || 0, lessons: Object.keys(state.done).length, updated: Date.now() }); } catch (e) { console.warn("board", e); }
+}
+/* The Roll: every learner who has not opted out. No email, first name and last initial only. */
+async function writeRoll(d) {
+  if (!state.name) return;
+  try {
+    if (state.show === 0) { await d.doc("roll/" + uid).delete(); return; }
+    const parts = state.name.trim().split(/\s+/), nm = parts.length > 1 ? parts[0] + " " + parts[parts.length - 1][0].toUpperCase() + "." : parts[0];
+    let wk = 0; for (let i = 0; i < 7; i++) wk += state.act[isoDay(new Date(Date.now() - i * dayMs))]?.l || 0;
+    const seals = Object.entries(state.quiz).filter(([k, v]) => /^x[23]?:/.test(k) && v.passed).length;
+    await d.doc("roll/" + uid).set({ name: nm.slice(0, 40), door: state.door || "", kind: state.kind || "public", xp: xp(), wk, streak: state.streak?.n || 0, lessons: Object.keys(state.done).length, seals, updated: Date.now() });
+  } catch (e) { console.warn("roll", e); }
+}
+export async function loadRoll() {
+  const d = db(); if (!d) throw new Error("offline");
+  const snap = await d.collection("roll").get();
+  return snap.docs.map(x => ({ id: x.id, ...x.data() }));
 }
 export async function loadBoard() {
   const d = db(); if (!d) throw new Error("offline");
@@ -141,6 +160,8 @@ export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().
 export const setOnboarded = () => mutate(s => { s.onb = 1; });
 export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });
+export const setDoor = id => mutate(s => { s.door = id; });
+export const setShow = on => mutate(s => { s.show = on ? 1 : 0; });
 export const setStart = lv => mutate(s => { s.start = lv; });
 
 /* ——— credentials ——— */

@@ -1,4 +1,4 @@
-/* UpperCrust One: boot and routes. */
+/* UpperCrust Academy: boot and routes. */
 import { h, toast, clear } from "./dom.js";
 import { loadData, loadTx } from "./data.js";
 import * as Store from "./store.js";
@@ -7,6 +7,7 @@ import { frame, isAdmin, notFound } from "./ui.js";
 import { renderLesson } from "./lesson.js";
 import * as Q from "./quizzes.js";
 import * as Home from "./home.js";
+import * as Ac from "./academy.js";
 import * as Syl from "./syllabus.js";
 import * as P from "./practice.js";
 import * as C from "./credview.js";
@@ -22,19 +23,20 @@ document.body.prepend(skip);
 
 /* route table: [pattern, view, nav id, title, focus?] */
 const ROUTES = [
-  [/^$/, () => Home.home(), "home", "Home"],
-  [/^courses$/, () => Home.courses(), "courses", "Courses"],
+  [/^$/, () => Ac.today(), "home", "Today"],
+  [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Assessment Centre"],
+  [/^courses$/, () => Home.courses(), "courses", "The Map"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
-  [/^board$/, () => board(), "me", "Leaderboard"],
-  [/^funds$/, () => Lib.funds(), "library", "Funds"],
-  [/^fund\/([\w-]+)$/, id => Lib.fund(id), "library", "Fund"],
-  [/^indices$/, () => Lib.indices(), "library", "Indices"],
-  [/^index\/([\w-]+)$/, id => Lib.index(id), "library", "Index"],
-  [/^practice$/, () => P.practice(), "practice", "Practice"],
+  [/^board$/, () => board(), "me", "The Roll"],
+  [/^funds$/, () => Lib.funds(), "desk", "Funds"],
+  [/^fund\/([\w-]+)$/, id => Lib.fund(id), "desk", "Fund"],
+  [/^indices$/, () => Lib.indices(), "desk", "Indices"],
+  [/^index\/([\w-]+)$/, id => Lib.index(id), "desk", "Index"],
+  [/^practice$/, () => P.practice(), "desk", "Practice"],
   [/^desk$/, () => P.desk(), "desk", "Desk"],
-  [/^lab$/, () => P.lab(), "practice", "Client lab"],
-  [/^lab\/([\w-]+)$/, id => P.labScenario(id), "practice", "Client lab"],
+  [/^lab$/, () => P.lab(), "desk", "Client lab"],
+  [/^lab\/([\w-]+)$/, id => P.labScenario(id), "desk", "Client lab"],
   [/^me$/, () => C.me(), "me", "Credentials"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
@@ -59,7 +61,7 @@ function route() {
   for (const [re, view, nav, title, focus] of ROUTES) {
     const m = path.match(re);
     if (!m) continue;
-    document.title = `${title} · UpperCrust One`;
+    document.title = `${title} · UpperCrust Academy`;
     ui.show(!focus); ui.active(nav);
     try {
       const out = view(...m.slice(1));
@@ -77,7 +79,7 @@ function route() {
 async function boot() {
   const pub = location.hash.match(/^#\/verify\/([\w-]+)$/);
   if (pub) {
-    document.title = "Verify · UpperCrust One";
+    document.title = "Verify · UpperCrust Academy";
     root.append(C.verify(pub[1]));
     addEventListener("hashchange", () => location.reload());
     return;
@@ -99,7 +101,7 @@ async function boot() {
     const r = await Auth.welcome();
     Store.setOnboarded();
     if (r === "place") location.hash = "#/quiz/place";
-  }
+  } else if (!Store.isStaff() && !Store.get().door) { await Auth.welcome(); }
   ui = frame(route);
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);

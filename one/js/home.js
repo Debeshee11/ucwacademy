@@ -53,7 +53,7 @@ export function home() {
   const ready = p.examReady, isExam = step?.kind === "exam";
   trail.push(h("div", { class: "trail" }, stepEl(0, cred
     ? h("a", { class: "node gold", href: `#/cert/${cred.id}`, "aria-label": "Certificate" }, icon("trophy"))
-    : ready ? h("a", { class: "node gold" + (isExam ? " now" : ""), href: `#/quiz/exam/${c.id}`, "aria-label": "Beginner exam" }, icon("trophy"))
+    : ready ? h("a", { class: "node gold" + (isExam ? " now" : ""), href: `#/assess/${c.id}`, "aria-label": "Beginner exam" }, icon("trophy"))
       : h("button", { class: "node lock", "aria-label": "Beginner exam, locked", on: { click: () => toast("Pass every module quiz first") } }, icon("lock")),
     cred ? "Your certificate" : "Beginner exam", isExam ? "START" : null, c.level, cred ? "Earned" : "20 questions · 80% to pass")));
 
@@ -115,10 +115,11 @@ export function courses() {
     const started = D.courses.filter(c => Store.courseProgress(c).done > 0 && !Creds.find("course", c.id));
     cont.replaceChildren(); cont.hidden = !started.length || !!f.text || f.level !== "all";
     if (!cont.hidden) cont.append(h("h2", { class: "h2" }, "Continue learning"), h("div", { class: "grid3" }, started.map(card)));
-    const secs = D.sections.map(sc => [sc, D.courses.filter(c => c.sec === sc.id && match(c))]).filter(([, a]) => a.length);
+    const open = !f.text && f.level === "all";
+    const secs = D.sections.map(sc => [sc, D.courses.filter(c => c.sec === sc.id && match(c))]).filter(([sc, a]) => a.length || (open && sc.id !== "idx"));
     list.replaceChildren(...(secs.length ? secs.map(([sc, a]) => h("section", { class: "stack" },
       h("div", { class: "sec-h" }, h("h2", { class: "h2" }, sc.name), h("p", { class: "small mute" }, `${a.length} ${a.length === 1 ? "course" : "courses"} · ${sc.blurb}`)),
-      h("div", { class: "grid3" }, a.map(card)))) : [h("p", { class: "mute" }, "Nothing matches. Try a different word.")]));
+      a.length ? h("div", { class: "grid3" }, a.map(card)) : h("div", { class: "card tint soon" }, h("b", {}, "Opening soon"), h("p", { class: "small mute" }, "These lessons are being written and reviewed by practitioners. They open in the next release.")))) : [h("p", { class: "mute" }, "Nothing matches. Try a different word.")]));
     if (!f.text && f.level === "all") list.append(h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, "Practice with real clients")), h("div", { class: "grid3" }, labCard())));
   }
   function paint() {
@@ -130,7 +131,7 @@ export function courses() {
   }
   paint();
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead" }, `${D.courses.length} courses, grouped by topic. Every course has a level (Foundation, Practitioner or Expert) and three exams with a syllabus you can read first.`)),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "The Map"), h("p", { class: "lead" }, `${D.courses.length} courses across six realms of money: Earn, Keep, Protect, Grow, Borrow and Pass on. Exams live in the Assessment Centre.`)),
     strip, body);
 }
 
@@ -167,14 +168,11 @@ export function coursePage(id) {
   const quizRow = (mi, q, open) => open || q?.passed
     ? h("a", { class: "list-row", href: `#/quiz/module/${id}/${mi}` }, checkMark(q?.passed ? "done" : "now"), h("div", { class: "grow" }, h("div", { class: "list-title" }, `Module ${mi + 1} quiz`), h("div", { class: "small mute" }, q ? `Best ${q.best}%${q.passed ? " · passed" : ""}` : "10 questions · 70% to pass")), chev())
     : h("div", { class: "list-row", style: "color:var(--mute)" }, h("span", { class: "check" }, icon("lock")), h("div", { class: "grow" }, h("div", {}, `Module ${mi + 1} quiz`), h("div", { class: "small" }, "Opens when every lesson in the module is done")));
-  const examBlock = () => h("div", { class: "exam-trio" }, TIERS().map(T => {
-    const r = p.exams[T.id], open = T.id === "b" ? p.examReady : !!p.exams[T.id === "i" ? "b" : "i"]?.passed;
-    return h("div", { class: "exam-card" + (open ? "" : " locked") },
-      h("span", { class: "eyebrow" }, `Exam ${TIERS().indexOf(T) + 1} · ${T.tag}`), h("b", {}, `${T.name} exam`), h("div", { class: "small mute" }, `20 questions · ${RULES.tierPass[T.id]}% to pass`),
-      r ? h("span", { class: "pill " + (r.passed ? "ok" : "") }, r.passed ? `Passed · best ${r.best}%` : `Best ${r.best}%`) : null,
-      h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/quiz/exam/${id}/${T.id}` }, r?.passed ? "Retake" : "Start") : h("span", { class: "small mute" }, icon("lock", 16), T.id === "b" ? " After module quizzes" : ` After ${T.id === "i" ? "Beginner" : "Intermediate"}`),
-        h("a", { class: "btn ghost", href: `#/syllabus/${id}/${T.id}` }, "Syllabus")));
-  }));
+  const examBlock = () => h("div", { class: "card stack as-link" },
+    h("div", { class: "eyebrow" }, "Assessment Centre"), h("h3", { class: "h3" }, "Three exams, one place"),
+    h("p", { class: "small mute" }, "Beginner, Intermediate and Hard. 20 questions each, with a syllabus you can read first."),
+    h("div", { class: "row-flex", style: "gap:8px;flex-wrap:wrap" }, TIERS().map(T => h("span", { class: "pill " + (p.exams[T.id]?.passed ? "ok" : "") }, `${T.name}${p.exams[T.id]?.passed ? " · passed" : ""}`))),
+    h("a", { class: "btn primary", href: `#/assess/${id}` }, p.examReady ? "Check readiness" : "See the exams"));
   function paint() {
     strip.replaceChildren(...TABS.map(([k, t]) => h("button", { role: "tab", "aria-selected": String(tab === k), on: { click: () => { tab = k; paint(); } } }, t)));
     body.replaceChildren();

@@ -1,4 +1,5 @@
 /* Credentials list, the certificate itself, and public verification. */
+import { ledger, settingsCard } from "./academy.js";
 import { ORG } from "./config.js";
 import { h, icon, fmtDate, toast, plural, pct } from "./dom.js";
 import { D, level, course } from "./data.js";
@@ -27,8 +28,9 @@ export function me() {
   const s = Store.get(), creds = Creds.all(), n = Object.keys(s.done).length, m = Store.mastery();
   const open = D.courses.filter(c => !Creds.find("course", c.id));
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Credentials"),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Ledger"),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy"))),
+    ledger(),
     masteryMap(),
     h("section", { class: "stack" },
       creds.length ? h("div", { class: "divide" }, creds.map(c => h("div", { class: "list-row" },
@@ -38,6 +40,7 @@ export function me() {
         : h("div", { class: "card tint stack stack-s" }, h("h2", { class: "h2" }, "None yet."), h("p", {}, "Pass a course exam to earn your first certificate. Each one is valid for 12 months and can be verified by anyone with the link."))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Three kinds of credential"),
       h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass each module quiz at 70%, then the Beginner exam at 80%. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
+    settingsCard(),
     open.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Still to earn"),
       h("div", { class: "divide" }, open.map(c => { const p = Store.courseProgress(c); return h("a", { class: "list-row", href: `#/course/${c.id}` },
         h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, c.title), bar(p.pct)), h("span", { class: "small mute" }, p.pct + "%")); })),
@@ -51,9 +54,9 @@ function qrNode(id) {
 }
 function sheet(c, extra) {
   const lv = level(c.level);
-  const line = c.kind === "pro" ? "has demonstrated mastery across every UpperCrust One course" : c.kind === "level" ? `has completed every ${lv.name} course` : "has passed the course exam for";
+  const line = c.kind === "pro" ? "has demonstrated mastery across every UpperCrust Academy course" : c.kind === "level" ? `has completed every ${lv.name} course` : "has passed the course exam for";
   return h("div", { class: "cert-sheet" }, h("div", { class: "cert-in" },
-    h("img", { src: "assets/logo-uppercrust.png", alt: ORG, style: "height:34px" }),
+    h("img", { src: "assets/logo-gold.svg", alt: ORG, style: "height:34px" }),
     h("div", { class: "eyebrow", style: "margin-top:36px;letter-spacing:.14em;text-transform:uppercase" }, Creds.kindLabel(c)),
     h("p", { class: "mute", style: "margin-top:18px" }, "This certifies that"),
     h("div", { class: "cert-name" }, c.name || Store.get().name || "Learner"),
@@ -62,7 +65,7 @@ function sheet(c, extra) {
     h("p", { class: "small mute", style: "margin-top:10px" }, `${Creds.levelLabel(c)} · Score ${c.score}%`),
     h("div", { class: "cert-foot" },
       h("div", { class: "sig", style: "text-align:left" }, "Issued ", fmtDate(c.issued), h("br"), "Valid until ", fmtDate(c.until)),
-      h("div", { class: "cert-seal", "aria-hidden": "true" }, "One"),
+      h("div", { class: "cert-seal", "aria-hidden": "true" }, "UC"),
       h("div", { style: "text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px" }, qrNode(c.id), h("div", { class: "tiny mute" }, "Scan to verify"), h("div", { class: "tiny mute" }, "ID " + c.id), h("div", { class: "sig", style: "margin-left:auto" }, ORG)))),
     extra);
 }
@@ -97,5 +100,5 @@ export function verify(id) {
       sheet(c));
   }).catch(() => box.replaceChildren(h("h1", { class: "h1" }, "Could not check."), h("p", { class: "lead" }, "The verification service is unreachable. Try again shortly.")));
   return h("main", { class: "wrap page stack stack-l", id: "main" },
-    h("a", { class: "brand", href: "./" }, h("img", { src: "assets/logo-uppercrust.png", alt: "UpperCrust" }), h("span", { class: "one" }, "One")), box);
+    h("a", { class: "brand", href: "./" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust" }), h("span", { class: "one" }, "One")), box);
 }

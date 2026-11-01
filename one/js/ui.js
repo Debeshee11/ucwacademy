@@ -6,11 +6,11 @@ import * as Store from "./store.js";
 import { signOut } from "./auth.js";
 
 export const NAV = [
-  ["#/", "Learn", "home", "home"],
-  ["#/courses", "Courses", "search", "courses"],
-  ["#/practice", "Practice", "bolt", "practice"],
-  ["#/funds", "Library", "book", "library"],
-  ["#/me", "Awards", "award", "me"]
+  ["#/", "Today", "home", "home"],
+  ["#/courses", "Map", "search", "courses"],
+  ["#/assess", "Assess", "trophy", "assess"],
+  ["#/desk", "Desk", "trend", "desk"],
+  ["#/me", "Ledger", "award", "me"]
 ];
 export const isAdmin = () => Store.userEmail() === ADMIN_EMAIL;
 
@@ -18,7 +18,7 @@ export function frame(onLang) {
   const nav = h("nav", { class: "nav", "aria-label": "Main" });
   const tabs = h("nav", { class: "tabs", "aria-label": "Main" });
   const menuHost = h("div", { class: "me" });
-  const brand = () => h("a", { class: "brand", href: "#/", "aria-label": "UpperCrust One home" }, h("img", { src: "assets/logo-uppercrust.png", alt: "UpperCrust" }), h("span", { class: "one" }, "One"));
+  const brand = () => h("a", { class: "brand", href: "#/", "aria-label": "UpperCrust Academy home" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust" }), h("span", { class: "acad" }, "Academy"));
   const side = h("aside", { class: "side" }, brand(), nav);
   const top = h("header", { class: "bar-top" }, brand(), menuHost);
   let open = false, active = "";
@@ -39,7 +39,7 @@ export function frame(onLang) {
       menuHost.append(h("div", { class: "menu", role: "menu", on: { click: ev => ev.stopPropagation() } },
         h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
         h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Quiz language", lang),
-        Store.isStaff() && h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
+        h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "The Roll"),
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
