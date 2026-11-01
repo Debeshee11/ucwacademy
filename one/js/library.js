@@ -79,7 +79,8 @@ export function funds() {
     chips.replaceChildren(...[["all", "All"], ...kinds.map(k => [k, k])].map(([id, t]) =>
       h("button", { class: "lib-chip", "aria-pressed": String(st.k === id), on: { click: () => { st.k = id; st.g = "all"; st.n = 60; paint(); } } }, t)));
     const inKind = groups.filter(g => st.k === "all" || (g.type || "Other") === st.k);
-    catSel.replaceChildren(h("option", { value: "all" }, "All categories (" + inKind.length + ")"), ...inKind.map(g => h("option", { value: g.id, selected: st.g === g.id }, t3(g.name, L) + " (" + g.funds.length + ")")));
+    catSel.replaceChildren(h("option", { value: "all" }, "All categories (" + inKind.length + ")"), ...inKind.map(g => h("option", { value: g.id }, t3(g.name, L) + " (" + g.funds.length + ")")));
+    catSel.value = inKind.some(g => g.id === st.g) ? st.g : (st.g = "all");
     const [, key, dir] = SORTS[st.sort];
     const ids = inKind.filter(g => st.g === "all" || g.id === st.g).flatMap(g => g.funds).filter(id => fundMeta(id))
       .filter(id => !st.q || ((fundMeta(id).name || "") + " " + (fundMeta(id).house || "") + " " + (fundMeta(id).category || "")).toLowerCase().includes(st.q))

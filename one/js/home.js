@@ -130,7 +130,7 @@ export function courses() {
   }
   paint();
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead" }, `${D.courses.length} courses. Each has three exams (Beginner, Intermediate, Hard) and a syllabus you can read first.`)),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead" }, `${D.courses.length} courses, grouped by topic. Every course has a level (Foundation, Practitioner or Expert) and three exams with a syllabus you can read first.`)),
     strip, body);
 }
 
@@ -170,7 +170,7 @@ export function coursePage(id) {
   const examBlock = () => h("div", { class: "exam-trio" }, TIERS().map(T => {
     const r = p.exams[T.id], open = T.id === "b" ? p.examReady : !!p.exams[T.id === "i" ? "b" : "i"]?.passed;
     return h("div", { class: "exam-card" + (open ? "" : " locked") },
-      h("span", { class: "eyebrow" }, T.tag), h("b", {}, `${T.name} exam`), h("div", { class: "small mute" }, `20 questions · ${RULES.tierPass[T.id]}% to pass`),
+      h("span", { class: "eyebrow" }, `Exam ${TIERS().indexOf(T) + 1} · ${T.tag}`), h("b", {}, `${T.name} exam`), h("div", { class: "small mute" }, `20 questions · ${RULES.tierPass[T.id]}% to pass`),
       r ? h("span", { class: "pill " + (r.passed ? "ok" : "") }, r.passed ? `Passed · best ${r.best}%` : `Best ${r.best}%`) : null,
       h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/quiz/exam/${id}/${T.id}` }, r?.passed ? "Retake" : "Start") : h("span", { class: "small mute" }, icon("lock", 16), T.id === "b" ? " After module quizzes" : ` After ${T.id === "i" ? "Beginner" : "Intermediate"}`),
         h("a", { class: "btn ghost", href: `#/syllabus/${id}/${T.id}` }, "Syllabus")));
