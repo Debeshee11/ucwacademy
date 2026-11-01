@@ -42,7 +42,7 @@ service cloud.firestore {
       allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
       allow list: if isAdmin();
       allow create, update: if request.auth != null && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(['v','name','mobile','kind','door','prov','consent','show','study','onb','lang','start','done','part','q','quiz','creds','lab','act','streak','last','created','updated','email'])
+        && request.resource.data.keys().hasOnly(['v','name','mobile','kind','door','prov','consent','show','study','nm','onb','lang','start','done','part','q','quiz','creds','lab','act','streak','last','created','updated','email'])
         && request.resource.data.email == request.auth.token.email.lower();
       allow delete: if isAdmin();
     }
