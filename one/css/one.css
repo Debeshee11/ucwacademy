@@ -373,3 +373,21 @@ a.card.link b[style*="1FA45B"]{color:#1FA45B}a.card.link b[style*="D43B3B"]{colo
 .exam-card.locked { opacity: .65; }
 .exam-card b { font: 900 18px var(--font); }
 .exam-card .row-flex { margin-top: 6px; }
+
+/* mobile hardening */
+html, body { max-width: 100%; overflow-x: clip; }
+body { touch-action: manipulation; }
+.cols > *, .lib-two > *, .stack, section, .card, .lib-panel, .lib-col { min-width: 0; }
+.utabs { max-width: 100%; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.utabs::-webkit-scrollbar, .lib-chips::-webkit-scrollbar { display: none; }
+@media (max-width: 760px) {
+  input, select, textarea { font-size: 16px; }
+  .lib-tools { flex-direction: column; align-items: stretch; }
+  .lib-tools > * { width: 100%; }
+  .lib-select { width: 100%; }
+  .lib-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; margin-inline: -18px; padding-inline: 18px; scrollbar-width: none; }
+  .lib-chip { flex: none; }
+  .lib-bar { flex-direction: column; align-items: stretch; gap: 8px; }
+  .hero .stats { gap: 6px 18px; }
+  .exam-card .row-flex { flex-wrap: wrap; }
+}
