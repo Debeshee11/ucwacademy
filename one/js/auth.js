@@ -34,6 +34,13 @@ const errMsg = e => {
 };
 
 const GOOGLE_G = '<svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>';
+/* Indian numbers: 10 digits starting 6-9. Abroad: + then 8 to 15 digits. Returns the number to store, or "". */
+export function cleanMobile(v) {
+  const t = String(v || "").replace(/[\s().-]/g, "");
+  if (/^\+\d{8,15}$/.test(t) && !/^\+91\d{10}$/.test(t)) return t;
+  const d = t.replace(/^(\+91|91|0)(?=\d{10}$)/, "");
+  return /^[6-9]\d{9}$/.test(d) ? d : "";
+}
 const html = s => { const d = document.createElement("span"); d.innerHTML = s; return d.firstChild; };
 
 function mount(a, startMsg) {
@@ -91,15 +98,15 @@ function mount(a, startMsg) {
       if (mode === "up") {
         const [fn, nm] = field("rn", "Full name", { type: "text", autocomplete: "name", placeholder: "Your full name" });
         const [fe, em] = field("re", "Email", { type: "text", inputmode: "email", autocomplete: "email", autocapitalize: "off", spellcheck: "false", placeholder: "you@example.com" });
-        const [fm, mo] = field("rm", "Mobile number (optional)", { type: "tel", inputmode: "numeric", autocomplete: "tel-national", placeholder: "10-digit mobile number", maxlength: "18" });
+        const [fm, mo] = field("rm", "Mobile number", { type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", maxlength: "20" });
         const [fp, pw] = pwField("rp", "Create a password", { autocomplete: "new-password", placeholder: "At least 6 characters" });
         const fine = h("p", { class: "tiny mute" }, "We store your name, email, optional mobile number, your door and your learning progress to run your account. Learning content is for education only, not investment advice.");
         fields = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
           ev.preventDefault(); if (!a) return;
-          const name = nm.value.trim(), raw = mo.value.replace(/[\s-]/g, ""), mob = raw.replace(/^(\+91|91|0)(?=\d{10}$)/, ""), mail = em.value.trim().toLowerCase();
+          const name = nm.value.trim(), mob = cleanMobile(mo.value), mail = em.value.trim().toLowerCase();
           if (name.length < 2) return fail("Enter your name.");
           if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) return fail("Enter a valid email.");
-          if (raw && !/^[6-9]\d{9}$/.test(mob)) return fail("Enter a valid 10-digit mobile number, or leave it empty.");
+          if (!mob) return fail("Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code.");
           if (mail.endsWith(STAFF_DOMAIN)) { mode = "staff"; startMsg = "Employees: sign in with your work email."; return paint(); }
           if (pw.value.length < 6) return fail("Password needs at least 6 characters.");
           btn.disabled = true; btn.textContent = "Creating…"; err.textContent = "";
@@ -107,7 +114,7 @@ function mount(a, startMsg) {
             await persist();
             const u = (await a.createUserWithEmailAndPassword(mail, pw.value)).user;
             try { await u.updateProfile({ displayName: name }); u.sendEmailVerification(); } catch {}
-            pending = { name, mobile: mob }; finish(u);
+            pending = { name, mobile: mob, fresh: true }; finish(u);
           } catch (e) { fail(errMsg(e)); }
         } } }, fn, fe, fm, fp, keepRow, err, btn, fine);
         setTimeout(() => nm.focus());
@@ -138,13 +145,16 @@ function mount(a, startMsg) {
     }
     paint();
 
+    const artEl = document.createElement("div"); artEl.className = "lg-art";
+    artEl.innerHTML = '<svg viewBox="0 0 420 300" aria-hidden="true">' + [0,1,2,3,4,5,6,7].map(i => { const ht = 30 + i * i * 3.2 + i * 14; return `<rect x="${40 + i * 44}" y="${250 - ht}" width="22" height="${ht}" rx="3" fill="#C9A24B" fill-opacity="${i > 5 ? 0.95 : 0.25 + i * 0.07}"/>`; }).join("") + '<path d="M30 230 C120 200 200 170 390 40" fill="none" stroke="#E6CF94" stroke-width="2" stroke-dasharray="2 7"/></svg>';
     const side = h("aside", { class: "lg-side", "aria-hidden": "false" },
+      artEl,
       h("div", { class: "lg-mark" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "lg-acad" }, "Academy")),
       h("div", { class: "lg-pitch" },
         h("p", { class: "lg-eyebrow" }, "The Wealth Company"),
         h("h2", { class: "lg-big" }, "Money knowledge,", h("br"), h("em", {}, "for every household.")),
         h("ul", { class: "lg-points" },
-          h("li", {}, h("b", {}, "Learn what matters."), " Earn, keep, protect, grow, borrow and pass on."),
+          h("li", {}, h("b", {}, "Learn what matters."), " Money basics, mutual funds, the stock market, NRI and more."),
           h("li", {}, h("b", {}, "Prove it."), " Exams and certificates anyone can verify."),
           h("li", {}, h("b", {}, "Built for you."), " Students, homemakers, teachers, professionals, retirees."))),
       h("p", { class: "lg-foot" }, "For education only. Not investment advice."));
@@ -162,37 +172,34 @@ export async function signOut() {
 export function welcome() {
   return new Promise(resolve => {
     const staff = Store.isStaff();
-    let step = Store.get().name ? 1 : 0, choice = null, door = Store.get().door || null;
+    let step = Store.get().name && Store.get().mobile ? 1 : 0, choice = null, door = Store.get().door || null;
     const box = h("div", { class: "gate-card stack stack-l wide" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
-    const name = h("input", { class: "input", type: "text", autocomplete: "given-name", id: "nm", placeholder: "First name" });
+    const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
     const logo = h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust", style: "height:34px;margin:0 auto" });
 
+    const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "" });
+    const perr = h("p", { class: "error", role: "alert" });
     function paint() {
       box.replaceChildren();
       if (step === 0) {
+        name.value = name.value || Store.get().name || "";
+        const need = true;
         box.append(logo,
-          h("div", {}, h("h1", { class: "h1" }, "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, "What should we call you?")),
-          h("div", { class: "field" }, h("label", { for: "nm" }, "Your name"), name),
-          h("button", { class: "btn primary block", on: { click: () => { if (!name.value.trim()) return name.focus(); Store.setName(name.value); step = 1; paint(); } } }, "Continue"));
+          h("div", {}, h("h1", { class: "h1" }, need ? "Complete your profile" : "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, need ? "Two quick details so we can set up your account and send your certificates." : "What should we call you?")),
+          h("div", { class: "field" }, h("label", { for: "nm" }, "Full name"), name),
+          need ? h("div", { class: "field" }, h("label", { for: "mb" }, "Mobile number"), mobile) : null,
+          perr,
+          h("button", { class: "btn primary block", on: { click: () => {
+            if (name.value.trim().length < 2) { perr.textContent = "Enter your name."; return name.focus(); }
+            let m = "";
+            if (need) { m = cleanMobile(mobile.value); if (!m) { perr.textContent = "Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code."; return mobile.focus(); } }
+            Store.setProfile({ name: name.value, mobile: m }); step = 1; paint(); } } }, "Continue"));
         name.focus();
-      } else if (!staff) {
-        const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); scrim.remove(); resolve(null); } } }, "Open my Academy");
-        box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which door fits you best? It sets where you start and the examples you see. You can change it any time.")),
-          doorPicker(door, id => { door = id; go.disabled = false; }), go);
       } else {
-        const opts = [
-          ["foundation", "I'm new to this", "Start with the basics. Best if you joined recently."],
-          ["practitioner", "I know the basics", "Go straight to markets, metals and allocation."],
-          ["expert", "I advise clients every day", "Jump to fund analysis and hard conversations."],
-          ["place", "Not sure", "Take a 24-question placement test. About 10 minutes."]
-        ];
-        const go = h("button", { class: "btn primary block", disabled: true, on: { click: () => { if (choice !== "place") Store.setStart(choice); scrim.remove(); resolve(choice === "place" ? "place" : null); } } }, "Start learning");
-        box.append(h("div", {}, h("h1", { class: "h1" }, `Nice to meet you, ${Store.get().name}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Where would you like to begin? You can change this any time.")),
-          h("div", { class: "stack stack-s" }, opts.map(([id, t, d]) => h("button", { class: "choice", "aria-pressed": "false", on: { click: ev => {
-            choice = id; box.querySelectorAll(".choice").forEach(b => b.setAttribute("aria-pressed", "false")); ev.currentTarget.setAttribute("aria-pressed", "true"); go.disabled = false; } } },
-            h("span", {}, h("b", { style: "display:block;font-weight:600" }, t), h("span", { class: "small mute" }, d))))),
-          go);
+        const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); scrim.remove(); resolve(null); } } }, "Open my academy");
+        box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? It sets the courses we recommend first and the examples you see. You can change it any time.")),
+          doorPicker(door, id => { door = id; go.disabled = false; }), go);
       }
     }
     paint();

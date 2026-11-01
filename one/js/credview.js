@@ -28,7 +28,7 @@ export function me() {
   const s = Store.get(), creds = Creds.all(), n = Object.keys(s.done).length, m = Store.mastery();
   const open = D.courses.filter(c => !Creds.find("course", c.id));
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Ledger"),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "My progress"),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy"))),
     ledger(),
     masteryMap(),
@@ -53,20 +53,32 @@ function qrNode(id) {
   return box;
 }
 function sheet(c, extra) {
-  const lv = level(c.level);
-  const line = c.kind === "pro" ? "has demonstrated mastery across every UpperCrust Academy course" : c.kind === "level" ? `has completed every ${lv.name} course` : "has passed the course exam for";
+  const lv = level(c.level), cr = c.kind === "course" && c.key ? course(c.key) : null;
+  const what = c.kind === "pro" ? "demonstrated mastery across the full UpperCrust Academy curriculum" : c.kind === "level" ? `completed every ${lv.name} course in the UpperCrust Academy curriculum` : "successfully completed the course and passed the Beginner assessment in";
+  const write = c.kind === "course"
+    ? `${cr ? cr.blurb + " " : ""}The holder completed every lesson and module quiz and passed the course assessment with a score of ${c.score}%, meeting the Academy’s standard for knowledge, accuracy and responsible communication.`
+    : `The holder met the Academy’s standard across every course in this programme, with an average assessment score of ${c.score}%.`;
+  const skills = cr ? skillsOf(cr).slice(0, 6) : [];
   return h("div", { class: "cert-sheet" }, h("div", { class: "cert-in" },
-    h("img", { src: "assets/logo-gold.svg", alt: ORG, style: "height:34px" }),
-    h("div", { class: "eyebrow", style: "margin-top:36px;letter-spacing:.14em;text-transform:uppercase" }, Creds.kindLabel(c)),
-    h("p", { class: "mute", style: "margin-top:18px" }, "This certifies that"),
+    h("div", { class: "cert-top" }, h("img", { src: "assets/logo-gold.svg", alt: ORG, style: "height:38px" }), h("div", { class: "cert-acad" }, "Academy")),
+    h("div", { class: "cert-rule" }),
+    h("div", { class: "cert-kind" }, Creds.kindLabel(c)),
+    h("p", { class: "cert-lead" }, "This is to certify that"),
     h("div", { class: "cert-name" }, c.name || Store.get().name || "Learner"),
-    h("p", { class: "mute", style: "margin-top:12px" }, line),
-    c.kind === "course" ? h("h2", { class: "serif", style: "font-size:34px;font-weight:400;margin-top:8px" }, c.title) : h("h2", { class: "serif", style: "font-size:34px;font-weight:400;margin-top:8px" }, c.title),
-    h("p", { class: "small mute", style: "margin-top:10px" }, `${Creds.levelLabel(c)} · Score ${c.score}%`),
+    h("p", { class: "cert-lead" }, `has ${what}`),
+    h("h2", { class: "cert-title" }, c.title),
+    h("p", { class: "cert-lv" }, `${Creds.levelLabel(c)} · Score ${c.score}%`),
+    h("p", { class: "cert-write" }, write),
+    skills.length ? h("div", { class: "cert-skills" }, h("b", {}, "Skills verified"), skills.join("  ·  ")) : null,
     h("div", { class: "cert-foot" },
-      h("div", { class: "sig", style: "text-align:left" }, "Issued ", fmtDate(c.issued), h("br"), "Valid until ", fmtDate(c.until)),
+      h("div", { class: "sig" }, h("div", { class: "sigline" }), h("b", {}, "Head of Learning"), h("span", {}, ORG + " Academy")),
       h("div", { class: "cert-seal", "aria-hidden": "true" }, "UC"),
-      h("div", { style: "text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px" }, qrNode(c.id), h("div", { class: "tiny mute" }, "Scan to verify"), h("div", { class: "tiny mute" }, "ID " + c.id), h("div", { class: "sig", style: "margin-left:auto" }, ORG)))),
+      h("div", { class: "sig" }, h("div", { class: "sigline" }), h("b", {}, "Programme Director"), h("span", {}, ORG))),
+    h("div", { class: "cert-meta" },
+      h("div", {}, h("span", {}, "Issued"), h("b", {}, fmtDate(c.issued)), h("span", {}, "Valid until"), h("b", {}, fmtDate(c.until))),
+      h("div", { style: "text-align:center" }, h("span", {}, "Credential ID"), h("b", {}, c.id)),
+      h("div", { style: "display:flex;gap:10px;align-items:center" }, h("div", { class: "tiny mute", style: "text-align:right" }, "Scan to verify", h("br"), "authenticity"), qrNode(c.id))),
+    h("p", { class: "cert-fine" }, `Issued by ${ORG} Academy, the learning arm of ${ORG}. Authenticity can be confirmed online using the credential ID or QR code. This certificate is educational and is not investment advice or a regulatory licence.`)),
     extra);
 }
 

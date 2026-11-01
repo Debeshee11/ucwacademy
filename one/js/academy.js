@@ -6,21 +6,24 @@ import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { nextUp, hrefFor, labelFor } from "./path.js";
 import { page, widePage, bar, notFound } from "./ui.js";
+import { cover } from "./art.js";
+import { newsFeed } from "./news.js";
 
 export const DOORS = [
-  { id: "student", name: "Student", who: "School to early career", hook: "First salary, first SIP", realms: ["keep", "earn", "grow"] },
-  { id: "homemaker", name: "Homemaker", who: "Runs the household money", hook: "Make the household a team", realms: ["keep", "protect", "grow"] },
-  { id: "teacher", name: "Teacher", who: "Educators and trainers", hook: "Teach money in your classroom", realms: ["keep", "grow", "pass"] },
-  { id: "salaried", name: "Salaried", who: "Early to mid career", hook: "Payslip to portfolio", realms: ["earn", "protect", "grow"] },
-  { id: "business", name: "Business owner", who: "Shop, practice or startup", hook: "Separate you from the business", realms: ["earn", "borrow", "protect"] },
-  { id: "retiree", name: "Retiree", who: "55 and above", hook: "Make savings last", realms: ["protect", "pass", "keep"] },
-  { id: "partner", name: "Partner", who: "Community leader or adviser", hook: "Host a Gurukul session", realms: ["grow", "pass", "keep"] },
-  { id: "global", name: "Global", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["pass", "grow", "keep"] }
+  { id: "student", name: "Student", who: "School to early career", hook: "First salary, first SIP", realms: ["basics", "mf"] },
+  { id: "homemaker", name: "Homemaker", who: "Runs the household money", hook: "Make the household a team", realms: ["basics", "mf"] },
+  { id: "teacher", name: "Teacher", who: "Educators and trainers", hook: "Teach money in your classroom", realms: ["basics", "mf", "teach"] },
+  { id: "salaried", name: "Working professional", who: "Early to mid career", hook: "Payslip to portfolio", realms: ["basics", "mf", "stocks"] },
+  { id: "business", name: "Business owner", who: "Shop, practice or startup", hook: "Separate you from the business", realms: ["basics", "assets", "mf"] },
+  { id: "retiree", name: "Retiree", who: "55 and above", hook: "Make savings last", realms: ["basics", "assets", "mf"] },
+  { id: "partner", name: "Partner", who: "Community leader or adviser", hook: "Host a Gurukul session", realms: ["mf", "stocks", "assets", "teach"] },
+  { id: "team", name: "UpperCrust team", who: "Employees and advisers", hook: "Learn alongside the firm", realms: ["mf", "stocks", "assets", "basics"], staff: true },
+  { id: "global", name: "Global", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["nri", "mf", "basics"] }
 ];
 export const doorOf = id => DOORS.find(d => d.id === id) || null;
-export const realms = () => D.sections.filter(s => s.id !== "idx");
+export const realms = () => D.sections;
 const realmName = id => D.sections.find(s => s.id === id)?.name || "";
-const core = () => D.courses.filter(c => !c.optional && c.sec !== "idx");
+const core = () => D.courses.filter(c => !c.optional);
 
 /* Rank titles on the Roll, named the way a firm names its people. */
 export const RANKS = [[0, "Observer"], [100, "Analyst"], [400, "Associate"], [1000, "Principal"], [2500, "Director"], [6000, "Partner"]];
@@ -41,7 +44,7 @@ export function pathCourses(doorId) {
 
 /* ——— choosing a Door ——— */
 export function doorPicker(current, onPick) {
-  return h("div", { class: "doors" }, DOORS.map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
+  return h("div", { class: "doors" }, DOORS.filter(d => !d.staff || Store.isStaff()).map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
     ev.currentTarget.parentElement.querySelectorAll(".door").forEach(b => b.setAttribute("aria-pressed", "false")); ev.currentTarget.setAttribute("aria-pressed", "true"); onPick(d.id); } } },
     h("b", {}, d.name), h("span", { class: "small mute" }, d.who), h("span", { class: "tiny door-hook" }, d.hook))));
 }
@@ -70,22 +73,22 @@ export function today() {
   return widePage(
     h("div", { class: "stack stack-s" },
       h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
-      h("p", { class: "mute" }, door ? h("span", {}, `Your door: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Choose your door in Ledger to personalise this page.")),
+      h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in My progress to personalise this page.")),
     h("div", { class: "cols" },
       h("div", { class: "stack stack-l" }, hero,
-        h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your path"),
+        h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recommended for you"),
           h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
-            return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Aware" : q.pct + "%")); })),
-          h("a", { class: "linkish", href: "#/courses" }, "See the whole Map"))),
+            return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
+          h("a", { class: "linkish", href: "#/courses" }, "Browse all courses"))),
       h("div", { class: "rail" },
-        h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today"),
+        h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today's goals"),
           h("div", { class: "divide" }, goals.map(g => h("a", { class: "list-row", href: g.href }, h("span", { class: "check " + (g.done ? "on" : "") }, g.done ? icon("check") : null), h("div", { class: "grow" }, h("div", { class: "list-title" }, g.t), h("div", { class: "tiny mute" }, g.sub)))))),
-        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Your Ledger"),
-          h("div", { class: "seal-row" }, [["Aware", seals.b], ["Capable", seals.i], ["Certified", seals.h]].map(([t, n]) => h("div", { class: "seal-mini" }, h("b", {}, n), h("span", { class: "tiny mute" }, t)))),
-          h("a", { class: "linkish", href: "#/me" }, "Open Ledger")),
-        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "The Roll"),
+        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "My progress"),
+          h("div", { class: "seal-row" }, [["Beginner", seals.b], ["Intermediate", seals.i], ["Hard", seals.h]].map(([t, n]) => h("div", { class: "seal-mini" }, h("b", {}, n), h("span", { class: "tiny mute" }, t + " exams")))),
+          h("a", { class: "linkish", href: "#/me" }, "Open My progress")),
+        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Leaderboard"),
           h("p", { class: "small" }, h("b", {}, rk.title), ` · ${xp} points`, rk.next ? ` · ${rk.need} to ${rk.next}` : ""),
-          h("a", { class: "linkish", href: "#/board" }, "See the standings")))));
+          h("a", { class: "linkish", href: "#/board" }, "See the leaderboard")))));
 }
 
 /* ——— Seals ——— */
@@ -95,25 +98,25 @@ export function sealTotals() { const t = { b: 0, i: 0, h: 0 }; for (const c of c
 export const sealCount = () => { const t = sealTotals(); return t.b + t.i + t.h; };
 
 export function ledger() {
-  const SEALS = [["b", "Aware", "Beginner exam"], ["i", "Capable", "Intermediate exam"], ["h", "Certified", "Hard exam"]];
+  const SEALS = [["b", "Beginner", "Beginner exam"], ["i", "Intermediate", "Intermediate exam"], ["h", "Hard", "Hard exam"]];
   return h("section", { class: "stack" },
-    h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, "Your Ledger"), h("p", { class: "small mute" }, "Six realms of money, three seals each. A seal is earned by passing that exam in the Assessment Centre.")),
+    h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, "Exams passed, by subject"), h("p", { class: "small mute" }, "Each course has three exams. Pass one in the Exams section and its box fills here.")),
     h("div", { class: "ledger", role: "table", "aria-label": "Ledger" },
-      h("div", { class: "lg-row head", role: "row" }, h("span", {}, "Realm"), SEALS.map(([, n, e]) => h("span", { title: e }, n))),
+      h("div", { class: "lg-row head", role: "row" }, h("span", {}, "Subject"), SEALS.map(([, n, e]) => h("span", { title: e }, n))),
       realms().map(r => { const cs = core().filter(c => c.sec === r.id);
         return h("div", { class: "lg-row", role: "row" }, h("span", { class: "lg-realm" }, h("b", {}, r.name), h("small", { class: "tiny mute" }, r.blurb)),
           cs.length ? SEALS.map(([k]) => { const n = cs.filter(c => passed(c.id, k)).length, full = n === cs.length;
             return h("span", { class: "lg-cell" + (full ? " full" : n ? " part" : ""), "aria-label": `${n} of ${cs.length}` }, full ? icon("check", 18) : n + "/" + cs.length); })
-            : h("span", { class: "lg-soon" }, "Opening soon")); })));
+            : h("span", { class: "lg-soon" }, "Courses opening soon")); })));
 }
 
 export function settingsCard() {
   const s = Store.get();
-  const show = h("input", { type: "checkbox", id: "showroll", checked: s.show !== 0, on: { change: ev => { Store.setShow(ev.target.checked); toast(ev.target.checked ? "You are on the Roll" : "You are hidden from the Roll"); } } });
-  return h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your door"),
-    h("p", { class: "small mute" }, "Your door sets your starting path and the examples you see. You can change it any time."),
-    doorPicker(s.door, id => { Store.setDoor(id); toast("Door updated"); }),
-    h("label", { class: "row-flex small", for: "showroll", style: "gap:10px;margin-top:6px" }, show, "Show my first name and last initial on The Roll"));
+  const show = h("input", { type: "checkbox", id: "showroll", checked: s.show !== 0, on: { change: ev => { Store.setShow(ev.target.checked); toast(ev.target.checked ? "You are on the leaderboard" : "You are hidden from the leaderboard"); } } });
+  return h("section", { class: "stack" }, h("h2", { class: "h2" }, "Who are you?"),
+    h("p", { class: "small mute" }, "This sets the courses we recommend first and the examples you see. You can change it any time."),
+    doorPicker(s.door, id => { Store.setDoor(id); toast("Saved"); }),
+    h("label", { class: "row-flex small", for: "showroll", style: "gap:10px;margin-top:6px" }, show, "Show my first name and last initial on the leaderboard"));
 }
 
 /* ——— Assessment Centre: the only place a scored exam starts ——— */
@@ -136,8 +139,52 @@ export function assess(cid) {
       h("div", { class: "as-tiers" }, TIERS().map(T => tierCell(c, T, p)))); };
   const focus = cid ? course(cid) : null;
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Assessment Centre"), h("p", { class: "lead mute" }, "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then sit the exam. Each pass adds a seal to your Ledger.")),
-    focus ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Selected course"), card(focus)) : null,
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Exams"), h("p", { class: "lead mute" }, "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then take the exam. Each course has a Beginner, Intermediate and Hard exam.")),
+    focus ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your course"), card(focus)) : null,
     realms().map(r => { const cs = list.filter(c => c.sec === r.id && c.id !== cid);
       return cs.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, r.name), h("p", { class: "small mute" }, r.blurb)), h("div", { class: "stack" }, cs.map(card))) : null; }));
+}
+
+/* ——— Courses: subject, then track, then course ——— */
+const levelTxt = c => level(c.level).name;
+export function courseCard(c) {
+  const p = Store.courseProgress(c), cred = Creds.find("course", c.id);
+  return h("a", { class: "ccard", href: `#/course/${c.id}` }, cover(c),
+    h("div", { class: "ccard-b" },
+      h("div", { class: "ccard-meta" }, h("span", { class: "lv-dot " + c.level }), levelTxt(c)),
+      h("h3", { class: "ccard-t" }, c.title),
+      h("p", { class: "tiny mute" }, `${c.lessons.length} lessons · 3 exams`),
+      h("div", { class: "ccard-f" }, cred ? h("span", { class: "pill ok" }, "Certified") : p.done ? h("div", { class: "stack stack-xs" }, bar(p.pct), h("span", { class: "tiny mute" }, `${p.pct}% done`)) : h("span", { class: "ccard-go" }, "Start course"))));
+}
+export function courses() {
+  const f = { text: "", level: "all", cat: "all" }, s = Store.get(), door = doorOf(s.door);
+  const host = h("div", { class: "stack stack-xl" });
+  const search = h("input", { class: "input", type: "search", placeholder: "Search courses: SIP, gold, SEBI, tax…", "aria-label": "Search courses", on: { input: ev => { f.text = ev.target.value.trim().toLowerCase(); paint(); } } });
+  const trackOf = (cat, id) => cat.tracks.find(t => t.id === id);
+  function paint() {
+    const match = c => (f.level === "all" || c.level === f.level) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
+    const chip = (v, cur, set, t) => h("button", { class: "chip", "aria-pressed": String(cur === v), on: { click: () => { set(v); paint(); } } }, t);
+    const filtering = f.text || f.level !== "all" || f.cat !== "all";
+    const rec = !filtering && door ? pathCourses(s.door).filter(c => !s.quiz["x:" + c.id]?.passed).slice(0, 3) : [];
+    const cats = D.sections.filter(c => f.cat === "all" || c.id === f.cat);
+    host.replaceChildren(...[
+      h("div", { class: "stack" },
+        h("div", { class: "search" }, icon("search"), search),
+        h("div", { class: "chips", role: "group", "aria-label": "Subject" }, chip("all", f.cat, v => (f.cat = v), "All subjects"), ...D.sections.map(c => chip(c.id, f.cat, v => (f.cat = v), c.name))),
+        h("div", { class: "chips", role: "group", "aria-label": "Level" }, chip("all", f.level, v => (f.level = v), "All levels"), ...D.levels.map(l => chip(l.id, f.level, v => (f.level = v), l.name)))),
+      rec.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, "Recommended for you"), h("p", { class: "small mute" }, `Picked for: ${door.name}`)), h("div", { class: "cgrid" }, rec.map(courseCard))) : null,
+      cats.map(cat => {
+        const blocks = cat.tracks.map(t => { const cs = D.courses.filter(c => c.sec === cat.id && c.track === t.id && match(c)); return [t, cs]; }).filter(([t, cs]) => cs.length || (t.soon && !filtering));
+        if (!blocks.length) return null;
+        const n = D.courses.filter(c => c.sec === cat.id).length;
+        return h("section", { class: "subject stack stack-l", id: "subj-" + cat.id },
+          h("div", { class: "subject-h" }, h("h2", { class: "subject-t" }, cat.name), h("p", { class: "mute" }, cat.blurb + (n ? ` · ${n} ${n === 1 ? "course" : "courses"}` : ""))),
+          blocks.map(([t, cs]) => h("div", { class: "track stack" },
+            h("div", { class: "track-h" }, h("h3", { class: "track-t" }, t.name), h("p", { class: "small mute" }, t.blurb)),
+            t.soon && !cs.length ? h("div", { class: "soon-card" }, h("b", {}, "Opening soon"), h("span", { class: "small mute" }, "Being written and reviewed by practitioners.")) : h("div", { class: "cgrid" }, cs.map(courseCard)))));
+      }).filter(Boolean),
+      filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
+  }
+  paint();
+  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Each subject is split into tracks, so you always know where to begin.`)), host);
 }

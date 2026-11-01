@@ -18,26 +18,27 @@ import * as Lib from "./library.js";
 import { team } from "./team.js";
 
 const root = document.getElementById("app");
+const splash = () => h("div", { class: "splash", role: "status", "aria-label": "Loading" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("div", { class: "splash-line" }, h("i")), h("p", { class: "splash-t" }, "Preparing your academy"));
 const skip = h("button", { style: "position:absolute;left:-999px;top:8px;background:#fff;border:1px solid #DDD9D0;padding:8px 14px;border-radius:8px;z-index:99", on: { focus: e => (e.target.style.left = "8px"), blur: e => (e.target.style.left = "-999px"), click: () => document.getElementById("main")?.focus() } }, "Skip to content");
 document.body.prepend(skip);
 
 /* route table: [pattern, view, nav id, title, focus?] */
 const ROUTES = [
-  [/^$/, () => Ac.today(), "home", "Today"],
-  [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Assessment Centre"],
-  [/^courses$/, () => Home.courses(), "courses", "The Map"],
+  [/^$/, () => Ac.today(), "home", "Home"],
+  [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Exams"],
+  [/^courses$/, () => Ac.courses(), "courses", "Courses"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
-  [/^board$/, () => board(), "me", "The Roll"],
+  [/^board$/, () => board(), "me", "Leaderboard"],
   [/^funds$/, () => Lib.funds(), "desk", "Funds"],
   [/^fund\/([\w-]+)$/, id => Lib.fund(id), "desk", "Fund"],
   [/^indices$/, () => Lib.indices(), "desk", "Indices"],
   [/^index\/([\w-]+)$/, id => Lib.index(id), "desk", "Index"],
   [/^practice$/, () => P.practice(), "desk", "Practice"],
-  [/^desk$/, () => P.desk(), "desk", "Desk"],
+  [/^desk$/, () => P.desk(), "desk", "Markets"],
   [/^lab$/, () => P.lab(), "desk", "Client lab"],
   [/^lab\/([\w-]+)$/, id => P.labScenario(id), "desk", "Client lab"],
-  [/^me$/, () => C.me(), "me", "Credentials"],
+  [/^me$/, () => C.me(), "me", "My progress"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
@@ -85,7 +86,7 @@ async function boot() {
     return;
   }
   const user = await Auth.start();
-  root.replaceChildren(h("main", { class: "wrap page" }, h("p", { class: "mute" }, "Loading your courses…")));
+  root.replaceChildren(splash());
   try {
     await Promise.all([loadData(), Store.init(user)]);
     await loadLive();
@@ -101,7 +102,7 @@ async function boot() {
     const r = await Auth.welcome();
     Store.setOnboarded();
     if (r === "place") location.hash = "#/quiz/place";
-  } else if (!Store.isStaff() && !Store.get().door) { await Auth.welcome(); }
+  } else if ((!Store.get().door || !Store.get().mobile || !Store.get().name)) { await Auth.welcome(); }
   ui = frame(route);
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);

@@ -3,7 +3,7 @@ import { RULES } from "./config.js";
 import { h, icon } from "./dom.js";
 import { D, course, lesson, level, TIERS, examMeta, examPool } from "./data.js";
 import * as Store from "./store.js";
-import { widePage, notFound, levelTag } from "./ui.js";
+import { widePage, notFound, levelTag, bar } from "./ui.js";
 
 const STYLE = {
   b: { emoji: "🌱", verb: "Know it", intro: "Words, ideas and rules. If you can say each line below in your own words, you are ready.", pts: l => l.remember || [], ptsTitle: "Remember" },
@@ -16,15 +16,24 @@ export function syllabus(cid, tier) {
   if (!c || !T) return notFound("That syllabus does not exist.");
   const S = STYLE[tier], meta = examMeta(cid), s = Store.get(), P = Store.courseProgress(c);
   const open = tier === "b" ? P.examReady : !!P.exams[tier === "i" ? "b" : "i"]?.passed, mine = P.exams[tier], pass = RULES.tierPass[tier];
-  const lessonCard = n => {
-    const l = lesson(n), pts = S.pts(l);
-    return h("div", { class: "card stack stack-s syl-l" },
-      h("div", { class: "row-flex between" }, h("h3", { class: "h3" }, l.title), s.done[n] ? h("span", { class: "pill ok" }, "Read") : h("a", { class: "small", href: `#/lesson/${n}` }, "Read lesson")),
-      tier === "h" && l.client ? h("div", { class: "stack stack-xs" },
-        h("div", { class: "eyebrow" }, "The client says"), h("p", { class: "syl-q" }, l.client.quote), l.client.context ? h("p", { class: "small mute" }, l.client.context) : null,
-        l.talk ? h("div", { class: "eyebrow", style: "margin-top:6px" }, "A strong answer sounds like") : null, l.talk ? h("p", {}, l.talk) : null) : null,
-      pts.length ? h("div", { class: "stack stack-xs" }, h("div", { class: "eyebrow" }, S.ptsTitle), h("ul", { class: "facts" }, pts.map(t => h("li", {}, t)))) : null,
-      tier === "h" && !l.client ? h("ul", { class: "facts" }, (l.concept || []).slice(0, 3).map(t => h("li", {}, t))) : null);
+  const study = s.study || {}, key = n => `${cid}:${tier}:${n}`, all = c.lessons;
+  const doneN = all.filter(n => study[key(n)]).length;
+  const meter = h("div", { class: "syl-meter" }, h("div", { class: "syl-meter-t" }, h("b", {}, `${doneN} of ${all.length} lessons studied`), h("span", {}, doneN === all.length ? "You are ready. Take the exam." : "Tick each lesson once you can explain it aloud.")), bar(all.length ? doneN / all.length * 100 : 0));
+  const lessonCard = (n, i) => {
+    const l = lesson(n), pts = S.pts(l), on = !!study[key(n)];
+    const det = h("details", { class: "syl-d" + (on ? " is-done" : "") },
+      h("summary", {}, h("span", { class: "syl-n" }, String(i + 1).padStart(2, "0")), h("span", { class: "syl-st" }, l.title), on ? h("span", { class: "pill ok" }, "Studied") : null),
+      h("div", { class: "syl-body stack stack-s" },
+        l.concept?.[0] && tier !== "i" ? h("p", { class: "lead" }, l.concept[0]) : null,
+        tier === "h" && l.client ? h("div", { class: "stack stack-xs" },
+          h("div", { class: "eyebrow" }, "The client says"), h("p", { class: "syl-q" }, l.client.quote), l.client.context ? h("p", { class: "small mute" }, l.client.context) : null,
+          l.talk ? h("div", { class: "eyebrow", style: "margin-top:6px" }, "A strong answer sounds like") : null, l.talk ? h("p", {}, l.talk) : null) : null,
+        pts.length ? h("div", { class: "stack stack-xs" }, h("div", { class: "eyebrow" }, S.ptsTitle), h("ul", { class: "facts" }, pts.map(t => h("li", {}, t)))) : null,
+        tier === "h" && !l.client ? h("ul", { class: "facts" }, (l.concept || []).slice(0, 3).map(t => h("li", {}, t))) : null,
+        h("div", { class: "row-flex between syl-act" },
+          h("label", { class: "syl-chk" }, h("input", { type: "checkbox", checked: on, on: { change: () => { Store.toggleStudy(key(n)); } } }), " I've studied this"),
+          s.done[n] ? h("span", { class: "pill ok" }, "Lesson read") : h("a", { class: "small", href: `#/lesson/${n}` }, "Read full lesson"))));
+    return det;
   };
   const cheat = [...new Set(c.lessons.flatMap(n => lesson(n).remember || []))];
   const tabs = h("div", { class: "utabs", role: "tablist" }, TIERS().map(t => h("a", { role: "tab", class: "syl-tab", "aria-selected": String(t.id === tier), href: `#/syllabus/${cid}/${t.id}`, style: "text-decoration:none" }, t.name)));
@@ -35,16 +44,16 @@ export function syllabus(cid, tier) {
       h("h1", { class: "h1", style: "font-size:clamp(30px,5vw,44px)" }, `${T.name} syllabus: ${S.verb}`),
       h("p", { class: "lead" }, meta.hook || c.blurb),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, RULES.examQuestions), " questions"), h("span", {}, h("b", {}, pass + "%"), " to pass"), h("span", {}, h("b", {}, c.lessons.length), " lessons covered"), h("span", {}, h("b", {}, Math.min(examPool(c, tier).length, 99)), " in the question bank")),
-      h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to the Assessment Centre") : h("span", { class: "pill" }, tier === "b" ? "Opens after every module quiz" : `Opens after the ${tier === "i" ? "Beginner" : "Intermediate"} exam`))),
+      h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to Exams") : h("span", { class: "pill" }, tier === "b" ? "Opens after every module quiz" : `Opens after the ${tier === "i" ? "Beginner" : "Intermediate"} exam`))),
     h("div", { class: "cols" },
       h("div", { class: "stack stack-l" }, tabs,
         h("section", { class: "stack" }, h("h2", { class: "h2" }, `${S.emoji} What this exam is about`), h("p", { class: "lead" }, T.blurb), h("p", {}, S.intro)),
-        h("section", { class: "stack" }, h("h2", { class: "h2" }, "🗺️ The study map"), ...c.modules.map((m, mi) => h("div", { class: "stack" },
-          h("div", { class: "eyebrow" }, `Module ${mi + 1}`), h("h3", { class: "h2" }, m.title), ...m.lessons.map(lessonCard)))),
+        h("section", { class: "stack" }, h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "🗺️ The study map"), h("span", { class: "row-flex no-print" }, h("button", { class: "btn ghost small", on: { click: ev => { const d = [...document.querySelectorAll(".syl-d")], o = d.some(x => !x.open); d.forEach(x => x.open = o); ev.currentTarget.textContent = o ? "Collapse all" : "Expand all"; } } }, "Expand all"), h("button", { class: "btn ghost small", on: { click: () => { document.querySelectorAll(".syl-d").forEach(x => x.open = true); print(); } } }, "Print or save as PDF"))), meter, ...c.modules.map((m, mi) => h("div", { class: "stack" },
+          h("div", { class: "eyebrow" }, `Module ${mi + 1}`), h("h3", { class: "h2" }, m.title), ...m.lessons.map(n => lessonCard(n, all.indexOf(n)))))),
         meta.fun?.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "💡 Did you know?"), ...meta.fun.map(t => h("div", { class: "card tint" }, h("p", {}, t)))) : null,
         meta.traps?.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "🪤 Traps the exam loves"), h("ul", { class: "facts" }, meta.traps.map(t => h("li", {}, t)))) : null,
         tier !== "b" && cheat.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "🧾 One-page cheat sheet"), h("ul", { class: "facts" }, cheat.map(t => h("li", {}, t)))) : null),
       h("aside", {}, h("div", { class: "card stack" }, h("h3", { class: "h3" }, "How to prepare"),
         h("div", { class: "stack stack-s small" }, ["Read the study map once, slowly.", "Close it and say each “Remember” line from memory.", "Check the traps list. Most wrong answers are traps.", "Take the exam. A new set of questions is drawn each time."].map((t, i) => h("div", { class: "row-flex", style: "gap:10px;align-items:flex-start;flex-wrap:nowrap" }, h("b", {}, i + 1 + "."), h("span", {}, t)))),
-        open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to the Assessment Centre") : null))));
+        open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to Exams") : null))));
 }
