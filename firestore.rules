@@ -42,7 +42,7 @@ service cloud.firestore {
       allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
       allow list: if isAdmin();
       allow create, update: if request.auth != null && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(['v','name','mobile','kind','onb','lang','start','done','part','q','quiz','creds','lab','act','streak','last','created','updated','email'])
+        && request.resource.data.keys().hasOnly(['v','name','mobile','kind','door','prov','consent','show','onb','lang','start','done','part','q','quiz','creds','lab','act','streak','last','created','updated','email'])
         && request.resource.data.email == request.auth.token.email.lower();
       allow delete: if isAdmin();
     }
@@ -54,6 +54,15 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['name','email','xp','wk','streak','lessons','updated'])
         && request.resource.data.email == request.auth.token.email.lower();
       allow delete: if isAdmin();
+    }
+
+    // The Roll: public standings. First name and last initial only, no email. Any signed-in learner reads; each writes only their own.
+    match /roll/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['name','door','kind','xp','wk','streak','lessons','seals','updated'])
+        && request.resource.data.name is string && request.resource.data.name.size() <= 40;
+      allow delete: if request.auth != null && (request.auth.uid == uid || isAdmin());
     }
 
     // Fund library data the admin maintains: extra funds and each month's portfolio holdings. Any signed-in learner can read.
