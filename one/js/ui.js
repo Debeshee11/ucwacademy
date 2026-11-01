@@ -6,11 +6,12 @@ import * as Store from "./store.js";
 import { signOut } from "./auth.js";
 
 export const NAV = [
-  ["#/", "Today", "home", "home"],
-  ["#/courses", "Map", "search", "courses"],
-  ["#/assess", "Assess", "trophy", "assess"],
-  ["#/desk", "Desk", "trend", "desk"],
-  ["#/me", "Ledger", "award", "me"]
+  ["#/", "Home", "home", "home"],
+  ["#/courses", "Courses", "book", "courses"],
+  ["#/nism", "NISM", "award", "nism"],
+  ["#/assess", "Exams", "trophy", "assess"],
+  ["#/desk", "Markets", "trend", "desk"],
+  ["#/me", "My progress", "award", "me"]
 ];
 export const isAdmin = () => Store.userEmail() === ADMIN_EMAIL;
 
@@ -39,7 +40,7 @@ export function frame(onLang) {
       menuHost.append(h("div", { class: "menu", role: "menu", on: { click: ev => ev.stopPropagation() } },
         h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
         h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Quiz language", lang),
-        h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "The Roll"),
+        h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));

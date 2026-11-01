@@ -4,7 +4,7 @@ import { db } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
 
 const blank = () => ({
-  v: 1, name: "", mobile: "", kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, onb: 0, lang: "en", start: null,
+  v: 1, name: "", mobile: "", kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
   done: {},            /* lesson number -> time completed */
   part: {},            /* lesson number -> part last reached */
   q: {},               /* question id -> { b: box 0-4, d: due time, n: tries, r: right, f: first try right 1/0 } */
@@ -162,6 +162,10 @@ export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });
 export const setDoor = id => mutate(s => { s.door = id; });
 export const toggleStudy = k => mutate(s => { s.study = s.study || {}; if (s.study[k]) delete s.study[k]; else s.study[k] = 1; });
+export const saveMock = (id, n, rec) => mutate(s => {
+  s.nm = s.nm || {}; const e = (s.nm[id] = s.nm[id] || {}); const r = (e[n] = e[n] || { att: 0, best: -999, hist: [] });
+  r.att++; r.best = Math.max(r.best, rec.s); r.last = rec; r.hist = [...r.hist.slice(-4), { s: rec.s, d: rec.d }];
+});
 export const setShow = on => mutate(s => { s.show = on ? 1 : 0; });
 export const setStart = lv => mutate(s => { s.start = lv; });
 

@@ -16,6 +16,7 @@ import { fundData } from "./funddata.js";
 import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
 import { team } from "./team.js";
+import * as Nism from "./nism.js";
 
 const root = document.getElementById("app");
 const splash = () => h("div", { class: "splash", role: "status", "aria-label": "Loading" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("div", { class: "splash-line" }, h("i")), h("p", { class: "splash-t" }, "Preparing your academy"));
@@ -38,6 +39,8 @@ const ROUTES = [
   [/^desk$/, () => P.desk(), "desk", "Markets"],
   [/^lab$/, () => P.lab(), "desk", "Client lab"],
   [/^lab\/([\w-]+)$/, id => P.labScenario(id), "desk", "Client lab"],
+  [/^nism$/, () => Nism.hub(), "nism", "NISM prep"],
+  [/^nism\/([\w-]+)$/, id => Nism.examPage(id), "nism", "NISM exam"],
   [/^me$/, () => C.me(), "me", "My progress"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
@@ -46,6 +49,7 @@ const ROUTES = [
   [/^quiz\/module\/([\w-]+)\/(\d+)$/, (c, i) => Q.moduleQuiz(root, c, +i), "", "Quiz", true],
   [/^quiz\/exam\/([\w-]+)(?:\/([bih]))?$/, (c, t) => Q.exam(root, c, t || "b"), "", "Exam", true],
   [/^syllabus\/([\w-]+)\/([bih])$/, (c, t) => Syl.syllabus(c, t), "courses", "Syllabus"],
+  [/^nism\/([\w-]+)\/mock\/(\d)$/, (id, n) => Nism.mock(root, id, +n, /review=1/.test(location.hash)), "", "NISM mock", true],
   [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true],
   [/^quiz\/daily$/, () => Q.daily(root), "", "Daily five", true],
   [/^quiz\/revise$/, () => Q.revise(root), "", "Revise", true],
