@@ -1,10 +1,10 @@
 /* Each learner's progress: one document, learners/<uid>, mirrored in localStorage so the app still works offline. */
 import { RULES, STAFF_DOMAIN } from "./config.js";
-import { db } from "./fb.js";
+import { db, fns } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
 
 const blank = () => ({
-  v: 1, name: "", mobile: "", kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
+  v: 1, name: "", mobile: "", mv: 0, kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
   done: {},            /* lesson number -> time completed */
   part: {},            /* lesson number -> part last reached */
   q: {},               /* question id -> { b: box 0-4, d: due time, n: tries, r: right, f: first try right 1/0 } */
@@ -42,6 +42,8 @@ export async function init(user) {
       if (snap.exists) { const remote = clean(JSON.parse(JSON.stringify(snap.data()))); if ((remote.updated || 0) >= (state.updated || 0)) state = remote; }
     } catch (e) { console.warn("Could not read progress", e); }
   }
+  state.nm = {};
+  if (d) { try { const r = await d.doc("nmres/" + uid).get(); if (r.exists) { const { lastAt, ...rest } = r.data(); state.nm = rest; } } catch (e) { console.warn("Could not read mock results", e); } }
   if (!state.kind) state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
   const pid = user.providerData?.[0]?.providerId || "";
   state.prov = pid === "google.com" ? "google" : pid === "password" ? "email" : (pid || state.prov || "");
@@ -57,25 +59,16 @@ function persist() {
 export async function flush() {
   clearTimeout(timer); timer = null;
   const d = db(); if (!d || !uid) return;
-  try { await d.doc("learners/" + uid).set({ ...JSON.parse(JSON.stringify(state)), email }); warned = false; await writeBoard(d); await writeRoll(d); }
+  try { const { nm, ...save } = JSON.parse(JSON.stringify(state));  /* mock results are written by the backend, never from here */
+    await d.doc("learners/" + uid).set({ ...save, email }); warned = false; syncBoard(false); }
   catch (e) { console.warn("Could not save progress", e); if (!warned) { warned = true; document.dispatchEvent(new CustomEvent("one:syncerror")); } }
 }
-/* Employees only: a small public-to-staff scoreboard record, board/<uid>. */
-async function writeBoard(d) {
-  if (!email.endsWith(STAFF_DOMAIN) || !state.name) return;
-  let wk = 0; for (let i = 0; i < 7; i++) wk += state.act[isoDay(new Date(Date.now() - i * dayMs))]?.l || 0;
-  try { await d.doc("board/" + uid).set({ name: state.name, email, xp: xp(), wk, streak: state.streak?.n || 0, lessons: Object.keys(state.done).length, updated: Date.now() }); } catch (e) { console.warn("board", e); }
-}
-/* The Roll: every learner who has not opted out. No email, first name and last initial only. */
-async function writeRoll(d) {
-  if (!state.name) return;
-  try {
-    if (state.show === 0) { await d.doc("roll/" + uid).delete(); return; }
-    const parts = state.name.trim().split(/\s+/), nm = parts.length > 1 ? parts[0] + " " + parts[parts.length - 1][0].toUpperCase() + "." : parts[0];
-    let wk = 0; for (let i = 0; i < 7; i++) wk += state.act[isoDay(new Date(Date.now() - i * dayMs))]?.l || 0;
-    const seals = Object.entries(state.quiz).filter(([k, v]) => /^x[23]?:/.test(k) && v.passed).length;
-    await d.doc("roll/" + uid).set({ name: nm.slice(0, 40), door: state.door || "", kind: state.kind || "public", xp: xp(), wk, streak: state.streak?.n || 0, lessons: Object.keys(state.done).length, seals, updated: Date.now() });
-  } catch (e) { console.warn("roll", e); }
+/* The Roll and the staff board are computed by the backend from this record. */
+let lastSync = 0;
+export async function syncBoard(force) {
+  if (!uid || !state.name || (!force && Date.now() - lastSync < 120000)) return;
+  lastSync = Date.now();
+  try { const f = fns(); if (f) await f.httpsCallable("syncBoard")(); } catch (e) { console.warn("board", e); }
 }
 export async function loadRoll() {
   const d = db(); if (!d) throw new Error("offline");
@@ -156,17 +149,15 @@ export const recordLab = (id, score) => mutate(s => { const r = s.lab[id] || { s
 
 /* ——— profile ——— */
 export const setName = name => mutate(s => { s.name = name.trim().slice(0, 60); });
-export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); });
+export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); if (p.mv) s.mv = 1; });
 export const setOnboarded = () => mutate(s => { s.onb = 1; });
 export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });
 export const setDoor = id => mutate(s => { s.door = id; });
 export const toggleStudy = k => mutate(s => { s.study = s.study || {}; if (s.study[k]) delete s.study[k]; else s.study[k] = 1; });
-export const saveMock = (id, n, rec) => mutate(s => {
-  s.nm = s.nm || {}; const e = (s.nm[id] = s.nm[id] || {}); const r = (e[n] = e[n] || { att: 0, best: -999, hist: [] });
-  r.att++; r.best = Math.max(r.best, rec.s); r.last = rec; r.hist = [...r.hist.slice(-4), { s: rec.s, d: rec.d }];
-});
-export const setShow = on => mutate(s => { s.show = on ? 1 : 0; });
+/* Mock results come from the backend. This only updates the copy shown on screen; it is never written back from the browser. */
+export const setMockResult = (id, n, rec) => { state.nm = state.nm || {}; (state.nm[id] = state.nm[id] || {})[n] = rec; emit(); };
+export const setShow = on => { mutate(s => { s.show = on ? 1 : 0; }); flush().then(() => syncBoard(true)); };
 export const setStart = lv => mutate(s => { s.start = lv; });
 
 /* ——— credentials ——— */

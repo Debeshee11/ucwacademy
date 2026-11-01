@@ -16,6 +16,7 @@ import { fundData } from "./funddata.js";
 import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
 import { team } from "./team.js";
+import { admin } from "./admin.js";
 import * as Nism from "./nism.js";
 
 const root = document.getElementById("app");
@@ -43,6 +44,7 @@ const ROUTES = [
   [/^nism\/([\w-]+)$/, id => Nism.examPage(id), "nism", "NISM exam"],
   [/^me$/, () => C.me(), "me", "My progress"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
+  [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],

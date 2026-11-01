@@ -63,7 +63,7 @@ export function team() {
       roster(rows),
       h("section", { class: "stack" },
         h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "All learners"), h("button", { class: "btn ghost", style: "height:40px", on: { click: () => {
-          const text = csv([["Name", "Email", "Mobile", "Type", "Door", "Signed up with", "Joined", "Level", "Lessons", "Progress %", "First-try accuracy %", "Streak", "Credentials", "Status", "Last active"], ...rows.map(r => [r.name, r.email, r.mobile, r.kind, r.door, r.prov, r.joined ? new Date(r.joined).toISOString() : "", r.level, r.lessons, r.progress, r.mastery ?? "", r.streak, r.certs, r.status, r.updated ? new Date(r.updated).toISOString() : ""])]);
+          const text = csv([["Name", "Email", "Mobile", "Type", "Learner type", "Signed up with", "Joined", "Level", "Lessons", "Progress %", "First-try accuracy %", "Streak", "Credentials", "Status", "Last active"], ...rows.map(r => [r.name, r.email, r.mobile, r.kind, r.door, r.prov, r.joined ? new Date(r.joined).toISOString() : "", r.level, r.lessons, r.progress, r.mastery ?? "", r.streak, r.certs, r.status, r.updated ? new Date(r.updated).toISOString() : ""])]);
           const a = h("a", { href: URL.createObjectURL(new Blob([text], { type: "text/csv" })), download: "uppercrust-one-team.csv" }); document.body.append(a); a.click(); a.remove(); toast("Exported");
         } } }, "Export CSV")),
         h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:760px" },
@@ -107,7 +107,7 @@ function signups(rows) {
     h("p", { class: "mute" }, `${pub.length} public learners · ${n(day)} today · ${n(7 * day)} this week · ` + Object.entries(doors).map(([k, v]) => `${k} ${v}`).join(", ")),
     h("p", { class: "tiny mute" }, "Details we collect: name, email, optional mobile, door, sign-up method, join date and learning progress. Use Export CSV below for the full list."),
     h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:720px" },
-      h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Door", "Via", "Lessons"].map(th2))),
+      h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Learner type", "Via", "Lessons"].map(th2))),
       h("tbody", {}, pub.slice(0, 25).map(r => h("tr", {}, [r.joined ? new Date(r.joined).toLocaleDateString("en-IN") : "–", r.name, r.email, r.mobile || "–", r.door || "–", r.prov || "–", r.lessons].map(v => h("td", { style: "padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap" }, v))))))),
     !pub.length ? h("p", { class: "mute" }, "No public sign-ups yet.") : null);
 }

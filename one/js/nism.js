@@ -2,6 +2,7 @@
 import { h, icon, toast, fmtDate } from "./dom.js";
 import * as Store from "./store.js";
 import { widePage, bar } from "./ui.js";
+import { fns } from "./fb.js";
 
 const j = async p => { const r = await fetch(p); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); };
 let IDX = null; const EX = {};
@@ -94,6 +95,14 @@ export function examPage(id) {
 }
 
 /* ——— mock runner (full screen) ——— */
+
+/* Backend calls. The server marks the mock and holds the answer keys. */
+async function call(name, data) {
+  const f = fns(); if (!f) throw new Error("The service could not be reached. Check your connection.");
+  return (await f.httpsCallable(name)(data)).data;
+}
+const errText = e => (/unauthenticated/.test(e?.code || "") ? "Please sign in again." : /resource-exhausted/.test(e?.code || "") ? "Please wait a few seconds and try again." : /failed-precondition/.test(e?.code || "") ? (e.message || "This mock is not ready yet.") : /unavailable|network|deadline/.test(e?.code || e?.message || "") ? "No connection. Check your internet." : "Something went wrong. Try again.");
+const withKeys = (M, key, why) => M.qs.forEach((q, i) => { q.a = key[i]; q.w = why[i]; });
 const key = (id, n) => `nm:${id}:${n}`;
 const ss = { get(k) { try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } }, set(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch { } }, del(k) { try { sessionStorage.removeItem(k); } catch { } } };
 let tick = null;
@@ -103,7 +112,12 @@ export function mock(root, id, n, review) {
   exam(id).then(E => {
     const M = E.mocks[n - 1] && { qs: E.mocks[n - 1] };
     if (!M) return void (location.hash = `#/nism/${id}`);
-    if (review) { const r = (mine(id)[n] || {}).last; if (r && r.a) return result(root, E, M, n, r, true); }
+    if (review) {
+      const r = (mine(id)[n] || {}).last;
+      if (!r || !r.a) return void (location.hash = `#/nism/${id}`);
+      return call("getReview", { examId: id, mock: n }).then(d => { withKeys(M, d.key, d.why); result(root, E, M, n, r, true); })
+        .catch(e => root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load the review."), h("p", { class: "mute" }, errText(e)), h("a", { class: "btn primary", href: `#/nism/${id}` }, "Back"))));
+    }
     const total = M.qs.length, saved = ss.get(key(id, n));
     const S = saved && saved.end > Date.now() ? saved : { a: Array(total).fill(null), f: [], cur: 0, end: Date.now() + E.mins * 60000, start: Date.now() };
     const save = () => ss.set(key(id, n), S);
@@ -111,19 +125,32 @@ export function mock(root, id, n, review) {
     const clock = h("span", { class: "nm-clock" });
     const body = h("div", { class: "nm-q" }), pal = h("div", { class: "nm-pal" }), prog = h("span", { class: "nm-prog" });
     const fmtT = s => `${String(Math.floor(s / 3600)).padStart(1, "0")}:${String(Math.floor(s % 3600 / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
-    function finish(auto) {
+    let busy = false;
+    async function finish(auto) {
+      if (busy) return;
       const answered = S.a.filter(x => x != null).length;
       if (!auto && answered < total && !confirm(`${total - answered} question${total - answered > 1 ? "s are" : " is"} unanswered. Submit anyway?`)) return;
-      clearInterval(tick); ss.del(key(id, n));
-      const un = {}; let c = 0, w = 0, sc = 0, sw = 0;
-      M.qs.forEach((q, i) => { const u = (un[q.u] = un[q.u] || [0, 0]); u[1]++; if (S.a[i] == null) return; const mk = q.m || 1; if (S.a[i] === q.a) { c++; sc += mk; u[0]++; } else { w++; sw += mk; } });
-      const s = sc - sw * E.negf, rec = { s: Math.round(s * 100) / 100, c, w, u: total - c - w, t: Math.round((Date.now() - S.start) / 1000), d: Date.now(), un, a: S.a, f: S.f };
-      Store.saveMock(id, n, rec); result(root, E, M, n, rec, false);
+      busy = true; clearInterval(tick);
+      const secs = Math.round((Date.now() - S.start) / 1000);
+      body.replaceChildren(h("p", { class: "lead" }, "Marking your mock…"), h("p", { class: "mute" }, "Please keep this page open."));
+      try {
+        const d = await call("submitMock", { examId: id, mock: n, answers: S.a, secs });
+        ss.del(key(id, n)); window.onkeydown = null;
+        const rec = { s: d.s, c: d.c, w: d.w, u: d.u, t: secs, d: Date.now(), un: d.un, a: S.a, f: S.f };
+        Store.setMockResult(id, n, { att: d.att, best: d.best, last: rec, hist: [] });
+        withKeys(M, d.key, d.why); result(root, E, M, n, rec, false);
+      } catch (e) {
+        busy = false;
+        body.replaceChildren(h("h2", { class: "h2" }, "Could not submit yet."), h("p", { class: "mute" }, errText(e)), h("p", { class: "mute" }, "Your answers are saved on this page. Try again when you are back online."),
+          h("div", { class: "row-flex" }, h("button", { class: "btn primary", on: { click: () => finish(true) } }, "Try again"), h("button", { class: "btn ghost", on: { click: () => { paint(); if (left() > 0) tick = setInterval(upd, 1000); } } }, "Back to questions")));
+      }
     }
     function paint() {
       const q = M.qs[S.cur], flagged = S.f.includes(S.cur);
       prog.textContent = `Question ${S.cur + 1} of ${total}${q.m > 1 ? " · " + q.m + " marks" : ""}`;
+      const cs = q.c != null && E.cases && E.cases[n - 1] && E.cases[n - 1][q.c];
       body.replaceChildren(
+        cs ? h("div", { class: "nm-case" }, h("div", { class: "eyebrow gold" }, `Case study ${q.c + 1}`), h("p", {}, cs)) : null,
         h("div", { class: "eyebrow" }, `Unit ${q.u} · ${E.units.find(u => u.n === q.u)?.title || ""}`),
         h("h2", { class: "nm-qt" }, q.p),
         h("div", { class: "nm-opts", role: "radiogroup" }, q.o.map((t, i) => h("button", { class: "nm-opt" + (S.a[S.cur] === i ? " on" : ""), role: "radio", "aria-checked": String(S.a[S.cur] === i), on: { click: () => { S.a[S.cur] = S.a[S.cur] === i ? null : i; save(); paint(); } } }, h("span", { class: "nm-l" }, "ABCD"[i]), h("span", {}, t)))),
@@ -137,7 +164,7 @@ export function mock(root, id, n, review) {
       h("header", { class: "nm-top" }, h("a", { class: "nm-x", href: `#/nism/${id}`, "aria-label": "Leave mock", on: { click: ev => { if (!confirm("Leave this mock? Your answers are kept while this tab stays open.")) ev.preventDefault(); } } }, icon("x", 20)), h("div", { class: "nm-title" }, h("b", {}, `${E.code} · Mock ${n}`), h("span", {}, LEVELS[n - 1])), prog, clock, h("button", { class: "btn primary small", on: { click: () => finish(false) } }, "Submit")),
       h("div", { class: "nm-body" }, body, h("aside", { class: "nm-side" }, h("div", { class: "eyebrow" }, "Question palette"), pal, h("div", { class: "nm-key" }, h("span", { class: "a" }, "Answered"), h("span", { class: "f" }, "Flagged"), h("span", {}, "Not answered")), h("p", { class: "tiny mute" }, `Pass mark ${E.passMarks}. ${E.neg === "None" ? "No negative marking: attempt everything." : "Negative marking: " + E.neg + ". Skip when unsure."}`)))));
     paint(); upd(); tick = setInterval(() => { if (!document.querySelector(".nm-run")) return clearInterval(tick); upd(); }, 1000);
-    window.onkeydown = ev => { if (!document.querySelector(".nm-run") || /input|textarea/i.test(ev.target.tagName)) return; const k = ev.key; if ("1234".includes(k) && k.length === 1) { S.a[S.cur] = +k - 1; save(); paint(); } else if (k === "ArrowRight" && S.cur < total - 1) { S.cur++; save(); paint(); } else if (k === "ArrowLeft" && S.cur > 0) { S.cur--; save(); paint(); } };
+    window.onkeydown = ev => { if (busy || !document.querySelector(".nm-run") || /input|textarea/i.test(ev.target.tagName)) return; const k = ev.key; if ("1234".includes(k) && k.length === 1) { S.a[S.cur] = +k - 1; save(); paint(); } else if (k === "ArrowRight" && S.cur < total - 1) { S.cur++; save(); paint(); } else if (k === "ArrowLeft" && S.cur > 0) { S.cur--; save(); paint(); } };
   }).catch(e => { console.error(e); root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load this mock."), h("a", { class: "btn primary", href: `#/nism/${id}` }, "Back"))); });
 }
 

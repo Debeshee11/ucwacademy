@@ -7,6 +7,7 @@ import * as Creds from "./creds.js";
 import { nextUp, hrefFor, labelFor } from "./path.js";
 import { levelStats, weekLessons, currentLevel, skillsOf, questionCount } from "./progress.js";
 import { newsFeed } from "./news.js";
+import { cover } from "./art.js";
 import { page, widePage, levelTag, bar, checkMark, notFound } from "./ui.js";
 
 const rerender = () => document.dispatchEvent(new Event("one:rerender"));
@@ -169,7 +170,7 @@ export function coursePage(id) {
     ? h("a", { class: "list-row", href: `#/quiz/module/${id}/${mi}` }, checkMark(q?.passed ? "done" : "now"), h("div", { class: "grow" }, h("div", { class: "list-title" }, `Module ${mi + 1} quiz`), h("div", { class: "small mute" }, q ? `Best ${q.best}%${q.passed ? " · passed" : ""}` : "10 questions · 70% to pass")), chev())
     : h("div", { class: "list-row", style: "color:var(--mute)" }, h("span", { class: "check" }, icon("lock")), h("div", { class: "grow" }, h("div", {}, `Module ${mi + 1} quiz`), h("div", { class: "small" }, "Opens when every lesson in the module is done")));
   const examBlock = () => h("div", { class: "card stack as-link" },
-    h("div", { class: "eyebrow" }, "Assessment Centre"), h("h3", { class: "h3" }, "Three exams, one place"),
+    h("div", { class: "eyebrow" }, "Exams"), h("h3", { class: "h3" }, "Three exams, one place"),
     h("p", { class: "small mute" }, "Beginner, Intermediate and Hard. 20 questions each, with a syllabus you can read first."),
     h("div", { class: "row-flex", style: "gap:8px;flex-wrap:wrap" }, TIERS().map(T => h("span", { class: "pill " + (p.exams[T.id]?.passed ? "ok" : "") }, `${T.name}${p.exams[T.id]?.passed ? " · passed" : ""}`))),
     h("a", { class: "btn primary", href: `#/assess/${id}` }, p.examReady ? "Check readiness" : "See the exams"));
@@ -197,6 +198,7 @@ export function coursePage(id) {
   return widePage(
     h("section", { class: "hero stack" },
       h("a", { class: "small", href: "#/courses" }, icon("left", 16), "Courses"),
+      h("div", { class: "hero-art" }, cover(c, true)),
       h("div", { class: "row-flex", style: "gap:10px" }, levelTag(lv), h("span", { class: "pill gold" }, "Certificate included"), h("span", { class: "pill" }, "English · हिन्दी · ગુજરાતી")),
       h("h1", { class: "h1", style: "font-size:clamp(30px,5vw,44px)" }, c.title), h("p", { class: "lead" }, c.blurb),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, c.lessons.length), " lessons"), h("span", {}, h("b", {}, c.modules.length), " unit quizzes"), h("span", {}, h("b", {}, 3), " exams"), h("span", {}, h("b", {}, nQ), " practice questions")),

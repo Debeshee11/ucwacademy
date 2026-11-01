@@ -12,3 +12,6 @@ export function fb() {
 }
 export const auth = () => (fb() ? firebase.auth() : null);
 export const db = () => (fb() ? firebase.firestore() : null);
+
+/* Backend callable functions, deployed in Mumbai (asia-south1). */
+export const fns = () => (fb() && firebase.functions ? fb().functions("asia-south1") : null);

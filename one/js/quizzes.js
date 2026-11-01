@@ -21,7 +21,7 @@ export function moduleQuiz(root, cid, mi) {
       const nextModule = mi + 1 < c.modules.length;
       return res.passed ? {
         head: "Module passed.", sub: `${res.score}%. ` + (all ? "Every module is done. The Beginner exam is open." : nextModule ? "Next module is ready." : ""),
-        actions: [all ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to the Assessment Centre") : nextModule ? h("a", { class: "btn primary", href: `#/lesson/${c.modules[mi + 1].lessons[0]}` }, "Start next module") : null,
+        actions: [all ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to Exams") : nextModule ? h("a", { class: "btn primary", href: `#/lesson/${c.modules[mi + 1].lessons[0]}` }, "Start next module") : null,
           h("a", { class: "btn ghost", href: back(c) }, "Back to course")]
       } : {
         head: "Not yet.", sub: `${res.score}%. You need ${RULES.modulePass}%. Read the lessons again, then try once more.`,

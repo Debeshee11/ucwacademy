@@ -30,6 +30,11 @@ const errMsg = e => {
   if (/account-exists-with-different/.test(c)) return "This email is registered another way. Sign in with email and password.";
   if (/operation-not-allowed|unauthorized-domain/.test(c)) return "This sign-in method is not switched on yet. Contact UpperCrust.";
   if (/popup-closed|cancelled-popup/.test(c)) return "";
+  if (/invalid-phone-number|missing-phone-number/.test(c)) return "That mobile number does not look right.";
+  if (/invalid-verification-code|missing-verification-code/.test(c)) return "That code is not right. Check the SMS and try again.";
+  if (/code-expired|session-expired/.test(c)) return "That code has expired. Send a new one.";
+  if (/captcha/.test(c)) return "Security check failed. Reload the page and try again.";
+  if (/quota-exceeded/.test(c)) return "Too many codes sent today. Try tomorrow, or use Google.";
   return "That email or password is not right.";
 };
 
@@ -45,7 +50,8 @@ const html = s => { const d = document.createElement("span"); d.innerHTML = s; r
 
 function mount(a, startMsg) {
   return new Promise(resolve => {
-    let mode = "in"; /* in | up | staff */
+    let mode = "phone"; /* phone | mail | staff */
+    let persist = async () => {};
     let tries = 0, lockUntil = 0;
     const form = h("div", { class: "lg-form" });
     const finish = u => { resolve(u); document.querySelector(".lg")?.remove(); };
@@ -75,18 +81,74 @@ function mount(a, startMsg) {
       }
     }
 
+    /* ——— mobile one-time code ——— */
+    let confirmation = null, verifier = null, sentTo = "", resendAt = 0, resendTimer = null;
+    const toE164 = v => { const m = cleanMobile(v); return m ? (m.startsWith("+") ? m : "+91" + m) : ""; };
+    const clearVerifier = () => { try { verifier?.clear(); } catch {} verifier = null; };
+
+    function phoneForm(err, setBusy) {
+      const wrap = h("div", { class: "stack" });
+      const recap = h("div", { id: "recap" });
+      const show = () => {
+        wrap.replaceChildren();
+        if (!confirmation) {
+          const [fm, mo] = field("ph", "Mobile number", { type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", maxlength: "20" });
+          const send = h("button", { class: "btn primary block", type: "submit" }, "Send OTP");
+          wrap.append(h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
+            ev.preventDefault(); if (!a) return;
+            if (Date.now() < lockUntil) return setBusy(false, "Too many tries. Wait a few seconds and try again.");
+            const num = toE164(mo.value);
+            if (!num) return setBusy(false, "Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code.");
+            send.disabled = true; send.textContent = "Sending…"; err.textContent = "";
+            try {
+              await persist();
+              clearVerifier(); verifier = new firebase.auth.RecaptchaVerifier("recap", { size: "invisible" });
+              confirmation = await a.signInWithPhoneNumber(num, verifier);
+              sentTo = num; resendAt = Date.now() + 30e3; show();
+            } catch (e) { clearVerifier(); confirmation = null; send.disabled = false; send.textContent = "Send OTP"; if (!/network/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } err.textContent = errMsg(e); }
+          } } }, fm, h("p", { class: "tiny mute" }, "We will text a 6-digit code to this number. Standard SMS charges may apply."), err, recap, send));
+          setTimeout(() => mo.focus());
+        } else {
+          const [fc, code] = field("otp", "Enter the 6-digit code", { type: "text", inputmode: "numeric", autocomplete: "one-time-code", maxlength: "6", placeholder: "••••••" }); code.classList.add("otp");
+          const ok = h("button", { class: "btn primary block", type: "submit" }, "Verify and continue");
+          const resend = h("button", { type: "button", class: "link small", disabled: true }, "");
+          const tickR = () => { const sec = Math.ceil((resendAt - Date.now()) / 1000); resend.disabled = sec > 0; resend.textContent = sec > 0 ? `Resend code in ${sec}s` : "Send a new code"; if (sec <= 0) clearInterval(resendTimer); };
+          clearInterval(resendTimer); resendTimer = setInterval(() => { if (!resend.isConnected) return clearInterval(resendTimer); tickR(); }, 1000); tickR();
+          resend.onclick = () => { confirmation = null; err.textContent = ""; show(); };
+          wrap.append(h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
+            ev.preventDefault();
+            const c = code.value.replace(/\D/g, "");
+            if (c.length !== 6) { err.textContent = "Enter the 6-digit code."; return; }
+            ok.disabled = true; ok.textContent = "Checking…"; err.textContent = "";
+            try {
+              const r = await confirmation.confirm(c);
+              const m = cleanMobile(sentTo);
+              pending = { mobile: m, mv: 1, fresh: !!r.additionalUserInfo?.isNewUser };
+              finish(r.user);
+            } catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; if (/code-expired|session-expired/.test(e?.code || "")) { confirmation = null; } err.textContent = errMsg(e); if (!confirmation) show(); }
+          } } }, h("p", { class: "mute" }, `Code sent to ${sentTo.replace(/^\+91/, "+91 ")}.`), fc, err, ok,
+          h("div", { class: "lg-alt" }, resend, h("button", { type: "button", class: "link small", on: { click: () => { confirmation = null; err.textContent = ""; show(); } } }, "Change number"))));
+          setTimeout(() => code.focus());
+        }
+      };
+      show();
+      return wrap;
+    }
+
     function paint() {
       form.replaceChildren();
       const err = h("p", { class: "error", role: "alert" }, startMsg || "");
-      const label = mode === "up" ? "Create my account" : mode === "staff" ? "Sign in as employee" : "Sign in";
-      const btn = h("button", { class: "btn primary block", type: "submit" }, label);
-      const fail = m => { err.textContent = m; btn.disabled = false; btn.textContent = label; };
       const keep = h("input", { type: "checkbox", id: "keep", checked: true });
       const keepRow = h("label", { class: "row-flex small mute", for: "keep", style: "gap:10px" }, keep, "Keep me signed in");
-      const persist = () => a.setPersistence(keep.checked ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION);
+      const persistFn = () => a.setPersistence(keep.checked ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION);
+      persist = persistFn;
+      const fail = m => { err.textContent = m; };
+      const setBusy = (_, m) => fail(m || "");
+      const label = mode === "staff" ? "Sign in as employee" : "Sign in";
+      const btn = h("button", { class: "btn primary block", type: "submit" }, label);
 
-      const gBtn = h("button", { type: "button", class: "g-btn", on: { click: async ev => { ev.currentTarget.disabled = true; err.textContent = ""; await google(fail); ev.currentTarget.disabled = false; } } }, html(GOOGLE_G), mode === "up" ? "Sign up with Google" : mode === "staff" ? "Continue with work Google account" : "Continue with Google");
-      const or = h("div", { class: "or" }, h("span", {}, "or with email"));
+      const gBtn = h("button", { type: "button", class: "g-btn", on: { click: async ev => { ev.currentTarget.disabled = true; err.textContent = ""; await google(fail); ev.currentTarget.disabled = false; } } }, html(GOOGLE_G), mode === "staff" ? "Continue with work Google account" : "Continue with Google");
+      const or = h("div", { class: "or" }, h("span", {}, mode === "phone" ? "or" : "or with email"));
 
       const forgotFor = email => h("button", { type: "button", class: "link small", on: { click: async () => {
         let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
@@ -95,53 +157,34 @@ function mount(a, startMsg) {
       } } }, "Forgot password?");
 
       let fields;
-      if (mode === "up") {
-        const [fn, nm] = field("rn", "Full name", { type: "text", autocomplete: "name", placeholder: "Your full name" });
-        const [fe, em] = field("re", "Email", { type: "text", inputmode: "email", autocomplete: "email", autocapitalize: "off", spellcheck: "false", placeholder: "you@example.com" });
-        const [fm, mo] = field("rm", "Mobile number", { type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", maxlength: "20" });
-        const [fp, pw] = pwField("rp", "Create a password", { autocomplete: "new-password", placeholder: "At least 6 characters" });
-        const fine = h("p", { class: "tiny mute" }, "We store your name, email, optional mobile number, your door and your learning progress to run your account. Learning content is for education only, not investment advice.");
-        fields = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
-          ev.preventDefault(); if (!a) return;
-          const name = nm.value.trim(), mob = cleanMobile(mo.value), mail = em.value.trim().toLowerCase();
-          if (name.length < 2) return fail("Enter your name.");
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) return fail("Enter a valid email.");
-          if (!mob) return fail("Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code.");
-          if (mail.endsWith(STAFF_DOMAIN)) { mode = "staff"; startMsg = "Employees: sign in with your work email."; return paint(); }
-          if (pw.value.length < 6) return fail("Password needs at least 6 characters.");
-          btn.disabled = true; btn.textContent = "Creating…"; err.textContent = "";
-          try {
-            await persist();
-            const u = (await a.createUserWithEmailAndPassword(mail, pw.value)).user;
-            try { await u.updateProfile({ displayName: name }); u.sendEmailVerification(); } catch {}
-            pending = { name, mobile: mob, fresh: true }; finish(u);
-          } catch (e) { fail(errMsg(e)); }
-        } } }, fn, fe, fm, fp, keepRow, err, btn, fine);
-        setTimeout(() => nm.focus());
+      if (mode === "phone") {
+        fields = phoneForm(err, setBusy);
       } else {
         const staff = mode === "staff";
         const [fe, email] = field("em", staff ? "Work email" : "Email", { type: "text", inputmode: "email", autocomplete: "username", autocapitalize: "off", spellcheck: "false", placeholder: staff ? "name@uppercrustwealth.com" : "you@example.com" });
         const [fp, pw] = pwField("pw", "Password", { autocomplete: "current-password" });
+        const fb2 = m => { err.textContent = m; btn.disabled = false; btn.textContent = label; };
         fields = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
           ev.preventDefault(); if (!a) return;
-          if (Date.now() < lockUntil) return fail("Too many tries. Wait a few seconds and try again.");
+          if (Date.now() < lockUntil) return fb2("Too many tries. Wait a few seconds and try again.");
           let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
-          if (!em || !pw.value) return fail("Enter your email and password.");
+          if (!em || !pw.value) return fb2("Enter your email and password.");
           btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
           try { await persist(); finish((await a.signInWithEmailAndPassword(em, pw.value)).user); }
-          catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fail(errMsg(e)); }
+          catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fb2(errMsg(e)); }
         } } }, fe, fp, h("div", { class: "row-flex", style: "justify-content:space-between" }, keepRow, forgotFor(email)), err, btn);
         setTimeout(() => email.focus());
       }
 
-      const heading = mode === "up" ? ["Create your account", "Free to start. Learn at your own pace."] : mode === "staff" ? ["Employee sign in", "Use your UpperCrust work email."] : ["Welcome back", "Sign in to continue learning."];
-      const swap = mode === "staff"
-        ? h("p", { class: "lg-swap" }, h("button", { type: "button", class: "link", on: { click: () => { mode = "in"; startMsg = ""; paint(); } } }, "Back to learner sign in"))
-        : h("p", { class: "lg-swap" }, mode === "up" ? "Already have an account? " : "New here? ", h("button", { type: "button", class: "link", on: { click: () => { mode = mode === "up" ? "in" : "up"; startMsg = ""; paint(); } } }, mode === "up" ? "Sign in" : "Create an account"));
-      form.append(
-        h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
-        gBtn, or, fields, swap,
-        ...(mode === "staff" ? [] : [h("p", { class: "lg-staff" }, "UpperCrust employee? ", h("button", { type: "button", class: "link", on: { click: () => { mode = "staff"; startMsg = ""; paint(); } } }, "Sign in with your work email"))]));
+      const heading = mode === "staff" ? ["Employee sign in", "Use your UpperCrust work email."] : mode === "mail" ? ["Sign in with email", "For accounts created with an email and password."] : ["Welcome", "Sign in or sign up with your mobile number. No password to remember."];
+      const go = (m, msg = "") => h("button", { type: "button", class: "link", on: { click: () => { clearVerifier(); confirmation = null; mode = m; startMsg = msg; paint(); } } });
+      const links = [];
+      if (mode !== "phone") links.push(h("p", { class: "lg-swap" }, "Back to ", Object.assign(go("phone"), { textContent: "mobile sign in" })));
+      if (mode === "phone") links.push(h("p", { class: "lg-swap" }, "Have an email account? ", Object.assign(go("mail"), { textContent: "Sign in with email" })));
+      if (mode !== "staff") links.push(h("p", { class: "lg-staff" }, "UpperCrust employee? ", Object.assign(go("staff"), { textContent: "Sign in with your work email" })));
+      form.append(h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
+        ...(mode === "phone" ? [fields, or, gBtn] : [gBtn, or, fields]), ...links,
+        h("p", { class: "tiny mute" }, "We store your name, mobile number, door and learning progress to run your account. Learning content is for education only, not investment advice."));
     }
     paint();
 
@@ -178,7 +221,7 @@ export function welcome() {
     const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
     const logo = h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust", style: "height:34px;margin:0 auto" });
 
-    const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "" });
+    const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "", readonly: !!Store.get().mv });
     const perr = h("p", { class: "error", role: "alert" });
     function paint() {
       box.replaceChildren();

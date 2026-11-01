@@ -42,6 +42,7 @@ export function frame(onLang) {
         h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Quiz language", lang),
         h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
+        isAdmin() && h("a", { href: "#/admin", role: "menuitem", on: { click: close } }, icon("trend", 20), "Growth and exams"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
     }
