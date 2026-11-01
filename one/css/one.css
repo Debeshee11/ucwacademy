@@ -391,3 +391,50 @@ body { touch-action: manipulation; }
   .hero .stats { gap: 6px 18px; }
   .exam-card .row-flex { flex-wrap: wrap; }
 }
+
+/* ——— Sign in (split screen) ——— */
+.lg { min-height: 100vh; min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); background: #fff; }
+.lg-side { background: radial-gradient(120% 90% at 0% 0%, #17335E 0%, #0B1F3A 55%, #07152A 100%); color: #F4EFE3; padding: 48px 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; }
+.lg-side::after { content: ""; position: absolute; right: -120px; bottom: -120px; width: 420px; height: 420px; border-radius: 50%; border: 1px solid rgba(201,162,75,.35); box-shadow: 0 0 0 60px rgba(201,162,75,.06), 0 0 0 120px rgba(201,162,75,.04); pointer-events: none; }
+.lg-mark { display: flex; align-items: center; gap: 12px; font: 400 24px var(--serif); letter-spacing: .01em; }
+.lg-mark em { color: #D8B45E; }
+.lg-crest { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #C9A24B; border-radius: 8px; color: #D8B45E; font: italic 400 22px var(--serif); }
+.lg-eyebrow { font: 800 12px/1 var(--font); letter-spacing: .2em; text-transform: uppercase; color: #D8B45E; margin-bottom: 20px; }
+.lg-big { font: 400 clamp(38px, 4.2vw, 58px)/1.08 var(--serif); letter-spacing: -.01em; }
+.lg-big em { color: #D8B45E; }
+.lg-points { margin-top: 36px; display: grid; gap: 18px; max-width: 460px; }
+.lg-points li { padding-left: 22px; position: relative; color: #C9D2E3; font-size: 16px; line-height: 1.55; }
+.lg-points li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; background: #C9A24B; transform: rotate(45deg); }
+.lg-points b { color: #fff; font-weight: 800; }
+.lg-foot { font-size: 13px; color: #8E9BB3; position: relative; z-index: 1; }
+.lg-main { display: grid; place-items: center; padding: 32px 24px; background: #fff; overflow-y: auto; }
+.lg-card { width: 100%; max-width: 400px; display: grid; gap: 28px; }
+.lg-top img { height: 38px; width: auto; }
+.lg-form { display: grid; gap: 20px; }
+.lg-h { font: 400 38px/1.1 var(--serif); color: #0B1F3A; margin-bottom: 6px; }
+.g-btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 54px; background: #fff; border: 2px solid var(--line2); border-radius: 14px; font: 800 15px var(--font); color: var(--ink); transition: background .15s, border-color .15s; }
+.g-btn:hover:not([disabled]) { background: var(--soft); border-color: #B9B8CC; }
+.g-btn[disabled] { opacity: .6; cursor: wait; }
+.or { display: flex; align-items: center; gap: 14px; color: var(--mute); font: 700 13px var(--font); }
+.or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.pw { position: relative; } .pw .input { padding-right: 76px; }
+.pw-eye { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: 0; padding: 8px 10px; font: 800 13px var(--font); color: var(--blue-d); border-radius: 8px; }
+.lg-swap { text-align: center; color: var(--ink2); font-size: 15px; }
+.lg-staff { text-align: center; font-size: 14px; color: var(--mute); padding-top: 18px; border-top: 1px solid var(--line); }
+.lg .link { background: none; border: 0; padding: 0; color: var(--blue-d); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.lg .btn.primary { background: #0B1F3A; border-color: #07152A; color: #fff; }
+.lg .btn.primary:hover { filter: none; background: #17335E; }
+.lg .input { border-radius: 12px; }
+@media (max-width: 860px) {
+  .lg { grid-template-columns: 1fr; }
+  .lg-side { padding: 28px 24px 32px; gap: 20px; }
+  .lg-side::after, .lg-points, .lg-foot { display: none; }
+  .lg-big { font-size: 30px; } .lg-eyebrow { margin-bottom: 10px; }
+  .lg-main { align-items: start; padding: 28px 20px 40px; }
+  .lg-top { display: none; }
+  .lg-h { font-size: 32px; }
+}
+.lg { position: fixed; inset: 0; z-index: 80; overflow-y: auto; min-height: 0; }
+.lg-side { min-height: 100%; }
+.lg-main { min-height: 100%; }
+@media (max-width: 860px) { .lg-side { min-height: 0; } }
