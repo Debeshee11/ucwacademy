@@ -99,8 +99,28 @@ def match_static(name, static, aliases):
     return best if score >= 0.75 else None
 
 
+ALIAS = {"elss tax saver fund": "elss", "children s fund": "childrens fund", "childrens fund": "childrens fund"}
+SHOW = {"elss": "ELSS (Tax Saver)", "childrens fund": "Children's Fund", "etf": "ETFs", "fof": "Fund of Funds"}
+
+
+def canon(cat):
+    """One key and one display name for a category, whatever spelling the feed uses ('Equity Schemes - Elss- Tax Saver Fund', 'Elss')."""
+    tail = cat.split(" - ", 1)[1] if " - " in cat else cat
+    key = " ".join(re.sub(r"\bschemes?\b", " ", re.sub(r"[^a-z0-9 ]+", " ", tail.lower())).split())
+    key = ALIAS.get(key, key)
+    name = SHOW.get(key) or re.sub(r"\b(Etf|Fof|Elss|Psu|Esg|Nifty|Bse)\b", lambda m: m.group(1).upper(), tail.strip().title().replace("'S", "'s"))
+    return key, name
+
+
 def category_type(cat):
-    return (re.split(r"\s+scheme\b", cat, flags=re.I)[0] or "Other").strip().title()
+    c = cat.lower()
+    has = lambda *w: any(x in c for x in w)
+    if has("hybrid", "balanced", "arbitrage", "multi asset", "equity savings"): return "Hybrid"
+    if has("solution", "retirement", "children"): return "Solution Oriented"
+    if has("index", "etf", "exchange traded", "fund of funds", "fof"): return "Index, ETF and FoF"
+    if has("debt", "income", "liquid", "gilt", "money market", "overnight", "duration", "credit risk", "floater", "corporate bond", "banking and psu"): return "Debt"
+    if has("equity", "elss", "cap fund", "flexi", "focused", "value", "contra", "sectoral", "thematic", "dividend yield"): return "Equity"
+    return "Other"
 
 
 def build(rules, latest_list, fetch=get_json, static=None, workers=4):
@@ -122,14 +142,15 @@ def build(rules, latest_list, fetch=get_json, static=None, workers=4):
         used.update(x["schemeCode"] for x in picks)
         groups.append({"id": g["id"], "name": g["name"], "type": g.get("type", "Other"), "funds": []}); members.append(picks)
     if rules.get("all_categories"):
-        by = {}
+        by, names, types = {}, {}, {}
         for x in pool:
             if x["schemeCode"] not in used and x.get("schemeCategory"):
-                by.setdefault(x["schemeCategory"], []).append(x)
+                k, nm = canon(x["schemeCategory"])
+                by.setdefault(k, []).append(x); names.setdefault(k, nm); types.setdefault(k, category_type(x["schemeCategory"]))
         cap = rules["all_categories"].get("max", 400) if isinstance(rules["all_categories"], dict) else 400
-        for cat in sorted(by):
-            picks = sorted(by[cat], key=lambda x: x["schemeName"])[:cap]
-            groups.append({"id": slug(cat), "name": {"en": re.sub(r"^.*?\s-\s", "", cat).strip() or cat}, "type": category_type(cat), "funds": []}); members.append(picks)
+        for k in sorted(by, key=lambda k: (types[k], names[k])):
+            picks = sorted(by[k], key=lambda x: x["schemeName"])[:cap]
+            groups.append({"id": slug(names[k]), "name": {"en": names[k]}, "type": types[k], "funds": []}); members.append(picks)
     for g, picks in zip(groups, members):
         print(f"group {g['id']}: {len(picks)} funds")
     jobs = [x for picks in members for x in picks]
