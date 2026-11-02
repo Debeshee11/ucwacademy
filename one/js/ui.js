@@ -1,7 +1,8 @@
 /* The frame around every page: top bar, bottom tabs on phones, and the account menu. */
 import { ADMIN_EMAIL } from "./config.js";
 import { h, icon, clear } from "./dom.js";
-import { D, loadTx } from "./data.js";
+import { D } from "./data.js";
+import { LANGS, setLanguage } from "./i18n.js";
 import * as Store from "./store.js";
 import { signOut } from "./auth.js";
 
@@ -35,11 +36,11 @@ export function frame(onLang) {
       h("span", { class: "pillstat xp", title: "Points: 20 per lesson, 2 per right answer, 30 per quiz passed", "aria-label": `${Store.xp()} points` }, icon("star"), Store.xp()),
       btn);
     if (open) {
-      const lang = h("select", { "aria-label": "Quiz language", on: { change: async ev => { Store.setLang(ev.target.value); await loadTx(ev.target.value); close(); onLang && onLang(); } } },
-        [["en", "English"], ["hi", "हिन्दी"], ["gu", "ગુજરાતી"]].map(([v, t]) => h("option", { value: v, selected: s.lang === v }, t)));
+      const lang = h("select", { "aria-label": "Language", on: { change: async ev => { const v = ev.target.value; Store.setLang(v); try { await Store.flush(); } catch {} setLanguage(v); } } },
+        LANGS.map(([v, t]) => h("option", { value: v, selected: s.lang === v }, t)));
       menuHost.append(h("div", { class: "menu", role: "menu", on: { click: ev => ev.stopPropagation() } },
         h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
-        h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Quiz language", lang),
+        h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Language", lang),
         h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/admin", role: "menuitem", on: { click: close } }, icon("trend", 20), "Growth and exams"),

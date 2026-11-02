@@ -6,6 +6,7 @@ import { D } from "./data.js";
 import * as Store from "./store.js";
 import { doorPicker } from "./academy.js";
 import { loginSide } from "./loginart.js";
+import { LANGS, getLang, setLanguage } from "./i18n.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "acad" }, "Academy"));
 
@@ -47,6 +48,8 @@ export function cleanMobile(v) {
   const d = t.replace(/^(\+91|91|0)(?=\d{10}$)/, "");
   return /^[6-9]\d{9}$/.test(d) ? d : "";
 }
+/* on a phone, focusing a field on load scrolls past the picture and opens the keyboard at once */
+const wide = () => matchMedia("(min-width: 861px)").matches;
 const html = s => { const d = document.createElement("span"); d.innerHTML = s; return d.firstChild; };
 
 function mount(a, startMsg) {
@@ -108,7 +111,7 @@ function mount(a, startMsg) {
               sentTo = num; resendAt = Date.now() + 30e3; show();
             } catch (e) { clearVerifier(); confirmation = null; send.disabled = false; send.textContent = "Send OTP"; if (!/network/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } err.textContent = errMsg(e); }
           } } }, fm, h("p", { class: "tiny mute" }, "We will text a 6-digit code to this number. Standard SMS charges may apply."), err, recap, send));
-          setTimeout(() => mo.focus());
+          setTimeout(() => wide() && mo.focus());
         } else {
           const [fc, code] = field("otp", "Enter the 6-digit code", { type: "text", inputmode: "numeric", autocomplete: "one-time-code", maxlength: "6", placeholder: "••••••" }); code.classList.add("otp");
           const ok = h("button", { class: "btn primary block", type: "submit" }, "Verify and continue");
@@ -174,7 +177,7 @@ function mount(a, startMsg) {
           try { await persist(); finish((await a.signInWithEmailAndPassword(em, pw.value)).user); }
           catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fb2(errMsg(e)); }
         } } }, fe, fp, h("div", { class: "row-flex", style: "justify-content:space-between" }, keepRow, forgotFor(email)), err, btn);
-        setTimeout(() => email.focus());
+        setTimeout(() => wide() && email.focus());
       }
 
       const heading = mode === "staff" ? ["Employee sign in", "Use your UpperCrust work email."] : mode === "mail" ? ["Sign in with email", "For accounts created with an email and password."] : ["Welcome", "Sign in or sign up with your mobile number. No password to remember."];
@@ -190,7 +193,9 @@ function mount(a, startMsg) {
     paint();
 
     const side = loginSide();
-    document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" },
+    const langRow = h("div", { class: "lg-lang", role: "group", "aria-label": "Language" },
+      LANGS.map(([v, t]) => h("button", { type: "button", class: "lg-lbtn", lang: v, "aria-pressed": String(getLang() === v), on: { click: () => v !== getLang() && setLanguage(v) } }, t)));
+    document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" }, langRow,
       h("div", { class: "lg-top" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" })), form))));
   });
 }

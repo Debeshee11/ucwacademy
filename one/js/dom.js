@@ -1,4 +1,5 @@
 /* Small DOM helpers. h("div", { class: "card", on: { click } }, "text", child) builds elements without innerHTML, so content can never inject markup. */
+import { locale } from "./i18n.js";
 export const $ = (sel, el = document) => el.querySelector(sel);
 
 export function h(tag, attrs, ...kids) {
@@ -70,7 +71,7 @@ export const pick = (a, n) => shuffle(a).slice(0, n);
 /* Dates are kept as local YYYY-MM-DD strings. */
 export const isoDay = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 export const dayMs = 86400e3;
-export const fmtDate = ts => new Date(ts).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+export const fmtDate = ts => new Date(ts).toLocaleDateString(locale(), { day: "numeric", month: "long", year: "numeric" });
 export const greeting = () => { const hr = new Date().getHours(); return hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"; };
 export const ago = ts => {
   const m = Math.round((Date.now() - ts) / 6e4);

@@ -1,4 +1,5 @@
 /* UpperCrust Academy: boot and routes. */
+import * as I18n from "./i18n.js";
 import { h, toast, clear } from "./dom.js";
 import { loadData, loadTx } from "./data.js";
 import * as Store from "./store.js";
@@ -101,6 +102,10 @@ async function boot() {
     root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load."), h("p", { class: "mute" }, "Check your connection and reload."), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));
     return;
   }
+  /* One language everywhere: this browser's choice wins; a choice made on another device is picked up once. */
+  const sl = Store.get().lang || "en";
+  if (I18n.hasPref()) { if (sl !== I18n.getLang()) Store.setLang(I18n.getLang()); }
+  else if (sl !== "en" && I18n.remember(sl)) { location.reload(); return; }
   await loadTx(Store.get().lang);
   document.addEventListener("one:syncerror", () => toast("Progress saved on this device only. We'll retry."));
   const np = Auth.takeProfile(); if (np) Store.setProfile(np);
