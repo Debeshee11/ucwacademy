@@ -5,6 +5,7 @@ import { h, $ } from "./dom.js";
 import { D } from "./data.js";
 import * as Store from "./store.js";
 import { doorPicker } from "./academy.js";
+import { loginSide } from "./loginart.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "acad" }, "Academy"));
 
@@ -188,19 +189,7 @@ function mount(a, startMsg) {
     }
     paint();
 
-    const artEl = document.createElement("div"); artEl.className = "lg-art";
-    artEl.innerHTML = '<svg viewBox="0 0 420 300" aria-hidden="true">' + [0,1,2,3,4,5,6,7].map(i => { const ht = 30 + i * i * 3.2 + i * 14; return `<rect x="${40 + i * 44}" y="${250 - ht}" width="22" height="${ht}" rx="3" fill="#C9A24B" fill-opacity="${i > 5 ? 0.95 : 0.25 + i * 0.07}"/>`; }).join("") + '<path d="M30 230 C120 200 200 170 390 40" fill="none" stroke="#E6CF94" stroke-width="2" stroke-dasharray="2 7"/></svg>';
-    const side = h("aside", { class: "lg-side", "aria-hidden": "false" },
-      artEl,
-      h("div", { class: "lg-mark" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "lg-acad" }, "Academy")),
-      h("div", { class: "lg-pitch" },
-        h("p", { class: "lg-eyebrow" }, "The Wealth Company"),
-        h("h2", { class: "lg-big" }, "Money knowledge,", h("br"), h("em", {}, "for every household.")),
-        h("ul", { class: "lg-points" },
-          h("li", {}, h("b", {}, "Learn what matters."), " Money basics, mutual funds, the stock market, NRI and more."),
-          h("li", {}, h("b", {}, "Prove it."), " Exams and certificates anyone can verify."),
-          h("li", {}, h("b", {}, "Built for you."), " Students, homemakers, teachers, professionals, retirees."))),
-      h("p", { class: "lg-foot" }, "For education only. Not investment advice."));
+    const side = loginSide();
     document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" },
       h("div", { class: "lg-top" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" })), form))));
   });
