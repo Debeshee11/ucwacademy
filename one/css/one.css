@@ -708,3 +708,14 @@ body { background: var(--bg); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) { .lgh-orb, .lgh-card.swap { animation: none; } .lgh-room { transition: none; } }
 @media (min-width: 861px) and (min-height: 880px) { .lgh-head { margin-top: auto; } .lgh-stage { margin-bottom: auto; } .lgh .lg-foot { margin-top: 0; } }
 @media (min-width: 861px) and (max-height: 820px) { .lgh { padding: 28px 44px 20px; gap: 14px; } .lgh .lg-big { font-size: 40px; } .lgh-lede { display: none; } .lgh-roof { height: 52px; } .lgh-room { height: 68px; gap: 5px; } .lgh-card { padding: 14px 18px; gap: 6px; } .lgh-title { font-size: 24px; } .lgh-body { font-size: 13.5px; } .lgh .lg-foot { display: none; } }
+
+/* ——— Language switch on the sign-in screen ——— */
+.lg-lang { display: flex; justify-content: flex-end; gap: 4px; padding: 3px; border-radius: 999px; background: #F1EEE6; width: max-content; margin-left: auto; }
+.lg-lbtn { border: 0; background: transparent; color: #3A4A66; font: 800 13px/1 var(--font); padding: 8px 14px; border-radius: 999px; cursor: pointer; min-height: 34px; }
+.lg-lbtn[aria-pressed="true"] { background: #0B1F3A; color: #fff; }
+.lg-lbtn:not([aria-pressed="true"]):hover { background: #E4DFD2; }
+.lg-lbtn:focus-visible { outline: 3px solid #C9A24B; outline-offset: 2px; }
+
+/* Hindi and Gujarati: wide letter-spacing and forced capitals break the joined letters, so switch them off */
+html:lang(hi) *, html:lang(gu) * { letter-spacing: normal !important; text-transform: none !important; }
+@media (max-width: 860px) { .lg-main { overflow: visible; } }
