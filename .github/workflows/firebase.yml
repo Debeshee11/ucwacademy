@@ -28,4 +28,4 @@ jobs:
         run: |
           echo "$SA" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          npx --yes firebase-tools@latest deploy --only functions --project ucwacademy --non-interactive
+          npx --yes firebase-tools@latest deploy --only functions --project ucwacademy --non-interactive --force
