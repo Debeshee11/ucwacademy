@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+        with: { node-version: 22 }
       - name: Test the marking logic
         working-directory: functions
         run: npm install --no-audit --no-fund && npm test
@@ -28,4 +28,4 @@ jobs:
         run: |
           echo "$SA" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          npx --yes firebase-tools@13 deploy --only functions --project ucwacademy --non-interactive
+          npx --yes firebase-tools@latest deploy --only functions --project ucwacademy --non-interactive
