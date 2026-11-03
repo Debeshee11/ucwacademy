@@ -5,7 +5,8 @@
    "name": "Mutual funds and distribution",
    "blurb": "Distribute funds, advise investors, understand the product.",
    "exams": [
-    "nism-v-a"
+    "nism-v-a",
+    "nism-v-d"
    ]
   },
   {
@@ -13,7 +14,8 @@
    "name": "Markets and foundations",
    "blurb": "How securities markets work, from first principles.",
    "exams": [
-    "nism-xii"
+    "nism-xii",
+    "nism-vi"
    ]
   },
   {
@@ -41,7 +43,8 @@
    "blurb": "PMS and alternative investment fund distribution.",
    "exams": [
     "nism-xxi-a",
-    "nism-xix-a"
+    "nism-xix-a",
+    "nism-xxi-b"
    ]
   },
   {
@@ -243,6 +246,63 @@
    "facts": 160,
    "pages": 38,
    "track": "nism-adv"
+  },
+  {
+   "id": "nism-v-d",
+   "series": "V-D",
+   "code": "NISM Series V-D",
+   "title": "Mutual Fund: Specialized Investment Fund Distributors",
+   "short": "MF and SIF Distributors",
+   "tag": "V-D",
+   "blurb": "The common certification for mutual fund and SIF distributors: fund basics, the SIF framework, plus equity and interest rate derivatives.",
+   "qs": 150,
+   "marks": 150,
+   "mins": 180,
+   "pass_": 0,
+   "pass": 60,
+   "neg": "10% of marks",
+   "units": 12,
+   "facts": 132,
+   "pages": 39,
+   "track": "nism-mf"
+  },
+  {
+   "id": "nism-vi",
+   "series": "VI",
+   "code": "NISM Series VI",
+   "title": "Depository Operations",
+   "short": "Depository Operations",
+   "tag": "VI",
+   "blurb": "How depositories, depository participants and demat accounts work: opening, transfer, pledge, settlement, corporate actions and debt.",
+   "qs": 100,
+   "marks": 100,
+   "mins": 120,
+   "pass_": 0,
+   "pass": 60,
+   "neg": "25% of marks",
+   "units": 12,
+   "facts": 100,
+   "pages": 34,
+   "track": "nism-market"
+  },
+  {
+   "id": "nism-xxi-b",
+   "series": "XXI-B",
+   "code": "NISM Series XXI-B",
+   "title": "Portfolio Managers",
+   "short": "Portfolio Managers",
+   "tag": "XXI-B",
+   "blurb": "For PMS fund managers: portfolio construction, equity and bond strategies, risk, performance measurement and the SEBI rules you operate under.",
+   "qs": 120,
+   "marks": 150,
+   "mins": 180,
+   "pass_": 0,
+   "pass": 60,
+   "neg": "25% of marks",
+   "units": 12,
+   "facts": 129,
+   "pages": 37,
+   "track": "nism-alt"
   }
  ]
 }
