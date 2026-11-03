@@ -56,7 +56,7 @@ export function frame(onLang) {
     for (const [href, label, ic, id] of NAV) {
       const cur = id === active ? { "aria-current": "page" } : {};
       nav.append(h("a", { href, ...cur }, icon(ic), label));
-      tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label)));
+      tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label === "My progress" ? "Progress" : label)));
     }
   }
   Store.subscribe(() => { if (!open) paintMenu(); });

@@ -8,8 +8,8 @@ const WHO = ["Kids", "Students", "Professionals", "Homemakers", "Retirees"];
 function orbit() {
   const s = document.createElementNS(NS, "svg");
   s.setAttribute("viewBox", "20 50 160 100"); s.setAttribute("class", "lgl-orbit"); s.setAttribute("aria-hidden", "true");
-  s.innerHTML = `<defs><linearGradient id="lgl-g" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="166" y2="0"><stop offset="0" stop-color="#3D8BFF"/><stop offset=".38" stop-color="#8B6CFF"/><stop offset=".68" stop-color="#FF7E9D"/><stop offset="1" stop-color="#FFB400"/></linearGradient></defs>
-<path d="${LOOP}"/><circle class="dot" r="9"><animateMotion dur="9s" repeatCount="indefinite" path="${LOOP}"/></circle>`;
+  s.innerHTML = `<defs><linearGradient id="lgl-g" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="166" y2="0"><stop offset="0" stop-color="#FFB000"/><stop offset=".55" stop-color="#FFC531"/><stop offset="1" stop-color="#FFD866"/></linearGradient></defs>
+<path d="${LOOP}"/><circle class="dot" r="11"><animateMotion dur="9s" repeatCount="indefinite" path="${LOOP}"/></circle>`;
   return s;
 }
 
