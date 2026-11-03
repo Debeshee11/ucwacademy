@@ -44,7 +44,7 @@ if __name__ == "__main__":
     idx_p = REPO + "one/data/nism.json"
     old = json.load(open(idx_p)) if os.path.exists(idx_p) else {"exams": []}
     byid = {e["id"]: e for e in old["exams"]}; byid.update({e["id"]: e for e in ex})
-    ORD = ["nism-v-a","nism-xii","nism-viii","nism-x-a","nism-xv","nism-xxi-a","nism-xix-a","nism-xi","nism-i","nism-xb"]
+    ORD = ["nism-v-a","nism-xii","nism-viii","nism-x-a","nism-xv","nism-xxi-a","nism-xix-a","nism-xi","nism-i","nism-xb","nism-v-d","nism-vi","nism-xxi-b"]
     order = sorted(byid, key=lambda k: ORD.index(k) if k in ORD else 99)
     exams = [byid[i] for i in order]
     tracks = [dict(t, exams=[e["id"] for e in exams if e["track"] == t["id"]]) for t in TRACKS]

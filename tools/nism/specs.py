@@ -10,6 +10,9 @@ SPECS = [
  ("ex_i", {3: ["cfut", "fut_pnl", "margin"], 4: ["cpt", "opt_net", "breakeven"], 5: ["opt_net", "breakeven"], 7: ["margin"], 2: ["cfut"]}),
  ("ex_xi", {3: ["ipo"], 5: ["mcap", "pe", "divy"], 6: ["margin", "contract"], 4: ["mcap"]}),
  ("ex_va", {1: ["nav", "units"], 6: ["nav", "units", "stcg", "ltcg", "ter", "exit", "stamp", "ret_div"], 7: ["units", "sip", "avgcost", "stamp"], 8: ["abs", "cagr", "ret_div"], 11: ["sip"]}),
+ ("ex_vd", {1: ["nav","units"], 3: ["nav","units","stcg","ltcg","ter","exit","stamp"], 4: ["sip","abs","cagr","sharpe"], 7: ["cfut","fut_pnl","margin","contract"], 8: ["opt_net","breakeven"], 11: ["fut_pnl","margin"]}),
+ ("ex_vi", {}),
+ ("ex_xxib", {2: ["pe","eps","roe","ev"], 3: ["fv","pv"], 6: ["fv","pv","cagr"], 7: ["capm","sharpe"], 9: ["sharpe"], 11: ["twr","sharpe","capm","abs","cagr"], 12: ["stcg","ltcg"]}),
 ]
 TRACKS = [
  dict(id="nism-mf", name="Mutual funds and distribution", blurb="Distribute funds, advise investors, understand the product."),
