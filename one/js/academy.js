@@ -145,22 +145,31 @@ export function assess(cid) {
       return cs.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, r.name), h("p", { class: "small mute" }, r.blurb)), h("div", { class: "stack" }, cs.map(card))) : null; }));
 }
 
-/* ——— Courses: subject, then track, then course ——— */
+/* ——— Courses: subject accordion, then track, then course rows ——— */
 const levelTxt = c => level(c.level).name;
+const SUBJ = { basics: ["#B7791F", "#FFF1C6"], mf: ["#0F7B6C", "#DDF5EE"], stocks: ["#2F6BDB", "#E3EDFF"], assets: ["#C2570C", "#FFE8D2"], nri: ["#7A4FC4", "#EEE6FF"], teach: ["#C2386B", "#FFE3EE"] };
+const subjStyle = id => { const [a, b] = SUBJ[id] || SUBJ.basics; return `--sc:${a};--sb:${b}`; };
 export function courseCard(c) {
   const p = Store.courseProgress(c), cred = Creds.find("course", c.id);
-  return h("a", { class: "ccard", href: `#/course/${c.id}` }, cover(c),
+  return h("a", { class: "ccard", href: `#/course/${c.id}`, style: subjStyle(c.sec) }, cover(c),
     h("div", { class: "ccard-b" },
       h("div", { class: "ccard-meta" }, h("span", { class: "lv-dot " + c.level }), levelTxt(c)),
       h("h3", { class: "ccard-t" }, c.title),
       h("p", { class: "tiny mute" }, `${c.lessons.length} lessons · 3 exams`),
       h("div", { class: "ccard-f" }, cred ? h("span", { class: "pill ok" }, "Certified") : p.done ? h("div", { class: "stack stack-xs" }, bar(p.pct), h("span", { class: "tiny mute" }, `${p.pct}% done`)) : h("span", { class: "ccard-go" }, "Start course"))));
 }
+const courseRow = c => {
+  const p = Store.courseProgress(c), cred = Creds.find("course", c.id);
+  return h("a", { class: "crow", href: `#/course/${c.id}`, style: subjStyle(c.sec) },
+    h("span", { class: "crow-tag" }, String(c.tag || c.topic).split(/[^A-Za-z0-9/]+/)[0].slice(0, 5)),
+    h("span", { class: "crow-b" }, h("b", { class: "crow-t" }, c.title), h("span", { class: "crow-m" }, h("span", { class: "lv-dot " + c.level }), `${levelTxt(c)} · ${c.lessons.length} lessons`)),
+    cred ? h("span", { class: "pill ok" }, "Certified") : p.done ? h("span", { class: "crow-pct" }, p.pct + "%") : icon("chev", 18));
+};
+const soonRow = (t, sec) => h("div", { class: "crow soon", style: subjStyle(sec) }, h("span", { class: "crow-tag" }, "···"), h("span", { class: "crow-b" }, h("b", { class: "crow-t" }, t.name), h("span", { class: "crow-m" }, t.blurb)), h("span", { class: "pill" }, "Opening soon"));
 export function courses() {
   const f = { text: "", level: "all", cat: "all" }, s = Store.get(), door = doorOf(s.door);
-  const host = h("div", { class: "stack stack-xl" });
+  const host = h("div", { class: "stack stack-l" }), openSet = new Set();
   const search = h("input", { class: "input", type: "search", placeholder: "Search courses: SIP, gold, SEBI, tax…", "aria-label": "Search courses", on: { input: ev => { f.text = ev.target.value.trim().toLowerCase(); paint(); } } });
-  const trackOf = (cat, id) => cat.tracks.find(t => t.id === id);
   function paint() {
     const match = c => (f.level === "all" || c.level === f.level) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
     const chip = (v, cur, set, t) => h("button", { class: "chip", "aria-pressed": String(cur === v), on: { click: () => { set(v); paint(); } } }, t);
@@ -173,18 +182,21 @@ export function courses() {
         h("div", { class: "chips", role: "group", "aria-label": "Subject" }, chip("all", f.cat, v => (f.cat = v), "All subjects"), ...D.sections.map(c => chip(c.id, f.cat, v => (f.cat = v), c.name))),
         h("div", { class: "chips", role: "group", "aria-label": "Level" }, chip("all", f.level, v => (f.level = v), "All levels"), ...D.levels.map(l => chip(l.id, f.level, v => (f.level = v), l.name)))),
       rec.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, "Recommended for you"), h("p", { class: "small mute" }, `Picked for: ${door.name}`)), h("div", { class: "cgrid" }, rec.map(courseCard))) : null,
-      cats.map(cat => {
-        const blocks = cat.tracks.map(t => { const cs = D.courses.filter(c => c.sec === cat.id && c.track === t.id && match(c)); return [t, cs]; }).filter(([t, cs]) => cs.length || (t.soon && !filtering));
+      h("div", { class: "acc-list" }, cats.map(cat => {
+        const blocks = cat.tracks.map(t => [t, D.courses.filter(c => c.sec === cat.id && c.track === t.id && match(c))]).filter(([t, cs]) => cs.length || (t.soon && !filtering));
         if (!blocks.length) return null;
-        const n = D.courses.filter(c => c.sec === cat.id).length;
-        return h("section", { class: "subject stack stack-l", id: "subj-" + cat.id },
-          h("div", { class: "subject-h" }, h("h2", { class: "subject-t" }, cat.name), h("p", { class: "mute" }, cat.blurb + (n ? ` · ${n} ${n === 1 ? "course" : "courses"}` : ""))),
-          blocks.map(([t, cs]) => h("div", { class: "track stack" },
-            h("div", { class: "track-h" }, h("h3", { class: "track-t" }, t.name), h("p", { class: "small mute" }, t.blurb)),
-            t.soon && !cs.length ? h("div", { class: "soon-card" }, h("b", {}, "Opening soon"), h("span", { class: "small mute" }, "Being written and reviewed by practitioners.")) : h("div", { class: "cgrid" }, cs.map(courseCard)))));
-      }).filter(Boolean),
+        const all = D.courses.filter(c => c.sec === cat.id), soonN = cat.tracks.filter(t => t.soon).length;
+        const d = h("details", { class: "acc", style: subjStyle(cat.id), id: "subj-" + cat.id }, 
+          h("summary", { class: "acc-s" }, h("span", { class: "acc-ic" }, (cat.name.match(/\b\w/g) || []).slice(0, 2).join("").toUpperCase()), h("span", { class: "acc-h" }, h("b", { class: "acc-t" }, cat.name), h("span", { class: "acc-m" }, cat.blurb)), h("span", { class: "acc-n" }, `${all.length} ${all.length === 1 ? "course" : "courses"}${soonN ? ` · ${soonN} soon` : ""}`), h("span", { class: "acc-chev" }, icon("chev", 18))),
+          h("div", { class: "acc-b" }, blocks.map(([t, cs]) => h("div", { class: "track stack stack-s" },
+            cs.length ? h("div", { class: "track-h" }, h("h3", { class: "track-t" }, t.name), h("p", { class: "small mute" }, t.blurb)) : null,
+            cs.length ? h("div", { class: "crows" }, cs.map(courseRow)) : soonRow(t, cat.id)))));
+        d.open = filtering || openSet.has(cat.id) || (!openSet.size && cats[0] === cat && cats.length > 1 && false);
+        d.addEventListener("toggle", () => { d.open ? openSet.add(cat.id) : openSet.delete(cat.id); });
+        return d;
+      }).filter(Boolean)),
       filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
   }
   paint();
-  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Each subject is split into tracks, so you always know where to begin.`)), host);
+  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`)), host);
 }
