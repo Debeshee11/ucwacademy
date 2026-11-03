@@ -21,7 +21,7 @@ import { admin } from "./admin.js";
 import * as Nism from "./nism.js";
 
 const root = document.getElementById("app");
-const splash = () => h("div", { class: "splash", role: "status", "aria-label": "Loading" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("div", { class: "splash-line" }, h("i")), h("p", { class: "splash-t" }, "Preparing your academy"));
+const splash = () => h("div", { class: "splash", role: "status", "aria-label": "Loading" }, h("img", { src: "assets/mark.svg", alt: "UpperCrust Academy" }), h("div", { class: "splash-line" }, h("i")), h("p", { class: "splash-t" }, "Preparing your academy"));
 const skip = h("button", { style: "position:absolute;left:-999px;top:8px;background:#fff;border:1px solid #DDD9D0;padding:8px 14px;border-radius:8px;z-index:99", on: { focus: e => (e.target.style.left = "8px"), blur: e => (e.target.style.left = "-999px"), click: () => document.getElementById("main")?.focus() } }, "Skip to content");
 document.body.prepend(skip);
 

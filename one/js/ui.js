@@ -20,7 +20,7 @@ export function frame(onLang) {
   const nav = h("nav", { class: "nav", "aria-label": "Main" });
   const tabs = h("nav", { class: "tabs", "aria-label": "Main" });
   const menuHost = h("div", { class: "me" });
-  const brand = () => h("a", { class: "brand", href: "#/", "aria-label": "UpperCrust Academy home" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust" }), h("span", { class: "acad" }, "Academy"));
+  const brand = () => h("a", { class: "brand", href: "#/", "aria-label": "UpperCrust Academy home" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
   const side = h("aside", { class: "side" }, brand(), nav);
   const top = h("header", { class: "bar-top" }, brand(), menuHost);
   let open = false, active = "";

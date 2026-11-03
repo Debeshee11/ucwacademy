@@ -112,5 +112,5 @@ export function verify(id) {
       sheet(c));
   }).catch(() => box.replaceChildren(h("h1", { class: "h1" }, "Could not check."), h("p", { class: "lead" }, "The verification service is unreachable. Try again shortly.")));
   return h("main", { class: "wrap page stack stack-l", id: "main" },
-    h("a", { class: "brand", href: "./" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust" }), h("span", { class: "one" }, "One")), box);
+    h("a", { class: "brand", href: "./" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy"))), box);
 }

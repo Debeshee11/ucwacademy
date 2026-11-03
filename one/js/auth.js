@@ -8,7 +8,7 @@ import { doorPicker } from "./academy.js";
 import { loginSide } from "./loginart.js";
 import { LANGS, getLang, setLanguage } from "./i18n.js";
 
-const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" }), h("span", { class: "acad" }, "Academy"));
+const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
 
 /* Resolves with the signed-in user. Resolves at once when a session is restored. */
 export function start() {
@@ -196,7 +196,7 @@ function mount(a, startMsg) {
     const langRow = h("div", { class: "lg-lang", role: "group", "aria-label": "Language" },
       LANGS.map(([v, t]) => h("button", { type: "button", class: "lg-lbtn", lang: v, "aria-pressed": String(getLang() === v), on: { click: () => v !== getLang() && setLanguage(v) } }, t)));
     document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" }, langRow,
-      h("div", { class: "lg-top" }, h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust, The Wealth Company" })), form))));
+      h("div", { class: "lg-top" }, h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")))), form))));
   });
 }
 
@@ -213,7 +213,7 @@ export function welcome() {
     const box = h("div", { class: "gate-card stack stack-l wide" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
-    const logo = h("img", { src: "assets/logo-gold.svg", alt: "UpperCrust", style: "height:34px;margin:0 auto" });
+    const logo = h("img", { src: "assets/mark.svg", alt: "UpperCrust Academy", style: "height:36px;margin:0 auto" });
 
     const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "", readonly: !!Store.get().mv });
     const perr = h("p", { class: "error", role: "alert" });
