@@ -1,11 +1,12 @@
 name: Deploy backend
 
-# Publishes the Cloud Functions to Firebase whenever they change. Firestore rules are published by hand in the Firebase console (see PUSH-GUIDE.md).
+# Publishes the Cloud Functions and the Firestore security rules whenever they change.
 # One-time setup: add the repository secret FIREBASE_SERVICE_ACCOUNT (see SETUP-BACKEND.md).
+# The tests also check that the staff list is the same in the rules, the functions and the browser config.
 on:
   push:
     branches: [main]
-    paths: ["functions/**", "firebase.json"]
+    paths: ["functions/**", "firebase.json", "firestore.rules", "one/js/config.js"]
   workflow_dispatch:
 
 concurrency:
@@ -19,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - name: Test the marking logic
+      - name: Test marking logic and configuration
         working-directory: functions
         run: npm install --no-audit --no-fund && npm test
       - name: Deploy functions and rules
@@ -28,4 +29,5 @@ jobs:
         run: |
           echo "$SA" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          npx --yes firebase-tools@latest deploy --only functions --project ucwacademy --non-interactive --force
+          npx --yes firebase-tools@13.29.1 deploy --only functions,firestore:rules --project ucwacademy --non-interactive --force
+          rm -f "$RUNNER_TEMP/sa.json"
