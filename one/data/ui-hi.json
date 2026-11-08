@@ -1076,5 +1076,9 @@
 "One quick check that this number is yours. It keeps your certificates and account safe.": "बस एक जाँच कि यह नंबर आपका है। इससे आपके सर्टिफ़िकेट और अकाउंट सुरक्षित रहते हैं।",
 "That number is already used by another account. Use a different number, or sign in with it.": "यह नंबर किसी और अकाउंट में इस्तेमाल हो चुका है। दूसरा नंबर इस्तेमाल करें, या उसी से साइन इन करें।",
 "Could not send the code just now. Try again in a moment.": "अभी कोड नहीं भेजा जा सका। थोड़ी देर में फिर कोशिश करें।",
-"Too many codes sent today. Try again tomorrow.": "आज बहुत ज़्यादा कोड भेजे जा चुके हैं। कल फिर कोशिश करें।"
+"Too many codes sent today. Try again tomorrow.": "आज बहुत ज़्यादा कोड भेजे जा चुके हैं। कल फिर कोशिश करें।",
+"Subjects": "विषय",
+"Updated": "अपडेट किया",
+"Opens the publisher's site.": "प्रकाशक की साइट खुलती है।",
+"Read story": "खबर पढ़ें"
 }
