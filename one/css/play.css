@@ -5,8 +5,8 @@
   --gold: #FFB703; --gold-d: #C98600; --gold-tint: #FFF3CF; --gold-ink: #7A4F00;
   --ink: #2A1E12; --ink2: #4A3C2C; --mute: #7D705F;
   --line: #ECE6D8; --line2: #DAD2BF; --soft: #F8F5EC;
-  --font: "Figtree", system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", "Noto Sans Gujarati", sans-serif;
-  --display: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --font: "Figtree", "Noto Sans Devanagari", "Noto Sans Gujarati", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Bricolage Grotesque", "Figtree", "Noto Sans Devanagari", "Noto Sans Gujarati", system-ui, sans-serif;
   --r: 22px;
 }
 body { background: #fff; font-family: var(--font); font-weight: 500; }
