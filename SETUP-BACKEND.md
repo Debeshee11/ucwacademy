@@ -1,9 +1,13 @@
 # Backend setup
 
-The full step-by-step is in PUSH-GUIDE.md that came with the master zip. Short version:
+Everything is deployed by GitHub Actions. One-time steps:
 
-1. Firebase: upgrade to Blaze, enable Phone and Google sign-in, set SMS limits and a budget alert.
-2. GitHub: add the secret FIREBASE_SERVICE_ACCOUNT, then add `.github/workflows/firebase.yml` (deploys the functions).
-3. GitHub (owner account): Settings > Pages > Source: GitHub Actions, then add `.github/workflows/pages.yml`.
-4. Sign in as admin > account menu > Growth and exams: Verify staff accounts, then upload the answer keys.
-5. Firebase console > Firestore > Rules: publish `firestore.rules.STRICT`.
+1. **Firebase**: upgrade to Blaze. Enable Phone, Google and Email/Password sign-in. Add `ucwacademy.in` to Authentication > Settings > Authorized domains.
+2. **GitHub secret**: add `FIREBASE_SERVICE_ACCOUNT` (a service-account JSON with permission to deploy functions and rules).
+3. **GitHub Pages**: Settings > Pages > Source: GitHub Actions. The site is published by `.github/workflows/pages.yml`.
+4. Push to `main`. `.github/workflows/firebase.yml` runs the tests, then deploys the functions and `firestore.rules`.
+5. Sign in as admin > account menu > Growth and exams:
+   - **Verify staff accounts** (the admin and employees must have verified emails; sign out and in once afterwards).
+   - Upload the **course exam keys** (`private-keys/examkeys/*.json`, including `_meta.json`).
+   - Upload the **NISM answer keys**.
+6. Work through `LAUNCH-CHECKLIST.md`.

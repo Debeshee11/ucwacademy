@@ -17,12 +17,14 @@ Learning platform for UpperCrust Wealth. Static site (GitHub Pages) + Firebase A
 
 ## Sign-in
 
-Two tabs: UpperCrust employee (accounts you create in Firebase Authentication) and New learner (name, mobile, email, password; needs Email/Password enabled in Firebase Authentication).
+Learners sign in with a mobile number (one-time code) or Google. Employees use the work-email door (accounts you create in Firebase Authentication). Email and password sign-in is for existing accounts only. After first sign-in every learner accepts the Privacy notice and Terms once.
 
 ## Adding an employee
 
 1. Firebase console, Authentication, add the user (email + password).
-2. Add the email to `STAFF` in `one/js/config.js` and to `listed()` in `firestore.rules`. Publish the rules.
+2. Add the email in all three places: `STAFF` in `one/js/config.js`, `listed()` in `firestore.rules`, and `functions/lib/staff.js`. `npm test` in `functions/` fails if they differ.
+3. Push to `main`. The deploy workflow publishes the rules and functions.
+4. Sign in as admin > Growth and exams > **Verify staff accounts**. The new employee signs out and in once.
 
 ## Funds: what is automatic
 
@@ -43,7 +45,7 @@ The fund page then shows that month's holdings and what changed since last month
 
 ## Credentials
 
-Pass a module quiz (70%), then the course exam (80%) to earn a course certificate. Valid 12 months; a 15-question refresher (80%) renews. Index courses are optional and do not count toward level credentials. Verify page: `https://ucwacademy.in/#/verify/<ID>`.
+Pass a module quiz (70%), then the Beginner exam (80%) to earn a course certificate. Exams and refreshers are marked on the server, which issues the certificate. Valid 12 months; a 15-question refresher (80%) renews. Index courses are optional and do not count toward level credentials. Verify page: `https://ucwacademy.in/#/verify/<ID>`.
 
 ## AI feedback (optional)
 
@@ -51,14 +53,21 @@ Set `AI_ENDPOINT` in `config.js` to a URL you host. The app POSTs `{quote, conte
 
 ## Known limits
 
-- Lesson content and answers ship to the browser, so a determined learner can read them.
-- Scores and credentials are computed in the browser. For tamper-proof results, move scoring to Cloud Functions.
+- Lesson questions (and so the Beginner exam, which draws on them) ship with their answers, because lesson quizzes mark instantly. A learner who reads the data files can look those answers up. Intermediate and Hard exams, the extra Beginner questions and the refreshers' keys are private.
+- Credentials are issued and marked only by the backend; the browser cannot create or change them.
 - The interface is English. Quiz questions can be shown in Hindi and Gujarati where translated.
 
 
 ## Courses, exams and syllabus
 
-- **Courses** page (was Explore) groups 23 courses into sections and has a **Market news** tab (headlines from the `news-data` branch; run Actions > Update headlines once to create it).
+- **Courses** page (was Explore) groups 37 courses into sections and has a **Market news** tab (headlines from the `news-data` branch; run Actions > Update headlines once to create it).
 - Every course has three exams of 20 questions: Beginner (80% to pass, issues the certificate), Intermediate (75%) and Hard (70%). Each opens after the one before. Each has a syllabus page at `#/syllabus/<course>/<b|i|h>`.
-- Exam questions live in `one/data/exams.json`. Beginner draws from the lesson questions; Intermediate and Hard have their own 20 each. Index course questions are generated from `indices.json`.
+- Exam questions live in `one/data/exams.json` (answers removed; the full copy and the keys are made by `scripts/build_examkeys.py` into the git-ignored `private-keys/` folder and uploaded from the admin page). Beginner draws from the lesson questions; Intermediate and Hard have their own 20 each. Index course questions are generated from `indices.json`.
 - Sections are defined in `one/data/courses.json` (`sections`, and `sec` on each course).
+
+
+## Launch, backups and operations
+
+See `LAUNCH-CHECKLIST.md` for the one-time console steps (App Check, SMS limits, budget alert, backups, answer-key uploads) and the go-live check.
+
+After changing lessons or exam questions: run `python3 scripts/build_examkeys.py`, commit `one/data/*.json`, then upload `private-keys/examkeys/*.json` from Admin > Growth and exams.
