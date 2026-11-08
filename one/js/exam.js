@@ -8,6 +8,7 @@ import { reportError } from "./monitor.js";
 
 const errText = e => /unauthenticated/.test(e?.code || "") ? "Please sign in again."
   : /resource-exhausted/.test(e?.code || "") ? "Please wait a few seconds and try again."
+  : /already-exists|aborted/.test(e?.code || "") ? "This attempt was already used. Start the exam again."
   : /failed-precondition/.test(e?.code || "") ? (e.message || "This exam is not ready yet.")
   : /unavailable|network|deadline/.test(e?.code || e?.message || "") ? "No connection. Check your internet."
   : "Something went wrong. Try again.";
@@ -23,7 +24,9 @@ export function runExam(root, cfg) {
   const lang = Store.get().lang;
   const qs = cfg.questions.map(q => arrange(localize(q, lang)));
   const total = qs.length, picks = Array(total).fill(null);
-  let i = 0, busy = false;
+  let i = 0, busy = false, attempt = null;
+  /* The server opens an attempt now; it can be marked once, and not sooner than a person could read the questions. */
+  try { const f0 = fns(); if (f0) f0.httpsCallable("startExam")({ courseId: cfg.courseId, tier: cfg.tier }).then(r => { attempt = r.data?.attemptId || null; }).catch(() => {}); } catch {}
 
   const barFill = h("i", { style: "width:0%" });
   const count = h("span", { class: "small mute", "aria-live": "polite", style: "min-width:56px;text-align:right" });
@@ -66,7 +69,7 @@ export function runExam(root, cfg) {
     try {
       const f = fns(); if (!f) throw new Error("The service could not be reached.");
       const answers = picks.map((k, n) => (k == null ? null : qs[n].order[k]));
-      const res = (await f.httpsCallable("submitExam")({ courseId: cfg.courseId, tier: cfg.tier, qids: qs.map(q => q.id), answers })).data;
+      const res = (await f.httpsCallable("submitExam")({ courseId: cfg.courseId, tier: cfg.tier, qids: qs.map(q => q.id), answers, attemptId: attempt })).data;
       await result(res);
     } catch (e) {
       reportError(e);
