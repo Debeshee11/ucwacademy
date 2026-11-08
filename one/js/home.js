@@ -1,4 +1,5 @@
 /* Home, Explore, and a single course. */
+import { realmVars } from "./art.js";
 import { h, icon, plural, isoDay, dayMs, toast } from "./dom.js";
 import { D, level, course, lesson, partsOf, loadTx, TIERS } from "./data.js";
 import { RULES } from "./config.js";
@@ -196,7 +197,7 @@ export function coursePage(id) {
 
   const nQ = questionCount(c);
   return widePage(
-    h("section", { class: "hero stack" },
+    h("section", { class: "hero stack", style: realmVars(c.sec) },
       h("a", { class: "small", href: "#/courses" }, icon("left", 16), "Courses"),
       h("div", { class: "hero-art" }, cover(c, true)),
       h("div", { class: "row-flex", style: "gap:10px" }, levelTag(lv), h("span", { class: "pill gold" }, "Certificate included"), h("span", { class: "pill" }, "English · हिन्दी · ગુજરાતી")),

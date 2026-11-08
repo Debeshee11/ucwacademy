@@ -1,4 +1,5 @@
 /* The lesson player: a few short parts, one at a time. */
+import { cheer } from "./cheer.js";
 import { h, icon, clear } from "./dom.js";
 import { D, lesson, courseOf, moduleIndexOf, partsOf } from "./data.js";
 import * as Store from "./store.js";
@@ -82,6 +83,7 @@ export function renderLesson(root, n) {
   function finish() {
     const first = !Store.get().done[n];
     Store.finishLesson(n);
+    if (first) cheer("+20 points", 22);
     const next = nextLessonAfter(n), m = moduleIndexOf(c, n), mod = c.modules[m];
     const modDone = mod.lessons.every(x => Store.get().done[x]);
     let act;

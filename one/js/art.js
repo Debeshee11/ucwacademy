@@ -1,7 +1,10 @@
 /* Cover art: original, generated from the course id so every course has its own look. Navy and gold only. */
 const hash = s => { let a = 7; for (const c of s) a = (a * 31 + c.charCodeAt(0)) >>> 0; return a; };
 const rnd = seed => () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
-const G = "#B07A00", G2 = "#E0B24A";
+const G = "currentColor", G2 = "currentColor";
+/* Each subject has its own colour pair: ink and tint. */
+const REALM = { basics: ["#B97700", "#FFEFC2"], mf: ["#0B7F57", "#D6F4E7"], stocks: ["#3450D1", "#E0E7FF"], assets: ["#D2501A", "#FFE3D2"], nri: ["#7440CF", "#EBE1FF"], teach: ["#C72F69", "#FFE0EC"] };
+export const realmVars = sec => { const [a, b] = REALM[sec] || REALM.basics; return `--sc:${a};--sb:${b}`; };
 
 const MOTIF = {
   basics: r => { let s = ""; for (let i = 0; i < 6; i++) for (let j = 0; j < 4; j++) { const on = r() > .45; s += `<rect x="${176 + i * 22}" y="${34 + j * 22}" width="14" height="14" rx="3" fill="${on ? G : "none"}" stroke="${G}" stroke-opacity="${on ? 0 : .35}"/>`; } return s; },
@@ -15,8 +18,8 @@ const MOTIF = {
 export function cover(c, wide) {
   const r = rnd(hash(c.id)), m = (MOTIF[c.sec] || MOTIF.basics)(r);
   const el = document.createElement("div");
-  el.className = "cover" + (wide ? " wide" : "");
+  el.className = "cover" + (wide ? " wide" : ""); el.style.cssText = realmVars(c.sec);
   const rot = (hash(c.id) % 5) * 7;
-  el.innerHTML = `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="g${rot}${c.id.length}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD866"/><stop offset="1" stop-color="#FFF1C6"/></linearGradient></defs><rect width="320" height="180" fill="url(#g${rot}${c.id.length})"/><circle cx="${40 + rot * 3}" cy="-10" r="90" fill="none" stroke="${G}" stroke-opacity=".12" stroke-width="22"/>${m}</svg>`;
+  el.innerHTML = `<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><circle cx="${40 + rot * 3}" cy="-10" r="90" fill="none" stroke="${G}" stroke-opacity=".12" stroke-width="22"/>${m}</svg>`;
   return el;
 }

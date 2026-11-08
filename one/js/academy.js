@@ -1,12 +1,13 @@
 /* The Academy's own structure: Doors (who you are), Realms (what you need), Seals (what you own), Today, the Assessment Centre. */
 import { RULES, CONTACT_EMAIL } from "./config.js";
-import { h, icon, plural, toast } from "./dom.js";
+import { h, icon, plural, toast, isoDay, dayMs } from "./dom.js";
 import { D, course, level, TIERS } from "./data.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { nextUp, hrefFor, labelFor } from "./path.js";
 import { page, widePage, bar, notFound } from "./ui.js";
-import { cover } from "./art.js";
+import { cover, realmVars } from "./art.js";
+import { trail } from "./trail.js";
 import { newsFeed, newsPreview } from "./news.js";
 import { signOut } from "./auth.js";
 
@@ -31,7 +32,7 @@ export const RANKS = [[0, "Observer"], [100, "Analyst"], [400, "Associate"], [10
 export function rankOf(xp) {
   let i = 0; RANKS.forEach(([t], k) => { if (xp >= t) i = k; });
   const next = RANKS[i + 1];
-  return { title: RANKS[i][1], next: next ? next[1] : null, need: next ? next[0] - xp : 0 };
+  return { title: RANKS[i][1], next: next ? next[1] : null, need: next ? next[0] - xp : 0, pct: next ? Math.round(100 * (xp - RANKS[i][0]) / (next[0] - RANKS[i][0])) : 100 };
 }
 
 export function pathCourses(doorId) {
@@ -59,12 +60,19 @@ export function today() {
   const seals = sealTotals(), xp = Store.xp(), rk = rankOf(xp);
   const stepLine = !step ? "You have finished everything. Retake an exam to improve your score." : step.kind === "lesson" ? "Lesson · about 8 minutes" : step.kind === "module" ? "Unit check · 10 questions" : "You are ready for the exam";
 
-  const hero = h("section", { class: "td-hero stack" },
-    h("div", { class: "eyebrow gold" }, "Your next step"),
-    h("h2", { class: "td-title" }, step?.kind === "lesson" ? "Lesson " + (step.course.lessons.indexOf(step.n) + 1) + ": " + (D.lessons[step.n]?.title || "") : step ? labelFor(step) : "All caught up"),
-    h("p", { class: "td-sub" }, c ? `${c.title} · ${realmName(c.sec)}` : ""), h("p", { class: "td-sub dim" }, stepLine),
-    h("div", { class: "row-flex" }, h("a", { class: "btn gold", href: step ? hrefFor(step) : "#/courses" }, step ? (step.kind === "lesson" && s.part[step.n] > 0 ? "Continue" : "Start") : "Browse courses"),
-      p.done ? h("span", { class: "td-sub dim" }, `${p.pct}% of this course`) : null));
+  const lessonTitle = step?.kind === "lesson" ? D.lessons[step.n]?.title || "" : "";
+  const hero = h("section", { class: "play-hero", style: c ? realmVars(c.sec) : "" },
+    h("div", { class: "ph-copy" },
+      h("p", { class: "ph-kicker" }, step ? (step.kind === "lesson" && s.part[step.n] > 0 ? "Pick up where you stopped" : "Your next step") : "All caught up"),
+      h("h2", { class: "ph-title" }, step?.kind === "lesson" ? lessonTitle : step ? labelFor(step) : "You have finished everything"),
+      h("p", { class: "ph-sub" }, c ? `${c.title} · ${realmName(c.sec)}` : ""),
+      h("p", { class: "ph-sub dim" }, stepLine),
+      h("div", { class: "row-flex ph-act" }, h("a", { class: "btn gold big", href: step ? hrefFor(step) : "#/courses" }, step ? (step.kind === "lesson" && s.part[step.n] > 0 ? "Continue" : "Start") : "Browse courses"),
+        p.done ? h("span", { class: "ph-pct" }, `${p.pct}% of this course`) : null)),
+    c ? h("div", { class: "ph-trail" }, trail(c, 5)) : null);
+
+  /* the last seven days, oldest first: filled when the learner did anything that day */
+  const week = (() => { const out = []; for (let k = 6; k >= 0; k--) { const d = isoDay(new Date(Date.now() - k * dayMs)), e = s.act[d]; out.push(h("span", { class: "wk" + (e && (e.l || e.r || e.d) ? " on" : "") + (k === 0 ? " today" : ""), title: d }, new Date(Date.now() - k * dayMs).toLocaleDateString("en", { weekday: "narrow" }))); } return h("div", { class: "week", "aria-label": "Your last seven days" }, out); })();
 
   const goals = [
     due ? { t: `Review ${plural(due, "question")}`, sub: "Spaced revision", href: "#/quiz/revise", done: a.r } : null,
@@ -92,7 +100,7 @@ export function today() {
             return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
           h("a", { class: "linkish", href: "#/courses" }, "Browse all courses"))),
       h("div", { class: "rail" }, news,
-        h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today's goals"),
+        h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today's goals"), week,
           h("div", { class: "divide" }, goals.map(g => h("a", { class: "list-row", href: g.href }, h("span", { class: "check " + (g.done ? "on" : "") }, g.done ? icon("check") : null), h("div", { class: "grow" }, h("div", { class: "list-title" }, g.t), h("div", { class: "tiny mute" }, g.sub)))))),
         h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Progress"),
           h("div", { class: "seal-row" }, [["Beginner", seals.b], ["Intermediate", seals.i], ["Hard", seals.h]].map(([t, n]) => h("div", { class: "seal-mini" }, h("b", {}, n), h("span", { class: "tiny mute" }, t + " exams")))),
@@ -179,8 +187,7 @@ export function assess(cid) {
 
 /* ——— Courses: subject accordion, then track, then course rows ——— */
 const levelTxt = c => level(c.level).name;
-const SUBJ = { basics: ["#B7791F", "#FFF1C6"], mf: ["#0F7B6C", "#DDF5EE"], stocks: ["#2F6BDB", "#E3EDFF"], assets: ["#C2570C", "#FFE8D2"], nri: ["#7A4FC4", "#EEE6FF"], teach: ["#C2386B", "#FFE3EE"] };
-const subjStyle = id => { const [a, b] = SUBJ[id] || SUBJ.basics; return `--sc:${a};--sb:${b}`; };
+const subjStyle = realmVars;
 export function courseCard(c) {
   const p = Store.courseProgress(c), cred = Creds.find("course", c.id);
   return h("a", { class: "ccard", href: `#/course/${c.id}`, style: subjStyle(c.sec) }, cover(c),
@@ -211,8 +218,8 @@ export function courses() {
     host.replaceChildren(...[
       h("div", { class: "stack" },
         h("div", { class: "search" }, icon("search"), search),
-        h("div", { class: "chips", role: "group", "aria-label": "Subject" }, chip("all", f.cat, v => (f.cat = v), "All subjects"), ...D.sections.map(c => chip(c.id, f.cat, v => (f.cat = v), c.name))),
-        h("div", { class: "chips", role: "group", "aria-label": "Level" }, chip("all", f.level, v => (f.level = v), "All levels"), ...D.levels.map(l => chip(l.id, f.level, v => (f.level = v), l.name)))),
+        h("div", { class: "chips scroll", role: "group", "aria-label": "Subject" }, chip("all", f.cat, v => (f.cat = v), "All subjects"), ...D.sections.map(c => chip(c.id, f.cat, v => (f.cat = v), c.name))),
+        h("div", { class: "chips scroll", role: "group", "aria-label": "Level" }, chip("all", f.level, v => (f.level = v), "All levels"), ...D.levels.map(l => chip(l.id, f.level, v => (f.level = v), l.name)))),
       rec.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, "Recommended for you"), h("p", { class: "small mute" }, `Picked for: ${door.name}`)), h("div", { class: "cgrid" }, rec.map(courseCard))) : null,
       h("div", { class: "acc-list" }, cats.map(cat => {
         const blocks = cat.tracks.map(t => [t, D.courses.filter(c => c.sec === cat.id && c.track === t.id && match(c))]).filter(([t, cs]) => cs.length || (t.soon && !filtering));

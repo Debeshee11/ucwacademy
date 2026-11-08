@@ -1,5 +1,5 @@
 /* Credentials list, the certificate itself, and public verification. */
-import { ledger, settingsCard } from "./academy.js";
+import { ledger, settingsCard, rankOf } from "./academy.js";
 import { ORG } from "./config.js";
 import { h, icon, fmtDate, toast, plural, pct } from "./dom.js";
 import { D, level, course } from "./data.js";
@@ -28,9 +28,18 @@ export function me() {
   const s = Store.get(), creds = Creds.all(), n = Object.keys(s.done).length, m = Store.mastery();
   const open = D.courses.filter(c => !Creds.find("course", c.id));
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Progress"),
-      h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy")),
-      h("a", { class: "linkish", href: "#/board" }, "See the leaderboard")),
+    h("section", { class: "score" },
+      h("div", { class: "sc-main" },
+        h("p", { class: "sc-label" }, "Your points"),
+        h("div", { class: "sc-xp" }, h("span", { class: "sc-coin" }, "₹"), String(Store.xp())),
+        h("p", { class: "sc-rank" }, rankOf(Store.xp()).title, rankOf(Store.xp()).next ? ` · ${rankOf(Store.xp()).need} points to ${rankOf(Store.xp()).next}` : ""),
+        bar(rankOf(Store.xp()).pct)),
+      h("div", { class: "sc-stats" },
+        h("div", {}, icon("flame", 22), h("b", {}, Store.streakNow()), h("span", {}, "day streak")),
+        h("div", {}, icon("book", 22), h("b", {}, n), h("span", {}, "lessons")),
+        h("div", {}, icon("award", 22), h("b", {}, creds.length), h("span", {}, "earned")),
+        m != null ? h("div", {}, icon("check", 22), h("b", {}, m + "%"), h("span", {}, "first-try accuracy")) : null),
+      h("a", { class: "btn ghost sm", href: "#/board" }, "Leaderboard")),
     ledger(),
     masteryMap(),
     h("section", { class: "stack" },

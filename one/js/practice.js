@@ -11,23 +11,30 @@ import { newsFeed } from "./news.js";
 const row = (href, title, sub, done) => h("a", { class: "list-row", href },
   checkMark(done ? "done" : ""), h("div", { class: "grow" }, h("div", { class: "list-title" }, title), h("div", { class: "small mute" }, sub)), h("span", { class: "chev" }, icon("chev", 18)));
 
+const tile = (href, ic, title, sub, vars, state) => h("a", { class: "gtile" + (state ? " " + state : ""), href, style: vars },
+  h("span", { class: "gtile-ic" }, icon(ic, 26)), h("span", { class: "gtile-t" }, title), h("span", { class: "gtile-s" }, sub), state === "done" ? h("span", { class: "gtile-badge" }, icon("check", 16), "Done") : null);
+const C = { gold: "--sc:#B97700;--sb:#FFEFC2", green: "--sc:#0B7F57;--sb:#D6F4E7", blue: "--sc:#3450D1;--sb:#E0E7FF", orange: "--sc:#D2501A;--sb:#FFE3D2", violet: "--sc:#7440CF;--sb:#EBE1FF", pink: "--sc:#C72F69;--sb:#FFE0EC" };
+
 export function practice() {
   const a = Store.todayAct(), due = Store.dueIds().length, labN = Object.keys(Store.get().lab).length;
   const renew = Creds.all().filter(c => c.kind === "course" && Creds.standing(c) !== "valid");
   return page(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Practice"), h("p", { class: "lead mute" }, "Short, regular practice beats long cramming.")),
-    h("div", { class: "divide" },
-      row("#/quiz/daily", "Daily five", a.d ? "Done today" : "Five questions, about two minutes", a.d),
-      row("#/quiz/revise", "Revise", due ? plural(due, "question") + " due for review" : "Nothing due right now", a.r),
-      D.holdQs.some(q => q.tags.includes("holdings")) ? row("#/quiz/holdings", "Holdings quiz", "New questions every month from the latest portfolios") : null,
-      row("#/quiz/fund", "Fund quiz", "Factsheets, returns, risk and tax across real funds"),
-      row("#/quiz/market", "Market quiz", "Indices, economy and how markets work"),
-      row("#/news", "News & Markets", "Headlines and stories to teach from"),
-      row("#/board", "Leaderboard", "Standings across the Academy"),
-      row("#/lab", "Client lab", `${D.sims.length} real client questions · ${labN} tried`),
-      row("#/quiz/place", "Placement test", "24 questions to find your level")),
-    renew.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Refreshers"),
-      h("div", { class: "divide" }, renew.map(c => row(`#/quiz/refresh/${c.key}`, c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null);
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Practice"), h("p", { class: "lead mute" }, "Short, regular practice beats long cramming. Pick a game.")),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today"),
+      h("div", { class: "gtiles two" },
+        tile("#/quiz/daily", "bolt", "Daily five", a.d ? "You did it. Come back tomorrow." : "Five questions, two minutes", C.gold, a.d ? "done" : "big"),
+        tile("#/quiz/revise", "flame", "Revise", due ? plural(due, "question") + " due for review" : "Nothing due right now", C.orange, a.r ? "done" : due ? "big" : "")),
+      renew.length ? h("div", { class: "gtiles" }, renew.map(c => tile(`#/quiz/refresh/${c.key}`, "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions", C.pink))) : null),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Quiz arena"),
+      h("div", { class: "gtiles" },
+        D.holdQs.some(q => q.tags.includes("holdings")) ? tile("#/quiz/holdings", "trend", "Holdings quiz", "New every month, from real portfolios", C.green) : null,
+        tile("#/quiz/fund", "book", "Fund quiz", "Factsheets, returns, risk and tax", C.blue),
+        tile("#/quiz/market", "trend", "Market quiz", "Indices, economy, how markets work", C.violet))),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "More ways to learn"),
+      h("div", { class: "gtiles" },
+        tile("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`, C.pink),
+        tile("#/quiz/place", "check", "Placement test", "24 questions to find your level", C.green),
+        tile("#/board", "trophy", "Leaderboard", "See where you stand", C.gold))));
 }
 
 /* ——— Market desk ——— */
