@@ -6,7 +6,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "node test/score.test.js && node test/exam.test.js && node test/config.test.js"
+    "test": "node test/score.test.js && node test/exam.test.js && node test/config.test.js && node test/merge.test.js"
   },
   "dependencies": {
     "firebase-admin": "^12.6.0",
