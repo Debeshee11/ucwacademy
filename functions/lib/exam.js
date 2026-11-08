@@ -33,9 +33,18 @@ exports.submitExam = R.https.onCall(async (data, ctx) => {
     t.set(rate, { examAt: now }, { merge: true });
   });
 
+  /* Tier order is enforced here, from results the server recorded itself. */
+  const prior = (await db.doc("examres/" + uid).get()).data() || {};
+  const passedTier = (t) => !!prior[`${courseId}:${t}`]?.passed;
+  if (tier === "i" && !passedTier("b") && !findIn(await mine(uid), "course", courseId)) fail("failed-precondition", "Pass the Beginner exam first.");
+  if (tier === "h" && !passedTier("i")) fail("failed-precondition", "Pass the Intermediate exam first.");
+
   let res;
   try { res = mark(course, tier, data?.qids, data?.answers); } catch { fail("invalid-argument", "The answers are not valid."); }
   if (res.error) fail("invalid-argument", res.error);
+
+  const key = `${courseId}:${tier}`, old = prior[key] || {};
+  await db.doc("examres/" + uid).set({ [key]: { best: Math.max(old.best || 0, res.score), n: (old.n || 0) + 1, last: now, passed: old.passed || (res.passed ? now : null) } }, { merge: true });
 
   let out = { ...res, cred: null, renewed: false, extra: [] };
   if (res.passed && tier === "b") out = { ...out, ...(await awardCourse(uid, { id: courseId, title: course.title, level: course.level }, res.score)) };
