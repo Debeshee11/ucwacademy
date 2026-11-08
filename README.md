@@ -9,7 +9,7 @@ Learning platform for UpperCrust Wealth. Static site (GitHub Pages) + Firebase A
 | `index.html` | App shell |
 | `one/css/one.css` | All styles and design tokens |
 | `one/js/*.js` | App code. `config.js` holds every setting |
-| `one/data/*.json` | Courses, lessons, client scenarios, fund factsheets, indices, Hindi and Gujarati questions |
+| `functions/content/*.json` (served to signed-in learners only, through the `content` function) | Courses, lessons, client scenarios, fund factsheets, indices, Hindi and Gujarati questions |
 | `assets/logo-uppercrust.png` | Logo |
 | `firestore.rules` | Security rules. Paste into the Firebase console and Publish |
 | `scripts/`, `.github/workflows/` | Headlines pipeline (writes to branch `news-data`) |
@@ -62,12 +62,12 @@ Set `AI_ENDPOINT` in `config.js` to a URL you host. The app POSTs `{quote, conte
 
 - **Courses** page (was Explore) groups 37 courses into sections and has a **Market news** tab (headlines from the `news-data` branch; run Actions > Update headlines once to create it).
 - Every course has three exams of 20 questions: Beginner (80% to pass, issues the certificate), Intermediate (75%) and Hard (70%). Each opens after the one before. Each has a syllabus page at `#/syllabus/<course>/<b|i|h>`.
-- Exam questions live in `one/data/exams.json` (answers removed; the full copy and the keys are made by `scripts/build_examkeys.py` into the git-ignored `private-keys/` folder and uploaded from the admin page). Beginner draws from the lesson questions; Intermediate and Hard have their own 20 each. Index course questions are generated from `indices.json`.
-- Sections are defined in `one/data/courses.json` (`sections`, and `sec` on each course).
+- Exam questions live in `functions/content/exams.json` (answers removed; the full copy and the keys are made by `scripts/build_examkeys.py` into the git-ignored `private-keys/` folder and uploaded from the admin page). Beginner draws from the lesson questions; Intermediate and Hard have their own 20 each. Index course questions are generated from `indices.json`.
+- Sections are defined in `functions/content/courses.json` (`sections`, and `sec` on each course).
 
 
 ## Launch, backups and operations
 
 See `LAUNCH-CHECKLIST.md` for the one-time console steps (App Check, SMS limits, budget alert, backups, answer-key uploads) and the go-live check.
 
-After changing lessons or exam questions: run `python3 scripts/build_examkeys.py`, commit `one/data/*.json`, then upload `private-keys/examkeys/*.json` from Admin > Growth and exams.
+After changing lessons or exam questions: run `python3 scripts/build_examkeys.py`, commit `functions/content/*.json` (served to signed-in learners only, through the `content` function), then upload `private-keys/examkeys/*.json` from Admin > Growth and exams.
