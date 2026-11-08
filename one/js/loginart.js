@@ -1,25 +1,22 @@
-/* Left side of the sign-in screen. One idea: learning never ends. A light travels round the loop, for every age. */
+/* Left side of the sign-in screen: the tagline, and a ten-second quiz that gives a reason to stay. */
 import { h } from "./dom.js";
+import { playHero } from "./loginplay.js";
+import { tryCard } from "./logintry.js";
 
-const NS = "http://www.w3.org/2000/svg";
-const LOOP = "M100 100 C78 62 40 62 40 100 C40 138 78 138 100 100 C122 62 160 62 160 100 C160 138 122 138 100 100Z";
-const WHO = ["Kids", "Students", "Professionals", "Homemakers", "Retirees"];
-
-function orbit() {
-  const s = document.createElementNS(NS, "svg");
-  s.setAttribute("viewBox", "20 50 160 100"); s.setAttribute("class", "lgl-orbit"); s.setAttribute("aria-hidden", "true");
-  s.innerHTML = `<defs><linearGradient id="lgl-g" gradientUnits="userSpaceOnUse" x1="34" y1="0" x2="166" y2="0"><stop offset="0" stop-color="#FFB000"/><stop offset=".55" stop-color="#FFC531"/><stop offset="1" stop-color="#FFD866"/></linearGradient></defs>
-<path d="${LOOP}"/><circle class="dot" r="11"><animateMotion dur="9s" repeatCount="indefinite" path="${LOOP}"/></circle>`;
-  return s;
-}
+const SQUIGGLE = '<svg viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 Q 20 0 37 9 T 71 9 T 105 9 T 139 9 T 173 9 T 217 9" /></svg>';
+const sq = () => { const s = document.createElement("span"); s.className = "lgl-sq"; s.innerHTML = SQUIGGLE; return s; };
 
 export function loginSide() {
-  return h("aside", { class: "lg-side lgl" },
+  const word = h("span", { class: "lgl-word", "data-c": "0" }, "for Everyone");
+  /* "Keep learning" takes the learner to the sign-in field */
+  const keep = () => { const f = document.querySelector("#ph, #em"); f?.scrollIntoView({ block: "center", behavior: "smooth" }); setTimeout(() => f?.focus({ preventScroll: true }), 350); };
+  const side = h("aside", { class: "lg-side lgl" },
+    h("span", { class: "lgl-blob b1", "aria-hidden": "true" }), h("span", { class: "lgl-blob b2", "aria-hidden": "true" }), h("span", { class: "lgl-blob b3", "aria-hidden": "true" }),
     h("div", { class: "lg-mark" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy"))),
     h("div", { class: "lgl-stage" },
-      orbit(),
-      h("h2", { class: "lgl-big" }, "Learning never ends."),
-      h("p", { class: "lgl-sub" }, "Money skills for every age and every stage of life."),
-      h("ul", { class: "lgl-chips", "aria-label": "Made for" }, WHO.map(w => h("li", { class: "lgl-chip" }, w)))),
-    h("p", { class: "lg-foot" }, "For education only. Not investment advice."));
+      h("h2", { class: "lgl-big" }, h("span", { class: "l1" }, "Learning "), h("span", { class: "l2" }, word), h("span", { class: "l3" }, "Made fun!", sq())),
+      tryCard(keep)),
+    h("div", { class: "lg-foot" }, h("p", { class: "lgl-trust" }, "From UpperCrust Wealth · 25+ years of wealth wisdom"), h("p", {}, "For education only. Not investment advice.")));
+  playHero(word);
+  return side;
 }

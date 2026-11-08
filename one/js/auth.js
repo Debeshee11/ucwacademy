@@ -144,7 +144,7 @@ function mount(a, startMsg) {
     }
 
     function paint() {
-      form.replaceChildren();
+      form.replaceChildren(); document.querySelector(".lg")?.setAttribute("data-mode", mode);
       const err = h("p", { class: "error", role: "alert" }, startMsg || "");
       const keep = h("input", { type: "checkbox", id: "keep", checked: true });
       const keepRow = h("label", { class: "row-flex small mute", for: "keep", style: "gap:10px" }, keep, "Keep me signed in");
@@ -200,7 +200,7 @@ function mount(a, startMsg) {
     const side = loginSide();
     const langRow = h("div", { class: "lg-lang", role: "group", "aria-label": "Language" },
       LANGS.map(([v, t]) => h("button", { type: "button", class: "lg-lbtn", lang: v, "aria-pressed": String(getLang() === v), on: { click: () => v !== getLang() && setLanguage(v) } }, t)));
-    document.body.append(h("div", { class: "lg" }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" }, langRow,
+    document.body.append(h("div", { class: "lg", "data-mode": mode }, side, h("main", { class: "lg-main" }, h("div", { class: "lg-card" }, langRow,
       h("div", { class: "lg-top" }, h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")))), form))));
   });
 }
