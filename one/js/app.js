@@ -138,7 +138,7 @@ async function boot() {
     const r = await Auth.welcome();
     Store.setOnboarded();
     if (r === "place") location.hash = "#/quiz/place";
-  } else if (!Store.get().door || !Store.get().mobile || !Store.get().name || needsVerify()) { await Auth.welcome(); }
+  } else if (!Store.get().door || !Store.get().mobile || !Store.get().name || !Store.contactEmail() || needsVerify()) { await Auth.welcome(); }
   ui = frame(route);
   document.addEventListener("one:tour", () => startTour(Store.uidNow()));
   addEventListener("hashchange", route);

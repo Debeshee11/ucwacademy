@@ -222,7 +222,7 @@ export async function signOut() {
 export function welcome() {
   return new Promise(resolve => {
     const staff = Store.isStaff();
-    let step = Store.get().name && Store.get().mobile ? (needsVerify() ? "v" : 1) : 0, choice = null, door = Store.get().door || null;
+    let step = Store.get().name && Store.get().mobile && Store.contactEmail() ? (needsVerify() ? "v" : 1) : 0, choice = null, door = Store.get().door || null;
     const box = h("div", { class: "gate-card stack stack-l wide" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
@@ -230,6 +230,8 @@ export function welcome() {
 
     const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "", readonly: !!Store.get().mv });
     const perr = h("p", { class: "error", role: "alert" });
+    const needEmail = !Store.contactEmail();
+    const emailIn = h("input", { class: "input", id: "ce", type: "email", inputmode: "email", autocomplete: "email", autocapitalize: "off", placeholder: "you@example.com" });
     /* Prove the number: a code is texted when this step opens. */
     let conf = null, resendAt = 0, tick = null;
     function verifyPaint() {
@@ -264,15 +266,17 @@ export function welcome() {
         name.value = name.value || Store.get().name || "";
         const need = true;
         box.append(logo,
-          h("div", {}, h("h1", { class: "h1" }, need ? "Complete your profile" : "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, need ? "Two quick details so we can set up your account and send your certificates." : "What should we call you?")),
+          h("div", {}, h("h1", { class: "h1" }, need ? "Complete your profile" : "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, need ? "Three quick details so we can set up your account and send your certificates." : "What should we call you?")),
           h("div", { class: "field" }, h("label", { for: "nm" }, "Full name"), name),
           need ? h("div", { class: "field" }, h("label", { for: "mb" }, "Mobile number"), mobile) : null,
+          needEmail ? h("div", { class: "field" }, h("label", { for: "ce" }, "Email"), emailIn) : null,
           perr,
           h("button", { class: "btn primary block", on: { click: () => {
             if (name.value.trim().length < 2) { perr.textContent = "Enter your name."; return name.focus(); }
             let m = "";
             if (need) { m = cleanMobile(mobile.value); if (!m) { perr.textContent = "Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code."; return mobile.focus(); } }
-            Store.setProfile({ name: name.value, mobile: m }); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
+            if (needEmail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailIn.value.trim())) { perr.textContent = "Enter a valid email."; return emailIn.focus(); }
+            Store.setProfile({ name: name.value, mobile: m, email: emailIn.value }); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
         name.focus();
       } else if (step === "v") {
         verifyPaint();

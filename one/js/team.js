@@ -105,7 +105,7 @@ function signups(rows) {
   const th2 = t => h("th", { style: "text-align:left;padding:10px 8px;border-bottom:1px solid var(--line2);font-weight:600;color:var(--mute);font-size:13px;white-space:nowrap" }, t);
   return h("section", { class: "stack" }, h("h2", { class: "h2" }, "New learners"),
     h("p", { class: "mute" }, `${pub.length} public learners · ${n(day)} today · ${n(7 * day)} this week · ` + Object.entries(doors).map(([k, v]) => `${k} ${v}`).join(", ")),
-    h("p", { class: "tiny mute" }, "Details we collect: name, email, optional mobile, door, sign-up method, join date and learning progress. Use Export CSV below for the full list."),
+    h("p", { class: "tiny mute" }, "Details we collect: name, email, mobile, door, sign-up method, join date and learning progress. Use Export CSV below for the full list."),
     h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:720px" },
       h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Learner type", "Via", "Lessons"].map(th2))),
       h("tbody", {}, pub.slice(0, 25).map(r => h("tr", {}, [r.joined ? new Date(r.joined).toLocaleDateString("en-IN") : "–", r.name, r.email, r.mobile || "–", r.door || "–", r.prov || "–", r.lessons].map(v => h("td", { style: "padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap" }, v))))))),

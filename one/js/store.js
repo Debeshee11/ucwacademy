@@ -73,7 +73,7 @@ export async function flush() {
       const snap = await tx.get(ref), mine = strip(state);
       merged = snap.exists ? mergeStates(clean(snap.data()), clean(mine)) : mine;
       merged.updated = Math.max(merged.updated || 0, Date.now());
-      tx.set(ref, { ...merged, email });
+      tx.set(ref, { ...merged, email: email || merged.email || "" });
     });
     if (merged) { const { nm, creds } = state; state = { ...clean(merged), nm, creds }; try { localStorage.setItem(KEY(uid), JSON.stringify(state)); } catch {} emit(); }
     warned = false; syncBoard(false); }
@@ -105,6 +105,8 @@ export const get = () => state;
 export const subscribe = fn => { subs.add(fn); return () => subs.delete(fn); };
 export const userId = () => uid;
 export const userEmail = () => email;
+/* The email we hold for this learner: the sign-in email, or the one they typed for phone sign-in. */
+export const contactEmail = () => email || state.email || "";
 
 /* ——— activity and streak (weekends never break a streak) ——— */
 const weekday = d => d.getDay() !== 0 && d.getDay() !== 6;
@@ -165,7 +167,7 @@ export const recordLab = (id, score) => mutate(s => { const r = s.lab[id] || { s
 
 /* ——— profile ——— */
 export const setName = name => mutate(s => { s.name = name.trim().slice(0, 60); });
-export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); if (p.mv) s.mv = 1; });
+export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); if (p.mv) s.mv = 1; if (p.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email.trim())) s.email = p.email.trim().toLowerCase().slice(0, 120); });
 export const setOnboarded = () => mutate(s => { s.onb = 1; });
 export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });
