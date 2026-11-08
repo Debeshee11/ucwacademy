@@ -16,6 +16,7 @@ exports.deleteAccount = R.https.onCall(async (data, ctx) => {
   if (ADMIN_EMAILS.includes(String(ctx.auth.token.email || "").toLowerCase())) fail("permission-denied", "The administrator account cannot be deleted here.");
   for (const p of ["learners", "nmres", "roll", "board", "rate", "examres"]) await db.doc(`${p}/${uid}`).delete().catch(() => {});
   await deleteWhere(db.collection("credentials").where("uid", "==", uid));
+  await deleteWhere(db.collection("attempts").where("uid", "==", uid));
   await deleteWhere(db.collection("errors").where("uid", "==", uid));
   await admin.auth().deleteUser(uid);
   return { ok: true };

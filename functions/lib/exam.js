@@ -20,13 +20,37 @@ async function loadCourse(id) {
   return k;
 }
 
+const MIN_MS = 20000, MAX_MS = 3 * 3600e3;
+exports.startExam = R.https.onCall(async (data, ctx) => {
+  const uid = needAuth(ctx);
+  const courseId = String(data?.courseId || ""), tier = String(data?.tier || "");
+  if (!COUNT[tier]) fail("invalid-argument", "Unknown exam.");
+  await loadCourse(courseId);
+  const ref = db.collection("attempts").doc();
+  await ref.set({ uid, courseId, tier, started: Date.now(), used: false });
+  return { attemptId: ref.id };
+});
+
 exports.submitExam = R.https.onCall(async (data, ctx) => {
   const uid = needAuth(ctx);
   const courseId = String(data?.courseId || ""), tier = String(data?.tier || "");
   if (!COUNT[tier]) fail("invalid-argument", "Unknown exam.");
   const course = await loadCourse(courseId);
 
-  const rate = db.doc("rate/" + uid), now = Date.now();
+  /* One attempt, one marking: no replays, no instant submissions, no using another learner's attempt. */
+  const aid = String(data?.attemptId || ""), now = Date.now();
+  if (!/^[A-Za-z0-9]{10,40}$/.test(aid)) fail("failed-precondition", "Please start the exam again.");
+  await db.runTransaction(async t => {
+    const ref = db.doc("attempts/" + aid), a = await t.get(ref);
+    if (!a.exists || a.get("uid") !== uid || a.get("courseId") !== courseId || a.get("tier") !== tier) fail("failed-precondition", "Please start the exam again.");
+    if (a.get("used")) fail("already-exists", "This attempt was already used.");
+    const age = now - a.get("started");
+    if (age < MIN_MS) fail("resource-exhausted", "Please wait a few seconds and try again.");
+    if (age > MAX_MS) fail("failed-precondition", "This attempt expired. Start the exam again.");
+    t.update(ref, { used: true, at: now });
+  });
+
+  const rate = db.doc("rate/" + uid);
   await db.runTransaction(async t => {
     const s = await t.get(rate);
     if (now - (s.get("examAt") || 0) < COOLDOWN_MS) fail("resource-exhausted", "Please wait a few seconds before submitting again.");
