@@ -1,0 +1,1295 @@
+{
+ "levels": [
+  {
+   "id": "foundation",
+   "name": "Beginner",
+   "alias": "Beginner",
+   "blurb": "Learn the language. Spot the myths."
+  },
+  {
+   "id": "practitioner",
+   "name": "Intermediate",
+   "alias": "Intermediate",
+   "blurb": "Apply ideas to a real client situation."
+  },
+  {
+   "id": "expert",
+   "name": "Advanced",
+   "alias": "Pro",
+   "blurb": "Judge trade-offs. Defend your advice."
+  }
+ ],
+ "courses": [
+  {
+   "id": "mf-foundations",
+   "level": "foundation",
+   "title": "Mutual fund foundations",
+   "blurb": "How the industry works, what an SIP can and cannot promise, why costs and rules matter, and how to talk honestly when markets fall.",
+   "modules": [
+    {
+     "title": "How the industry and investors behave",
+     "lessons": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    {
+     "title": "Products, costs and why returns differ",
+     "lessons": [
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    },
+    {
+     "title": "Selling responsibly",
+     "lessons": [
+      11,
+      12,
+      13,
+      14,
+      15
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "MF",
+   "sec": "mf",
+   "track": "mf-basics"
+  },
+  {
+   "id": "regulation",
+   "level": "foundation",
+   "title": "SEBI, AMFI and the rules of the road",
+   "blurb": "Who runs a mutual fund, how funds are classified, what costs mean, and what you may and may not say to a client.",
+   "modules": [
+    {
+     "title": "Who is who, and how funds are sorted",
+     "lessons": [
+      301,
+      302,
+      303
+     ]
+    },
+    {
+     "title": "Selling by the rules",
+     "lessons": [
+      304,
+      305,
+      306
+     ]
+    }
+   ],
+   "topic": "Regulation",
+   "tag": "SEBI",
+   "sec": "mf",
+   "track": "mf-basics"
+  },
+  {
+   "id": "financial-maths",
+   "level": "foundation",
+   "title": "Financial maths for advisers",
+   "blurb": "Time value, CAGR, XIRR, SIP maths, inflation and costs: the numbers behind every client conversation.",
+   "modules": [
+    {
+     "title": "Growth and returns",
+     "lessons": [
+      101,
+      102,
+      103,
+      104,
+      105
+     ]
+    },
+    {
+     "title": "Goals, risk and costs",
+     "lessons": [
+      106,
+      107,
+      108,
+      109,
+      110
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "CAGR",
+   "sec": "basics",
+   "track": "habits"
+  },
+  {
+   "id": "sip-planning",
+   "level": "foundation",
+   "title": "SIP, SWP, STP and goal investing",
+   "blurb": "Start, step up, transfer and withdraw: the systematic plans that turn goals into monthly habits.",
+   "modules": [
+    {
+     "title": "Investing regularly",
+     "lessons": [
+      331,
+      332,
+      333
+     ]
+    },
+    {
+     "title": "Withdrawing, goals and discipline",
+     "lessons": [
+      334,
+      335,
+      336
+     ]
+    }
+   ],
+   "topic": "Planning",
+   "tag": "SIP",
+   "sec": "mf",
+   "track": "mf-basics"
+  },
+  {
+   "id": "equity-funds",
+   "level": "foundation",
+   "title": "Equity fund categories",
+   "blurb": "Large, mid, small, flexi, ELSS, sectoral and style funds: what each must hold and who each suits.",
+   "modules": [
+    {
+     "title": "The market-cap ladder and ELSS",
+     "lessons": [
+      311,
+      312,
+      313
+     ]
+    },
+    {
+     "title": "Themes, styles and choosing well",
+     "lessons": [
+      314,
+      315,
+      316
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "EQ",
+   "sec": "mf",
+   "track": "mf-types"
+  },
+  {
+   "id": "economy-markets",
+   "level": "practitioner",
+   "title": "Indian economy and markets",
+   "blurb": "Growth, rates, inflation, flows and valuation, and how to turn the macro picture into a simple story for a client.",
+   "modules": [
+    {
+     "title": "Growth, rates and inflation",
+     "lessons": [
+      16,
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    {
+     "title": "Flows, budgets and valuation",
+     "lessons": [
+      21,
+      22,
+      23,
+      24,
+      25
+     ]
+    },
+    {
+     "title": "Sectors, global links and the client story",
+     "lessons": [
+      26,
+      27,
+      28,
+      29,
+      30
+     ]
+    }
+   ],
+   "topic": "Markets and economy",
+   "tag": "GDP",
+   "sec": "stocks",
+   "track": "st-econ"
+  },
+  {
+   "id": "hybrid-funds",
+   "level": "practitioner",
+   "title": "Hybrid funds: balanced, arbitrage and equity savings",
+   "blurb": "Aggressive, conservative, balanced advantage, arbitrage and equity savings: how each works, how it is taxed, and who it fits.",
+   "modules": [
+    {
+     "title": "The hybrid family",
+     "lessons": [
+      321,
+      322,
+      323
+     ]
+    },
+    {
+     "title": "Income, tax and matching to clients",
+     "lessons": [
+      324,
+      325,
+      326
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "HY",
+   "sec": "mf",
+   "track": "mf-types"
+  },
+  {
+   "id": "passive-etf",
+   "level": "practitioner",
+   "title": "Index funds and ETFs: passive investing",
+   "blurb": "Index funds, ETFs, tracking error, smart beta and how to build a low-cost core.",
+   "modules": [
+    {
+     "title": "How passive funds work",
+     "lessons": [
+      341,
+      342,
+      343
+     ]
+    },
+    {
+     "title": "Smart beta and building a core",
+     "lessons": [
+      344,
+      345,
+      346
+     ]
+    }
+   ],
+   "topic": "Mutual funds",
+   "tag": "ETF",
+   "sec": "mf",
+   "track": "mf-types"
+  },
+  {
+   "id": "debt-funds",
+   "level": "practitioner",
+   "title": "Fixed income and debt funds",
+   "blurb": "Bond maths, duration, credit risk, the yield curve, SEBI categories, tax, and matching debt funds to goals honestly.",
+   "modules": [
+    {
+     "title": "How bonds and rates work",
+     "lessons": [
+      111,
+      112,
+      113,
+      114,
+      115
+     ]
+    },
+    {
+     "title": "Categories, risk, tax and selling",
+     "lessons": [
+      116,
+      117,
+      118,
+      119,
+      120
+     ]
+    }
+   ],
+   "topic": "Fixed income",
+   "tag": "Debt",
+   "sec": "mf",
+   "track": "mf-types"
+  },
+  {
+   "id": "multi-asset",
+   "level": "practitioner",
+   "title": "Multi-asset and allocation",
+   "blurb": "Why allocation drives outcomes, how multi-asset funds work, and how to handle rebalancing, retirees and objections.",
+   "modules": [
+    {
+     "title": "The category and why it works",
+     "lessons": [
+      61,
+      62,
+      63,
+      64,
+      65
+     ]
+    },
+    {
+     "title": "Rebalancing, income and construction",
+     "lessons": [
+      66,
+      67,
+      68,
+      69,
+      70
+     ]
+    },
+    {
+     "title": "Behaviour, objections and the pitch",
+     "lessons": [
+      71,
+      72,
+      73,
+      74,
+      75
+     ]
+    }
+   ],
+   "topic": "Asset allocation",
+   "tag": "60/40",
+   "sec": "mf",
+   "track": "mf-types"
+  },
+  {
+   "id": "behaviour",
+   "level": "practitioner",
+   "title": "Investor behaviour and psychology",
+   "blurb": "Loss aversion, herding, anchoring and the behaviour gap, plus a script for the hard conversation.",
+   "modules": [
+    {
+     "title": "The biases",
+     "lessons": [
+      351,
+      352,
+      353
+     ]
+    },
+    {
+     "title": "Acting on them",
+     "lessons": [
+      354,
+      355,
+      356
+     ]
+    }
+   ],
+   "topic": "Behaviour",
+   "tag": "BEH",
+   "sec": "basics",
+   "track": "habits"
+  },
+  {
+   "id": "gold-silver",
+   "level": "practitioner",
+   "title": "Gold and silver for client portfolios",
+   "blurb": "What drives precious metals, which product fits which client, how much is enough, and how to keep expectations honest.",
+   "modules": [
+    {
+     "title": "Gold: the run and the buyers",
+     "lessons": [
+      46,
+      47,
+      48,
+      49,
+      50
+     ]
+    },
+    {
+     "title": "Gold today and silver's breakout",
+     "lessons": [
+      51,
+      52,
+      53,
+      54,
+      55
+     ]
+    },
+    {
+     "title": "Sizing, volatility and the pitch",
+     "lessons": [
+      56,
+      57,
+      58,
+      59,
+      60
+     ]
+    }
+   ],
+   "topic": "Gold and silver",
+   "tag": "Au · Ag",
+   "sec": "assets",
+   "track": "gold"
+  },
+  {
+   "id": "defence",
+   "level": "practitioner",
+   "title": "Defence and manufacturing",
+   "blurb": "The budget, production, exports and order pipeline behind the theme, and how to pitch it without overpromising.",
+   "modules": [
+    {
+     "title": "Budget, production and orders",
+     "lessons": [
+      31,
+      32,
+      33,
+      34,
+      35
+     ]
+    },
+    {
+     "title": "Players and policy",
+     "lessons": [
+      36,
+      37,
+      38,
+      39,
+      40
+     ]
+    },
+    {
+     "title": "Valuation and the client pitch",
+     "lessons": [
+      41,
+      42,
+      43,
+      44,
+      45
+     ]
+    }
+   ],
+   "topic": "Markets and economy",
+   "tag": "DEF",
+   "sec": "stocks",
+   "track": "st-econ"
+  },
+  {
+   "id": "reit-invit",
+   "level": "practitioner",
+   "title": "REITs and InvITs: real-asset income",
+   "blurb": "How listed trusts own offices, malls, roads and power lines, how payouts and tax work, the risks, and how SEBI's 2026 changes affect mutual funds.",
+   "modules": [
+    {
+     "title": "REITs: owning rent",
+     "lessons": [
+      91,
+      92,
+      93,
+      94,
+      95
+     ]
+    },
+    {
+     "title": "InvITs, risks and selling responsibly",
+     "lessons": [
+      96,
+      97,
+      98,
+      99,
+      100
+     ]
+    }
+   ],
+   "topic": "Real assets",
+   "tag": "REIT",
+   "sec": "assets",
+   "track": "real"
+  },
+  {
+   "id": "fund-analysis",
+   "level": "expert",
+   "title": "Fund analysis and client conversations",
+   "blurb": "Read a factsheet like an analyst, test a fund under stress, handle hard objections and stay inside the rules.",
+   "modules": [
+    {
+     "title": "Reading a fund",
+     "lessons": [
+      76,
+      77,
+      78,
+      79,
+      80
+     ]
+    },
+    {
+     "title": "Stress, NFOs and client moments",
+     "lessons": [
+      81,
+      82,
+      83,
+      84,
+      85
+     ]
+    },
+    {
+     "title": "Compliance, numbers and revision",
+     "lessons": [
+      86,
+      87,
+      88,
+      90
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "Fact·Sheet",
+   "sec": "mf",
+   "track": "mf-pro"
+  },
+  {
+   "id": "pms-aif-sif",
+   "level": "expert",
+   "title": "PMS, AIF and SIF structures",
+   "blurb": "How PMS, AIFs and SIFs work, who they suit, how they are costed and taxed, and how to sell them without crossing a line.",
+   "modules": [
+    {
+     "title": "The structures",
+     "lessons": [
+      121,
+      122,
+      123,
+      124,
+      125
+     ]
+    },
+    {
+     "title": "Suitability, track records and selling",
+     "lessons": [
+      126,
+      127,
+      128,
+      129,
+      130
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "PMS·AIF",
+   "sec": "assets",
+   "track": "alt"
+  },
+  {
+   "id": "tax-retirement",
+   "level": "expert",
+   "title": "Tax and retirement planning",
+   "blurb": "Capital gains, switching and harvesting, IDCW and regimes, then retirement corpus maths, withdrawals and honest planning.",
+   "modules": [
+    {
+     "title": "Taxes on mutual funds",
+     "lessons": [
+      131,
+      132,
+      133,
+      134,
+      135
+     ]
+    },
+    {
+     "title": "Retirement planning",
+     "lessons": [
+      136,
+      137,
+      138,
+      139,
+      140
+     ]
+    }
+   ],
+   "topic": "Client conversations",
+   "tag": "Tax",
+   "sec": "basics",
+   "track": "tax"
+  },
+  {
+   "id": "idx-broad",
+   "level": "foundation",
+   "title": "Broad market indices",
+   "blurb": "Nifty 50 to Total Market: what each index holds, how it is weighted and what it says about the market.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      201,
+      202,
+      203,
+      204
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      205,
+      206,
+      207,
+      208
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Broad",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "idx-midsmall",
+   "level": "practitioner",
+   "title": "Mid and small cap indices",
+   "blurb": "Midcap, smallcap and microcap indices: valuation, concentration and how they behave.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      209,
+      210,
+      211,
+      212
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      213,
+      214,
+      215,
+      216
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Mid·Small",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "idx-banking",
+   "level": "practitioner",
+   "title": "Banking and financial indices",
+   "blurb": "Bank, private bank, PSU bank, financial services, NBFC and insurance indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      217,
+      218,
+      219,
+      220
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      221,
+      222,
+      223
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Banks",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "idx-consumer",
+   "level": "practitioner",
+   "title": "Consumer, health and realty indices",
+   "blurb": "Auto, FMCG, pharma, healthcare, consumer durables, media and realty indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      224,
+      225,
+      226,
+      227
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      228,
+      229,
+      230
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Consumer",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "idx-tech-infra",
+   "level": "practitioner",
+   "title": "Technology and infrastructure indices",
+   "blurb": "IT, telecom, capital goods, infrastructure and cement indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      231,
+      232,
+      233
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      234,
+      235
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Tech·Infra",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "idx-energy",
+   "level": "practitioner",
+   "title": "Energy, materials and defence indices",
+   "blurb": "Metal, chemicals, oil and gas, power, commodities and defence indices.",
+   "modules": [
+    {
+     "title": "Part 1",
+     "lessons": [
+      236,
+      237,
+      238
+     ]
+    },
+    {
+     "title": "Part 2",
+     "lessons": [
+      239,
+      240,
+      241
+     ]
+    }
+   ],
+   "topic": "Indices",
+   "tag": "Energy",
+   "optional": true,
+   "sec": "stocks",
+   "track": "st-idx"
+  },
+  {
+   "id": "stock-basics",
+   "level": "foundation",
+   "title": "How the stock market works",
+   "blurb": "Shares, exchanges, demat accounts, orders, settlement, IPOs and corporate actions: everything you need before your first trade.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      401,
+      402,
+      403,
+      404,
+      405
+     ]
+    }
+   ],
+   "topic": "Stock market",
+   "tag": "STK",
+   "sec": "stocks",
+   "track": "st-basics"
+  },
+  {
+   "id": "company-fundamentals",
+   "level": "practitioner",
+   "title": "Reading a company: fundamentals",
+   "blurb": "Earnings, valuation ratios, profitability, debt and cash flow: how to judge a business before you judge its share price.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      406,
+      407,
+      408,
+      409,
+      410
+     ]
+    }
+   ],
+   "topic": "Stock market",
+   "tag": "FND",
+   "sec": "stocks",
+   "track": "st-basics"
+  },
+  {
+   "id": "futures-explained",
+   "level": "practitioner",
+   "title": "Futures explained",
+   "blurb": "What a futures contract is, how margin and daily settlement work, and why leverage cuts both ways.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      411,
+      412,
+      413,
+      414,
+      415
+     ]
+    }
+   ],
+   "topic": "Derivatives",
+   "tag": "FUT",
+   "sec": "stocks",
+   "track": "derivatives"
+  },
+  {
+   "id": "options-explained",
+   "level": "practitioner",
+   "title": "Options explained",
+   "blurb": "Calls, puts, premium, the Greeks and simple strategies, with an honest look at who wins and who loses.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      416,
+      417,
+      418,
+      419,
+      420
+     ]
+    }
+   ],
+   "topic": "Derivatives",
+   "tag": "OPT",
+   "sec": "stocks",
+   "track": "derivatives"
+  },
+  {
+   "id": "gold-asset",
+   "level": "foundation",
+   "title": "Gold: ways to own it",
+   "blurb": "Why gold is held, what moves its price, and how physical gold, ETFs, funds, bonds and digital gold compare.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      421,
+      422,
+      423,
+      424,
+      425
+     ]
+    }
+   ],
+   "topic": "Gold",
+   "tag": "GLD",
+   "sec": "assets",
+   "track": "gold"
+  },
+  {
+   "id": "silver-asset",
+   "level": "foundation",
+   "title": "Silver: ways to own it",
+   "blurb": "Silver’s dual life as a precious and an industrial metal, what drives it, and how to own it sensibly.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      426,
+      427,
+      428,
+      429,
+      430
+     ]
+    }
+   ],
+   "topic": "Silver",
+   "tag": "SLV",
+   "sec": "assets",
+   "track": "gold"
+  },
+  {
+   "id": "pms-explained",
+   "level": "expert",
+   "title": "Portfolio Management Services (PMS)",
+   "blurb": "What a PMS is, who it is for, how fees and taxes work, and the questions to ask before investing ₹50 lakh or more.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      431,
+      432,
+      433,
+      434,
+      435
+     ]
+    }
+   ],
+   "topic": "PMS",
+   "tag": "PMS",
+   "sec": "assets",
+   "track": "alt"
+  },
+  {
+   "id": "aif-explained",
+   "level": "expert",
+   "title": "Alternative Investment Funds (AIF)",
+   "blurb": "Category I, II and III AIFs, who can invest, fee structures, lock-ins and the risks of private pooled funds.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      436,
+      437,
+      438,
+      439,
+      440
+     ]
+    }
+   ],
+   "topic": "AIF",
+   "tag": "AIF",
+   "sec": "assets",
+   "track": "alt"
+  },
+  {
+   "id": "sif-explained",
+   "level": "expert",
+   "title": "Specialised Investment Funds (SIF)",
+   "blurb": "SEBI’s newer category between mutual funds and PMS or AIFs: strategies, the ₹10 lakh threshold, long-short exposure and the risks.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      441,
+      442,
+      443,
+      444,
+      445
+     ]
+    }
+   ],
+   "topic": "SIF",
+   "tag": "SIF",
+   "sec": "assets",
+   "track": "alt"
+  },
+  {
+   "id": "term-life-insurance",
+   "level": "foundation",
+   "title": "Life and term insurance",
+   "blurb": "Why life cover matters, how term insurance works, how much you need, and why you should keep insurance and investment apart.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      446,
+      447,
+      448,
+      449,
+      450
+     ]
+    }
+   ],
+   "topic": "Insurance",
+   "tag": "INS",
+   "sec": "basics",
+   "track": "insure"
+  },
+  {
+   "id": "health-insurance-basics",
+   "level": "foundation",
+   "title": "Health insurance",
+   "blurb": "How health cover pays, what reduces your payout, waiting periods and exclusions, and how to choose and keep a good plan.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      451,
+      452,
+      453,
+      454,
+      455
+     ]
+    }
+   ],
+   "topic": "Insurance",
+   "tag": "HLT",
+   "sec": "basics",
+   "track": "insure"
+  },
+  {
+   "id": "budgeting-emergency-fund",
+   "level": "foundation",
+   "title": "Budgeting and the emergency fund",
+   "blurb": "Know where your money goes, choose a budgeting method that you will keep, build an emergency fund and handle debt in the right order.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      456,
+      457,
+      458,
+      459,
+      460
+     ]
+    }
+   ],
+   "topic": "Personal finance",
+   "tag": "BDG",
+   "sec": "basics",
+   "track": "budget"
+  },
+  {
+   "id": "loans-credit-scores",
+   "level": "foundation",
+   "title": "Loans, EMIs and credit scores",
+   "blurb": "How EMIs are built, fixed versus floating rates, ways to cut interest, how credit scores work and how to use cards without traps.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      461,
+      462,
+      463,
+      464,
+      465
+     ]
+    }
+   ],
+   "topic": "Borrowing",
+   "tag": "LCS",
+   "sec": "basics",
+   "track": "loans"
+  },
+  {
+   "id": "nri-banking-investing",
+   "level": "practitioner",
+   "title": "NRI banking and investing in India",
+   "blurb": "NRE, NRO and FCNR accounts, who counts as an NRI, how investing and tax work, and the compliance steps that matter.",
+   "modules": [
+    {
+     "title": "The essentials",
+     "lessons": [
+      466,
+      467,
+      468,
+      469,
+      470
+     ]
+    }
+   ],
+   "topic": "NRI",
+   "tag": "NRI",
+   "sec": "nri",
+   "track": "nri-basics"
+  }
+ ],
+ "sections": [
+  {
+   "id": "basics",
+   "name": "Money Basics",
+   "blurb": "The foundations every household needs.",
+   "tracks": [
+    {
+     "id": "habits",
+     "name": "Money habits and maths",
+     "blurb": "Think clearly about money, time and behaviour.",
+     "courses": [
+      "financial-maths",
+      "behaviour"
+     ]
+    },
+    {
+     "id": "tax",
+     "name": "Tax and retirement",
+     "blurb": "Keep more, plan for the years after work.",
+     "courses": [
+      "tax-retirement"
+     ]
+    },
+    {
+     "id": "budget",
+     "name": "Budgeting and saving",
+     "blurb": "Plan spending, build an emergency fund.",
+     "courses": [
+      "budgeting-emergency-fund"
+     ]
+    },
+    {
+     "id": "insure",
+     "name": "Insurance and protection",
+     "blurb": "Health, term and general insurance explained.",
+     "courses": [
+      "term-life-insurance",
+      "health-insurance-basics"
+     ]
+    },
+    {
+     "id": "loans",
+     "name": "Loans and credit",
+     "blurb": "EMIs, credit scores and borrowing well.",
+     "courses": [
+      "loans-credit-scores"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mf",
+   "name": "Mutual Funds",
+   "blurb": "From your first SIP to analysing a fund like a professional.",
+   "tracks": [
+    {
+     "id": "mf-basics",
+     "name": "Basics of Mutual Funds",
+     "blurb": "How funds work, SIPs, costs and the rules that protect you.",
+     "courses": [
+      "mf-foundations",
+      "sip-planning",
+      "regulation"
+     ]
+    },
+    {
+     "id": "mf-types",
+     "name": "Types of Funds",
+     "blurb": "Equity, hybrid, debt, index and multi-asset funds.",
+     "courses": [
+      "equity-funds",
+      "hybrid-funds",
+      "debt-funds",
+      "passive-etf",
+      "multi-asset"
+     ]
+    },
+    {
+     "id": "mf-pro",
+     "name": "Fund analysis and advice",
+     "blurb": "Compare funds and hold better client conversations.",
+     "courses": [
+      "fund-analysis"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stocks",
+   "name": "Stock Market and Economy",
+   "blurb": "How markets, indices and the economy fit together.",
+   "tracks": [
+    {
+     "id": "st-basics",
+     "name": "Basics of the Stock Market",
+     "blurb": "Shares, exchanges, orders, IPOs and how to start safely.",
+     "courses": [
+      "stock-basics",
+      "company-fundamentals"
+     ]
+    },
+    {
+     "id": "st-econ",
+     "name": "Economy and markets",
+     "blurb": "The big picture behind returns.",
+     "courses": [
+      "economy-markets",
+      "defence"
+     ]
+    },
+    {
+     "id": "st-idx",
+     "name": "NSE indices",
+     "blurb": "All 41 NSE indices, grouped by theme.",
+     "courses": [
+      "idx-broad",
+      "idx-midsmall",
+      "idx-banking",
+      "idx-consumer",
+      "idx-tech-infra",
+      "idx-energy"
+     ]
+    },
+    {
+     "id": "derivatives",
+     "name": "Derivatives",
+     "blurb": "Futures and options, explained from the ground up.",
+     "courses": [
+      "futures-explained",
+      "options-explained"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "assets",
+   "name": "Gold, Real Assets and Alternatives",
+   "blurb": "Beyond shares and bonds.",
+   "tracks": [
+    {
+     "id": "gold",
+     "name": "Gold and silver",
+     "blurb": "Metals in a client portfolio.",
+     "courses": [
+      "gold-silver",
+      "gold-asset",
+      "silver-asset"
+     ]
+    },
+    {
+     "id": "real",
+     "name": "Real assets",
+     "blurb": "REITs and InvITs for income.",
+     "courses": [
+      "reit-invit"
+     ]
+    },
+    {
+     "id": "alt",
+     "name": "PMS, AIF and SIF",
+     "blurb": "Structures for larger, sophisticated investors.",
+     "courses": [
+      "pms-aif-sif",
+      "pms-explained",
+      "aif-explained",
+      "sif-explained"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nri",
+   "name": "NRI and Global",
+   "blurb": "For Indians living abroad and global investing.",
+   "tracks": [
+    {
+     "id": "nri-basics",
+     "name": "NRI investing from India",
+     "blurb": "Accounts, FEMA, tax and repatriation.",
+     "courses": [
+      "nri-banking-investing"
+     ]
+    },
+    {
+     "id": "global",
+     "name": "Global investing",
+     "blurb": "Investing in overseas markets from India.",
+     "soon": true
+    }
+   ]
+  },
+  {
+   "id": "teach",
+   "name": "For Teachers and Communities",
+   "blurb": "Teach money to others, with ready material.",
+   "tracks": [
+    {
+     "id": "classroom",
+     "name": "Teaching money",
+     "blurb": "Lesson kits for classrooms and community sessions.",
+     "soon": true
+    }
+   ]
+  }
+ ]
+}
