@@ -10,6 +10,7 @@ import { cover, realmVars } from "./art.js";
 import { trail } from "./trail.js";
 import { newsFeed, newsPreview } from "./news.js";
 import { nismBanner } from "./nismbanner.js";
+import { pageHero } from "./pagehero.js";
 import { signOut } from "./auth.js";
 
 export const DOORS = [
@@ -166,7 +167,7 @@ export function assess(cid) {
   if (cid && !course(cid)) return notFound("That course does not exist.");
   const tierCell = (c, T, p) => {
     const r = p.exams[T.id], open = T.id === "b" ? p.examReady : !!p.exams[T.id === "i" ? "b" : "i"]?.passed;
-    return h("div", { class: "as-tier" + (r?.passed ? " ok" : "") + (open ? "" : " locked") },
+    return h("div", { class: "as-tier t-" + T.id + (r?.passed ? " ok" : "") + (open ? "" : " locked") },
       h("div", { class: "row-flex between" }, h("b", {}, T.name), r?.passed ? h("span", { class: "pill ok" }, "Passed") : !open ? icon("lock", 16) : null),
       h("div", { class: "tiny mute" }, `20 questions · ${RULES.tierPass[T.id]}% to pass${r ? ` · best ${r.best}%` : ""}`),
       h("div", { class: "row-flex", style: "gap:8px" },
@@ -174,13 +175,13 @@ export function assess(cid) {
         h("a", { class: "btn ghost sm", href: `#/syllabus/${c.id}/${T.id}` }, "Syllabus")));
   };
   const card = c => { const p = Store.courseProgress(c);
-    return h("article", { class: "card stack as-card", id: "as-" + c.id },
+    return h("article", { class: "card stack as-card", id: "as-" + c.id, style: realmVars(c.sec) },
       h("div", { class: "row-flex between" }, h("div", {}, h("div", { class: "tiny mute" }, realmName(c.sec) + " · " + level(c.level).name), h("h3", { class: "h3" }, c.title)),
         p.examReady ? null : h("a", { class: "btn ghost sm", href: `#/course/${c.id}` }, `Finish the course · ${p.pct}%`)),
       h("div", { class: "as-tiers" }, TIERS().map(T => tierCell(c, T, p)))); };
   const focus = cid ? course(cid) : null;
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Exams"), h("p", { class: "lead mute" }, "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then take the exam. Each course has a Beginner, Intermediate and Hard exam.")),
+    pageHero("exams", "Exams", "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then take the exam. Each course has a Beginner, Intermediate and Hard exam.", [[list.length, "Courses"], [3, "Exams"]]),
     nismBanner(),
     focus ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your course"), card(focus)) : null,
     realms().map(r => { const cs = list.filter(c => c.sec === r.id && c.id !== cid);
@@ -239,5 +240,5 @@ export function courses() {
       filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
   }
   paint();
-  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`)), nismBanner(), host);
+  return widePage(pageHero("courses", "Courses", `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`), nismBanner(), host);
 }

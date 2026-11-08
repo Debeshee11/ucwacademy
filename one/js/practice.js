@@ -7,6 +7,7 @@ import * as Creds from "./creds.js";
 import { page, checkMark, notFound } from "./ui.js";
 import { stories, storyCard } from "./home.js";
 import { newsFeed } from "./news.js";
+import { pageHero } from "./pagehero.js";
 
 const row = (href, title, sub, done) => h("a", { class: "list-row", href },
   checkMark(done ? "done" : ""), h("div", { class: "grow" }, h("div", { class: "list-title" }, title), h("div", { class: "small mute" }, sub)), h("span", { class: "chev" }, icon("chev", 18)));
@@ -40,7 +41,7 @@ export function practice() {
 /* ——— Market desk ——— */
 export function desk() {
   const { seg, list, note } = newsFeed();
-  return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "News & Markets"), h("p", { class: "lead mute" }, "Today's headlines, why they matter, and what to tell clients."), note),
+  return page(pageHero("news", "News & Markets", "Today's headlines, why they matter, and what to tell clients.", [], note),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), seg, list),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Teach from the story"), h("div", { class: "divide" }, stories(5).map(storyCard))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Market tools"), h("div", { class: "divide" },
