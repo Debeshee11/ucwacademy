@@ -28,8 +28,9 @@ export function me() {
   const s = Store.get(), creds = Creds.all(), n = Object.keys(s.done).length, m = Store.mastery();
   const open = D.courses.filter(c => !Creds.find("course", c.id));
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "My progress"),
-      h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy"))),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Progress"),
+      h("div", { class: "stats" }, h("span", {}, h("b", {}, n), " lessons"), h("span", {}, h("b", {}, creds.length), " earned"), m != null && h("span", {}, h("b", {}, m + "%"), " first-try accuracy")),
+      h("a", { class: "linkish", href: "#/board" }, "See the leaderboard")),
     ledger(),
     masteryMap(),
     h("section", { class: "stack" },

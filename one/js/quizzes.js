@@ -52,7 +52,7 @@ export function exam(root, cid, tier = "b") {
       if (tier !== "b") return { head: `${T.name} exam passed.`, sub: `${res.score}%. ` + (nextT ? `${nextT.name} is now open.` : "That is every exam in this course. Outstanding."), actions: [res.passed && nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
       Creds.absorb(res);
       const r = { cred: res.cred, extra: res.extra || [] };
-      if (!r.cred) return { head: "You passed.", sub: `${res.score}%. Your certificate could not be issued just now. Open My progress in a minute; if it is missing, tell the administrator.`, actions: [h("a", { class: "btn primary", href: "#/me" }, "My progress")] };
+      if (!r.cred) return { head: "You passed.", sub: `${res.score}%. Your certificate could not be issued just now. Open Progress in a minute; if it is missing, tell the administrator.`, actions: [h("a", { class: "btn primary", href: "#/me" }, "My progress")] };
       const extra = r.extra.map(x => h("p", { class: "pill gold" }, x.title + " earned"));
       return { head: "You passed.", sub: `${res.score}%. Your certificate is ready, and the Intermediate exam is open.`, body: extra.length ? h("div", { class: "row-flex", style: "justify-content:center" }, extra) : null,
         actions: [h("a", { class: "btn primary", href: `#/cert/${r.cred.id}` }, "View certificate"), nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };

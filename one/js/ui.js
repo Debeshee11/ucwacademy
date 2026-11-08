@@ -7,12 +7,12 @@ import * as Store from "./store.js";
 import { signOut } from "./auth.js";
 
 export const NAV = [
-  ["#/", "Home", "home", "home"],
-  ["#/courses", "Courses", "book", "courses"],
-  ["#/nism", "NISM", "award", "nism"],
-  ["#/assess", "Exams", "trophy", "assess"],
-  ["#/desk", "Markets", "trend", "desk"],
-  ["#/me", "My progress", "award", "me"]
+  ["#/", "Home", "home", "home", "Your next step"],
+  ["#/courses", "Learn", "book", "courses", "All courses, in order"],
+  ["#/practice", "Practice", "trophy", "practice", "Daily quiz, revision, client lab"],
+  ["#/assess", "Exams", "award", "assess", "Course exams and NISM prep"],
+  ["#/news", "News & Markets", "trend", "desk", "Headlines, funds, indices"],
+  ["#/me", "Progress", "star", "me", "Streak, certificates, leaderboard"]
 ];
 export const isAdmin = () => Store.userEmail() === ADMIN_EMAIL;
 
@@ -55,10 +55,10 @@ export function frame(onLang) {
 
   function paintNav() {
     clear(nav); clear(tabs);
-    for (const [href, label, ic, id] of NAV) {
+    for (const [href, label, ic, id, sub] of NAV) {
       const cur = id === active ? { "aria-current": "page" } : {};
-      nav.append(h("a", { href, ...cur }, icon(ic), label));
-      tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label === "My progress" ? "Progress" : label)));
+      nav.append(h("a", { href, title: sub, ...cur }, icon(ic), h("span", { class: "nav-t" }, h("b", {}, label), h("small", {}, sub))));
+      tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label === "News & Markets" ? "News" : label)));
     }
   }
   Store.subscribe(() => { if (!open) paintMenu(); });

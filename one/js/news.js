@@ -23,3 +23,14 @@ export function newsFeed() {
     .catch(() => { err = "Headlines could not be loaded. Check your connection, or that the headlines workflow has run at least once."; paint(); });
   return { seg, list, note };
 }
+
+/* Small preview for Home: top headlines, link to the full page. */
+export function newsPreview(n = 3) {
+  const box = h("div", { class: "divide" }, h("p", { class: "small mute" }, "Loading headlines…"));
+  fetch(NEWS_BASE + "news.json", { cache: "no-cache" }).then(r => { if (!r.ok) throw 0; return r.json(); }).then(d => {
+    const items = (d.items || []).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, n);
+    box.replaceChildren(...(items.length ? items.map(i => h("a", { class: "list-row", href: i.link, target: "_blank", rel: "noopener noreferrer" },
+      h("div", { class: "grow" }, h("div", { class: "list-title" }, i.title), h("div", { class: "tiny mute" }, `${i.source} · ${ago(new Date(i.date).getTime())}`)))) : [h("p", { class: "small mute" }, "No headlines yet.")]));
+  }).catch(() => box.replaceChildren(h("p", { class: "small mute" }, "Headlines are unavailable right now.")));
+  return box;
+}

@@ -29,7 +29,7 @@ function privacy() {
       "Anyone with the link to one of your certificates can see your name, the certificate title, your score and its dates. Nothing else.",
       "Our service providers: Google Firebase (sign-in, database, hosting of the backend) and, for mobile sign-in, its SMS partners. Fonts load from Google Fonts. News headlines link out to publishers.",
     ])),
-    sec("How long we keep it", h("p", {}, "Until you delete your account. Deleting it (My progress, Delete my account) removes your record, your leaderboard entry, your mock results and your certificates, and closes your sign-in. A certificate that was already shared will then show as not found.")),
+    sec("How long we keep it", h("p", {}, "Until you delete your account. Deleting it (Progress, Delete my account) removes your record, your leaderboard entry, your mock results and your certificates, and closes your sign-in. A certificate that was already shared will then show as not found.")),
     sec("Your choices and rights", ul([
       "Access or correct your information: write to us, or change your name and details in the app.",
       "Erase it: use Delete my account in the app, or write to us.",

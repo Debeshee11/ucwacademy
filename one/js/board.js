@@ -24,7 +24,7 @@ export function board() {
       h("div", { class: "row-flex", style: "gap:10px;flex-wrap:wrap" },
         h("div", { class: "chips" }, scopes.map(([id, t]) => h("button", { class: "chip", "aria-pressed": String(scope === id), on: { click: () => { scope = id; paint(); } } }, t))),
         h("div", { class: "chips" }, Object.entries(METRICS).map(([id, [t]]) => h("button", { class: "chip", "aria-pressed": String(by === id), on: { click: () => { by = id; paint(); } } }, t)))),
-      scope === "door" && !mine ? h("p", { class: "mute" }, "Tell us who you are in My progress to see people like you.") :
+      scope === "door" && !mine ? h("p", { class: "mute" }, "Tell us who you are in Progress to see people like you.") :
       list.length ? h("div", { class: "divide" }, list.map((r, i) => h("div", { class: "list-row roll-row" + (r.id === me ? " me" : "") },
         h("b", { class: "roll-n" }, i < 3 ? ["1", "2", "3"][i] : i + 1),
         h("div", { class: "avatar sm", "aria-hidden": "true" }, (r.name || "?")[0].toUpperCase()),

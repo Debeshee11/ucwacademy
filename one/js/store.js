@@ -2,6 +2,7 @@
 import { RULES, STAFF_DOMAIN } from "./config.js";
 import { db, fns } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
+import { mergeStates } from "./merge.js";
 
 const blank = () => ({
   v: 1, name: "", mobile: "", mv: 0, kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
@@ -39,7 +40,7 @@ export async function init(user) {
   if (d) {
     try {
       const snap = await d.doc("learners/" + uid).get();
-      if (snap.exists) { const remote = clean(JSON.parse(JSON.stringify(snap.data()))); if ((remote.updated || 0) >= (state.updated || 0)) state = remote; }
+      if (snap.exists) { const remote = clean(JSON.parse(JSON.stringify(snap.data()))); state = local ? mergeStates(remote, state) : remote; }
     } catch (e) { console.warn("Could not read progress", e); }
   }
   /* Credentials are issued by the backend and read back here; the browser never writes them. */
@@ -62,8 +63,17 @@ function persist() {
 export async function flush() {
   clearTimeout(timer); timer = null;
   const d = db(); if (!d || !uid) return;
-  try { const { nm, creds, ...save } = JSON.parse(JSON.stringify(state));  /* mock results and credentials are written by the backend, never from here */
-    await d.doc("learners/" + uid).set({ ...save, email }); warned = false; syncBoard(false); }
+  try {
+    const ref = d.doc("learners/" + uid), strip = o => { const { nm, creds, ...r } = JSON.parse(JSON.stringify(o)); return r; };   /* mock results and credentials are written by the backend, never from here */
+    let merged = null;
+    await d.runTransaction(async tx => {
+      const snap = await tx.get(ref), mine = strip(state);
+      merged = snap.exists ? mergeStates(clean(snap.data()), clean(mine)) : mine;
+      merged.updated = Math.max(merged.updated || 0, Date.now());
+      tx.set(ref, { ...merged, email });
+    });
+    if (merged) { const { nm, creds } = state; state = { ...clean(merged), nm, creds }; try { localStorage.setItem(KEY(uid), JSON.stringify(state)); } catch {} emit(); }
+    warned = false; syncBoard(false); }
   catch (e) { console.warn("Could not save progress", e); if (!warned) { warned = true; document.dispatchEvent(new CustomEvent("one:syncerror")); } }
 }
 /* The Roll and the staff board are computed by the backend from this record. */

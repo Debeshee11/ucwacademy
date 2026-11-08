@@ -124,7 +124,7 @@ export function courses() {
     if (!f.text && f.level === "all") list.append(h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, "Practice with real clients")), h("div", { class: "grid3" }, labCard())));
   }
   function paint() {
-    strip.replaceChildren(...[["courses", "Courses"], ["news", "Market news"]].map(([k, t]) => h("button", { role: "tab", "aria-selected": String(f.tab === k), on: { click: () => { f.tab = k; paint(); } } }, t)));
+    strip.replaceChildren(...[["courses", "Courses"], ["news", "News & markets"]].map(([k, t]) => h("button", { role: "tab", "aria-selected": String(f.tab === k), on: { click: () => { f.tab = k; paint(); } } }, t)));
     body.replaceChildren();
     if (f.tab === "courses") { paintCourses(); body.append(h("div", { class: "search" }, icon("search"), search), cont, h("div", { class: "stack stack-s" }, chips), list); }
     else body.append(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), h("p", { class: "lead mute" }, "What moved markets and funds. Use it to start client conversations."), news.note, news.seg, news.list),
@@ -132,7 +132,7 @@ export function courses() {
   }
   paint();
   return widePage(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "The Map"), h("p", { class: "lead" }, `${D.courses.length} courses across six realms of money: Earn, Keep, Protect, Grow, Borrow and Pass on. Exams live in the Assessment Centre.`)),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Learn"), h("p", { class: "lead" }, `${D.courses.length} courses across six realms of money: Earn, Keep, Protect, Grow, Borrow and Pass on. Exams live in the Assessment Centre.`)),
     strip, body);
 }
 
