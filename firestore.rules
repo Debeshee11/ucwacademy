@@ -95,6 +95,7 @@ service cloud.firestore {
 
     // Course exam answer keys, backend only.
     match /examkeys/{id} { allow read, write: if false; }
+    match /attempts/{id} { allow read, write: if false; }
     match /rate/{uid}    { allow read, write: if false; }
 
     // Browser error reports: signed-in users can add short ones, only the admin reads them.
