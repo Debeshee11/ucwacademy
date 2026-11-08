@@ -151,7 +151,7 @@ export function mock(root, id, n, review) {
       prog.textContent = `Question ${S.cur + 1} of ${total}${q.m > 1 ? " · " + q.m + " marks" : ""}`;
       const cs = q.c != null && E.cases && E.cases[n - 1] && E.cases[n - 1][q.c];
       body.replaceChildren(
-        cs ? h("div", { class: "nm-case" }, h("div", { class: "eyebrow gold" }, `Case study ${q.c + 1}`), h("p", {}, cs)) : null,
+        cs ? h("div", { class: "nm-case" }, h("div", { class: "eyebrow gold" }, `Case study ${q.c + 1}`), h("p", {}, cs)) : "",
         h("div", { class: "eyebrow" }, `Unit ${q.u} · ${E.units.find(u => u.n === q.u)?.title || ""}`),
         h("h2", { class: "nm-qt" }, q.p),
         h("div", { class: "nm-opts", role: "radiogroup" }, q.o.map((t, i) => h("button", { class: "nm-opt" + (S.a[S.cur] === i ? " on" : ""), role: "radio", "aria-checked": String(S.a[S.cur] === i), on: { click: () => { S.a[S.cur] = S.a[S.cur] === i ? null : i; save(); paint(); } } }, h("span", { class: "nm-l" }, "ABCD"[i]), h("span", {}, t)))),
