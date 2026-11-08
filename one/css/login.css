@@ -20,7 +20,7 @@
 .lgl-word[data-c="0"] { background: var(--lg-coral); } .lgl-word[data-c="1"] { background: var(--lg-sky); color: var(--lg-ink); -webkit-text-fill-color: var(--lg-ink); }
 .lgl-word[data-c="2"] { background: var(--lg-violet); } .lgl-word[data-c="3"] { background: var(--lg-mint); color: var(--lg-ink); -webkit-text-fill-color: var(--lg-ink); }
 .lgl-word[data-c="4"] { background: #fff; color: var(--lg-ink); -webkit-text-fill-color: var(--lg-ink); }
-.lgl-word.swap { animation: lgSwap .5s cubic-bezier(.3, 1.6, .5, 1) both; }
+.lgl-word.swap { animation: lgSwap .5s cubic-bezier(.3, 1.6, .5, 1) backwards; }
 @keyframes lgSwap { 0% { opacity: 0; transform: translateY(.5em) rotate(-9deg) scale(.85); } 100% { opacity: 1; transform: rotate(-2.5deg); } }
 .lgl-big .l3 { position: relative; display: block; width: max-content; margin-top: .06em; margin-bottom: .3em; }
 .lgl-sq { position: absolute; left: 0; right: 0; top: 100%; height: .16em; }
@@ -71,7 +71,7 @@
 
 /* ---------- the ten-second quiz ---------- */
 .lgl-stage { align-content: space-between; gap: 18px; min-height: 0; }
-.lgt { position: relative; display: grid; gap: 10px; padding: 16px; border: 3px solid var(--lg-ink); border-radius: 22px; background: #fff; box-shadow: 6px 6px 0 var(--lg-ink); transform: rotate(-1deg); max-width: 520px; animation: lgIn .7s .2s cubic-bezier(.3, 1.5, .5, 1) both; }
+.lgt { position: relative; display: grid; gap: 10px; padding: 16px; border: 3px solid var(--lg-ink); border-radius: 22px; background: #fff; box-shadow: 6px 6px 0 var(--lg-ink); transform: rotate(-1deg); max-width: 520px; animation: lgIn .7s .2s cubic-bezier(.3, 1.5, .5, 1) backwards; }
 @keyframes lgIn { 0% { opacity: 0; transform: translateY(30px) rotate(3deg) scale(.94); } 100% { opacity: 1; transform: rotate(-1deg); } }
 .lgt-chip { justify-self: start; margin: -30px 0 -2px -4px; padding: 5px 12px; border: 2.5px solid var(--lg-ink); border-radius: 99px; background: var(--lg-violet); color: #fff; font: 800 12px var(--font); letter-spacing: .04em; box-shadow: 2px 3px 0 var(--lg-ink); animation: lgWob 2.4s ease-in-out infinite; }
 @keyframes lgWob { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(2deg) scale(1.05); } }
@@ -85,7 +85,7 @@
 .lgt-fine { margin: 0; font: 600 10.5px var(--font); color: rgba(42, 30, 18, .55); }
 .lgt-body { display: grid; gap: 10px; }
 .lgt-verdict { margin: 0; font: 800 14px var(--display); color: #C2410C; } .lgt-verdict.yes { color: #0F8F5F; }
-.lgt-big { margin: 0; font: 800 clamp(34px, 4vw, 52px)/1 var(--display); letter-spacing: -.03em; background: linear-gradient(95deg, #FF6B6B, #FFB703); -webkit-background-clip: text; background-clip: text; color: transparent; animation: lgBig .6s cubic-bezier(.3, 1.8, .5, 1) both; }
+.lgt-big { margin: 0; font: 800 clamp(34px, 4vw, 52px)/1 var(--display); letter-spacing: -.03em; background: linear-gradient(95deg, #FF6B6B, #FFB703); -webkit-background-clip: text; background-clip: text; color: transparent; animation: lgBig .6s cubic-bezier(.3, 1.8, .5, 1) backwards; }
 @keyframes lgBig { 0% { transform: scale(.4); opacity: 0; } 100% { transform: none; opacity: 1; } }
 .lgt-why { margin: 0; font: 700 14px/1.35 var(--font); }
 .lgt-act { display: flex; gap: 8px; }
@@ -118,3 +118,15 @@
   .lgt-act { margin-top: 2px; }
 }
 @media (max-width: 860px) and (max-height: 650px) { .lgt-why { font-size: 11.5px; } .lgt-verdict { display: none; } .lgt-q { font-size: 13px; } }
+
+/* ---------- layout: tagline and quiz sit together, centred; nothing under the language pill ---------- */
+.lgl-stage { display: flex !important; flex-direction: column; justify-content: center; align-content: normal; gap: clamp(14px, 3dvh, 28px); }
+.lgl-big .l1, .lgl-big .l2 { display: block; } .lgl-big .l2 { margin-top: .05em; }
+@media (max-width: 860px) {
+  .lg-side.lgl { padding-top: 14px; }
+  .lgl-stage { padding-top: 8px; gap: 16px; }
+  .lgl-big .l3 { display: block; margin-left: 0; margin-top: .14em; margin-bottom: .1em; }
+  .lgl-big { font-size: min(11vw, 5.6dvh, 46px); }
+}
+@media (max-width: 860px) and (max-height: 720px) { .lgl-big { font-size: min(9vw, 4.7dvh, 33px); } .lgl-stage { gap: 12px; } }
+@media (max-width: 860px) and (max-height: 650px) { .lgl-big { font-size: min(8.4vw, 4.4dvh, 29px); } .lgl-stage { gap: 8px; } }
