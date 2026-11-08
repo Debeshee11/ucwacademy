@@ -1,10 +1,11 @@
+import { getContent, getOne } from "./content.js";
 /* Course content: courses.json (structure), lessons.json (90 lessons), sims.json (client scenarios), tx-*.json (Hindi and Gujarati questions). */
 export const D = { levels: [], courses: [], lessons: {}, sims: [], tx: {}, live: { funds: {}, months: {} }, auto: { groups: [], funds: {}, updated: "" }, holdQs: [], sections: [], exams: { tiers: [], courses: {} }, fundGroups: [], funds: {}, fundSource: "", fundqs: [], indices: [], companies: { en: {}, tx: {} }, indexqs: [] };
 
-const j = async path => { const r = await fetch(path); if (!r.ok) throw new Error(path + " " + r.status); return r.json(); };
-
 export async function loadData() {
-  const [c, l, s, f, fq, ix, co, iq, ex] = await Promise.all(["courses", "lessons", "sims", "funds", "fundqs", "indices", "companies", "indexqs", "exams"].map(n => j(`one/data/${n}.json`)));
+  const N = ["courses", "lessons", "sims", "funds", "fundqs", "indices", "companies", "indexqs", "exams"];
+  const R = await getContent(N);
+  const [c, l, s, f, fq, ix, co, iq, ex] = N.map(n => R[n]);
   D.fundGroups = f.groups; D.funds = f.funds; D.fundSource = f.source; D.fundqs = fq; D.indices = ix; D.companies = co; D.indexqs = iq; D.exams = ex;
   D.levels = c.levels; D.sections = c.sections || []; D.courses = c.courses; D.sims = s;
   for (const x of l) D.lessons[x.n] = x;
@@ -13,7 +14,7 @@ export async function loadData() {
 
 export async function loadTx(lang) {
   if (lang === "en" || D.tx[lang]) return;
-  try { D.tx[lang] = await j(`one/data/tx-${lang}.json`); } catch { D.tx[lang] = {}; }
+  try { D.tx[lang] = await getOne(`tx-${lang}`); } catch { D.tx[lang] = {}; }
 }
 
 /* Text that may be a plain string or {en,hi,gu}. */

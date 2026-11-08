@@ -5,8 +5,8 @@ import { widePage } from "./ui.js";
 import { fns } from "./fb.js";
 import { DOORS } from "./academy.js";
 import { D } from "./data.js";
-
-const j = async p => { const r = await fetch(p); if (!r.ok) throw new Error(p); return r.json(); };
+import { getOne } from "./content.js";
+const j = p => getOne(p.replace(/^one\/data\//, "").replace(/\.json$/, ""));
 const call = async (name, data) => { const f = fns(); if (!f) throw new Error("Backend not reachable."); return (await f.httpsCallable(name)(data)).data; };
 const n0 = x => (x || 0).toLocaleString("en-IN");
 const tile = (v, l, sub) => h("div", { class: "ad-tile" }, h("b", {}, v), h("span", {}, l), sub ? h("small", {}, sub) : null);

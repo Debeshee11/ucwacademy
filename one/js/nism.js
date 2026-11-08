@@ -3,11 +3,10 @@ import { h, icon, toast, fmtDate } from "./dom.js";
 import * as Store from "./store.js";
 import { widePage, bar } from "./ui.js";
 import { fns } from "./fb.js";
-
-const j = async p => { const r = await fetch(p); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); };
+import { getOne } from "./content.js";
 let IDX = null; const EX = {};
-const idx = async () => IDX || (IDX = await j("one/data/nism.json"));
-const exam = async id => EX[id] || (EX[id] = await j(`one/data/nism/${id}.json`));
+const idx = async () => IDX || (IDX = await getOne("nism"));
+const exam = async id => EX[id] || (EX[id] = await getOne(`nism/${id}`));
 const pdfHref = e => `assets/nism/${e.id}-study-guide.pdf`;
 const LEVELS = ["Foundation", "Core", "Applied", "Exam level", "Beyond exam"];
 const mine = id => (Store.get().nm || {})[id] || {};
