@@ -9,6 +9,7 @@ import { page, widePage, bar, notFound } from "./ui.js";
 import { cover, realmVars } from "./art.js";
 import { trail } from "./trail.js";
 import { newsFeed, newsPreview } from "./news.js";
+import { nismBanner } from "./nismbanner.js";
 import { signOut } from "./auth.js";
 
 export const DOORS = [
@@ -180,6 +181,7 @@ export function assess(cid) {
   const focus = cid ? course(cid) : null;
   return widePage(
     h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Exams"), h("p", { class: "lead mute" }, "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then take the exam. Each course has a Beginner, Intermediate and Hard exam.")),
+    nismBanner(),
     focus ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your course"), card(focus)) : null,
     realms().map(r => { const cs = list.filter(c => c.sec === r.id && c.id !== cid);
       return cs.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, r.name), h("p", { class: "small mute" }, r.blurb)), h("div", { class: "stack" }, cs.map(card))) : null; }));
@@ -237,5 +239,5 @@ export function courses() {
       filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
   }
   paint();
-  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`)), host);
+  return widePage(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Courses"), h("p", { class: "lead mute" }, `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`)), nismBanner(), host);
 }
