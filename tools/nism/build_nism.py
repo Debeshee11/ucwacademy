@@ -4,7 +4,7 @@ import pdfgen, nismq, authored
 REPO = os.environ.get("UCW_REPO", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..") + "/")
 KEYS = os.environ.get("UCW_KEYS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "private-keys") + "/")
 os.makedirs(KEYS, exist_ok=True)
-os.makedirs(REPO + "one/data/nism", exist_ok=True); os.makedirs(REPO + "assets/nism", exist_ok=True)
+os.makedirs(REPO + "functions/content/nism", exist_ok=True); os.makedirs(REPO + "assets/nism", exist_ok=True)
 NEG = {"None": 0, "25% of marks": .25, "10% of marks": .1}
 def pages(p):
     o = subprocess.run(["pdfinfo", p], capture_output=True, text=True).stdout
@@ -32,7 +32,7 @@ def build(mod, num):
     json.dump(keys, open(KEYS + f"{E['id']}.json", "w"), ensure_ascii=False, separators=(",", ":"))
     out["mocks"] = [[{k: v for k, v in q.items() if k in ("u", "p", "o", "m", "c")} for q in m["qs"]] for m in mocks]
     if any(cases): out["cases"] = cases
-    json.dump(out, open(REPO + f"one/data/nism/{E['id']}.json", "w"), ensure_ascii=False, separators=(",", ":"))
+    json.dump(out, open(REPO + f"functions/content/nism/{E['id']}.json", "w"), ensure_ascii=False, separators=(",", ":"))
     pdf = REPO + f"assets/nism/{E['id']}-study-guide.pdf"; pdfgen.build_pdf(pdf, E)
     return dict(id=E["id"], series=E["series"], code=E["code"], title=E["title"], short=E.get("short", E["title"]), tag=E["tag"], blurb=E["blurb"], qs=E["qs"], marks=E["marks"], mins=E["mins"], pass_=0, **{"pass": E["pass"]}, neg=E["neg"], units=len(E["units"]), facts=sum(len(u["facts"]) for u in E["units"]), pages=pages(pdf), track=E["track"])
 if __name__ == "__main__":
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     ex = []
     for mod, num in SPECS:
         if mod in mods: ex.append(build(mod, num)); print(mod, ex[-1]["pages"], "pages", ex[-1]["facts"], "facts")
-    idx_p = REPO + "one/data/nism.json"
+    idx_p = REPO + "functions/content/nism.json"
     old = json.load(open(idx_p)) if os.path.exists(idx_p) else {"exams": []}
     byid = {e["id"]: e for e in old["exams"]}; byid.update({e["id"]: e for e in ex})
     ORD = ["nism-v-a","nism-xii","nism-viii","nism-x-a","nism-xv","nism-xxi-a","nism-xix-a","nism-xi","nism-i","nism-xb","nism-v-d","nism-vi","nism-xxi-b"]
