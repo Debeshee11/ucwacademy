@@ -94,3 +94,11 @@ a.nmc:hover { transform: translateY(-3px); border-color: var(--gold-d); }
 .lib-panel, .lib-col .card { border-radius: 22px; }
 .fund-head, .lib-hero { border-radius: 26px; border: 2px solid var(--line); border-bottom-width: 5px; background: #fff; }
 .nm-top .btn { color: var(--ink); }
+
+/* NISM banner: its own band, apart from the course lists */
+.nmban { display: flex; align-items: center; gap: 16px; padding: 16px 18px; border: 3px solid var(--ink); border-radius: 22px; background: linear-gradient(120deg, #FFE08A, #FFB703); box-shadow: 5px 5px 0 var(--ink); color: var(--ink); transition: transform .12s var(--ease); }
+.nmban:hover { transform: translateY(-2px); } .nmban:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+.nmban-badge { flex: none; display: grid; place-items: center; width: 62px; height: 62px; border-radius: 18px; background: var(--ink); color: var(--gold); font: 800 17px var(--display); letter-spacing: .04em; transform: rotate(-4deg); }
+.nmban-b { display: grid; gap: 2px; flex: 1; min-width: 0; } .nmban-t { font: 800 22px/1.1 var(--display); letter-spacing: -.02em; } .nmban-s { font-weight: 600; font-size: 14px; line-height: 1.35; }
+.nmban-go { flex: none; display: inline-flex; align-items: center; gap: 2px; padding: 9px 14px; border-radius: 14px; background: #fff; border: 2.5px solid var(--ink); font: 800 14px var(--font); }
+@media (max-width: 560px) { .nmban { padding: 14px; gap: 12px; } .nmban-badge { width: 50px; height: 50px; font-size: 14px; border-radius: 14px; } .nmban-t { font-size: 19px; } .nmban-s { font-size: 13px; } .nmban-go { padding: 8px 10px; } }
