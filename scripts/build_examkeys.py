@@ -2,11 +2,11 @@
 
 Run from the repository root:  python3 scripts/build_examkeys.py
 
-Reads   one/data/lessons.json, one/data/courses.json and the FULL exam file (private-keys/exams.full.json if present, else one/data/exams.json)
+Reads   functions/content/lessons.json, functions/content/courses.json and the FULL exam file (private-keys/exams.full.json if present, else functions/content/exams.json)
 Writes  private-keys/exams.full.json      full copy of the exam questions (never commit; the folder is git-ignored)
         private-keys/examkeys/<id>.json    one answer-key file per course, plus _meta.json (upload these from Admin > Growth and exams)
-        one/data/exams.json               public file with answer, why and wrong removed from exam-only questions
-        one/data/lessons.json, exams.json duplicate answer options removed (idempotent)
+        functions/content/exams.json               public file with answer, why and wrong removed from exam-only questions
+        functions/content/lessons.json, exams.json duplicate answer options removed (idempotent)
 Lesson questions keep their answers in the public file because the lesson quizzes mark instantly in the browser.
 """
 import json, os, sys

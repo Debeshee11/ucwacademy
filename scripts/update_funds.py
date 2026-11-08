@@ -7,7 +7,7 @@ ranks each fund inside its group, and writes one file for the Library page:
 
     python3 scripts/update_funds.py --out DATA_DIR      # writes DATA_DIR/funds-live.json
 
-Funds already in one/data/funds.json keep their factsheet notes; only their NAV and returns are refreshed.
+Funds already in functions/content/funds.json keep their factsheet notes; only their NAV and returns are refreshed.
 Holdings are NOT in this feed. Fund houses publish them monthly; the admin uploads them on the Fund data page.
 Standard library only. When GITHUB_OUTPUT is set, "changed=true|false" is written to it.
 """
@@ -197,7 +197,7 @@ def main():
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     rules = json.load(open(os.path.join(ROOT, "scripts", "fund_rules.json"), encoding="utf-8"))
-    static = json.load(open(os.path.join(ROOT, "one", "data", "funds.json"), encoding="utf-8"))["funds"]
+    static = json.load(open(os.path.join(ROOT, "functions", "content", "funds.json"), encoding="utf-8"))["funds"]
     latest = get_json("/mf/latest")
     if not isinstance(latest, list) or not latest:
         print("Could not read the fund list. Nothing changed.", file=sys.stderr)

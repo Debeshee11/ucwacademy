@@ -2,8 +2,8 @@
 """Content uniformity audit. Run from the repo root: python3 scripts/content_audit.py
 Lists lessons that are much thinner than the median, lessons missing client or remember notes, and questions with fewer than 4 options."""
 import json, statistics as st
-ls = json.load(open("one/data/lessons.json"))
-C = json.load(open("one/data/courses.json"))["courses"]
+ls = json.load(open("functions/content/lessons.json"))
+C = json.load(open("functions/content/courses.json"))["courses"]
 w = lambda v: len(json.dumps(v).split())
 F = ["story", "concept", "client", "talk", "remember"]
 tot = {l["n"]: sum(w(l[f]) for f in F) for l in ls}
