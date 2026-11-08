@@ -1,0 +1,68 @@
+/* Play layer, part two: lists, leaderboard, NISM, news, contact, tour. Loaded after play.css. */
+
+/* Lists become rows you can press. */
+.divide { display: grid; gap: 10px; }
+.divide > * + * { border-top: 0; }
+.divide > .list-row, .divide > a, .divide > article { border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 18px; padding: 14px 18px; background: #fff; transition: transform .12s var(--ease), border-color .12s; }
+.divide > a:hover { border-color: var(--gold-d); transform: translateY(-2px); background: #fff; }
+.divide > a:active { transform: translateY(2px); border-bottom-width: 2px; }
+.list-row .chev { color: var(--gold-d); }
+.list-title { font-weight: 800; }
+
+/* Leaderboard: your standing is a score card */
+.roll-me { background: var(--ink); color: #fff; border: 0; border-bottom: 6px solid #130D06; border-radius: 28px; padding: 26px; }
+.roll-me .eyebrow, .roll-me .mute, .roll-me .small { color: #E0D3BA; }
+.roll-me .eyebrow { color: var(--gold); }
+.roll-rank { font: 800 clamp(34px, 5vw, 48px)/1.05 var(--display); color: #fff; letter-spacing: -.025em; }
+.roll-ladder span { text-transform: none; letter-spacing: 0; font: 800 13px var(--font); background: rgba(255, 255, 255, .1); border: 2px solid rgba(255, 255, 255, .18); color: #E0D3BA; }
+.roll-ladder span.on { background: var(--gold); border-color: #B97700; color: var(--ink); }
+.roll-row.me { background: var(--gold-tint); border-color: var(--gold-d) !important; }
+.roll-n { font-family: var(--display); font-weight: 800; color: var(--gold-d); }
+
+/* NISM */
+.nmc { border: 2px solid var(--line); border-bottom-width: 5px; border-radius: 24px; background: #fff; padding: 22px; transition: transform .15s var(--ease), border-color .15s; }
+a.nmc:hover { transform: translateY(-3px); border-color: var(--gold-d); }
+.nmc-t { font: 800 21px/1.2 var(--display); letter-spacing: -.01em; color: var(--ink); }
+.nmc-s { color: var(--ink2); font-weight: 500; }
+.nm-tag { text-transform: none; letter-spacing: 0; font: 800 14px var(--font); color: var(--gold-ink); }
+.hero:not(:has(.hero-art)) { grid-template-columns: minmax(0, 1fr); }
+.hero:not(:has(.hero-art)) .h1 { max-width: 20ch; text-wrap: balance; }
+.hero .eyebrow, .hero .eyebrow.gold { color: var(--sc, var(--gold-ink)); text-transform: none; letter-spacing: 0; font-weight: 800; }
+
+/* News and stories */
+.seg { display: flex; gap: 8px; flex-wrap: wrap; }
+.seg button { height: 40px; padding: 0 18px; border-radius: 99px; border: 2px solid var(--line); border-bottom-width: 4px; background: #fff; font: 800 14px var(--font); color: var(--ink2); }
+.seg button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold-d); color: var(--ink); }
+
+/* Quiz screens */
+.focus-top { background: rgba(255, 255, 255, .96); }
+.focus-top .bar > i { background: linear-gradient(180deg, #FFCB3D, var(--gold)); }
+.dock { border-top: 2px solid var(--line); background: #fff; }
+.read h1, .read h2 { font-family: var(--display); }
+
+/* Contact */
+.cways { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.cway { display: grid; gap: 4px; align-content: start; padding: 22px; border-radius: 24px; border: 2px solid var(--gold-d); border-bottom-width: 6px; background: var(--gold-tint); transition: transform .12s var(--ease); }
+.cway:hover { transform: translateY(-3px); } .cway:active { transform: translateY(2px); border-bottom-width: 3px; }
+.cway-ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; background: var(--gold); color: var(--ink); margin-bottom: 8px; }
+.cway-t { font: 800 22px/1.15 var(--display); }
+.cway-v { font-weight: 700; color: var(--ink2); overflow-wrap: anywhere; }
+
+/* Tour */
+.tour { position: fixed; inset: 0; z-index: 90; }
+.tour-ring { position: fixed; display: none; border-radius: 18px; box-shadow: 0 0 0 9999px rgba(42, 30, 18, .66), 0 0 0 4px var(--gold); transition: left .25s var(--ease), top .25s var(--ease), width .25s var(--ease), height .25s var(--ease); pointer-events: none; }
+.tour-card { position: fixed; display: grid; gap: 10px; padding: 22px; border-radius: 24px; background: #fff; border: 2px solid var(--gold-d); border-bottom-width: 6px; box-shadow: 0 18px 40px rgba(0, 0, 0, .25); }
+.tour-dots { display: flex; gap: 6px; } .tour-dots i { width: 22px; height: 6px; border-radius: 4px; background: var(--line2); } .tour-dots i.on { background: var(--gold-d); }
+.tour-t { font: 800 24px/1.1 var(--display); letter-spacing: -.02em; }
+.tour-p { color: var(--ink2); font-size: 16px; line-height: 1.5; }
+.tour-act { margin-top: 6px; gap: 10px; }
+
+/* Login: on phones the form comes first; the art shrinks to a banner */
+.lgl-big { font-family: var(--display); font-weight: 800; letter-spacing: -.03em; }
+.lg-h { font-family: var(--display); font-weight: 800; letter-spacing: -.02em; }
+@media (max-width: 800px) {
+  .lg-side.lgl { padding: 18px 22px 20px; min-height: 0; }
+  .lgl-stage { display: none; }
+  .lgl-big { font-size: 30px; }
+  .lgl-sub { font-size: 16px; }
+}
