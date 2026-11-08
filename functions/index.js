@@ -9,7 +9,7 @@ const EXAM_ID = /^nism-[a-z]+(?:-[a-z]+)?$/;
 const COOLDOWN_MS = 15000;
 
 /* Exams, credentials and account deletion live in lib/. */
-Object.assign(exports, require("./lib/exam"), require("./lib/account"));
+Object.assign(exports, require("./lib/exam"), require("./lib/account"), require("./lib/content"));
 
 /* Answer keys live in Firestore (nmkeys/<exam>), not in the public repository. Cached while the instance is warm. */
 const cache = new Map();
