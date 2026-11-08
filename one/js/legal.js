@@ -1,6 +1,6 @@
 /* Privacy notice, terms of use, and the consent step shown once after first sign-in.
    The wording is a working draft: have your lawyer or compliance officer read it before launch. */
-import { ORG, CONTACT_EMAIL } from "./config.js";
+import { ORG, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_TEL } from "./config.js";
 import { h } from "./dom.js";
 import * as Store from "./store.js";
 
@@ -52,7 +52,7 @@ function terms() {
     sec("Our content", h("p", {}, `The lessons, questions and design belong to ${ORG} or its licensors. You may use them for your own learning.`)),
     sec("Availability and liability", h("p", {}, "We work to keep the Academy running but cannot promise it will always be available or error free. To the extent the law allows, we are not liable for losses from using the Academy or relying on its content.")),
     sec("Changes and law", h("p", {}, "We may update the Academy and these terms. Continuing to use it means you accept the update. Indian law applies.")),
-    sec("Contact", h("p", {}, "Write to ", mail, ".")),
+    sec("Contact", h("p", {}, "Write to ", mail, ", call ", h("a", { href: "tel:" + CONTACT_TEL }, CONTACT_PHONE), " or open the ", h("a", { href: "#/contact" }, "contact page"), ".")),
   ];
 }
 
@@ -61,7 +61,7 @@ export function legalPage(kind) {
   return h("main", { class: "wrap page stack stack-l", id: "main" },
     h("a", { class: "brand", href: "./" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy"))),
     ...(kind === "terms" ? terms() : privacy()),
-    h("p", { class: "small" }, h("a", { href: "#/privacy" }, "Privacy notice"), "  ·  ", h("a", { href: "#/terms" }, "Terms of use"), "  ·  ", h("a", { href: "./" }, "Back to the Academy")));
+    h("p", { class: "small" }, h("a", { href: "#/privacy" }, "Privacy notice"), "  ·  ", h("a", { href: "#/terms" }, "Terms of use"), "  ·  ", h("a", { href: "#/contact" }, "Contact us"), "  ·  ", h("a", { href: "./" }, "Back to the Academy")));
 }
 
 /* Links for forms and menus. They open in a new tab so a half-finished sign-in is not lost. */

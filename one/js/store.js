@@ -178,6 +178,7 @@ export const setStart = lv => mutate(s => { s.start = lv; });
 
 /* ——— consent ——— */
 export const hasConsent = () => !!state.consent;
+export const uidNow = () => uid;
 export const setConsent = () => mutate(s => { s.consent = Date.now(); });
 
 /* ——— account deletion: the backend removes every record, then the sign-in itself ——— */

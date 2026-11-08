@@ -193,7 +193,7 @@ function mount(a, startMsg) {
       form.append(h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
         ...(mode === "phone" ? [fields, or, gBtn] : [gBtn, or, fields]), ...links,
         h("p", { class: "tiny mute" }, "We store your name, mobile number, door and learning progress to run your account. Learning content is for education only, not investment advice. By continuing you accept the ", legalLinks(), "."),
-        h("p", { class: "tiny mute" }, "Need help? ", h("a", { href: "mailto:" + CONTACT_EMAIL }, CONTACT_EMAIL)));
+        h("p", { class: "tiny mute" }, "Need help? ", h("a", { href: "#/contact" }, "Contact us"), " or write to ", h("a", { href: "mailto:" + CONTACT_EMAIL }, CONTACT_EMAIL), "."));
     }
     paint();
 

@@ -1,4 +1,6 @@
 /* UpperCrust Academy: boot and routes. */
+import { contactPage } from "./contact.js";
+import { startTour, tourSeen } from "./tour.js";
 import "./monitor.js";
 import * as I18n from "./i18n.js";
 import { reportError } from "./monitor.js";
@@ -50,6 +52,7 @@ const ROUTES = [
   [/^me$/, () => C.me(), "me", "Progress"],
   [/^privacy$/, () => legalPage("privacy"), "", "Privacy notice"],
   [/^terms$/, () => legalPage("terms"), "", "Terms of use"],
+  [/^contact$/, () => contactPage(), "", "Contact us"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
@@ -94,14 +97,20 @@ async function boot() {
   const pub = location.hash.match(/^#\/verify\/([\w-]+)$/);
   if (pub) {
     document.title = "Verify · UpperCrust Academy";
-    root.append(C.verify(pub[1]));
+    root.replaceChildren(C.verify(pub[1]));
+    addEventListener("hashchange", () => location.reload());
+    return;
+  }
+  if (/^#\/contact$/.test(location.hash)) {
+    document.title = "Contact us · UpperCrust Academy";
+    root.replaceChildren(contactPage());
     addEventListener("hashchange", () => location.reload());
     return;
   }
   const legal = location.hash.match(/^#\/(privacy|terms)$/);
   if (legal) {
     document.title = (legal[1] === "terms" ? "Terms of use" : "Privacy notice") + " · UpperCrust Academy";
-    root.append(legalPage(legal[1]));
+    root.replaceChildren(legalPage(legal[1]));
     addEventListener("hashchange", () => location.reload());
     return;
   }
@@ -129,8 +138,10 @@ async function boot() {
     if (r === "place") location.hash = "#/quiz/place";
   } else if ((!Store.get().door || !Store.get().mobile || !Store.get().name)) { await Auth.welcome(); }
   ui = frame(route);
+  document.addEventListener("one:tour", () => startTour(Store.uidNow()));
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);
   route();
+  if (!tourSeen(Store.uidNow()) && !/^#\/(lesson|quiz|syllabus|nism\/[\w-]+\/mock)/.test(location.hash)) setTimeout(() => startTour(Store.uidNow()), 600);
 }
 boot();

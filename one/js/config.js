@@ -46,7 +46,9 @@ export const STAFF = ["manojrohit@uppercrustwealth.com", "roshanshah@uppercrustw
 export const ORG = "UpperCrust Wealth";
 
 /* Where learners write for support, privacy requests and complaints. Confirm this mailbox exists before launch. */
-export const CONTACT_EMAIL = "support@uppercrustwealth.com";
+export const CONTACT_EMAIL = "social@uppercrustwealth.com";
+export const CONTACT_PHONE = "+91 63531 22206";
+export const CONTACT_TEL = "+916353122206";
 
 /* Firebase App Check (reCAPTCHA v3 site key). Leave empty until App Check is set up; see LAUNCH-CHECKLIST.md. */
 export const APPCHECK_SITE_KEY = "";
