@@ -1,22 +1,15 @@
 /* UpperCrust Academy backend. Marks NISM mocks on the server so scores cannot be edited in the browser,
    keeps the answer keys private, and gives the admin their numbers. Region: Mumbai. */
-const functions = require("firebase-functions/v1");
-const admin = require("firebase-admin");
+const { functions, admin, db, FV, makeR, fail, needAuth, needAdmin, day } = require("./lib/common");
 const { validAnswers, score, foldRecord } = require("./lib/score");
+const { STAFF, ADMIN_EMAILS } = require("./lib/staff");
 
-admin.initializeApp();
-const db = admin.firestore();
-const FV = admin.firestore.FieldValue;
-const R = functions.region("asia-south1");
-
-const ADMIN_EMAILS = ["admin@uppercrustwealth.com"];
+const R = makeR();
 const EXAM_ID = /^nism-[a-z]+(?:-[a-z]+)?$/;
 const COOLDOWN_MS = 15000;
 
-const fail = (code, msg) => { throw new functions.https.HttpsError(code, msg); };
-const needAuth = ctx => { if (!ctx.auth) fail("unauthenticated", "Sign in first."); return ctx.auth.uid; };
-const needAdmin = ctx => { needAuth(ctx); if (!ADMIN_EMAILS.includes(String(ctx.auth.token.email || "").toLowerCase())) fail("permission-denied", "Admin only."); };
-const day = (t = Date.now()) => new Date(t + 5.5 * 3600e3).toISOString().slice(0, 10); /* IST day */
+/* Exams, credentials and account deletion live in lib/. */
+Object.assign(exports, require("./lib/exam"), require("./lib/account"));
 
 /* Answer keys live in Firestore (nmkeys/<exam>), not in the public repository. Cached while the instance is warm. */
 const cache = new Map();
@@ -98,7 +91,7 @@ exports.keyStatus = R.https.onCall(async (data, ctx) => {
 
 /* Admin only: the numbers behind the dashboard. Uses count queries, so it stays cheap with thousands of learners. */
 const DOORS = ["student", "homemaker", "teacher", "salaried", "business", "retiree", "partner", "team", "global"];
-exports.adminStats = R.runWith({ timeoutSeconds: 60, memory: "512MB" }).https.onCall(async (data, ctx) => {
+exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall(async (data, ctx) => {
   needAdmin(ctx);
   const col = db.collection("learners"), now = Date.now(), D = 86400e3;
   const cnt = async q => (await q.count().get()).data().count;
@@ -126,13 +119,11 @@ exports.adminStats = R.runWith({ timeoutSeconds: 60, memory: "512MB" }).https.on
     for (const i of Object.keys(t)) { const n = t[i], wr = w[i] || 0; if (n >= 20) hard.push({ examId: m[1], mock: +m[2], i: +i, n, wrong: wr, skipped: s[i] || 0, rate: wr / n }); }
   });
   hard.sort((a, b) => b.rate - a.rate);
-  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), at: now };
+  const errs = (await db.collection("errors").orderBy("t", "desc").limit(20).get()).docs.map(d => d.data());
+  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), errors: errs, at: now };
 });
 
 /* ——— staff identity ——— */
-const STAFF_DOMAIN = "@uppercrustwealth.com";
-const STAFF = [];
-
 /* Admin only: marks the listed employees' accounts as email-verified, which the security rules now require.
    Anyone who registers a staff address without owning the mailbox stays unverified and gets no staff access. */
 exports.verifyStaff = R.https.onCall(async (data, ctx) => {
