@@ -1,0 +1,31 @@
+/* Skeletons, error card, resume bar, first-run Home, collapsible Exams, WhatsApp button. */
+.skel-list { display: grid; gap: 14px; }
+.skel { display: grid; gap: 10px; padding: 18px; border: 2.5px solid var(--line); border-radius: 20px; background: #fff; }
+.sk { display: block; height: 14px; border-radius: 8px; background: linear-gradient(90deg, #F1EBDD 25%, #FBF7EC 50%, #F1EBDD 75%); background-size: 200% 100%; animation: skshine 1.3s linear infinite; }
+.sk.a { width: 30%; height: 20px; border-radius: 99px; } .sk.b { width: 92%; height: 18px; } .sk.c { width: 62%; }
+@keyframes skshine { to { background-position: -200% 0; } }
+.splash .skel-list { width: min(320px, 80vw); }
+.errcard { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 28px 20px; border: 3px solid var(--ink); border-radius: 24px; box-shadow: 5px 5px 0 var(--ink); background: #FFF8E6; }
+.err-emo { font-size: 44px; }
+
+.resume { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border: 3px solid var(--ink); border-radius: 20px; background: #E3F7FD; box-shadow: 4px 4px 0 var(--ink); color: var(--ink); transition: transform .12s var(--ease); }
+.resume:hover { transform: translateY(-2px); } .resume:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.resume-go { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 15px; background: var(--ink); color: var(--gold); font-size: 18px; }
+.resume-b { flex: 1; min-width: 0; display: grid; } .resume-b b { font: 800 16px/1.25 var(--display); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .resume-b small { font: 700 12px var(--font); color: var(--ink2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.resume-cta { flex: none; padding: 9px 16px; border-radius: 14px; background: var(--gold); border: 2.5px solid var(--ink); font: 800 14px var(--font); }
+
+.play-hero.first { padding-block: 30px; } .play-hero.first .ph-title { font-size: clamp(26px, 6vw, 38px); }
+.play-hero.first .btn.big { min-height: 60px; font-size: 19px; padding-inline: 34px; animation: firstpulse 2.2s ease-in-out infinite; }
+@keyframes firstpulse { 50% { transform: scale(1.04); } }
+.explore { margin-top: 6px; } .explore > summary { cursor: pointer; list-style: none; text-align: center; padding: 14px; border: 2.5px dashed var(--line2); border-radius: 18px; font: 800 15px var(--font); color: var(--ink2); }
+.explore > summary::-webkit-details-marker { display: none; } .explore[open] > summary { margin-bottom: 18px; }
+
+.exsec { border: 3px solid var(--ink); border-radius: 22px; background: #fff; box-shadow: 4px 4px 0 var(--ink); }
+.exsec-s { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #FFF1C6; border-radius: 19px; }
+.exsec-s::-webkit-details-marker { display: none; } .exsec[open] > .exsec-s { border-radius: 19px 19px 0 0; border-bottom: 3px solid var(--ink); }
+.exsec-t { flex: 1; min-width: 0; display: grid; } .exsec-t b { font: 800 19px/1.2 var(--display); } .exsec-t small { font: 600 13px var(--font); color: var(--ink2); }
+.exsec .acc-chev { transition: transform .2s; } .exsec[open] .acc-chev { transform: rotate(-90deg); }
+.exsec-b { padding: 16px; }
+
+.btn.wa { background: #25D366; border-color: #128C4B; color: #04290F; }
+button.pillstat { font: inherit; cursor: pointer; background: #fff; }
