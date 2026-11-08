@@ -9,6 +9,7 @@ import { loginSide } from "./loginart.js";
 import { LANGS, getLang, setLanguage } from "./i18n.js";
 import { legalLinks } from "./legal.js";
 import { CONTACT_EMAIL } from "./config.js";
+import { needsVerify, sendCode, confirmCode, verifyError } from "./mobileverify.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
 
@@ -214,7 +215,7 @@ export async function signOut() {
 export function welcome() {
   return new Promise(resolve => {
     const staff = Store.isStaff();
-    let step = Store.get().name && Store.get().mobile ? 1 : 0, choice = null, door = Store.get().door || null;
+    let step = Store.get().name && Store.get().mobile ? (needsVerify() ? "v" : 1) : 0, choice = null, door = Store.get().door || null;
     const box = h("div", { class: "gate-card stack stack-l wide" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
@@ -222,6 +223,34 @@ export function welcome() {
 
     const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel", placeholder: "10-digit mobile, or +country code", value: Store.get().mobile || "", readonly: !!Store.get().mv });
     const perr = h("p", { class: "error", role: "alert" });
+    /* Prove the number: a code is texted when this step opens. */
+    let conf = null, resendAt = 0, tick = null;
+    function verifyPaint() {
+      const num = Store.get().mobile, e164 = num.startsWith("+") ? num : "+91" + num;
+      const holder = h("div", { id: "recap2" }), err = h("p", { class: "error", role: "alert" });
+      const code = h("input", { class: "input otp", id: "vc", type: "text", inputmode: "numeric", autocomplete: "one-time-code", maxlength: "6", placeholder: "••••••" });
+      const ok = h("button", { class: "btn primary block", type: "submit", disabled: true }, "Verify and continue");
+      const resend = h("button", { type: "button", class: "link small", disabled: true }, "");
+      const change = h("button", { type: "button", class: "link small", on: { click: () => { clearInterval(tick); step = 0; paint(); } } }, "Change number");
+      const lap = () => { const sec = Math.ceil((resendAt - Date.now()) / 1000); resend.disabled = sec > 0; resend.textContent = sec > 0 ? `Resend code in ${sec}s` : "Send a new code"; if (sec <= 0) clearInterval(tick); };
+      const send = async () => {
+        err.textContent = ""; ok.disabled = true; resend.disabled = true;
+        try { conf = await sendCode(e164, holder); resendAt = Date.now() + 30e3; clearInterval(tick); tick = setInterval(() => { if (!resend.isConnected) return clearInterval(tick); lap(); }, 1000); lap(); ok.disabled = false; code.focus(); }
+        catch (e) { err.textContent = verifyError(e); resend.disabled = false; resend.textContent = "Send a new code"; }
+      };
+      resend.onclick = send;
+      const form = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
+        ev.preventDefault();
+        const c = code.value.replace(/\D/g, "");
+        if (!conf) return send();
+        if (c.length !== 6) { err.textContent = "Enter the 6-digit code."; return; }
+        ok.disabled = true; ok.textContent = "Checking…"; err.textContent = "";
+        try { await confirmCode(conf, c, num); clearInterval(tick); if (Store.get().door) { scrim.remove(); resolve(null); } else { step = 1; paint(); } }
+        catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; err.textContent = verifyError(e); if (/expired/.test(e?.code || "")) conf = null; }
+      } } }, h("div", { class: "field" }, h("label", { for: "vc" }, `Enter the 6-digit code sent to ${e164.replace(/^\+91/, "+91 ")}`), code), err, ok, h("div", { class: "lg-alt" }, resend, change), holder);
+      box.append(logo, h("div", {}, h("h1", { class: "h1" }, "Verify your mobile"), h("p", { class: "mute", style: "margin-top:8px" }, "One quick check that this number is yours. It keeps your certificates and account safe.")), form);
+      send();
+    }
     function paint() {
       box.replaceChildren();
       if (step === 0) {
@@ -236,8 +265,10 @@ export function welcome() {
             if (name.value.trim().length < 2) { perr.textContent = "Enter your name."; return name.focus(); }
             let m = "";
             if (need) { m = cleanMobile(mobile.value); if (!m) { perr.textContent = "Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code."; return mobile.focus(); } }
-            Store.setProfile({ name: name.value, mobile: m }); step = 1; paint(); } } }, "Continue"));
+            Store.setProfile({ name: name.value, mobile: m }); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
         name.focus();
+      } else if (step === "v") {
+        verifyPaint();
       } else {
         const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); scrim.remove(); resolve(null); } } }, "Open my academy");
         box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? It sets the courses we recommend first and the examples you see. You can change it any time.")),

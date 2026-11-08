@@ -9,6 +9,7 @@ import { h, toast, clear } from "./dom.js";
 import { loadData, loadTx } from "./data.js";
 import * as Store from "./store.js";
 import * as Auth from "./auth.js";
+import { needsVerify } from "./mobileverify.js";
 import { frame, isAdmin, notFound } from "./ui.js";
 import { renderLesson } from "./lesson.js";
 import * as Q from "./quizzes.js";
@@ -136,7 +137,7 @@ async function boot() {
     const r = await Auth.welcome();
     Store.setOnboarded();
     if (r === "place") location.hash = "#/quiz/place";
-  } else if ((!Store.get().door || !Store.get().mobile || !Store.get().name)) { await Auth.welcome(); }
+  } else if (!Store.get().door || !Store.get().mobile || !Store.get().name || needsVerify()) { await Auth.welcome(); }
   ui = frame(route);
   document.addEventListener("one:tour", () => startTour(Store.uidNow()));
   addEventListener("hashchange", route);
