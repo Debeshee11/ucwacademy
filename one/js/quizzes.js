@@ -4,7 +4,7 @@ import { D, course, level, questionsFor, TIERS, examPool } from "./data.js";
 import { h, pick, shuffle } from "./dom.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
-import { runQuiz } from "./quiz.js";
+import { runQuiz, questionById } from "./quiz.js";
 import { runExam } from "./exam.js";
 import { orderedCourses } from "./path.js";
 
