@@ -1,5 +1,5 @@
 /* Firebase, loaded from the SDK scripts in index.html. Returns null when the SDK could not load, so the app can say so plainly. */
-import { FIREBASE } from "./config.js";
+import { FIREBASE, APPCHECK_SITE_KEY } from "./config.js";
 
 let app = null;
 export function fb() {
@@ -7,6 +7,7 @@ export function fb() {
   if (typeof firebase === "undefined") return null;
   try {
     app = firebase.apps.length ? firebase.app() : firebase.initializeApp(FIREBASE);
+    if (APPCHECK_SITE_KEY && firebase.appCheck) { try { firebase.appCheck().activate(APPCHECK_SITE_KEY, true); } catch (e) { console.warn("App Check failed", e); } }
     return app;
   } catch (e) { console.warn("Firebase init failed", e); return null; }
 }

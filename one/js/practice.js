@@ -81,7 +81,7 @@ export function labScenario(id) {
           } catch { ai.replaceChildren(h("p", { class: "error" }, "Feedback is unavailable right now.")); }
           ev.currentTarget.disabled = false;
         } } }, "Get written feedback") : null,
-        h("button", { class: "btn primary", on: { click: () => { Store.recordLab(s.id, upd()); const got = Creds.recheck(); toast(got.length ? got[0].title + " earned" : "Saved"); location.hash = "#/lab"; } } }, "Save and finish")));
+        h("button", { class: "btn primary", on: { click: () => { Store.recordLab(s.id, upd()); toast("Saved"); Store.flush().then(() => Creds.recheck()).then(got => got.length && toast(got[0].title + " earned")); location.hash = "#/lab"; } } }, "Save and finish")));
   }
   return page(
     h("div", { class: "stack" }, h("a", { class: "small mute", href: "#/lab", style: "display:inline-flex;gap:6px;align-items:center" }, icon("left", 16), "Client lab"),

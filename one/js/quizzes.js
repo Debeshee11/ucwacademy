@@ -4,7 +4,8 @@ import { D, course, level, questionsFor, TIERS, examPool } from "./data.js";
 import { h, pick, shuffle } from "./dom.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
-import { runQuiz, questionById } from "./quiz.js";
+import { runQuiz } from "./quiz.js";
+import { runExam } from "./exam.js";
 import { orderedCourses } from "./path.js";
 
 const back = c => `#/course/${c.id}`;
@@ -41,15 +42,17 @@ export function exam(root, cid, tier = "b") {
     return;
   }
   const pass = RULES.tierPass[tier], pool = examPool(c, tier);
-  runQuiz(root, {
-    title: `${c.title} · ${T.name} exam`, questions: pick(pool, RULES.examQuestions), pass, exit: back(c),
+  runExam(root, {
+    title: `${c.title} · ${T.name} exam`, courseId: cid, tier, questions: pick(pool, RULES.examQuestions), exit: back(c),
     done: res => {
       Store.recordQuiz(TIER_KEY[tier] + cid, res.score, res.passed);
       const next = tier === "b" ? "i" : tier === "i" ? "h" : null, nextT = TIERS().find(t => t.id === next);
       const nextBtn = nextT ? h("a", { class: "btn " + (res.passed ? "primary" : "ghost"), href: `#/syllabus/${cid}/${next}` }, `${nextT.name} syllabus`) : null;
       if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${pass}%. Read the syllabus again, then retry. A new set of questions is drawn each time.`, actions: [h("a", { class: "btn primary", href: `#/syllabus/${cid}/${tier}` }, "Open the syllabus"), h("a", { class: "btn ghost", href: back(c) }, "Back to course")] };
       if (tier !== "b") return { head: `${T.name} exam passed.`, sub: `${res.score}%. ` + (nextT ? `${nextT.name} is now open.` : "That is every exam in this course. Outstanding."), actions: [res.passed && nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
-      const r = Creds.awardCourse(cid, res.score);
+      Creds.absorb(res);
+      const r = { cred: res.cred, extra: res.extra || [] };
+      if (!r.cred) return { head: "You passed.", sub: `${res.score}%. Your certificate could not be issued just now. Open My progress in a minute; if it is missing, tell the administrator.`, actions: [h("a", { class: "btn primary", href: "#/me" }, "My progress")] };
       const extra = r.extra.map(x => h("p", { class: "pill gold" }, x.title + " earned"));
       return { head: "You passed.", sub: `${res.score}%. Your certificate is ready, and the Intermediate exam is open.`, body: extra.length ? h("div", { class: "row-flex", style: "justify-content:center" }, extra) : null,
         actions: [h("a", { class: "btn primary", href: `#/cert/${r.cred.id}` }, "View certificate"), nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
@@ -60,12 +63,13 @@ export function exam(root, cid, tier = "b") {
 export function refresher(root, cid) {
   const c = course(cid), cred = Creds.find("course", cid);
   if (!c || !cred) return void (location.hash = "#/me");
-  runQuiz(root, {
-    title: `${c.title} · Refresher`, questions: pick(questionsFor(c.lessons), RULES.refreshQuestions), pass: RULES.examPass, exit: "#/me",
+  runExam(root, {
+    title: `${c.title} · Refresher`, courseId: cid, tier: "r", questions: pick(questionsFor(c.lessons), RULES.refreshQuestions), exit: "#/me",
     done: res => {
       Store.recordQuiz("r:" + cid, res.score, res.passed);
       if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${RULES.examPass}%. Your certificate stays as it is until you pass.`, actions: [h("a", { class: "btn primary", href: "#/me" }, "Back")] };
-      const r = Creds.awardCourse(cid, res.score);
+      Creds.absorb(res);
+      const r = { cred: res.cred || cred };
       return { head: "Renewed.", sub: "Your certificate is valid for another 12 months.", actions: [h("a", { class: "btn primary", href: `#/cert/${r.cred.id}` }, "View certificate")] };
     }
   });

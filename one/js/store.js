@@ -42,12 +42,15 @@ export async function init(user) {
       if (snap.exists) { const remote = clean(JSON.parse(JSON.stringify(snap.data()))); if ((remote.updated || 0) >= (state.updated || 0)) state = remote; }
     } catch (e) { console.warn("Could not read progress", e); }
   }
+  /* Credentials are issued by the backend and read back here; the browser never writes them. */
+  const keepLocal = state.creds;
+  state.creds = {};
+  if (d) { try { (await d.collection("credentials").where("uid", "==", uid).get()).forEach(x => { state.creds[x.id] = x.data(); }); } catch (e) { console.warn("Could not read credentials", e); state.creds = keepLocal && typeof keepLocal === "object" ? keepLocal : {}; } }
   state.nm = {};
   if (d) { try { const r = await d.doc("nmres/" + uid).get(); if (r.exists) { const { lastAt, ...rest } = r.data(); state.nm = rest; } } catch (e) { console.warn("Could not read mock results", e); } }
   if (!state.kind) state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
   const pid = user.providerData?.[0]?.providerId || "";
   state.prov = pid === "google.com" ? "google" : pid === "password" ? "email" : (pid || state.prov || "");
-  if (!state.consent) state.consent = Date.now();
   emit();
 }
 
@@ -59,7 +62,7 @@ function persist() {
 export async function flush() {
   clearTimeout(timer); timer = null;
   const d = db(); if (!d || !uid) return;
-  try { const { nm, ...save } = JSON.parse(JSON.stringify(state));  /* mock results are written by the backend, never from here */
+  try { const { nm, creds, ...save } = JSON.parse(JSON.stringify(state));  /* mock results and credentials are written by the backend, never from here */
     await d.doc("learners/" + uid).set({ ...save, email }); warned = false; syncBoard(false); }
   catch (e) { console.warn("Could not save progress", e); if (!warned) { warned = true; document.dispatchEvent(new CustomEvent("one:syncerror")); } }
 }
@@ -72,7 +75,7 @@ export async function syncBoard(force) {
 }
 export async function loadRoll() {
   const d = db(); if (!d) throw new Error("offline");
-  const snap = await d.collection("roll").get();
+  const snap = await d.collection("roll").orderBy("xp", "desc").limit(200).get();
   return snap.docs.map(x => ({ id: x.id, ...x.data() }));
 }
 export async function loadBoard() {
@@ -160,7 +163,19 @@ export const setMockResult = (id, n, rec) => { state.nm = state.nm || {}; (state
 export const setShow = on => { mutate(s => { s.show = on ? 1 : 0; }); flush().then(() => syncBoard(true)); };
 export const setStart = lv => mutate(s => { s.start = lv; });
 
-/* ——— credentials ——— */
+/* ——— consent ——— */
+export const hasConsent = () => !!state.consent;
+export const setConsent = () => mutate(s => { s.consent = Date.now(); });
+
+/* ——— account deletion: the backend removes every record, then the sign-in itself ——— */
+export async function deleteAccount() {
+  const f = fns(); if (!f) throw new Error("offline");
+  clearTimeout(timer); timer = null;
+  await f.httpsCallable("deleteAccount")();
+  try { localStorage.removeItem(KEY(uid)); } catch {}
+}
+
+/* ——— credentials (copies of what the backend issued) ——— */
 export const addCredential = c => mutate(s => { s.creds[c.id] = c; });
 export const renewCredential = (id, until) => mutate(s => { if (s.creds[id]) { s.creds[id].until = until; s.creds[id].renewed = Date.now(); } });
 

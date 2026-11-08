@@ -45,6 +45,8 @@ export function frame(onLang) {
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/admin", role: "menuitem", on: { click: close } }, icon("trend", 20), "Growth and exams"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
+        h("a", { href: "#/privacy", role: "menuitem", on: { click: close } }, icon("link", 20), "Privacy notice"),
+        h("a", { href: "#/terms", role: "menuitem", on: { click: close } }, icon("link", 20), "Terms of use"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
     }
   }

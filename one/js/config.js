@@ -41,6 +41,15 @@ export const RULES = {
 export const STAFF_DOMAIN = "@uppercrustwealth.com";
 
 /* Employees, for the activity roster. Keep in step with listed() in firestore.rules. */
-export const STAFF = ["manojrohit@uppercrustwealth.com", "roshanshah@uppercrustwealth.com", "hemantpatel@uppercrustwealth.com", "savan@uppercrustwealth.com", "palakshah@uppercrustwealth.com", "harshil_patel@uppercrustwealth.com", "navin@uppercrustwealth.com", "kanchanbhagwat@uppercrustwealth.com", "omkar@uppercrustwealth.com", "prakashpatel@uppercrustwealth.com", "ops@uppercrustwealth.com", "sudheerkumar@uppercrustwealth.com", "sandeep@uppercrustwealth.com", "yuvraj@uppercrustwealth.com", "equity@uppercrustwealth.com", "crm@uppercrustwealth.com", "ishagil@uppercrustwealth.com", "bijalmehta@uppercrustwealth.com", "aasthapanwar@uppercrustwealth.com", "happy@uppercrustwealth.com", "dhruvpawashe@uppercrustwealth.com", "admin@uppercrustwealth.com", "admin@uppercrustwealth.com"];
+export const STAFF = ["manojrohit@uppercrustwealth.com", "roshanshah@uppercrustwealth.com", "hemantpatel@uppercrustwealth.com", "savan@uppercrustwealth.com", "palakshah@uppercrustwealth.com", "harshil_patel@uppercrustwealth.com", "navin@uppercrustwealth.com", "kanchanbhagwat@uppercrustwealth.com", "omkar@uppercrustwealth.com", "prakashpatel@uppercrustwealth.com", "ops@uppercrustwealth.com", "sudheerkumar@uppercrustwealth.com", "sandeep@uppercrustwealth.com", "yuvraj@uppercrustwealth.com", "equity@uppercrustwealth.com", "crm@uppercrustwealth.com", "ishagil@uppercrustwealth.com", "bijalmehta@uppercrustwealth.com", "aasthapanwar@uppercrustwealth.com", "happy@uppercrustwealth.com", "dhruvpawashe@uppercrustwealth.com", "admin@uppercrustwealth.com"];
 
 export const ORG = "UpperCrust Wealth";
+
+/* Where learners write for support, privacy requests and complaints. Confirm this mailbox exists before launch. */
+export const CONTACT_EMAIL = "support@uppercrustwealth.com";
+
+/* Firebase App Check (reCAPTCHA v3 site key). Leave empty until App Check is set up; see LAUNCH-CHECKLIST.md. */
+export const APPCHECK_SITE_KEY = "";
+
+/* Shown in error reports, so a problem can be traced to the release that caused it. */
+export const BUILD = "2026-11-07";

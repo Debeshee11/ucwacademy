@@ -1,5 +1,8 @@
 /* UpperCrust Academy: boot and routes. */
+import "./monitor.js";
 import * as I18n from "./i18n.js";
+import { reportError } from "./monitor.js";
+import { legalPage, consentGate } from "./legal.js";
 import { h, toast, clear } from "./dom.js";
 import { loadData, loadTx } from "./data.js";
 import * as Store from "./store.js";
@@ -44,6 +47,8 @@ const ROUTES = [
   [/^nism$/, () => Nism.hub(), "nism", "NISM prep"],
   [/^nism\/([\w-]+)$/, id => Nism.examPage(id), "nism", "NISM exam"],
   [/^me$/, () => C.me(), "me", "My progress"],
+  [/^privacy$/, () => legalPage("privacy"), "", "Privacy notice"],
+  [/^terms$/, () => legalPage("terms"), "", "Terms of use"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
@@ -75,7 +80,7 @@ function route() {
       const out = view(...m.slice(1));
       if (!focus) { clear(root); if (out) root.append(out); }
     } catch (e) {
-      console.error(e);
+      console.error(e); reportError(e);
       clear(root).append(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Something went wrong."), h("p", { class: "mute" }, "Reload the page. If it keeps happening, tell the administrator."), h("a", { class: "btn primary", href: "#/" }, "Home")));
     }
     if (!focus) window.scrollTo(0, 0);
@@ -92,13 +97,20 @@ async function boot() {
     addEventListener("hashchange", () => location.reload());
     return;
   }
+  const legal = location.hash.match(/^#\/(privacy|terms)$/);
+  if (legal) {
+    document.title = (legal[1] === "terms" ? "Terms of use" : "Privacy notice") + " · UpperCrust Academy";
+    root.append(legalPage(legal[1]));
+    addEventListener("hashchange", () => location.reload());
+    return;
+  }
   const user = await Auth.start();
   root.replaceChildren(splash());
   try {
     await Promise.all([loadData(), Store.init(user)]);
     await loadLive();
   } catch (e) {
-    console.error(e);
+    console.error(e); reportError(e);
     root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load."), h("p", { class: "mute" }, "Check your connection and reload."), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));
     return;
   }
@@ -109,6 +121,7 @@ async function boot() {
   await loadTx(Store.get().lang);
   document.addEventListener("one:syncerror", () => toast("Progress saved on this device only. We'll retry."));
   const np = Auth.takeProfile(); if (np) Store.setProfile(np);
+  if (!Store.hasConsent()) await consentGate();
   if (!Store.get().onb && !Object.keys(Store.get().done).length) {
     const r = await Auth.welcome();
     Store.setOnboarded();

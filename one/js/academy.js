@@ -1,5 +1,5 @@
 /* The Academy's own structure: Doors (who you are), Realms (what you need), Seals (what you own), Today, the Assessment Centre. */
-import { RULES } from "./config.js";
+import { RULES, CONTACT_EMAIL } from "./config.js";
 import { h, icon, plural, toast } from "./dom.js";
 import { D, course, level, TIERS } from "./data.js";
 import * as Store from "./store.js";
@@ -8,6 +8,7 @@ import { nextUp, hrefFor, labelFor } from "./path.js";
 import { page, widePage, bar, notFound } from "./ui.js";
 import { cover } from "./art.js";
 import { newsFeed } from "./news.js";
+import { signOut } from "./auth.js";
 
 export const DOORS = [
   { id: "student", name: "Student", who: "School to early career", hook: "First salary, first SIP", realms: ["basics", "mf"] },
@@ -116,7 +117,22 @@ export function settingsCard() {
   return h("section", { class: "stack" }, h("h2", { class: "h2" }, "Who are you?"),
     h("p", { class: "small mute" }, "This sets the courses we recommend first and the examples you see. You can change it any time."),
     doorPicker(s.door, id => { Store.setDoor(id); toast("Saved"); }),
-    h("label", { class: "row-flex small", for: "showroll", style: "gap:10px;margin-top:6px" }, show, "Show my first name and last initial on the leaderboard"));
+    h("label", { class: "row-flex small", for: "showroll", style: "gap:10px;margin-top:6px" }, show, "Show my first name and last initial on the leaderboard"),
+    accountCard());
+}
+
+/* Delete everything the Academy holds about this learner. */
+function accountCard() {
+  const msg = h("p", { class: "small", role: "status" });
+  const btn = h("button", { class: "btn ghost", on: { click: async () => {
+    if (!confirm("Delete your account? This removes your progress, leaderboard entry and certificates for good. It cannot be undone.")) return;
+    if (!confirm("Last check: delete everything now?")) return;
+    btn.disabled = true; msg.textContent = "Deleting…";
+    try { await Store.deleteAccount(); await signOut(); }
+    catch (e) { btn.disabled = false; msg.textContent = /offline|unavailable|network/.test(e?.code || e?.message || "") ? "No connection. Try again online." : "Could not delete just now. Write to " + CONTACT_EMAIL + "."; }
+  } } }, "Delete my account and data");
+  return h("div", { class: "card stack stack-s", style: "margin-top:18px" }, h("h3", { class: "h3" }, "Your data"),
+    h("p", { class: "small mute" }, "You can delete your account and every record we hold. See the ", h("a", { href: "#/privacy" }, "Privacy notice"), "."), btn, msg);
 }
 
 /* ——— Assessment Centre: the only place a scored exam starts ——— */

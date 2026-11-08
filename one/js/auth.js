@@ -7,6 +7,8 @@ import * as Store from "./store.js";
 import { doorPicker } from "./academy.js";
 import { loginSide } from "./loginart.js";
 import { LANGS, getLang, setLanguage } from "./i18n.js";
+import { legalLinks } from "./legal.js";
+import { CONTACT_EMAIL } from "./config.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
 
@@ -37,7 +39,9 @@ const errMsg = e => {
   if (/code-expired|session-expired/.test(c)) return "That code has expired. Send a new one.";
   if (/captcha/.test(c)) return "Security check failed. Reload the page and try again.";
   if (/quota-exceeded/.test(c)) return "Too many codes sent today. Try tomorrow, or use Google.";
-  return "That email or password is not right.";
+  if (/wrong-password|user-not-found|invalid-credential|invalid-login/.test(c)) return "That email or password is not right.";
+  if (/user-disabled/.test(c)) return `This account is switched off. Write to ${CONTACT_EMAIL}.`;
+  return `Could not sign in just now. Try again, or write to ${CONTACT_EMAIL}.`;
 };
 
 const GOOGLE_G = '<svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>';
@@ -188,7 +192,8 @@ function mount(a, startMsg) {
       if (mode !== "staff") links.push(h("p", { class: "lg-staff" }, "UpperCrust employee? ", Object.assign(go("staff"), { textContent: "Sign in with your work email" })));
       form.append(h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
         ...(mode === "phone" ? [fields, or, gBtn] : [gBtn, or, fields]), ...links,
-        h("p", { class: "tiny mute" }, "We store your name, mobile number, door and learning progress to run your account. Learning content is for education only, not investment advice."));
+        h("p", { class: "tiny mute" }, "We store your name, mobile number, door and learning progress to run your account. Learning content is for education only, not investment advice. By continuing you accept the ", legalLinks(), "."),
+        h("p", { class: "tiny mute" }, "Need help? ", h("a", { href: "mailto:" + CONTACT_EMAIL }, CONTACT_EMAIL)));
     }
     paint();
 

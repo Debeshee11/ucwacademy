@@ -3,6 +3,7 @@ import { h, icon } from "./dom.js";
 import { D, t3 } from "./data.js";
 import * as Store from "./store.js";
 import { page, notFound } from "./ui.js";
+import { riskNote } from "./disclaimer.js";
 import { monthsOf, monthLabel, diff, fundIds, fundMeta } from "./holdings.js";
 
 const lang = () => Store.get().lang || "en";
@@ -91,6 +92,7 @@ export function funds() {
   }
   paint();
   return page(
+    riskNote(),
     head("funds", "Fund factsheets", "Real schemes, real numbers. Open one and read it the way a fund analyst does."),
     h("div", { class: "lib-quiz" }, h("div", {}, h("b", {}, "Test what you read"), h("p", {}, "Questions built from these factsheets, this month's holdings and live returns.")),
       h("div", { class: "lib-quiz-btns" }, h("a", { class: "btn primary", href: "#/quiz/holdings" }, "Holdings quiz"), h("a", { class: "btn ghost", href: "#/quiz/fund" }, "Fund quiz"))),
@@ -153,6 +155,7 @@ export function fund(id) {
   const stats = [f.nav != null ? stat("NAV" + (f.navDate ? " · " + f.navDate : ""), "₹" + num(f.nav)) : null, f.aum != null ? stat("Fund size", "₹" + num(f.aum, 0) + " cr") : null, f.er != null ? stat("Expense ratio", f.er + "%") : null,
     x ? stat("3-year return", sgn(r.fund[x.i3]), cls(r.fund[x.i3])) : null, m ? stat("Holdings as of", monthLabel(m.month)) : null].filter(Boolean);
   return page(
+    riskNote(),
     h("a", { class: "lib-back", href: "#/funds" }, icon("left", 18), "All funds"),
     h("section", { class: "lib-hero" },
       h("div", { class: "lib-hero-top" }, avatar(f.house || f.name, 56), h("div", {}, h("div", { class: "lib-eyebrow" }, f.house || "Fund"), h("h1", { class: "h1" }, f.name))),

@@ -4,6 +4,7 @@ import { h, toast, ago } from "./dom.js";
 import { widePage } from "./ui.js";
 import { fns } from "./fb.js";
 import { DOORS } from "./academy.js";
+import { D } from "./data.js";
 
 const j = async p => { const r = await fetch(p); if (!r.ok) throw new Error(p); return r.json(); };
 const call = async (name, data) => { const f = fns(); if (!f) throw new Error("Backend not reachable."); return (await f.httpsCallable(name)(data)).data; };
@@ -12,12 +13,12 @@ const tile = (v, l, sub) => h("div", { class: "ad-tile" }, h("b", {}, v), h("spa
 
 export function admin() {
   const host = h("div", { class: "stack stack-xl" }, h("p", { class: "mute" }, "Loading the numbers…"));
-  Promise.all([call("adminStats"), call("keyStatus"), j("one/data/nism.json")]).then(([S, keys, I]) => paint(host, S, keys, I))
+  Promise.all([call("adminStats"), call("keyStatus"), j("one/data/nism.json"), call("examKeyStatus")]).then(([S, keys, I, ek]) => paint(host, S, keys, I, ek))
     .catch(e => host.replaceChildren(h("p", { class: "error" }, /permission/.test(e?.code || "") ? "Only the administrator can see this." : "Could not load. " + (e.message || "")), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));
   return widePage(h("section", { class: "stack" }, h("div", { class: "eyebrow gold" }, "Administrator"), h("h1", { class: "h1" }, "Growth and exams"), h("p", { class: "mute" }, "Who is joining, who is active, how the NISM mocks are going. ", h("a", { href: "#/team" }, "Open the learner list"))), host);
 }
 
-function paint(host, S, keys, I) {
+function paint(host, S, keys, I, ek) {
   const title = id => I.exams.find(e => e.id === id)?.short || id;
   const max = Math.max(1, ...S.signups.map(x => x.n));
   const spark = h("div", { class: "ad-spark", role: "img", "aria-label": "New learners per day, last 30 days" }, S.signups.map(x => h("i", { title: `${x.d}: ${x.n}`, style: `height:${Math.max(4, x.n / max * 100)}%` })));
@@ -62,6 +63,25 @@ function paint(host, S, keys, I) {
     vbtn.disabled = false;
   } } }, "Verify staff accounts");
 
+  /* course exam keys: one file per course plus _meta.json, made by scripts/build_examkeys.py */
+  const haveEx = Object.fromEntries(ek.map(k => [k.id, k.updated]));
+  const missingEx = [...D.courses.map(c => c.id), "_meta"].filter(id => !haveEx[id]);
+  const exStatus = h("div", { class: "row-flex between ad-key" }, h("span", {}, "Course exam keys"), missingEx.length ? h("span", { class: "pill bad" }, `${missingEx.length} missing: ${missingEx.slice(0, 4).join(", ")}${missingEx.length > 4 ? "…" : ""}`) : h("span", { class: "pill ok" }, "All uploaded"));
+  const exFile = h("input", { type: "file", accept: ".json,application/json", multiple: true, id: "ef" });
+  const exLog = h("p", { class: "small mute", role: "status", style: "white-space:pre-line" });
+  const exUp = h("button", { class: "btn primary", on: { click: async () => {
+    if (!exFile.files.length) return toast("Choose the exam key files first.");
+    exUp.disabled = true; exLog.textContent = "";
+    for (const f of exFile.files) {
+      try { const d = await call("putExamKeys", { keys: JSON.parse(await f.text()) }); exLog.textContent += `✓ ${d.id}${d.questions ? ": " + d.questions + " questions" : ""}\n`; }
+      catch (e) { exLog.textContent += `✗ ${f.name}: ${e.message || "failed"}\n`; }
+    }
+    exUp.disabled = false;
+  } } }, "Upload exam keys");
+
+  const errs = (S.errors || []).length ? h("div", { class: "stack stack-s" }, S.errors.map(x => h("div", { class: "card stack stack-xs" }, h("div", { class: "eyebrow" }, `${ago(x.t)} · ${x.u || ""} · build ${x.v || "?"}`), h("p", { class: "small" }, x.m), x.s ? h("pre", { class: "tiny mute", style: "white-space:pre-wrap;overflow:auto;max-height:120px" }, x.s) : null)))
+    : h("p", { class: "mute" }, "No errors reported.");
+
   host.replaceChildren(
     h("section", { class: "ad-tiles" }, tile(n0(S.total), "Learners", n0(S.staff) + " staff"), tile(n0(S.joined.d1), "Joined today"), tile(n0(S.joined.d7), "Joined, 7 days"), tile(n0(S.joined.d30), "Joined, 30 days"), tile(n0(S.active.d1), "Active today"), tile(n0(S.active.d7), "Active, 7 days"), tile(n0(S.active.d30), "Active, 30 days"),
       tile(S.total ? Math.round(100 * S.active.d7 / S.total) + "%" : "–", "Weekly active share")),
@@ -70,5 +90,7 @@ function paint(host, S, keys, I) {
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "NISM mocks"), tbl),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Hardest questions"), h("p", { class: "mute" }, "Most often answered wrongly. Rewrite or explain these better."), hardBox),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Staff accounts"), h("p", { class: "mute" }, "Staff access now needs a verified email. Run this once after deploying, and again when you add an employee."), vbtn, vlog),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Course exam answer keys"), h("p", { class: "mute" }, "Course exams and refreshers are marked on the server and cannot be taken until these are uploaded. Upload every file from private-keys/examkeys, including _meta.json. Do this once, and again whenever lessons or exam questions change."), exStatus, h("div", { class: "field" }, h("label", { for: "ef" }, "Exam key files (.json)"), exFile), exUp, exLog),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recent errors"), h("p", { class: "mute" }, "Reported by learners' browsers, newest first."), errs),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "NISM answer keys"), h("p", { class: "mute" }, "Mocks cannot be marked until the keys are on the server. Upload the files from the private-keys folder. Do this once, and again whenever the questions change."), status, h("div", { class: "field" }, h("label", { for: "kf" }, "Answer-key files (.json)"), file), up, log));
 }
