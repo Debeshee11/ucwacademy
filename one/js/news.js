@@ -1,6 +1,7 @@
 /* The headlines feed, shared by the Courses page (News tab) and the Market desk. */
 import { NEWS_BASE } from "./config.js";
 import { h, ago } from "./dom.js";
+import { skeleton, errorCard } from "./ux.js";
 
 const TNAME = { markets: "Markets", mf: "Funds", rbi: "RBI", sebi: "SEBI" };
 const TOPICS = [["all", "All"], ["markets", "Markets"], ["mf", "Funds"], ["rbi", "RBI"], ["sebi", "SEBI"]];
@@ -11,8 +12,8 @@ export function newsFeed() {
   function paint() {
     seg.replaceChildren(...TOPICS.map(([id, t]) => h("button", { "data-t": id, "aria-pressed": String(topic === id), on: { click: () => { topic = id; paint(); } } }, t)));
     list.replaceChildren();
-    if (err) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, err));
-    if (!items) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, "Loading headlines…"));
+    if (err) return list.append(errorCard(() => { err = ""; items = null; load(); paint(); }));
+    if (!items) return list.append(skeleton(3));
     const shown = items.filter(i => topic === "all" || (i.topics || []).includes(topic)).slice(0, 30);
     if (!shown.length) return list.append(h("p", { class: "mute", style: "padding:24px 0" }, "No headlines on this topic yet."));
     shown.forEach((i, k) => { const tp = (i.topics || []).find(x => TNAME[x]) || "markets";
@@ -22,9 +23,10 @@ export function newsFeed() {
         h("div", { class: "nwc-row" }, h("span", { class: "nwc-src" }, i.source), h("span", { class: "nwc-go" }, "Read story", " →")))); });
   }
   paint();
-  fetch(NEWS_BASE + "news.json", { cache: "no-cache" }).then(r => { if (!r.ok) throw 0; return r.json(); })
+  function load() { fetch(NEWS_BASE + "news.json", { cache: "no-cache" }).then(r => { if (!r.ok) throw 0; return r.json(); })
     .then(d => { items = (d.items || []).sort((a, b) => new Date(b.date) - new Date(a.date)); note.replaceChildren(...(d.updated ? [h("span", {}, "Updated"), " ", h("span", {}, ago(new Date(d.updated).getTime())), " · ", h("span", {}, "Opens the publisher's site.")] : [])); paint(); })
-    .catch(() => { err = "Headlines could not be loaded. Check your connection, or that the headlines workflow has run at least once."; paint(); });
+    .catch(() => { err = "x"; paint(); }); }
+  load();
   return { seg, list, note };
 }
 

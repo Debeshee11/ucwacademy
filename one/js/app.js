@@ -23,6 +23,7 @@ import { fundData } from "./funddata.js";
 import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
 import { team } from "./team.js";
+import { errorCard } from "./ux.js";
 import { admin } from "./admin.js";
 import * as Nism from "./nism.js";
 
@@ -122,7 +123,7 @@ async function boot() {
     await loadLive();
   } catch (e) {
     console.error(e); reportError(e);
-    root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not load."), h("p", { class: "mute" }, "Check your connection and reload."), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));
+    root.replaceChildren(h("main", { class: "wrap page stack" }, errorCard(() => location.reload())));
     return;
   }
   /* One language everywhere: this browser's choice wins; a choice made on another device is picked up once. */

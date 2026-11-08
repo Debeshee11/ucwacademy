@@ -45,6 +45,8 @@ const errMsg = e => {
   return `Could not sign in just now. Try again, or write to ${CONTACT_EMAIL}.`;
 };
 
+/* Google refuses sign-in inside the browsers built into WhatsApp, Instagram, Facebook and similar apps. */
+const inApp = () => /FBAN|FBAV|Instagram|Line\/|WhatsApp|Snapchat|Twitter|LinkedInApp|MicroMessenger|GSA\//i.test(navigator.userAgent || "");
 const GOOGLE_G = '<svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.6 5.9c4.4-4.1 7-10.1 7-17.6z"/><path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>';
 /* Indian numbers: 10 digits starting 6-9. Abroad: + then 8 to 15 digits. Returns the number to store, or "". */
 export function cleanMobile(v) {
@@ -60,6 +62,7 @@ const html = s => { const d = document.createElement("span"); d.innerHTML = s; r
 function mount(a, startMsg) {
   return new Promise(resolve => {
     let mode = "phone"; /* phone | mail | staff */
+    let signup = false; /* in mail mode: create a new email account */
     let persist = async () => {};
     let tries = 0, lockUntil = 0;
     const form = h("div", { class: "lg-form" });
@@ -78,6 +81,7 @@ function mount(a, startMsg) {
 
     async function google(fail) {
       if (!a) return;
+      if (inApp()) return fail("Google sign-in does not work inside this app. Open this page in Chrome or Safari, or use your mobile number.");
       const p = new firebase.auth.GoogleAuthProvider(); p.setCustomParameters({ prompt: "select_account" });
       try {
         await a.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -153,7 +157,7 @@ function mount(a, startMsg) {
       persist = persistFn;
       const fail = m => { err.textContent = m; };
       const setBusy = (_, m) => fail(m || "");
-      const label = mode === "staff" ? "Sign in as employee" : "Sign in";
+      const label = mode === "staff" ? "Sign in as employee" : signup ? "Create account" : "Sign in";
       const btn = h("button", { class: "btn primary block", type: "submit" }, label);
 
       const gBtn = h("button", { type: "button", class: "g-btn", on: { click: async ev => { ev.currentTarget.disabled = true; err.textContent = ""; await google(fail); ev.currentTarget.disabled = false; } } }, html(GOOGLE_G), mode === "staff" ? "Continue with work Google account" : "Continue with Google");
@@ -171,24 +175,27 @@ function mount(a, startMsg) {
       } else {
         const staff = mode === "staff";
         const [fe, email] = field("em", staff ? "Work email" : "Email", { type: "text", inputmode: "email", autocomplete: "username", autocapitalize: "off", spellcheck: "false", placeholder: staff ? "name@uppercrustwealth.com" : "you@example.com" });
-        const [fp, pw] = pwField("pw", "Password", { autocomplete: "current-password" });
+        const [fp, pw] = pwField("pw", "Password", { autocomplete: signup ? "new-password" : "current-password" });
         const fb2 = m => { err.textContent = m; btn.disabled = false; btn.textContent = label; };
         fields = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
           ev.preventDefault(); if (!a) return;
           if (Date.now() < lockUntil) return fb2("Too many tries. Wait a few seconds and try again.");
           let em = email.value.trim().toLowerCase(); if (em === "admin") em = ADMIN_EMAIL;
           if (!em || !pw.value) return fb2("Enter your email and password.");
-          btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
-          try { await persist(); finish((await a.signInWithEmailAndPassword(em, pw.value)).user); }
+          if (signup && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return fb2("That email does not look right.");
+          if (signup && pw.value.length < 6) return fb2("Password is too short. Use at least 6 characters.");
+          btn.disabled = true; btn.textContent = signup ? "Creating…" : "Signing in…"; err.textContent = "";
+          try { await persist(); finish((signup ? await a.createUserWithEmailAndPassword(em, pw.value) : await a.signInWithEmailAndPassword(em, pw.value)).user); }
           catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fb2(errMsg(e)); }
         } } }, fe, fp, h("div", { class: "row-flex", style: "justify-content:space-between" }, keepRow, forgotFor(email)), err, btn);
         setTimeout(() => wide() && email.focus());
       }
 
-      const heading = mode === "staff" ? ["Employee sign in", "Use your UpperCrust work email."] : mode === "mail" ? ["Sign in with email", "For accounts created with an email and password."] : ["Welcome", "Sign in or sign up with your mobile number. No password to remember."];
-      const go = (m, msg = "") => h("button", { type: "button", class: "link", on: { click: () => { clearVerifier(); confirmation = null; mode = m; startMsg = msg; paint(); } } });
+      const heading = mode === "staff" ? ["Employee sign in", "Use your UpperCrust work email."] : mode === "mail" ? (signup ? ["Create an email account", "Pick a password. You will verify your mobile number next."] : ["Sign in with email", "Use the email and password you signed up with."]) : ["Welcome", "Sign in or sign up with your mobile number. No password to remember."];
+      const go = (m, msg = "") => h("button", { type: "button", class: "link", on: { click: () => { clearVerifier(); confirmation = null; mode = m; signup = false; startMsg = msg; paint(); } } });
       const links = [];
       if (mode !== "phone") links.push(h("p", { class: "lg-swap" }, "Back to ", Object.assign(go("phone"), { textContent: "mobile sign in" })));
+      if (mode === "mail") links.push(h("p", { class: "lg-swap" }, signup ? "Already have an account? " : "New here? ", Object.assign(h("button", { type: "button", class: "link", on: { click: () => { signup = !signup; startMsg = ""; paint(); } } }), { textContent: signup ? "Sign in" : "Create an email account" })));
       if (mode === "phone") links.push(h("p", { class: "lg-swap" }, "Have an email account? ", Object.assign(go("mail"), { textContent: "Sign in with email" })));
       if (mode !== "staff") links.push(h("p", { class: "lg-staff" }, "UpperCrust employee? ", Object.assign(go("staff"), { textContent: "Sign in with your work email" })));
       form.append(h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),

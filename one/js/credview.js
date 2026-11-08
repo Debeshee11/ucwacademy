@@ -105,6 +105,7 @@ export function cert(id) {
       h("button", { class: "btn primary", on: { click: () => print() } }, icon("print", 18), "Print or save as PDF"),
       h("button", { class: "btn ghost", on: { click: async () => { try { await navigator.clipboard.writeText(url); toast("Verification link copied"); } catch { prompt("Copy this link", url); } } } }, icon("link", 18), "Copy verification link"),
       h("a", { class: "btn ghost", target: "_blank", rel: "noopener", href: linkedin(c, url) }, "Add to LinkedIn"),
+      h("a", { class: "btn wa", target: "_blank", rel: "noopener", href: "https://wa.me/?text=" + encodeURIComponent(`I earned "${c.title}" from UpperCrust Academy. Verify it here: ${url}`) }, "Share on WhatsApp"),
       stand(c)),
     c.kind === "course" && course(c.key) ? h("section", { class: "stack no-print" }, h("h2", { class: "h2" }, "Skills verified"), h("div", { class: "chips" }, skillsOf(course(c.key)).map(t => h("span", { class: "pill" }, t)))) : null,
     h("section", { class: "card tint stack stack-s no-print" }, h("h3", { class: "h3" }, "Why it expires"), h("p", { class: "small" }, "Rules, rates and data change. A 15-question refresher before the date keeps your credential current and your advice accurate.")),

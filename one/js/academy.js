@@ -11,6 +11,7 @@ import { trail } from "./trail.js";
 import { newsFeed, newsPreview } from "./news.js";
 import { nismBanner } from "./nismbanner.js";
 import { pageHero } from "./pagehero.js";
+import { resumeBar } from "./ux.js";
 import { signOut } from "./auth.js";
 
 export const DOORS = [
@@ -91,11 +92,11 @@ export function today() {
     h("a", { class: "linkish", href: "#/courses" }, "See all courses"));
   const news = h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "In the news today"), newsPreview(3), h("a", { class: "linkish", href: "#/news" }, "All news & markets"));
 
-  return widePage(
-    h("div", { class: "stack stack-s" },
+  const fresh = !Object.keys(s.done).length && !Object.keys(s.part).length && !p.done;
+  const heading = h("div", { class: "stack stack-s" },
       h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
-      h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in Progress to personalise this page.")),
-    h("div", { class: "cols" },
+      h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in Progress to personalise this page."));
+  const rest = h("div", { class: "cols" },
       h("div", { class: "stack stack-l" }, hero, p.done ? null : guide, nismBanner(),
         h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recommended for you"),
           h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
@@ -109,7 +110,10 @@ export function today() {
           h("a", { class: "linkish", href: "#/me" }, "Open Progress")),
         h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Leaderboard"),
           h("p", { class: "small" }, h("b", {}, rk.title), ` · ${xp} points`, rk.next ? ` · ${rk.need} to ${rk.next}` : ""),
-          h("a", { class: "linkish", href: "#/board" }, "See the leaderboard")))));
+          h("a", { class: "linkish", href: "#/board" }, "See the leaderboard"))));
+  /* a brand-new learner sees one big first step; everything else waits behind a fold */
+  if (fresh) { hero.classList.add("first"); return widePage(heading, hero, h("details", { class: "explore" }, h("summary", {}, "Explore everything else"), rest)); }
+  return widePage(heading, rest);
 }
 
 /* ——— Seals ——— */
@@ -182,10 +186,10 @@ export function assess(cid) {
   const focus = cid ? course(cid) : null;
   return widePage(
     pageHero("exams", "Exams", "Every scored exam starts here, and nowhere else. Read the syllabus, check you are ready, then take the exam. Each course has a Beginner, Intermediate and Hard exam.", [[list.length, "Courses"], [3, "Exams"]]),
-    nismBanner(),
+    resumeBar(), nismBanner(),
     focus ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your course"), card(focus)) : null,
     realms().map(r => { const cs = list.filter(c => c.sec === r.id && c.id !== cid);
-      return cs.length ? h("section", { class: "stack" }, h("div", { class: "sec-h" }, h("h2", { class: "h2" }, r.name), h("p", { class: "small mute" }, r.blurb)), h("div", { class: "stack" }, cs.map(card))) : null; }));
+      return cs.length ? h("details", { class: "exsec", open: !!focus && false }, h("summary", { class: "exsec-s" }, h("span", { class: "exsec-t" }, h("b", {}, r.name), h("small", {}, r.blurb)), h("span", { class: "acc-n" }, String(cs.length)), h("span", { class: "acc-chev" }, icon("chev", 18))), h("div", { class: "stack exsec-b" }, cs.map(card))) : null; }));
 }
 
 /* ——— Courses: subject accordion, then track, then course rows ——— */
@@ -240,5 +244,5 @@ export function courses() {
       filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
   }
   paint();
-  return widePage(pageHero("courses", "Courses", `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`), nismBanner(), host);
+  return widePage(pageHero("courses", "Courses", `${D.courses.length} courses in ${D.sections.length} subjects. Tap a subject to open it.`), resumeBar(), nismBanner(), host);
 }

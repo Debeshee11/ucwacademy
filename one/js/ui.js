@@ -1,6 +1,6 @@
 /* The frame around every page: top bar, bottom tabs on phones, and the account menu. */
 import { ADMIN_EMAIL } from "./config.js";
-import { h, icon, clear } from "./dom.js";
+import { h, icon, clear, toast } from "./dom.js";
 import { D } from "./data.js";
 import { LANGS, setLanguage } from "./i18n.js";
 import * as Store from "./store.js";
@@ -32,8 +32,8 @@ export function frame(onLang) {
     const initial = (s.name || Store.userEmail() || "?").trim()[0].toUpperCase();
     const btn = h("button", { class: "avatar", "aria-haspopup": "menu", "aria-expanded": String(open), "aria-label": "Account", on: { click: ev => { ev.stopPropagation(); open = !open; paintMenu(); } } }, initial);
     menuHost.append(
-      h("span", { class: "pillstat fire", title: "Weekday streak", "aria-label": `${n} day streak` }, icon("flame"), n),
-      h("span", { class: "pillstat xp", title: "Points: 20 per lesson, 2 per right answer, 30 per quiz passed", "aria-label": `${Store.xp()} points` }, icon("star"), Store.xp()),
+      h("button", { type: "button", class: "pillstat fire", title: "Weekday streak", "aria-label": `${n} day streak`, on: { click: () => toast("Do one lesson or quiz on a weekday to grow your streak.") } }, icon("flame"), n),
+      h("button", { type: "button", class: "pillstat xp", title: "Points: 20 per lesson, 2 per right answer, 30 per quiz passed", "aria-label": `${Store.xp()} points`, on: { click: () => toast("Points: 20 per lesson, 2 per right answer, 30 per quiz passed.") } }, icon("star"), Store.xp()),
       btn);
     if (open) {
       const lang = h("select", { "aria-label": "Language", on: { change: async ev => { const v = ev.target.value; Store.setLang(v); try { await Store.flush(); } catch {} setLanguage(v); } } },
