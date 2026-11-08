@@ -141,8 +141,14 @@ function accountCard() {
     try { await Store.deleteAccount(); await signOut(); }
     catch (e) { btn.disabled = false; msg.textContent = /offline|unavailable|network/.test(e?.code || e?.message || "") ? "No connection. Try again online." : "Could not delete just now. Write to " + CONTACT_EMAIL + "."; }
   } } }, "Delete my account and data");
+  const exp = h("button", { class: "btn ghost", on: { click: async () => {
+    exp.disabled = true; msg.textContent = "Preparing your file…";
+    try { const d = await Store.exportData(), a = h("a", { href: URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: "application/json" })), download: "my-uppercrust-academy-data.json" }); document.body.append(a); a.click(); a.remove(); msg.textContent = "Downloaded."; }
+    catch { msg.textContent = "Could not export just now. Write to " + CONTACT_EMAIL + "."; }
+    exp.disabled = false;
+  } } }, "Download my data");
   return h("div", { class: "card stack stack-s", style: "margin-top:18px" }, h("h3", { class: "h3" }, "Your data"),
-    h("p", { class: "small mute" }, "You can delete your account and every record we hold. See the ", h("a", { href: "#/privacy" }, "Privacy notice"), "."), btn, msg);
+    h("p", { class: "small mute" }, "Download everything we hold about you, or delete it all. See the ", h("a", { href: "#/privacy" }, "Privacy notice"), "."), h("div", { class: "row-flex", style: "gap:10px;flex-wrap:wrap" }, exp, btn), msg);
 }
 
 /* ——— Assessment Centre: the only place a scored exam starts ——— */

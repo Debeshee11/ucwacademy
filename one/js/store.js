@@ -49,6 +49,9 @@ export async function init(user) {
   if (d) { try { (await d.collection("credentials").where("uid", "==", uid).get()).forEach(x => { state.creds[x.id] = x.data(); }); } catch (e) { console.warn("Could not read credentials", e); state.creds = keepLocal && typeof keepLocal === "object" ? keepLocal : {}; } }
   state.nm = {};
   if (d) { try { const r = await d.doc("nmres/" + uid).get(); if (r.exists) { const { lastAt, ...rest } = r.data(); state.nm = rest; } } catch (e) { console.warn("Could not read mock results", e); } }
+  /* Course exam results recorded by the backend win over anything held locally. */
+  if (d) { try { const r = await d.doc("examres/" + uid).get(); if (r.exists) for (const [k, v] of Object.entries(r.data())) { const [cid, t] = k.split(":"), key = ({ b: "x:", i: "x2:", h: "x3:" })[t]; if (!key || !v) continue;
+    const o = state.quiz[key + cid] || { best: 0, n: 0, last: 0, passed: null }; state.quiz[key + cid] = { best: Math.max(o.best || 0, v.best || 0), n: Math.max(o.n || 0, v.n || 0), last: Math.max(o.last || 0, v.last || 0), passed: v.passed || o.passed }; } } catch (e) { console.warn("Could not read exam results", e); } }
   if (!state.kind) state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
   const pid = user.providerData?.[0]?.providerId || "";
   state.prov = pid === "google.com" ? "google" : pid === "password" ? "email" : (pid || state.prov || "");
@@ -183,6 +186,12 @@ export async function deleteAccount() {
   clearTimeout(timer); timer = null;
   await f.httpsCallable("deleteAccount")();
   try { localStorage.removeItem(KEY(uid)); } catch {}
+}
+
+export async function exportData() {
+  const f = fns(); if (!f) throw new Error("offline");
+  await flush();
+  return (await f.httpsCallable("exportMyData")()).data;
 }
 
 /* ——— credentials (copies of what the backend issued) ——— */
