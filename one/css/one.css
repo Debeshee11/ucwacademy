@@ -943,3 +943,8 @@ a.crow:hover { border-color: var(--sc); transform: translateX(2px); }
   .crow-tag { height: 40px; font-size: 12px; }
   .crow-t { font-size: 15px; }
 }
+.nav a { align-items: center; }
+.nav-t { display: grid; gap: 3px; min-width: 0; }
+.nav-t b { font: inherit; }
+.nav-t small { font: 600 11px/1.2 var(--font); letter-spacing: 0; text-transform: none; color: var(--mute); white-space: normal; }
+.nav a[aria-current="page"] .nav-t small { color: var(--gold-ink); }
