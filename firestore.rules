@@ -47,6 +47,11 @@ service cloud.firestore {
     }
 
     // NISM mock results. Written only by the backend (submitMock), so scores cannot be edited from the browser.
+    // Course exam results (best score, attempts, passed). Written only by the backend (submitExam); tier order is enforced from these.
+    match /examres/{uid} {
+      allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+      allow write: if false;
+    }
     match /nmres/{uid} {
       allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
       allow write: if false;
