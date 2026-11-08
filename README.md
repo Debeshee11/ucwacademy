@@ -1,17 +1,12 @@
-All FRONTEND (GitHub Pages). Unzip at repo root, push.
+All FRONTEND. Unzip at repo root, push.
 
 | File | Destination | Type |
 |---|---|---|
-| one/css/ux.css | one/css/ux.css | frontend (new) |
-| one/js/ux.js | one/js/ux.js | frontend (new) |
-| index.html | index.html | frontend (adds ux.css link) |
-| one/js/academy.js | one/js/academy.js | frontend |
-| one/js/news.js | one/js/news.js | frontend |
-| one/js/app.js | one/js/app.js | frontend |
-| one/js/ui.js | one/js/ui.js | frontend |
-| one/js/credview.js | one/js/credview.js | frontend |
+| one/js/store.js | one/js/store.js | frontend |
 | one/js/auth.js | one/js/auth.js | frontend |
+| one/js/app.js | one/js/app.js | frontend |
+| one/js/team.js | one/js/team.js | frontend (admin text) |
 | one/data/ui-hi.json, ui-gu.json | same paths | frontend |
 
-Needs UCW-pages-fun.zip (pages.css, pagehero.js) already pushed.
-Firebase console: Auth > Sign-in method: enable Email/Password, Google, Phone.
+Phone users now must enter an email on the profile step. Existing phone users without email see it once on next login.
+Firestore rules already allow the email field. No backend change.
