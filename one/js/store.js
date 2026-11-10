@@ -66,6 +66,7 @@ function persist() {
 export async function flush() {
   clearTimeout(timer); timer = null;
   const d = db(); if (!d || !uid) return;
+  if (!state.name || !state.mobile || !contactEmail()) return;   /* name, mobile and email are compulsory: keep the record on this device until they are given */
   try {
     const ref = d.doc("learners/" + uid), strip = o => { const { nm, creds, ...r } = JSON.parse(JSON.stringify(o)); return r; };   /* mock results and credentials are written by the backend, never from here */
     let merged = null;

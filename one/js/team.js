@@ -9,6 +9,7 @@ import * as Store from "./store.js";
 
 const WEEK = 7 * 86400e3;
 const firstTry = L => Object.entries(L.q || {}).filter(([, e]) => e.f === 0 || e.f === 1);
+const download = (file, text) => { const a = h("a", { href: URL.createObjectURL(new Blob([text], { type: "text/csv" })), download: file }); document.body.append(a); a.click(); a.remove(); };
 const csv = rows => rows.map(r => r.map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n");
 
 function levelOf(L) {
@@ -23,6 +24,8 @@ function summarize(L) {
     status: certs.length ? "Certified" : done >= 15 ? "Exam ready" : done ? "In progress" : "Not started" };
 }
 
+/* what a learner has not given yet */
+const miss = r => [!r.name || r.name === "(no name)" ? "name" : "", !r.email ? "email" : "", !r.door ? "type" : ""].filter(Boolean).join(", ") || "–";
 export function team() {
   const host = h("div", { class: "stack stack-xl" }, h("p", { class: "mute" }, "Loading…"));
   Store.loadAll().then(all => {
@@ -103,11 +106,12 @@ function signups(rows) {
   const n = ms => pub.filter(r => now - r.joined < ms).length;
   const doors = {}; for (const r of pub) doors[r.door || "not chosen"] = (doors[r.door || "not chosen"] || 0) + 1;
   const th2 = t => h("th", { style: "text-align:left;padding:10px 8px;border-bottom:1px solid var(--line2);font-weight:600;color:var(--mute);font-size:13px;white-space:nowrap" }, t);
-  return h("section", { class: "stack" }, h("h2", { class: "h2" }, "New learners"),
+  const dump = () => { download("uppercrust-learners-contacts.csv", csv([["Joined", "Name", "Email", "Mobile", "Learner type", "Signed up with", "Lessons done", "Missing"], ...pub.map(r => [r.joined ? new Date(r.joined).toISOString() : "", r.name === "(no name)" ? "" : r.name, r.email, r.mobile, r.door, r.prov, r.lessons, miss(r)])])); toast("Downloaded"); };
+  return h("section", { class: "stack" }, h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "New learners"), h("button", { class: "btn ghost", style: "height:40px", on: { click: dump } }, "Download CSV")),
     h("p", { class: "mute" }, `${pub.length} public learners · ${n(day)} today · ${n(7 * day)} this week · ` + Object.entries(doors).map(([k, v]) => `${k} ${v}`).join(", ")),
-    h("p", { class: "tiny mute" }, "Details we collect: name, email, mobile, door, sign-up method, join date and learning progress. Use Export CSV below for the full list."),
+    h("p", { class: "tiny mute" }, "Details we collect: name, email, mobile, door, sign-up method, join date and learning progress. Use Download CSV for contacts, or Export CSV below for the full list."),
     h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;font-size:15px;min-width:720px" },
-      h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Learner type", "Via", "Lessons"].map(th2))),
-      h("tbody", {}, pub.slice(0, 25).map(r => h("tr", {}, [r.joined ? new Date(r.joined).toLocaleDateString("en-IN") : "–", r.name, r.email, r.mobile || "–", r.door || "–", r.prov || "–", r.lessons].map(v => h("td", { style: "padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap" }, v))))))),
+      h("thead", {}, h("tr", {}, ["Joined", "Name", "Email", "Mobile", "Learner type", "Via", "Lessons", "Missing"].map(th2))),
+      h("tbody", {}, pub.slice(0, 25).map(r => h("tr", {}, [r.joined ? new Date(r.joined).toLocaleDateString("en-IN") : "–", r.name, r.email, r.mobile || "–", r.door || "–", r.prov || "–", r.lessons, miss(r)].map(v => h("td", { style: "padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap" }, v))))))),
     !pub.length ? h("p", { class: "mute" }, "No public sign-ups yet.") : null);
 }

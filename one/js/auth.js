@@ -276,12 +276,12 @@ export function welcome() {
             let m = "";
             if (need) { m = cleanMobile(mobile.value); if (!m) { perr.textContent = "Enter a valid mobile number. Indian numbers are 10 digits; abroad, start with + and the country code."; return mobile.focus(); } }
             if (needEmail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailIn.value.trim())) { perr.textContent = "Enter a valid email."; return emailIn.focus(); }
-            Store.setProfile({ name: name.value, mobile: m, email: emailIn.value }); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
+            Store.setProfile({ name: name.value, mobile: m, email: emailIn.value }); Store.flush(); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
         name.focus();
       } else if (step === "v") {
         verifyPaint();
       } else {
-        const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); scrim.remove(); resolve(null); } } }, "Open my academy");
+        const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); Store.flush(); scrim.remove(); resolve(null); } } }, "Open my academy");
         box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? It sets the courses we recommend first and the examples you see. You can change it any time.")),
           doorPicker(door, id => { door = id; go.disabled = false; }), go);
       }
