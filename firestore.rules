@@ -42,7 +42,11 @@ service cloud.firestore {
       allow list: if isAdmin();
       allow create, update: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['v','name','mobile','kind','door','prov','consent','show','study','mv','onb','lang','start','done','part','q','quiz','lab','act','streak','last','created','updated','email'])
-        && request.resource.data.email == (('email' in request.auth.token) ? request.auth.token.email.lower() : '');
+        && request.resource.data.email is string
+        && (('email' in request.auth.token) ? request.resource.data.email == request.auth.token.email.lower()
+            : (request.resource.data.email.size() <= 120 && request.resource.data.email.matches('^[^@ ]+@[^@ ]+[.][^@ ]+$')))
+        && request.resource.data.name is string && request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 60
+        && request.resource.data.mobile is string && request.resource.data.mobile.size() >= 8 && request.resource.data.mobile.size() <= 16;
       allow delete: if isAdmin();
     }
 
