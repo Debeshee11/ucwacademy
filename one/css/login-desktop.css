@@ -1,0 +1,24 @@
+/* Sign-in on a computer screen: the headline fits its panel, and the form never runs off the bottom. Phones are untouched. */
+@media (min-width: 861px) {
+  .lg-side.lgl { padding: clamp(24px, 4dvh, 44px) clamp(28px, 3.4vw, 56px); gap: 16px; }
+  .lgl-big { font-size: min(4.2vw, 8.6dvh, 80px); }
+  .lgl-stage { max-width: 100%; }
+  .lgl-word { max-width: 100%; }
+  .lgt { max-width: min(520px, 100%); }
+  .lgl .lg-foot { gap: 4px; font-size: 12px; }
+
+  /* the form: centre when it fits, scroll from the top when it does not */
+  .lg-main { display: flex; padding: clamp(14px, 3dvh, 32px) 24px; overflow-y: auto; }
+  .lg-card { margin: auto; padding: clamp(16px, 2.6dvh, 26px) 26px; gap: clamp(8px, 1.6dvh, 18px); }
+  .lg-form { gap: clamp(8px, 1.5dvh, 16px); }
+  .lg-h { font-size: clamp(28px, 4.4dvh, 38px); margin-bottom: 2px; }
+  .lg .btn.primary, .lg .input, .g-btn { min-height: 46px; height: 46px; }
+  .lg-form .tiny { font-size: 12px; line-height: 1.35; margin: 0; }
+}
+@media (min-width: 861px) and (max-height: 820px) {
+  .lg-card { padding-top: 14px; padding-bottom: 14px; }
+  .lg-lang { margin-bottom: 0; }
+  .lg .btn.primary, .lg .input, .g-btn { min-height: 42px; height: 42px; }
+  .lgt-chip { display: none; }
+  .lgl-sub { display: none; }
+}
