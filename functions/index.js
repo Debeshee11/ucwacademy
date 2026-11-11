@@ -2,14 +2,14 @@
    keeps the answer keys private, and gives the admin their numbers. Region: Mumbai. */
 const { functions, admin, db, FV, makeR, fail, needAuth, needAdmin, day } = require("./lib/common");
 const { validAnswers, score, foldRecord } = require("./lib/score");
-const { STAFF, ADMIN_EMAILS } = require("./lib/staff");
+const { isStaffEmail, roster } = require("./lib/staff");
 
 const R = makeR();
 const EXAM_ID = /^nism-[a-z]+(?:-[a-z]+)?$/;
 const COOLDOWN_MS = 15000;
 
 /* Exams, credentials and account deletion live in lib/. */
-Object.assign(exports, require("./lib/exam"), require("./lib/account"), require("./lib/content"));
+Object.assign(exports, require("./lib/exam"), require("./lib/account"), require("./lib/content"), { track: require("./lib/track").track });
 
 /* Answer keys live in Firestore (nmkeys/<exam>), not in the public repository. Cached while the instance is warm. */
 const cache = new Map();
@@ -51,7 +51,7 @@ exports.submitMock = R.https.onCall(async (data, ctx) => {
   const t = {}, w = {}, s = {};
   r.res.forEach((x, i) => { if (x === 1) t[i] = FV.increment(1); else if (x === 0) { t[i] = FV.increment(1); w[i] = FV.increment(1); } else s[i] = FV.increment(1); });
   batch.set(db.doc(`qstats/${examId}_${n}`), { t, w, s }, { merge: true });
-  batch.set(db.doc("stats/day_" + day()), { mocks: FV.increment(1) }, { merge: true });
+  batch.set(db.doc("stats/day_" + day()), { mocks: FV.increment(1), ev_mock: FV.increment(1) }, { merge: true });
   await batch.commit();
 
   return { s: r.s, c: r.c, w: r.w, u: r.u, un: r.un, total: keys.marks, pass, best: mine.best, att: mine.att, key: key.a, why: key.w };
@@ -120,7 +120,7 @@ exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall
   });
   hard.sort((a, b) => b.rate - a.rate);
   const errs = (await db.collection("errors").orderBy("t", "desc").limit(20).get()).docs.map(d => d.data());
-  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), errors: errs, at: now };
+  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), errors: errs, traffic: await require("./lib/track").trafficDays(14), at: now };
 });
 
 /* ——— staff identity ——— */
@@ -129,7 +129,7 @@ exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall
 exports.verifyStaff = R.https.onCall(async (data, ctx) => {
   needAdmin(ctx);
   const out = { verified: 0, already: 0, missing: [] };
-  for (const email of STAFF) {
+  for (const email of await roster(db)) {
     try {
       const u = await admin.auth().getUserByEmail(email);
       if (u.emailVerified) out.already++; else { await admin.auth().updateUser(u.uid, { emailVerified: true }); out.verified++; }
@@ -137,6 +137,9 @@ exports.verifyStaff = R.https.onCall(async (data, ctx) => {
   }
   return out;
 });
+
+/* Admin only: the employee roster for the activity table. Kept in Firestore (config/staff), never in the public site. */
+exports.staffList = R.https.onCall(async (data, ctx) => { needAdmin(ctx); return { emails: await roster(db) }; });
 
 /* ——— leaderboard ——— */
 /* The Roll and the staff board are written here, never from the browser. Points are recomputed from the learner's record
@@ -166,7 +169,7 @@ exports.syncBoard = R.https.onCall(async (data, ctx) => {
   wk = Math.min(wk, WEEK_LESSON_CAP);
   const streak = Math.min(Number(L.streak && L.streak.n) || 0, Math.ceil((now - (L.created || now)) / 864e5) + 1);
   const parts = String(L.name || "").trim().split(/\s+/), name = (parts.length > 1 ? parts[0] + " " + parts[parts.length - 1][0].toUpperCase() + "." : parts[0] || "Learner").slice(0, 40);
-  const staff = ctx.auth.token.email_verified === true && STAFF.includes(email);
+  const staff = ctx.auth.token.email_verified === true && isStaffEmail(email);
 
   await rollRef.set({ name, door: String(L.door || "").slice(0, 20), kind: staff ? "staff" : "public", xp, wk, streak, lessons: done, seals, updated: now, syncAt: now });
   if (staff) await db.doc("board/" + uid).set({ name: String(L.name || name).slice(0, 60), email, xp, wk, streak, lessons: done, updated: now });
