@@ -109,6 +109,9 @@ exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall
   const perDay = await Promise.all(days.map(t => cnt(col.where("created", ">=", t).where("created", "<", t + D))));
   const signups = days.map((t, i) => ({ d: day(t + 1), n: perDay[i] }));
 
+  const ages = {}; await Promise.all(["u18", "18-25", "26-40", "41-60", "60+"].map(async a => { ages[a] = await cnt(col.where("age", "==", a)); }));
+  const ints = {}; await Promise.all(["save", "grow", "stocks", "gold", "insure", "tax", "nism", "nri"].map(async i => { ints[i] = await cnt(col.where("ints", "array-contains", i)); }));
+
   const nism = {}; (await db.collection("stats").where(admin.firestore.FieldPath.documentId(), ">=", "nism_").where(admin.firestore.FieldPath.documentId(), "<", "nism`").get()).forEach(d => { nism[d.id.replace("nism_", "")] = d.data(); });
   /* hardest questions: most often wrong, with at least 20 answers */
   const hard = [];
@@ -120,7 +123,7 @@ exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall
   });
   hard.sort((a, b) => b.rate - a.rate);
   const errs = (await db.collection("errors").orderBy("t", "desc").limit(20).get()).docs.map(d => d.data());
-  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), errors: errs, traffic: await require("./lib/track").trafficDays(14), at: now };
+  return { total, staff, joined: { d1: j1, d7: j7, d30: j30 }, active: { d1: a1, d7: a7, d30: a30 }, doors, provs, signups, nism, hard: hard.slice(0, 25), errors: errs, traffic: await require("./lib/track").trafficDays(14), popular: await require("./lib/track").popular(10), ages, ints, at: now };
 });
 
 /* ——— staff identity ——— */
