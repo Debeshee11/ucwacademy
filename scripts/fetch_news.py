@@ -63,6 +63,11 @@ RULES = [
     ("ipo", re.compile(r"\b(IPOs?|DRHP|RHP|GMP|anchor investors?|public issue|listing gains?|subscription status|share allotment)\b", re.I)),
     ("sebi", re.compile(r"\bSEBI\b")),
     ("rbi", re.compile(r"\b(RBI|Reserve Bank|repo rate|policy rate|monetary policy|MPC|rate (cut|hike)s?|CRR|SLR|fiscal deficit|Union Budget|GST Council|Finance Ministry)\b", re.I)),
+    ("tax", re.compile(r"\b(income[- ]tax|ITR|capital gains?|LTCG|STCG|TDS|tax slabs?|tax saving|tax regime|CBDT|advance tax|indexation)\b", re.I)),
+    ("insurance", re.compile(r"\b(IRDAI|insurers?|insurance|LIC|term plans?|health cover|life insurance|annuity|ULIPs?)\b", re.I)),
+    ("gold", re.compile(r"\b(gold|silver|bullion|sovereign gold bonds?|SGBs?|gold ETFs?|MCX)\b", re.I)),
+    ("economy", re.compile(r"\b(inflation|CPI|WPI|GDP|IIP|PMI|trade deficit|current account|GST collections?|unemployment|economic growth|Economic Survey)\b", re.I)),
+    ("global", re.compile(r"\b(Wall Street|Dow Jones|Nasdaq|S&P 500|Federal Reserve|the Fed|ECB|Bank of Japan|Bank of England|Brent|OPEC|China|US dollar|dollar index|tariffs?|Treasury yields?)\b", re.I)),
     ("markets", re.compile(r"\b(Sensex|Nifty|stocks?|shares?|FIIs?|FPIs?|rupee|bond yields?|crude oil|gold prices?|Dalal Street)\b", re.I)),
 ]
 MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
