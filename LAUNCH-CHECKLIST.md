@@ -4,7 +4,7 @@ Tick every line before opening the Academy to the public.
 
 ## Before you push
 - [ ] `functions/lib/staff.js`, `listed()` in `firestore.rules` and `STAFF` in `one/js/config.js` all list the same people (`cd functions && npm install && npm test`).
-- [ ] `CONTACT_EMAIL` in `one/js/config.js` is a mailbox that exists and is watched (default: support@uppercrustwealth.com).
+- [ ] `CONTACT_EMAIL` in `one/js/config.js` is a mailbox that exists and is watched (default: social@uppercrustwealth.com).
 - [ ] Privacy notice and Terms (`one/js/legal.js`) read by your lawyer or compliance officer. Names a grievance contact.
 - [ ] Compliance has approved the fund pages (risk wording is in `one/js/disclaimer.js`) and the "Certified Professional" wording.
 - [ ] Run `sh scripts/sri.sh` on a computer with internet and paste the output over the CDN `<script>` tags in `index.html`.
