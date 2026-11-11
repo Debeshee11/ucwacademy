@@ -14,7 +14,7 @@ async function deleteWhere(q) {
 exports.deleteAccount = R.https.onCall(async (data, ctx) => {
   const uid = needAuth(ctx);
   if (ADMIN_EMAILS.includes(String(ctx.auth.token.email || "").toLowerCase())) fail("permission-denied", "The administrator account cannot be deleted here.");
-  for (const p of ["learners", "nmres", "roll", "board", "rate", "examres"]) await db.doc(`${p}/${uid}`).delete().catch(() => {});
+  for (const p of ["learners", "nmres", "roll", "board", "rate", "examres", "reviews"]) await db.doc(`${p}/${uid}`).delete().catch(() => {});
   await deleteWhere(db.collection("credentials").where("uid", "==", uid));
   await deleteWhere(db.collection("attempts").where("uid", "==", uid));
   await deleteWhere(db.collection("errors").where("uid", "==", uid));
@@ -25,7 +25,7 @@ exports.deleteAccount = R.https.onCall(async (data, ctx) => {
 /* Everything the Academy holds about the caller, as one JSON object they can save. */
 exports.exportMyData = R.https.onCall(async (data, ctx) => {
   const uid = needAuth(ctx), out = { exportedAt: new Date().toISOString(), uid, email: ctx.auth.token.email || null };
-  for (const p of ["learners", "nmres", "examres", "roll", "board"]) { const d = await db.doc(`${p}/${uid}`).get(); out[p] = d.exists ? d.data() : null; }
+  for (const p of ["learners", "nmres", "examres", "roll", "board", "reviews"]) { const d = await db.doc(`${p}/${uid}`).get(); out[p] = d.exists ? d.data() : null; }
   out.credentials = (await db.collection("credentials").where("uid", "==", uid).get()).docs.map(d => ({ id: d.id, ...d.data() }));
   return out;
 });

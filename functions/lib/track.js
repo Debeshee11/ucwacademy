@@ -1,7 +1,7 @@
 /* First-party analytics: anonymous daily counters, no cookies, no personal data. The admin reads them in adminStats. */
 const { db, FV, makeR, fail, day } = require("./common");
 
-const EVENTS = new Set(["view", "login", "signup", "lesson", "mock"]);
+const EVENTS = new Set(["view", "login", "signup", "lesson", "mock", "review"]);
 const SRC = /^[a-z0-9][a-z0-9.-]{0,29}$/;
 
 /* "What people like": counts per page, course, lesson, news topic. Keys look like course:sip-planning. */
