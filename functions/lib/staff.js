@@ -1,11 +1,17 @@
-/* The staff list for the backend. Keep it in step with listed() in firestore.rules and STAFF in one/js/config.js.
-   `npm test` fails if the three lists differ. */
+/* Who counts as staff. No names live in the code or the public repository.
+   Staff = a verified mailbox on the company domain. The roster (for the admin activity table and verifyStaff)
+   is the Firestore document config/staff { emails: [...] }, readable by the admin only. */
 const STAFF_DOMAIN = "@uppercrustwealth.com";
 const ADMIN_EMAILS = ["admin@uppercrustwealth.com"];
-const STAFF = [
-  "manojrohit", "roshanshah", "hemantpatel", "savan", "palakshah", "harshil_patel", "navin", "kanchanbhagwat", "omkar",
-  "prakashpatel", "ops", "sudheerkumar", "sandeep", "yuvraj", "equity", "crm", "ishagil", "bijalmehta", "aasthapanwar",
-  "happy", "dhruvpawashe", "admin"
-].map(n => n + STAFF_DOMAIN);
+const isStaffEmail = e => String(e || "").toLowerCase().endsWith(STAFF_DOMAIN);
 
-module.exports = { STAFF, STAFF_DOMAIN, ADMIN_EMAILS };
+let cached = null;
+async function roster(db) {
+  if (cached && Date.now() - cached.t < 300e3) return cached.list;
+  const d = await db.doc("config/staff").get();
+  const list = (d.exists && Array.isArray(d.get("emails")) ? d.get("emails") : []).map(x => String(x).toLowerCase()).filter(isStaffEmail);
+  cached = { list, t: Date.now() };
+  return list;
+}
+
+module.exports = { STAFF_DOMAIN, ADMIN_EMAILS, isStaffEmail, roster };
