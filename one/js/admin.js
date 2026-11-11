@@ -82,14 +82,29 @@ function paint(host, S, keys, I, ek) {
   const errs = (S.errors || []).length ? h("div", { class: "stack stack-s" }, S.errors.map(x => h("div", { class: "card stack stack-xs" }, h("div", { class: "eyebrow" }, `${ago(x.t)} · ${x.u || ""} · build ${x.v || "?"}`), h("p", { class: "small" }, x.m), x.s ? h("pre", { class: "tiny mute", style: "white-space:pre-wrap;overflow:auto;max-height:120px" }, x.s) : null)))
     : h("p", { class: "mute" }, "No errors reported.");
 
+  /* Traffic and funnel from the first-party counters (see analytics.js). */
+  const T = S.traffic || [], tot = k => T.reduce((a, x) => a + (x[k] || 0), 0);
+  const cols = [["ev_view", "Visits"], ["ev_login", "Saw sign-in"], ["ev_signup", "Sign-ups"], ["ev_lesson", "Lessons done"], ["examStarts", "Exams started"], ["examPasses", "Exams passed"], ["ev_mock", "Mocks"]];
+  const srcs = {}; T.forEach(x => Object.entries(x).forEach(([k, v]) => { if (k.startsWith("src_")) srcs[k.slice(4).replace(/_/g, ".")] = (srcs[k.slice(4).replace(/_/g, ".")] || 0) + v; }));
+  const srcRows = Object.entries(srcs).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  const cell = "padding:8px;border-bottom:1px solid var(--line);text-align:right";
+  const traffic = h("div", { class: "stack" },
+    h("p", { class: "mute" }, `Last 14 days: ${n0(tot("ev_view"))} visits, ${n0(tot("ev_signup"))} sign-ups` + (tot("ev_login") ? ` (${Math.round(100 * tot("ev_signup") / tot("ev_login"))}% of those who saw the sign-in screen)` : "") + ". Counted without cookies. Visits are app opens, not unique people."),
+    h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;min-width:620px" },
+      h("thead", {}, h("tr", {}, h("th", { style: cell + ";text-align:left" }, "Day"), cols.map(c => h("th", { style: cell + ";font-weight:600;color:var(--mute);font-size:13px" }, c[1])))),
+      h("tbody", {}, [...T].reverse().map(x => h("tr", {}, h("td", { style: cell + ";text-align:left" }, x.d), cols.map(c => h("td", { style: cell }, n0(x[c[0]] || 0))))),
+        h("tr", {}, h("td", { style: cell + ";text-align:left;font-weight:700" }, "Total"), cols.map(c => h("td", { style: cell + ";font-weight:700" }, n0(tot(c[0])))))))),
+    srcRows.length ? h("div", { class: "stack stack-s" }, h("h3", { class: "h3" }, "Where visits come from"), h("div", { class: "divide" }, srcRows.map(([k, v]) => h("div", { class: "list-row", style: "min-height:44px" }, h("div", { class: "grow" }, k), h("b", {}, n0(v)))))) : h("p", { class: "mute" }, "Sources appear once people visit. Add ?utm_source=whatsapp to links you share to see which channel works."));
+
   host.replaceChildren(
     h("section", { class: "ad-tiles" }, tile(n0(S.total), "Learners", n0(S.staff) + " staff"), tile(n0(S.joined.d1), "Joined today"), tile(n0(S.joined.d7), "Joined, 7 days"), tile(n0(S.joined.d30), "Joined, 30 days"), tile(n0(S.active.d1), "Active today"), tile(n0(S.active.d7), "Active, 7 days"), tile(n0(S.active.d30), "Active, 30 days"),
       tile(S.total ? Math.round(100 * S.active.d7 / S.total) + "%" : "–", "Weekly active share")),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "New learners, last 30 days"), spark),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Traffic and sign-up funnel"), traffic),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Who they are"), doors, h("p", { class: "small mute" }, `Sign-in: Google ${n0(S.provs.google)} · Phone ${n0(S.provs.phone)} · Email ${n0(S.provs.email)}`)),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "NISM mocks"), tbl),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Hardest questions"), h("p", { class: "mute" }, "Most often answered wrongly. Rewrite or explain these better."), hardBox),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Staff accounts"), h("p", { class: "mute" }, "Staff access now needs a verified email. Run this once after deploying, and again when you add an employee."), vbtn, vlog),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Staff accounts"), h("p", { class: "mute" }, "Staff access needs a verified company mailbox. The roster lives in Firestore (config/staff). Run this after adding an employee there."), vbtn, vlog),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Course exam answer keys"), h("p", { class: "mute" }, "Course exams and refreshers are marked on the server and cannot be taken until these are uploaded. Upload every file from private-keys/examkeys, including _meta.json. Do this once, and again whenever lessons or exam questions change."), exStatus, h("div", { class: "field" }, h("label", { for: "ef" }, "Exam key files (.json)"), exFile), exUp, exLog),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recent errors"), h("p", { class: "mute" }, "Reported by learners' browsers, newest first."), errs),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "NISM answer keys"), h("p", { class: "mute" }, "Mocks cannot be marked until the keys are on the server. Upload the files from the private-keys folder. Do this once, and again whenever the questions change."), status, h("div", { class: "field" }, h("label", { for: "kf" }, "Answer-key files (.json)"), file), up, log));

@@ -1,6 +1,6 @@
 /* The kinds of quiz: module, exam, refresher, daily, revision and placement. Each picks questions and decides what happens after. */
 import { RULES } from "./config.js";
-import { D, course, level, questionsFor, TIERS, examPool } from "./data.js";
+import { D, course, level, questionsFor, TIERS } from "./data.js";
 import { h, pick, shuffle } from "./dom.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
@@ -9,6 +9,8 @@ import { runExam } from "./exam.js";
 import { orderedCourses } from "./path.js";
 
 const back = c => `#/course/${c.id}`;
+/* Every question an exam in this course may use, found by id. The server decides which ones are asked. */
+const finder = c => { const m = new Map([...questionsFor(c.lessons), ...Object.values(D.exams.courses[c.id]?.qs || {}).flat()].map(q => [q.id, q])); return id => m.get(id); };
 
 export function moduleQuiz(root, cid, mi) {
   const c = course(cid), m = c?.modules[mi];
@@ -41,9 +43,9 @@ export function exam(root, cid, tier = "b") {
     root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Not open yet."), h("p", { class: "lead" }, tier === "b" ? "The Beginner exam opens when you have passed every module quiz." : `The ${T.name} exam opens when you pass the ${tier === "i" ? "Beginner" : "Intermediate"} exam.`), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
     return;
   }
-  const pass = RULES.tierPass[tier], pool = examPool(c, tier);
+  const pass = RULES.tierPass[tier];
   runExam(root, {
-    title: `${c.title} · ${T.name} exam`, courseId: cid, tier, questions: pick(pool, RULES.examQuestions), exit: back(c),
+    title: `${c.title} · ${T.name} exam`, courseId: cid, tier, lookup: finder(c), exit: back(c),
     done: res => {
       Store.recordQuiz(TIER_KEY[tier] + cid, res.score, res.passed);
       const next = tier === "b" ? "i" : tier === "i" ? "h" : null, nextT = TIERS().find(t => t.id === next);
@@ -64,7 +66,7 @@ export function refresher(root, cid) {
   const c = course(cid), cred = Creds.find("course", cid);
   if (!c || !cred) return void (location.hash = "#/me");
   runExam(root, {
-    title: `${c.title} · Refresher`, courseId: cid, tier: "r", questions: pick(questionsFor(c.lessons), RULES.refreshQuestions), exit: "#/me",
+    title: `${c.title} · Refresher`, courseId: cid, tier: "r", lookup: finder(c), exit: "#/me",
     done: res => {
       Store.recordQuiz("r:" + cid, res.score, res.passed);
       if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${RULES.examPass}%. Your certificate stays as it is until you pass.`, actions: [h("a", { class: "btn primary", href: "#/me" }, "Back")] };

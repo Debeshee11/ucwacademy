@@ -1,4 +1,5 @@
 /* UpperCrust Academy: boot and routes. */
+import { track } from "./analytics.js";
 import { contactPage } from "./contact.js";
 import { startTour, tourSeen } from "./tour.js";
 import "./monitor.js";
@@ -116,7 +117,9 @@ async function boot() {
     addEventListener("hashchange", () => location.reload());
     return;
   }
+  track("view", true);
   const user = await Auth.start();
+  if (!user) track("login", true);
   root.replaceChildren(splash());
   try {
     await Promise.all([loadData(), Store.init(user)]);
@@ -132,7 +135,7 @@ async function boot() {
   else if (sl !== "en" && I18n.remember(sl)) { location.reload(); return; }
   await loadTx(Store.get().lang);
   document.addEventListener("one:syncerror", () => toast("Progress saved on this device only. We'll retry."));
-  const np = Auth.takeProfile(); if (np) Store.setProfile(np);
+  const np = Auth.takeProfile(); if (np) { Store.setProfile(np); track("signup", true); }
   if (!Store.hasConsent()) await consentGate();
   if (!Store.get().onb && !Object.keys(Store.get().done).length) {
     const r = await Auth.welcome();

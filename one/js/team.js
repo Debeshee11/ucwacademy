@@ -4,7 +4,7 @@ import { D, level, lesson, courseOf } from "./data.js";
 import { page, widePage, bar } from "./ui.js";
 import { LABEL } from "./progress.js";
 import { questionById } from "./quiz.js";
-import { STAFF } from "./config.js";
+import { fns } from "./fb.js";
 import * as Store from "./store.js";
 
 const WEEK = 7 * 86400e3;
@@ -28,7 +28,8 @@ function summarize(L) {
 const miss = r => [!r.name || r.name === "(no name)" ? "name" : "", !r.email ? "email" : "", !r.door ? "type" : ""].filter(Boolean).join(", ") || "–";
 export function team() {
   const host = h("div", { class: "stack stack-xl" }, h("p", { class: "mute" }, "Loading…"));
-  Store.loadAll().then(all => {
+  const staffP = (async () => { try { return (await fns().httpsCallable("staffList")()).data.emails || []; } catch { return []; } })();
+  Promise.all([Store.loadAll(), staffP]).then(([all, staffEmails]) => {
     const rows = all.map(summarize).sort((a, b) => b.updated - a.updated);
     const active = rows.filter(r => Date.now() - r.updated < WEEK).length;
     const withM = rows.filter(r => r.mastery != null), avgM = withM.length ? Math.round(withM.reduce((a, r) => a + r.mastery, 0) / withM.length) : null;
@@ -63,7 +64,7 @@ export function team() {
           h("p", { class: "small" }, h("b", {}, plural(easy, "question")), " answered right by over 95%. Retire or make harder."),
           h("p", { class: "small" }, h("b", {}, plural(hard, "question")), " answered right by under 30%. Review the wording."))),
       signups(rows),
-      roster(rows),
+      roster(rows, staffEmails),
       h("section", { class: "stack" },
         h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "All learners"), h("button", { class: "btn ghost", style: "height:40px", on: { click: () => {
           const text = csv([["Name", "Email", "Mobile", "Type", "Learner type", "Signed up with", "Joined", "Level", "Lessons", "Progress %", "First-try accuracy %", "Streak", "Credentials", "Status", "Last active"], ...rows.map(r => [r.name, r.email, r.mobile, r.kind, r.door, r.prov, r.joined ? new Date(r.joined).toISOString() : "", r.level, r.lessons, r.progress, r.mastery ?? "", r.streak, r.certs, r.status, r.updated ? new Date(r.updated).toISOString() : ""])]);
@@ -80,7 +81,7 @@ export function team() {
 }
 
 /* Every employee on the staff list, with whether they have been active. */
-function roster(rows) {
+function roster(rows, STAFF) {
   const by = Object.fromEntries(rows.map(r => [r.email.toLowerCase(), r]));
   const nameOf = e => e.split("@")[0].replace(/[._]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
   const day = 86400e3, now = Date.now();

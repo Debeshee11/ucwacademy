@@ -19,14 +19,23 @@ function arrange(q) {
   return { ...q, shown: order.map(i => q.options[i]), order };
 }
 
-/* cfg: { title, courseId, tier: "b"|"i"|"h"|"r", questions, exit, done(res) -> { head, sub, body, actions } } */
-export function runExam(root, cfg) {
-  const lang = Store.get().lang;
-  const qs = cfg.questions.map(q => arrange(localize(q, lang)));
+/* cfg: { title, courseId, tier: "b"|"i"|"h"|"r", lookup(id) -> question, exit, done(res) -> { head, sub, body, actions } }
+   The server opens the attempt and chooses the questions; the browser only shows them. */
+export async function runExam(root, cfg) {
+  clear(root).append(h("main", { class: "wrap page stack", style: "text-align:center;padding-top:64px" }, h("p", { class: "lead" }, "Preparing your exam…")));
+  let start;
+  try { const f0 = fns(); if (!f0) throw new Error("The service could not be reached."); start = (await f0.httpsCallable("startExam")({ courseId: cfg.courseId, tier: cfg.tier })).data; }
+  catch (e) {
+    reportError(e);
+    return void clear(root).append(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Could not start the exam."), h("p", { class: "mute" }, errText(e)),
+      h("div", { class: "row-flex" }, h("button", { class: "btn primary", on: { click: () => runExam(root, cfg) } }, "Try again"), h("a", { class: "btn ghost", href: cfg.exit || "#/" }, "Back"))));
+  }
+  const lang = Store.get().lang, attempt = start.attemptId;
+  const found = (start.qids || []).map(cfg.lookup);
+  if (!found.length || found.some(q => !q)) return void clear(root).append(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "This exam is not ready."), h("p", { class: "mute" }, "The question set is out of date. Reload the page and try again."), h("a", { class: "btn ghost", href: cfg.exit || "#/" }, "Back")));
+  const qs = found.map(q => arrange(localize(q, lang)));
   const total = qs.length, picks = Array(total).fill(null);
-  let i = 0, busy = false, attempt = null;
-  /* The server opens an attempt now; it can be marked once, and not sooner than a person could read the questions. */
-  try { const f0 = fns(); if (f0) f0.httpsCallable("startExam")({ courseId: cfg.courseId, tier: cfg.tier }).then(r => { attempt = r.data?.attemptId || null; }).catch(() => {}); } catch {}
+  let i = 0, busy = false;
 
   const barFill = h("i", { style: "width:0%" });
   const count = h("span", { class: "small mute", "aria-live": "polite", style: "min-width:56px;text-align:right" });
@@ -69,7 +78,7 @@ export function runExam(root, cfg) {
     try {
       const f = fns(); if (!f) throw new Error("The service could not be reached.");
       const answers = picks.map((k, n) => (k == null ? null : qs[n].order[k]));
-      const res = (await f.httpsCallable("submitExam")({ courseId: cfg.courseId, tier: cfg.tier, qids: qs.map(q => q.id), answers, attemptId: attempt })).data;
+      const res = (await f.httpsCallable("submitExam")({ courseId: cfg.courseId, tier: cfg.tier, answers, attemptId: attempt })).data;
       await result(res);
     } catch (e) {
       reportError(e);

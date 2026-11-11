@@ -1,5 +1,6 @@
 /* Each learner's progress: one document, learners/<uid>, mirrored in localStorage so the app still works offline. */
 import { RULES, STAFF_DOMAIN } from "./config.js";
+import { track } from "./analytics.js";
 import { db, fns } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
 import { mergeStates } from "./merge.js";
@@ -132,6 +133,7 @@ export const todayAct = () => state.act[isoDay()] || { l: 0, r: 0, d: 0 };
 export const openLesson = (n, part) => mutate(s => { s.last = n; if (part != null) s.part[n] = part; });
 export const setPart = (n, part) => mutate(s => { s.part[n] = part; });
 export function finishLesson(n) {
+  track("lesson");
   mutate(s => { if (!s.done[n]) s.done[n] = Date.now(); touch(s); s.act[isoDay()].l++; s.last = n; });
 }
 
