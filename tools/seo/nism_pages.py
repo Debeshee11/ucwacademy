@@ -81,13 +81,13 @@ def exam_page(e):
 <section><h2>Try {len(samples(d))} sample questions</h2><p>These are from Mock 1. Open the free mock to see the correct answer and the reason behind each one.</p>{qs}
 <div class="cta"><a class="btn" href="{app_link(f"nism/{e['id']}/mock/1", camp)}">See answers in the free mock</a></div></section>
 <section><h2>How to prepare for {esc(e['code'])}</h2><ol class="steps">{"".join(f"<li>{esc(s)}</li>" for s in STEPS)}</ol>
-<p>The app also lists your weak units after each mock and lets you study in English, Hindi or Gujarati.</p></section>
+<p>The app also lists your weak units after each mock and runs in English, Hindi or Gujarati. Mock tests and study material are in English.</p></section>
 {faq_html(fq)}
 <section><h2>More NISM exams</h2>{rel}<p><a href="/learn/nism">See all NISM exams</a></p></section>
 {disclaimer()}"""
     write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(e),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": f"{e['code']} {e['title']} preparation", "description": desc,
-                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": ["en", "hi", "gu"],
+                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": "en",
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),
           cta=("Take Mock 1 free", app_link(f"nism/{e['id']}/mock/1", camp))))
     return p
@@ -101,7 +101,7 @@ def hub():
     fq = [("Which NISM exam should I take?", "It depends on the role. Mutual fund distributors look at Series V-A, those new to markets at Series XII, and advisers and analysts at the advice and research exams listed below. Use the table to compare each exam."),
           ("Are these NISM mock tests free?", f"Yes. UpperCrust Academy gives free mock tests and a free study guide PDF for all {len(EXAMS)} exams listed here."),
           ("How do I prepare for a NISM exam?", "Read the study guide once, study the heaviest units first, then take mock tests. Move on only when you clear the pass mark by 15 marks, and redo every wrong answer."),
-          ("Is the study material available in Hindi or Gujarati?", "The app, including its lessons and quizzes, can be switched between English, Hindi and Gujarati. The study guide PDFs are in English."),
+          ("Is the study material available in Hindi or Gujarati?", "No. The app screens can be switched to Hindi or Gujarati, but NISM mock tests and study guide PDFs are in English, as the NISM exams themselves are."),
           ("Is UpperCrust Academy part of NISM?", "No. It is independent preparation material from UpperCrust Wealth. Check the official NISM website for the latest syllabus and rules.")]
     body = f"""{crumbs_html(crumbs)}
 <section class="hero"><p class="eyebrow">NISM exam preparation</p><h1>NISM exam preparation: free mock tests and study guides</h1>

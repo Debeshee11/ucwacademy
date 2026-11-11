@@ -74,7 +74,7 @@ def page(*, path, title, desc, body, ld="", og="/assets/og/home.jpg", lang="en",
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p><b>UpperCrust Academy</b> by UpperCrust Wealth. Free lessons, mock tests and verifiable certificates in English, Hindi and Gujarati.</p>
+<p><b>UpperCrust Academy</b> by UpperCrust Wealth. Free lessons, mock tests and verifiable certificates. App in English, Hindi and Gujarati; lessons in English.</p>
 <p class="links"><a href="/learn/">All courses</a> · <a href="/learn/nism">NISM exams</a> · <a href="/learn/personal-finance">Personal finance</a> · <a href="/learn/hi-personal-finance">हिन्दी</a> · <a href="/learn/gu-personal-finance">ગુજરાતી</a> · <a href="{SITE}/#/privacy">Privacy</a> · <a href="{SITE}/#/terms">Terms</a></p>
 {disclaimer()}
 </div></footer>

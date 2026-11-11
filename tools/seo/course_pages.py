@@ -44,7 +44,7 @@ def faqs_for(c, n):
     lv = LEVELS[c["level"]]["name"]
     return [(f"Is the {c['title']} course free?", "Yes. Lessons, quizzes and practice are free. Sign in once with your mobile number or Google to start."),
             (f"Who is the {c['title']} course for?", f"It is a {lv.lower()}-level course with {n} short lessons, written in plain language for beginners and for people who advise others on money."),
-            ("Can I learn this in Hindi or Gujarati?", "Yes. Switch the app between English, Hindi and Gujarati at any time, and the quiz questions follow."),
+            ("Can I learn this in Hindi or Gujarati?", "The app screens switch between English, Hindi and Gujarati at any time, and many quiz questions have translations. Lesson text is in English for now."),
             ("Do I get a certificate?", "Yes. Pass the course exams to earn a certificate that anyone can verify online."),
             ("Is this investment advice?", "No. It is education only. Speak to a qualified adviser before you act on your own money.")]
 
@@ -52,7 +52,7 @@ def faqs_for(c, n):
 def course_page(c):
     sec = SEC_OF.get(c["id"], {"name": "Courses"}); lv = LEVELS[c["level"]]["name"]; ls = lessons_of(c); p = path_of(c)
     title = f"{c['title']}: Free Course with Quizzes"
-    desc = f"{c['blurb']} {len(ls)} short lessons, quizzes and practice. Free, in English, Hindi and Gujarati."[:300]
+    desc = f"{c['blurb']} {len(ls)} short lessons, quizzes and practice. Free. App in English, Hindi and Gujarati."[:300]
     fq = faqs_for(c, len(ls)); camp = "c-" + c["id"]
     crumbs = [("Home", "/learn/"), (sec["name"], "/learn/personal-finance" if sec["id"] == "basics" else "/learn/"), (c["title"], p)]
     mods = "".join(f"<div class='mod'><h3>{esc(m['title'])}</h3><ol>" + "".join(f"<li>{esc(LESSONS[str(n)]['title'])}</li>" for n in m["lessons"] if str(n) in LESSONS) + "</ol></div>" for m in c["modules"])
@@ -71,7 +71,7 @@ def course_page(c):
 {disclaimer()}"""
     write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(c),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": c["title"], "description": c["blurb"],
-                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": ["en", "hi", "gu"],
+                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": "en",
                     "educationalLevel": lv, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),
           cta=("Start free", app_link("course/" + c["id"], camp))))
     return p
