@@ -20,6 +20,7 @@
 .seg button[data-t="markets"]::before { content: "📈"; } .seg button[data-t="mf"]::before { content: "💰"; } .seg button[data-t="rbi"]::before { content: "🏦"; } .seg button[data-t="sebi"]::before { content: "⚖️"; }
 .nwc { --tc: #4CC9F0; --tb: #E3F7FD; display: grid; gap: 8px; padding: 16px 18px; background: #fff; border: 2.5px solid var(--ink); border-radius: 20px; box-shadow: 4px 4px 0 var(--tc); color: var(--ink); transition: transform .12s var(--ease), box-shadow .12s; }
 .nwc.t-mf { --tc: #2EC4B6; --tb: #DDF7F4; } .nwc.t-rbi { --tc: #9B5DE5; --tb: #F0E6FC; } .nwc.t-sebi { --tc: #FF6B6B; --tb: #FFE6E6; }
+.nwc.t-ipo { --tc: #F59E0B; --tb: #FEF3C7; } .nwc.t-economy { --tc: #3B82F6; --tb: #DBEAFE; } .nwc.t-tax { --tc: #16A34A; --tb: #DCFCE7; } .nwc.t-insurance { --tc: #0EA5E9; --tb: #E0F2FE; } .nwc.t-gold { --tc: #CA8A04; --tb: #FEF9C3; } .nwc.t-global { --tc: #64748B; --tb: #E2E8F0; }
 .nwc:hover { transform: translate(-1px, -2px); box-shadow: 6px 6px 0 var(--tc); } .nwc:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--tc); }
 .nwc-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .nwc-tag { padding: 3px 11px; border-radius: 99px; background: var(--tc); color: #fff; font: 800 12px var(--font); letter-spacing: .03em; text-shadow: 0 1px 0 rgba(0, 0, 0, .18); }
