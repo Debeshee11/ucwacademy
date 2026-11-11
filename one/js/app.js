@@ -1,5 +1,5 @@
 /* UpperCrust Academy: boot and routes. */
-import { track } from "./analytics.js";
+import { track, pop } from "./analytics.js";
 import { contactPage } from "./contact.js";
 import { startTour, tourSeen } from "./tour.js";
 import "./monitor.js";
@@ -82,6 +82,7 @@ function route() {
     const m = path.match(re);
     if (!m) continue;
     document.title = `${title} · UpperCrust Academy`;
+    { const [a, b] = path.split("/"); pop("page:" + (a || "home").replace(/[^\w-]/g, "")); if (b && /^(course|nism|fund|index)$/.test(a) && /^[\w-]{1,50}$/.test(b)) pop(a + ":" + b); }
     ui.show(!focus); ui.active(nav);
     try {
       const out = view(...m.slice(1));

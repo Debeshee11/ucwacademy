@@ -20,3 +20,9 @@ export function track(e, once = false) {
   if (once) { if (seen.has(e)) return; seen.add(e); }
   send(e, e === "view" ? source() : undefined);
 }
+
+/* What people open: a page, a course, a lesson, a news topic. Counted once per visit per item, except finished lessons. */
+export function pop(key, once = true) {
+  if (once) { if (seen.has(key)) return; seen.add(key); }
+  try { const f = fns(); if (f) f.httpsCallable("track")({ e: "pop", k: key }).catch(() => {}); } catch {}
+}

@@ -1,12 +1,12 @@
 /* Each learner's progress: one document, learners/<uid>, mirrored in localStorage so the app still works offline. */
 import { RULES, STAFF_DOMAIN } from "./config.js";
-import { track } from "./analytics.js";
+import { track, pop } from "./analytics.js";
 import { db, fns } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
 import { mergeStates } from "./merge.js";
 
 const blank = () => ({
-  v: 1, name: "", mobile: "", mv: 0, kind: "", door: "", prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
+  v: 1, name: "", mobile: "", mv: 0, kind: "", door: "", age: "", ints: [], prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
   done: {},            /* lesson number -> time completed */
   part: {},            /* lesson number -> part last reached */
   q: {},               /* question id -> { b: box 0-4, d: due time, n: tries, r: right, f: first try right 1/0 } */
@@ -28,6 +28,7 @@ const emit = () => subs.forEach(fn => fn(state));
 function clean(raw) {
   const s = { ...blank(), ...(raw || {}) };
   for (const k of ["done", "part", "q", "quiz", "creds", "lab", "act"]) if (!s[k] || typeof s[k] !== "object") s[k] = {};
+  if (!Array.isArray(s.ints)) s.ints = [];
   if (!s.streak || typeof s.streak !== "object") s.streak = { n: 0, last: "" };
   return s;
 }
@@ -133,7 +134,7 @@ export const todayAct = () => state.act[isoDay()] || { l: 0, r: 0, d: 0 };
 export const openLesson = (n, part) => mutate(s => { s.last = n; if (part != null) s.part[n] = part; });
 export const setPart = (n, part) => mutate(s => { s.part[n] = part; });
 export function finishLesson(n) {
-  track("lesson");
+  track("lesson"); pop("lesson:" + n, false);
   mutate(s => { if (!s.done[n]) s.done[n] = Date.now(); touch(s); s.act[isoDay()].l++; s.last = n; });
 }
 
@@ -175,6 +176,8 @@ export const setOnboarded = () => mutate(s => { s.onb = 1; });
 export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });
 export const setDoor = id => mutate(s => { s.door = id; });
+export const setAge = id => mutate(s => { s.age = id; });
+export const toggleInt = id => mutate(s => { const a = (s.ints || []).slice(); const i = a.indexOf(id); if (i >= 0) a.splice(i, 1); else if (a.length < 4) a.push(id); s.ints = a; });
 export const toggleStudy = k => mutate(s => { s.study = s.study || {}; if (s.study[k]) delete s.study[k]; else s.study[k] = 1; });
 /* Mock results come from the backend. This only updates the copy shown on screen; it is never written back from the browser. */
 export const setMockResult = (id, n, rec) => { state.nm = state.nm || {}; (state.nm[id] = state.nm[id] || {})[n] = rec; emit(); };

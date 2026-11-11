@@ -96,11 +96,23 @@ function paint(host, S, keys, I, ek) {
         h("tr", {}, h("td", { style: cell + ";text-align:left;font-weight:700" }, "Total"), cols.map(c => h("td", { style: cell + ";font-weight:700" }, n0(tot(c[0])))))))),
     srcRows.length ? h("div", { class: "stack stack-s" }, h("h3", { class: "h3" }, "Where visits come from"), h("div", { class: "divide" }, srcRows.map(([k, v]) => h("div", { class: "list-row", style: "min-height:44px" }, h("div", { class: "grow" }, k), h("b", {}, n0(v)))))) : h("p", { class: "mute" }, "Sources appear once people visit. Add ?utm_source=whatsapp to links you share to see which channel works."));
 
+  /* What people like most: opens per page, course, lesson, news topic; and who they are. */
+  const P = S.popular || {}, nm = (kind, k) => kind === "course" || kind === "exam" ? (D.courses.find(c => c.id === k)?.title || k) : kind === "lesson" ? (D.lessons[k]?.title || "Lesson " + k) : kind === "nism" ? k.toUpperCase() : k;
+  const popBox = (kind, title) => h("div", { class: "stack stack-s" }, h("h3", { class: "h3" }, title),
+    (P[kind] || []).length ? h("div", { class: "divide" }, P[kind].map(([k, v]) => h("div", { class: "list-row", style: "min-height:44px" }, h("div", { class: "grow" }, nm(kind, k)), h("b", {}, n0(v))))) : h("p", { class: "small mute" }, "Nothing yet."));
+  const AGEN = { "u18": "Under 18", "18-25": "18 to 25", "26-40": "26 to 40", "41-60": "41 to 60", "60+": "Over 60" }, INTN = { save: "Save and budget", grow: "Mutual funds and SIPs", stocks: "Stock market", gold: "Gold and real assets", insure: "Insurance", tax: "Tax and retirement", nism: "NISM exams and career", nri: "Money abroad (NRI)" };
+  const kv = (o, names) => Object.entries(o || {}).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${names[k] || k}: ${n0(v)}`).join(" · ") || "No answers yet.";
+  const liked = h("div", { class: "stack" }, h("p", { class: "mute" }, "Counted once per visit per item, except lessons, which count every time one is finished."),
+    h("div", { class: "cols" }, popBox("page", "Pages"), popBox("course", "Courses opened"), popBox("lesson", "Lessons finished")),
+    h("div", { class: "cols" }, popBox("exam", "Course exams started"), popBox("nism", "NISM exam pages"), popBox("news", "News topics tapped")),
+    h("p", { class: "small" }, h("b", {}, "Age groups: "), kv(S.ages, AGEN)), h("p", { class: "small" }, h("b", {}, "Interests: "), kv(S.ints, INTN)));
+
   host.replaceChildren(
     h("section", { class: "ad-tiles" }, tile(n0(S.total), "Learners", n0(S.staff) + " staff"), tile(n0(S.joined.d1), "Joined today"), tile(n0(S.joined.d7), "Joined, 7 days"), tile(n0(S.joined.d30), "Joined, 30 days"), tile(n0(S.active.d1), "Active today"), tile(n0(S.active.d7), "Active, 7 days"), tile(n0(S.active.d30), "Active, 30 days"),
       tile(S.total ? Math.round(100 * S.active.d7 / S.total) + "%" : "–", "Weekly active share")),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "New learners, last 30 days"), spark),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Traffic and sign-up funnel"), traffic),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "What people like most"), liked),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Who they are"), doors, h("p", { class: "small mute" }, `Sign-in: Google ${n0(S.provs.google)} · Phone ${n0(S.provs.phone)} · Email ${n0(S.provs.email)}`)),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "NISM mocks"), tbl),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Hardest questions"), h("p", { class: "mute" }, "Most often answered wrongly. Rewrite or explain these better."), hardBox),

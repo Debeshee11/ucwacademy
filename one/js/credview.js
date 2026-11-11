@@ -1,3 +1,4 @@
+/* global qrcode */
 /* Credentials list, the certificate itself, and public verification. */
 import { ledger, settingsCard, rankOf } from "./academy.js";
 import { ORG } from "./config.js";

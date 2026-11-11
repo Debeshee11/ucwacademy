@@ -13,6 +13,7 @@ import { nismBanner } from "./nismbanner.js";
 import { pageHero } from "./pagehero.js";
 import { resumeBar } from "./ux.js";
 import { signOut } from "./auth.js";
+import { aboutYou, personalise, tipFor, intNames } from "./guide.js";
 
 export const DOORS = [
   { id: "student", name: "Student", who: "School to early career", hook: "First salary, first SIP", realms: ["basics", "mf"] },
@@ -44,7 +45,7 @@ export function pathCourses(doorId) {
   for (const r of door ? door.realms : realms().map(x => x.id))
     for (const c of core().filter(c => c.sec === r).sort((a, b) => lv(a) - lv(b))) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); }
   for (const c of core()) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); }
-  return out;
+  return personalise(out);
 }
 
 /* ——— choosing a Door ——— */
@@ -92,12 +93,18 @@ export function today() {
     h("a", { class: "linkish", href: "#/courses" }, "See all courses"));
   const news = h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "In the news today"), newsPreview(3), h("a", { class: "linkish", href: "#/news" }, "All news & markets"));
 
+  const planTip = tipFor(s), planInts = intNames(s);
+  const plan = planTip || planInts.length ? h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Your plan"),
+    planTip ? h("p", {}, planTip) : null, planInts.length ? h("p", { class: "small mute" }, "You are here for: " + planInts.join(", ") + ".") : null,
+    h("p", { class: "small" }, "Start with: ", path.filter(x => !s.quiz["x:" + x.id]?.passed).slice(0, 3).map((x, i) => [i ? ", " : "", h("a", { class: "linkish", href: "#/course/" + x.id }, x.title)]).flat())) 
+    : h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Make this yours"), h("p", { class: "mute" }, "Tell us your age group and what you want to learn, and we will put the right courses first."), h("a", { class: "btn ghost", href: "#/me" }, "Set up my plan"));
+
   const fresh = !Object.keys(s.done).length && !Object.keys(s.part).length && !p.done;
   const heading = h("div", { class: "stack stack-s" },
       h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
       h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in Progress to personalise this page."));
   const rest = h("div", { class: "cols" },
-      h("div", { class: "stack stack-l" }, hero, p.done ? null : guide, nismBanner(),
+      h("div", { class: "stack stack-l" }, hero, plan, p.done ? null : guide, nismBanner(),
         h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recommended for you"),
           h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
             return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
@@ -141,6 +148,7 @@ export function settingsCard() {
   return h("section", { class: "stack" }, h("h2", { class: "h2" }, "Who are you?"),
     h("p", { class: "small mute" }, "This sets the courses we recommend first and the examples you see. You can change it any time."),
     doorPicker(s.door, id => { Store.setDoor(id); toast("Saved"); }),
+    h("h2", { class: "h2" }, "About you"), h("p", { class: "small mute" }, "Your age group and interests set which courses come first and the advice you see on Home."), aboutYou(() => toast("Saved")),
     h("label", { class: "row-flex small", for: "showroll", style: "gap:10px;margin-top:6px" }, show, "Show my first name and last initial on the leaderboard"),
     accountCard());
 }

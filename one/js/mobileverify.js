@@ -7,6 +7,9 @@ import * as Store from "./store.js";
 export function needsVerify() {
   const u = auth()?.currentUser;
   if (u?.phoneNumber) { if (!Store.get().mv) Store.setProfile({ mv: 1 }); return false; }
+  /* A number outside India is kept as given: texting codes abroad is slow, costly and often fails. */
+  const m = Store.get().mobile || "";
+  if (m.startsWith("+") && !m.startsWith("+91")) return false;
   return !Store.isStaff() && !Store.get().mv;
 }
 

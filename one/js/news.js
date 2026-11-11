@@ -2,15 +2,16 @@
 import { NEWS_BASE } from "./config.js";
 import { h, ago } from "./dom.js";
 import { skeleton, errorCard } from "./ux.js";
+import { pop } from "./analytics.js";
 
-const TNAME = { markets: "Markets", mf: "Funds", rbi: "RBI", sebi: "SEBI" };
-const TOPICS = [["all", "All"], ["markets", "Markets"], ["mf", "Funds"], ["rbi", "RBI"], ["sebi", "SEBI"]];
+const TNAME = { markets: "Markets", mf: "Funds", ipo: "IPO", rbi: "RBI", sebi: "SEBI", tax: "Tax", insurance: "Insurance", gold: "Gold", economy: "Economy", global: "Global" };
+const TOPICS = [["all", "All"], ["markets", "Markets"], ["mf", "Funds"], ["ipo", "IPO"], ["economy", "Economy"], ["rbi", "RBI"], ["sebi", "SEBI"], ["tax", "Tax"], ["insurance", "Insurance"], ["gold", "Gold"], ["global", "Global"]];
 
 export function newsFeed() {
   let items = null, topic = "all", err = "";
   const list = h("div", { class: "nwlist" }), seg = h("div", { class: "seg", role: "group", "aria-label": "Topic" }), note = h("p", { class: "tiny mute" });
   function paint() {
-    seg.replaceChildren(...TOPICS.map(([id, t]) => h("button", { "data-t": id, "aria-pressed": String(topic === id), on: { click: () => { topic = id; paint(); } } }, t)));
+    seg.replaceChildren(...TOPICS.map(([id, t]) => h("button", { "data-t": id, "aria-pressed": String(topic === id), on: { click: () => { topic = id; pop("news:" + id); paint(); } } }, t)));
     list.replaceChildren();
     if (err) return list.append(errorCard(() => { err = ""; items = null; load(); paint(); }));
     if (!items) return list.append(skeleton(3));
