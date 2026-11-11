@@ -1,7 +1,8 @@
 /* Sign in: Google, or email and password. Learners can create their own account; employees use the work-email door. */
 import { ADMIN_EMAIL, STAFF_DOMAIN } from "./config.js";
 import { auth } from "./fb.js";
-import { h, $ } from "./dom.js";
+import { h, $, add } from "./dom.js";
+const ap = (el, ...kids) => add(el, kids);
 import { D } from "./data.js";
 import * as Store from "./store.js";
 import { doorPicker } from "./academy.js";
@@ -113,7 +114,7 @@ function mount(a, startMsg) {
         if (r.additionalUserInfo?.isNewUser && r.user.displayName) pending = { name: r.user.displayName };
         finish(r.user);
       } catch (e) {
-        if (/popup-blocked|operation-not-supported/.test(e?.code || "")) { try { await a.signInWithRedirect(p); return; } catch (e2) { e = e2; } }
+        if (/popup-blocked|operation-not-supported|missing initial state/i.test((e?.code || "") + (e?.message || ""))) return fail("Your browser blocked the Google window. Allow pop-ups for this site and try again, or sign in with mobile number or email.");
         reportError(new Error("google-signin: " + (e?.code || e?.message || "unknown")));
         fail(errMsg(e));
       }
@@ -224,7 +225,7 @@ function mount(a, startMsg) {
       if (mode === "mail") links.push(h("p", { class: "lg-swap" }, signup ? "Already have an account? " : "New here? ", Object.assign(h("button", { type: "button", class: "link", on: { click: () => { signup = !signup; startMsg = ""; paint(); } } }), { textContent: signup ? "Sign in" : "Create an email account" })));
       if (mode === "phone") links.push(h("p", { class: "lg-swap" }, "Prefer email and password? ", Object.assign(go("mail"), { textContent: "Sign in or create an account with email" })));
       if (mode !== "staff") links.push(h("p", { class: "lg-staff" }, "UpperCrust employee? ", Object.assign(go("staff"), { textContent: "Sign in with your work email" })));
-      form.append(h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
+      ap(form, h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
         ...(inApp() ? [inAppBar()] : []),
         ...(mode === "mail" ? [h("div", { class: "chips", role: "group", "aria-label": "Sign in or create account" },
           h("button", { type: "button", class: "chip", "aria-pressed": String(!signup), on: { click: () => { signup = false; startMsg = ""; paint(); } } }, "I have an account"),
@@ -289,7 +290,7 @@ export function welcome() {
         try { await confirmCode(conf, c, num); clearInterval(tick); if (Store.get().door) { scrim.remove(); resolve(null); } else { step = 1; paint(); } }
         catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; err.textContent = verifyError(e); if (/expired/.test(e?.code || "")) conf = null; }
       } } }, h("div", { class: "field" }, h("label", { for: "vc" }, `Enter the 6-digit code sent to ${e164.replace(/^\+91/, "+91 ")}`), code), err, ok, h("div", { class: "lg-alt" }, resend, change), holder);
-      box.append(logo, h("div", {}, h("h1", { class: "h1" }, "Verify your mobile"), h("p", { class: "mute", style: "margin-top:8px" }, "One quick check that this number is yours. It keeps your certificates and account safe.")), form);
+      ap(box, logo, h("div", {}, h("h1", { class: "h1" }, "Verify your mobile"), h("p", { class: "mute", style: "margin-top:8px" }, "One quick check that this number is yours. It keeps your certificates and account safe.")), form);
       send();
     }
     function paint() {
@@ -297,7 +298,7 @@ export function welcome() {
       if (step === 0) {
         name.value = name.value || Store.get().name || "";
         const need = true;
-        box.append(logo,
+        ap(box, logo,
           h("div", {}, h("h1", { class: "h1" }, need ? "Complete your profile" : "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, need ? "Three quick details so we can set up your account and send your certificates." : "What should we call you?")),
           h("div", { class: "field" }, h("label", { for: "nm" }, "Full name"), name),
           need ? h("div", { class: "field" }, h("label", { for: "mb" }, "Mobile number"), Store.get().mv ? null : mcc, mobile) : null,
@@ -314,7 +315,7 @@ export function welcome() {
         verifyPaint();
       } else {
         const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); Store.flush(); scrim.remove(); resolve(null); } } }, "Open my academy");
-        box.append(logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
+        ap(box, logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
           doorPicker(door, id => { door = id; go.disabled = false; }), aboutYou(), go);
       }
     }

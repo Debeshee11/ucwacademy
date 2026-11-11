@@ -6,6 +6,7 @@ import { fns } from "./fb.js";
 import { DOORS } from "./academy.js";
 import { D } from "./data.js";
 import { getOne } from "./content.js";
+import { adminReviews } from "./adminreviews.js";
 const j = p => getOne(p.replace(/^one\/data\//, "").replace(/\.json$/, ""));
 const call = async (name, data) => { const f = fns(); if (!f) throw new Error("Backend not reachable."); return (await f.httpsCallable(name)(data)).data; };
 const n0 = x => (x || 0).toLocaleString("en-IN");
@@ -13,7 +14,7 @@ const tile = (v, l, sub) => h("div", { class: "ad-tile" }, h("b", {}, v), h("spa
 
 export function admin() {
   const host = h("div", { class: "stack stack-xl" }, h("p", { class: "mute" }, "Loading the numbers…"));
-  Promise.all([call("adminStats"), call("keyStatus"), j("one/data/nism.json"), call("examKeyStatus")]).then(([S, keys, I, ek]) => paint(host, S, keys, I, ek))
+  Promise.all([call("adminStats"), call("keyStatus"), j("one/data/nism.json"), call("examKeyStatus")]).then(([S, keys, I, ek]) => { paint(host, S, keys, I, ek); host.append(adminReviews()); })
     .catch(e => host.replaceChildren(h("p", { class: "error" }, /permission/.test(e?.code || "") ? "Only the administrator can see this." : "Could not load. " + (e.message || "")), h("button", { class: "btn primary", on: { click: () => location.reload() } }, "Reload")));
   return widePage(h("section", { class: "stack" }, h("div", { class: "eyebrow gold" }, "Administrator"), h("h1", { class: "h1" }, "Growth and exams"), h("p", { class: "mute" }, "Who is joining, who is active, how the NISM mocks are going. ", h("a", { href: "#/team" }, "Open the learner list"))), host);
 }

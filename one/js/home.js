@@ -55,8 +55,7 @@ export function home() {
   const ready = p.examReady, isExam = step?.kind === "exam";
   trail.push(h("div", { class: "trail" }, stepEl(0, cred
     ? h("a", { class: "node gold", href: `#/cert/${cred.id}`, "aria-label": "Certificate" }, icon("trophy"))
-    : ready ? h("a", { class: "node gold" + (isExam ? " now" : ""), href: `#/assess/${c.id}`, "aria-label": "Beginner exam" }, icon("trophy"))
-      : h("button", { class: "node lock", "aria-label": "Beginner exam, locked", on: { click: () => toast("Pass every module quiz first") } }, icon("lock")),
+    : h("a", { class: "node gold" + (isExam && ready ? " now" : ""), href: `#/assess/${c.id}`, "aria-label": "Beginner exam" }, icon("trophy")),
     cred ? "Your certificate" : "Beginner exam", isExam ? "START" : null, c.level, cred ? "Earned" : "20 questions · 80% to pass")));
 
   const goals = [

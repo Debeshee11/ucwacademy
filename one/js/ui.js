@@ -42,6 +42,7 @@ export function frame(onLang) {
         h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
         h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Language", lang),
         h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
+        h("a", { href: "#/review", role: "menuitem", on: { click: close } }, icon("star", 20), "Review and rate"),
         isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
         isAdmin() && h("a", { href: "#/admin", role: "menuitem", on: { click: close } }, icon("trend", 20), "Growth and exams"),
         isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
@@ -49,6 +50,7 @@ export function frame(onLang) {
         h("a", { href: "#/contact", role: "menuitem", on: { click: close } }, icon("chat", 20), "Contact us"),
         h("a", { href: "#/privacy", role: "menuitem", on: { click: close } }, icon("link", 20), "Privacy notice"),
         h("a", { href: "#/terms", role: "menuitem", on: { click: close } }, icon("link", 20), "Terms of use"),
+        h("a", { href: "#/disclosures", role: "menuitem", on: { click: close } }, icon("link", 20), "Disclosures"),
         h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
     }
   }

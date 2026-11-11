@@ -178,18 +178,18 @@ export function assess(cid) {
   const s = Store.get(), list = core();
   if (cid && !course(cid)) return notFound("That course does not exist.");
   const tierCell = (c, T, p) => {
-    const r = p.exams[T.id], open = T.id === "b" ? p.examReady : !!p.exams[T.id === "i" ? "b" : "i"]?.passed;
+    const r = p.exams[T.id], open = T.id === "b" ? true : !!p.exams[T.id === "i" ? "b" : "i"]?.passed;
     return h("div", { class: "as-tier t-" + T.id + (r?.passed ? " ok" : "") + (open ? "" : " locked") },
       h("div", { class: "row-flex between" }, h("b", {}, T.name), r?.passed ? h("span", { class: "pill ok" }, "Passed") : !open ? icon("lock", 16) : null),
       h("div", { class: "tiny mute" }, `20 questions · ${RULES.tierPass[T.id]}% to pass${r ? ` · best ${r.best}%` : ""}`),
       h("div", { class: "row-flex", style: "gap:8px" },
-        open ? h("a", { class: "btn primary sm", href: `#/quiz/exam/${c.id}/${T.id}` }, r?.passed ? "Retake" : "Start") : h("span", { class: "tiny mute" }, T.id === "b" ? "Pass every unit quiz first" : `Pass the ${T.id === "i" ? "Beginner" : "Intermediate"} exam first`),
+        open ? h("a", { class: "btn primary sm", href: `#/quiz/exam/${c.id}/${T.id}` }, r?.passed ? "Retake" : "Start") : h("span", { class: "tiny mute" }, `Pass the ${T.id === "i" ? "Beginner" : "Intermediate"} exam first`),
         h("a", { class: "btn ghost sm", href: `#/syllabus/${c.id}/${T.id}` }, "Syllabus")));
   };
   const card = c => { const p = Store.courseProgress(c);
     return h("article", { class: "card stack as-card", id: "as-" + c.id, style: realmVars(c.sec) },
       h("div", { class: "row-flex between" }, h("div", {}, h("div", { class: "tiny mute" }, realmName(c.sec) + " · " + level(c.level).name), h("h3", { class: "h3" }, c.title)),
-        p.examReady ? null : h("a", { class: "btn ghost sm", href: `#/course/${c.id}` }, `Finish the course · ${p.pct}%`)),
+        p.examReady ? null : h("a", { class: "btn ghost sm", href: `#/course/${c.id}` }, `Study this course · ${p.pct}%`)),
       h("div", { class: "as-tiers" }, TIERS().map(T => tierCell(c, T, p)))); };
   const focus = cid ? course(cid) : null;
   return widePage(

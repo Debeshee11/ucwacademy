@@ -20,6 +20,7 @@ import * as Syl from "./syllabus.js";
 import * as P from "./practice.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
+import { review } from "./review.js";
 import { fundData } from "./funddata.js";
 import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
@@ -41,6 +42,7 @@ const ROUTES = [
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
   [/^board$/, () => board(), "me", "Leaderboard"],
+  [/^review$/, () => review(), "me", "Review and rate"],
   [/^funds$/, () => Lib.funds(), "desk", "Funds"],
   [/^fund\/([\w-]+)$/, id => Lib.fund(id), "desk", "Fund"],
   [/^indices$/, () => Lib.indices(), "desk", "Indices"],
@@ -55,6 +57,7 @@ const ROUTES = [
   [/^me$/, () => C.me(), "me", "Progress"],
   [/^privacy$/, () => legalPage("privacy"), "", "Privacy notice"],
   [/^terms$/, () => legalPage("terms"), "", "Terms of use"],
+  [/^disclosures$/, () => legalPage("disclosures"), "", "Disclosures"],
   [/^contact$/, () => contactPage(), "", "Contact us"],
   [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
@@ -111,9 +114,9 @@ async function boot() {
     addEventListener("hashchange", () => location.reload());
     return;
   }
-  const legal = location.hash.match(/^#\/(privacy|terms)$/);
+  const legal = location.hash.match(/^#\/(privacy|terms|disclosures)$/);
   if (legal) {
-    document.title = (legal[1] === "terms" ? "Terms of use" : "Privacy notice") + " · UpperCrust Academy";
+    document.title = ({ terms: "Terms of use", disclosures: "Disclosures" }[legal[1]] || "Privacy notice") + " · UpperCrust Academy";
     root.replaceChildren(legalPage(legal[1]));
     addEventListener("hashchange", () => location.reload());
     return;

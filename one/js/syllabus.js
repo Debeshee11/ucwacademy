@@ -15,7 +15,7 @@ export function syllabus(cid, tier) {
   const c = course(cid), T = TIERS().find(t => t.id === tier);
   if (!c || !T) return notFound("That syllabus does not exist.");
   const S = STYLE[tier], meta = examMeta(cid), s = Store.get(), P = Store.courseProgress(c);
-  const open = tier === "b" ? P.examReady : !!P.exams[tier === "i" ? "b" : "i"]?.passed, mine = P.exams[tier], pass = RULES.tierPass[tier];
+  const open = tier === "b" ? true : !!P.exams[tier === "i" ? "b" : "i"]?.passed, mine = P.exams[tier], pass = RULES.tierPass[tier];
   const study = s.study || {}, key = n => `${cid}:${tier}:${n}`, all = c.lessons;
   const doneN = all.filter(n => study[key(n)]).length;
   const meter = h("div", { class: "syl-meter" }, h("div", { class: "syl-meter-t" }, h("b", {}, `${doneN} of ${all.length} lessons studied`), h("span", {}, doneN === all.length ? "You are ready. Take the exam." : "Tick each lesson once you can explain it aloud.")), bar(all.length ? doneN / all.length * 100 : 0));

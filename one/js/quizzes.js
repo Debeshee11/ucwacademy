@@ -38,7 +38,7 @@ const TIER_KEY = { b: "x:", i: "x2:", h: "x3:" };
 export function exam(root, cid, tier = "b") {
   const c = course(cid), T = TIERS().find(t => t.id === tier);
   if (!c || !T) return void (location.hash = "#/courses");
-  const P = Store.courseProgress(c), gate = tier === "b" ? P.examReady : P.exams[tier === "i" ? "b" : "i"]?.passed;
+  const P = Store.courseProgress(c), gate = tier === "b" ? true : P.exams[tier === "i" ? "b" : "i"]?.passed;
   if (!gate) {
     root.replaceChildren(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Not open yet."), h("p", { class: "lead" }, tier === "b" ? "The Beginner exam opens when you have passed every module quiz." : `The ${T.name} exam opens when you pass the ${tier === "i" ? "Beginner" : "Intermediate"} exam.`), h("a", { class: "btn primary", href: back(c) }, "Back to course")));
     return;
