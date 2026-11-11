@@ -84,6 +84,12 @@ service cloud.firestore {
     match /attempts/{id} { allow read, write: if false; }
     match /rate/{uid}    { allow read, write: if false; }
 
+    // Reviews and ratings. Written only by the backend (submitReview). A learner reads their own; everyone signed in reads approved ones.
+    match /reviews/{id} {
+      allow read: if isAdmin() || (request.auth != null && request.auth.uid == id) || (request.auth != null && resource.data.ok == true);
+      allow write: if false;
+    }
+
     // Browser error reports: signed-in users can add short ones, only the admin reads them.
     match /errors/{id} {
       allow create: if request.auth != null
