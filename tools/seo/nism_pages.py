@@ -1,5 +1,5 @@
 """One landing page per NISM exam, plus the NISM hub."""
-from common import SITE, BRAND, esc, slug, load, write, app_link
+from common import SITE, BRAND, esc, slug, load, write, app_link, file_for
 from layout import page, jsonld, faq_ld, faq_html, crumbs_ld, crumbs_html, share_html, disclaimer
 
 IDX = load("nism.json")
@@ -8,7 +8,7 @@ TRACKS = {t["id"]: t for t in IDX["tracks"]}
 
 
 def path_of(e):
-    return f"/learn/nism/{slug(e['series'])}-{slug(e['short'])}/"
+    return f"/learn/nism-{slug(e['series'])}-{slug(e['short'])}"
 
 
 def og_of(e):
@@ -63,7 +63,7 @@ def exam_page(e):
     desc = f"Prepare for {e['code']} ({e['title']}) free: unit-wise syllabus, study guide PDF and {n_mocks} full mock tests with explanations. {e['qs']} questions, {e['pass']}% to pass."
     pdf = f"/assets/nism/{e['id']}-study-guide.pdf"
     fq = faqs_for(e, n_mocks)
-    crumbs = [("Home", "/learn/"), ("NISM exams", "/learn/nism/"), (e["code"], p)]
+    crumbs = [("Home", "/learn/"), ("NISM exams", "/learn/nism"), (e["code"], p)]
     units = "".join(
         f"<details class='unit'{' open' if i == 0 else ''}><summary><b>Unit {u['n']}</b> {esc(u['title'])}<span class='w'>{u['w']}%</span></summary>"
         f"<p>{esc(u['overview'])}</p><ul>" + "".join(f"<li>{esc(x)}</li>" for x in u.get("focus", [])) + "</ul></details>" for i, u in enumerate(d["units"]))
@@ -83,9 +83,9 @@ def exam_page(e):
 <section><h2>How to prepare for {esc(e['code'])}</h2><ol class="steps">{"".join(f"<li>{esc(s)}</li>" for s in STEPS)}</ol>
 <p>The app also lists your weak units after each mock and lets you study in English, Hindi or Gujarati.</p></section>
 {faq_html(fq)}
-<section><h2>More NISM exams</h2>{rel}<p><a href="/learn/nism/">See all NISM exams</a></p></section>
+<section><h2>More NISM exams</h2>{rel}<p><a href="/learn/nism">See all NISM exams</a></p></section>
 {disclaimer()}"""
-    write(p.strip("/") + "/index.html", page(path=p, title=title, desc=desc, body=body, og=og_of(e),
+    write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(e),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": f"{e['code']} {e['title']} preparation", "description": desc,
                     "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": ["en", "hi", "gu"],
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),
@@ -94,7 +94,7 @@ def exam_page(e):
 
 
 def hub():
-    p = "/learn/nism/"; crumbs = [("Home", "/learn/"), ("NISM exams", p)]
+    p = "/learn/nism"; crumbs = [("Home", "/learn/"), ("NISM exams", p)]
     rows = "".join(f"<tr><td><a href='{path_of(e)}'><b>{esc(e['code'])}</b></a></td><td>{esc(e['title'])}</td><td>{e['qs']}</td><td>{e['mins']}</td><td>{e['pass']}%</td><td>{esc(e['neg'])}</td></tr>" for e in EXAMS)
     tracks = "".join(f"<section><h3>{esc(t['name'])}</h3><p>{esc(t['blurb'])}</p><div class='cards'>" +
                      "".join(f"<a class='card' href='{path_of(x)}'><b>{esc(x['code'])}</b><span>{esc(x['title'])}</span></a>" for x in EXAMS if x['track'] == t['id']) + "</div></section>" for t in IDX["tracks"])
@@ -110,7 +110,7 @@ def hub():
 <section><h2>Compare all NISM exams</h2><div class="tbl"><table><thead><tr><th>Exam</th><th>Title</th><th>Questions</th><th>Minutes</th><th>Pass</th><th>Negative marking</th></tr></thead><tbody>{rows}</tbody></table></div></section>
 <h2>Choose by what you do</h2>{tracks}
 {faq_html(fq)}{disclaimer()}"""
-    write("learn/nism/index.html", page(path=p, title="NISM Exam Preparation: Free Mock Tests & Study Guide PDFs", og="/assets/og/nism.jpg",
+    write(file_for(p), page(path=p, title="NISM Exam Preparation: Free Mock Tests & Study Guide PDFs", og="/assets/og/nism.jpg",
           desc=f"Free NISM mock tests, study guide PDFs and unit-wise syllabus for {len(EXAMS)} exams including V-A Mutual Fund Distributors, XII, VIII, X-A and XXI-A.",
           body=body, ld=jsonld(crumbs_ld(crumbs), faq_ld(fq)), cta=("Start free", app_link("nism", "nism-hub"))))
     return p

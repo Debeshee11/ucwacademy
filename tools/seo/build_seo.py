@@ -10,7 +10,7 @@ def main(skip_og=False):
     os.makedirs(os.path.join(ROOT, "learn"), exist_ok=True)
     shutil.copy(os.path.join(os.path.dirname(__file__), "seo.css"), os.path.join(ROOT, "learn", "seo.css"))
     urls = hub_pages.build() + nism_pages.build() + course_pages.build() + lang_pages.build()
-    pri = lambda u: "0.9" if u in ("/learn/", "/learn/nism/", "/learn/personal-finance/") else "0.8" if u.startswith("/learn/nism/") else "0.6"
+    pri = lambda u: "0.9" if u in ("/learn/", "/learn/nism", "/learn/personal-finance") else "0.8" if u.startswith("/learn/nism-") else "0.6"
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml.append(f"<url><loc>{SITE}/</loc><lastmod>{TODAY}</lastmod><priority>1.0</priority></url>")
     xml += [f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><priority>{pri(u)}</priority></url>" for u in urls]

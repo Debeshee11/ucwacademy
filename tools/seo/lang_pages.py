@@ -1,5 +1,5 @@
 """Hindi and Gujarati personal finance pages. Hand-written; they link into the app, where the language can be switched."""
-from common import SITE, esc, write, app_link
+from common import SITE, esc, write, app_link, file_for
 from layout import page, jsonld, faq_ld, faq_html, share_html
 
 PAGES = {
@@ -34,15 +34,15 @@ PAGES = {
 
 def build():
     out = []
-    alts = [("en", "/learn/personal-finance/"), ("hi", "/learn/hi/personal-finance/"), ("gu", "/learn/gu/personal-finance/")]
+    alts = [("en", "/learn/personal-finance"), ("hi", "/learn/hi-personal-finance"), ("gu", "/learn/gu-personal-finance")]
     for lang, d in PAGES.items():
-        p = f"/learn/{lang}/personal-finance/"
+        p = f"/learn/{lang}-personal-finance"
         body = f"""<section class="hero"><p class="eyebrow">UpperCrust Academy</p><h1>{esc(d['h1'])}</h1><p class="lead">{esc(d['lead'])}</p>
-<div class="cta"><a class="btn" href="{app_link('courses', 'pf-' + lang)}">{esc(d['cta'])}</a><a class="btn ghost" href="/learn/personal-finance/">{esc(d['en'])}</a><a class="btn ghost" href="/learn/{d['other'][0]}/personal-finance/">{esc(d['other'][1])}</a></div>{share_html(SITE + p, d['h1'])}</section>
+<div class="cta"><a class="btn" href="{app_link('courses', 'pf-' + lang)}">{esc(d['cta'])}</a><a class="btn ghost" href="/learn/personal-finance">{esc(d['en'])}</a><a class="btn ghost" href="/learn/{d['other'][0]}-personal-finance">{esc(d['other'][1])}</a></div>{share_html(SITE + p, d['h1'])}</section>
 <section><h2>{esc(d['topics_h'])}</h2><ul>{''.join(f'<li>{esc(x)}</li>' for x in d['topics'])}</ul></section>
 <section><h2>{esc(d['how_h'])}</h2><ol class="steps">{''.join(f'<li>{esc(x)}</li>' for x in d['how'])}</ol></section>
 {faq_html(d['faqs'])}<p class="fine">{esc(d['note'])}</p>"""
-        write(p.strip("/") + "/index.html", page(path=p, title=d["title"], desc=d["desc"], body=body, lang=lang, alts=alts, og="/assets/og/personal-finance.jpg",
+        write(file_for(p), page(path=p, title=d["title"], desc=d["desc"], body=body, lang=lang, alts=alts, og="/assets/og/personal-finance.jpg",
               ld=jsonld(faq_ld(d["faqs"])), cta=(d["cta"], app_link("courses", "pf-" + lang))))
         out.append(p)
     return out

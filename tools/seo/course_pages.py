@@ -1,5 +1,5 @@
 """One landing page per course, and the lookup of which section a course belongs to."""
-from common import SITE, esc, load, write, app_link
+from common import SITE, esc, load, write, app_link, file_for
 from layout import page, jsonld, faq_ld, faq_html, crumbs_ld, crumbs_html, share_html, disclaimer
 
 C = load("courses.json")
@@ -10,7 +10,7 @@ SEC_OF = {cid: s for s in C["sections"] for t in s["tracks"] for cid in t.get("c
 
 
 def path_of(c):
-    return f"/learn/course/{c['id']}/"
+    return f"/learn/course-{c['id']}"
 
 
 def og_of(c):
@@ -54,7 +54,7 @@ def course_page(c):
     title = f"{c['title']}: Free Course with Quizzes"
     desc = f"{c['blurb']} {len(ls)} short lessons, quizzes and practice. Free, in English, Hindi and Gujarati."[:300]
     fq = faqs_for(c, len(ls)); camp = "c-" + c["id"]
-    crumbs = [("Home", "/learn/"), (sec["name"], "/learn/personal-finance/" if sec["id"] == "basics" else "/learn/"), (c["title"], p)]
+    crumbs = [("Home", "/learn/"), (sec["name"], "/learn/personal-finance" if sec["id"] == "basics" else "/learn/"), (c["title"], p)]
     mods = "".join(f"<div class='mod'><h3>{esc(m['title'])}</h3><ol>" + "".join(f"<li>{esc(LESSONS[str(n)]['title'])}</li>" for n in m["lessons"] if str(n) in LESSONS) + "</ol></div>" for m in c["modules"])
     ideas = key_ideas(c)
     qs = "".join(f"<div class='q'><p><b>Q{i + 1}.</b> {esc(q['prompt'])}</p><ol type='A'>" + "".join(f"<li>{esc(o)}</li>" for o in q["options"]) + f"</ol><details class='faq'><summary>Show the answer</summary><p><b>{'ABCD'[q['answer']]}.</b> {esc(q.get('why', ''))}</p></details></div>" for i, q in enumerate(samples(c)))
@@ -69,7 +69,7 @@ def course_page(c):
 {faq_html(fq)}
 {('<section><h2>Related courses</h2>' + rel + '</section>') if rel else ''}
 {disclaimer()}"""
-    write(p.strip("/") + "/index.html", page(path=p, title=title, desc=desc, body=body, og=og_of(c),
+    write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(c),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": c["title"], "description": c["blurb"],
                     "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": ["en", "hi", "gu"],
                     "educationalLevel": lv, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),

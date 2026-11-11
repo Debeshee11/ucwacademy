@@ -26,6 +26,11 @@ def app_link(hash_, campaign):
     return f"{SITE}/?{UTM}{campaign}#/{hash_}"
 
 
+def file_for(path):
+    """Landing pages are flat files in learn/ (easy to upload by hand). GitHub Pages serves /learn/x from learn/x.html."""
+    return "learn/index.html" if path == "/learn/" else path.strip("/") + ".html"
+
+
 def write(rel, text):
     p = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)
