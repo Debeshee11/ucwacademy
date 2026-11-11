@@ -35,6 +35,7 @@ exports.startExam = R.https.onCall(async (data, ctx) => {
   const ref = db.collection("attempts").doc();
   await ref.set({ uid, courseId, tier, qids, started: Date.now(), used: false });
   db.doc("stats/day_" + day()).set({ examStarts: FV.increment(1) }, { merge: true }).catch(() => {});
+  db.doc("stats/pop").set({ ["exam__" + courseId]: FV.increment(1) }, { merge: true }).catch(() => {});
   return { attemptId: ref.id, qids };
 });
 
