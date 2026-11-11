@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { mark, COUNT, PASS } = require("../lib/mark");
+const { mark, COUNT, PASS, draw: drawQ } = require("../lib/mark");
 
 const keys = {}, ids = [];
 for (let i = 0; i < 25; i++) { const id = "q" + i; ids.push(id); keys[id] = [i % 4, "because " + i, 4]; }
@@ -27,4 +27,8 @@ assert.throws(() => mark(course, "b", draw(20), right(20).map((a, i) => (i === 0
 const small = { pools: { b: ids.slice(0, 8), i: [], h: [], r: [] }, keys };   /* pool smaller than the draw */
 assert.strictEqual(mark(small, "b", draw(8), right(8)).total, 8);
 assert.strictEqual(COUNT.b, 20); assert.strictEqual(PASS.b, 80);
+/* the server draws: right count, no repeats, all from the pool, prefers questions not seen last time */
+let d = drawQ(ids, "b", [], Math.random); assert.strictEqual(d.length, 20); assert.strictEqual(new Set(d).size, 20); assert(d.every(q => ids.includes(q)));
+const seen = ids.slice(0, 10); d = drawQ(ids, "b", seen, Math.random);
+assert.strictEqual(d.filter(q => seen.includes(q)).length, 5);   /* 15 unseen, need 20: only 5 repeats */
 console.log("exam tests ok");

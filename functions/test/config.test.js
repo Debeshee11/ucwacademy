@@ -1,19 +1,20 @@
-/* The staff list lives in three places. This fails if they drift apart. Also checks pass marks match the browser config. */
+/* Keeps staff addresses out of public files and the domain rule in step. Also checks pass marks match the browser config. */
 const assert = require("assert"), fs = require("fs"), path = require("path");
-const { STAFF, ADMIN_EMAILS } = require("../lib/staff");
+const { STAFF_DOMAIN, ADMIN_EMAILS, isStaffEmail } = require("../lib/staff");
 const { PASS } = require("../lib/mark");
 const root = path.join(__dirname, "..", "..");
 const read = p => fs.readFileSync(path.join(root, p), "utf8");
 const sorted = a => [...new Set(a)].sort();
 
 const rules = read("firestore.rules");
-const listed = rules.match(/function listed\(\)[\s\S]*?\]/)[0].match(/'([^']+@[^']+)'/g).map(s => s.slice(1, -1));
-assert.deepStrictEqual(sorted(listed), sorted(STAFF), "listed() in firestore.rules differs from functions/lib/staff.js");
-
 const cfg = read("one/js/config.js");
-const cstaff = JSON.parse(cfg.match(/export const STAFF = (\[[^\]]*\])/)[1]);
-assert.deepStrictEqual(sorted(cstaff), sorted(STAFF), "STAFF in one/js/config.js differs from functions/lib/staff.js");
-assert.strictEqual(new Set(STAFF).size, STAFF.length, "duplicate staff email");
+/* No individual staff address may sit in the public repository (admin address excepted). */
+const mails = f => (read(f).match(/[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/g) || []).map(x => x.toLowerCase());
+const allowed = new Set([ADMIN_EMAILS[0], "social@uppercrustwealth.com"]);
+for (const f of ["firestore.rules", "one/js/config.js", "functions/lib/staff.js", "functions/index.js", "one/js/team.js"])
+  for (const m of mails(f)) if (m.endsWith("@uppercrustwealth.com") && !allowed.has(m)) assert.fail(`staff address ${m} in ${f}`);
+assert(isStaffEmail("a@uppercrustwealth.com") && !isStaffEmail("a@gmail.com") && !isStaffEmail("a@uppercrustwealth.com.evil.io"));
+assert(rules.includes("uppercrustwealth[.]com") && STAFF_DOMAIN === cfg.match(/STAFF_DOMAIN = "([^"]+)"/)[1], "staff domain differs between rules, config and backend");
 
 const adminRule = rules.match(/function isAdmin\(\)[\s\S]*?\}/)[0].match(/== '([^']+)'/)[1];
 assert.strictEqual(adminRule, ADMIN_EMAILS[0], "isAdmin() differs from ADMIN_EMAILS");
