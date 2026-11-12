@@ -175,6 +175,7 @@ export function coursePage(id) {
     h("p", { class: "small mute" }, "Beginner, Intermediate and Hard. 20 questions each, with a syllabus you can read first."),
     h("div", { class: "row-flex", style: "gap:8px;flex-wrap:wrap" }, TIERS().map(T => h("span", { class: "pill " + (p.exams[T.id]?.passed ? "ok" : "") }, `${T.name}${p.exams[T.id]?.passed ? " · passed" : ""}`))),
     h("a", { class: "btn primary", href: `#/assess/${id}` }, p.examReady ? "Check readiness" : "See the exams"));
+  const put = (...k) => add(body, k);
   function paint() {
     strip.replaceChildren(...TABS.map(([k, t]) => h("button", { role: "tab", "aria-selected": String(tab === k), on: { click: () => { tab = k; paint(); } } }, t)));
     body.replaceChildren();
