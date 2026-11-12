@@ -1,0 +1,37 @@
+COURSE = dict(id="nri-investing-routes", level="practitioner", title="NRI investing: funds, shares, property and deposits", sec="nri", track="nri-basics", topic="NRI", tag="NRI",
+  blurb="The routes an NRI can use to invest in India: mutual funds, shares through PIS, property, deposits, and how money is sent back.",
+  hook="Every NRI rupee needs a route. Pick the wrong account and the money can get stuck in India or taxed more than needed.",
+  fun=["NRE and FCNR deposits are repatriable, while NRO money has a yearly limit on sending abroad.", "NRIs can buy residential and commercial property in India, but not agricultural land or farmhouses."],
+  traps=["Paying for an investment from the wrong account.", "Assuming an NRI can buy any kind of Indian property.", "Forgetting the paperwork needed to send money abroad."],
+  lessons=[
+  dict(title="Mutual funds for NRIs", intro="NRIs can invest in Indian mutual funds, with extra checks on identity and country.", concepts=[
+    ("NRI KYC", "NRI KYC is the identity and address check, including passport, visa and overseas address, needed before investing.", "An NRI submits a passport copy and overseas address proof to a fund house."),
+    ("Payment source", "Payment source means the NRE or NRO account the money comes from, which decides whether proceeds can be sent abroad.", "An NRI pays a SIP from an NRE account so redemption proceeds are repatriable."),
+    ("Country restriction", "A country restriction is a limit some fund houses place on investors living in certain countries because of local regulations.", "A fund house declines applications from investors resident in particular countries."),
+    ("Capital gains TDS", "Capital gains TDS is tax deducted when an NRI redeems fund units, at rates set for non-residents.", "A redemption credit arrives after tax has already been deducted.")],
+    client=("“Can I start a SIP from abroad?”", "A client who wants to invest monthly."), talk="“Yes, if your fund house accepts your country. We will complete NRI KYC and set the SIP from your NRE or NRO account.”", remember=["Complete NRI KYC first.", "The paying account matters.", "Some countries are restricted."]),
+  dict(title="Shares through PIS", intro="An NRI who wants to buy shares on Indian exchanges needs a special bank route.", concepts=[
+    ("PIS account", "A PIS account is an account with an RBI-authorised bank that lets an NRI buy and sell shares on Indian exchanges under the Portfolio Investment Scheme.", "An NRI opens a special bank account before buying listed shares on the exchange."),
+    ("Repatriable route", "The repatriable route is investing through NRE funds so that sale proceeds can be sent abroad.", "An NRI buys shares using money from an NRE account."),
+    ("Non-repatriable route", "The non-repatriable route is investing through NRO funds, where sending proceeds abroad is subject to limits and paperwork.", "An NRI buys shares using rupees from rental income in an NRO account."),
+    ("Holding limit", "A holding limit is a cap on how much of a single company foreign investors, including NRIs, may own together.", "A purchase is blocked because the company has reached its limit.")],
+    client=("“My broker says I cannot buy shares from my NRE account directly.”", "A client confused about the setup."), talk="“You need a PIS account linked to your NRE or NRO account, plus a demat and trading account. Then orders go through the bank for approval.”", remember=["PIS is the bank route.", "NRE route is repatriable.", "Company limits apply."]),
+  dict(title="Buying property", intro="Property is a common NRI goal. The law allows some kinds and rules out others.", concepts=[
+    ("Permitted property", "Permitted property for NRIs includes residential and commercial property in India.", "An NRI buys a flat for his parents."),
+    ("Restricted property", "Restricted property for NRIs includes agricultural land, plantation property and farmhouses, which need special permission or inheritance.", "An NRI cannot freely buy farmland."),
+    ("Rental income TDS", "Rental income TDS is tax deducted by the tenant or payer when rent is paid to an NRI.", "A tenant deducts tax before transferring the rent."),
+    ("Sale proceeds", "Sale proceeds from property sit in an NRO account, and sending them abroad is limited per financial year with documents.", "An NRI sells a flat and moves the money abroad within the yearly limit.")],
+    client=("“Can I buy farmland as an NRI?”", "A client who wants to buy land near the family village."), talk="“Agricultural land and farmhouses are generally not open to NRIs to buy, though you can inherit them. Residential and commercial property is permitted.”", remember=["Residential and commercial are allowed.", "Farmland is restricted.", "Sale money needs repatriation steps."]),
+  dict(title="Deposits and bank accounts", intro="NRIs can keep money in India in different accounts. Each has a job.", concepts=[
+    ("NRE deposit", "An NRE deposit is a rupee deposit made from foreign earnings that is repatriable and whose interest is generally tax free in India.", "An NRI parks savings in an NRE fixed deposit for steady interest."),
+    ("NRO deposit", "An NRO deposit is a rupee deposit for income earned in India, whose interest is taxable and repatriation is limited.", "An NRI keeps rent in an NRO fixed deposit."),
+    ("FCNR deposit", "An FCNR deposit is a deposit held in a foreign currency, so the holder avoids exchange rate risk on the principal.", "An NRI places dollars in a foreign currency deposit in India."),
+    ("Currency risk", "Currency risk is the chance that exchange rate moves change what your rupee money is worth in your home currency.", "A weaker rupee reduces the value of rupee savings when converted back.")],
+    client=("“Which deposit should I choose?”", "A client comparing NRE, NRO and FCNR."), talk="“It depends on the source of money, the currency you want and your plan to move it back. We can compare them side by side for your case.”", remember=["NRE is repatriable.", "NRO is for India income.", "FCNR avoids rupee risk."]),
+  dict(title="Sending money abroad", intro="Bringing money in is easy. Taking it out needs the right route and paperwork.", concepts=[
+    ("Repatriation", "Repatriation is sending money from India to your country of residence.", "An NRI sends sale proceeds to a foreign bank account."),
+    ("NRO yearly limit", "The NRO yearly limit is a cap per financial year on sending NRO funds abroad, subject to conditions and documents.", "An NRI sends funds from the sale of inherited property within the cap."),
+    ("Forms 15CA and 15CB", "Forms 15CA and 15CB are tax declarations and a chartered accountant certificate usually required before the bank sends certain payments abroad.", "A bank asks for these forms before remitting sale proceeds."),
+    ("FEMA", "FEMA is the Foreign Exchange Management Act, the law that governs foreign exchange and cross-border money flows.", "A bank explains that the rules for NRE and NRO accounts come from the foreign exchange law.")],
+    client=("“How do I get my property money abroad?”", "A client who sold a flat."), talk="“The proceeds go to your NRO account first. We then prepare the tax certificates and bank forms and send it within the yearly limit.”", remember=["Use the right account.", "Paperwork is mandatory.", "FEMA sets the rules."]),
+  ])
