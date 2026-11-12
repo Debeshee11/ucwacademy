@@ -1,5 +1,6 @@
 /* Reviews and ratings. Written only here, so stars and notes cannot be forged from the browser.
    Rated areas and tags come from fixed lists. A note is public only after the admin approves it. */
+const { scrub } = require("./scrub");
 const { db, makeR, fail, needAuth, needAdmin } = require("./common");
 
 const R = makeR();
@@ -15,7 +16,7 @@ exports.submitReview = R.https.onCall(async (data, ctx) => {
   const areas = {};
   for (const a of AREAS) { const v = star(data.areas && data.areas[a]); if (v) areas[a] = v; }
   const tags = [...new Set((Array.isArray(data.tags) ? data.tags : []).map(String).filter(t => TAGS.includes(t)))].slice(0, 6);
-  const note = String(data.note || "").replace(/\s+/g, " ").trim().slice(0, 500);
+  const note = scrub(String(data.note || "").replace(/\s+/g, " ").trim()).slice(0, 500);
   const recommend = data.recommend === true ? 1 : data.recommend === false ? 0 : null;
   const ref = db.doc("reviews/" + uid), prev = (await ref.get()).data();
   if (prev && now - (prev.at || 0) < WAIT_MS) fail("resource-exhausted", "Please wait a few seconds before saving again.");

@@ -4,13 +4,15 @@ const IST = 5.5 * 3600e3, DAY = 864e5;
 
 const dayKey = (now, back) => new Date(now + IST - back * DAY).toISOString().slice(0, 10);
 
-function buildRoll(L, prev, now, staff) {
+function buildRoll(L, prev, now, staff, examres) {
   prev = prev || {};
   const done = Object.entries(L.done || {}).filter(([k, t]) => /^\d+$/.test(k) && +k >= 1 && +k <= LESSON_MAX && Number(t) <= now + 60000).length;
   const qpts = Object.values(L.q || {}).reduce((a, e) => a + Math.min(Number(e && e.r) || 0, 50) * 2, 0);
-  const quiz = Object.entries(L.quiz || {}).filter(([, q]) => q && q.passed);
-  const seals = quiz.filter(([k]) => /^x[23]?:/.test(k)).length;
-  let xp = done * 20 + qpts + quiz.length * 30;
+  /* Module quizzes and refreshers are marked in the browser, so they only earn points. Exam passes and seals come from the results the server recorded. */
+  const quiz = Object.entries(L.quiz || {}).filter(([k, q]) => q && q.passed && /^[mr]:/.test(k));
+  const passes = Object.entries(examres || {}).filter(([k, v]) => /:[bih]$/.test(k) && v && v.passed);
+  const seals = passes.length;
+  let xp = done * 20 + qpts + quiz.length * 30 + passes.length * 30;
   const days = Math.max(1, (now - (prev.syncAt || now - DAY)) / DAY);
   const ceil = prev.xp != null ? prev.xp + Math.ceil(days) * DAILY_XP_CAP : FIRST_SYNC_CAP;
   xp = Math.max(prev.xp || 0, Math.min(xp, ceil));

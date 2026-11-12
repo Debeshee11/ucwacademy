@@ -47,7 +47,7 @@ async function checkLevels(uid, name, list) {
   if (!findIn(list, "pro", "pro")) {
     const L = (await db.doc("learners/" + uid).get()).data() || {};
     const labs = Object.keys(L.lab && typeof L.lab === "object" ? L.lab : {}).length;
-    const certs = meta.courses.map(c => findIn(list, "course", c.id));
+    const certs = meta.courses.filter(c => !c.optional).map(c => findIn(list, "course", c.id));
     if (labs >= 5 && certs.every(Boolean)) out.push(await issue(uid, name, list, "pro", "pro", "UpperCrust Certified Professional", "expert", Math.round(certs.reduce((a, c) => a + c.score, 0) / certs.length)));
   }
   return out;
