@@ -7,7 +7,7 @@ Tick every line before opening the Academy to the public.
 - [ ] `CONTACT_EMAIL` in `one/js/config.js` is a mailbox that exists and is watched (default: social@uppercrustwealth.com).
 - [ ] Privacy notice and Terms (`one/js/legal.js`) read by your lawyer or compliance officer. Names a grievance contact.
 - [ ] Compliance has approved the fund pages (risk wording is in `one/js/disclaimer.js`) and the "Certified Professional" wording.
-- [ ] Run `sh scripts/sri.sh` on a computer with internet and paste the output over the CDN `<script>` tags in `index.html`.
+- [x] Firebase and QR scripts are served from `one/vendor/` (same origin), so no outside script host can change them.
 
 ## Firebase console
 - [ ] Authentication > Sign-in method: Phone, Google, Email/Password on. Authorized domains include `ucwacademy.in`.
