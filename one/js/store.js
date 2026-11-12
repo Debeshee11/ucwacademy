@@ -3,7 +3,7 @@ import { RULES, STAFF_DOMAIN } from "./config.js";
 import { track, pop } from "./analytics.js";
 import { db, fns } from "./fb.js";
 import { isoDay, dayMs, pct } from "./dom.js";
-import { mergeStates } from "./merge.js";
+import { mergeStates, toRecord } from "./merge.js";
 
 const blank = () => ({
   v: 1, name: "", mobile: "", mv: 0, kind: "", door: "", age: "", ints: [], prov: "", consent: 0, show: 1, study: {}, nm: {}, onb: 0, lang: "en", start: null,
@@ -76,7 +76,7 @@ export async function flush() {
       const snap = await tx.get(ref), mine = strip(state);
       merged = snap.exists ? mergeStates(clean(snap.data()), clean(mine)) : mine;
       merged.updated = Math.max(merged.updated || 0, Date.now());
-      tx.set(ref, { ...merged, email: email || merged.email || "" });
+      tx.set(ref, toRecord(merged, email));
     });
     if (merged) { const { nm, creds } = state; state = { ...clean(merged), nm, creds }; try { localStorage.setItem(KEY(uid), JSON.stringify(state)); } catch {} emit(); }
     warned = false; syncBoard(false); }

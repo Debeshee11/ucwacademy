@@ -27,3 +27,9 @@ export function mergeStates(x, y) {
   out.updated = Math.max(num(x.updated), num(y.updated));
   return out;
 }
+
+/* What is written to learners/{uid}. Mock results (nm) and credentials (creds) belong to the backend, and the security rules reject any save that carries them. */
+export function toRecord(merged, email) {
+  const { nm, creds, ...rest } = merged || {};
+  return { ...rest, email: email || rest.email || "" };
+}
