@@ -29,5 +29,5 @@ export async function fetchPublic(id) {
 }
 
 export const kindLabel = c => c.kind === "pro" ? "Professional credential" : c.kind === "level" ? "Level credential" : "Course certificate";
-export const levelLabel = c => { const l = level(c.level); return l ? `${l.name} · ${l.alias}` : ""; };
+export const levelLabel = c => { const l = level(c.level); return l ? (l.alias && l.alias !== l.name ? `${l.name} · ${l.alias}` : l.name) : ""; };
 export const verifyUrl = id => `${location.origin}${location.pathname}#/verify/${id}`;

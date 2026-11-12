@@ -1,6 +1,6 @@
 /* Home, Explore, and a single course. */
 import { realmVars } from "./art.js";
-import { h, icon, plural, isoDay, dayMs, toast } from "./dom.js";
+import { h, icon, plural, isoDay, dayMs, toast, add } from "./dom.js";
 import { D, level, course, lesson, partsOf, loadTx, TIERS } from "./data.js";
 import { RULES } from "./config.js";
 import * as Store from "./store.js";
@@ -126,8 +126,9 @@ export function courses() {
   function paint() {
     strip.replaceChildren(...[["courses", "Courses"], ["news", "News & markets"]].map(([k, t]) => h("button", { role: "tab", "aria-selected": String(f.tab === k), on: { click: () => { f.tab = k; paint(); } } }, t)));
     body.replaceChildren();
-    if (f.tab === "courses") { paintCourses(); body.append(h("div", { class: "search" }, icon("search"), search), cont, h("div", { class: "stack stack-s" }, chips), list); }
-    else body.append(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), h("p", { class: "lead mute" }, "What moved markets and funds. Use it to start client conversations."), news.note, news.seg, news.list),
+    const put = (...k) => add(body, k);
+    if (f.tab === "courses") { paintCourses(); put(h("div", { class: "search" }, icon("search"), search), cont, h("div", { class: "stack stack-s" }, chips), list); }
+    else put(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), h("p", { class: "lead mute" }, "What moved markets and funds. Use it to start client conversations."), news.note, news.seg, news.list),
       h("a", { class: "card link row-flex between", href: "#/desk" }, h("div", {}, h("div", { class: "list-title" }, "Teach from the story"), h("div", { class: "small mute" }, "Market Desk turns this week's news into talking points")), chev()));
   }
   paint();
@@ -177,20 +178,20 @@ export function coursePage(id) {
   function paint() {
     strip.replaceChildren(...TABS.map(([k, t]) => h("button", { role: "tab", "aria-selected": String(tab === k), on: { click: () => { tab = k; paint(); } } }, t)));
     body.replaceChildren();
-    if (tab === "overview") body.append(
+    if (tab === "overview") put(
       h("section", { class: "stack" }, h("h2", { class: "h2" }, "How a lesson works"),
         h("ul", { class: "facts" }, [["The big story", " from this week's markets"], ["Concept", " in plain language"], ["Think like a client", " before you answer"], ["Questions", " that explain every option"], ["Client conversation", " talk track"], ["Remember", " one line to keep"]].map(([b, t]) => h("li", {}, h("b", {}, b), t)))),
       h("section", { class: "stack" }, h("h2", { class: "h2" }, "Skills you will gain"), h("div", { class: "chips" }, skillsOf(c).map(t => h("span", { class: "pill" }, t)))),
       nextCourse ? h("a", { class: "card link row-flex between", href: `#/course/${nextCourse.id}` }, h("div", {}, h("div", { class: "eyebrow" }, "Next up after this"), h("div", { class: "list-title" }, nextCourse.title), h("div", { class: "small mute" }, `${level(nextCourse.level).name} · ${nextCourse.lessons.length} lessons`)), chev()) : null);
-    if (tab === "syllabus") body.append(...modules(), examBlock());
-    if (tab === "quizzes") body.append(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Module quizzes"), h("div", { class: "divide" }, c.modules.map((m, mi) => quizRow(mi, s.quiz[`m:${id}:${mi}`], m.lessons.every(n => s.done[n]))))),
+    if (tab === "syllabus") put(...modules(), examBlock());
+    if (tab === "quizzes") put(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Module quizzes"), h("div", { class: "divide" }, c.modules.map((m, mi) => quizRow(mi, s.quiz[`m:${id}:${mi}`], m.lessons.every(n => s.done[n]))))),
       h("section", { class: "stack" }, h("h2", { class: "h2" }, "Three exams, one syllabus each"), examBlock()),
       h("p", { class: "small mute" }, "Every wrong answer comes with the reason it is wrong. Missed questions come back in your revision queue."));
-    if (tab === "certificate") body.append(
+    if (tab === "certificate") put(
       h("div", { class: "cert-mini" }, h("div", { class: "stack stack-xs" }, h("div", { class: "eyebrow" }, "Course certificate"), h("div", { class: "serif", style: "font-size:28px;font-style:italic" }, s.name || "Your name"), h("div", { class: "small mute" }, c.title))),
-      h("ul", { class: "facts" }, h("li", {}, "Pass each module quiz at 70%, then the Beginner exam at 80% to earn the certificate. Intermediate and Hard exams show how far you can go."), h("li", {}, "Valid 12 months. A 15-question refresher renews it."), h("li", {}, "Verified by link and QR code. Add it to LinkedIn.")),
+      h("ul", { class: "facts" }, h("li", {}, "Pass the Beginner exam at 80% to earn the certificate. Module quizzes are the best way to prepare. Intermediate and Hard exams open one after another."), h("li", {}, "Valid 12 months. A 15-question refresher renews it."), h("li", {}, "Verified by link and QR code. Add it to LinkedIn.")),
       cred ? h("a", { class: "btn primary", style: "align-self:flex-start", href: `#/cert/${cred.id}` }, "View your certificate") : null);
-    if (tab === "skills") body.append(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Skills this course verifies"), h("div", { class: "chips" }, skillsOf(c).map(t => h("span", { class: "pill" }, t)))));
+    if (tab === "skills") put(h("section", { class: "stack" }, h("h2", { class: "h2" }, "Skills this course verifies"), h("div", { class: "chips" }, skillsOf(c).map(t => h("span", { class: "pill" }, t)))));
   }
   paint();
 

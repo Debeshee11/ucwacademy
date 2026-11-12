@@ -6,14 +6,15 @@ export const AGES = [["u18", "Under 18"], ["18-25", "18 to 25"], ["26-40", "26 t
 
 /* sec = subject areas, ids = specific courses that fit the interest */
 export const INTS = [
-  { id: "save", name: "Save and budget", sec: ["basics"], ids: ["budgeting-emergency-fund", "loans-credit-scores"] },
+  { id: "save", name: "Save and budget", sec: ["basics"], ids: ["budgeting-emergency-fund", "loans-credit-scores", "scam-safety"] },
   { id: "grow", name: "Mutual funds and SIPs", sec: ["mf"], ids: ["mf-foundations", "sip-planning", "equity-funds"] },
-  { id: "stocks", name: "Stock market", sec: ["stocks"], ids: ["stock-basics", "company-fundamentals"] },
-  { id: "gold", name: "Gold and real assets", sec: ["assets"], ids: ["gold-asset", "gold-silver", "reit-invit"] },
-  { id: "insure", name: "Insurance and protection", sec: [], ids: ["term-life-insurance", "health-insurance-basics"] },
-  { id: "tax", name: "Tax and retirement", sec: [], ids: ["tax-retirement"] },
+  { id: "stocks", name: "Stock market", sec: ["stocks"], ids: ["stock-basics", "company-fundamentals", "ipo-investing"] },
+  { id: "gold", name: "Gold and real assets", sec: ["assets"], ids: ["gold-asset", "gold-silver", "reit-invit", "bonds-gsecs"] },
+  { id: "insure", name: "Insurance and protection", sec: [], ids: ["term-life-insurance", "health-insurance-basics", "general-insurance"] },
+  { id: "tax", name: "Tax and retirement", sec: [], ids: ["tax-retirement", "tax-on-investments", "retirement-epf-ppf-nps"] },
   { id: "nism", name: "NISM exams and a career", sec: [], ids: ["regulation", "financial-maths", "fund-analysis"] },
-  { id: "nri", name: "Money abroad (NRI)", sec: ["nri"], ids: ["nri-banking-investing"] }
+  { id: "nri", name: "Money abroad (NRI)", sec: ["nri"], ids: ["nri-banking-investing", "nri-tax-residency", "nri-investing-routes", "global-investing"] },
+  { id: "legacy", name: "Family wealth and legacy", sec: [], ids: ["wealth-succession"] }
 ];
 
 /* What to do first, by age. Plain advice for learning, not investment advice. */
@@ -25,11 +26,11 @@ export const AGE_TIP = {
   "60+": "Focus on steady income, health cover, tax on withdrawals, and passing wealth on in a simple way."
 };
 const AGE_IDS = {
-  "u18": ["budgeting-emergency-fund", "loans-credit-scores", "stock-basics"],
-  "18-25": ["budgeting-emergency-fund", "sip-planning", "mf-foundations", "term-life-insurance"],
-  "26-40": ["term-life-insurance", "health-insurance-basics", "sip-planning", "tax-retirement"],
-  "41-60": ["tax-retirement", "health-insurance-basics", "debt-funds", "multi-asset"],
-  "60+": ["tax-retirement", "health-insurance-basics", "debt-funds", "gold-asset"]
+  "u18": ["budgeting-emergency-fund", "scam-safety", "loans-credit-scores", "stock-basics"],
+  "18-25": ["budgeting-emergency-fund", "scam-safety", "sip-planning", "mf-foundations", "term-life-insurance"],
+  "26-40": ["term-life-insurance", "health-insurance-basics", "general-insurance", "sip-planning", "tax-retirement"],
+  "41-60": ["tax-retirement", "retirement-epf-ppf-nps", "wealth-succession", "health-insurance-basics", "debt-funds", "multi-asset"],
+  "60+": ["tax-retirement", "wealth-succession", "bonds-gsecs", "health-insurance-basics", "debt-funds", "gold-asset"]
 };
 
 /* Stable re-order: interests count most, then age, then the order the door already gave. */

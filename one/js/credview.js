@@ -9,6 +9,11 @@ import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { questionById } from "./quiz.js";
 import { page, widePage, notFound, bar } from "./ui.js";
+import { seal, ring } from "./certseal.js";
+import { cheer } from "./cheer.js";
+import { nick, grade, brag } from "./certcopy.js";
+import { sharePanel } from "./sharepanel.js";
+import { titleShelf } from "./titleshelf.js";
 
 const stand = c => { const s = Creds.standing(c); return s === "valid" ? h("span", { class: "pill ok" }, "Valid") : s === "soon" ? h("span", { class: "pill gold" }, "Expires soon") : h("span", { class: "pill" }, "Expired"); };
 
@@ -41,6 +46,7 @@ export function me() {
         h("div", {}, icon("award", 22), h("b", {}, creds.length), h("span", {}, "earned")),
         m != null ? h("div", {}, icon("check", 22), h("b", {}, m + "%"), h("span", {}, "first-try accuracy")) : null),
       h("a", { class: "btn ghost sm", href: "#/board" }, "Leaderboard")),
+    titleShelf(),
     ledger(),
     masteryMap(),
     h("section", { class: "stack" },
@@ -50,7 +56,7 @@ export function me() {
         stand(c), Creds.standing(c) !== "valid" && c.kind === "course" ? h("a", { class: "btn ghost", style: "height:38px;padding:0 16px", href: `#/quiz/refresh/${c.key}` }, "Renew") : null)))
         : h("div", { class: "card tint stack stack-s" }, h("h2", { class: "h2" }, "None yet."), h("p", {}, "Pass a course exam to earn your first certificate. Each one is valid for 12 months and can be verified by anyone with the link."))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Three kinds of credential"),
-      h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass each module quiz at 70%, then the Beginner exam at 80%. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
+      h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass the Beginner exam at 80%. Module quizzes help you prepare. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
     settingsCard(),
     open.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Still to earn"),
       h("div", { class: "divide" }, open.map(c => { const p = Store.courseProgress(c); return h("a", { class: "list-row", href: `#/course/${c.id}` },
@@ -63,34 +69,35 @@ function qrNode(id) {
   try { const q = qrcode(0, "M"); q.addData(Creds.verifyUrl(id)); q.make(); box.innerHTML = q.createSvgTag({ cellSize: 3, margin: 0, scalable: true }); } catch { box.hidden = true; }
   return box;
 }
-function sheet(c, extra) {
+function sheet(c, mine) {
   const lv = level(c.level), cr = c.kind === "course" && c.key ? course(c.key) : null;
   const what = c.kind === "pro" ? "demonstrated mastery across the full UpperCrust Academy curriculum" : c.kind === "level" ? `completed every ${lv.name} course in the UpperCrust Academy curriculum` : "successfully completed the course and passed the Beginner assessment in";
   const write = c.kind === "course"
     ? `${cr ? cr.blurb + " " : ""}The holder completed every lesson and module quiz and passed the course assessment with a score of ${c.score}%, meeting the Academy’s standard for knowledge, accuracy and responsible communication.`
     : `The holder met the Academy’s standard across every course in this programme, with an average assessment score of ${c.score}%.`;
   const skills = cr ? skillsOf(cr).slice(0, 6) : [];
-  return h("div", { class: "cert-sheet" }, h("div", { class: "cert-in" },
+  return h("div", { class: "cert-sheet", "data-lv": c.kind === "pro" ? "pro" : c.level || "practitioner" }, h("div", { class: "cert-in" },
+    ...["tl", "tr", "bl", "br"].map(k => h("i", { class: "cert-orn " + k, "aria-hidden": "true" })),
     h("div", { class: "cert-top" }, h("img", { src: "assets/logo-gold.svg", alt: ORG, style: "height:38px" }), h("div", { class: "cert-acad" }, "Academy")),
     h("div", { class: "cert-rule" }),
     h("div", { class: "cert-kind" }, Creds.kindLabel(c)),
     h("p", { class: "cert-lead" }, "This is to certify that"),
     h("div", { class: "cert-name" }, c.name || Store.get().name || "Learner"),
+    h("div", { class: "cert-nick" }, h("span", {}, "Achievement unlocked"), h("b", {}, nick(c) + (grade(c.score) ? " · " + grade(c.score) : ""))),
     h("p", { class: "cert-lead" }, `has ${what}`),
     h("h2", { class: "cert-title" }, c.title),
-    h("p", { class: "cert-lv" }, `${Creds.levelLabel(c)} · Score ${c.score}%`),
+    h("p", { class: "cert-lv" }, Creds.levelLabel(c)),
+    h("div", { class: "cert-score" }, ring(Number(c.score) || 0), h("div", {}, h("b", {}, "Assessment score"), h("span", {}, Number(c.score) >= 90 ? "Distinction" : Number(c.score) >= 80 ? "Merit" : "Pass"))),
     h("p", { class: "cert-write" }, write),
+    mine ? h("p", { class: "cert-brag" }, brag(c, { lessons: Object.keys(Store.get().done).length, streak: Store.streakNow() })) : null,
     skills.length ? h("div", { class: "cert-skills" }, h("b", {}, "Skills verified"), skills.join("  ·  ")) : null,
-    h("div", { class: "cert-foot" },
-      h("div", { class: "sig" }, h("div", { class: "sigline" }), h("b", {}, "Head of Learning"), h("span", {}, ORG + " Academy")),
-      h("div", { class: "cert-seal", "aria-hidden": "true" }, "UC"),
-      h("div", { class: "sig" }, h("div", { class: "sigline" }), h("b", {}, "Programme Director"), h("span", {}, ORG))),
+    h("div", { class: "cert-foot" }, h("div", { class: "cert-seal" }, seal(c.kind === "pro" ? "Professional" : (lv && lv.name) || "Academy"))),
     h("div", { class: "cert-meta" },
       h("div", {}, h("span", {}, "Issued"), h("b", {}, fmtDate(c.issued)), h("span", {}, "Valid until"), h("b", {}, fmtDate(c.until))),
       h("div", { style: "text-align:center" }, h("span", {}, "Credential ID"), h("b", {}, c.id)),
       h("div", { style: "display:flex;gap:10px;align-items:center" }, h("div", { class: "tiny mute", style: "text-align:right" }, "Scan to verify", h("br"), "authenticity"), qrNode(c.id))),
     h("p", { class: "cert-fine" }, `Issued by ${ORG} Academy, the learning arm of ${ORG}. Authenticity can be confirmed online using the credential ID or QR code. This certificate is educational and is not investment advice or a regulatory licence.`)),
-    extra);
+    null);
 }
 
 const linkedin = (c, url) => { const d = new Date(c.issued), e = new Date(c.until); return "https://www.linkedin.com/profile/add?" + new URLSearchParams({ startTask: "CERTIFICATION_NAME", name: c.title, organizationName: ORG, issueYear: d.getFullYear(), issueMonth: d.getMonth() + 1, expirationYear: e.getFullYear(), expirationMonth: e.getMonth() + 1, certUrl: url, certId: c.id }); };
@@ -98,16 +105,17 @@ const linkedin = (c, url) => { const d = new Date(c.issued), e = new Date(c.unti
 export function cert(id) {
   const c = Store.get().creds[id];
   if (!c) return notFound("That credential is not in your account.");
-  const url = Creds.verifyUrl(id);
+  const url = Creds.verifyUrl(id), nm = Store.get().name;
+  if (!sessionStorage.getItem("cheer:" + id)) { try { sessionStorage.setItem("cheer:" + id, "1"); } catch {} setTimeout(() => cheer("Credential earned", 40), 500); }
   return page(
     h("a", { class: "small mute no-print", href: "#/me", style: "display:inline-flex;gap:6px;align-items:center" }, icon("left", 16), "Credentials"),
-    sheet({ ...c, name: Store.get().name }),
+    sheet({ ...c, name: Store.get().name }, true),
     h("div", { class: "row-flex no-print", style: "justify-content:center" },
       h("button", { class: "btn primary", on: { click: () => print() } }, icon("print", 18), "Print or save as PDF"),
       h("button", { class: "btn ghost", on: { click: async () => { try { await navigator.clipboard.writeText(url); toast("Verification link copied"); } catch { prompt("Copy this link", url); } } } }, icon("link", 18), "Copy verification link"),
       h("a", { class: "btn ghost", target: "_blank", rel: "noopener", href: linkedin(c, url) }, "Add to LinkedIn"),
-      h("a", { class: "btn wa", target: "_blank", rel: "noopener", href: "https://wa.me/?text=" + encodeURIComponent(`I earned "${c.title}" from UpperCrust Academy. Verify it here: ${url}`) }, "Share on WhatsApp"),
       stand(c)),
+    sharePanel(c, nm, url),
     c.kind === "course" && course(c.key) ? h("section", { class: "stack no-print" }, h("h2", { class: "h2" }, "Skills verified"), h("div", { class: "chips" }, skillsOf(course(c.key)).map(t => h("span", { class: "pill" }, t)))) : null,
     h("section", { class: "card tint stack stack-s no-print" }, h("h3", { class: "h3" }, "Why it expires"), h("p", { class: "small" }, "Rules, rates and data change. A 15-question refresher before the date keeps your credential current and your advice accurate.")),
     h("p", { class: "small mute no-print", style: "text-align:center" }, "Anyone with the link can confirm this credential. It shows your name, the title and the dates, nothing else."));
