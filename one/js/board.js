@@ -3,12 +3,21 @@ import { h } from "./dom.js";
 import * as Store from "./store.js";
 import { page } from "./ui.js";
 import { standing, podium, row } from "./boardview.js";
+import { rebuildButton } from "./boardadmin.js";
 
 const METRICS = { wk: ["This week", "lessons"], xp: ["All time", "points"], seals: ["Seals", "seals"] };
+
+/* A weekly count is only valid for 7 days after it was saved. Add up the saved days again so old weeks do not linger. */
+const fresh = r => {
+  if (!r.wkd) return { ...r, wk: Date.now() - (r.updated || 0) > 7 * 864e5 ? 0 : r.wk || 0 };
+  const from = new Date(Date.now() + 5.5 * 3600e3 - 6 * 864e5).toISOString().slice(0, 10);
+  return { ...r, wk: Object.entries(r.wkd).reduce((a, [d, n]) => a + (d >= from ? Number(n) || 0 : 0), 0) };
+};
 
 export function board() {
   const staff = Store.isStaff(), me = Store.userId();
   let rows = [], team = [], scope = "all", by = "wk";
+  let load;
   const host = h("div", { class: "stack stack-l" }, h("p", { class: "mute" }, "Loading…"));
   const scopes = [["all", "Everyone"], ["door", "People like me"], ...(staff ? [["team", "UpperCrust team"]] : [])];
 
@@ -31,8 +40,9 @@ export function board() {
         pos >= 0 ? h("button", { class: "btn ghost block", type: "button", on: { click: () => document.getElementById("lb-me-row")?.scrollIntoView({ behavior: "smooth", block: "center" }) } }, "Jump to my row") : null]
       : h("div", { class: "lb-empty" }, h("b", {}, "Nobody here yet"), h("p", { class: "mute" }, "Finish a lesson and take the first place."))].flat(Infinity).filter(Boolean));
   }
-  Store.flush().catch(() => {}).then(() => Store.syncBoard(true)).catch(() => {}).then(() => Promise.all([Store.loadRoll(), staff ? Store.loadBoard().catch(() => []) : []]))
-    .then(([r, t]) => { rows = r; team = t; paint(); })
+  load = () => Store.flush().catch(() => {}).then(() => Store.syncBoard(true)).catch(() => {}).then(() => Promise.all([Store.loadRoll(), staff ? Store.loadBoard().catch(() => []) : []]))
+    .then(([r, t]) => { rows = r.map(fresh); team = t; paint(); })
     .catch(() => host.replaceChildren(h("p", { class: "error" }, "Could not load the leaderboard. Check your connection and try again.")));
-  return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Leaderboard"), h("p", { class: "lead mute" }, "Climb from Observer to Partner. 20 points a lesson, 2 a right answer, 30 a quiz or exam passed.")), host);
+  load();
+  return page(h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Leaderboard"), h("p", { class: "lead mute" }, "Climb from Observer to Partner. 20 points a lesson, 2 a right answer, 30 a quiz or exam passed.")), host, rebuildButton(() => load()));
 }
