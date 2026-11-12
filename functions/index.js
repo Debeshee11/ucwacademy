@@ -3,6 +3,7 @@
 const { functions, admin, db, FV, makeR, fail, needAuth, needAdmin, day } = require("./lib/common");
 const { validAnswers, score, foldRecord } = require("./lib/score");
 const { isStaffEmail, roster } = require("./lib/staff");
+const { buildRoll } = require("./lib/roll");
 
 const R = makeR();
 const EXAM_ID = /^nism-[a-z]+(?:-[a-z]+)?$/;
@@ -147,7 +148,6 @@ exports.staffList = R.https.onCall(async (data, ctx) => { needAdmin(ctx); return
 /* ——— leaderboard ——— */
 /* The Roll and the staff board are written here, never from the browser. Points are recomputed from the learner's record
    and the growth is capped per day, so an edited record cannot jump to the top. */
-const LESSON_MAX = 700, DAILY_XP_CAP = 800, FIRST_SYNC_CAP = 3000, WEEK_LESSON_CAP = 60;
 exports.syncBoard = R.https.onCall(async (data, ctx) => {
   const uid = needAuth(ctx);
   const email = String(ctx.auth.token.email || "").toLowerCase();
@@ -156,25 +156,30 @@ exports.syncBoard = R.https.onCall(async (data, ctx) => {
   const L = snap.data(), now = Date.now();
   const rollRef = db.doc("roll/" + uid), prev = (await rollRef.get()).data() || {};
   if (now - (prev.syncAt || 0) < 20000) return { ok: true, skipped: true };
-
   if (L.show === 0) { await rollRef.delete().catch(() => {}); await db.doc("board/" + uid).delete().catch(() => {}); return { ok: true, hidden: true }; }
-
-  const done = Object.entries(L.done || {}).filter(([k, t]) => /^\d+$/.test(k) && +k >= 1 && +k <= LESSON_MAX && Number(t) <= now + 60000).length;
-  const qpts = Object.values(L.q || {}).reduce((a, e) => a + Math.min(Number(e && e.r) || 0, 50) * 2, 0);
-  const quiz = Object.entries(L.quiz || {}).filter(([, q]) => q && q.passed);
-  const seals = quiz.filter(([k]) => /^x[23]?:/.test(k)).length;
-  let xp = done * 20 + qpts + quiz.length * 30;
-  const days = Math.max(1, (now - (prev.syncAt || now - 864e5)) / 864e5);
-  const ceil = prev.xp != null ? prev.xp + Math.ceil(days) * DAILY_XP_CAP : FIRST_SYNC_CAP;
-  xp = Math.max(prev.xp || 0, Math.min(xp, ceil));
-
-  let wk = 0; for (let i = 0; i < 7; i++) { const k = new Date(now + 5.5 * 3600e3 - i * 864e5).toISOString().slice(0, 10); wk += Math.min(Number(L.act && L.act[k] && L.act[k].l) || 0, 40); }
-  wk = Math.min(wk, WEEK_LESSON_CAP);
-  const streak = Math.min(Number(L.streak && L.streak.n) || 0, Math.ceil((now - (L.created || now)) / 864e5) + 1);
-  const parts = String(L.name || "").trim().split(/\s+/), name = (parts.length > 1 ? parts[0] + " " + parts[parts.length - 1][0].toUpperCase() + "." : parts[0] || "Learner").slice(0, 40);
   const staff = ctx.auth.token.email_verified === true && isStaffEmail(email);
+  const r = buildRoll(L, prev, now, staff);
+  await rollRef.set(r);
+  if (staff) await db.doc("board/" + uid).set({ name: String(L.name || r.name).slice(0, 60), email, xp: r.xp, wk: r.wk, streak: r.streak, lessons: r.lessons, updated: r.updated });
+  return { ok: true, xp: r.xp };
+});
 
-  await rollRef.set({ name, door: String(L.door || "").slice(0, 20), kind: staff ? "staff" : "public", xp, wk, streak, lessons: done, seals, updated: now, syncAt: now });
-  if (staff) await db.doc("board/" + uid).set({ name: String(L.name || name).slice(0, 60), email, xp, wk, streak, lessons: done, updated: now });
-  return { ok: true, xp };
+/* Admin: put every learner who has not opted out onto the Roll, including people who have not opened the app since the board launched. */
+exports.rebuildRoll = makeR({ timeoutSeconds: 300, memory: "512MB" }).https.onCall(async (data, ctx) => {
+  needAdmin(ctx);
+  const now = Date.now(); let added = 0, hidden = 0, empty = 0;
+  const snap = await db.collection("learners").get();
+  for (const d of snap.docs) {
+    const L = d.data(), ref = db.doc("roll/" + d.id);
+    if (L.show === 0) { await ref.delete().catch(() => {}); hidden++; continue; }
+    if (!L.name) { empty++; continue; }
+    let email = "", verified = false;
+    try { const u = await admin.auth().getUser(d.id); email = String(u.email || "").toLowerCase(); verified = u.emailVerified === true; } catch (e) { /* account gone */ continue; }
+    const prev = (await ref.get()).data() || {};
+    const staff = verified && isStaffEmail(email);
+    const r = buildRoll(L, prev, now, staff);
+    await ref.set(r); added++;
+    if (staff) await db.doc("board/" + d.id).set({ name: String(L.name).slice(0, 60), email, xp: r.xp, wk: r.wk, streak: r.streak, lessons: r.lessons, updated: r.updated });
+  }
+  return { ok: true, added, hidden, noName: empty, total: snap.size };
 });
