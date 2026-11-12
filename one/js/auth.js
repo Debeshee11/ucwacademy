@@ -13,6 +13,7 @@ import { CONTACT_EMAIL } from "./config.js";
 import { countryPicker, joinNumber } from "./countries.js";
 import { aboutYou } from "./guide.js";
 import { reportError } from "./monitor.js";
+import { safePersist, autoOtp } from "./authkit.js";
 import { gisReady, preloadGis, gisCredential } from "./googlesignin.js";
 import { needsVerify, sendCode, confirmCode, verifyError } from "./mobileverify.js";
 
@@ -112,7 +113,7 @@ function mount(a, startMsg) {
       if (inApp()) return fail("Google sign-in does not work inside this app. Use the buttons at the top to open in your browser, or sign in with mobile number or email.");
       const p = new firebase.auth.GoogleAuthProvider(); p.setCustomParameters({ prompt: "select_account" });
       try {
-        await a.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+        await safePersist(a, true);
         let r;
         if (gisReady() && window.google?.accounts?.oauth2) {
           try { r = await a.signInWithCredential(await gisCredential()); }
@@ -178,6 +179,7 @@ function mount(a, startMsg) {
             } catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; if (/code-expired|session-expired/.test(e?.code || "")) { confirmation = null; } err.textContent = errMsg(e); if (!confirmation) show(); }
           } } }, h("p", { class: "mute" }, `Code sent to ${sentTo.replace(/^\+91/, "+91 ")}.`), fc, err, ok,
           h("div", { class: "lg-alt" }, resend, h("button", { type: "button", class: "link small", on: { click: () => { confirmation = null; err.textContent = ""; show(); } } }, "Change number"))));
+          autoOtp(code, wrap.querySelector("form"));
           setTimeout(() => code.focus());
         }
       };
@@ -190,7 +192,7 @@ function mount(a, startMsg) {
       const err = h("p", { class: "error", role: "alert" }, startMsg || "");
       const keep = h("input", { type: "checkbox", id: "keep", checked: true });
       const keepRow = h("label", { class: "row-flex small mute", for: "keep", style: "gap:10px" }, keep, "Keep me signed in");
-      const persistFn = () => a.setPersistence(keep.checked ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION);
+      const persistFn = () => safePersist(a, keep.checked);
       persist = persistFn;
       const fail = m => { err.textContent = m; };
       const setBusy = (_, m) => fail(m || "");

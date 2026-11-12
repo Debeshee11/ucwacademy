@@ -8,12 +8,15 @@ const IGNORE = /ResizeObserver|Script error|Non-Error promise rejection|cancelle
 const seen = new Set();
 let sent = 0;
 
+/* Error text can echo what a person typed. Mask emails and phone numbers before sending. */
+const scrub = t => String(t || "").replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[email]").replace(/(?:\+?\d[\s().-]?){9,15}\d/g, "[number]");
+
 function report(m, s) {
   try {
-    const msg = String(m || "").trim(), d = db(), uid = Store.userId();
+    const msg = scrub(String(m || "").trim()), d = db(), uid = Store.userId();
     if (!msg || IGNORE.test(msg) || !d || !uid || sent >= 5 || seen.has(msg.slice(0, 80))) return;
     seen.add(msg.slice(0, 80)); sent++;
-    d.collection("errors").add({ m: msg.slice(0, 300), s: String(s || "").slice(0, 1200), u: String(location.hash || "#/").slice(0, 200), t: Date.now(), uid, v: BUILD }).catch(() => {});
+    d.collection("errors").add({ m: msg.slice(0, 300), s: scrub(s).slice(0, 1200), u: String(location.hash || "#/").slice(0, 200), t: Date.now(), uid, v: BUILD }).catch(() => {});
   } catch {}
 }
 
