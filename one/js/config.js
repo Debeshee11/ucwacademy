@@ -10,6 +10,9 @@ export const FIREBASE = {
   appId: "1:125615394980:web:d946bbaed518d266ba5631"
 };
 
+/* Google sign-in client. Firebase Console > Authentication > Sign-in method > Google > Web SDK configuration > "Web client ID". Paste it here. Leave empty to use the older popup. */
+export const GOOGLE_CLIENT_ID = "";
+
 /* The one account that can open the Team view. Must match isAdmin() in firestore.rules. */
 export const ADMIN_EMAIL = "admin@uppercrustwealth.com";
 

@@ -13,12 +13,14 @@ import { CONTACT_EMAIL } from "./config.js";
 import { countryPicker, joinNumber } from "./countries.js";
 import { aboutYou } from "./guide.js";
 import { reportError } from "./monitor.js";
+import { gisReady, preloadGis, gisCredential } from "./googlesignin.js";
 import { needsVerify, sendCode, confirmCode, verifyError } from "./mobileverify.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
 
 /* Resolves with the signed-in user. Resolves at once when a session is restored. */
 export function start() {
+  preloadGis();
   return new Promise(resolve => {
     const a = auth();
     if (!a) return resolve(mount(null, "The sign-in service could not be loaded. Check your connection and reload."));
@@ -106,11 +108,19 @@ function mount(a, startMsg) {
 
     async function google(fail) {
       if (!a) return;
+      preloadGis();
       if (inApp()) return fail("Google sign-in does not work inside this app. Use the buttons at the top to open in your browser, or sign in with mobile number or email.");
       const p = new firebase.auth.GoogleAuthProvider(); p.setCustomParameters({ prompt: "select_account" });
       try {
         await a.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-        const r = await a.signInWithPopup(p);
+        let r;
+        if (gisReady() && window.google?.accounts?.oauth2) {
+          try { r = await a.signInWithCredential(await gisCredential()); }
+          catch (e) {
+            if (/popup_closed|popup_failed_to_open|access_denied|gis\/(popup|access)/i.test(e?.code || "")) return fail(/closed|denied/i.test(e.code) ? "" : "Your browser blocked the Google window. Allow pop-ups for this site and try again, or sign in with mobile number or email.");
+            throw e;
+          }
+        } else r = await a.signInWithPopup(p);
         if (r.additionalUserInfo?.isNewUser && r.user.displayName) pending = { name: r.user.displayName };
         finish(r.user);
       } catch (e) {
