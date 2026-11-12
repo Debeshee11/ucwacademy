@@ -5,7 +5,7 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["index.html", "one/**", "assets/**", "learn/**", "sitemap.xml", "robots.txt", "CNAME", ".github/workflows/pages.yml"]
+    paths: ["index.html", "one/**", "scripts/stamp.py", "assets/**", "learn/**", "sitemap.xml", "robots.txt", "CNAME", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -29,6 +29,7 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html one assets learn sitemap.xml robots.txt CNAME _site/
+          python3 scripts/stamp.py _site "$GITHUB_SHA"
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
