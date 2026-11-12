@@ -1,7 +1,7 @@
 /* Leaderboard and Review pages. Loaded last, uses its own class names (lb-, rv-) so older layers cannot interfere. */
 .lb-av { --hu: 30; width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; font: 800 16px var(--display); color: #fff;
   background: linear-gradient(145deg, hsl(var(--hu) 70% 52%), hsl(calc(var(--hu) + 25) 70% 40%)); border: 2px solid #fff; box-shadow: 0 0 0 2px hsl(var(--hu) 60% 78%); }
-.lb-av.lg { width: 56px; height: 56px; font-size: 24px; } .lb-av.xl { width: 64px; height: 64px; font-size: 28px; }
+.lb-av.big { width: 56px; height: 56px; font-size: 24px; } .lb-av.xl { width: 64px; height: 64px; font-size: 28px; }
 .lb-eyebrow { font: 800 12px var(--font); letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
 .lb-prog { height: 12px; border-radius: 99px; background: rgba(255, 255, 255, .22); overflow: hidden; }
 .lb-prog > i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #FFD36B, #FFB703); transition: width .6s cubic-bezier(.2, .8, .2, 1); }
@@ -35,13 +35,13 @@
 .p1 .lb-block { min-height: 150px; background: linear-gradient(180deg, #FFC531, #C98600); }
 .p2 .lb-block { min-height: 116px; background: linear-gradient(180deg, #B9C2CE, #7C8794); }
 .p3 .lb-block { min-height: 92px; background: linear-gradient(180deg, #D79A63, #9A5F2E); }
-.lb-step.me .lb-av { box-shadow: 0 0 0 3px var(--gold); }
+.lb-step.is-me .lb-av { box-shadow: 0 0 0 3px var(--gold); }
 @keyframes lbfloat { 50% { transform: translateY(-5px); } }
 
 /* list */
 .lb-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .lb-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 2px solid var(--line); border-bottom-width: 4px; border-radius: 18px; background: #fff; }
-.lb-row.me { background: var(--gold-tint); border-color: var(--gold-d); }
+.lb-row.is-me { background: var(--gold-tint); border-color: var(--gold-d); }
 .lb-rk { width: 28px; text-align: center; font: 800 17px var(--display); color: var(--mute); }
 .lb-name { font-weight: 800; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .lb-bar { height: 6px; border-radius: 99px; background: var(--soft); margin-top: 6px; overflow: hidden; } .lb-bar > i { display: block; height: 100%; background: var(--gold); border-radius: 99px; }
