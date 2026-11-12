@@ -147,7 +147,7 @@ exports.staffList = R.https.onCall(async (data, ctx) => { needAdmin(ctx); return
 /* ——— leaderboard ——— */
 /* The Roll and the staff board are written here, never from the browser. Points are recomputed from the learner's record
    and the growth is capped per day, so an edited record cannot jump to the top. */
-const LESSON_MAX = 400, DAILY_XP_CAP = 800, FIRST_SYNC_CAP = 3000, WEEK_LESSON_CAP = 60;
+const LESSON_MAX = 700, DAILY_XP_CAP = 800, FIRST_SYNC_CAP = 3000, WEEK_LESSON_CAP = 60;
 exports.syncBoard = R.https.onCall(async (data, ctx) => {
   const uid = needAuth(ctx);
   const email = String(ctx.auth.token.email || "").toLowerCase();
