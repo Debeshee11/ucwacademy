@@ -158,7 +158,8 @@ exports.syncBoard = R.https.onCall(async (data, ctx) => {
   if (now - (prev.syncAt || 0) < 20000) return { ok: true, skipped: true };
   if (L.show === 0) { await rollRef.delete().catch(() => {}); await db.doc("board/" + uid).delete().catch(() => {}); return { ok: true, hidden: true }; }
   const staff = ctx.auth.token.email_verified === true && isStaffEmail(email);
-  const r = buildRoll(L, prev, now, staff);
+  const examres = (await db.doc("examres/" + uid).get()).data() || {};
+  const r = buildRoll(L, prev, now, staff, examres);
   await rollRef.set(r);
   if (staff) await db.doc("board/" + uid).set({ name: String(L.name || r.name).slice(0, 60), email, xp: r.xp, wk: r.wk, streak: r.streak, lessons: r.lessons, updated: r.updated });
   return { ok: true, xp: r.xp };
@@ -177,7 +178,8 @@ exports.rebuildRoll = makeR({ timeoutSeconds: 300, memory: "512MB" }).https.onCa
     try { const u = await admin.auth().getUser(d.id); email = String(u.email || "").toLowerCase(); verified = u.emailVerified === true; } catch (e) { /* account gone */ continue; }
     const prev = (await ref.get()).data() || {};
     const staff = verified && isStaffEmail(email);
-    const r = buildRoll(L, prev, now, staff);
+    const examres = (await db.doc("examres/" + d.id).get()).data() || {};
+    const r = buildRoll(L, prev, now, staff, examres);
     await ref.set(r); added++;
     if (staff) await db.doc("board/" + d.id).set({ name: String(L.name).slice(0, 60), email, xp: r.xp, wk: r.wk, streak: r.streak, lessons: r.lessons, updated: r.updated });
   }
