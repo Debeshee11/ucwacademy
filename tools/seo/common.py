@@ -55,3 +55,13 @@ def fit(base, tails, n=62):
         if len(base + t) <= n:
             return base + t
     return base + tails[-1]
+
+
+# Plain-language guides that answer the questions people search for. (path, link text)
+GUIDES = [
+    ("/learn/nism-how-to-register-and-book-exam", "How to register and book a NISM exam"),
+    ("/learn/nism-certificate-validity-and-renewal", "NISM certificate validity and renewal"),
+    ("/learn/which-nism-exam-should-i-take", "Which NISM exam should I take?"),
+    ("/learn/nism-passing-marks-all-exams", "NISM passing marks for every exam"),
+    ("/learn/nism-v-a-study-plan", "NISM V-A study plan: 4 weeks"),
+]

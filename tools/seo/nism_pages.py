@@ -1,5 +1,5 @@
 """One landing page per NISM exam, plus the NISM hub."""
-from common import SITE, BRAND, esc, slug, load, write, app_link, file_for, fit
+from common import SITE, BRAND, esc, slug, load, write, app_link, file_for, fit, GUIDES
 from layout import page, jsonld, faq_ld, faq_html, crumbs_ld, crumbs_html, share_html, disclaimer
 
 IDX = load("nism.json")
@@ -88,6 +88,7 @@ def exam_page(e):
 <p>The app also lists your weak units after each mock and runs in English, Hindi or Gujarati. Mock tests and study material are in English.</p></section>
 {faq_html(fq)}
 <section><h2>More NISM exams</h2>{rel}<p><a href="/learn/nism">See all NISM exams</a></p></section>
+<section><h2>NISM guides</h2>{guides_html()}</section>
 {disclaimer()}"""
     write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(e),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": f"{e['code']} {e['title']} preparation", "description": desc,
@@ -95,6 +96,10 @@ def exam_page(e):
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),
           cta=("Take Mock 1 free", app_link(f"nism/{e['id']}/mock/1", camp))))
     return p
+
+
+def guides_html():
+    return "<div class='cards'>" + "".join(f"<a class='card' href='{p}'><b>{esc(t)}</b></a>" for p, t in GUIDES) + "</div>"
 
 
 def hub():
@@ -113,6 +118,7 @@ def hub():
 <div class="cta"><a class="btn" href="{app_link('nism', 'nism-hub')}">Start free</a></div>{share_html(SITE + p, 'Free NISM mock tests and study guides')}</section>
 <section><h2>Compare all NISM exams</h2><div class="tbl"><table><thead><tr><th>Exam</th><th>Title</th><th>Questions</th><th>Minutes</th><th>Pass</th><th>Negative marking</th></tr></thead><tbody>{rows}</tbody></table></div></section>
 <h2>Choose by what you do</h2>{tracks}
+<section><h2>NISM guides</h2>{guides_html()}</section>
 {faq_html(fq)}{disclaimer()}"""
     write(file_for(p), page(path=p, title="NISM Exam Preparation: Free Mock Tests & Study Guide PDFs", og="/assets/og/nism.jpg",
           desc=f"Free NISM mock tests, study guide PDFs and unit-wise syllabus for {len(EXAMS)} exams including V-A Mutual Fund Distributors, XII, VIII, X-A and XXI-A.",
