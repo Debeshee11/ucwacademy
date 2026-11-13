@@ -38,3 +38,5 @@ details summary::after { content: "+"; float: right; font-weight: 800; } details
   .sticky { display: flex; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 20; align-items: center; justify-content: center; min-height: 52px; border: 3px solid var(--ink); border-radius: 18px; background: var(--gold); color: var(--ink); font: 800 17px "Figtree", sans-serif; text-decoration: none; box-shadow: 0 5px 0 var(--ink); }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.term { border-top: 2px solid var(--ink); padding: 14px 0 4px; } .term h3 { margin: 0 0 6px; font-size: 19px; } .term p { margin: 0 0 8px; }
+.term .ex { color: #4a463c; } .term .trap { background: #fff3d1; border-radius: 12px; padding: 8px 12px; font-size: 15px; }

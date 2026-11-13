@@ -1,5 +1,5 @@
 """One landing page per NISM exam, plus the NISM hub."""
-from common import SITE, BRAND, esc, slug, load, write, app_link, file_for
+from common import SITE, BRAND, esc, slug, load, write, app_link, file_for, fit
 from layout import page, jsonld, faq_ld, faq_html, crumbs_ld, crumbs_html, share_html, disclaimer
 
 IDX = load("nism.json")
@@ -9,6 +9,10 @@ TRACKS = {t["id"]: t for t in IDX["tracks"]}
 
 def path_of(e):
     return f"/learn/nism-{slug(e['series'])}-{slug(e['short'])}"
+
+
+def unit_path(e, u):
+    return f"/learn/nism-{slug(e['series'])}-unit-{u['n']}-{slug(u['title'])}"
 
 
 def og_of(e):
@@ -59,14 +63,14 @@ STEPS = ["Download the study guide and read the first three pages.", "Study the 
 
 def exam_page(e):
     d = detail(e); n_mocks = len(d["mocks"]); p = path_of(e); camp = e["id"]
-    title = f"NISM {e['series']} {e['short']}: Free Mock Test, Syllabus & PDF"
+    title = fit(f"NISM {e['series']} {e['short']}", [": Free Mock Test, Syllabus & PDF", ": Free Mock Test & Syllabus", ": Free Mock Test"])
     desc = f"Prepare for {e['code']} ({e['title']}) free: unit-wise syllabus, study guide PDF and {n_mocks} full mock tests with explanations. {e['qs']} questions, {e['pass']}% to pass."
     pdf = f"/assets/nism/{e['id']}-study-guide.pdf"
     fq = faqs_for(e, n_mocks)
     crumbs = [("Home", "/learn/"), ("NISM exams", "/learn/nism"), (e["code"], p)]
     units = "".join(
         f"<details class='unit'{' open' if i == 0 else ''}><summary><b>Unit {u['n']}</b> {esc(u['title'])}<span class='w'>{u['w']}%</span></summary>"
-        f"<p>{esc(u['overview'])}</p><ul>" + "".join(f"<li>{esc(x)}</li>" for x in u.get("focus", [])) + "</ul></details>" for i, u in enumerate(d["units"]))
+        f"<p>{esc(u['overview'])}</p><ul>" + "".join(f"<li>{esc(x)}</li>" for x in u.get("focus", [])) + f"</ul><p><a href='{unit_path(e, u)}'>Unit {u['n']} notes and practice questions</a></p></details>" for i, u in enumerate(d["units"]))
     qs = "".join(
         f"<div class='q'><p><b>Q{i + 1}.</b> {esc(q['p'])}</p><ol type='A'>" + "".join(f"<li>{esc(o)}</li>" for o in q["o"]) + "</ol></div>" for i, q in enumerate(samples(d)))
     related = [x for x in EXAMS if x["track"] == e["track"] and x["id"] != e["id"]] or [x for x in EXAMS if x["id"] != e["id"]][:3]

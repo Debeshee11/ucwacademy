@@ -1,6 +1,6 @@
 """The page shell and the small pieces every landing page shares."""
 import json
-from common import SITE, BRAND, esc, app_link
+from common import SITE, BRAND, esc, app_link, clip
 
 
 def jsonld(*objs):
@@ -38,7 +38,9 @@ def disclaimer():
             "For education only. Not investment advice. Always confirm the latest syllabus and rules on the official NISM website.</p>")
 
 
-def page(*, path, title, desc, body, ld="", og="/assets/og/home.jpg", lang="en", alts=None, cta=None):
+def page(*, path, title, desc, body, ld="", og="/assets/og/home.jpg", lang="en", alts=None, cta=None, noindex=False):
+    desc = clip(desc)
+    robots = '<meta name="robots" content="noindex">' if noindex else ""
     url = SITE + path
     alt = "".join(f"<link rel='alternate' hreflang='{l}' href='{SITE}{p}'>" for l, p in (alts or []))
     sticky = f"<a class='sticky' href='{cta[1]}'>{esc(cta[0])}</a>" if cta else ""
@@ -48,7 +50,7 @@ def page(*, path, title, desc, body, ld="", og="/assets/og/home.jpg", lang="en",
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
-<meta name="description" content="{esc(desc)}">
+<meta name="description" content="{esc(desc)}">{robots}
 <link rel="canonical" href="{url}">{alt}
 <meta name="theme-color" content="#FFB703">
 <meta property="og:type" content="website">

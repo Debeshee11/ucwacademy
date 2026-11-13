@@ -4,7 +4,7 @@ import json, os, re, html
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SITE = "https://ucwacademy.in"
 BRAND = "UpperCrust Academy"
-TODAY = os.environ.get("SEO_DATE", "2026-11-11")
+TODAY = os.environ.get("SEO_DATE", "2026-11-13")
 UTM = "utm_source=seo&utm_medium=landing&utm_campaign="
 
 
@@ -36,3 +36,22 @@ def write(rel, text):
     os.makedirs(os.path.dirname(p), exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:
         f.write(text)
+
+
+def clip(s, n=155):
+    """Meta descriptions over ~155 characters get cut in results. Cut at a sentence end if we can, else at a word."""
+    if len(s) <= n:
+        return s
+    cut = s[:n]
+    i = max(cut.rfind(". "), cut.rfind("? "))
+    if i >= 90:
+        return cut[:i + 1]
+    return cut[:cut.rfind(" ")].rstrip(" ,;:") + "."
+
+
+def fit(base, tails, n=62):
+    """Longest title (base + tail) that fits n characters; falls back to the shortest."""
+    for t in tails:
+        if len(base + t) <= n:
+            return base + t
+    return base + tails[-1]
