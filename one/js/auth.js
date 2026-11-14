@@ -15,6 +15,7 @@ import { aboutYou } from "./guide.js";
 import { reportError } from "./monitor.js";
 import { safePersist, autoOtp } from "./authkit.js";
 import { gisReady, preloadGis, gisCredential } from "./googlesignin.js";
+import { track } from "./analytics.js";
 import { needsVerify, sendCode, confirmCode, verifyError } from "./mobileverify.js";
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
@@ -29,7 +30,7 @@ export function start() {
     Promise.resolve().then(() => a.getRedirectResult?.()).catch(e => ({ e })).then(r => {
       let note = "";
       if (r?.e) note = errMsg(r.e); else if (r?.additionalUserInfo?.isNewUser && r.user?.displayName) pending = { name: r.user.displayName };
-      const off = a.onAuthStateChanged(user => { off(); user ? resolve(user) : resolve(mount(a, note)); });
+      const off = a.onAuthStateChanged(user => { off(); if (user) return resolve(user); track("login", true); resolve(mount(a, note)); });
     });
   });
 }

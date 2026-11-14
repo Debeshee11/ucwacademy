@@ -1,5 +1,6 @@
 /* UpperCrust Academy: boot and routes. */
 import { track, pop } from "./analytics.js";
+import { incoming } from "./growth.js";
 import { contactPage } from "./contact.js";
 import { startTour, tourSeen } from "./tour.js";
 import "./monitor.js";
@@ -122,8 +123,8 @@ async function boot() {
     return;
   }
   track("view", true);
+  incoming();
   const user = await Auth.start();
-  if (!user) track("login", true);
   root.replaceChildren(splash());
   try {
     await Promise.all([loadData(), Store.init(user)]);
@@ -147,6 +148,7 @@ async function boot() {
     if (r === "place") location.hash = "#/quiz/place";
   } else if (!Store.get().door || !Store.get().mobile || !Store.get().name || !Store.contactEmail() || needsVerify()) { await Auth.welcome(); }
   ui = frame(route);
+  incoming();
   document.addEventListener("one:tour", () => startTour(Store.uidNow()));
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);

@@ -1,8 +1,10 @@
 /* NISM certification prep: exam hub, unit-by-unit syllabus with PDF guide, and five graded mocks per exam. */
 import { h, icon, toast, fmtDate } from "./dom.js";
 import * as Store from "./store.js";
+import { shareNudge, challengeButton, versus } from "./growth.js";
 import { widePage, bar } from "./ui.js";
 import { fns } from "./fb.js";
+import { track } from "./analytics.js";
 import { getOne } from "./content.js";
 let IDX = null; const EX = {};
 const idx = async () => IDX || (IDX = await getOne("nism"));
@@ -138,6 +140,7 @@ export function mock(root, id, n, review) {
         ss.del(key(id, n)); window.onkeydown = null;
         const rec = { s: d.s, c: d.c, w: d.w, u: d.u, t: secs, d: Date.now(), un: d.un, a: S.a, f: S.f };
         Store.setMockResult(id, n, { att: d.att, best: d.best, last: rec, hist: [] });
+        track("mock");
         withKeys(M, d.key, d.why); result(root, E, M, n, rec, false);
       } catch (e) {
         busy = false;
@@ -180,11 +183,13 @@ function result(root, E, M, n, r, isReview) {
   root.replaceChildren(widePage(
     h("section", { class: "hero stack" }, h("a", { class: "small", href: `#/nism/${E.id}` }, icon("left", 16), E.title), h("div", { class: "eyebrow gold" }, `Mock ${n} · ${LEVELS[n - 1]}${isReview ? " · review" : ""}`),
       h("h1", { class: "h1", style: "font-size:clamp(34px,6vw,56px)" }, pass ? "You cleared it." : "Not there yet."),
+      versus({ ex: E.id, n, sc: r.s, of: E.marks || total, name: E.title }),
       h("p", { class: "lead" }, `${fx(r.s)} / ${E.marks || total} marks. Pass mark ${E.passMarks}. ${pass ? (n < 5 ? `Move on to Mock ${n + 1}.` : "You are exam-ready. Book the real one.") : "Study the weak units below, then retake. Questions repeat across mocks, so read each explanation."}`),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, r.c), " correct"), h("span", {}, h("b", {}, r.w), " wrong"), h("span", {}, h("b", {}, r.u), " skipped"), h("span", {}, h("b", {}, mins), " min used")),
-      h("div", { class: "row-flex" }, h("a", { class: "btn primary", href: `#/nism/${E.id}/mock/${n}` }, "Retake"), n < 5 ? h("a", { class: "btn ghost light", href: `#/nism/${E.id}/mock/${n + 1}` }, `Mock ${n + 1}`) : null, h("a", { class: "btn ghost light", href: `#/nism/${E.id}` }, "Exam page"))),
+      h("div", { class: "row-flex" }, h("a", { class: "btn primary", href: `#/nism/${E.id}/mock/${n}` }, "Retake"), challengeButton({ ex: E.id, n, sc: r.s, of: E.marks || total, name: E.title }), n < 5 ? h("a", { class: "btn ghost light", href: `#/nism/${E.id}/mock/${n + 1}` }, `Mock ${n + 1}`) : null, h("a", { class: "btn ghost light", href: `#/nism/${E.id}` }, "Exam page"))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Unit-wise accuracy"), h("p", { class: "mute" }, "Weakest first. Revise these units before the next mock."),
       h("div", { class: "nm-w" }, units.map(x => h("a", { class: "nm-wr", href: `#/nism/${E.id}` }, h("span", { class: "nm-wl" }, `${x.u}. ${x.title}`), h("span", { class: "nm-wb " + (x.p < .5 ? "bad" : x.p < .7 ? "mid" : "") }, h("i", { style: `width:${x.p * 100}%` })), h("b", {}, `${x.c}/${x.t}`))))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Review every question"), tabs, list)));
   window.scrollTo(0, 0);
+  if (pass && !isReview) shareNudge({ ex: E.id, n, sc: r.s, of: E.marks || total, name: E.title });
 }
