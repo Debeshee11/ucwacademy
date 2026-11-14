@@ -90,7 +90,8 @@ def exam_page(e):
 <section><h2>More NISM exams</h2>{rel}<p><a href="/learn/nism">See all NISM exams</a></p></section>
 <section><h2>NISM guides</h2>{guides_html()}</section>
 {disclaimer()}"""
-    write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(e),
+    alts = [("en", p), ("hi", "/learn/hi-nism-v-a-mutual-fund-distributors"), ("gu", "/learn/gu-nism-v-a-mutual-fund-distributors")] if e["id"] == "nism-v-a" else None
+    write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(e), alts=alts,
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": f"{e['code']} {e['title']} preparation", "description": desc,
                     "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": "en",
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),

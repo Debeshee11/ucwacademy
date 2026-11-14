@@ -3,7 +3,7 @@ Output goes to learn/, assets/og/, sitemap.xml and robots.txt at the repo root. 
 import os, sys, shutil
 sys.path.insert(0, os.path.dirname(__file__))
 from common import ROOT, SITE, TODAY, write
-import nism_pages, unit_pages, guide_pages, course_pages, hub_pages, lang_pages
+import nism_pages, unit_pages, guide_pages, lang_nism, course_pages, hub_pages, lang_pages
 
 
 GP = [p for p, _ in __import__("common").GUIDES]
@@ -12,8 +12,8 @@ GP = [p for p, _ in __import__("common").GUIDES]
 def main(skip_og=False):
     os.makedirs(os.path.join(ROOT, "learn"), exist_ok=True)
     shutil.copy(os.path.join(os.path.dirname(__file__), "seo.css"), os.path.join(ROOT, "learn", "seo.css"))
-    urls = hub_pages.build() + nism_pages.build() + unit_pages.build() + guide_pages.build() + course_pages.build() + lang_pages.build()
-    pri = lambda u: "0.8" if u in GP else "0.9" if u in ("/learn/", "/learn/nism", "/learn/personal-finance") else "0.8" if u.startswith("/learn/nism-") and "-unit-" not in u else "0.7" if "-unit-" in u or u in GP else "0.6"
+    urls = hub_pages.build() + nism_pages.build() + unit_pages.build() + guide_pages.build() + lang_nism.build() + course_pages.build() + lang_pages.build()
+    pri = lambda u: "0.8" if u in GP or "-nism-v-a-" in u else "0.9" if u in ("/learn/", "/learn/nism", "/learn/personal-finance") else "0.8" if u.startswith("/learn/nism-") and "-unit-" not in u else "0.7" if "-unit-" in u or u in GP else "0.6"
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml.append(f"<url><loc>{SITE}/</loc><lastmod>{TODAY}</lastmod><priority>1.0</priority></url>")
     xml += [f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><priority>{pri(u)}</priority></url>" for u in urls]
