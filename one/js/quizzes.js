@@ -10,7 +10,7 @@ import { orderedCourses } from "./path.js";
 
 const back = c => `#/course/${c.id}`;
 /* Every question an exam in this course may use, found by id. The server decides which ones are asked. */
-const finder = c => { const m = new Map([...questionsFor(c.lessons), ...Object.values(D.exams.courses[c.id]?.qs || {}).flat()].map(q => [q.id, q])); return id => m.get(id); };
+const finder = c => { const m = new Map([...questionsFor(c.lessons, true), ...Object.values(D.exams.courses[c.id]?.qs || {}).flat()].map(q => [q.id, q])); return id => m.get(id); };
 
 export function moduleQuiz(root, cid, mi) {
   const c = course(cid), m = c?.modules[mi];

@@ -11,22 +11,13 @@ import { trail } from "./trail.js";
 import { newsFeed, newsPreview } from "./news.js";
 import { nismBanner } from "./nismbanner.js";
 import { pageHero } from "./pagehero.js";
-import { resumeBar } from "./ux.js";
+import { resumeBar, ask } from "./ux.js";
 import { signOut } from "./auth.js";
+import { quoteOfDayCard } from "./quotes.js";
 import { aboutYou, personalise, tipFor, intNames } from "./guide.js";
 
-export const DOORS = [
-  { id: "student", name: "Student", who: "School to early career", hook: "First salary, first SIP", realms: ["basics", "mf"] },
-  { id: "homemaker", name: "Homemaker", who: "Runs the household money", hook: "Make the household a team", realms: ["basics", "mf"] },
-  { id: "teacher", name: "Teacher", who: "Educators and trainers", hook: "Teach money in your classroom", realms: ["basics", "mf", "teach"] },
-  { id: "salaried", name: "Working professional", who: "Early to mid career", hook: "Payslip to portfolio", realms: ["basics", "mf", "stocks"] },
-  { id: "business", name: "Business owner", who: "Shop, practice or startup", hook: "Separate you from the business", realms: ["basics", "assets", "mf"] },
-  { id: "retiree", name: "Retiree", who: "55 and above", hook: "Make savings last", realms: ["basics", "assets", "mf"] },
-  { id: "partner", name: "Partner", who: "Community leader or adviser", hook: "Host a Gurukul session", realms: ["mf", "stocks", "assets", "teach"] },
-  { id: "team", name: "UpperCrust team", who: "Employees and advisers", hook: "Learn alongside the firm", realms: ["mf", "stocks", "assets", "basics"], staff: true },
-  { id: "global", name: "Global", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["nri", "mf", "basics"] }
-];
-export const doorOf = id => DOORS.find(d => d.id === id) || null;
+import { DOORS, SEGMENTS, doorOf, pathCourses, proCourses, PRO_ONLY, isPro, segOfDoor, T, levelBlurb } from "./audience.js";
+export { DOORS, doorOf, pathCourses };
 export const realms = () => D.sections;
 const realmName = id => D.sections.find(s => s.id === id)?.name || "";
 const core = () => D.courses.filter(c => !c.optional);
@@ -39,20 +30,23 @@ export function rankOf(xp) {
   return { title: RANKS[i][1], next: next ? next[1] : null, need: next ? next[0] - xp : 0, pct: next ? Math.round(100 * (xp - RANKS[i][0]) / (next[0] - RANKS[i][0])) : 100 };
 }
 
-export function pathCourses(doorId) {
-  const door = doorOf(doorId), seen = new Set(), out = [];
-  const lv = c => D.levels.findIndex(l => l.id === c.level);
-  for (const r of door ? door.realms : realms().map(x => x.id))
-    for (const c of core().filter(c => c.sec === r).sort((a, b) => lv(a) - lv(b))) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); }
-  for (const c of core()) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); }
-  return personalise(out);
-}
-
 /* ——— choosing a Door ——— */
 export function doorPicker(current, onPick) {
-  return h("div", { class: "doors" }, DOORS.filter(d => !d.staff || Store.isStaff()).map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
-    ev.currentTarget.parentElement.querySelectorAll(".door").forEach(b => b.setAttribute("aria-pressed", "false")); ev.currentTarget.setAttribute("aria-pressed", "true"); onPick(d.id); } } },
-    h("b", {}, d.name), h("span", { class: "small mute" }, d.who), h("span", { class: "tiny door-hook" }, d.hook))));
+  /* Step one: which of two audiences. Step two: which kind of learner. Whoever is already set sees their own group open. */
+  const staff = Store.isStaff();
+  let seg = current ? segOfDoor(doorOf(current)) : staff ? "pro" : "everyday";
+  const host = h("div", { class: "stack" });
+  function paint() {
+    const doors = DOORS.filter(d => segOfDoor(d) === seg && (!d.staff || staff));
+    host.replaceChildren(
+      h("div", { class: "segs", role: "group", "aria-label": "Which describes you?" }, SEGMENTS.map(g => h("button", { type: "button", class: "seg", "aria-pressed": String(seg === g.id), on: { click: () => { seg = g.id; paint(); } } },
+        h("b", {}, g.name), h("span", { class: "small mute" }, g.who)))),
+      h("div", { class: "doors" }, doors.map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
+        current = d.id; host.querySelectorAll(".door").forEach(b => b.setAttribute("aria-pressed", "false")); ev.currentTarget.setAttribute("aria-pressed", "true"); onPick(d.id); } } },
+        h("b", {}, d.name), h("span", { class: "small mute" }, d.who), h("span", { class: "tiny door-hook" }, d.hook)))));
+  }
+  paint();
+  return host;
 }
 
 /* ——— Today ——— */
@@ -88,7 +82,7 @@ export function today() {
       h("li", {}, h("b", {}, "Learn"), " – short lessons in a fixed order. Start with the next step above."),
       h("li", {}, h("b", {}, "Practice"), " – a daily five and revision keep what you learned."),
       h("li", {}, h("b", {}, "Exams"), " – pass Beginner, Intermediate, Hard to earn seals. NISM prep is here too."),
-      h("li", {}, h("b", {}, "News & Markets"), " – daily headlines and what to tell clients."),
+      h("li", {}, h("b", {}, "News & Markets"), isPro() ? " – daily headlines and what to tell clients." : " – today's headlines, explained in plain words."),
       h("li", {}, h("b", {}, "Progress"), " – streak, certificates, leaderboard.")),
     h("a", { class: "linkish", href: "#/courses" }, "See all courses"));
   const news = h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "In the news today"), newsPreview(3), h("a", { class: "linkish", href: "#/news" }, "All news & markets"));
@@ -109,7 +103,7 @@ export function today() {
           h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
             return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
           h("a", { class: "linkish", href: "#/courses" }, "Browse all courses"))),
-      h("div", { class: "rail" }, news,
+      h("div", { class: "rail" }, quoteOfDayCard(), news,
         h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today's goals"), week,
           h("div", { class: "divide" }, goals.map(g => h("a", { class: "list-row", href: g.href }, h("span", { class: "check " + (g.done ? "on" : "") }, g.done ? icon("check") : null), h("div", { class: "grow" }, h("div", { class: "list-title" }, g.t), h("div", { class: "tiny mute" }, g.sub)))))),
         h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Progress"),
@@ -157,8 +151,8 @@ export function settingsCard() {
 function accountCard() {
   const msg = h("p", { class: "small", role: "status" });
   const btn = h("button", { class: "btn ghost", on: { click: async () => {
-    if (!confirm("Delete your account? This removes your progress, leaderboard entry and certificates for good. It cannot be undone.")) return;
-    if (!confirm("Last check: delete everything now?")) return;
+    if (!(await ask("This removes your progress, leaderboard entry and certificates for good. It cannot be undone.", { title: "Delete your account?", ok: "Delete", cancel: "Keep my account", danger: true }))) return;
+    if (!(await ask("Last check: delete everything now?", { ok: "Delete everything", cancel: "Keep my account", danger: true }))) return;
     btn.disabled = true; msg.textContent = "Deleting…";
     try { await Store.deleteAccount(); await signOut(); }
     catch (e) { btn.disabled = false; msg.textContent = /offline|unavailable|network/.test(e?.code || e?.message || "") ? "No connection. Try again online." : "Could not delete just now. Write to " + CONTACT_EMAIL + "."; }
@@ -225,7 +219,8 @@ export function courses() {
   const host = h("div", { class: "stack stack-l" }), openSet = new Set();
   const search = h("input", { class: "input", type: "search", placeholder: "Search courses: SIP, gold, SEBI, tax…", "aria-label": "Search courses", on: { input: ev => { f.text = ev.target.value.trim().toLowerCase(); paint(); } } });
   function paint() {
-    const match = c => (f.level === "all" || c.level === f.level) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
+    const hidden = c => !isPro() && PRO_ONLY.has(c.id) && !f.text;
+    const match = c => !hidden(c) && (f.level === "all" || c.level === f.level) && (!f.text || `${c.title} ${c.blurb} ${c.topic} ${c.tag}`.toLowerCase().includes(f.text));
     const chip = (v, cur, set, t) => h("button", { class: "chip", "aria-pressed": String(cur === v), on: { click: () => { set(v); paint(); } } }, t);
     const filtering = f.text || f.level !== "all" || f.cat !== "all";
     const rec = !filtering && door ? pathCourses(s.door).filter(c => !s.quiz["x:" + c.id]?.passed).slice(0, 3) : [];
@@ -239,16 +234,19 @@ export function courses() {
       h("div", { class: "acc-list" }, cats.map(cat => {
         const blocks = cat.tracks.map(t => [t, D.courses.filter(c => c.sec === cat.id && c.track === t.id && match(c))]).filter(([t, cs]) => cs.length || (t.soon && !filtering));
         if (!blocks.length) return null;
-        const all = D.courses.filter(c => c.sec === cat.id), soonN = cat.tracks.filter(t => t.soon).length;
+        const all = D.courses.filter(c => c.sec === cat.id && !hidden(c)), soonN = cat.tracks.filter(t => t.soon).length;
         const d = h("details", { class: "acc", style: subjStyle(cat.id), id: "subj-" + cat.id }, 
-          h("summary", { class: "acc-s" }, h("span", { class: "acc-ic" }, (cat.name.match(/\b\w/g) || []).slice(0, 2).join("").toUpperCase()), h("span", { class: "acc-h" }, h("b", { class: "acc-t" }, cat.name), h("span", { class: "acc-m" }, cat.blurb)), h("span", { class: "acc-n" }, `${all.length} ${all.length === 1 ? "course" : "courses"}${soonN ? ` · ${soonN} soon` : ""}`), h("span", { class: "acc-chev" }, icon("chev", 18))),
+          h("summary", { class: "acc-s" }, h("span", { class: "acc-ic" }, (cat.name.match(/\b\w/g) || []).slice(0, 2).join("").toUpperCase()), h("span", { class: "acc-h" }, h("b", { class: "acc-t" }, cat.name), h("span", { class: "acc-m" }, T(cat.blurb))), h("span", { class: "acc-n" }, `${all.length} ${all.length === 1 ? "course" : "courses"}${soonN ? ` · ${soonN} soon` : ""}`), h("span", { class: "acc-chev" }, icon("chev", 18))),
           h("div", { class: "acc-b" }, blocks.map(([t, cs]) => h("div", { class: "track stack stack-s" },
-            cs.length ? h("div", { class: "track-h" }, h("h3", { class: "track-t" }, t.name), h("p", { class: "small mute" }, t.blurb)) : null,
+            cs.length ? h("div", { class: "track-h" }, h("h3", { class: "track-t" }, t.name), h("p", { class: "small mute" }, T(t.blurb))) : null,
             cs.length ? h("div", { class: "crows" }, cs.map(courseRow)) : soonRow(t, cat.id)))));
         d.open = filtering || openSet.has(cat.id) || (!openSet.size && cats[0] === cat && cats.length > 1 && false);
         d.addEventListener("toggle", () => { d.open ? openSet.add(cat.id) : openSet.delete(cat.id); });
         return d;
       }).filter(Boolean)),
+      !isPro() && !f.text && f.cat === "all" ? h("details", { class: "acc pro-more", style: subjStyle("mf") },
+        h("summary", { class: "acc-s" }, h("span", { class: "acc-ic" }, "PRO"), h("span", { class: "acc-h" }, h("b", { class: "acc-t" }, "For finance professionals"), h("span", { class: "acc-m" }, "Written for advisers, distributors and analysts: the working side of finance.")), h("span", { class: "acc-n" }, `${proCourses().length} courses`), h("span", { class: "acc-chev" }, icon("chev", 18))),
+        h("div", { class: "acc-b" }, h("div", { class: "crows" }, proCourses().filter(c => f.level === "all" || c.level === f.level).map(courseRow)))) : null,
       filtering && !D.courses.some(match) ? h("p", { class: "mute" }, "Nothing matches. Try a different word or clear the filters.") : null].flat(Infinity).filter(Boolean));
   }
   paint();

@@ -2,8 +2,9 @@
 import { h, icon, toast } from "./dom.js";
 import { captions, nick, grade } from "./certcopy.js";
 import { download } from "./certshare.js";
+import { showCopy } from "./ux.js";
 
-const copy = async text => { try { await navigator.clipboard.writeText(text); toast("Copied. Paste it in your post."); } catch { prompt("Copy this text", text); } };
+const copy = async text => { try { await navigator.clipboard.writeText(text); toast("Copied. Paste it in your post."); } catch { showCopy("Copy this text", text); } };
 
 export function sharePanel(c, name, url) {
   const cap = captions(c, name, url);

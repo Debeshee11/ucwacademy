@@ -2,6 +2,7 @@
 import { h, icon, shuffle, clear } from "./dom.js";
 import { D, localize } from "./data.js";
 import * as Store from "./store.js";
+import { ask } from "./ux.js";
 
 /* Every question in the course by id, so revision can find the ones that are due. */
 let byId = null;
@@ -31,7 +32,7 @@ export function runQuiz(root, cfg) {
   const total = qs.length;
 
   const barFill = h("i", { style: "width:0%" });
-  const exit = h("button", { class: "icon-btn", "aria-label": "Leave quiz", on: { click: () => { if (!answers.length || confirm("Leave this quiz? Your answers so far will not count.")) location.hash = cfg.exit || "#/"; } } }, icon("x", 22));
+  const exit = h("button", { class: "icon-btn", "aria-label": "Leave quiz", on: { click: async () => { if (!answers.length || await ask("Leave this quiz? Your answers so far will not count.", { ok: "Leave", cancel: "Keep going" })) location.hash = cfg.exit || "#/"; } } }, icon("x", 22));
   const count = h("span", { class: "small mute", "aria-live": "polite", style: "min-width:56px;text-align:right" });
   const top = h("div", { class: "focus-top" }, h("div", { class: "focus-in" }, exit, h("div", { class: "bar" }, barFill), count));
   const body = h("div", { class: "read" });

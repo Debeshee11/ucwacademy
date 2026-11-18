@@ -1,5 +1,6 @@
 /* global qrcode */
 /* Credentials list, the certificate itself, and public verification. */
+import { isPro } from "./audience.js";
 import { ledger, settingsCard, rankOf } from "./academy.js";
 import { ORG } from "./config.js";
 import { h, icon, fmtDate, toast, plural, pct } from "./dom.js";
@@ -11,6 +12,8 @@ import { questionById } from "./quiz.js";
 import { page, widePage, notFound, bar } from "./ui.js";
 import { seal, ring } from "./certseal.js";
 import { cheer } from "./cheer.js";
+import { showCopy } from "./ux.js";
+import { vendor } from "./fb.js";
 import { nick, grade, brag } from "./certcopy.js";
 import { sharePanel } from "./sharepanel.js";
 import { titleShelf } from "./titleshelf.js";
@@ -56,17 +59,18 @@ export function me() {
         stand(c), Creds.standing(c) !== "valid" && c.kind === "course" ? h("a", { class: "btn ghost", style: "height:38px;padding:0 16px", href: `#/quiz/refresh/${c.key}` }, "Renew") : null)))
         : h("div", { class: "card tint stack stack-s" }, h("h2", { class: "h2" }, "None yet."), h("p", {}, "Pass a course exam to earn your first certificate. Each one is valid for 12 months and can be verified by anyone with the link."))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Three kinds of credential"),
-      h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass the Beginner exam at 80%. Module quizzes help you prepare. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
+      h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass the Beginner exam at 80%. Module quizzes help you prepare. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ...(isPro() ? [["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]] : [])].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
     settingsCard(),
     open.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Still to earn"),
       h("div", { class: "divide" }, open.map(c => { const p = Store.courseProgress(c); return h("a", { class: "list-row", href: `#/course/${c.id}` },
         h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, c.title), bar(p.pct)), h("span", { class: "small mute" }, p.pct + "%")); })),
-      h("p", { class: "small mute" }, "Complete both Practitioner courses for the level credential. Complete all courses and five Client Lab scenarios for the Professional credential.")) : null);
+      h("p", { class: "small mute" }, isPro() ? "Complete both Practitioner courses for the level credential. Complete all courses and five Client Lab scenarios for the Professional credential." : "Complete every course in a level for its level credential.")) : null);
 }
 
 function qrNode(id) {
   const box = h("div", { class: "qr", title: "Scan to verify", "aria-label": "QR code for verification" });
-  try { const q = qrcode(0, "M"); q.addData(Creds.verifyUrl(id)); q.make(); box.innerHTML = q.createSvgTag({ cellSize: 3, margin: 0, scalable: true }); } catch { box.hidden = true; }
+  /* The QR library is fetched only when a certificate is shown. */
+  vendor("qrcode.js").then(() => { try { const q = qrcode(0, "M"); q.addData(Creds.verifyUrl(id)); q.make(); box.innerHTML = q.createSvgTag({ cellSize: 3, margin: 0, scalable: true }); } catch { box.hidden = true; } });
   return box;
 }
 function sheet(c, mine) {
@@ -112,7 +116,7 @@ export function cert(id) {
     sheet({ ...c, name: Store.get().name }, true),
     h("div", { class: "row-flex no-print", style: "justify-content:center" },
       h("button", { class: "btn primary", on: { click: () => print() } }, icon("print", 18), "Print or save as PDF"),
-      h("button", { class: "btn ghost", on: { click: async () => { try { await navigator.clipboard.writeText(url); toast("Verification link copied"); } catch { prompt("Copy this link", url); } } } }, icon("link", 18), "Copy verification link"),
+      h("button", { class: "btn ghost", on: { click: async () => { try { await navigator.clipboard.writeText(url); toast("Verification link copied"); } catch { showCopy("Copy this link", url); } } } }, icon("link", 18), "Copy verification link"),
       h("a", { class: "btn ghost", target: "_blank", rel: "noopener", href: linkedin(c, url) }, "Add to LinkedIn"),
       stand(c)),
     sharePanel(c, nm, url),

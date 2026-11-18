@@ -5,6 +5,7 @@ import { localize } from "./data.js";
 import * as Store from "./store.js";
 import { fns } from "./fb.js";
 import { reportError } from "./monitor.js";
+import { ask } from "./ux.js";
 
 const errText = e => /unauthenticated/.test(e?.code || "") ? "Please sign in again."
   : /resource-exhausted/.test(e?.code || "") ? "Please wait a few seconds and try again."
@@ -39,7 +40,7 @@ export async function runExam(root, cfg) {
 
   const barFill = h("i", { style: "width:0%" });
   const count = h("span", { class: "small mute", "aria-live": "polite", style: "min-width:56px;text-align:right" });
-  const exit = h("button", { class: "icon-btn", "aria-label": "Leave exam", on: { click: () => { if (confirm("Leave this exam? Your answers so far will not count.")) { document.removeEventListener("keydown", keys); location.hash = cfg.exit || "#/"; } } } }, icon("x", 22));
+  const exit = h("button", { class: "icon-btn", "aria-label": "Leave exam", on: { click: async () => { if (await ask("Leave this exam? Your answers so far will not count.", { ok: "Leave", cancel: "Keep going" })) { document.removeEventListener("keydown", keys); location.hash = cfg.exit || "#/"; } } } }, icon("x", 22));
   const top = h("div", { class: "focus-top" }, h("div", { class: "focus-in" }, exit, h("div", { class: "bar" }, barFill), count));
   const body = h("div", { class: "read" }), dock = h("div", { class: "dock" });
   clear(root).append(top, body, dock);
@@ -71,7 +72,7 @@ export async function runExam(root, cfg) {
   async function submit() {
     if (busy) return;
     const blank = picks.filter(x => x == null).length;
-    if (blank && !confirm(`${blank} question${blank > 1 ? "s are" : " is"} unanswered. Submit anyway?`)) return;
+    if (blank && !(await ask(`${blank} question${blank > 1 ? "s are" : " is"} unanswered. Submit anyway?`, { ok: "Submit", cancel: "Go back" }))) return;
     busy = true; document.removeEventListener("keydown", keys);
     clear(dock); barFill.style.width = "100%"; count.textContent = "";
     clear(body).append(h("div", { class: "stack stack-l", style: "text-align:center;padding-top:48px" }, h("p", { class: "lead" }, "Marking your exam…"), h("p", { class: "mute" }, "Please keep this page open.")));

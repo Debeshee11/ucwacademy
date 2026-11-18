@@ -23,7 +23,7 @@ export const AGE_TIP = {
   "18-25": "Build an emergency fund, learn what a SIP is, and start small and early. Time is your biggest advantage.",
   "26-40": "Protect first: understand term and health cover. Then plan goals like a home or your children's education with SIPs.",
   "41-60": "Check your retirement readiness, review your insurance, and learn how to balance equity, debt and gold.",
-  "60+": "Focus on steady income, health cover, tax on withdrawals, and passing wealth on in a simple way."
+  "60+": "Protect first: learn the scams that target savings, then focus on steady income, health cover, tax on withdrawals, and passing wealth on in a simple way."
 };
 const AGE_IDS = {
   "u18": ["budgeting-emergency-fund", "scam-safety", "loans-credit-scores", "stock-basics"],

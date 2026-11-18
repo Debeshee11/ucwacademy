@@ -6,6 +6,7 @@ import { widePage, bar } from "./ui.js";
 import { fns } from "./fb.js";
 import { track } from "./analytics.js";
 import { getOne } from "./content.js";
+import { ask } from "./ux.js";
 let IDX = null; const EX = {};
 const idx = async () => IDX || (IDX = await getOne("nism"));
 const exam = async id => EX[id] || (EX[id] = await getOne(`nism/${id}`));
@@ -131,7 +132,7 @@ export function mock(root, id, n, review) {
     async function finish(auto) {
       if (busy) return;
       const answered = S.a.filter(x => x != null).length;
-      if (!auto && answered < total && !confirm(`${total - answered} question${total - answered > 1 ? "s are" : " is"} unanswered. Submit anyway?`)) return;
+      if (!auto && answered < total && !(await ask(`${total - answered} question${total - answered > 1 ? "s are" : " is"} unanswered. Submit anyway?`, { ok: "Submit", cancel: "Go back" }))) return;
       busy = true; clearInterval(tick);
       const secs = Math.round((Date.now() - S.start) / 1000);
       body.replaceChildren(h("p", { class: "lead" }, "Marking your mock…"), h("p", { class: "mute" }, "Please keep this page open."));
@@ -164,7 +165,7 @@ export function mock(root, id, n, review) {
     }
     const upd = () => { const s = left(); clock.textContent = fmtT(s); clock.classList.toggle("low", s < 600); if (s <= 0) finish(true); };
     root.replaceChildren(h("div", { class: "nm-run" },
-      h("header", { class: "nm-top" }, h("a", { class: "nm-x", href: `#/nism/${id}`, "aria-label": "Leave mock", on: { click: ev => { if (!confirm("Leave this mock? Your answers are kept while this tab stays open.")) ev.preventDefault(); } } }, icon("x", 20)), h("div", { class: "nm-title" }, h("b", {}, `${E.code} · Mock ${n}`), h("span", {}, LEVELS[n - 1])), prog, clock, h("button", { class: "btn primary small", on: { click: () => finish(false) } }, "Submit")),
+      h("header", { class: "nm-top" }, h("a", { class: "nm-x", href: `#/nism/${id}`, "aria-label": "Leave mock", on: { click: async ev => { ev.preventDefault(); if (await ask("Leave this mock? Your answers are kept while this tab stays open.", { ok: "Leave", cancel: "Keep going" })) location.hash = `#/nism/${id}`; } } }, icon("x", 20)), h("div", { class: "nm-title" }, h("b", {}, `${E.code} · Mock ${n}`), h("span", {}, LEVELS[n - 1])), prog, clock, h("button", { class: "btn primary small", on: { click: () => finish(false) } }, "Submit")),
       h("div", { class: "nm-body" }, body, h("aside", { class: "nm-side" }, h("div", { class: "eyebrow" }, "Question palette"), pal, h("div", { class: "nm-key" }, h("span", { class: "a" }, "Answered"), h("span", { class: "f" }, "Flagged"), h("span", {}, "Not answered")), h("p", { class: "tiny mute" }, `Pass mark ${E.passMarks}. ${E.neg === "None" ? "No negative marking: attempt everything." : "Negative marking: " + E.neg + ". Skip when unsure."}`)))));
     paint(); upd(); tick = setInterval(() => { if (!document.querySelector(".nm-run")) return clearInterval(tick); upd(); }, 1000);
     window.onkeydown = ev => { if (busy || !document.querySelector(".nm-run") || /input|textarea/i.test(ev.target.tagName)) return; const k = ev.key; if ("1234".includes(k) && k.length === 1) { S.a[S.cur] = +k - 1; save(); paint(); } else if (k === "ArrowRight" && S.cur < total - 1) { S.cur++; save(); paint(); } else if (k === "ArrowLeft" && S.cur > 0) { S.cur--; save(); paint(); } };

@@ -85,12 +85,12 @@ function paint(host, S, keys, I, ek) {
 
   /* Traffic and funnel from the first-party counters (see analytics.js). */
   const T = S.traffic || [], tot = k => T.reduce((a, x) => a + (x[k] || 0), 0);
-  const cols = [["ev_view", "Visits"], ["ev_login", "Saw sign-in"], ["ev_signup", "Sign-ups"], ["ev_lesson", "Lessons done"], ["examStarts", "Exams started"], ["examPasses", "Exams passed"], ["ev_mock", "Mocks"]];
+  const cols = [["ev_view", "Visits"], ["ev_login", "Saw sign-in"], ["ev_signup", "New sign-ins"], ["ev_profile", "Finished profile"], ["ev_lesson", "Lessons done"], ["examStarts", "Exams started"], ["examPasses", "Exams passed"], ["ev_mock", "Mocks"]];
   const srcs = {}; T.forEach(x => Object.entries(x).forEach(([k, v]) => { if (k.startsWith("src_")) srcs[k.slice(4).replace(/_/g, ".")] = (srcs[k.slice(4).replace(/_/g, ".")] || 0) + v; }));
   const srcRows = Object.entries(srcs).sort((a, b) => b[1] - a[1]).slice(0, 10);
   const cell = "padding:8px;border-bottom:1px solid var(--line);text-align:right";
   const traffic = h("div", { class: "stack" },
-    h("p", { class: "mute" }, `Last 14 days: ${n0(tot("ev_view"))} visits, ${n0(tot("ev_signup"))} sign-ups` + (tot("ev_login") ? ` (${Math.round(100 * tot("ev_signup") / tot("ev_login"))}% of those who saw the sign-in screen)` : "") + ". Counted without cookies. Visits are app opens, not unique people."),
+    h("p", { class: "mute" }, `Last 14 days: ${n0(tot("ev_view"))} visits, ${n0(tot("ev_signup"))} new sign-ins, ${n0(tot("ev_profile"))} finished their profile` + (tot("ev_signup") && tot("ev_profile") ? ` (${Math.round(100 * tot("ev_profile") / tot("ev_signup"))}% of new sign-ins)` : "") + ". Counted without cookies. Visits are app opens, not unique people."),
     h("div", { style: "overflow-x:auto" }, h("table", { style: "width:100%;border-collapse:collapse;min-width:620px" },
       h("thead", {}, h("tr", {}, h("th", { style: cell + ";text-align:left" }, "Day"), cols.map(c => h("th", { style: cell + ";font-weight:600;color:var(--mute);font-size:13px" }, c[1])))),
       h("tbody", {}, [...T].reverse().map(x => h("tr", {}, h("td", { style: cell + ";text-align:left" }, x.d), cols.map(c => h("td", { style: cell }, n0(x[c[0]] || 0))))),

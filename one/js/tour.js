@@ -1,14 +1,17 @@
 /* A first-visit tour of the main menu. Spotlights one menu item at a time; can be skipped and replayed from the account menu. */
+import { isPro } from "./audience.js";
 import { h } from "./dom.js";
 
-const STEPS = [
+const STEPS_ALL = [
   ["#/", "Home", "Your next step is always on top. Open the app and press Start."],
   ["#/courses", "Learn", "Every course, in order. Finish lessons to earn points and unlock exams."],
-  ["#/practice", "Practice", "A daily five, revision and the client lab. Two minutes is enough."],
+  ["#/practice", "Practice", "A daily five, revision and calculators. Two minutes is enough."],
   ["#/assess", "Exams", "Pass Beginner, Intermediate and Hard exams to earn certificates. NISM prep lives here too."],
-  ["#/news", "News & Markets", "Today's headlines, and what to tell clients about them."],
+  ["#/news", "News & Markets", "Today's headlines, and what they mean for your money."],
   ["#/me", "Progress", "Your points, streak, certificates and the leaderboard."]
 ];
+const PRO_TEXT = { "#/practice": "A daily five, revision and the client lab. Two minutes is enough.", "#/news": "Today's headlines, and what to tell clients about them." };
+const STEPS = new Proxy(STEPS_ALL, { get: (t, k) => { const v = t[k]; return Array.isArray(v) && isPro() && PRO_TEXT[v[0]] ? [v[0], v[1], PRO_TEXT[v[0]]] : v; } });
 const KEY = u => "one:tour:" + u;
 export const tourSeen = u => { try { return !!localStorage.getItem(KEY(u)); } catch { return true; } };
 const markSeen = u => { try { localStorage.setItem(KEY(u), "1"); } catch {} };

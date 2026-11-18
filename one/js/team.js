@@ -19,13 +19,13 @@ function levelOf(L) {
 }
 function summarize(L) {
   const ft = firstTry(L), done = Object.keys(L.done || {}).length, certs = Object.values(L.creds || {});
-  return { id: L.id, name: L.name || "(no name)", email: L.email || "", kind: L.kind || (/@uppercrustwealth\.com$/i.test(L.email || "") ? "staff" : "public"), mobile: L.mobile || "", door: L.door || "", prov: L.prov || "", joined: L.created || 0, lessons: done, progress: pct(done, Object.keys(D.lessons).length), level: levelOf(L),
+  return { id: L.id, name: L.name || "(no name)", email: L.email || "", kind: L.kind || (/@uppercrustwealth\.com$/i.test(L.email || "") ? "staff" : "public"), mobile: L.mobile || "", door: L.door || "", mv: L.mv || 0, prov: L.prov || "", joined: L.created || 0, lessons: done, progress: pct(done, Object.keys(D.lessons).length), level: levelOf(L),
     mastery: ft.length >= 5 ? pct(ft.filter(([, e]) => e.f === 1).length, ft.length) : null, streak: L.streak?.n || 0, certs: certs.length, updated: L.updated || 0,
     status: certs.length ? "Certified" : done >= 15 ? "Exam ready" : done ? "In progress" : "Not started" };
 }
 
 /* what a learner has not given yet */
-const miss = r => [!r.name || r.name === "(no name)" ? "name" : "", !r.email ? "email" : "", !r.door ? "type" : ""].filter(Boolean).join(", ") || "–";
+const miss = r => [!r.name || r.name === "(no name)" ? "name" : "", !r.email ? "email" : "", !r.door ? "type" : "", r.mv === 2 ? "mobile not verified" : ""].filter(Boolean).join(", ") || "–";
 export function team() {
   const host = h("div", { class: "stack stack-xl" }, h("p", { class: "mute" }, "Loading…"));
   const staffP = (async () => { try { return (await fns().httpsCallable("staffList")()).data.emails || []; } catch { return []; } })();

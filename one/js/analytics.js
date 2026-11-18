@@ -1,9 +1,12 @@
 /* First-party analytics. Sends anonymous event counts to the backend: no cookies, no personal data, no ad tools.
    The admin page shows them. Failures are silent: analytics must never break the app. */
-import { fns } from "./fb.js";
+import { fns, backend } from "./fb.js";
 
 const seen = new Set();
-const send = (e, src) => { try { const f = fns(); if (f) f.httpsCallable("track")({ e, src }).catch(() => {}); } catch {} };
+/* Counting waits a moment so it never competes with the first screen, then needs the backend part of the SDK. */
+const calm = new Promise(r => setTimeout(r, 2500));
+const call = data => { calm.then(backend).then(() => { try { const f = fns(); if (f) f.httpsCallable("track")(data).catch(() => {}); } catch {} }).catch(() => {}); };
+const send = (e, src) => call({ e, src });
 
 /* Where this visit came from: ?utm_source, ?ref, else the referring site, else "direct". */
 export function source() {
@@ -24,5 +27,5 @@ export function track(e, once = false) {
 /* What people open: a page, a course, a lesson, a news topic. Counted once per visit per item, except finished lessons. */
 export function pop(key, once = true) {
   if (once) { if (seen.has(key)) return; seen.add(key); }
-  try { const f = fns(); if (f) f.httpsCallable("track")({ e: "pop", k: key }).catch(() => {}); } catch {}
+  call({ e: "pop", k: key });
 }

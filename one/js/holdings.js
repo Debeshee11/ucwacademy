@@ -1,4 +1,5 @@
 /* Monthly fund holdings: parse what the admin pastes, load saved months, show what changed, and build the holdings quiz. */
+import * as Store from "./store.js";
 import { db } from "./fb.js";
 import { FUNDS_BASE } from "./config.js";
 import { D } from "./data.js";
@@ -38,7 +39,8 @@ export async function loadLive() {
   D.live = { funds: {}, months: {} };
   await loadAuto();
   const d = db();
-  if (d) {
+  /* The admin's extra fund data is readable by signed-in learners only (firestore.rules), so a guest does not ask for it. */
+  if (d && !Store.isGuest()) {
     try {
       const [a, b] = await Promise.all([d.collection("fundx").get(), d.collection("fundmonths").get()]);
       a.docs.forEach(x => { D.live.funds[x.id] = x.data(); });

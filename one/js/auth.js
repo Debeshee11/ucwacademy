@@ -1,6 +1,6 @@
 /* Sign in: Google, or email and password. Learners can create their own account; employees use the work-email door. */
 import { ADMIN_EMAIL, STAFF_DOMAIN } from "./config.js";
-import { auth } from "./fb.js";
+import { auth, backend } from "./fb.js";
 import { h, $, add } from "./dom.js";
 const ap = (el, ...kids) => add(el, kids);
 import { D } from "./data.js";
@@ -20,23 +20,50 @@ import { needsVerify, sendCode, confirmCode, verifyError } from "./mobileverify.
 
 const brand = () => h("div", { class: "brand" }, h("img", { src: "assets/mark.svg", alt: "" }), h("span", { class: "bt" }, h("b", {}, "UpperCrust"), h("i", {}, "Academy")));
 
-/* Resolves with the signed-in user. Resolves at once when a session is restored. */
+/* Where a visitor asked to sign in from, so they land back there afterwards. */
+const BACK = "uc.back", PEND = "uc.pending";
+const wantsSignIn = () => /^#\/signin/.test(location.hash);
+
+/* Resolves with the signed-in user, or with null for a guest. Lessons and practice are open to everyone, so nobody is asked to sign in
+   just to look around: the sign-in screen opens only when a visitor asks for it (#/signin) or a feature needs an account. */
 export function start() {
-  preloadGis();
   return new Promise(resolve => {
     const a = auth();
-    if (!a) return resolve(mount(null, "The sign-in service could not be loaded. Check your connection and reload."));
+    if (!a) return resolve(wantsSignIn() ? mount(null, "The sign-in service could not be loaded. Check your connection and reload.") : null);
+    /* Sign-in needs App Check switched on before a code is sent, so the rest of the SDK is fetched as the screen opens. */
+    if (wantsSignIn()) backend();
+    preloadGis();
     /* After a redirect sign-in (used when a popup is blocked) pick up the name and any error before deciding what to show. */
     Promise.resolve().then(() => a.getRedirectResult?.()).catch(e => ({ e })).then(r => {
       let note = "";
-      if (r?.e) note = errMsg(r.e); else if (r?.additionalUserInfo?.isNewUser && r.user?.displayName) pending = { name: r.user.displayName };
-      const off = a.onAuthStateChanged(user => { off(); if (user) return resolve(user); track("login", true); resolve(mount(a, note)); });
+      if (r?.e) note = errMsg(r.e); else if (r?.additionalUserInfo?.isNewUser) pending = { name: r.user?.displayName || "", fresh: true };
+      const off = a.onAuthStateChanged(user => {
+        off();
+        if (user) { if (wantsSignIn()) goBack(); return resolve(user); }
+        if (!wantsSignIn() && !note) return resolve(null);
+        track("login", true);
+        mount(a, note).then(u => { goBack(); resolve(u); });
+      });
     });
   });
 }
 
 let pending = null;
-export const takeProfile = () => { const p = pending; pending = null; return p; };
+export const takeProfile = () => {
+  let p = pending; pending = null;
+  try { const s = sessionStorage.getItem(PEND); if (s) { sessionStorage.removeItem(PEND); p = p || JSON.parse(s); } } catch {}
+  return p;
+};
+function goBack() {
+  let to = "#/"; try { to = sessionStorage.getItem(BACK) || "#/"; sessionStorage.removeItem(BACK); } catch {}
+  if (/^#\/signin/.test(to)) to = "#/";
+  try { history.replaceState(null, "", location.pathname + location.search + to); } catch { location.hash = to; }
+}
+/* Open the sign-in screen from anywhere in the app. The page reloads there, signs the visitor in, joins their guest progress to the account and returns them to where they were. */
+export function signIn(back) {
+  try { sessionStorage.setItem(BACK, back || location.hash || "#/"); } catch {}
+  location.hash = "#/signin"; location.reload();
+}
 
 const errMsg = e => {
   const c = e?.code || "";
@@ -123,7 +150,7 @@ function mount(a, startMsg) {
             throw e;
           }
         } else r = await a.signInWithPopup(p);
-        if (r.additionalUserInfo?.isNewUser && r.user.displayName) pending = { name: r.user.displayName };
+        if (r.additionalUserInfo?.isNewUser) pending = { name: r.user.displayName || "", fresh: true };
         finish(r.user);
       } catch (e) {
         if (/popup-blocked|operation-not-supported|missing initial state/i.test((e?.code || "") + (e?.message || ""))) return fail("Your browser blocked the Google window. Allow pop-ups for this site and try again, or sign in with mobile number or email.");
@@ -225,7 +252,7 @@ function mount(a, startMsg) {
           if (signup && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return fb2("That email does not look right.");
           if (signup && pw.value.length < 6) return fb2("Password is too short. Use at least 6 characters.");
           btn.disabled = true; btn.textContent = signup ? "Creating…" : "Signing in…"; err.textContent = "";
-          try { await persist(); finish((signup ? await a.createUserWithEmailAndPassword(em, pw.value) : await a.signInWithEmailAndPassword(em, pw.value)).user); }
+          try { await persist(); const cr = signup ? await a.createUserWithEmailAndPassword(em, pw.value) : await a.signInWithEmailAndPassword(em, pw.value); if (signup) pending = { fresh: true }; finish(cr.user); }
           catch (e) { if (!/network|too-many/.test(e?.code || "") && ++tries >= 5) { lockUntil = Date.now() + 30e3; tries = 0; } fb2(errMsg(e)); }
         } } }, fe, fp, h("div", { class: "row-flex", style: "justify-content:space-between" }, keepRow, forgotFor(email)), err, btn);
         setTimeout(() => wide() && email.focus());
@@ -238,6 +265,7 @@ function mount(a, startMsg) {
       if (mode === "mail") links.push(h("p", { class: "lg-swap" }, signup ? "Already have an account? " : "New here? ", Object.assign(h("button", { type: "button", class: "link", on: { click: () => { signup = !signup; startMsg = ""; paint(); } } }), { textContent: signup ? "Sign in" : "Create an email account" })));
       if (mode === "phone") links.push(h("p", { class: "lg-swap" }, "Prefer email and password? ", Object.assign(go("mail"), { textContent: "Sign in or create an account with email" })));
       if (mode !== "staff") links.push(h("p", { class: "lg-staff" }, "UpperCrust employee? ", Object.assign(go("staff"), { textContent: "Sign in with your work email" })));
+      links.push(h("p", { class: "lg-swap" }, h("button", { type: "button", class: "link", on: { click: () => { goBack(); location.reload(); } } }, "Not now. Keep learning without an account")));
       ap(form, h("div", { class: "lg-head" }, h("h1", { class: "lg-h" }, heading[0]), h("p", { class: "mute" }, heading[1])),
         ...(inApp() ? [inAppBar()] : []),
         ...(mode === "mail" ? [h("div", { class: "chips", role: "group", "aria-label": "Sign in or create account" },
@@ -264,17 +292,18 @@ export async function signOut() {
 }
 
 /* First visit: ask what to call the learner and where to start. Resolves with "place" when they want a placement test. */
-export function welcome() {
+export function welcome(opts = {}) {
   return new Promise(resolve => {
-    const staff = Store.isStaff();
-    let step = Store.get().name && Store.get().mobile && Store.contactEmail() ? (needsVerify() ? "v" : 1) : 0, choice = null, door = Store.get().door || null;
+    const staff = Store.isStaff(), guest = !!opts.guest;
+    /* A guest is asked only who they are, so Home can suggest the right courses. No name, number or email. */
+    let step = guest ? 1 : Store.get().name && Store.get().mobile && Store.contactEmail() ? (needsVerify() ? "v" : 1) : 0, choice = null, door = Store.get().door || null;
     const box = h("div", { class: "gate-card stack stack-l wide" });
     const scrim = h("div", { class: "scrim", role: "dialog", "aria-modal": "true", "aria-label": "Welcome to UpperCrust Academy" }, box);
     const name = h("input", { class: "input", type: "text", autocomplete: "name", id: "nm", placeholder: "Your full name" });
     const logo = h("img", { src: "assets/mark.svg", alt: "UpperCrust Academy", style: "height:36px;margin:0 auto" });
 
     const mcc = countryPicker();
-    const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel-national", placeholder: "Mobile number (no country code)", value: Store.get().mobile || "", readonly: !!Store.get().mv });
+    const mobile = h("input", { class: "input", id: "mb", type: "tel", inputmode: "tel", autocomplete: "tel-national", placeholder: "Mobile number (no country code)", value: Store.get().mobile || "", readonly: Store.get().mv === 1 });
     const perr = h("p", { class: "error", role: "alert" });
     const needEmail = !Store.contactEmail();
     const emailIn = h("input", { class: "input", id: "ce", type: "email", inputmode: "email", autocomplete: "email", autocapitalize: "off", placeholder: "you@example.com" });
@@ -287,11 +316,17 @@ export function welcome() {
       const ok = h("button", { class: "btn primary block", type: "submit", disabled: true }, "Verify and continue");
       const resend = h("button", { type: "button", class: "link small", disabled: true }, "");
       const change = h("button", { type: "button", class: "link small", on: { click: () => { clearInterval(tick); step = 0; paint(); } } }, "Change number");
+      /* Never a dead end: the learner can always skip (their Google or email sign-in already proves who they are), go back, or sign out. */
+      const help = h("div", {}), moveOn = () => { clearInterval(tick); if (Store.get().door) { scrim.remove(); resolve(null); } else { step = 1; paint(); } };
+      const skip = async () => { Store.setProfile({ mv: 2 }); try { await Store.flush(); } catch {} moveOn(); };
+      const dup = () => help.replaceChildren(h("div", { class: "card tint stack stack-s", role: "status" },
+        h("p", { class: "small" }, "This number is already linked to another sign-in. Use a different number, or carry on: we will keep this one on file and you can learn right away."),
+        h("div", { class: "row-flex", style: "gap:10px;flex-wrap:wrap" }, h("button", { type: "button", class: "btn primary", on: { click: skip } }, "Carry on without verifying"), h("button", { type: "button", class: "btn ghost", on: { click: () => { clearInterval(tick); step = 0; paint(); } } }, "Use a different number"))));
       const lap = () => { const sec = Math.ceil((resendAt - Date.now()) / 1000); resend.disabled = sec > 0; resend.textContent = sec > 0 ? `Resend code in ${sec}s` : "Send a new code"; if (sec <= 0) clearInterval(tick); };
       const send = async () => {
         err.textContent = ""; ok.disabled = true; resend.disabled = true;
         try { conf = await sendCode(e164, holder); resendAt = Date.now() + 30e3; clearInterval(tick); tick = setInterval(() => { if (!resend.isConnected) return clearInterval(tick); lap(); }, 1000); lap(); ok.disabled = false; code.focus(); }
-        catch (e) { err.textContent = verifyError(e); resend.disabled = false; resend.textContent = "Send a new code"; }
+        catch (e) { err.textContent = verifyError(e); resend.disabled = false; resend.textContent = "Send a new code"; if (/already-in-use|account-exists/.test(e?.code || "")) dup(); }
       };
       resend.onclick = send;
       const form = h("form", { class: "stack", novalidate: true, on: { submit: async ev => {
@@ -301,8 +336,9 @@ export function welcome() {
         if (c.length !== 6) { err.textContent = "Enter the 6-digit code."; return; }
         ok.disabled = true; ok.textContent = "Checking…"; err.textContent = "";
         try { await confirmCode(conf, c, num); clearInterval(tick); if (Store.get().door) { scrim.remove(); resolve(null); } else { step = 1; paint(); } }
-        catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; err.textContent = verifyError(e); if (/expired/.test(e?.code || "")) conf = null; }
-      } } }, h("div", { class: "field" }, h("label", { for: "vc" }, `Enter the 6-digit code sent to ${e164.replace(/^\+91/, "+91 ")}`), code), err, ok, h("div", { class: "lg-alt" }, resend, change), holder);
+        catch (e) { ok.disabled = false; ok.textContent = "Verify and continue"; err.textContent = verifyError(e); if (/already-in-use|account-exists/.test(e?.code || "")) dup(); if (/expired/.test(e?.code || "")) conf = null; }
+      } } }, h("div", { class: "field" }, h("label", { for: "vc" }, `Enter the 6-digit code sent to ${e164.replace(/^\+91/, "+91 ")}`), code), err, help, ok, h("div", { class: "lg-alt" }, resend, change), h("button", { type: "button", class: "btn ghost block", on: { click: skip } }, "Skip for now. I will verify later"),
+        h("p", { class: "tiny mute", style: "text-align:center" }, "Not you? ", h("button", { type: "button", class: "link", on: { click: signOut } }, "Sign out")), holder);
       ap(box, logo, h("div", {}, h("h1", { class: "h1" }, "Verify your mobile"), h("p", { class: "mute", style: "margin-top:8px" }, "One quick check that this number is yours. It keeps your certificates and account safe.")), form);
       send();
     }
@@ -314,7 +350,7 @@ export function welcome() {
         ap(box, logo,
           h("div", {}, h("h1", { class: "h1" }, need ? "Complete your profile" : "Let's get you started."), h("p", { class: "mute", style: "margin-top:8px" }, need ? "Three quick details so we can set up your account and send your certificates." : "What should we call you?")),
           h("div", { class: "field" }, h("label", { for: "nm" }, "Full name"), name),
-          need ? h("div", { class: "field" }, h("label", { for: "mb" }, "Mobile number"), Store.get().mv ? null : mcc, mobile) : null,
+          need ? h("div", { class: "field" }, h("label", { for: "mb" }, "Mobile number"), Store.get().mv === 1 ? null : mcc, mobile) : null,
           needEmail ? h("div", { class: "field" }, h("label", { for: "ce" }, "Email"), emailIn) : null,
           perr,
           h("button", { class: "btn primary block", on: { click: () => {
@@ -322,14 +358,20 @@ export function welcome() {
             let m = "";
             if (need) { m = cleanMobile(joinNumber(mcc, mobile.value)); if (!m) { perr.textContent = "Enter a valid mobile number for the country you picked."; return mobile.focus(); } }
             if (needEmail && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailIn.value.trim())) { perr.textContent = "Enter a valid email."; return emailIn.focus(); }
-            Store.setProfile({ name: name.value, mobile: m, email: emailIn.value }); Store.flush(); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"));
+            const was = !!(Store.get().name && Store.get().mobile && Store.contactEmail());
+            /* a changed number is no longer the verified one */
+            if (m && m !== Store.get().mobile && Store.get().mv) Store.setProfile({ mvOff: 1 });
+            Store.setProfile({ name: name.value, mobile: m, email: emailIn.value }); Store.flush(); if (!was) track("profile", true); step = needsVerify() ? "v" : 1; paint(); } } }, "Continue"),
+          h("p", { class: "tiny mute", style: "text-align:center" }, "Not you? ", h("button", { type: "button", class: "link", on: { click: signOut } }, "Sign out")));
         name.focus();
       } else if (step === "v") {
         verifyPaint();
       } else {
         const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); Store.flush(); scrim.remove(); resolve(null); } } }, "Open my academy");
-        ap(box, logo, h("div", {}, h("h1", { class: "h1" }, `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
-          doorPicker(door, id => { door = id; go.disabled = false; }), aboutYou(), go);
+        ap(box, logo, h("div", {}, h("h1", { class: "h1" }, guest ? "Welcome. Everything here is free." : `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, guest ? "Which describes you best? It sets the courses we show first. No account needed: start learning right away." : "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
+          doorPicker(door, id => { door = id; go.disabled = false; }), aboutYou(), go,
+          !guest ? h("button", { type: "button", class: "link", style: "margin:0 auto", on: { click: () => { step = 0; paint(); } } }, "Back to my details") : null,
+          guest ? h("button", { type: "button", class: "link", style: "margin:0 auto", on: { click: () => { scrim.remove(); resolve(null); } } }, "Skip for now") : null);
       }
     }
     paint();

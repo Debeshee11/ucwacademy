@@ -1,7 +1,7 @@
 /* Credentials. The backend issues them (functions/lib/creds.js) when a Beginner exam or refresher is passed, and when a level or the
    Professional credential becomes due. This file only reads and describes them. Each is published at credentials/<id>, so anyone
    with the link can verify it. Valid for RULES.validMonths; a refresher renews it. */
-import { db, fns } from "./fb.js";
+import { db, fns, backend } from "./fb.js";
 import { dayMs } from "./dom.js";
 import { level } from "./data.js";
 import * as Store from "./store.js";
@@ -18,11 +18,13 @@ export function absorb(res) { for (const c of [res?.cred, ...(res?.extra || [])]
 
 /* After Client Lab practice the Professional credential may be due. Resolves with the credentials newly awarded. */
 export async function recheck() {
+  await backend();
   const f = fns(); if (!f) return [];
   try { const r = (await f.httpsCallable("checkCredentials")()).data; (r.extra || []).forEach(Store.addCredential); return r.extra || []; } catch { return []; }
 }
 
 export async function fetchPublic(id) {
+  await backend();
   const d = db(); if (!d) throw new Error("offline");
   const snap = await d.doc("credentials/" + id).get();
   return snap.exists ? snap.data() : null;

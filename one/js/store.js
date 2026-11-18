@@ -19,9 +19,14 @@ const blank = () => ({
   created: Date.now(), updated: 0
 });
 
-let state = blank(), uid = null, email = "", timer = null, warned = false;
+let state = blank(), uid = null, email = "", timer = null, warned = false, guest = false;
 const subs = new Set();
-const KEY = u => "one:v1:" + u;
+/* A visitor who has not signed in learns as a guest: progress is kept on this device under its own key, and joins the account at sign-in. */
+const GUEST = "guest";
+const KEY = u => "one:v1:" + (u || GUEST);
+export const isGuest = () => guest;
+const PROGRESS = ["done", "part", "q", "quiz", "lab", "act", "streak"];
+const hasProgress = g => !!g && (Object.keys(g.done || {}).length || Object.keys(g.q || {}).length || Object.keys(g.quiz || {}).length || Object.keys(g.lab || {}).length);
 const emit = () => subs.forEach(fn => fn(state));
 
 /* ——— load and save ——— */
@@ -34,6 +39,14 @@ function clean(raw) {
 }
 
 export async function init(user) {
+  if (!user) {
+    /* Guest: nothing is read from or written to the database. */
+    guest = true; uid = null; email = "";
+    let g = null; try { g = JSON.parse(localStorage.getItem(KEY(null)) || "null"); } catch {}
+    state = clean(g); state.kind = "guest"; state.creds = {}; state.nm = {};
+    emit(); return;
+  }
+  guest = false;
   uid = user.uid; email = (user.email || "").toLowerCase();
   let local = null;
   try { local = JSON.parse(localStorage.getItem(KEY(uid)) || "null"); } catch {}
@@ -54,7 +67,28 @@ export async function init(user) {
   /* Course exam results recorded by the backend win over anything held locally. */
   if (d) { try { const r = await d.doc("examres/" + uid).get(); if (r.exists) for (const [k, v] of Object.entries(r.data())) { const [cid, t] = k.split(":"), key = ({ b: "x:", i: "x2:", h: "x3:" })[t]; if (!key || !v) continue;
     const o = state.quiz[key + cid] || { best: 0, n: 0, last: 0, passed: null }; state.quiz[key + cid] = { best: Math.max(o.best || 0, v.best || 0), n: Math.max(o.n || 0, v.n || 0), last: Math.max(o.last || 0, v.last || 0), passed: v.passed || o.passed }; } } catch (e) { console.warn("Could not read exam results", e); } }
-  if (!state.kind) state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
+  /* Progress made as a guest on this device joins the account once, then the guest copy is cleared. Nothing already in the account is lost:
+     each lesson, answer and score keeps the better of the two, and the account's own name, number and settings are never replaced. */
+  try {
+    const g = JSON.parse(localStorage.getItem(KEY(null)) || "null");
+    if (hasProgress(g)) {
+      const mine = state.streak || { n: 0, last: "" }, theirs = clean(g).streak;
+      const m = mergeStates(clean(state), clean(g));
+      for (const k of PROGRESS) state[k] = m[k];
+      /* A streak the account already had is never cut short by a day of guest learning: the guest day extends it. */
+      state.streak = theirs.last > mine.last ? (mine.last && mine.last >= prevWorkday(theirs.last) ? { n: Math.max(mine.n + 1, theirs.n), last: theirs.last } : theirs)
+        : theirs.last === mine.last ? { n: Math.max(mine.n, theirs.n), last: mine.last } : mine;
+      if (state.last == null && g.last != null) state.last = g.last;
+      for (const k of ["door", "age", "start"]) if (!state[k] && g[k]) state[k] = g[k];
+      if (!(state.ints || []).length && Array.isArray(g.ints)) state.ints = g.ints.slice(0, 4);
+      if (!state.onb && g.onb) state.onb = 1;
+      state.updated = Date.now();
+      localStorage.setItem(KEY(uid), JSON.stringify(state));
+      timer = setTimeout(flush, 1500);
+    }
+    if (g) localStorage.removeItem(KEY(null));
+  } catch (e) { console.warn("Could not join guest progress", e); }
+  if (!state.kind || state.kind === "guest") state.kind = email.endsWith(STAFF_DOMAIN) ? "staff" : "public";
   const pid = user.providerData?.[0]?.providerId || "";
   state.prov = pid === "google.com" ? "google" : pid === "password" ? "email" : (pid || state.prov || "");
   emit();
@@ -171,7 +205,7 @@ export const recordLab = (id, score) => mutate(s => { const r = s.lab[id] || { s
 
 /* ——— profile ——— */
 export const setName = name => mutate(s => { s.name = name.trim().slice(0, 60); });
-export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); if (p.mv) s.mv = 1; if (p.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email.trim())) s.email = p.email.trim().toLowerCase().slice(0, 120); });
+export const setProfile = p => mutate(s => { if (p.name) s.name = p.name.trim().slice(0, 60); if (p.mobile) s.mobile = String(p.mobile).startsWith("+") ? String(p.mobile).slice(0, 16) : String(p.mobile).replace(/\D/g, "").slice(-10); if (p.mvOff) s.mv = 0; if (p.mv) s.mv = p.mv === 2 && s.mv !== 1 ? 2 : 1; if (p.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email.trim())) s.email = p.email.trim().toLowerCase().slice(0, 120); });
 export const setOnboarded = () => mutate(s => { s.onb = 1; });
 export const isStaff = () => email.endsWith(STAFF_DOMAIN);
 export const setLang = lang => mutate(s => { s.lang = lang; });

@@ -9,6 +9,7 @@ import { reportError } from "./monitor.js";
 import { legalPage, consentGate } from "./legal.js";
 import { h, toast, clear } from "./dom.js";
 import { loadData, loadTx } from "./data.js";
+import { applyAudience } from "./audience.js";
 import * as Store from "./store.js";
 import * as Auth from "./auth.js";
 import { needsVerify } from "./mobileverify.js";
@@ -26,9 +27,13 @@ import { fundData } from "./funddata.js";
 import { loadLive } from "./holdings.js";
 import * as Lib from "./library.js";
 import { team } from "./team.js";
-import { errorCard } from "./ux.js";
+import { errorCard, accountWall, saveNudge } from "./ux.js";
 import { admin } from "./admin.js";
 import * as Nism from "./nism.js";
+import { toolsPage, toolPage, toolById } from "./tools.js";
+import { backend } from "./fb.js";
+import { quotesPage } from "./quotes.js";
+import { course as courseById } from "./data.js";
 
 const root = document.getElementById("app");
 const splash = () => h("div", { class: "splash", role: "status", "aria-label": "Loading" }, h("img", { src: "assets/mark.svg", alt: "UpperCrust Academy" }), h("div", { class: "splash-line" }, h("i")), h("p", { class: "splash-t" }, "Preparing your academy"));
@@ -42,15 +47,19 @@ const ROUTES = [
   [/^courses$/, () => Ac.courses(), "courses", "Courses"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
-  [/^board$/, () => board(), "me", "Leaderboard"],
-  [/^review$/, () => review(), "me", "Review and rate"],
+  [/^board$/, () => board(), "me", "Leaderboard", false, "The leaderboard shows learners by name, so it needs an account."],
+  [/^review$/, () => review(), "me", "Review and rate", false, "Sign in to rate the Academy."],
   [/^funds$/, () => Lib.funds(), "desk", "Funds"],
   [/^fund\/([\w-]+)$/, id => Lib.fund(id), "desk", "Fund"],
   [/^indices$/, () => Lib.indices(), "desk", "Indices"],
   [/^index\/([\w-]+)$/, id => Lib.index(id), "desk", "Index"],
   [/^practice$/, () => P.practice(), "practice", "Practice"],
+  [/^tools$/, () => toolsPage(), "practice", "Money calculators"],
+  [/^tool\/([\w-]+)$/, id => toolPage(id, courseById(toolById(id)?.course)?.title) || notFound("That calculator does not exist."), "practice", "Calculator"],
   [/^news$/, () => P.desk(), "desk", "News & Markets"],
   [/^desk$/, () => P.desk(), "desk", "News & Markets"],
+  [/^quotes$/, () => quotesPage(), "practice", "Quote bank"],
+  [/^quote\/([0-9a-f]{6})$/, id => quotesPage(id), "practice", "Quote bank"],
   [/^lab$/, () => P.lab(), "practice", "Client lab"],
   [/^lab\/([\w-]+)$/, id => P.labScenario(id), "practice", "Client lab"],
   [/^nism$/, () => Nism.hub(), "assess", "NISM prep"],
@@ -60,16 +69,16 @@ const ROUTES = [
   [/^terms$/, () => legalPage("terms"), "", "Terms of use"],
   [/^disclosures$/, () => legalPage("disclosures"), "", "Disclosures"],
   [/^contact$/, () => contactPage(), "", "Contact us"],
-  [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate"],
+  [/^cert\/([\w-]+)$/, id => C.cert(id), "me", "Certificate", false, "Certificates are issued to a named account."],
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],
   [/^quiz\/module\/([\w-]+)\/(\d+)$/, (c, i) => Q.moduleQuiz(root, c, +i), "", "Quiz", true],
-  [/^quiz\/exam\/([\w-]+)(?:\/([bih]))?$/, (c, t) => Q.exam(root, c, t || "b"), "", "Exam", true],
+  [/^quiz\/exam\/([\w-]+)(?:\/([bih]))?$/, (c, t) => Q.exam(root, c, t || "b"), "", "Exam", true, "Course exams are marked on our servers and lead to a certificate in your name, so they need an account. Lessons and practice quizzes stay open."],
   [/^syllabus\/([\w-]+)\/([bih])$/, (c, t) => Syl.syllabus(c, t), "courses", "Syllabus"],
-  [/^nism\/([\w-]+)\/mock\/(\d)$/, (id, n) => Nism.mock(root, id, +n, /review=1/.test(location.hash)), "", "NISM mock", true],
-  [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true],
+  [/^nism\/([\w-]+)\/mock\/(\d)$/, (id, n) => Nism.mock(root, id, +n, /review=1/.test(location.hash)), "", "NISM mock", true, "Mock exams are marked on our servers and your scores are saved to your account. The study guides and unit notes stay open."],
+  [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true, "Refreshers renew a certificate, so they need an account."],
   [/^quiz\/daily$/, () => Q.daily(root), "", "Daily five", true],
   [/^quiz\/revise$/, () => Q.revise(root), "", "Revise", true],
   [/^quiz\/fund(?:\/(ma|def))?$/, g => Q.fundQuiz(root, g), "", "Fund quiz", true],
@@ -82,15 +91,17 @@ const ROUTES = [
 let ui = null;
 function route() {
   const path = location.hash.replace(/^#\/?/, "").split("?")[0].replace(/\/$/, "");
-  for (const [re, view, nav, title, focus] of ROUTES) {
+  for (const [re, view, nav, title, focusRoute, acct] of ROUTES) {
     const m = path.match(re);
     if (!m) continue;
+    /* A guest who opens something that needs an account sees why, and one button to sign in. Nothing else changes for them. */
+    const walled = !!acct && Store.isGuest(), focus = focusRoute && !walled;
     document.title = `${title} · UpperCrust Academy`;
     { const [a, b] = path.split("/"); pop("page:" + (a || "home").replace(/[^\w-]/g, "")); if (b && /^(course|nism|fund|index)$/.test(a) && /^[\w-]{1,50}$/.test(b)) pop(a + ":" + b); }
     ui.show(!focus); ui.active(nav);
     try {
-      const out = view(...m.slice(1));
-      if (!focus) { clear(root); if (out) root.append(out); }
+      const out = walled ? accountWall(title, acct) : view(...m.slice(1));
+      if (!focus) { clear(root); if (out) root.append(out); if (!walled && nav === "home" && out) saveNudge(out); }
     } catch (e) {
       console.error(e); reportError(e);
       clear(root).append(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Something went wrong."), h("p", { class: "mute" }, "Reload the page. If it keeps happening, tell the administrator."), h("a", { class: "btn primary", href: "#/" }, "Home")));
@@ -102,6 +113,8 @@ function route() {
 }
 
 async function boot() {
+  /* Someone who has signed in on this device before will need the database: start fetching that part of the SDK now, alongside everything else. */
+  try { if (Object.keys(localStorage).some(k => /^one:v1:(?!guest$)/.test(k))) backend(); } catch {}
   const pub = location.hash.match(/^#\/verify\/([\w-]+)$/);
   if (pub) {
     document.title = "Verify · UpperCrust Academy";
@@ -127,7 +140,7 @@ async function boot() {
   const user = await Auth.start();
   root.replaceChildren(splash());
   try {
-    await Promise.all([loadData(), Store.init(user)]);
+    await Promise.all([loadData(), (user ? backend() : Promise.resolve()).then(() => Store.init(user))]);
     await loadLive();
   } catch (e) {
     console.error(e); reportError(e);
@@ -139,20 +152,35 @@ async function boot() {
   if (I18n.hasPref()) { if (sl !== I18n.getLang()) Store.setLang(I18n.getLang()); }
   else if (sl !== "en" && I18n.remember(sl)) { location.reload(); return; }
   await loadTx(Store.get().lang);
+  applyAudience();
   document.addEventListener("one:syncerror", () => toast("Progress saved on this device only. We'll retry."));
-  const np = Auth.takeProfile(); if (np) { Store.setProfile(np); track("signup", true); }
+  const np = Auth.takeProfile(); if (np) { const { fresh, ...prof } = np; Store.setProfile(prof); if (fresh) track("signup", true); }
+  if (!user) {
+    /* Guests go straight in. On a first visit to Home they pick who they are (or skip); a link to a lesson or course opens at once. */
+    if (!Store.get().onb && !Object.keys(Store.get().done).length && /^#?\/?$/.test(location.hash)) await Auth.welcome({ guest: true });
+    if (!Store.get().onb) Store.setOnboarded();
+  } else {
   if (!Store.hasConsent()) await consentGate();
   if (!Store.get().onb && !Object.keys(Store.get().done).length) {
     const r = await Auth.welcome();
     Store.setOnboarded();
     if (r === "place") location.hash = "#/quiz/place";
   } else if (!Store.get().door || !Store.get().mobile || !Store.get().name || !Store.contactEmail() || needsVerify()) { await Auth.welcome(); }
+  }
   ui = frame(route);
   incoming();
   document.addEventListener("one:tour", () => startTour(Store.uidNow()));
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);
   route();
-  if (!tourSeen(Store.uidNow()) && !/^#\/(lesson|quiz|syllabus|nism\/[\w-]+\/mock)/.test(location.hash)) setTimeout(() => startTour(Store.uidNow()), 600);
+  /* The tour starts on arrival, as before. A guest who followed a link to a lesson, course or calculator is left to read it; they get the tour when they first reach Home. */
+  const tourOk = () => !tourSeen(Store.uidNow()) && (user ? !/^#\/(lesson|quiz|syllabus|nism\/[\w-]+\/mock)/.test(location.hash) : /^#?\/?$/.test(location.hash));
+  if (tourOk()) setTimeout(() => startTour(Store.uidNow()), 600);
+  else if (!user) addEventListener("hashchange", function once() { if (tourOk()) { removeEventListener("hashchange", once); setTimeout(() => { if (tourOk()) startTour(Store.uidNow()); }, 600); } });
 }
 boot();
+
+/* Offline and "add to home screen": the service worker keeps the app and every opened lesson on the device. */
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}

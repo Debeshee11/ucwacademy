@@ -3,7 +3,7 @@ import { h } from "./dom.js";
 
 /* kind: "courses" | "exams" | "news". stats: [[number, label], ...] */
 export function pageHero(kind, title, lead, stats = [], note = null) {
-  const EMO = { courses: "🎓", exams: "🏆", news: "📰" };
+  const EMO = { courses: "🎓", exams: "🏆", news: "📰", quotes: "💬" };
   return h("section", { class: "pghero pg-" + kind },
     h("i", { class: "pgh-blob b1", "aria-hidden": "true" }), h("i", { class: "pgh-blob b2", "aria-hidden": "true" }),
     h("span", { class: "pgh-emo", "aria-hidden": "true" }, EMO[kind] || "✨"),

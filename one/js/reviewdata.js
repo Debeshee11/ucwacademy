@@ -1,5 +1,5 @@
 /* Review data: what to ask, how points are earned, and the calls to the backend. No screen code here. */
-import { db, fns } from "./fb.js";
+import { db, fns, backend } from "./fb.js";
 import * as Store from "./store.js";
 
 export const AREAS = [["content", "Lessons and content"], ["exams", "Quizzes and exams"], ["design", "Look and feel"], ["speed", "Speed and reliability"], ["guidance", "Guidance for me"]];
@@ -22,15 +22,18 @@ export function badges(r) {
 }
 
 export async function mine() {
+  await backend();
   const d = db(), u = Store.userId(); if (!d || !u) return null;
   const s = await d.doc("reviews/" + u).get(); return s.exists ? s.data() : null;
 }
 export async function wall() {
+  await backend();
   const d = db(); if (!d) return [];
   const s = await d.collection("reviews").where("ok", "==", true).limit(30).get();
   return s.docs.map(x => ({ id: x.id, ...x.data() })).sort((a, b) => (b.at || 0) - (a.at || 0));
 }
 export async function send(r) {
+  await backend();
   const f = fns(); if (!f) throw new Error("Could not reach the server.");
   return (await f.httpsCallable("submitReview")({ stars: r.stars, areas: r.areas, tags: r.tags, note: r.note, recommend: r.recommend })).data;
 }

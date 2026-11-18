@@ -1,4 +1,5 @@
 /* The syllabus for one exam: a study guide built from the course's lessons, with the extras that make it worth reading. */
+import { isPro, T as T3 } from "./audience.js";
 import { RULES } from "./config.js";
 import { h, icon } from "./dom.js";
 import { D, course, lesson, level, TIERS, examMeta, examPool } from "./data.js";
@@ -26,8 +27,8 @@ export function syllabus(cid, tier) {
       h("div", { class: "syl-body stack stack-s" },
         l.concept?.[0] && tier !== "i" ? h("p", { class: "lead" }, l.concept[0]) : null,
         tier === "h" && l.client ? h("div", { class: "stack stack-xs" },
-          h("div", { class: "eyebrow" }, "The client says"), h("p", { class: "syl-q" }, l.client.quote), l.client.context ? h("p", { class: "small mute" }, l.client.context) : null,
-          l.talk ? h("div", { class: "eyebrow", style: "margin-top:6px" }, "A strong answer sounds like") : null, l.talk ? h("p", {}, l.talk) : null) : null,
+          h("div", { class: "eyebrow" }, isPro() ? "The client says" : "A common question"), h("p", { class: "syl-q" }, l.client.quote), l.client.context ? h("p", { class: "small mute" }, l.client.context) : null,
+          l.talk ? h("div", { class: "eyebrow", style: "margin-top:6px" }, isPro() ? "A strong answer sounds like" : "A clear answer sounds like") : null, l.talk ? h("p", {}, l.talk) : null) : null,
         pts.length ? h("div", { class: "stack stack-xs" }, h("div", { class: "eyebrow" }, S.ptsTitle), h("ul", { class: "facts" }, pts.map(t => h("li", {}, t)))) : null,
         tier === "h" && !l.client ? h("ul", { class: "facts" }, (l.concept || []).slice(0, 3).map(t => h("li", {}, t))) : null,
         h("div", { class: "row-flex between syl-act" },
@@ -41,13 +42,13 @@ export function syllabus(cid, tier) {
     h("section", { class: "hero stack" },
       h("a", { class: "small", href: `#/course/${cid}` }, icon("left", 16), c.title),
       h("div", { class: "row-flex", style: "gap:10px" }, levelTag(level(c.level)), h("span", { class: "pill gold" }, `${S.emoji} ${T.name} exam`), mine?.passed ? h("span", { class: "pill ok" }, `Passed · best ${mine.best}%`) : null),
-      h("h1", { class: "h1", style: "font-size:clamp(30px,5vw,44px)" }, `${T.name} syllabus: ${S.verb}`),
+      h("h1", { class: "h1", style: "font-size:clamp(30px,5vw,44px)" }, `${T.name} syllabus: ${!isPro() && S.verb === "Advise with it" ? "Master it" : S.verb}`),
       h("p", { class: "lead" }, meta.hook || c.blurb),
       h("div", { class: "stats" }, h("span", {}, h("b", {}, RULES.examQuestions), " questions"), h("span", {}, h("b", {}, pass + "%"), " to pass"), h("span", {}, h("b", {}, c.lessons.length), " lessons covered"), h("span", {}, h("b", {}, Math.min(examPool(c, tier).length, 99)), " in the question bank")),
       h("div", { class: "row-flex" }, open ? h("a", { class: "btn primary", href: `#/assess/${cid}` }, "Go to Exams") : h("span", { class: "pill" }, tier === "b" ? "Opens after every module quiz" : `Opens after the ${tier === "i" ? "Beginner" : "Intermediate"} exam`))),
     h("div", { class: "cols" },
       h("div", { class: "stack stack-l" }, tabs,
-        h("section", { class: "stack" }, h("h2", { class: "h2" }, `${S.emoji} What this exam is about`), h("p", { class: "lead" }, T.blurb), h("p", {}, S.intro)),
+        h("section", { class: "stack" }, h("h2", { class: "h2" }, `${S.emoji} What this exam is about`), h("p", { class: "lead" }, T.blurb), h("p", {}, T3(S.intro))),
         h("section", { class: "stack" }, h("div", { class: "row-flex between" }, h("h2", { class: "h2" }, "🗺️ The study map"), h("span", { class: "row-flex no-print" }, h("button", { class: "btn ghost small", on: { click: ev => { const d = [...document.querySelectorAll(".syl-d")], o = d.some(x => !x.open); d.forEach(x => x.open = o); ev.currentTarget.textContent = o ? "Collapse all" : "Expand all"; } } }, "Expand all"), h("button", { class: "btn ghost small", on: { click: () => { document.querySelectorAll(".syl-d").forEach(x => x.open = true); print(); } } }, "Print or save as PDF"))), meter, ...c.modules.map((m, mi) => h("div", { class: "stack" },
           h("div", { class: "eyebrow" }, `Module ${mi + 1}`), h("h3", { class: "h2" }, m.title), ...m.lessons.map(n => lessonCard(n, all.indexOf(n)))))),
         meta.fun?.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "💡 Did you know?"), ...meta.fun.map(t => h("div", { class: "card tint" }, h("p", {}, t)))) : null,

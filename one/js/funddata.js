@@ -3,6 +3,7 @@ import { h, toast } from "./dom.js";
 import { D } from "./data.js";
 import { db } from "./fb.js";
 import * as Store from "./store.js";
+import { ask } from "./ux.js";
 import { page, notFound, isAdmin } from "./ui.js";
 import { parseHoldings, loadLive, monthsOf, monthLabel, fundIds, fundName, slug } from "./holdings.js";
 
@@ -53,7 +54,7 @@ export function fundData() {
         field("Fund", fundSel), nBox, field("Month of the portfolio", month), field("Paste holdings", text), preview, save),
       h("section", { class: "lib-panel" }, h("h2", { class: "lib-ptitle" }, "Saved months"),
         saved.length ? h("ul", { class: "lib-rows" }, saved.map(([id, m]) => h("li", { class: "row-flex between" }, h("span", {}, h("b", {}, fundName(id)), ` · ${monthLabel(m)} · ${D.live.months[id][m].holdings.length} holdings`),
-          h("button", { class: "btn ghost", style: "height:38px", on: { click: async () => { if (!confirm("Delete this month?")) return; await db().doc(`fundmonths/${id}__${m}`).delete(); await loadLive(); paint(); } } }, "Delete"))))
+          h("button", { class: "btn ghost", style: "height:38px", on: { click: async () => { if (!(await ask("Delete this month?", { ok: "Delete", danger: true }))) return; await db().doc(`fundmonths/${id}__${m}`).delete(); await loadLive(); paint(); } } }, "Delete"))))
           : h("p", { class: "mute" }, "Nothing uploaded yet. Until then, funds show the top 10 from the factsheet.")));
   }
   paint();

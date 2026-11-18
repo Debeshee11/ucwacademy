@@ -1,4 +1,5 @@
 /* Home, Explore, and a single course. */
+import { isPro } from "./audience.js";
 import { realmVars } from "./art.js";
 import { h, icon, plural, isoDay, dayMs, toast, add } from "./dom.js";
 import { D, level, course, lesson, partsOf, loadTx, TIERS } from "./data.js";
@@ -23,7 +24,7 @@ export const storyCard = l => h("a", { class: "list-row", href: `#/lesson/${l.n}
   h("div", { class: "grow" },
     h("div", { class: "tiny mute" }, (l.story.src || "").split("(")[0].trim() + (l.story.date ? " · " + l.story.date : "")),
     h("div", { class: "list-title", style: "margin-top:2px" }, l.story.headline),
-    h("div", { class: "news-for" }, h("b", {}, "For clients: "), l.talk.replace(/^["“]|["”]$/g, "").split(/(?<=[.!?])\s/)[0])), chev());
+    h("div", { class: "news-for" }, h("b", {}, isPro() ? "For clients: " : "In short: "), l.talk.replace(/^["“]|["”]$/g, "").split(/(?<=[.!?])\s/)[0])), chev());
 
 const OFF = [0, -46, -74, -46, 0, 46, 74, 46];
 
@@ -181,7 +182,7 @@ export function coursePage(id) {
     body.replaceChildren();
     if (tab === "overview") put(
       h("section", { class: "stack" }, h("h2", { class: "h2" }, "How a lesson works"),
-        h("ul", { class: "facts" }, [["The big story", " from this week's markets"], ["Concept", " in plain language"], ["Think like a client", " before you answer"], ["Questions", " that explain every option"], ["Client conversation", " talk track"], ["Remember", " one line to keep"]].map(([b, t]) => h("li", {}, h("b", {}, b), t)))),
+        h("ul", { class: "facts" }, (isPro() ? [["The big story", " from this week's markets"], ["Concept", " in plain language"], ["Think like a client", " before you answer"], ["Questions", " that explain every option"], ["Client conversation", " talk track"], ["Remember", " one line to keep"]] : [["The big story", " from this week's markets"], ["The idea", " in plain language"], ["A worked example", " with real rupees"], ["A common question", " people ask"], ["Questions", " that explain every option"], ["The short answer", " and one line to keep"]]).map(([b, t]) => h("li", {}, h("b", {}, b), t)))),
       h("section", { class: "stack" }, h("h2", { class: "h2" }, "Skills you will gain"), h("div", { class: "chips" }, skillsOf(c).map(t => h("span", { class: "pill" }, t)))),
       nextCourse ? h("a", { class: "card link row-flex between", href: `#/course/${nextCourse.id}` }, h("div", {}, h("div", { class: "eyebrow" }, "Next up after this"), h("div", { class: "list-title" }, nextCourse.title), h("div", { class: "small mute" }, `${level(nextCourse.level).name} · ${nextCourse.lessons.length} lessons`)), chev()) : null);
     if (tab === "syllabus") put(...modules(), examBlock());
@@ -211,6 +212,6 @@ export function coursePage(id) {
       h("div", { class: "stack stack-l" }, strip, body),
       h("aside", {}, h("div", { class: "card stack" },
         h("h3", { class: "h3" }, "This course includes"),
-        h("div", { class: "stack stack-s small" }, ["Six-part lessons with client scenarios", "Quizzes with a reason for every wrong answer", "Spaced revision of what you missed", "Certificate you can verify and share"].map(t => h("div", { class: "row-flex", style: "gap:10px;align-items:flex-start;flex-wrap:nowrap" }, h("span", { style: "color:var(--ok);flex:none" }, icon("check", 18)), t))),
+        h("div", { class: "stack stack-s small" }, [(isPro() ? "Six-part lessons with client scenarios" : "Short lessons with worked examples"), "Quizzes with a reason for every wrong answer", "Spaced revision of what you missed", "Certificate you can verify and share"].map(t => h("div", { class: "row-flex", style: "gap:10px;align-items:flex-start;flex-wrap:nowrap" }, h("span", { style: "color:var(--ok);flex:none" }, icon("check", 18)), t))),
         h("a", { class: "small", style: "color:var(--blue-d);font-weight:800", href: "#/quiz/place" }, "Take the placement quiz")))));
 }

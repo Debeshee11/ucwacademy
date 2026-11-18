@@ -4,7 +4,8 @@ import { h, icon, clear, toast } from "./dom.js";
 import { D } from "./data.js";
 import { LANGS, setLanguage } from "./i18n.js";
 import * as Store from "./store.js";
-import { signOut } from "./auth.js";
+import { signOut, signIn } from "./auth.js";
+import { isPro, doorOf } from "./audience.js";
 
 export const NAV = [
   ["#/", "Home", "home", "home", "Your next step"],
@@ -28,30 +29,35 @@ export function frame(onLang) {
   function close() { open = false; paintMenu(); }
   function paintMenu() {
     clear(menuHost);
-    const s = Store.get(), n = Store.streakNow();
+    const s = Store.get(), n = Store.streakNow(), guest = Store.isGuest();
     const initial = (s.name || Store.userEmail() || "?").trim()[0].toUpperCase();
     const btn = h("button", { class: "avatar", "aria-haspopup": "menu", "aria-expanded": String(open), "aria-label": "Account", on: { click: ev => { ev.stopPropagation(); open = !open; paintMenu(); } } }, initial);
     menuHost.append(
       h("button", { type: "button", class: "pillstat fire", title: "Weekday streak", "aria-label": `${n} day streak`, on: { click: () => toast("Do one lesson or quiz on a weekday to grow your streak.") } }, icon("flame"), n),
       h("button", { type: "button", class: "pillstat xp", title: "Points: 20 per lesson, 2 per right answer, 30 per quiz passed", "aria-label": `${Store.xp()} points`, on: { click: () => toast("Points: 20 per lesson, 2 per right answer, 30 per quiz passed.") } }, icon("star"), Store.xp()),
+      guest ? h("button", { type: "button", class: "guest-in", on: { click: () => signIn() } }, "Sign in") : null,
       btn);
     if (open) {
       const lang = h("select", { "aria-label": "Language", on: { change: async ev => { const v = ev.target.value; Store.setLang(v); try { await Store.flush(); } catch {} setLanguage(v); } } },
         LANGS.map(([v, t]) => h("option", { value: v, selected: s.lang === v }, t)));
+      const door = doorOf(s.door), link = (href, ic, label) => h("a", { href, role: "menuitem", on: { click: close } }, icon(ic, 20), label);
+      const admin = isAdmin() ? h("details", { class: "mdet" }, h("summary", { class: "mh" }, "Admin"),
+        link("#/admin", "trend", "Growth and exams"), link("#/team", "team", "Team"), link("#/funddata", "book", "Fund data")) : null;
       menuHost.append(h("div", { class: "menu", role: "menu", on: { click: ev => ev.stopPropagation() } },
-        h("div", { class: "who" }, h("div", { style: "font-weight:800" }, s.name || "Learner"), h("div", { class: "tiny mute" }, Store.userEmail())),
-        h("label", { class: "tiny mute", style: "display:block;padding:0 12px 10px;font-weight:800" }, "Language", lang),
-        h("a", { href: "#/board", role: "menuitem", on: { click: close } }, icon("trophy", 20), "Leaderboard"),
-        h("a", { href: "#/review", role: "menuitem", on: { click: close } }, icon("star", 20), "Review and rate"),
-        isAdmin() && h("a", { href: "#/funddata", role: "menuitem", on: { click: close } }, icon("book", 20), "Fund data"),
-        isAdmin() && h("a", { href: "#/admin", role: "menuitem", on: { click: close } }, icon("trend", 20), "Growth and exams"),
-        isAdmin() && h("a", { href: "#/team", role: "menuitem", on: { click: close } }, icon("team", 20), "Team"),
-        h("button", { role: "menuitem", on: { click: () => { close(); document.dispatchEvent(new CustomEvent("one:tour")); } } }, icon("star", 20), "Take the tour"),
-        h("a", { href: "#/contact", role: "menuitem", on: { click: close } }, icon("chat", 20), "Contact us"),
-        h("a", { href: "#/privacy", role: "menuitem", on: { click: close } }, icon("link", 20), "Privacy notice"),
-        h("a", { href: "#/terms", role: "menuitem", on: { click: close } }, icon("link", 20), "Terms of use"),
-        h("a", { href: "#/disclosures", role: "menuitem", on: { click: close } }, icon("link", 20), "Disclosures"),
-        h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
+        h("div", { class: "who" }, h("div", { style: "font-weight:800" }, guest ? "Guest" : s.name || "Learner"),
+          h("div", { class: "tiny mute" }, guest ? "Progress is saved on this device" : Store.userEmail()),
+          h("a", { class: "tiny linkish", href: "#/me", on: { click: close } }, door ? `Learning as ${door.name}. Change` : "Tell us who you are")),
+        guest && h("button", { role: "menuitem", class: "btn primary block", style: "margin:8px 0 2px;width:100%", on: { click: () => { close(); signIn(); } } }, icon("user", 20), "Sign in or create an account"),
+        h("div", { class: "mh" }, "Explore"),
+        h("div", { class: "mrow" }, link("#/quotes", "quote", "Quote bank"), link("#/tools", "trend", "Calculators"),
+          !guest && link("#/board", "trophy", "Leaderboard"), !guest && link("#/review", "star", "Rate us")),
+        h("div", { class: "mh" }, "Settings"),
+        h("label", { class: "tiny mute", style: "display:block;padding:0 12px 6px;font-weight:800" }, "Language", lang),
+        h("button", { role: "menuitem", on: { click: () => { close(); document.dispatchEvent(new CustomEvent("one:tour")); } } }, icon("help", 20), "Take the tour"),
+        admin,
+        h("hr"),
+        h("div", { class: "mfoot" }, h("a", { href: "#/contact", on: { click: close } }, "Contact"), h("a", { href: "#/privacy", on: { click: close } }, "Privacy"), h("a", { href: "#/terms", on: { click: close } }, "Terms"), h("a", { href: "#/disclosures", on: { click: close } }, "Disclosures")),
+        !guest && h("button", { role: "menuitem", on: { click: signOut } }, icon("out", 20), "Sign out")));
     }
   }
   document.addEventListener("click", () => { if (open) close(); });
@@ -59,7 +65,8 @@ export function frame(onLang) {
 
   function paintNav() {
     clear(nav); clear(tabs);
-    for (const [href, label, ic, id, sub] of NAV) {
+    for (const [href, label, ic, id, sub0] of NAV) {
+      const sub = !isPro() && id === "practice" ? "Daily quiz, revision, calculators" : !isPro() && id === "desk" ? "Headlines, funds, indices" : sub0;
       const cur = id === active ? { "aria-current": "page" } : {};
       nav.append(h("a", { href, title: sub, ...cur }, icon(ic), h("span", { class: "nav-t" }, h("b", {}, label), h("small", {}, sub))));
       tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label === "News & Markets" ? "News" : label)));

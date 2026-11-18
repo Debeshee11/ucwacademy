@@ -1,4 +1,5 @@
 /* Practice hub, the market desk, and the client lab. */
+import { isPro } from "./audience.js";
 import { AI_ENDPOINT, NEWS_BASE, RULES } from "./config.js";
 import { h, icon, ago, plural, toast } from "./dom.js";
 import { D } from "./data.js";
@@ -8,6 +9,7 @@ import { page, checkMark, notFound } from "./ui.js";
 import { stories, storyCard } from "./home.js";
 import { newsFeed } from "./news.js";
 import { pageHero } from "./pagehero.js";
+import { ask } from "./ux.js";
 
 const row = (href, title, sub, done) => h("a", { class: "list-row", href },
   checkMark(done ? "done" : ""), h("div", { class: "grow" }, h("div", { class: "list-title" }, title), h("div", { class: "small mute" }, sub)), h("span", { class: "chev" }, icon("chev", 18)));
@@ -33,7 +35,9 @@ export function practice() {
         tile("#/quiz/market", "trend", "Market quiz", "Indices, economy, how markets work", C.violet))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "More ways to learn"),
       h("div", { class: "gtiles" },
-        tile("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`, C.pink),
+        tile("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement and more", C.green),
+        isPro() ? tile("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`, C.pink) : null,
+        tile("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures", C.pink),
         tile("#/quiz/place", "check", "Placement test", "24 questions to find your level", C.green),
         tile("#/board", "trophy", "Leaderboard", "See where you stand", C.gold))));
 }
@@ -41,9 +45,9 @@ export function practice() {
 /* ——— Market desk ——— */
 export function desk() {
   const { seg, list, note } = newsFeed();
-  return page(pageHero("news", "News & Markets", "Today's headlines, why they matter, and what to tell clients.", [], note),
+  return page(pageHero("news", "News & Markets", isPro() ? "Today's headlines, why they matter, and what to tell clients." : "Today's headlines and why they matter, in plain words.", [], note),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today's headlines"), seg, list),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Teach from the story"), h("div", { class: "divide" }, stories(5).map(storyCard))),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, isPro() ? "Teach from the story" : "Learn from the story"), h("div", { class: "divide" }, stories(5).map(storyCard))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "Market tools"), h("div", { class: "divide" },
       row("#/funds", "Fund library", "Every mutual fund: returns, risk, holdings"), row("#/indices", "Index library", "All NSE indices"), row("#/practice", "Practice", "Daily five, revision, fund and market quizzes"))));
 }
@@ -62,8 +66,8 @@ export function labScenario(id) {
   if (!s) return notFound("That scenario does not exist.");
   const ans = h("textarea", { class: "input", rows: 6, placeholder: "Write what you would say to the client…", "aria-label": "Your answer", id: "lab-ans" });
   const reveal = h("div", { class: "stack stack-l", hidden: true });
-  const show = h("button", { class: "btn primary", on: { click: () => {
-    if (ans.value.trim().length < 20 && !confirm("Your answer is very short. Compare anyway?")) return;
+  const show = h("button", { class: "btn primary", on: { click: async () => {
+    if (ans.value.trim().length < 20 && !(await ask("Your answer is very short. Compare anyway?", { ok: "Compare", cancel: "Write more" }))) return;
     show.hidden = true; reveal.hidden = false; build(); reveal.scrollIntoView({ behavior: "smooth", block: "start" });
   } } }, "Compare with a model answer");
 
