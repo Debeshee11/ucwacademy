@@ -91,7 +91,7 @@ exports.keyStatus = R.https.onCall(async (data, ctx) => {
 });
 
 /* Admin only: the numbers behind the dashboard. Uses count queries, so it stays cheap with thousands of learners. */
-const DOORS = ["student", "homemaker", "teacher", "salaried", "business", "retiree", "partner", "team", "global"];
+const DOORS = ["student", "firstjob", "homemaker", "teacher", "salaried", "business", "retiree", "global", "mfd", "ria", "analyst", "planner", "partner", "team"];
 exports.adminStats = makeR({ timeoutSeconds: 60, memory: "512MB" }).https.onCall(async (data, ctx) => {
   needAdmin(ctx);
   const col = db.collection("learners"), now = Date.now(), D = 86400e3;
