@@ -1,0 +1,297 @@
+{
+  "course": "loans-credit-scores",
+  "by": "UpperCrust Academy",
+  "upd": "2026-11",
+  "sources": [
+    "RBI (Pre-payment Charges on Loans) Directions, 2025, in force for loans sanctioned or renewed on or after 1 January 2026, checked 15 Nov 2026",
+    "RBI circular on reset of floating interest rate on EMI-based personal loans (18 August 2023), checked from memory; confirm before review sign-off"
+  ],
+  "lessons": {
+    "461": {
+      "story": {
+        "kicker": "Meet Karthik and Divya",
+        "headline": "The 30-year loan had the smaller EMI. It also cost ₹22 lakh more.",
+        "paras": [
+          "Karthik and Divya were buying their first flat in Coimbatore and needed a loan of ₹30 lakh. The bank offered two options at the same 9% interest.",
+          "Over 20 years the EMI was ₹26,992. Over 30 years it was ₹24,139. The loan officer pointed at the second number: “Only ₹24,000 a month. Very comfortable.” Divya liked it. ₹2,853 less every month felt like a real saving.",
+          "Then Karthik asked for the total. Over 20 years they would pay ₹34.8 lakh in interest. Over 30 years, ₹56.9 lakh. The “comfortable” option cost ₹22 lakh more, for the same flat."
+        ]
+      },
+      "concept": [
+        "A loan has four parts, and you need all four before you can judge it. The principal is the amount you borrow. The interest rate is what the lender charges each year for lending it. The tenure is how long you take to repay. The EMI, or equated monthly instalment, is the fixed amount you pay each month. Change any one and the others move.",
+        "Every EMI contains two things: interest for that month, and a part that repays the principal. In the early years, most of the EMI is interest, because interest is charged on what you still owe, and at the start you owe almost everything. On a ₹30 lakh loan at 9%, the first EMI of ₹26,992 contains ₹22,500 of interest and only ₹4,492 of repayment. Year by year the balance tilts the other way.",
+        "This is why tenure matters so much. A longer tenure makes each EMI smaller, but you stay in debt longer and pay interest for all those extra years. A small drop in EMI can mean a very large rise in total cost.",
+        "Lenders and sellers talk about the EMI because it is the smallest, friendliest number. The number to ask for is the total you will repay: EMI multiplied by the number of months. Subtract the principal and you see the price of the loan.",
+        "A sound rule: choose the shortest tenure whose EMI you can pay comfortably even in a difficult month. Keep all your EMIs together below about 40% of your take-home pay, so that one surprise does not push you into missing a payment."
+      ],
+      "example": {
+        "title": "₹30 lakh at 9%: what the tenure does",
+        "head": ["Tenure", "EMI and total interest"],
+        "rows": [
+          ["10 years", "₹38,003 a month · ₹15.6 lakh interest"],
+          ["15 years", "₹30,428 a month · ₹24.8 lakh interest"],
+          ["20 years", "₹26,992 a month · ₹34.8 lakh interest"],
+          ["30 years", "₹24,139 a month · ₹56.9 lakh interest"]
+        ],
+        "note": "Going from 20 to 30 years lowers the EMI by ₹2,853 and raises the interest by ₹22.1 lakh. Going from 20 to 15 years raises the EMI by ₹3,436 and saves ₹10 lakh."
+      },
+      "tool": "emi",
+      "toolAsk": "Try your own loan, then change only the years.",
+      "client": { "quote": "“The bank says my EMI is only ₹18,000. That is affordable, no?”", "context": "A client focused on the monthly figure." },
+      "talk": "“Affordable each month and cheap overall are different questions. Ask for three more numbers: the interest rate, the number of months, and the total you will repay. Then pick the shortest period you can manage comfortably.”",
+      "remember": [
+        "Four parts: principal, rate, tenure, EMI. Never judge by EMI alone.",
+        "Total repaid = EMI × months. Ask for it every time.",
+        "Longer tenure: smaller EMI, far more interest.",
+        "Early EMIs are mostly interest.",
+        "Keep all EMIs under about 40% of take-home pay."
+      ],
+      "qs": [
+        { "id": "v2-461-1", "prompt": "A loan has an EMI of ₹15,000 for 60 months. The amount borrowed was ₹7 lakh. How much interest is paid over the loan?",
+          "options": ["₹1 lakh", "₹2 lakh", "₹7 lakh", "₹9 lakh"], "answer": 1,
+          "why": "Total repaid is ₹15,000 × 60 = ₹9 lakh. Subtract the ₹7 lakh borrowed and the interest is ₹2 lakh.",
+          "wrong": ["That would need a total of ₹8 lakh. The total here is ₹15,000 × 60 = ₹9 lakh.", null, "₹7 lakh is the principal, not the interest.", "₹9 lakh is the total repaid. Interest is that minus the ₹7 lakh borrowed."] },
+        { "id": "v2-461-2", "prompt": "Two friends each borrow ₹20 lakh at the same rate. Asha repays over 10 years, Bhavna over 20. Which statement is true?",
+          "options": ["Bhavna has the lower EMI and pays more interest in total", "Bhavna has the lower EMI and pays less interest in total", "Both pay the same total interest because the rate is equal", "Asha has the lower EMI because her loan ends sooner"], "answer": 0,
+          "why": "Spreading the same loan over more months lowers each instalment but keeps the borrower paying interest for twice as long, so the total interest is much higher.",
+          "wrong": [null, "A longer tenure never reduces total interest at the same rate. It increases it.", "The rate is per year. More years at that rate means more interest.", "A shorter tenure means larger instalments, not smaller ones."] },
+        { "id": "v2-461-3", "prompt": "In the first year of a 20-year home loan, what does most of each EMI go towards?",
+          "options": ["Repaying the principal", "Processing fees", "Interest", "Insurance on the property"], "answer": 2,
+          "why": "Interest is charged on the outstanding balance, which is at its highest at the start. So early EMIs are mostly interest and only a little principal.",
+          "wrong": ["Principal repayment is the small part early on and grows over the years.", "Processing fees are charged once at the start, not from each EMI.", null, "Insurance, if taken, is a separate premium and not part of the EMI split."] },
+        { "id": "v2-461-4", "prompt": "Naveen takes home ₹75,000 a month. He already pays EMIs of ₹12,000. Using the guide of keeping all EMIs under 40% of take-home pay, what is the largest new EMI he should consider?",
+          "options": ["₹12,000", "₹30,000", "₹18,000", "₹42,000"], "answer": 2,
+          "why": "40% of ₹75,000 is ₹30,000 for all EMIs together. He already pays ₹12,000, leaving room for ₹18,000.",
+          "wrong": ["That is what he already pays, not the room he has left.", "₹30,000 is the limit for all EMIs combined. His existing ₹12,000 must come out of it.", null, "₹42,000 with his existing EMI would take 72% of his pay."] }
+      ]
+    },
+    "462": {
+      "story": {
+        "kicker": "Meet Shalini",
+        "headline": "Her EMI never changed. Her loan quietly grew four years longer.",
+        "paras": [
+          "Shalini took a 20-year home loan of ₹30 lakh at a floating rate of 8.5%. Her EMI was ₹26,035, and for two years it never changed. She assumed all was well.",
+          "Then she looked at her annual statement. Her rate was now 9.5%, and the months remaining were 264, not the 216 she expected. The bank had kept her EMI the same and stretched the loan by 48 months instead.",
+          "Nobody had cheated her. This is how a floating-rate loan works when rates rise and the borrower does nothing. But it meant four more years of payments. She had not known she had a choice."
+        ]
+      },
+      "concept": [
+        "The interest rate on a loan is either fixed or floating. A fixed rate stays the same for the agreed period, so your EMI is certain. It is usually set a little higher, because the lender carries the risk of rates rising. A floating rate moves up and down over the life of the loan.",
+        "Floating rates on most new retail loans from banks are linked to an outside benchmark, most often the Reserve Bank's repo rate. Your rate is the benchmark plus a spread. When the Reserve Bank raises or cuts the repo rate, your rate follows at the next reset, typically within three months.",
+        "When your rate rises, something has to give. Either the EMI goes up, or the tenure gets longer, or a bit of both. Lenders often extend the tenure by default because the borrower does not feel it. As Shalini found, an unchanged EMI can hide years of extra payments.",
+        "You have a say. Lenders are required to tell you about the effect of a rate change and to offer you the choice of a higher EMI, a longer tenure or a mix, as well as the option to prepay in part. If you can afford it, raising the EMI is nearly always cheaper than extending the loan.",
+        "Which should you choose? Floating suits long loans, where rates will rise and fall many times and you benefit when they fall. Fixed suits short loans, or anyone whose budget cannot absorb a higher EMI. Whichever you hold, read your loan statement once a year: check the rate, the EMI and, above all, the months remaining."
+      ],
+      "example": {
+        "title": "Shalini's loan when the rate rose from 8.5% to 9.5%",
+        "intro": "₹30 lakh, 20 years, two years already paid. Balance: ₹28.75 lakh.",
+        "head": ["Her choice", "Result"],
+        "rows": [
+          ["Do nothing: keep EMI at ₹26,035", "264 months left instead of 216"],
+          ["Keep the end date: raise the EMI", "₹27,830 a month, ₹1,795 more"],
+          ["Extra instalments she avoids by raising it", "48 × ₹26,035"]
+        ],
+        "note": "Paying ₹1,795 more each month avoids 48 extra instalments of ₹26,035, about ₹12.5 lakh of payments. Whenever your rate changes, ask the lender for both figures before you decide."
+      },
+      "client": { "quote": "“My rate went up and so did my loan tenure. Why?”", "context": "A client whose floating-rate loan reset." },
+      "talk": "“Your rate is tied to the repo rate, so it rose when the repo rate rose. The lender kept your EMI steady by adding months. You can ask to raise the EMI instead and keep your original end date. If you can afford it, that costs far less overall.”",
+      "remember": [
+        "Fixed: certain EMI, usually a higher rate. Floating: moves with the benchmark.",
+        "Rate up means higher EMI or longer tenure. You can choose.",
+        "A steady EMI can hide a growing loan.",
+        "Raising the EMI is usually cheaper than extending the tenure.",
+        "Check rate, EMI and months remaining once a year."
+      ],
+      "qs": [
+        { "id": "v2-462-1", "prompt": "The repo rate rises by 0.5%. Prakash has a repo-linked floating-rate home loan. What should he expect?",
+          "options": ["Nothing changes until the loan is renewed", "His rate rises at the next reset, lifting his EMI or his tenure", "His EMI falls because banks pass on the benefit", "His loan automatically converts to a fixed rate until the repo rate falls"], "answer": 1,
+          "why": "A repo-linked rate is the repo rate plus a spread, so it moves when the repo rate moves. The lender then raises the EMI, extends the tenure, or both.",
+          "wrong": ["Floating rates reset during the loan, typically within three months of a change.", null, "A rise in the benchmark raises the borrower's cost. EMIs fall only when rates are cut.", "Conversion happens only if the borrower asks for it, and may carry a fee."] },
+        { "id": "v2-462-2", "prompt": "After a rate rise, Rekha's lender says: “Your EMI stays the same.” What should she check next?",
+          "options": ["Whether her credit score has improved", "Whether the processing fee has been refunded", "How many months are now left on the loan", "Whether the property value has gone up"], "answer": 2,
+          "why": "If the rate is higher and the EMI is unchanged, the tenure must have been extended. The number of months remaining shows the real cost of doing nothing.",
+          "wrong": ["Her score is unrelated to how the lender absorbed this rate change.", "Processing fees are a one-time charge and are not refunded when rates move.", null, "The property's value does not change what she owes or for how long."] },
+        { "id": "v2-462-3", "prompt": "Who is a fixed-rate loan most suitable for?",
+          "options": ["Someone with a tight budget taking a three-year car loan", "Someone taking a 25-year loan who expects rates to fall", "Someone who plans to prepay the whole loan within months", "Someone who wants the lowest possible starting rate"], "answer": 0,
+          "why": "A fixed rate gives certainty. On a short loan with no spare room in the budget, knowing the exact EMI matters more than the chance of a slightly lower rate.",
+          "wrong": [null, "Over a long loan, and with rates expected to fall, floating lets the borrower benefit.", "Fixed-rate loans can carry prepayment charges, so they suit this borrower least.", "Fixed rates usually start a little higher than floating rates."] },
+        { "id": "v2-462-4", "prompt": "Mohan's floating rate has risen. He can afford ₹2,000 more a month. Which choice costs him the least in total?",
+          "options": ["Keep the EMI and let the tenure extend", "Stop paying until rates fall again", "Take a personal loan to cover the difference", "Raise the EMI and keep the original end date"], "answer": 3,
+          "why": "A higher EMI repays principal faster, so less interest builds up. Extending the tenure means paying interest for many additional months.",
+          "wrong": ["This feels painless but adds years of instalments.", "Missing EMIs brings penalties and damages his credit score.", "A personal loan costs more than the home loan it would be supporting.", null] }
+      ]
+    },
+    "463": {
+      "story": {
+        "kicker": "Meet Rahul",
+        "headline": "A ₹3 lakh bonus, used once, ended his home loan three and a half years early.",
+        "paras": [
+          "Three years into his 20-year, ₹30 lakh home loan at 9%, Rahul received a bonus of ₹3 lakh. He was tempted by a new car's down payment. A colleague suggested he look at his loan statement first.",
+          "He still owed ₹28.15 lakh. After 36 EMIs totalling ₹9.7 lakh, the loan had fallen by less than ₹2 lakh. The rest had gone as interest.",
+          "He put the ₹3 lakh into the loan and kept his EMI the same. The bank's new schedule showed the loan ending 43 months earlier, with ₹8.7 lakh less interest. One payment of ₹3 lakh had saved nearly three times its own size."
+        ]
+      },
+      "concept": [
+        "The cost of a loan is not fixed on the day you sign. There are three ways to bring it down afterwards, and most borrowers never use them.",
+        "Prepayment means paying extra towards the principal, beyond your EMIs. Every rupee prepaid stops earning interest for the lender for the rest of the loan. That is why it works best early, when the balance is high and many years remain. Even small regular prepayments, such as one extra EMI a year, shorten a long loan by years.",
+        "When you prepay, choose to keep the EMI and shorten the tenure, unless your budget is under strain. This gives the largest saving. On floating-rate loans taken by individuals, lenders are not allowed to charge a prepayment penalty. Fixed-rate loans may carry one, so read the terms.",
+        "A balance transfer moves your loan to another lender offering a lower rate. It is worth doing when the rate gap is meaningful and many years remain. Count every cost first: processing fee, legal and valuation charges. Before you move, ask your own lender to match the rate. Often they will, for a small fee.",
+        "Judge every loan by its total cost of borrowing: interest plus processing fees, insurance sold with the loan, and any other charges. Lenders must give you a Key Facts Statement showing the annual percentage rate, which includes these. A loan with a lower headline rate and heavy fees can cost more than one with a higher rate and none. Before prepaying, though, keep your emergency fund intact. Money put into a loan cannot be taken out again."
+      ],
+      "example": {
+        "title": "Rahul's prepayment",
+        "intro": "₹30 lakh at 9% for 20 years. After 3 years he owes ₹28.15 lakh.",
+        "head": ["", "Without prepaying", "With ₹3 lakh prepaid"],
+        "rows": [
+          ["EMI", "₹26,992", "₹26,992"],
+          ["Months left", "204", "161"],
+          ["Interest still to pay", "₹26.9 lakh", "₹18.2 lakh"]
+        ],
+        "note": "Saved: 43 months and ₹8.7 lakh of interest. The earlier in the loan a prepayment is made, the more it saves."
+      },
+      "tool": "emi",
+      "toolAsk": "See the true cost of your loan.",
+      "client": { "quote": "“I got a bonus. Should I prepay my loan?”", "context": "A client with a surplus." },
+      "talk": "“If your emergency fund is in place, usually yes, and the earlier in the loan the better. Keep the EMI the same and let the tenure shorten. On a floating-rate loan there is no penalty. Ask the bank for the new schedule so you can see the months and interest saved.”",
+      "remember": [
+        "Prepay early: that is when it saves the most.",
+        "Keep the EMI, shorten the tenure.",
+        "No prepayment penalty on floating-rate loans to individuals.",
+        "Before a balance transfer, add up every fee and ask your lender to match.",
+        "Compare loans by total cost, not headline rate. Emergency fund comes first."
+      ],
+      "qs": [
+        { "id": "v2-463-1", "prompt": "Two borrowers each prepay ₹2 lakh on identical 20-year loans. Sonal does it in year 2, Tarun in year 15. Who saves more interest?",
+          "options": ["Tarun, because he has paid more EMIs by then", "Both save the same, as the amount is equal", "Sonal, because many more years of interest are avoided", "Neither, because a prepayment only shortens the loan period"], "answer": 2,
+          "why": "A prepayment removes principal that would otherwise be charged interest every remaining year. In year 2 there are 18 years left; in year 15 only five.",
+          "wrong": ["The EMIs already paid do not change how much a prepayment saves from now on.", "The same amount saves very different interest depending on the years remaining.", null, "Shortening the loan is exactly how the interest is saved."] },
+        { "id": "v2-463-2", "prompt": "After a prepayment the bank offers Rina two choices: lower EMI with the same end date, or the same EMI with an earlier end date. Her budget is comfortable. Which saves more?",
+          "options": ["The same EMI and an earlier end date", "A lower EMI with the same end date as before", "Both save exactly the same interest", "It depends only on her credit score"], "answer": 0,
+          "why": "Keeping the EMI means more principal is repaid every month, so the balance falls faster and less interest builds up.",
+          "wrong": [null, "A lower EMI eases the monthly budget, but the loan runs just as long, so less interest is saved.", "The two options lead to different balances over time and different total interest.", "Credit score has no bearing on which repayment option saves more."] },
+        { "id": "v2-463-3", "prompt": "Bank A offers a personal loan at 11% with a 3% processing fee and compulsory insurance. Bank B offers 11.75% with no fees. How should a borrower compare them?",
+          "options": ["Choose A, since its rate is lower", "Choose B, since any fee is always worse than a slightly higher interest rate", "Choose whichever bank approves faster", "Compare the total cost using each loan's annual percentage rate"], "answer": 3,
+          "why": "The headline rate leaves out fees and add-ons. The annual percentage rate in the Key Facts Statement includes them, so it shows which loan is truly cheaper.",
+          "wrong": ["A's fee and insurance could make it the costlier loan despite the lower rate.", "Sometimes a small fee with a much lower rate is cheaper. Only the total shows it.", "Speed says nothing about cost.", null] },
+        { "id": "v2-463-4", "prompt": "Gaurav has ₹2 lakh in savings, which is his whole emergency fund, and a floating-rate home loan. He is thinking of prepaying the full ₹2 lakh. What is the main risk?",
+          "options": ["The bank will charge him a heavy prepayment penalty", "His EMI will rise after the prepayment", "He will have no cushion if an emergency strikes", "His credit score will fall for repaying early"], "answer": 2,
+          "why": "Money paid into a loan cannot be withdrawn. Without a cushion, the next emergency could force him to borrow at a far higher rate than the home loan he reduced.",
+          "wrong": ["Floating-rate loans to individuals carry no prepayment penalty.", "A prepayment never raises the EMI. It lowers the EMI or shortens the tenure.", null, "Repaying early does not harm a credit score."] }
+      ]
+    },
+    "464": {
+      "story": {
+        "kicker": "Meet Aditya",
+        "headline": "He earned ₹1.8 lakh a month. The bank still said no.",
+        "paras": [
+          "Aditya, a software lead in Hyderabad, applied for a home loan and was confident. He earned well and had never defaulted on anything. The bank declined.",
+          "He downloaded his credit report and found the reasons. His score was 668. He had paid his credit card bill late three times in two years, “only by a few days”, when travelling. His two cards were regularly used up to 80% of their limits. And in the past month he had applied to five lenders to compare offers.",
+          "None of this felt serious at the time. Together it told lenders that he was stretched and hunting for credit. A year of on-time payments and lower card use later, his score was 771, and the same bank offered him a better rate than he had first asked for."
+        ]
+      },
+      "concept": [
+        "A credit score is a three-digit number, from 300 to 900, that sums up how you have handled borrowed money. Lenders check it before approving any loan or card, and it affects not just whether you get the loan but the rate you are offered. Around 750 and above is generally treated as good.",
+        "The score is built from your credit report, a record kept by credit bureaus of every loan and card in your name and every payment you made or missed. Income is not part of it. A high earner who pays late scores lower than a modest earner who never does.",
+        "Four habits drive most of the score. First, pay on time, every time: payment history carries the most weight, and even a few days late is recorded. Second, use only a small part of your card limit. This is credit utilisation, and staying under about 30% is a good guide. Third, do not apply to many lenders in a short time. Each application creates a hard enquiry, and several together look like distress. Fourth, keep old accounts: a long, clean history helps.",
+        "Checking your own report does not lower your score. You are entitled to one free full report a year from each credit bureau. Read it for errors: a loan you never took, a payment wrongly marked late, a closed account shown as open. Raise a dispute with the bureau; wrong entries can be corrected.",
+        "A score is rebuilt the same way it is damaged: slowly, through behaviour. There are no shortcuts, and anyone offering to “fix your score fast” for a fee is selling nothing. Set every card and EMI to auto-pay, bring card use down, and time does the rest."
+      ],
+      "example": {
+        "title": "Credit utilisation: the same spending, two pictures",
+        "intro": "Spending ₹45,000 a month on cards.",
+        "head": ["Total card limit", "Utilisation"],
+        "rows": [
+          ["₹60,000", "75%: looks stretched"],
+          ["₹90,000", "50%: on the high side"],
+          ["₹1,50,000", "30%: looks comfortable"]
+        ],
+        "note": "Utilisation = amount used ÷ total limit. You can lower it by spending less on cards, by paying part of the bill before the statement date, or by asking for a higher limit and not using it."
+      },
+      "client": { "quote": "“My loan was rejected even though my salary is high.”", "context": "A client with a low credit score." },
+      "talk": "“Lenders look at how you have repaid, not at how much you earn. Download your free credit report and look for late payments, high card use and many recent applications. Fix those habits, set everything to auto-pay, and the score recovers within a year or so.”",
+      "remember": [
+        "Score runs 300 to 900. About 750 and above is good.",
+        "Pay everything on time: it matters most.",
+        "Keep card use under about 30% of your limit.",
+        "Avoid many loan applications close together.",
+        "Check your free report once a year and dispute errors."
+      ],
+      "qs": [
+        { "id": "v2-464-1", "prompt": "Leela has one credit card with a limit of ₹2 lakh. Her statement shows ₹1.5 lakh used. What is her credit utilisation, and how will lenders read it?",
+          "options": ["25%, which looks comfortable", "50%, which is about average", "75%, which looks stretched", "150%, which is over the limit"], "answer": 2,
+          "why": "Utilisation is the amount used divided by the limit: ₹1.5 lakh ÷ ₹2 lakh = 75%. Well above the guide of about 30%, it suggests she depends heavily on credit.",
+          "wrong": ["25% is the unused share of her limit, not the used share.", "₹1.5 lakh of ₹2 lakh is three quarters, not half.", null, "She has used less than her limit. 150% would mean ₹3 lakh used."] },
+        { "id": "v2-464-2", "prompt": "Which person is likely to have the higher credit score?",
+          "options": ["Earns ₹3 lakh a month; paid card bills late four times this year", "Earns ₹40,000 a month; has paid every EMI on time for six years", "Earns ₹2 lakh a month; has never taken any loan or card", "Earns ₹1 lakh a month; applied to eight lenders last month"], "answer": 1,
+          "why": "Payment history is the biggest factor, and income is not part of the score at all. Six years of on-time payments is exactly what the score rewards.",
+          "wrong": ["Late payments weigh heavily, whatever the income.", null, "With no borrowing at all there is little history to score, so lenders have nothing to go on.", "Eight applications in a month create many hard enquiries and signal distress."] },
+        { "id": "v2-464-3", "prompt": "Manoj wants the best home loan rate. He plans to apply to seven banks this week and pick the cheapest. What is the better approach?",
+          "options": ["Apply to all seven, since more options is always better", "Compare published rates first, then apply to one or two", "Apply to none and wait for a bank to call him", "Close his oldest credit card before applying"], "answer": 1,
+          "why": "Each formal application creates a hard enquiry on his report. Comparing rates from published information first, and applying only to the best one or two, avoids a cluster of enquiries.",
+          "wrong": ["Seven enquiries in a week can lower his score and worsen the offers he gets.", null, "Waiting passively gives him no control over the rate or the lender.", "Closing an old account shortens his credit history, which can hurt the score."] },
+        { "id": "v2-464-4", "prompt": "Nandini checks her own credit report and finds a personal loan she never took. What should she do?",
+          "options": ["Raise a dispute with the credit bureau and the lender named", "Ignore it, since she owes nothing on it", "Stop checking, because checking lowers the score", "Pay a score-repair agent who promises to delete the entry within a week"], "answer": 0,
+          "why": "An unknown loan may be an error or identity misuse. The bureau must investigate a dispute, and the lender has to confirm or correct the record.",
+          "wrong": [null, "Left alone, it can lower her score and may point to fraud in her name.", "Checking your own report never lowers the score.", "Such agents have no power to delete entries. The dispute process is free."] }
+      ]
+    },
+    "465": {
+      "story": {
+        "kicker": "Meet Zoya",
+        "headline": "“Minimum amount due: ₹2,500.” She paid it for a year and owed more than when she started.",
+        "paras": [
+          "Zoya's card bill after her sister's wedding was ₹50,000. The statement said in bold: minimum amount due ₹2,500. That seemed kind. She paid it, and kept putting about ₹1,700 of fuel on the card each month as usual.",
+          "A year later she had paid ₹30,000 to the card company. Her balance was close to ₹60,000.",
+          "The card charged 3% a month on whatever she had not paid. In the first month that was ₹1,500 of interest. Of her ₹2,500, only ₹1,000 reduced the debt. And because she was carrying a balance, her new purchases started attracting interest too, with no interest-free days. The minimum due had kept her account in good standing and her debt alive."
+        ]
+      },
+      "concept": [
+        "Not all borrowing is equal. Knowing the kind of debt you are taking tells you most of what you need to know about its cost.",
+        "A secured loan is backed by something the lender can take if you do not pay: a home, a car, gold, a fixed deposit. Because the lender's risk is lower, the rate is lower. An unsecured loan has nothing behind it but your promise. Personal loans, credit cards and most pay-later schemes are unsecured, and so they cost much more.",
+        "A credit card is revolving credit: you can borrow, repay and borrow again up to a limit. Used well, it is free. Pay the full statement amount by the due date and you pay no interest at all, while building a strong credit history. Used badly, it is the costliest common debt there is, often 3% or more a month.",
+        "The minimum amount due is the trap. It is a small slice of the bill, set so that the account is not marked overdue. Interest runs on everything left unpaid. Once you carry a balance, the interest-free period usually stops for new purchases as well. If you cannot pay in full, pay as much as you possibly can and stop using the card until it is cleared. Converting a large balance into a fixed EMI plan or a lower-rate personal loan can cut the cost sharply.",
+        "Before any new loan, lenders work out how much of your income already goes to repayments. A common ceiling is 40% to 50%. Use a stricter test for yourself. Borrow for things that last or grow: a home, education, a business tool. Avoid borrowing for things that are gone before the loan is: holidays, phones, celebrations. Save for those instead."
+      ],
+      "example": {
+        "title": "Zoya's first month",
+        "intro": "₹50,000 owed, 3% interest a month, ₹2,500 paid.",
+        "head": ["", "Amount"],
+        "rows": [
+          ["Interest for the month (3% of ₹50,000)", "₹1,500"],
+          ["Paid", "₹2,500"],
+          ["=", "Debt actually reduced", "₹1,000"]
+        ],
+        "note": "At that pace, with no new spending, the debt would take about two and a half years to clear and cost roughly ₹27,500 in interest. With new spending added each month, it never clears at all."
+      },
+      "tool": "card",
+      "toolAsk": "See how long a card balance really takes to clear.",
+      "client": { "quote": "“I only pay the minimum on my card. It is fine, right?”", "context": "A client with a growing card balance." },
+      "talk": "“It keeps the account from going overdue, and that is all it does. The rest is charged around 3% a month, and your new purchases lose their interest-free days. Pay the full amount if you can. If not, stop using the card and clear it as fast as possible, or convert it to a cheaper EMI.”",
+      "remember": [
+        "Secured loans cost less than unsecured ones.",
+        "Pay the full card bill by the due date: zero interest.",
+        "The minimum due keeps the debt alive.",
+        "Carrying a balance ends interest-free days on new spending.",
+        "Borrow for what lasts. Save for what does not."
+      ],
+      "qs": [
+        { "id": "v2-465-1", "prompt": "A card charges 3% a month. Dev owes ₹40,000, pays the minimum of ₹2,000 and makes no new purchases. By how much does his debt fall that month?",
+          "options": ["₹2,000", "₹1,200", "₹800", "₹400"], "answer": 2,
+          "why": "Interest for the month is 3% of ₹40,000 = ₹1,200. Of the ₹2,000 paid, ₹1,200 covers interest and only ₹800 reduces the debt.",
+          "wrong": ["That ignores the ₹1,200 of interest added during the month.", "₹1,200 is the interest charged, not the reduction in debt.", null, "The reduction is ₹2,000 − ₹1,200 = ₹800."] },
+        { "id": "v2-465-2", "prompt": "Why does a gold loan usually carry a lower interest rate than a personal loan?",
+          "options": ["Gold loans are offered only to people with high and steady incomes", "The lender holds the gold and can sell it on default", "Personal loans are regulated more strictly", "Gold loans are always for very short periods"], "answer": 1,
+          "why": "A gold loan is secured. Because the lender can sell the pledged gold on default, its risk is lower, and that is passed on as a lower rate.",
+          "wrong": ["Gold loans depend on the gold pledged, not on the borrower's income.", null, "Regulation is not what sets the price difference. The security is.", "Tenure varies. The lower rate comes from the security, not the length."] },
+        { "id": "v2-465-3", "prompt": "Ishaan pays his full credit card statement amount by the due date every month. What does the card cost him in interest?",
+          "options": ["Nothing", "About 3% a month on his spending", "Interest only on purchases above ₹10,000", "The same as a personal loan"], "answer": 0,
+          "why": "Cards give an interest-free period on purchases as long as the full statement amount is paid by the due date. Used this way, a card is a free and convenient way to pay.",
+          "wrong": [null, "That rate applies only to amounts left unpaid after the due date.", "There is no such threshold. The interest-free period covers all purchases when the bill is paid in full.", "A personal loan charges interest from day one. A card paid in full charges none."] },
+        { "id": "v2-465-4", "prompt": "Which of these is the most sensible use of borrowing?",
+          "options": ["A personal loan for a week-long overseas holiday", "A pay-later plan for the newest phone, replacing one that works", "A card balance carried for six months for festival shopping", "An education loan for a course that raises earning ability"], "answer": 3,
+          "why": "Borrowing makes most sense for something that lasts or grows in value beyond the life of the loan. Education that raises income does that. The others are gone long before the debt is.",
+          "wrong": ["The holiday ends in a week. The repayments last for years.", "A working phone replaced on credit is a want paid for at a high rate.", "Carrying a card balance is the costliest way to pay for anything.", null] }
+      ]
+    }
+  }
+}

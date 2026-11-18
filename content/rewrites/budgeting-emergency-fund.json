@@ -1,0 +1,298 @@
+{
+  "course": "budgeting-emergency-fund",
+  "by": "UpperCrust Academy",
+  "upd": "2026-11",
+  "lessons": {
+    "456": {
+      "story": {
+        "kicker": "Meet Riya",
+        "headline": "₹60,000 comes in. By the 25th, nothing is left.",
+        "paras": [
+          "Riya is 28 and works in Pune. Her salary of ₹60,000 lands on the 1st. She does not gamble, she does not buy expensive things, and yet by the last week of every month she is counting days.",
+          "One Sunday she opens her bank and UPI statements and adds up one full month. Rent and bills are what she expected. The surprises are small and many: ₹6,400 on food delivery, ₹2,100 on subscriptions she had forgotten, ₹3,500 on cabs for trips a bus would have covered.",
+          "Nothing about her income changed that Sunday. What changed is that she could finally see where it went. That is the whole point of this lesson."
+        ]
+      },
+      "concept": [
+        "You cannot fix what you cannot see. Before any budget, any investment or any goal, spend one month simply writing down where your money goes. Your bank statement and your UPI history already hold most of it.",
+        "Sort every rupee into three piles. Fixed costs are the same each month and hard to change quickly: rent, EMIs, school fees, insurance. Variable costs move up and down: food, travel, shopping, eating out. Savings is whatever you kept or invested.",
+        "Most of the money you can free up hides in the variable pile, in amounts too small to notice one at a time. A ₹250 order feels like nothing. Twenty-five of them is ₹6,250.",
+        "Two numbers tell you how you are doing. Your savings rate is what you saved divided by your take-home pay. Someone who saves ₹9,000 out of ₹60,000 has a savings rate of 15%. This number matters more than your salary: a person earning less but saving 20% builds wealth faster than a person earning more and saving 2%.",
+        "Your net worth is everything you own minus everything you owe. Savings, investments and property on one side; loans and card dues on the other. Check it twice a year. If it is rising, you are moving forward, whatever the month felt like."
+      ],
+      "example": {
+        "title": "Riya's month, added up",
+        "intro": "Take-home pay: ₹60,000.",
+        "head": ["Where it went", "Amount"],
+        "rows": [
+          ["Rent and household bills (fixed)", "₹22,000"],
+          ["Phone EMI (fixed)", "₹3,000"],
+          ["Groceries and daily travel", "₹11,000"],
+          ["Eating out and food delivery", "₹9,500"],
+          ["Shopping and subscriptions", "₹8,500"],
+          ["Everything else", "₹4,000"],
+          ["=", "Saved", "₹2,000"]
+        ],
+        "note": "Savings rate: ₹2,000 ÷ ₹60,000 = 3.3%. Riya trims delivery by ₹3,000 and cancels ₹1,500 of unused subscriptions. She now saves ₹6,500 a month, a rate of 10.8%, without touching rent, groceries or anything she truly values."
+      },
+      "client": { "quote": "“I earn well but nothing is left at month-end. Where does it go?”", "context": "A client frustrated by month-end shortfalls." },
+      "talk": "“Do not start by cutting. Start by looking. Add up one full month from your bank and UPI history, sort it into fixed, variable and saved, and the answer usually shows itself. Then cut only what you would not miss.”",
+      "remember": [
+        "Track one full month before you change anything.",
+        "Fixed, variable, saved: every rupee goes in one pile.",
+        "Savings rate = saved ÷ take-home pay. Watch this number, not your salary.",
+        "Net worth = what you own − what you owe. Check it twice a year."
+      ],
+      "qs": [
+        { "id": "v2-456-1", "prompt": "Arjun takes home ₹80,000 a month. After all spending, ₹12,000 goes into savings and investments. What is his savings rate?",
+          "options": ["12%", "15%", "18%", "20%"], "answer": 1,
+          "why": "Savings rate is the amount saved divided by take-home pay: ₹12,000 ÷ ₹80,000 = 0.15, or 15%.",
+          "wrong": ["12 is the amount saved in thousands, not the share of income. Divide ₹12,000 by ₹80,000.", null, "18% of ₹80,000 would be ₹14,400. He saves ₹12,000.", "20% of ₹80,000 would be ₹16,000. He saves ₹12,000."] },
+        { "id": "v2-456-2", "prompt": "Which of these is a fixed expense for a household?",
+          "options": ["Weekend dinners that cost between ₹1,500 and ₹4,000", "The ₹18,000 rent paid on the 5th of every month", "Festival shopping that happens twice a year", "Cab rides taken when the bus is late"], "answer": 1,
+          "why": "A fixed expense is the same amount every month and cannot be changed quickly. Rent fits. The other three change in size or timing, so they are variable.",
+          "wrong": ["The amount changes each week, so this is a variable expense.", null, "This is irregular and its size is your choice, so it is variable. A sinking fund helps plan for it.", "This depends on the day, so it is variable, and often a place where savings hide."] },
+        { "id": "v2-456-3", "prompt": "Farah has ₹3 lakh in the bank, ₹2 lakh in mutual funds and a scooter worth ₹50,000. She owes ₹1.5 lakh on a personal loan and ₹50,000 on a credit card. What is her net worth?",
+          "options": ["₹5.5 lakh", "₹2 lakh", "₹3.5 lakh", "₹7.5 lakh"], "answer": 2,
+          "why": "She owns ₹3 lakh + ₹2 lakh + ₹0.5 lakh = ₹5.5 lakh. She owes ₹1.5 lakh + ₹0.5 lakh = ₹2 lakh. Net worth is ₹5.5 lakh − ₹2 lakh = ₹3.5 lakh.",
+          "wrong": ["That is only what she owns. Net worth also subtracts what she owes.", "That is only what she owes.", null, "That adds her debts to her assets. Debts are subtracted, not added."] },
+        { "id": "v2-456-4", "prompt": "After tracking a month, Meena finds about ₹7,000 going to things she barely remembers buying. What is the most useful next step?",
+          "options": ["Stop every kind of non-essential spending from tomorrow", "Drop what she would not miss and save that amount on salary day", "Leave it, because each purchase was small", "Switch to paying for everything by credit card so that she earns reward points"], "answer": 1,
+          "why": "Tracking is only useful if it leads to one clear decision. Cutting what she would not miss is painless, and moving the money on salary day makes the saving happen before it can be spent again.",
+          "wrong": ["Cutting everything at once rarely lasts. Budgets that feel like punishment are abandoned within weeks.", null, "Small and frequent is exactly how money disappears. ₹7,000 a month is ₹84,000 a year.", "Points do not fix unplanned spending, and a card makes small purchases even easier to forget."] }
+      ]
+    },
+    "457": {
+      "story": {
+        "kicker": "Meet Imran and Sana",
+        "headline": "The 40-category budget lasted three weeks. The three-bucket one is still running.",
+        "paras": [
+          "Imran and Sana decided to get serious about money. They downloaded an app, created forty categories and promised to enter every chai and every auto fare.",
+          "By the third week nobody was entering anything. They felt they had failed at budgeting. They had not. They had picked a method that needed more effort than they could give.",
+          "Their second attempt took ten minutes to set up. On salary day a fixed amount moves out to savings on its own. What is left is split into two: must-pay and free-to-spend. Two years later it is still working."
+        ]
+      },
+      "concept": [
+        "A budget is not a punishment. It is a plan you make for your money before the month spends it for you. The best method is the one you will still be using a year from now.",
+        "The 50-30-20 rule is the simplest place to start. About half your take-home pay goes to needs: rent, food, bills, EMIs, insurance. About 30% goes to wants: eating out, travel, shopping. At least 20% goes to savings and paying off debt. These are starting points. In a costly city rent alone can push needs past 50%, and that is fine as long as savings still get their share first.",
+        "Pay yourself first is the habit that makes any budget work. Do not save what is left after spending. Move your savings out on the day your salary arrives, by standing instruction, and spend what remains without guilt. People who wait for month-end to save usually find nothing there.",
+        "A zero-based budget gives every rupee a job before the month begins: income minus all planned spending and saving equals zero. It takes more effort, and suits people whose income changes from month to month.",
+        "Sinking funds stop yearly costs from wrecking a month. Insurance premiums, festival spending and school fees are not surprises. Add them up, divide by twelve, and set that amount aside each month. When the bill arrives, the money is already waiting."
+      ],
+      "example": {
+        "title": "50-30-20 on a take-home pay of ₹50,000",
+        "head": ["Bucket", "Each month"],
+        "rows": [
+          ["Savings and debt repayment (20%), moved out on salary day", "₹10,000"],
+          ["Needs (50%): rent, food, bills, EMIs, insurance", "₹25,000"],
+          ["Wants (30%): eating out, shopping, travel", "₹15,000"],
+          ["=", "Total", "₹50,000"]
+        ],
+        "note": "Add a sinking fund inside needs. Yearly insurance ₹18,000 + Diwali ₹12,000 + school books ₹6,000 = ₹36,000 a year. That is ₹3,000 a month set aside, and no painful months."
+      },
+      "client": { "quote": "“Budgets never work for me.”", "context": "A client who has tried and failed." },
+      "talk": "“Then the method was wrong, not you. Forget tracking every rupee. Set one standing instruction that moves your savings out on salary day, and spend the rest freely. Automation beats willpower every time.”",
+      "remember": [
+        "Start with 50-30-20, then adjust it to your life.",
+        "Pay yourself first: savings leave on salary day, not month-end.",
+        "Yearly bills ÷ 12 = your monthly sinking fund.",
+        "A simple budget you keep beats a perfect one you quit."
+      ],
+      "qs": [
+        { "id": "v2-457-1", "prompt": "Kavita takes home ₹70,000 a month and wants to follow the 50-30-20 rule. How much should go to savings and debt repayment?",
+          "options": ["₹7,000", "₹14,000", "₹21,000", "₹35,000"], "answer": 1,
+          "why": "The 20 in 50-30-20 is the savings share. 20% of ₹70,000 is ₹14,000.",
+          "wrong": ["That is 10% of her pay. The rule sets aside 20%.", null, "That is 30%, the share the rule suggests for wants.", "That is 50%, the share the rule suggests for needs."] },
+        { "id": "v2-457-2", "prompt": "Rohit plans to save “whatever is left” at the end of each month. Most months, nothing is left. Which single change is most likely to fix this?",
+          "options": ["Write down every single expense in a notebook each night before going to bed", "Set a standing instruction that moves savings out the day salary arrives", "Wait for his next pay rise before trying to save", "Keep all his money in cash so he can see it"], "answer": 1,
+          "why": "This is “pay yourself first”. Money that leaves the account on salary day cannot be spent by accident, so saving no longer depends on willpower at month-end.",
+          "wrong": ["Tracking shows where money went, but it does not move any of it into savings.", null, "Spending tends to rise with income. Without the habit, a bigger salary is spent just as fully.", "Cash is easy to spend and earns nothing. It does not create a saving habit."] },
+        { "id": "v2-457-3", "prompt": "A family's car insurance of ₹24,000 falls due in 8 months. They want to use a sinking fund so the bill does not strain that month. How much should they set aside each month?",
+          "options": ["₹2,000", "₹2,400", "₹3,000", "₹4,000"], "answer": 2,
+          "why": "Divide the bill by the months left: ₹24,000 ÷ 8 = ₹3,000 a month.",
+          "wrong": ["₹2,000 a month would collect only ₹16,000 in 8 months.", "₹2,400 a month would collect only ₹19,200 in 8 months.", null, "₹4,000 a month would collect ₹32,000, more than the bill needs."] },
+        { "id": "v2-457-4", "prompt": "Anita lives in Mumbai. Rent, food and bills take 62% of her take-home pay, so 50-30-20 does not fit. What is the sensible response?",
+          "options": ["Give up on budgeting, since the rule does not work for her", "Borrow each month so that needs stay at 50%", "Adjust the split, for example 62-18-20, and keep savings moving out first", "Stop saving altogether until she is able to move to a cheaper city or a cheaper flat"], "answer": 2,
+          "why": "The percentages are a starting point, not a law. When needs are high, wants are the bucket that gives way. Savings still go out first.",
+          "wrong": ["The rule is a guide. A budget shaped to her real costs still works.", "Borrowing to fit a rule of thumb creates a real debt to solve an imaginary problem.", null, "Waiting for perfect conditions means years of no saving. A smaller amount saved now is worth more than a larger amount saved someday."] }
+      ]
+    },
+    "458": {
+      "story": {
+        "kicker": "Meet Deepak",
+        "headline": "He lost his job in March. He did not lose anything else.",
+        "paras": [
+          "Deepak is 34, the only earner in a family of four. In March his company closed its Bengaluru office. It took him four months to find the next job.",
+          "Those four months were worrying, but they were not a disaster. Two years earlier he had built a cushion of ₹2.4 lakh, six months of his family's essential costs, and left it alone. Groceries, school fees and both loan EMIs were all paid on time. His SIPs were paused, not sold.",
+          "A colleague laid off the same day had no cushion. He ran up his credit card and broke a fixed deposit early. He found a job just as quickly, and then spent the next year repaying the gap."
+        ]
+      },
+      "concept": [
+        "An emergency fund is money set aside for one purpose: to carry you through a shock without borrowing or selling your investments at a bad time. Job loss, a medical bill insurance does not fully cover, an urgent repair, a family emergency in another city. These are not rare events. Over a working life, most households meet at least one.",
+        "How much? Add up your essential monthly costs: rent or home loan EMI, food, bills, school fees, insurance premiums, medicines, other EMIs. Leave out eating out, shopping and holidays. Multiply by three to six. If you are the only earner, are self-employed, or have irregular income, aim for six to twelve months.",
+        "Where to keep it? The fund has two jobs: stay safe and be reachable within a day. Returns come last. A savings account, a sweep-in fixed deposit and a liquid mutual fund all fit. Many people keep one month in the savings account and the rest in a sweep-in deposit or liquid fund. Liquid funds carry low risk, not zero risk, and money from them usually reaches your bank the next working day.",
+        "What does not fit: shares and equity funds, because they can be down 20% in the very month you need them; gold jewellery and property, because they are slow or costly to sell; and deposits with a lock-in.",
+        "Two rules keep it working. Use it only for real emergencies, and a sale on phones is not one. And after you use it, refill it before you return to other goals. Health and term insurance are its partners: insurance handles the large rare shocks so the fund is not wiped out by one hospital stay."
+      ],
+      "example": {
+        "title": "Building Deepak's number",
+        "intro": "Only essentials are counted.",
+        "head": ["Essential cost", "Each month"],
+        "rows": [
+          ["Home loan EMI", "₹15,000"],
+          ["Groceries and household", "₹8,000"],
+          ["Electricity, gas, phone, internet", "₹3,000"],
+          ["School fees", "₹5,000"],
+          ["Car loan EMI", "₹6,000"],
+          ["Insurance premiums and medicines", "₹3,000"],
+          ["=", "Essentials for one month", "₹40,000"],
+          ["=", "Six months (his target)", "₹2,40,000"]
+        ],
+        "note": "He keeps ₹40,000 in his savings account and ₹2,00,000 in a sweep-in fixed deposit. Saving ₹10,000 a month, it took him two years to build. He started with one month's cover, then kept going."
+      },
+      "tool": "emergency",
+      "toolAsk": "Now work out your own number.",
+      "client": { "quote": "“Why keep money idle when I could invest it?”", "context": "A client who wants to put every rupee to work." },
+      "talk": "“This money is not idle. It is on duty. Its job is to make sure a bad month never forces you to borrow at 36% or sell your investments when markets are down. Build it first; it is what lets the rest of your money stay invested.”",
+      "remember": [
+        "Essentials × 3 to 6 months. Go to 6 to 12 if income is irregular or you are the only earner.",
+        "Safe and reachable in a day: savings account, sweep-in deposit, liquid fund.",
+        "Never in shares, jewellery or anything with a lock-in.",
+        "Use it only for real emergencies, then refill it first."
+      ],
+      "qs": [
+        { "id": "v2-458-1", "prompt": "A household spends ₹35,000 a month on essentials and ₹15,000 on eating out, shopping and trips. They want an emergency fund that covers six months. What should the target be?",
+          "options": ["₹90,000", "₹1,05,000", "₹2,10,000", "₹3,00,000"], "answer": 2,
+          "why": "Only essentials are counted, because wants can be paused in a crisis. ₹35,000 × 6 = ₹2,10,000.",
+          "wrong": ["That is six months of wants. The fund covers essentials.", "That is three months of essentials. They asked for six.", null, "That counts the ₹15,000 of wants too. In an emergency those are the first things to stop."] },
+        { "id": "v2-458-2", "prompt": "Where is the most suitable place to keep the bulk of an emergency fund?",
+          "options": ["A small-cap equity mutual fund, for higher growth", "Gold jewellery kept in a bank locker", "A sweep-in fixed deposit or a liquid mutual fund", "A five-year tax-saving fixed deposit"], "answer": 2,
+          "why": "Emergency money must be safe and reachable within about a day. A sweep-in deposit or liquid fund does both. Growth is not the goal here.",
+          "wrong": ["Equity can fall sharply just when you need the money, forcing you to sell at a loss.", "Jewellery is slow to sell, loses value to making charges, and cannot be sold in part.", null, "A tax-saving deposit is locked for five years, so the money cannot be reached in an emergency."] },
+        { "id": "v2-458-3", "prompt": "Sneha is a freelance designer. Some months she earns ₹1.2 lakh and some months ₹20,000. How should her emergency fund compare with that of a salaried friend with the same expenses?",
+          "options": ["Smaller, because she can always find extra work", "The same three months, since their monthly expenses are exactly equal", "Larger, closer to six to twelve months of essentials", "None is needed if she has a credit card"], "answer": 2,
+          "why": "Irregular income means lean months are normal, not rare. A larger cushion covers both true emergencies and the gaps between payments.",
+          "wrong": ["Work is hardest to find exactly when a shock hits, such as illness or a weak market.", "Equal expenses do not mean equal risk. Her income is far less certain than a salary.", null, "A credit card is a loan at a very high rate. It turns an emergency into a debt."] },
+        { "id": "v2-458-4", "prompt": "Which of these is a proper use of an emergency fund?",
+          "options": ["A festive-season discount on a new phone she has wanted for months", "A hospital bill of ₹60,000 that insurance did not cover", "A cousin's wedding gift next month", "A long-planned family holiday"], "answer": 1,
+          "why": "An emergency is urgent, necessary and unplanned. An uncovered hospital bill is all three.",
+          "wrong": ["A discount is a want with a deadline. It is not urgent or necessary.", null, "A wedding is known in advance. Plan for it with a sinking fund.", "A holiday is a goal. Save for it separately so the cushion stays whole."] }
+      ]
+    },
+    "459": {
+      "story": {
+        "kicker": "Meet Neha",
+        "headline": "She was investing ₹5,000 a month. Her credit card was taking more than that back.",
+        "paras": [
+          "Neha felt she was doing the right thing. Every month ₹5,000 went into a SIP. She was hoping for around 12% a year.",
+          "She also carried a credit card balance of ₹1 lakh from a house move, and paid ₹5,000 towards it each month. The card charged 3% a month, which is 36% a year. In the first month alone, ₹3,000 of her ₹5,000 payment was interest.",
+          "She was earning perhaps 12% on one hand and paying 36% on the other. Once she saw both numbers side by side, the order of what to do next became obvious."
+        ]
+      },
+      "concept": [
+        "Every rupee of debt you repay earns you the interest rate on that debt, with certainty. Clearing a card that charges 36% a year is like finding an investment that pays 36% with no risk. No ordinary investment offers that. So the rule is simple: if a debt costs more than your money can reasonably earn, repay the debt first.",
+        "Credit cards are the costliest common debt, often 3% or more a month. They also set a trap called the minimum amount due, usually a small slice of the bill. Pay only that and you avoid a late fee, but interest is charged on the rest, and new purchases can start attracting interest from the day you make them. A balance can then last for years.",
+        "When you have several debts, pay the minimum on all of them so nothing goes overdue. Then send every spare rupee to one debt at a time. The avalanche method targets the highest interest rate first. It costs the least in total. The snowball method targets the smallest balance first. It costs a little more but gives quick wins, which helps some people keep going. Either is far better than spreading extra money thinly.",
+        "A sensible order for most households: first, never miss a minimum payment or EMI, because missed payments damage your credit score. Second, keep a small starter cushion of about one month's essentials, so the next surprise does not go back on the card. Third, clear high-interest debt. Fourth, finish the emergency fund and invest.",
+        "Not all debt needs to be rushed. A home loan at a moderate rate can run its course while you invest alongside it. The urgency is for debt priced above what your investments can earn: cards, pay-later schemes and most personal loans."
+      ],
+      "example": {
+        "title": "Neha's ₹1 lakh card balance at 36% a year",
+        "intro": "Same debt, two ways of paying. No new spending on the card.",
+        "head": ["She pays each month", "Result"],
+        "rows": [
+          ["₹3,000", "Never clears: this only covers the interest"],
+          ["₹5,000", "31 months, about ₹55,000 in interest"],
+          ["₹10,000 (SIP paused, added to the card)", "13 months, about ₹20,700 in interest"]
+        ],
+        "note": "Pausing the SIP for 13 months saves her about ₹34,000 in interest. After that the full ₹10,000 a month is free to invest, with no debt pulling against it."
+      },
+      "tool": "card",
+      "toolAsk": "See what a higher payment does.",
+      "client": { "quote": "“Should I invest or pay off my credit card?”", "context": "A client with a card balance and spare money." },
+      "talk": "“Clear the card first. It is charging you about three times what a good investment might earn in a good year. Paying it off is a sure return of 36%. Keep paying the minimums on everything else, finish the card, then restart investing with the whole amount.”",
+      "remember": [
+        "Repaying a debt earns you its interest rate, with certainty.",
+        "Never pay only the minimum due on a card.",
+        "Minimums on all, every extra rupee to one: highest rate (avalanche) or smallest balance (snowball).",
+        "Order: no missed payments → one-month cushion → costly debt → full cushion and investing."
+      ],
+      "qs": [
+        { "id": "v2-459-1", "prompt": "Vikram has three debts: a credit card of ₹40,000 at 36% a year, a personal loan of ₹2 lakh at 14%, and a home loan of ₹20 lakh at 9%. Using the avalanche method, where should his extra money go first?",
+          "options": ["The home loan, because it is the largest", "The personal loan, because it is in the middle", "The credit card, because its rate is highest", "Equally across all three debts"], "answer": 2,
+          "why": "Avalanche means highest interest rate first. At 36% the card costs far more per rupee than the other two, so clearing it saves the most.",
+          "wrong": ["Size is not the test. At 9% the home loan is his cheapest debt.", "The personal loan comes second, after the card is cleared.", null, "Spreading extra money evenly leaves the costliest debt alive for longest."] },
+        { "id": "v2-459-2", "prompt": "Pooja owes ₹15,000 at 18% on a store loan and ₹60,000 at 36% on a credit card. She chooses the snowball method. Which does she clear first?",
+          "options": ["The ₹15,000 store loan, because the balance is smallest", "The ₹60,000 card, because the rate is highest", "Whichever has the earlier due date", "Neither, until she has six months of savings"], "answer": 0,
+          "why": "Snowball targets the smallest balance first for a quick win, then rolls that payment into the next debt. Avalanche would have picked the card.",
+          "wrong": [null, "That is the avalanche choice. It saves more interest, but it is not what snowball means.", "Due dates decide when minimums are paid, not which debt gets the extra money.", "Waiting six months lets a 36% debt grow. A one-month cushion is enough before attacking costly debt."] },
+        { "id": "v2-459-3", "prompt": "A card charges 3% interest a month. The balance is ₹50,000 and no new purchases are made. If the cardholder pays ₹2,500 this month, by about how much does the debt actually fall?",
+          "options": ["₹2,500", "₹1,500", "₹1,000", "₹500"], "answer": 2,
+          "why": "Interest for the month is 3% of ₹50,000 = ₹1,500. Of the ₹2,500 paid, ₹1,500 covers interest and only ₹1,000 reduces the debt.",
+          "wrong": ["That ignores interest. ₹1,500 of the payment is swallowed by the month's interest.", "₹1,500 is the interest charged, not the fall in the debt.", null, "The fall is ₹2,500 − ₹1,500 = ₹1,000."] },
+        { "id": "v2-459-4", "prompt": "Sameer receives a ₹50,000 bonus. He has a ₹50,000 card balance at 36% a year and is tempted to invest the bonus in a fund he hopes will return 12%. What is the stronger choice, and why?",
+          "options": ["Invest it, because markets beat debt over time", "Clear the card, because saving 36% for certain beats hoping for 12%", "Split it evenly, to balance risk", "Keep it in his savings account so that he stays flexible for whatever comes up"], "answer": 1,
+          "why": "Repaying the card is a guaranteed saving of 36% a year. The investment might return 12%, and might not. The gap is too wide for any other choice to make sense.",
+          "wrong": ["Markets do not reliably beat a 36% cost, and the card's interest is certain while returns are not.", null, "Half the debt would still be compounding at 36%, far above what the other half can earn.", "A savings account earns a small fraction of what the card is charging him."] }
+      ]
+    },
+    "460": {
+      "story": {
+        "kicker": "Meet the Sharmas",
+        "headline": "“Save more this year” failed three years running. “₹6 lakh by Diwali 2029” did not.",
+        "paras": [
+          "Every January the Sharmas made the same promise: this year we will save more. Every December they had roughly what they started with. There was no amount, no date and no plan, so there was nothing to stick to.",
+          "Then they wanted a car, and for the first time the goal had a shape: ₹6 lakh for the down payment, in three years. They worked out the monthly amount, set an auto-debit for the 2nd of each month, the day after salary, and stopped thinking about it.",
+          "Thirty-six months later the money was there. They had not become more disciplined. They had removed the need for discipline."
+        ]
+      },
+      "concept": [
+        "A wish becomes a goal when it has three things: a name, an amount and a date. “Save more” is a wish. “₹6 lakh for a car down payment in three years” is a goal. Once you have all three, simple division gives you the monthly amount, and the goal turns into one action.",
+        "Price your goals in future money, not today's. Prices rise over time. This is inflation. Something that costs ₹1 lakh today will cost about ₹2 lakh in nine years if its price climbs 8% a year, which is not unusual for school and college fees. For goals more than three years away, raise the target to allow for it.",
+        "Then automate. Set a standing instruction or SIP for the day after your salary arrives. Money that moves on its own is saved every month; money that waits for you to remember is saved some months. This single step matters more than choosing the perfect product.",
+        "Guard against lifestyle inflation. When income rises, spending tends to rise to meet it, and savings stay where they were. A simple habit beats it: every time your pay goes up, raise your monthly saving by half the increase on the same day. You still enjoy the raise, and your goals speed up.",
+        "Finally, review once a year, and after any big change such as a new job, a marriage, a child or a home loan. Check each goal's amount and date, raise your saving, and confirm your insurance and emergency fund still fit your life. Twenty minutes a year keeps the whole plan honest."
+      ],
+      "example": {
+        "title": "Three goals, three monthly amounts",
+        "intro": "A name, an amount and a date turn each one into a single number.",
+        "head": ["Goal", "Each month"],
+        "rows": [
+          ["School admission: ₹1,50,000 in 12 months, kept in the bank", "₹12,500"],
+          ["Emergency fund: ₹2,40,000 in 24 months, kept in the bank", "₹10,000"],
+          ["Car down payment: ₹6,00,000 in 36 months, earning an assumed 7% a year", "₹14,939"]
+        ],
+        "note": "Without any return, the car goal would need ₹16,667 a month (₹6,00,000 ÷ 36). The assumed 7% covers the difference. Short goals belong in safe places; the return matters little and the certainty matters a lot."
+      },
+      "tool": "goal",
+      "toolAsk": "Turn one of your goals into a monthly number.",
+      "client": { "quote": "“I want to save more but never stick to it.”", "context": "A client who gives up after a few months." },
+      "talk": "“You do not need more willpower. You need a target and an auto-debit. Give the goal a name, an amount and a date, divide to get the monthly figure, and set it to leave your account the day after salary. Then raise it every time your pay rises.”",
+      "remember": [
+        "A goal has a name, an amount and a date.",
+        "Price distant goals in future money: costs rise.",
+        "Automate for the day after salary.",
+        "Each pay rise: lift your saving by half of it, the same day.",
+        "Review once a year and after every big life change."
+      ],
+      "qs": [
+        { "id": "v2-460-1", "prompt": "Which of these is a well-formed financial goal?",
+          "options": ["Save a lot more than last year", "Build ₹3 lakh for a scooter in 30 months by saving ₹10,000 a month", "Become financially secure as soon as possible, and well before turning forty", "Invest in whatever is doing well right now"], "answer": 1,
+          "why": "It has a name (scooter), an amount (₹3 lakh), a date (30 months) and the monthly action that gets there. ₹10,000 × 30 = ₹3 lakh.",
+          "wrong": ["There is no amount and no date, so there is nothing to act on or measure.", null, "“Secure” and “as soon as possible” cannot be turned into a monthly number.", "This is a way of choosing products, not a goal, and chasing recent winners is a common mistake."] },
+        { "id": "v2-460-2", "prompt": "A year of school costs ₹1 lakh today. If fees rise 8% a year, roughly what will a year cost in nine years?",
+          "options": ["About ₹1.1 lakh", "About ₹1.7 lakh", "About ₹2 lakh", "About ₹3 lakh"], "answer": 2,
+          "why": "At 8% a year, prices double in about nine years (the Rule of 72: 72 ÷ 8 = 9). ₹1 lakh becomes about ₹2 lakh.",
+          "wrong": ["That is one year of increase, not nine.", "That adds 8% nine times without compounding (₹72,000). Each year's rise builds on the last.", null, "Prices would need to rise about 13% a year to triple in nine years."] },
+        { "id": "v2-460-3", "prompt": "Tanvi's take-home pay rises by ₹10,000 a month. Which habit best protects her from lifestyle inflation?",
+          "options": ["Upgrade her phone and car first, then save what remains", "Raise her monthly SIP by ₹5,000 on the day the new salary arrives", "Keep the full increase in her savings account and decide what to do with it later", "Leave her saving unchanged until the next annual review"], "answer": 1,
+          "why": "Raising the auto-debit the same day locks in half the increase for her goals before spending can absorb it. She still enjoys the other half.",
+          "wrong": ["Spending first is exactly how a raise disappears with nothing saved.", null, "Money left to “decide later” in a spending account is usually spent.", "By the review, her spending will already have grown to match the new income."] },
+        { "id": "v2-460-4", "prompt": "Salary arrives on the 1st. Which date for a monthly auto-debit into savings gives the best chance of it succeeding every month?",
+          "options": ["The 2nd", "The 15th", "The 25th", "The last day of the month"], "answer": 0,
+          "why": "The earlier the transfer, the less chance the money has been spent. The day after salary is “pay yourself first” in practice, and it avoids failed debits for lack of balance.",
+          "wrong": [null, "Half the month's spending has already happened, so the balance may be short in a heavy month.", "By the 25th many accounts are running low, and a failed debit can attract bank charges.", "This is saving “whatever is left”, which most months is nothing."] }
+      ]
+    }
+  }
+}

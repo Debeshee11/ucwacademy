@@ -1,0 +1,671 @@
+{
+  "course": "scam-safety",
+  "by": "UpperCrust Academy",
+  "upd": "2026-11",
+  "sources": [
+    "RBI, Customer Protection: Limiting Liability of Customers in Unauthorised Electronic Banking Transactions (6 July 2017), https://rbi.org.in/Scripts/NotificationUser.aspx?Id=11040, checked 15 Nov 2026",
+    "National Cyber Crime Reporting Portal and helpline 1930, https://cybercrime.gov.in, checked 15 Nov 2026"
+  ],
+  "lessons": {
+    "501": {
+      "story": {
+        "kicker": "Meet Suresh",
+        "headline": "The scheme paid him on time for five months. Then it stopped answering the phone.",
+        "paras": [
+          "A friend from Suresh's morning walk told him about a scheme that paid 10% a month. Suresh was doubtful, so he put in only ₹50,000. On the 5th of the next month, ₹5,000 arrived in his account, exactly as promised.",
+          "It arrived again the next month, and the next. Convinced, Suresh added ₹4 lakh from a fixed deposit and brought in his brother-in-law. The organiser thanked him warmly and said places were filling fast.",
+          "In the sixth month no money came. The office was locked and the phone was switched off. Suresh had received ₹25,000 in payouts. He had put in ₹4.5 lakh. The early payments were never returns. They were bait, paid out of other people's deposits."
+        ]
+      },
+      "concept": [
+        "Almost every money scam can be spotted with four questions. Learn them once and you are protected against schemes that have not even been invented yet.",
+        "First: is the return guaranteed and high? Real investments make you choose. Safe ones, such as bank deposits, pay modest returns. Higher returns always come with the chance of loss. Anyone promising both safety and a high return is lying about one of them. A promise of 10% a month works out to more than 200% a year. No honest business on earth pays that.",
+        "Second: are you being hurried? “Only today”, “last three places”, “do not tell anyone yet”. Pressure exists to stop you from thinking, checking or asking your family. A real opportunity is still there tomorrow.",
+        "Third: is the person or company registered? In India, anyone who takes deposits, sells investments or gives investment advice must be registered with a regulator such as SEBI, RBI or IRDAI, and each regulator publishes its list online. No registration means no protection for you if things go wrong.",
+        "Fourth: do you understand where the money comes from? If nobody can explain in plain words how the profit is made, treat that as your answer. And remember what caught Suresh: being paid on time at the start proves nothing. Paying early investors with later investors' money is the oldest trick there is."
+      ],
+      "example": {
+        "title": "What 10% a month really means",
+        "intro": "₹1 lakh, growing at the rate each one promises, for one year.",
+        "head": [
+          "Where the money is",
+          "After one year"
+        ],
+        "rows": [
+          [
+            "Bank fixed deposit at about 7% a year",
+            "₹1,07,000"
+          ],
+          [
+            "An equity fund in a good year, about 12%",
+            "₹1,12,000"
+          ],
+          [
+            "The scheme: 10% a month, compounded",
+            "₹3,13,843"
+          ]
+        ],
+        "note": "Tripling money in a year, with no risk, is not a better investment. It is a different thing altogether: a story told to collect deposits. The bigger the gap from normal returns, the more certain it is that the money does not exist."
+      },
+      "client": {
+        "quote": "“A friend says this scheme pays 10 percent a month.”",
+        "context": "A client excited by a high return."
+      },
+      "talk": "“Your friend is probably honest and has probably been paid. That is how these schemes spread. But 10% a month is over 200% a year, and nothing safe pays that. Before putting in a rupee, ask who regulates it and how the money is earned. If there is no clear answer, walk away.”",
+      "remember": [
+        "High return and guaranteed safety never come together.",
+        "Hurry is a warning sign. Real opportunities wait.",
+        "No registration with a regulator means no protection.",
+        "Being paid on time at first proves nothing."
+      ],
+      "qs": [
+        {
+          "id": "v2-501-1",
+          "prompt": "An agent offers Lata a plan that “doubles your money in 12 months, fully guaranteed”. Which response shows the best judgement?",
+          "options": [
+            "Invest a small amount first to test whether the payouts arrive",
+            "Decline: no honest investment can guarantee doubling in a year",
+            "Invest, but only if a relative has already been paid by the plan",
+            "Ask the agent for a slightly lower return so that it becomes safer"
+          ],
+          "answer": 1,
+          "why": "Doubling in a year means a 100% return. A guarantee of that is the clearest sign of fraud. No amount is safe to “test” it with.",
+          "wrong": [
+            "Early payouts are how such schemes build trust. A test that succeeds only draws you in deeper.",
+            null,
+            "Relatives are usually early investors, paid with other people's deposits so that they recruit more.",
+            "The return is not negotiable because it is not real. A lower number changes nothing."
+          ]
+        },
+        {
+          "id": "v2-501-2",
+          "prompt": "A caller says an investment offer closes tonight and Imran must transfer money within the hour to get in. What does the deadline most likely tell him?",
+          "options": [
+            "The offer is popular, so it must be good",
+            "Prices will certainly be higher tomorrow",
+            "The company is efficient and rewards investors who decide quickly",
+            "The caller wants to stop him from checking or asking anyone"
+          ],
+          "answer": 3,
+          "why": "Artificial urgency is a tool. It works by removing the time you would use to verify the offer or talk to family, which is exactly what a fraudster needs.",
+          "wrong": [
+            "Popularity can be faked easily, and a real investment does not vanish in an hour.",
+            "Nobody knows tomorrow's prices. A claim of certainty is itself a red flag.",
+            "Legitimate firms give documents and time to read them. They do not demand transfers within the hour.",
+            null
+          ]
+        },
+        {
+          "id": "v2-501-3",
+          "prompt": "Meera has received ₹6,000 a month for four months from a scheme where she invested ₹60,000. She is thinking of adding ₹5 lakh. What should the regular payments tell her?",
+          "options": [
+            "Very little: early payouts can come from new investors' money",
+            "The scheme is proven and safe to scale up",
+            "The organisers are earning far more than they pay out",
+            "She should wait until six payments have arrived before adding more"
+          ],
+          "answer": 0,
+          "why": "She has received ₹24,000 and still has ₹60,000 at risk. In a Ponzi scheme early investors are paid on time precisely so that they add more and bring others.",
+          "wrong": [
+            null,
+            "Four payments prove only that the organisers are still collecting new deposits.",
+            "There is no evidence of any earnings at all. The payouts are being presented as proof, with nothing behind them.",
+            "Two more payments would prove nothing new. The pattern, not the count, is the problem."
+          ]
+        },
+        {
+          "id": "v2-501-4",
+          "prompt": "Which of these is the strongest sign that an investment offer may be genuine?",
+          "options": [
+            "The office is large and well furnished",
+            "Many people in the neighbourhood have joined",
+            "The firm's registration appears on the regulator's own website",
+            "The brochure shows the founders in photos with several famous people"
+          ],
+          "answer": 2,
+          "why": "Registration that you verify yourself on the regulator's website is the one check a fraudster cannot fake. It does not make an investment profitable, but it means the firm is supervised and you have a route to complain.",
+          "wrong": [
+            "Impressive offices are rented with investors' money. They are part of the show.",
+            "Scams spread through communities. Many members only means many victims later.",
+            null,
+            "Photos are easily staged or edited, and celebrities do not check the schemes they are pictured near."
+          ]
+        }
+      ]
+    },
+    "502": {
+      "story": {
+        "kicker": "Meet Kamala",
+        "headline": "The caller knew her name, her bank and the last four digits of her card.",
+        "paras": [
+          "Kamala, a retired teacher in Nagpur, got a call at 11 in the morning. The man was polite. He said he was from her bank's security team, that her card was about to be blocked, and that he could fix it in two minutes. He already knew her name and the last four digits of her card.",
+          "Because he knew so much, she believed him. He asked her to read out the six-digit code that had just arrived by SMS, “to verify”. She did. Within a minute ₹48,000 had left her account.",
+          "The code was never for verification. It was the bank's final check before a payment, and she had read it to the thief. The details he “knew” had come from a leaked list that costs a few hundred rupees."
+        ]
+      },
+      "concept": [
+        "Digital fraud does not break into your bank. It persuades you to open the door. Every method below ends with you handing over something that only you should hold.",
+        "Your OTP, PIN, CVV and passwords are keys. No bank, wallet, government office or delivery company ever needs you to tell them one, on a call, in a chat or in a form. This has no exceptions. The moment anyone asks, you know who you are talking to.",
+        "UPI has one rule worth memorising: you enter your PIN only to send money, never to receive it. Fraudsters send a “collect request” and say “enter your PIN to accept the refund”. If you enter it, you pay them. Receiving money needs nothing from you at all.",
+        "Phishing is a message that copies a real organisation and carries a link: your account is blocked, your parcel is held, your electricity will be cut tonight. The link leads to a copy of the real site that records what you type. Do not use links from messages. Open the official app, or type the address yourself.",
+        "Remote access apps are the most dangerous. A “support agent” asks you to install a screen-sharing app so he can “help”. From then on he sees your screen, including every OTP. Never install an app because a caller told you to."
+      ],
+      "example": {
+        "title": "Same call, two endings",
+        "head": [
+          "What the caller says",
+          "What it really is"
+        ],
+        "rows": [
+          [
+            "“Read me the code to verify your identity”",
+            "Your OTP approving his payment"
+          ],
+          [
+            "“Enter your UPI PIN to receive the refund”",
+            "A collect request: you pay him"
+          ],
+          [
+            "“Click this link to update your KYC”",
+            "A copy of the bank's site that records your password"
+          ],
+          [
+            "“Install this app so I can fix it for you”",
+            "Screen sharing: he sees every code you receive"
+          ]
+        ],
+        "note": "The safe ending is the same every time. Hang up. Then call the number printed on the back of your own card, or open the bank's official app. If the problem was real, it will still be there."
+      },
+      "client": {
+        "quote": "“A person from my bank asked for my OTP.”",
+        "context": "A client who got a call."
+      },
+      "talk": "“That was not your bank. No bank ever asks for an OTP, PIN or CVV. Knowing your name and card digits proves nothing; that data is sold cheaply. Hang up, then call the number on the back of your card yourself.”",
+      "remember": [
+        "OTP, PIN, CVV, password: never shared, with anyone, ever.",
+        "UPI PIN is only for sending money, never for receiving.",
+        "Do not tap links in messages. Open the official app instead.",
+        "Never install an app because a caller asks you to.",
+        "When in doubt, hang up and call the official number yourself."
+      ],
+      "qs": [
+        {
+          "id": "v2-502-1",
+          "prompt": "Ravi is selling a sofa online. The buyer says, “I have sent ₹8,000. Just approve the request and enter your UPI PIN to receive it.” What is actually happening?",
+          "options": [
+            "The buyer is paying through a newer and faster UPI feature for sellers",
+            "The payment is on hold until Ravi verifies his identity",
+            "The bank needs the PIN to confirm that Ravi owns the account",
+            "Ravi is being asked to approve a payment from his own account"
+          ],
+          "answer": 3,
+          "why": "Receiving money on UPI never needs a PIN. A request that asks for one is a collect request: entering the PIN sends ₹8,000 from Ravi to the “buyer”.",
+          "wrong": [
+            "No UPI feature asks the receiver for a PIN. That is the rule that exposes this trick.",
+            "There is no such hold. Money sent to you simply arrives.",
+            "Banks never use the UPI PIN to confirm ownership, and never through a stranger's request.",
+            null
+          ]
+        },
+        {
+          "id": "v2-502-2",
+          "prompt": "An SMS says: “Your electricity will be disconnected at 9:30 pm tonight. Call this number immediately.” What is the safest thing to do?",
+          "options": [
+            "Call the number at once, since the deadline is close",
+            "Reply to the SMS asking for the bill details",
+            "Check the bill in the electricity company's own app",
+            "Forward the SMS to family so they can pay it"
+          ],
+          "answer": 2,
+          "why": "The message uses fear and a deadline to make you call a fraudster's number. Checking through the electricity company's own app or website tells you the truth with no risk.",
+          "wrong": [
+            "That number belongs to the sender. Calling it is exactly what the message is designed to achieve.",
+            "Replying confirms your number is active and invites further calls.",
+            null,
+            "Forwarding spreads the trap to people who may act on it."
+          ]
+        },
+        {
+          "id": "v2-502-3",
+          "prompt": "A caller claiming to be from a wallet company asks Asha to install a screen-sharing app so he can fix a failed refund. Why is this dangerous?",
+          "options": [
+            "He can then see her screen, including OTPs and passwords",
+            "The app will use a lot of mobile data",
+            "The refund will take longer to process",
+            "Screen-sharing apps are illegal in India and could get her fined"
+          ],
+          "answer": 0,
+          "why": "With screen sharing, everything she sees, he sees. He can start a payment and read the OTP from her screen without her saying a word.",
+          "wrong": [
+            null,
+            "Data use is trivial beside the real risk, which is full sight of her banking.",
+            "There is no refund. The story exists only to get the app installed.",
+            "These apps are legal and have honest uses. The danger is installing one for a stranger."
+          ]
+        },
+        {
+          "id": "v2-502-4",
+          "prompt": "A caller knows Joseph's full name, date of birth and the last four digits of his card. What does this prove about the caller?",
+          "options": [
+            "He must be from the bank, as only the bank holds this",
+            "Nothing: such details are widely leaked and sold",
+            "He is from a government agency with access to records",
+            "He is at least partly trustworthy and can be given a little information"
+          ],
+          "answer": 1,
+          "why": "Personal details leak from many sources and are sold in bulk. Fraudsters recite them to earn trust. Identity is proven by you calling the official number, never by what a caller knows.",
+          "wrong": [
+            "Shops, apps and data breaches hold the same details. The bank is far from the only source.",
+            null,
+            "Agencies do not phone people and recite card digits. This is the same trick in a different costume.",
+            "There is no safe partial trust. Each extra detail you give completes his picture of you."
+          ]
+        }
+      ]
+    },
+    "503": {
+      "story": {
+        "kicker": "Meet Dr Anand",
+        "headline": "He was “under digital arrest” for two days in his own study.",
+        "paras": [
+          "Dr Anand, 61, a retired surgeon, received a call saying a parcel in his name had been found with illegal items. He was transferred to a “police officer” on a video call: uniform, flag, an office in the background, an official-looking notice with his name on it.",
+          "He was told he was under “digital arrest”, must stay on camera, and must tell no one, not even his wife, or she would be arrested too. To prove his money was clean, he had to move it to a “safe government account” for verification. Over two days he transferred ₹38 lakh.",
+          "There was no parcel, no case and no arrest. Digital arrest does not exist in Indian law. No police force, court or agency arrests anyone on a video call, and none asks for money to be moved for “verification”. Educated, careful people fall for this every week, because the fear is real even though the story is not."
+        ]
+      },
+      "concept": [
+        "The largest frauds today are not about small payments. They take savings built over decades, and they work by controlling how you feel: greed in some, fear in others. Four patterns cover most of them.",
+        "The impersonation call. Someone claims to be police, customs, a tax officer or a court official and says you are in trouble. The purpose is panic. Real agencies send written notices and never demand money on a call. If a caller threatens arrest and asks for money, you can be sure it is fraud. Cut the call. Nothing happens.",
+        "The Ponzi scheme pays old investors with new investors' deposits and collapses when new money slows. The mark is a high “assured” return that does not depend on anything you can see.",
+        "The fake trading app starts in a chat group where a “guru” shares tips and members post their profits. You are guided to an app that shows your money growing quickly. The profits are numbers on a screen. When you try to withdraw, you are asked for a “tax” or “fee” first, and then another. The app, the group and its happy members are all run by the same people.",
+        "The pump and dump targets real shares of tiny companies. Operators buy cheaply, spread tips through messages and videos to draw in buyers, sell at the inflated price and leave everyone else holding shares nobody wants. An unknown share recommended by strangers is their exit, not your entry."
+      ],
+      "example": {
+        "title": "How a fake trading app takes ₹8 lakh",
+        "head": [
+          "Stage",
+          "What the victim sees"
+        ],
+        "rows": [
+          [
+            "Week 1: joins a tips group, invests ₹10,000",
+            "App shows ₹13,500. A small withdrawal works"
+          ],
+          [
+            "Week 3: invests ₹2 lakh",
+            "App shows ₹3.4 lakh"
+          ],
+          [
+            "Week 5: invests ₹5 lakh more",
+            "App shows ₹14 lakh"
+          ],
+          [
+            "Week 6: tries to withdraw",
+            "“Pay ₹90,000 tax first to release funds”"
+          ],
+          [
+            "=",
+            "Total lost",
+            "₹8,00,000"
+          ]
+        ],
+        "note": "The one small withdrawal in week 1 was the investment the fraudsters made in him. A genuine broker is registered with SEBI, the money moves only between your own bank account and your own trading account, and nobody ever asks for a fee to release your own funds."
+      },
+      "client": {
+        "quote": "“An officer says I must pay a fine on a video call or be arrested.”",
+        "context": "A client who got a threatening call."
+      },
+      "talk": "“That is a fraud, however official it looks. No agency in India arrests people on video or takes fines by transfer. Cut the call now. You will not be arrested for hanging up. Then tell your family and report it on 1930.”",
+      "remember": [
+        "“Digital arrest” does not exist. No agency demands money on a call.",
+        "Profits shown in an app are not money until they reach your bank.",
+        "A fee to release your own money is always fraud.",
+        "Tips from strangers about unknown shares are someone else's exit.",
+        "If you are told to keep it secret from family, tell your family."
+      ],
+      "qs": [
+        {
+          "id": "v2-503-1",
+          "prompt": "On a video call, a man in police uniform tells Sunita she is under “digital arrest” and must transfer her savings to a government account for verification. What should she do?",
+          "options": [
+            "Transfer a small part to show she is cooperating",
+            "Stay on the call but refuse to pay until she sees an ID card",
+            "End the call at once and tell her family",
+            "Ask for the case number and call back on the same number"
+          ],
+          "answer": 2,
+          "why": "Digital arrest is not a legal process and no agency verifies money by having it transferred. Ending the call carries no consequence. Telling family breaks the isolation the fraud depends on.",
+          "wrong": [
+            "Any transfer is lost, and paying once marks her as someone who will pay again.",
+            "ID cards and notices are forged easily. Staying on the call keeps her under their control.",
+            null,
+            "The number belongs to the fraudsters. A case number from them means nothing."
+          ]
+        },
+        {
+          "id": "v2-503-2",
+          "prompt": "An app shows Vivek's ₹3 lakh has grown to ₹9 lakh in a month. When he asks to withdraw, he is told to deposit ₹60,000 as “withdrawal tax” first. What does this tell him?",
+          "options": [
+            "The app follows tax rules, which is a good sign",
+            "He should withdraw half now and pay tax on the rest later",
+            "He should pay, since ₹60,000 is small beside ₹9 lakh",
+            "The ₹9 lakh is not real and the ₹60,000 would be lost too"
+          ],
+          "answer": 3,
+          "why": "Real tax is never collected as a deposit before withdrawal. The demand shows the balance is only a number on a screen, and each fee paid leads to another.",
+          "wrong": [
+            "No genuine platform asks for tax to be paid in before releasing your money.",
+            "No withdrawal of any size will be allowed. The option does not exist.",
+            "Comparing the fee with a fictional balance is the exact reasoning the fraud relies on.",
+            null
+          ]
+        },
+        {
+          "id": "v2-503-3",
+          "prompt": "A messaging group with 500 members recommends buying shares of a tiny company “before it goes up ten times”. Several members post screenshots of profits. What is most likely going on?",
+          "options": [
+            "Experts are kindly sharing their research for free",
+            "Operators who already hold the shares are creating buyers to sell to",
+            "The company is about to announce excellent results",
+            "It is a normal and regulated way for small companies to find new investors"
+          ],
+          "answer": 1,
+          "why": "This is a pump and dump. Operators buy first, generate excitement, sell into the buying they created, and the price then collapses.",
+          "wrong": [
+            "Strangers do not give away profitable research. The members and screenshots are often fake.",
+            null,
+            "Acting on unpublished results would be illegal, and the claim cannot be checked.",
+            "Companies raise money through regulated issues, not through anonymous tips in chat groups."
+          ]
+        },
+        {
+          "id": "v2-503-4",
+          "prompt": "Which feature is common to impersonation calls, fake trading apps and Ponzi schemes?",
+          "options": [
+            "They all work by controlling emotion: fear, greed or trust",
+            "They are all run from outside India",
+            "They all require the victim to visit an office",
+            "They all target only people who have never invested or saved before"
+          ],
+          "answer": 0,
+          "why": "Each one bypasses careful thinking by triggering a strong feeling: fear of arrest, greed for quick profit, or trust in a friendly group. Recognising the feeling is the best defence.",
+          "wrong": [
+            null,
+            "Many are run within India. Location does not define them.",
+            "Most happen entirely by phone and app. No office is involved.",
+            "Experienced investors and professionals are frequent victims, as Dr Anand's story shows."
+          ]
+        }
+      ]
+    },
+    "504": {
+      "story": {
+        "kicker": "Meet Harpreet",
+        "headline": "Two minutes on a regulator's website saved her ₹6 lakh.",
+        "paras": [
+          "Harpreet got a call from a well-spoken “wealth manager”. He offered a portfolio service with a strong track record and sent a glossy presentation with a registration number printed on every page.",
+          "She was ready to transfer ₹6 lakh. Her daughter asked one question: “Did you check that number yourself?” They opened the regulator's website and searched. The number belonged to a real, registered firm, in another city, with a different name, website and phone number. The caller had simply copied it.",
+          "Harpreet then called the real firm on the number shown on the regulator's site. They confirmed they had never heard of the caller, and that it was the third such call they had received that month."
+        ]
+      },
+      "concept": [
+        "You do not need to judge whether someone sounds honest. Fraudsters sound more honest than honest people; it is their profession. You need a few checks that work no matter how convincing the person is.",
+        "Check the registration yourself. Stockbrokers, investment advisers, research analysts, mutual fund distributors, banks, deposit-taking companies and insurers each need a licence. SEBI, AMFI, RBI and IRDAI publish searchable lists on their own websites. Type the regulator's address yourself and search by name or number. Then match everything: the firm's name, city, and contact details. A copied number fails this test.",
+        "Use only official channels. Reach a firm through the phone number or website shown on the regulator's list or on your own account statement, never through a number in a message or a search advertisement. Fraudsters buy ads so that their number appears first when you search for “customer care”.",
+        "Call back. When anyone contacts you about your money, however genuine they seem, end the conversation and contact the organisation yourself through its official channel. A real employee will not mind. A fraudster will push you to stay on the line.",
+        "Watch where the money goes. Payments for a genuine investment go to the regulated company's own account, in its name, or to your own trading or fund account. A request to pay an individual's account, a personal UPI ID or an unrelated company is reason enough to stop. Finally, lock your own doors: turn on two-step sign-in for email, banking and investment apps."
+      ],
+      "example": {
+        "title": "Harpreet's two-minute check",
+        "head": [
+          "Question",
+          "What she found"
+        ],
+        "rows": [
+          [
+            "Is the number on the regulator's list?",
+            "Yes"
+          ],
+          [
+            "Does the firm name match the caller's?",
+            "No"
+          ],
+          [
+            "Does the city and phone number match?",
+            "No"
+          ],
+          [
+            "Is payment to the firm's own account?",
+            "No: a personal account"
+          ],
+          [
+            "=",
+            "Decision",
+            "Do not pay"
+          ]
+        ],
+        "note": "One “yes” is not enough. A real registration number proves only that a real firm exists somewhere. Every detail has to match, and the money must go to that firm's own account."
+      },
+      "client": {
+        "quote": "“How do I know if an adviser is genuine?”",
+        "context": "A client who got a cold call."
+      },
+      "talk": "“Do not go by how they sound. Ask for the registration number, then look it up yourself on the regulator's website and match the name, city and phone number. Call the firm back on the number listed there. And never pay into a personal account.”",
+      "remember": [
+        "Search the regulator's own website yourself: SEBI, AMFI, RBI or IRDAI.",
+        "Match every detail, not just the number.",
+        "Call back on the official number. Never trust the incoming call.",
+        "Money goes only to the regulated firm's own account.",
+        "Turn on two-step sign-in everywhere."
+      ],
+      "qs": [
+        {
+          "id": "v2-504-1",
+          "prompt": "An adviser emails Nikhil a certificate showing a SEBI registration number. What is the right way to confirm it?",
+          "options": [
+            "Ask the adviser to send a clearer copy of the certificate",
+            "Search the number on SEBI's website and match the name",
+            "Check whether the adviser's website also displays the number",
+            "Ask the adviser for references from other clients"
+          ],
+          "answer": 1,
+          "why": "Only the regulator's own list is independent of the person being checked. Matching name and contact details catches the common trick of copying a real firm's number.",
+          "wrong": [
+            "A clearer copy of a forged or borrowed certificate is still forged or borrowed.",
+            null,
+            "The adviser controls that website and can print any number on it.",
+            "References can be accomplices. They are supplied by the person under test."
+          ]
+        },
+        {
+          "id": "v2-504-2",
+          "prompt": "Pallavi needs her bank's customer care number. Which source is the safest?",
+          "options": [
+            "The first result when she searches online for the bank's helpline",
+            "A number sent to her by SMS from an unknown sender",
+            "The number printed on the back of her debit card",
+            "A number shared in a neighbourhood chat group"
+          ],
+          "answer": 2,
+          "why": "The card was issued by the bank itself, so the number on it is certain to be genuine. The bank's official app and statements are equally safe.",
+          "wrong": [
+            "Fraudsters pay for advertisements so that fake helpline numbers appear at the top of search results.",
+            "An unknown sender offering a helpful number is a classic lure.",
+            null,
+            "Well-meaning neighbours often pass on numbers they found in the same unsafe ways."
+          ]
+        },
+        {
+          "id": "v2-504-3",
+          "prompt": "A registered-looking firm asks Omar to pay for his investment by UPI to “our relationship manager's personal ID, for faster processing”. What should he conclude?",
+          "options": [
+            "This is normal for smaller firms",
+            "It is acceptable if he is given a receipt",
+            "Stop: genuine investments are paid to the firm's own account",
+            "He should pay half now and half after the units are allotted"
+          ],
+          "answer": 2,
+          "why": "Regulated firms collect money only in their own name. Routing it to an individual means either the firm is fake or an employee is stealing. Either way the money is unprotected.",
+          "wrong": [
+            "Firm size makes no difference. No regulated firm collects investments in personal accounts.",
+            "A receipt is a piece of paper. It cannot recover money sent to a private account.",
+            null,
+            "Half of a payment to the wrong account is still lost."
+          ]
+        },
+        {
+          "id": "v2-504-4",
+          "prompt": "Someone phones Geeta saying they are from her mutual fund and need to “update her nominee details urgently”. They sound professional. What is the best next step?",
+          "options": [
+            "Answer their questions, since nominee details are not sensitive",
+            "Ask them to prove who they are by stating her folio number",
+            "End the call and contact the fund house through its official app",
+            "Ask them to call back the next day at a better time"
+          ],
+          "answer": 2,
+          "why": "The call-back rule removes the need to judge the caller at all. If the request is real, the official channel will confirm it.",
+          "wrong": [
+            "Such calls collect personal details one piece at a time for later misuse.",
+            "Folio numbers leak like any other data. Knowing one proves nothing.",
+            null,
+            "A later call from the same person is no more trustworthy than this one."
+          ]
+        }
+      ]
+    },
+    "505": {
+      "story": {
+        "kicker": "Meet Farid",
+        "headline": "He called 1930 eleven minutes after the transfer. Most of the money was stopped.",
+        "paras": [
+          "Farid realised it the moment the “bank officer” hung up. ₹1.8 lakh had just left his account. His first feeling was shame. His second was the urge to tell nobody and hope.",
+          "Instead he did three things in fifteen minutes. He called 1930, the national cyber crime helpline, and gave the transaction details. He called his bank on the number on his card and had his account and cards blocked. He took screenshots of the messages and the call log.",
+          "Because the report reached the system so fast, ₹1.4 lakh was frozen in the receiving account before it could be withdrawn. A neighbour who lost a similar amount the same month waited three days out of embarrassment. By then the money had moved through several accounts and was gone."
+        ]
+      },
+      "concept": [
+        "If money has left your account through fraud, speed matters more than anything else. Stolen money is moved from account to account within hours. Every minute you save improves the chance of freezing it.",
+        "Step one: call 1930. This is the national cyber crime helpline. Give the amount, time, your account and the transaction reference. The system alerts the banks involved so the money can be frozen where it sits. Also file the complaint on the official portal, cybercrime.gov.in, and keep the acknowledgement number.",
+        "Step two: call your bank, using the number on your card or in the official app. Ask them to block the card, UPI and net banking, and to record a fraud complaint in writing. Note the complaint number and the time. Under Reserve Bank rules, when a transaction is truly unauthorised and the fault is not yours, reporting it to the bank within three working days protects you from bearing the loss. The longer you wait, the more of it can fall on you. If you shared an OTP or PIN yourself, the bank may treat it differently, so say exactly what happened.",
+        "Step three: save the evidence. Screenshots of messages, the caller's number, transaction IDs, the app or website name, any account or UPI ID you paid. Do not delete the chat in anger.",
+        "Step four: close the door. Change passwords and PINs, remove any app you were asked to install, and warn family, because fraudsters often try the same household again, sometimes posing as “recovery agents” who promise to get the money back for a fee. That is a second fraud. And let go of the shame. These crimes are run by professionals. Reporting quickly is what a sensible person does."
+      ],
+      "example": {
+        "title": "The first hour, in order",
+        "head": [
+          "When",
+          "Do this"
+        ],
+        "rows": [
+          [
+            "Minute 0 to 10",
+            "Call 1930. Give amount, time and transaction ID"
+          ],
+          [
+            "Minute 10 to 20",
+            "Call the bank on the official number. Block card, UPI, net banking"
+          ],
+          [
+            "Minute 20 to 30",
+            "Screenshot everything. Note complaint numbers"
+          ],
+          [
+            "Within the hour",
+            "File on cybercrime.gov.in. Change passwords. Tell family"
+          ],
+          [
+            "Within 3 working days",
+            "Give the bank a written complaint and keep the acknowledgement"
+          ]
+        ],
+        "note": "For a complaint about a SEBI-registered broker, adviser or listed company, SEBI's SCORES portal is the route. For a bank that does not resolve your complaint within 30 days, the RBI Ombudsman is the next step."
+      },
+      "client": {
+        "quote": "“I sent money to a scammer. What now?”",
+        "context": "A client who just realised."
+      },
+      "talk": "“Call 1930 right now, then your bank on the number on your card, and block everything. Save every message. Do it in the next ten minutes; the speed decides how much can be frozen. And do not feel foolish. Feeling foolish is what makes people wait.”",
+      "remember": [
+        "Call 1930 first. Minutes matter.",
+        "Then the bank, on its official number: block and get a complaint number.",
+        "Report to the bank within three working days.",
+        "Save all evidence. Change every password.",
+        "Anyone who offers to recover the money for a fee is the next fraud."
+      ],
+      "qs": [
+        {
+          "id": "v2-505-1",
+          "prompt": "Ten minutes ago Bina realised she had transferred ₹90,000 to a fraudster. What should she do first?",
+          "options": [
+            "Message the fraudster and ask for the money back",
+            "Wait until evening to discuss it with her family",
+            "Call 1930 and report the transaction details",
+            "Post a warning about the fraudster on social media"
+          ],
+          "answer": 2,
+          "why": "The 1930 helpline can alert the banks involved so the money is frozen before it is withdrawn or moved on. That only works if the report is made quickly.",
+          "wrong": [
+            "The fraudster will not return it, and the conversation costs minutes that matter.",
+            "By evening the money will have passed through several accounts.",
+            null,
+            "A warning helps others later, but it does nothing to stop this money. Report first."
+          ]
+        },
+        {
+          "id": "v2-505-2",
+          "prompt": "Money was taken from Kiran's account by a transaction he did not make and did not authorise. He never shared any code. By when should he report it to his bank to be best protected from bearing the loss?",
+          "options": [
+            "Within three working days of the bank's alert",
+            "Within thirty calendar days of the bank's first alert",
+            "Before his next monthly statement",
+            "Any time within the financial year"
+          ],
+          "answer": 0,
+          "why": "Under the Reserve Bank's rules on unauthorised electronic transactions, reporting within three working days of being notified gives a customer who was not at fault the strongest protection. Delay increases the share of loss the customer may bear.",
+          "wrong": [
+            null,
+            "After the first few working days the customer's protection weakens, and it then depends on the bank's own policy.",
+            "A month is far too late for the strongest protection and for any chance of freezing the money.",
+            "There is no such yearly window. The clock runs in working days from the bank's alert."
+          ]
+        },
+        {
+          "id": "v2-505-3",
+          "prompt": "A week after being defrauded, Jaya gets a call from a “cyber recovery agency” that says it can get her ₹2 lakh back for an advance fee of ₹15,000. What is this most likely to be?",
+          "options": [
+            "A government service that works closely with the cyber police",
+            "A legitimate lawyer offering his services",
+            "A private firm with special access to bank systems",
+            "A second fraud aimed at someone known to have paid once"
+          ],
+          "answer": 3,
+          "why": "Victims' details are shared among fraudsters. Recovery is handled by the police and the banks at no charge. Anyone asking for an advance fee is running a follow-up fraud.",
+          "wrong": [
+            "Official recovery never involves a fee, and officials do not cold-call victims with offers.",
+            "A genuine lawyer does not call unknown victims promising guaranteed recovery for an advance.",
+            "No private firm has access to freeze or reverse bank transfers.",
+            null
+          ]
+        },
+        {
+          "id": "v2-505-4",
+          "prompt": "After a fraud, which action would harm a victim's case?",
+          "options": [
+            "Taking screenshots of the messages and call log",
+            "Deleting the chat and the app out of anger",
+            "Writing down the bank's complaint number and time",
+            "Changing banking passwords and PINs"
+          ],
+          "answer": 1,
+          "why": "The chat, the app name, the numbers and the IDs are evidence that investigators use to trace accounts. Deleting them removes what could help recover the money.",
+          "wrong": [
+            "Screenshots preserve evidence and are one of the first things to do.",
+            null,
+            "The complaint number and time prove when the bank was told, which affects liability.",
+            "New passwords stop further loss. Do it, after saving the evidence."
+          ]
+        }
+      ]
+    }
+  }
+}
