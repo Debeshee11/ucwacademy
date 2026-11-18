@@ -5,7 +5,7 @@ name: Deploy site
 on:
   push:
     branches: [main]
-    paths: ["index.html", "one/**", "scripts/stamp.py", "assets/**", "learn/**", "sitemap.xml", "robots.txt", "404.html", "CNAME", ".github/workflows/pages.yml"]
+    paths: ["index.html", "one/**", "scripts/stamp.py", "assets/**", "learn/**", "sitemap.xml", "robots.txt", "404.html", "CNAME", "sw.js", "manifest.webmanifest", "functions/content/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,17 @@ jobs:
       - name: Collect the site files
         run: |
           mkdir _site
-          cp -r index.html one assets learn sitemap.xml robots.txt 404.html CNAME _site/
+          cp -r index.html one assets learn sitemap.xml robots.txt 404.html CNAME sw.js manifest.webmanifest _site/
+          # Lessons and practice are open to everyone: publish the course files so the browser and the offline cache can keep them.
+          # Exam and mock answer keys are not in these files; they stay in the database, behind the backend.
+          cp -r functions/content _site/one/content
+          # Speed: join the sixty script modules into one small file. If this step ever fails, the site is published
+          # with the separate modules exactly as before, so a bundling problem can never block a release.
+          if npx --yes esbuild@0.24.0 _site/one/js/app.js --bundle --format=esm --minify --target=es2022 --legal-comments=none --outfile=_site/one/js/app.bundle.js; then
+            sed -i 's#src="one/js/app.js"#src="one/js/app.bundle.js"#' _site/index.html
+          else
+            echo "::warning::Bundling was skipped; the unbundled modules are being served."; rm -f _site/one/js/app.bundle.js
+          fi
           python3 scripts/stamp.py _site "$GITHUB_SHA"
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
