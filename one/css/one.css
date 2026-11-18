@@ -948,3 +948,14 @@ a.crow:hover { border-color: var(--sc); transform: translateX(2px); }
 .nav-t b { font: inherit; }
 .nav-t small { font: 600 11px/1.2 var(--font); letter-spacing: 0; text-transform: none; color: var(--mute); white-space: normal; }
 .nav a[aria-current="page"] .nav-t small { color: var(--gold-ink); }
+
+/* profile picker: two clearly different steps and two colour families */
+.pk-step { margin: 6px 0 -2px; font: 700 14px var(--font); color: var(--ink2); } .pk-step b { display: inline-block; background: var(--ink); color: #fff; border-radius: 99px; padding: 2px 10px; margin-right: 8px; font-size: 12px; }
+.segs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } @media (max-width: 520px) { .segs { grid-template-columns: 1fr; } }
+.seg.pk-everyday { border-color: #BFE6CF; background: #F2FBF6; } .seg.pk-pro { border-color: #C5D4F2; background: #F2F6FD; }
+.seg.pk-everyday[aria-pressed="true"] { border-color: #1E8E56; background: #E3F6EB; box-shadow: 0 0 0 3px rgba(30,142,86,.35); }
+.seg.pk-pro[aria-pressed="true"] { border-color: #2556B8; background: #E4ECFC; box-shadow: 0 0 0 3px rgba(37,86,184,.35); }
+.pk-ic { font-size: 26px; } .pk-tick { font: 800 12px var(--font); color: #1B5E3A; } .seg.pk-pro .pk-tick { color: #1F458F; }
+.pk-d-everyday .door { border-left: 6px solid #1E8E56; } .pk-d-pro .door { border-left: 6px solid #2556B8; }
+.pk-d-everyday .door[aria-pressed="true"] { background: #E3F6EB; } .pk-d-pro .door[aria-pressed="true"] { background: #E4ECFC; }
+.nmfor { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; } .nmfor .chip { display: inline-flex; align-items: center; height: 34px; }
