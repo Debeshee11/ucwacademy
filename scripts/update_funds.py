@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List and refresh mutual funds automatically from AMFI data (free feed: api.mfapi.in).
+"""List and refresh mutual funds automatically from AMFI data (public feed: api.mfapi.in).
 
 Run by .github/workflows/update-funds.yml every week. For every group in scripts/fund_rules.json it finds the matching
 open-ended funds (Regular plan, Growth option), downloads each fund's NAV history, works out returns over 3M to 10Y,
