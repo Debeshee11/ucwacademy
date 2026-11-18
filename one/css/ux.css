@@ -29,3 +29,25 @@
 
 .btn.wa { background: #25D366; border-color: #128C4B; color: #04290F; }
 button.pillstat { font: inherit; cursor: pointer; background: #fff; }
+
+/* ——— In-app dialogs, guest prompts. Light and airy: a soft white veil, never a dark overlay. ——— */
+.dlg { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(255, 252, 244, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: dlg-in .16s ease-out; }
+.dlg-card { width: 100%; max-width: 420px; background: #fff; border: 2px solid var(--line2); border-bottom-width: 5px; border-radius: 24px; padding: 26px 24px 22px; box-shadow: 0 18px 50px rgba(201, 134, 0, .16); animation: dlg-pop .2s var(--ease, ease-out); }
+.dlg-msg { font: 700 18px/1.45 var(--font); color: var(--ink); }
+.dlg-row { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 6px; }
+.dlg-row .btn { flex: 1 1 130px; }
+.btn.primary.danger { background: #FFE3E4; border-color: #E5484D; color: #8F1D21; }
+@keyframes dlg-in { from { opacity: 0; } }
+@keyframes dlg-pop { from { transform: translateY(10px) scale(.97); opacity: 0; } }
+
+.wall { text-align: center; align-items: center; background: var(--gold-tint); border: 2px solid #F6DE8C; border-bottom-width: 5px; border-radius: 28px; padding: 40px 24px; max-width: 620px; margin: 24px auto 0; }
+.wall-emo { font-size: 44px; line-height: 1; }
+
+.nudge { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #F1FAF4; border: 2px solid #BFE6CD; border-bottom-width: 4px; border-radius: 20px; padding: 14px 16px; }
+.nudge-emo { font-size: 28px; line-height: 1; }
+.nudge-b { flex: 1 1 240px; display: grid; gap: 2px; } .nudge-b b { font: 800 16px/1.3 var(--display, var(--font)); }
+.nudge .icon-btn { flex: none; }
+
+.guest-in { height: 40px; padding: 0 16px; border-radius: 14px; border: 2px solid var(--ink); border-bottom-width: 4px; background: var(--gold); color: var(--ink); font: 800 14px/1 var(--font); white-space: nowrap; }
+.guest-in:hover { filter: brightness(1.04); } .guest-in:active { transform: translateY(2px); border-bottom-width: 2px; }
+@media (max-width: 420px) { .guest-in { padding: 0 12px; font-size: 13px; } }

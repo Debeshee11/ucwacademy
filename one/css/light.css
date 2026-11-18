@@ -1,0 +1,77 @@
+/* UpperCrust Academy, light layer. Loaded last and wins over everything before it.
+   House rule: no dark surfaces anywhere. Every panel that used to be dark brown, navy or purple is now a bright,
+   warm tint with dark text on it. Nothing is removed from the other stylesheets, so this file can be switched off
+   in index.html to get the old look back.
+   Tints: honey #FFF3CF, butter #FFE9A8, mint #E9F8EF, sky #EAF3FF, lilac #F3EDFF, peach #FFEBDD. Text stays ink for contrast. */
+:root { --honey: #FFF3CF; --butter: #FFE9A8; --honey-line: #F3D676; --honey-foot: #E7B93B; --mint: #E9F8EF; --sky: #EAF3FF; --lilac: #F3EDFF; --peach: #FFEBDD; }
+
+/* ——— Home: "Your next step" ——— */
+.play-hero { color: var(--ink); background: radial-gradient(90% 120% at 100% 100%, rgba(255, 183, 3, .34), transparent 62%), linear-gradient(135deg, #FFF8E1 0%, var(--honey) 55%, var(--butter) 100%); border: 2px solid var(--honey-line); border-bottom: 6px solid var(--honey-foot); }
+.ph-kicker { color: var(--gold-ink); }
+.ph-sub { color: var(--ink2); } .ph-sub.dim, .ph-pct { color: var(--mute); }
+.stop:not(:last-child)::after { border-left-color: rgba(122, 79, 0, .32); }
+.stop-in { color: var(--ink); }
+.coin { border-color: #EBD9A4; background: #fff; color: #B9A77E; }
+.coin.now { border-color: #fff; box-shadow: 0 0 0 8px rgba(255, 183, 3, .28); }
+.tl-t { color: var(--mute); } .stop.now .tl-t, .stop.done .tl-t { color: var(--ink); }
+
+/* ——— Progress: points card ——— */
+.score { color: var(--ink); background: linear-gradient(135deg, #FFF8E1 0%, var(--honey) 60%, var(--butter) 100%); border: 2px solid var(--honey-line); border-bottom: 6px solid var(--honey-foot); }
+.sc-label { color: var(--gold-ink); } .sc-rank { color: var(--ink2); }
+.score .bar { background: rgba(122, 79, 0, .14); }
+.sc-stats > div { background: #fff; border-color: #F1DFA6; }
+.sc-stats svg { color: var(--gold-d); } .sc-stats span { color: var(--mute); }
+.score .btn.ghost { background: #fff; color: var(--ink); border-color: var(--line2); }
+
+/* ——— Leaderboard: your standing ——— */
+.lb-me, .roll-me { color: var(--ink); background: linear-gradient(135deg, #FFF8E1 0%, var(--honey) 60%, var(--butter) 100%); border: 2px solid var(--honey-line); border-bottom: 6px solid var(--honey-foot); }
+.lb-me .small, .roll-me .mute, .roll-me .small { color: var(--ink2); }
+.roll-me .eyebrow { color: var(--gold-ink); }
+.lb-spot { background: #fff; border: 2px solid #F1DFA6; } .lb-spot.off { color: var(--ink2); }
+.lb-num { color: var(--gold-d); } .roll-rank { color: var(--ink); }
+.roll-ladder span { background: #fff; border-color: #F1DFA6; color: var(--mute); }
+.lb-seg.metric button[aria-selected="true"] { background: var(--gold); color: var(--ink); border-color: var(--gold-d); }
+
+/* ——— Review page meter ——— */
+.rv-meter { color: var(--ink); background: linear-gradient(135deg, #FBF8FF 0%, var(--lilac) 60%, #E6DAFF 100%); border: 2px solid #DACBFA; border-bottom: 6px solid #C3ADF2; }
+.rv-meter .small { color: var(--ink2); }
+.rv-badges li { background: #fff; color: #6B5A94; border: 2px solid #E4D9FB; } .rv-badges li.on { border-color: #E7B93B; }
+
+/* ——— NISM mock: top bar ——— */
+.nm-top { background: var(--honey); color: var(--ink); border-bottom: 2px solid var(--honey-line); }
+.nm-x { color: var(--ink); } .nm-x:hover { background: rgba(122, 79, 0, .1); }
+.nm-title span { color: var(--gold-ink); }
+.nm-top .small, .nm-top .mute, .nm-top [class*="prog"] { color: var(--ink2); }
+.nm-clock { color: var(--gold-ink); } .nm-clock.low { color: #C62828; }
+.nm-pb.c { outline-color: var(--gold-d); }
+
+/* ——— NISM page hero when no subject colour is set: bright gold button, not brown ——— */
+.hero:not([style*="--sc"]) .btn.primary { background: var(--gold); border-color: var(--gold-d); color: var(--ink); }
+.hero:not([style*="--sc"]) .pill.gold { background: #fff; color: var(--gold-ink); }
+
+/* ——— Small badges ——— */
+.nmban-badge, .resume-go { background: linear-gradient(160deg, #FFE27A, var(--gold)); color: #5A3A00; border: 2px solid #E39A00; }
+.lv-dot.expert { background: #F08A12; }
+.lib-chip[aria-pressed="true"], .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold-d); color: var(--ink); }
+
+/* Subject tags and tiles: a soft tint of the subject colour with the colour itself as ink, instead of a solid dark block.
+   Browsers without color-mix keep the old look. */
+.crow-tag { background: color-mix(in srgb, var(--sc) 16%, #fff) !important; color: color-mix(in srgb, var(--sc) 82%, #2A1E12) !important; text-shadow: none; border: 2px solid color-mix(in srgb, var(--sc) 30%, #fff); }
+.gtile-ic { background: color-mix(in srgb, var(--sc) 16%, #fff); color: color-mix(in srgb, var(--sc) 82%, #2A1E12); }
+
+/* ——— Feedback: toast, points pop, tour, share prompts ——— */
+.toast { background: #fff; color: var(--ink); border: 2px solid var(--gold-d); border-bottom-width: 4px; box-shadow: 0 12px 32px rgba(201, 134, 0, .18); }
+.pop-pts { background: #fff; color: var(--gold-ink); border: 3px solid var(--gold); border-bottom-width: 6px; box-shadow: 0 14px 36px rgba(201, 134, 0, .22); }
+.tour-ring { box-shadow: 0 0 0 9999px rgba(255, 251, 240, .8), 0 0 0 4px var(--gold); }
+.tour-card { box-shadow: 0 18px 40px rgba(201, 134, 0, .2); }
+.gw { background: rgba(255, 252, 244, .84); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.gw-card { border: 2px solid var(--line2); box-shadow: 0 18px 50px rgba(201, 134, 0, .18); }
+.gc { background: var(--honey); color: var(--ink); border: 2px solid var(--gold-d); box-shadow: 0 10px 28px rgba(201, 134, 0, .2); }
+
+/* ——— Sign-in screen on phones: the headline never slides under the logo ———
+   The headline and quiz are centred in the space above the form. On a short screen they are taller than that space,
+   and centring pushed the first line up under the logo. Auto margins keep them centred when they fit and top-aligned when they do not. */
+@media (max-width: 860px) {
+  .lgl-stage { display: flex; flex-direction: column; justify-content: flex-start; }
+  .lgl-stage > :first-child { margin-top: auto; } .lgl-stage > :last-child { margin-bottom: auto; }
+}

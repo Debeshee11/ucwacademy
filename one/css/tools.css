@@ -1,0 +1,68 @@
+/* Money calculators and the "worked example" table inside lessons. Bright tints only. */
+.tint-mint { --tb: #E9F8EF; --tl: #BFE6CD; --tf: #9AD3AF; --ta: #1FA45B; }
+.tint-sky { --tb: #EAF3FF; --tl: #C5DBFA; --tf: #A3C4F3; --ta: #2F7CF6; }
+.tint-peach { --tb: #FFEEE2; --tl: #FBD3B8; --tf: #F4B48E; --ta: #E8590C; }
+.tint-lilac { --tb: #F3EDFF; --tl: #DACBFA; --tf: #C3ADF2; --ta: #7A4DD8; }
+
+.tool { background: var(--tb); border: 2px solid var(--tl); border-bottom: 6px solid var(--tf); border-radius: 28px; padding: 22px; display: grid; gap: 18px; }
+.tool-h { display: flex; gap: 14px; align-items: center; }
+.tool-emo { flex: none; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 18px; background: #fff; border: 2px solid var(--tl); font-size: 28px; line-height: 1; }
+.tool-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.tool-fields { display: grid; gap: 14px; }
+.tool-f { display: grid; gap: 8px; background: #fff; border: 2px solid var(--tl); border-radius: 18px; padding: 12px 14px; }
+.tool-fl { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tool-fl label { font: 700 15px/1.3 var(--font); color: var(--ink2); }
+.tool-in { display: inline-flex; align-items: center; gap: 4px; border: 2px solid var(--line2); border-radius: 12px; padding: 0 10px; height: 42px; background: #fff; }
+.tool-in:focus-within { border-color: var(--ta); box-shadow: 0 0 0 3px var(--tb); }
+.tool-u { font: 800 15px var(--font); color: var(--mute); }
+.tool-num { width: 9ch; border: 0; outline: 0; background: none; text-align: right; font: 800 17px var(--display, var(--font)); color: var(--ink); padding: 0; }
+.tool-range { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: none; margin: 0; cursor: pointer; }
+.tool-range::-webkit-slider-runnable-track { height: 8px; border-radius: 8px; background: linear-gradient(90deg, var(--ta) var(--p, 0%), var(--tl) var(--p, 0%)); }
+.tool-range::-moz-range-track { height: 8px; border-radius: 8px; background: var(--tl); } .tool-range::-moz-range-progress { height: 8px; border-radius: 8px; background: var(--ta); }
+.tool-range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -9px; border-radius: 50%; background: #fff; border: 3px solid var(--ta); box-shadow: 0 3px 0 var(--tf); }
+.tool-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 3px solid var(--ta); }
+.tool-out { background: #fff; border: 2px solid var(--tl); border-radius: 22px; padding: 20px; display: grid; gap: 12px; position: sticky; top: 84px; }
+.tool-label { font: 700 15px var(--font); color: var(--mute); }
+.tool-big { font: 800 clamp(32px, 6vw, 46px)/1.05 var(--display, var(--font)); letter-spacing: -.025em; color: var(--ink); overflow-wrap: anywhere; }
+.tool-bar { display: flex; height: 18px; border-radius: 10px; overflow: hidden; background: var(--tb); gap: 3px; }
+.seg { min-width: 4px; border-radius: 6px; transition: flex .25s var(--ease, ease); }
+.seg.a, .dot.a { background: #FFC531; } .seg.b, .dot.b { background: #3CC47A; } .seg.c, .dot.c { background: #FF9C6B; }
+.tool-key { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 600 13px var(--font); color: var(--ink2); } .tool-key span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.tool-rows { margin: 0; display: grid; gap: 0; } .tool-rows > div { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-top: 2px dashed var(--line); }
+.tool-rows dt { color: var(--ink2); font-weight: 600; font-size: 15px; } .tool-rows dd { margin: 0; font: 800 16px var(--display, var(--font)); text-align: right; white-space: nowrap; }
+.tool-note { font-size: 13px; line-height: 1.5; color: var(--mute); }
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.tool-tile { display: grid; gap: 6px; padding: 18px; border-radius: 24px; background: var(--tb); border: 2px solid var(--tl); border-bottom: 6px solid var(--tf); color: var(--ink); transition: transform .12s var(--ease, ease); }
+.tool-tile:hover { transform: translateY(-3px); } .tool-tile:active { transform: translateY(2px); border-bottom-width: 3px; }
+.tool-tile b { font: 800 19px/1.2 var(--display, var(--font)); margin-top: 6px; } .tool-tile .small { color: var(--ink2); }
+.tool-go { display: inline-flex; align-items: center; gap: 4px; font: 800 14px var(--font); color: var(--ta, var(--gold-ink)); margin-top: 4px; }
+.tool-learn { display: grid; gap: 4px; }
+.read .tool { margin-top: 4px; } .read .tool-body { grid-template-columns: 1fr; } .read .tool-out { position: static; }
+@media (max-width: 760px) { .tool { padding: 16px; border-radius: 24px; } .tool-body { grid-template-columns: 1fr; } .tool-out { position: static; order: -1; } .read .tool-out { order: 0; } }
+
+/* Worked example inside a lesson: a small, friendly table. */
+.eg { background: #FFFBEC; border: 2px solid #F3D676; border-bottom-width: 5px; border-radius: 22px; padding: 18px; display: grid; gap: 12px; }
+.eg-t { font: 800 19px/1.25 var(--display, var(--font)); }
+.eg table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.eg th { text-align: left; font: 800 12px var(--font); letter-spacing: .08em; text-transform: uppercase; color: var(--gold-ink); padding: 0 8px 8px 0; }
+.eg td { padding: 10px 8px 10px 0; border-top: 2px dashed #F1DFA6; vertical-align: top; } .eg td:last-child, .eg th:last-child { text-align: right; padding-right: 0; font-weight: 800; white-space: nowrap; }
+.eg tr.sum td { border-top: 3px solid #E7B93B; font-weight: 800; }
+.eg-note { font-size: 15px; color: var(--ink2); }
+.lesson-foot { font-size: 13px; color: var(--mute); border-top: 2px dashed var(--line); padding-top: 12px; }
+.story-kick { color: var(--gold-ink); }
+
+/* Inside a lesson the reading styles are large; the calculator and the example keep their own sizes. */
+.read .tool p, .read .eg p { margin: 0; }
+.read .tool .tool-label { font: 700 15px/1.4 var(--font); } .read .tool .tool-note { font-size: 13px; line-height: 1.5; }
+.read .tool .tool-big { font: 800 clamp(32px, 9vw, 44px)/1.05 var(--display, var(--font)); }
+.read .tool .tool-h .small { font-size: 15px; line-height: 1.4; }
+.read .eg .eg-note { font-size: 16px; line-height: 1.55; }
+.read .lesson-foot { font-size: 13px; line-height: 1.5; }
+
+/* Worked examples whose second column is a sentence: wrap it and read left to right. Three-column tables stay compact. */
+.eg td, .eg th { overflow-wrap: break-word; }
+.eg-text td:last-child, .eg-text th:last-child { white-space: normal; text-align: left; padding-left: 10px; }
+.eg-text td:first-child { width: 44%; } .eg-text td:last-child { font-weight: 700; }
+.eg-text tr.sum td:last-child { text-align: right; white-space: nowrap; }
+.eg th { white-space: normal; }
