@@ -21,7 +21,7 @@ def main(skip_og=False):
     write("sitemap.xml", "\n".join(xml) + "\n")
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     from layout import page
-    write("404.html", page(path="/404", title="Page not found | UpperCrust Academy", desc="That page does not exist. Browse free NISM mock tests and finance courses.", noindex=True,
+    write("404.html", page(path="/404", title="Page not found | UpperCrust Academy", desc="That page does not exist. Browse NISM mock tests and finance courses.", noindex=True,
           body="<section class='hero'><h1>Page not found</h1><p class='lead'>That link is wrong or the page moved. Pick a place to start:</p><div class='cta'><a class='btn' href='/learn/nism'>NISM mock tests</a><a class='btn ghost' href='/learn/'>All courses</a></div></section>"))
     n = 0 if skip_og else __import__("og").build()
     print(f"{len(urls)} pages, {n} share images, sitemap.xml, robots.txt")

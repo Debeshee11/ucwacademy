@@ -23,17 +23,17 @@ def card(eyebrow, title, chips, i=0):
 .ey{{font:800 22px F;letter-spacing:.18em;text-transform:uppercase;color:#8A5F00;margin-bottom:14px}} h1{{font:800 {size}px/1.02 B;letter-spacing:-.03em;max-width:1000px}}
 .ch{{display:flex;gap:12px;flex-wrap:wrap}} .ch span{{background:#fff;border:3px solid #2A1E12;border-radius:99px;padding:8px 20px;font:800 24px F;box-shadow:0 4px 0 #2A1E12}} .ch span.g{{background:#FFB703}}
 </style></head><body><div class="b1"></div><div class="b2"></div><div class="in"><div class="br"><img src="{MARK}"><span>UpperCrust</span><i>Academy</i></div>
-<div><div class="ey">{E(eyebrow)}</div><h1>{E(title)}</h1></div><div class="ch"><span class="g">Free</span>{ch}</div></div></body></html>"""
+<div><div class="ey">{E(eyebrow)}</div><h1>{E(title)}</h1></div><div class="ch"><span class="g">Learn</span>{ch}</div></div></body></html>"""
 
 
 def jobs():
-    j = [("home", card("Free learning", "Learn money, markets and NISM", ["English", "हिन्दी", "ગુજરાતી"], 0)),
-         ("nism", card("NISM exam preparation", "Free NISM mock tests and study guides", [f"{len(NP.EXAMS)} exams", "Mock tests", "PDF guides"], 2)),
+    j = [("home", card("Money lessons for everyone", "Learn money, markets and NISM", ["English", "हिन्दी", "ગુજરાતી"], 0)),
+         ("nism", card("NISM exam preparation", "NISM mock tests and study guides", [f"{len(NP.EXAMS)} exams", "Mock tests", "PDF guides"], 2)),
          ("personal-finance", card("Personal finance course", "Personal finance for India", ["Budget", "Insurance", "SIP", "Tax"], 1))]
     for i, e in enumerate(NP.EXAMS):
         j.append((e["id"], card(e["code"], e["title"], [f"{e['qs']} questions", f"{e['pass']}% to pass", "Mock tests"], i)))
     for i, c in enumerate(CP.C["courses"]):
-        j.append(("c-" + c["id"], card("Free course · " + CP.LEVELS[c["level"]]["name"], c["title"], ["Short lessons", "Quizzes"], i)))
+        j.append(("c-" + c["id"], card("Course · " + CP.LEVELS[c["level"]]["name"], c["title"], ["Short lessons", "Quizzes"], i)))
     return j
 
 

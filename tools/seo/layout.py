@@ -71,12 +71,12 @@ def page(*, path, title, desc, body, ld="", og="/assets/og/home.jpg", lang="en",
 </head>
 <body>
 <header class="top"><div class="wrap row"><a class="brand" href="/learn/"><img src="/assets/mark.svg" alt="" width="34" height="34"><span><b>UpperCrust</b><i>Academy</i></span></a>
-<nav class="nav"><a href="/learn/nism">NISM</a><a href="/learn/personal-finance">Personal finance</a><a class="btn sm" href="{app_link('', 'header')}">Start free</a></nav></div></header>
+<nav class="nav"><a href="/learn/nism">NISM</a><a href="/learn/personal-finance">Personal finance</a><a class="btn sm" href="{app_link('', 'header')}">Get started</a></nav></div></header>
 <main class="wrap">
 {body}
 </main>
 <footer class="foot"><div class="wrap">
-<p><b>UpperCrust Academy</b> by UpperCrust Wealth. Free lessons, mock tests and verifiable certificates. App in English, Hindi and Gujarati; lessons in English.</p>
+<p><b>UpperCrust Academy</b> by UpperCrust Wealth. Lessons, mock tests and verifiable certificates. App in English, Hindi and Gujarati; lessons in English.</p>
 <p class="links"><a href="/learn/">All courses</a> · <a href="/learn/nism">NISM exams</a> · <a href="/learn/personal-finance">Personal finance</a> · <a href="/learn/hi-personal-finance">हिन्दी</a> · <a href="/learn/gu-personal-finance">ગુજરાતી</a> · <a href="{SITE}/#/privacy">Privacy</a> · <a href="{SITE}/#/terms">Terms</a></p>
 {disclaimer()}
 </div></footer>

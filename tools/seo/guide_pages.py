@@ -20,14 +20,14 @@ def wrap(path, title, h1, lead, body, faqs, desc, crumb):
     crumbs = [("Home", "/learn/"), ("NISM exams", "/learn/nism"), (crumb, path)]
     full = f"""{crumbs_html(crumbs)}
 <section class="hero"><p class="eyebrow">NISM exam guide</p><h1>{esc(h1)}</h1><p class="lead">{esc(lead)}</p>
-<div class="cta"><a class="btn" href="{app_link('nism', 'guide')}">Take a free mock test</a><a class="btn ghost" href="/learn/nism">All NISM exams</a></div>
+<div class="cta"><a class="btn" href="{app_link('nism', 'guide')}">Take a mock test</a><a class="btn ghost" href="/learn/nism">All NISM exams</a></div>
 {share_html(SITE + path, h1)}</section>
 {body}
 {faq_html(faqs)}
 <section><h2>More NISM guides</h2>{guide_links(path)}</section>
 <p class='fine'>{esc(OK)}</p>{disclaimer()}"""
     write(file_for(path), page(path=path, title=title, desc=desc, body=full, og="/assets/og/nism.jpg",
-          ld=jsonld(crumbs_ld(crumbs), faq_ld(faqs)), cta=("Take a free mock test", app_link("nism", "guide"))))
+          ld=jsonld(crumbs_ld(crumbs), faq_ld(faqs)), cta=("Take a mock test", app_link("nism", "guide"))))
     return path
 
 
@@ -43,11 +43,11 @@ def register():
     body = f"""<section><h2>NISM exam registration: step by step</h2><ol class="steps">{"".join(f"<li>{s}</li>" for s in steps)}</ol>
 <p>NISM runs its exams at test centres in more than 150 cities, so book early to get the slot and centre you want.</p></section>
 <section><h2>What does a NISM exam cost?</h2><p>The fee depends on the exam. NISM lists {ext(OFFICIAL + 'frequently-asked-questions-portfolio-management-services-distributors', 'Series XXI-A at ₹1,500')} including GST, and its certification pamphlet lists Series I at ₹1,500 and Series XIX-A at ₹1,770. Investment adviser exams cost more. Always read the fee on the portal on the day you book.</p></section>
-<section><h2>Study material is free</h2><p>NISM sends a soft copy of the official workbook after you enrol, and you can also download it free from the NISM website. Our <a href="/learn/nism">unit-wise study guides and free mocks</a> work alongside it.</p></section>
+<section><h2>Study material</h2><p>NISM sends a soft copy of the official workbook after you enrol, and you can also download it from the NISM website. Our <a href="/learn/nism">unit-wise study guides and mocks</a> work alongside it.</p></section>
 <section><h2>Before you book</h2><ul><li>Finish one full read and at least two mocks first. <a href="/learn/nism-v-a-study-plan">See the 4-week plan</a>.</li><li>Not sure which exam to pick? Read <a href="/learn/which-nism-exam-should-i-take">which NISM exam to take</a>.</li><li>Enter your name exactly as it appears on your ID.</li></ul></section>"""
     fq = [("Is NISM registration open all year?", "Yes. NISM exam registration and the testing window stay open throughout the year, so you can book when you are ready."),
           ("Where do I register for a NISM exam?", "On the NISM certification portal, cert.nism.ac.in. After registration you choose a test centre, date and time slot and pay online."),
-          ("Is the NISM study material free?", "Yes. NISM gives a soft copy of the workbook after enrolment and also lets you download it free from its website."),
+          ("Where do I get the NISM study material?", "NISM gives a soft copy of the workbook after enrolment and also lets you download it from its website."),
           ("How early should I book a NISM exam?", "Book as early as you can. Popular centres and dates fill up, and you need time to finish your mocks first.")]
     return wrap("/learn/nism-how-to-register-and-book-exam", fit("How to Register for a NISM Exam", [": Steps, Fees & Booking", ": Steps & Fees"], 62),
                 "How to register and book a NISM exam", "Six steps from profile to admit card, with what the exam costs and what to carry on exam day.", body, fq,
@@ -60,7 +60,7 @@ def validity():
 <li><b>Complete a CPE programme</b> (continuing professional education) for that exam during the 12 months before the expiry date. NISM offers a classroom CPE and a shorter online eCPE. {ext(OFFICIAL + 'continuing-professional-education-cpe-ecpe', 'See the NISM CPE page')} for the exams that offer it and the current fee.</li></ol>
 <p>Renewal gives you a further 3 years counted from the date your old certificate expires, so renewing early does not waste time.</p></section>
 <section><h2>What if the certificate has already expired?</h2><p>The CPE route works only while the certificate is still valid. For example, NISM states that a mutual fund distributor whose certificate and ARN have expired must pass the NISM Series V-A exam again. Plan your renewal a few months ahead.</p></section>
-<section><h2>Steps to avoid a lapse</h2><ul><li>Note the expiry date from your certificate the day you pass.</li><li>Set a reminder 6 months before it.</li><li>Take the CPE, or practise with our <a href="/learn/nism">free mocks</a> and rebook the exam.</li></ul></section>"""
+<section><h2>Steps to avoid a lapse</h2><ul><li>Note the expiry date from your certificate the day you pass.</li><li>Set a reminder 6 months before it.</li><li>Take the CPE, or practise with our <a href="/learn/nism">mocks</a> and rebook the exam.</li></ul></section>"""
     fq = [("How many years is a NISM certificate valid?", "A NISM certificate is valid for 3 years from the date it is issued."),
           ("How do I renew a NISM certificate?", "Either pass the same NISM exam again before expiry, or complete the CPE programme for that exam in the 12 months before the certificate expires."),
           ("How long does a renewed certificate last?", "A renewed certificate is valid for 3 years, counted from the date the old certificate expires."),
@@ -90,7 +90,7 @@ def which():
           ("Which NISM exam is best for beginners?", "NISM Series XII, Securities Markets Foundation, is a broad first exam. If you plan to distribute mutual funds, start with V-A.")]
     return wrap("/learn/which-nism-exam-should-i-take", "Which NISM Exam Should I Take? Pick by Job Role",
                 "Which NISM exam should I take?", "Pick by what you want to do. A table of 13 exams matched to the job each one is for.", body, fq,
-                "Which NISM exam should you take? Match your job, from mutual fund distributor to research analyst, to the right NISM series. Free mocks for each.", "Which exam")
+                "Which NISM exam should you take? Match your job, from mutual fund distributor to research analyst, to the right NISM series. Mocks for each.", "Which exam")
 
 
 def marks():
@@ -130,10 +130,10 @@ def plan():
     fq = [("How long does it take to prepare for NISM V-A?", "Most candidates need two to four weeks of about an hour a day. This plan uses four weeks."),
           ("Which NISM V-A units matter most?", "The units with the highest weight, listed in the plan table. Spend the most days on them."),
           ("How many mocks should I take?", "Take all 5 full mocks and redo every wrong answer. Book the exam once you score about 65 or more."),
-          ("Is the official NISM workbook free?", "Yes. NISM gives a free soft copy after you enrol and lets you download it from its website.")]
+          ("Where do I get the official NISM workbook?", "NISM gives a soft copy after you enrol and lets you download it from its website.")]
     return wrap("/learn/nism-v-a-study-plan", "NISM V-A Study Plan: Pass in 4 Weeks (Day by Day)",
                 "NISM V-A study plan: 4 weeks, day by day", "Fifteen days for the units in proportion to their weight, then mocks, revision and rest.", body, fq,
-                "A day-by-day NISM Series V-A study plan: 15 days of unit study by weightage, then 5 mocks, revision and rest. Free notes and questions for every unit.", "V-A study plan")
+                "A day-by-day NISM Series V-A study plan: 15 days of unit study by weightage, then 5 mocks, revision and rest. Notes and questions for every unit.", "V-A study plan")
 
 
 def build():

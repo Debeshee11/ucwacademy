@@ -43,7 +43,7 @@ def key_ideas(c, k=6):
 
 def faqs_for(c, n):
     lv = LEVELS[c["level"]]["name"]
-    return [(f"Is the {c['title']} course free?", "Yes. Lessons, quizzes and practice are free and open to everyone, with no account needed. Create a free account only if you want to save your progress across devices and earn the certificate."),
+    return [(f"Can I start the {c['title']} course without signing up?", "Yes. Lessons, quizzes and practice open without an account. Create an account if you want to save your progress across devices and earn the certificate."),
             (f"Who is the {c['title']} course for?", f"It is a {lv.lower()}-level course with {n} short lessons, written in plain language for beginners and for people who advise others on money."),
             ("Can I learn this in Hindi or Gujarati?", "The app screens switch between English, Hindi and Gujarati at any time, and many quiz questions have translations. Lesson text is in English for now."),
             ("Do I get a certificate?", "Yes. Pass the course exams to earn a certificate that anyone can verify online."),
@@ -52,8 +52,8 @@ def faqs_for(c, n):
 
 def course_page(c):
     sec = SEC_OF.get(c["id"], {"name": "Courses"}); lv = LEVELS[c["level"]]["name"]; ls = lessons_of(c); p = path_of(c)
-    title = f"{c['title']}: Free Course with Quizzes"
-    desc = f"{c['blurb']} {len(ls)} short lessons, quizzes and practice. Free. App in English, Hindi and Gujarati."[:300]
+    title = f"{c['title']}: Course with Quizzes"
+    desc = f"{c['blurb']} {len(ls)} short lessons, quizzes and practice. App in English, Hindi and Gujarati."[:300]
     fq = faqs_for(c, len(ls)); camp = "c-" + c["id"]
     crumbs = [("Home", "/learn/"), (sec["name"], "/learn/personal-finance" if sec["id"] == "basics" else "/learn/"), (c["title"], p)]
     mods = "".join(f"<div class='mod'><h3>{esc(m['title'])}</h3><ol>" + "".join(f"<li>{esc(LESSONS[str(n)]['title'])}</li>" for n in m["lessons"] if str(n) in LESSONS) + "</ol></div>" for m in c["modules"])
@@ -63,7 +63,7 @@ def course_page(c):
     rel = "<div class='cards'>" + "".join(f"<a class='card' href='{path_of(x)}'><b>{esc(x['title'])}</b><span>{esc(LEVELS[x['level']]['name'])}</span></a>" for x in sib) + "</div>" if sib else ""
     body = f"""{crumbs_html(crumbs)}
 <section class="hero"><p class="eyebrow">{esc(sec['name'])} · {esc(lv)}</p><h1>{esc(c['title'])}</h1><p class="lead">{esc(c['blurb'])}</p>
-<div class="cta"><a class="btn" href="{app_link('course/' + c['id'], camp)}">Start this course free</a></div>{share_html(SITE + p, 'Free course: ' + c['title'])}</section>
+<div class="cta"><a class="btn" href="{app_link('course/' + c['id'], camp)}">Start this course</a></div>{share_html(SITE + p, 'Course: ' + c['title'])}</section>
 <section><h2>What is inside</h2><p>{len(ls)} short lessons. Each ends with a quiz, so you know what you have learnt.</p>{mods}</section>
 {('<section><h2>Key ideas you will take away</h2><ul>' + ''.join(f'<li>{esc(x)}</li>' for x in ideas) + '</ul></section>') if ideas else ''}
 {('<section><h2>Try a question</h2>' + qs + '</section>') if qs else ''}
@@ -72,9 +72,9 @@ def course_page(c):
 {disclaimer()}"""
     write(file_for(p), page(path=p, title=title, desc=desc, body=body, og=og_of(c),
           ld=jsonld(crumbs_ld(crumbs), faq_ld(fq), {"@context": "https://schema.org", "@type": "Course", "name": c["title"], "description": c["blurb"],
-                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "isAccessibleForFree": True, "inLanguage": "en",
-                    "educationalLevel": lv, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "category": "Free"}}),
-          cta=("Start free", app_link("course/" + c["id"], camp))))
+                    "provider": {"@type": "Organization", "name": "UpperCrust Wealth", "sameAs": SITE}, "inLanguage": "en",
+                    "educationalLevel": lv}),
+          cta=("Get started", app_link("course/" + c["id"], camp))))
     return p
 
 
