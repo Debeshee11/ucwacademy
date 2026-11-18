@@ -77,14 +77,14 @@ export function showCopy(label, text) {
 /* ——— Guests ——— */
 /* A page a guest cannot use yet: says why in one line and offers one button. */
 export function accountWall(title, why) {
-  const go = h("button", { class: "btn primary", on: { click: () => signIn() } }, "Sign in or create a free account");
+  const go = h("button", { class: "btn primary", on: { click: () => signIn() } }, "Sign in or create an account");
   return h("main", { class: "wrap page stack stack-l", id: "main" },
     h("div", { class: "wall stack" },
       h("span", { class: "wall-emo", "aria-hidden": "true" }, "🔑"),
       h("p", { class: "eyebrow" }, title),
-      h("h1", { class: "h1" }, "This part needs a free account"),
+      h("h1", { class: "h1" }, "This part needs an account"),
       h("p", { class: "lead" }, why),
-      h("p", { class: "small mute" }, "It takes a minute, costs nothing, and everything you have done on this device comes with you."),
+      h("p", { class: "small mute" }, "It takes a minute, and everything you have done on this device comes with you."),
       h("div", { class: "row-flex", style: "justify-content:center" }, go, h("a", { class: "btn ghost", href: "#/courses" }, "Keep learning"))));
 }
 
@@ -96,7 +96,7 @@ export function saveNudge(host) {
   if (!n) return;
   const card = h("div", { class: "nudge", role: "note" },
     h("span", { class: "nudge-emo", "aria-hidden": "true" }, "💾"),
-    h("div", { class: "nudge-b" }, h("b", {}, n === 1 ? "You finished your first lesson." : `You have finished ${n} lessons.`), h("span", { class: "small" }, "They are saved on this device only. Create a free account to keep them safe, learn on any device and earn certificates.")),
+    h("div", { class: "nudge-b" }, h("b", {}, n === 1 ? "You finished your first lesson." : `You have finished ${n} lessons.`), h("span", { class: "small" }, "They are saved on this device only. Create an account to keep them safe, learn on any device and earn certificates.")),
     h("button", { class: "btn primary sm", on: { click: () => signIn() } }, "Save my progress"),
     h("button", { class: "icon-btn", "aria-label": "Not now", on: { click: () => { nudgeOff = true; card.remove(); } } }, "✕"));
   host.prepend(card);

@@ -34,8 +34,8 @@ export function hub() {
     box.replaceChildren(
       h("section", { class: "hero stack" }, h("div", { class: "eyebrow gold" }, "NISM certification prep"),
         h("h1", { class: "h1", style: "font-size:clamp(32px,5vw,50px)" }, "Pass your NISM exam with a syllabus you can actually use."),
-        h("p", { class: "lead" }, "A deep study guide for every exam, free to download with the UpperCrust Academy branding, and five full-length mocks that get harder one by one."),
-        h("div", { class: "stats" }, h("span", {}, h("b", {}, I.exams.filter(e => !e.soon).length), " exams"), h("span", {}, h("b", {}, I.exams.filter(e => !e.soon).length * 5), " full mocks"), h("span", {}, h("b", {}, I.exams.reduce((a, e) => a + (e.pages || 0), 0)), " pages of notes"), h("span", {}, h("b", {}, "Free"), " PDFs"))),
+        h("p", { class: "lead" }, "A deep study guide for every exam, to download, with the UpperCrust Academy branding, and five full-length mocks that get harder one by one."),
+        h("div", { class: "stats" }, h("span", {}, h("b", {}, I.exams.filter(e => !e.soon).length), " exams"), h("span", {}, h("b", {}, I.exams.filter(e => !e.soon).length * 5), " full mocks"), h("span", {}, h("b", {}, I.exams.reduce((a, e) => a + (e.pages || 0), 0)), " pages of notes"), h("span", {}, h("b", {}, "Download"), " PDFs"))),
       ...I.tracks.map(t => h("section", { class: "stack" }, h("div", {}, h("h2", { class: "h2" }, t.name), h("p", { class: "mute" }, t.blurb)), h("div", { class: "cgrid" }, t.exams.map(id => I.exams.find(e => e.id === id)).filter(Boolean).map(card)))),
       h("p", { class: "small mute" }, "UpperCrust Academy material is independent exam-preparation content written against the published NISM syllabus outline. It is not NISM’s own workbook and is not endorsed by NISM or SEBI. Always read the latest official workbook."));
   }).catch(() => fail(box));

@@ -89,7 +89,7 @@ export function toolCard(id, opts = {}) {
 /* #/tools: every calculator. */
 export function toolsPage() {
   return page(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Money calculators"), h("p", { class: "lead mute" }, "Move a slider and watch the number change. Free, no account needed.")),
+    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Money calculators"), h("p", { class: "lead mute" }, "Move a slider and watch the number change. No account needed.")),
     h("div", { class: "tool-grid" }, TOOLS.map(T => h("a", { class: `tool-tile tint-${T.tint}`, href: `#/tool/${T.id}` },
       h("span", { class: "tool-emo", "aria-hidden": "true" }, T.emoji), h("b", {}, T.name), h("span", { class: "small" }, T.blurb), h("span", { class: "tool-go" }, "Open", icon("chev", 16))))),
     h("p", { class: "small mute" }, "For learning only. These are illustrations from the numbers you enter, not investment advice or a promise of returns."));

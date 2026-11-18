@@ -38,10 +38,14 @@ export function doorPicker(current, onPick) {
   const host = h("div", { class: "stack" });
   function paint() {
     const doors = DOORS.filter(d => segOfDoor(d) === seg && (!d.staff || staff));
+    const pro = seg === "pro", g = SEGMENTS.find(x => x.id === seg);
     host.replaceChildren(
-      h("div", { class: "segs", role: "group", "aria-label": "Which describes you?" }, SEGMENTS.map(g => h("button", { type: "button", class: "seg", "aria-pressed": String(seg === g.id), on: { click: () => { seg = g.id; paint(); } } },
-        h("b", {}, g.name), h("span", { class: "small mute" }, g.who)))),
-      h("div", { class: "doors" }, doors.map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
+      h("p", { class: "pk-step" }, h("b", {}, "Step 1"), " Which describes you?"),
+      h("div", { class: "segs", role: "group", "aria-label": "Which describes you?" }, SEGMENTS.map(x => h("button", { type: "button", class: "seg pk-" + x.id, "aria-pressed": String(seg === x.id), on: { click: () => { seg = x.id; paint(); } } },
+        h("span", { class: "pk-ic", "aria-hidden": "true" }, x.id === "pro" ? "💼" : "🌱"),
+        h("b", {}, x.name), h("span", { class: "small mute" }, x.who), seg === x.id ? h("span", { class: "pk-tick" }, "✓ Chosen") : null))),
+      h("p", { class: "pk-step" }, h("b", {}, "Step 2"), pro ? " Which role do you work in?" : " Which of these fits you best?"),
+      h("div", { class: "doors pk-doors pk-d-" + seg }, doors.map(d => h("button", { type: "button", class: "door", "aria-pressed": String(current === d.id), on: { click: ev => {
         current = d.id; host.querySelectorAll(".door").forEach(b => b.setAttribute("aria-pressed", "false")); ev.currentTarget.setAttribute("aria-pressed", "true"); onPick(d.id); } } },
         h("b", {}, d.name), h("span", { class: "small mute" }, d.who), h("span", { class: "tiny door-hook" }, d.hook)))));
   }

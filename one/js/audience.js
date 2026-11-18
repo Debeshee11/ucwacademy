@@ -14,11 +14,11 @@ export const SEGMENTS = [
 
 export const DOORS = [
   /* everyday */
-  { id: "student", seg: "everyday", name: "Student", who: "School or college", hook: "Money habits before your first salary", realms: ["basics", "mf"],
+  { id: "student", seg: "everyday", name: "Student", who: "School or college", hook: "Money habits before your first salary", realms: ["basics", "mf"], exams: ["nism-xii"],
     track: ["budgeting-emergency-fund", "scam-safety", "loans-credit-scores", "sip-planning", "stock-basics", "mf-foundations", "tax-on-investments", "ipo-investing", "gold-asset", "behaviour"] },
-  { id: "firstjob", seg: "everyday", name: "First job", who: "Starting your career", hook: "Make your first salary work for you", realms: ["basics", "mf"],
+  { id: "firstjob", seg: "everyday", name: "First job", who: "Starting your career", hook: "Make your first salary work for you", realms: ["basics", "mf"], exams: ["nism-xii"],
     track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "health-insurance-basics", "term-life-insurance", "mf-foundations", "tax-on-investments", "retirement-epf-ppf-nps", "loans-credit-scores", "stock-basics"] },
-  { id: "salaried", seg: "everyday", name: "Working professional", who: "Building a career and a family", hook: "Payslip to portfolio", realms: ["basics", "mf", "stocks"],
+  { id: "salaried", seg: "everyday", name: "Working professional", who: "Building a career and a family", hook: "Payslip to portfolio", realms: ["basics", "mf", "stocks"], exams: ["nism-xii", "nism-v-a"],
     track: ["health-insurance-basics", "term-life-insurance", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-foundations", "loans-credit-scores", "general-insurance", "equity-funds", "passive-etf", "behaviour", "wealth-succession"] },
   { id: "homemaker", seg: "everyday", name: "Homemaker", who: "Runs the household money", hook: "Make the household a team", realms: ["basics", "mf"],
     track: ["budgeting-emergency-fund", "scam-safety", "health-insurance-basics", "general-insurance", "term-life-insurance", "gold-asset", "sip-planning", "loans-credit-scores", "silver-asset", "wealth-succession"] },
@@ -28,19 +28,20 @@ export const DOORS = [
     track: ["scam-safety", "health-insurance-basics", "retirement-epf-ppf-nps", "tax-retirement", "bonds-gsecs", "debt-funds", "wealth-succession", "general-insurance", "gold-asset", "hybrid-funds", "behaviour"] },
   { id: "teacher", seg: "everyday", name: "Teacher", who: "Educators and trainers", hook: "Teach money in your classroom", realms: ["basics", "mf", "teach"],
     track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-foundations", "behaviour"] },
-  { id: "global", seg: "everyday", name: "Living abroad (NRI)", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["nri", "mf", "basics"],
+  { id: "global", seg: "everyday", name: "Living abroad (NRI)", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["nri", "mf", "basics"], exams: ["nism-xii"],
     track: ["nri-banking-investing", "nri-tax-residency", "nri-investing-routes", "global-investing", "tax-on-investments", "mf-foundations", "sip-planning"] },
   /* finance professionals */
-  { id: "mfd", seg: "pro", name: "Mutual fund distributor", who: "AMFI-registered, ARN holder", hook: "Rules, products and client conversations", realms: ["mf", "basics", "stocks", "assets"],
+  { id: "mfd", seg: "pro", name: "Mutual fund distributor", who: "AMFI-registered, ARN holder", hook: "Rules, products and client conversations", realms: ["mf", "basics", "stocks", "assets"], exams: ["nism-v-a", "nism-v-d"],
     track: ["mf-foundations", "regulation", "sip-planning", "equity-funds", "debt-funds", "hybrid-funds", "passive-etf", "fund-analysis", "behaviour", "multi-asset", "financial-maths"] },
-  { id: "ria", seg: "pro", name: "Investment adviser", who: "SEBI-registered adviser (RIA)", hook: "Advice that holds up on paper", realms: ["basics", "mf", "assets", "stocks"],
+  { id: "ria", seg: "pro", name: "Investment adviser", who: "SEBI-registered adviser (RIA)", hook: "Advice that holds up on paper", realms: ["basics", "mf", "assets", "stocks"], exams: ["nism-x-a", "nism-xb"],
     track: ["regulation", "financial-maths", "fund-analysis", "behaviour", "multi-asset", "tax-retirement", "pms-aif-sif", "wealth-succession", "debt-funds"] },
   { id: "analyst", seg: "pro", name: "Analyst or researcher", who: "Markets, companies and funds", hook: "Read the numbers behind the story", realms: ["stocks", "mf", "assets", "basics"],
-    track: ["economy-markets", "company-fundamentals", "stock-basics", "fund-analysis", "defence", "options-explained", "futures-explained", "global-investing", "pms-explained", "idx-broad"] },
-  { id: "planner", seg: "pro", name: "Financial planner", who: "Goal-based and wealth planning", hook: "From goals to a written plan", realms: ["basics", "mf", "assets"],
+    track: ["economy-markets", "financial-statements", "company-fundamentals", "valuation-methods", "industry-analysis", "technical-analysis", "research-reports-sebi", "stock-basics", "fund-analysis", "options-explained", "futures-explained"],
+    exams: ["nism-xv", "nism-xii", "nism-viii"] },
+  { id: "planner", seg: "pro", name: "Financial planner", who: "Goal-based and wealth planning", hook: "From goals to a written plan", realms: ["basics", "mf", "assets"], exams: ["nism-x-a", "nism-xb"],
     track: ["financial-maths", "tax-retirement", "wealth-succession", "term-life-insurance", "health-insurance-basics", "general-insurance", "retirement-epf-ppf-nps", "fund-analysis", "behaviour", "pms-aif-sif"] },
-  { id: "partner", seg: "pro", name: "Partner", who: "Community leader or adviser", hook: "Host a Gurukul session", realms: ["mf", "stocks", "assets", "teach"] },
-  { id: "team", seg: "pro", name: "UpperCrust team", who: "Employees and advisers", hook: "Learn alongside the firm", realms: ["mf", "stocks", "assets", "basics"], staff: true }
+  { id: "partner", seg: "pro", name: "Partner", who: "Community leader or adviser", hook: "Host a Gurukul session", realms: ["mf", "stocks", "assets", "teach"], exams: ["nism-v-a", "nism-xii"] },
+  { id: "team", seg: "pro", name: "UpperCrust team", who: "Employees and advisers", hook: "Learn alongside the firm", realms: ["mf", "stocks", "assets", "basics"], exams: ["nism-v-a", "nism-xii"], staff: true }
 ];
 export const doorOf = id => DOORS.find(d => d.id === id) || null;
 

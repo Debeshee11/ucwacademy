@@ -85,7 +85,7 @@ export async function drawCard(q, style, sizeId) {
   if (logo) x.drawImage(logo, pad, fy - 6, 114, 63);
   const tx = pad + (logo ? 140 : 0);
   x.fillStyle = style.ink; x.font = '800 36px "Bricolage Grotesque", "Figtree", sans-serif'; x.fillText("UpperCrust Academy", tx, fy + 22);
-  x.globalAlpha = 0.7; x.font = '600 26px "Figtree", system-ui, sans-serif'; x.fillText("Free money lessons · ucwacademy.in", tx, fy + 60); x.globalAlpha = 1;
+  x.globalAlpha = 0.7; x.font = '600 26px "Figtree", system-ui, sans-serif'; x.fillText("Money lessons for everyone · ucwacademy.in", tx, fy + 60); x.globalAlpha = 1;
   return c;
 }
 const toBlob = (canvas, type = "image/jpeg") => new Promise(r => canvas.toBlob(r, type, 0.92));

@@ -368,7 +368,7 @@ export function welcome(opts = {}) {
         verifyPaint();
       } else {
         const go = h("button", { class: "btn primary block", disabled: !door, on: { click: () => { Store.setDoor(door); Store.flush(); scrim.remove(); resolve(null); } } }, "Open my academy");
-        ap(box, logo, h("div", {}, h("h1", { class: "h1" }, guest ? "Welcome. Everything here is free." : `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, guest ? "Which describes you best? It sets the courses we show first. No account needed: start learning right away." : "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
+        ap(box, logo, h("div", {}, h("h1", { class: "h1" }, guest ? "Welcome. Money lessons for everyone." : `Welcome, ${Store.get().name || "friend"}.`), h("p", { class: "mute", style: "margin-top:8px" }, guest ? "Which describes you best? It sets the courses we show first. No account needed: start learning right away." : "Which describes you best? Add your age group and interests too. They set the courses we show first. You can change all of it any time.")),
           doorPicker(door, id => { door = id; go.disabled = false; }), aboutYou(), go,
           !guest ? h("button", { type: "button", class: "link", style: "margin:0 auto", on: { click: () => { step = 0; paint(); } } }, "Back to my details") : null,
           guest ? h("button", { type: "button", class: "link", style: "margin:0 auto", on: { click: () => { scrim.remove(); resolve(null); } } }, "Skip for now") : null);
