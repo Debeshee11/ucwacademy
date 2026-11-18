@@ -150,7 +150,7 @@ def build_pdf(path, ex):
         c.setFillColor(GOLD); c.setFont("Sans-B", 9)
         c.drawString(M, 30 * mm, f"{ex['qs']} QUESTIONS  ·  {ex['mins']} MINUTES  ·  PASS {ex['pass']}%  ·  {len(ex['units'])} UNITS")
         c.setFillColor(colors.HexColor("#8FA0BD")); c.setFont("Sans", 8.5)
-        c.drawString(M, 22 * mm, "UpperCrust Academy  ·  ucwacademy.in  ·  Free for every learner  ·  Edition " + ex.get("edition", "2026"))
+        c.drawString(M, 22 * mm, "UpperCrust Academy  ·  ucwacademy.in  ·  For every learner  ·  Edition " + ex.get("edition", "2026"))
         c.restoreState()
     def body(c, doc):
         c.saveState(); c.setFillColor(IVORY); c.rect(0, 0, W, H, 0, 1)
