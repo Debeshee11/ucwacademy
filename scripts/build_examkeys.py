@@ -12,7 +12,7 @@ Lesson questions keep their answers in the public file because the lesson quizze
 import json, os, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-DATA = os.path.join(ROOT, "one", "data")
+DATA = os.path.join(ROOT, "functions", "content")   # course files moved here from one/data when content was first gated
 PRIV = os.path.join(ROOT, "private-keys")
 KEYDIR = os.path.join(PRIV, "examkeys")
 FULL = os.path.join(PRIV, "exams.full.json")
@@ -62,14 +62,20 @@ def main():
     pub = json.loads(json.dumps(exams))
     for c in courses["courses"]:
         lesson_ids = [n for m in c["modules"] for n in m["lessons"]]
-        lq = [q for n in lesson_ids for q in lm[n].get("qs", [])]
+        # Every lesson question keeps its answer key, so an exam drawn before a rewrite can still be marked.
+        lq_all = [q for n in lesson_ids for q in lm[n].get("qs", [])]
+        # New exams draw from the current questions only: a rewritten lesson's earlier ("legacy") questions are left out when it has newer ones.
+        def live(qs):
+            fresh = [q for q in qs if not q.get("legacy")]
+            return fresh or qs
+        lq = [q for n in lesson_ids for q in live(lm[n].get("qs", []))]
         cx = exams["courses"].get(c["id"], {})
         ex = cx.get("qs") or {}
         key = {}
         def put(q):
             if "answer" not in q: sys.exit("missing answer for " + q["id"])
             key[q["id"]] = [q["answer"], q.get("why", ""), len(q["options"])]
-        for q in lq: put(q)
+        for q in lq_all: put(q)
         for t in ex.values():
             for q in t: put(q)
         pools = {"b": [q["id"] for q in lq] + [q["id"] for q in ex.get("b", [])],
