@@ -15,7 +15,7 @@ export const locale = () => LOCALES[lang];
 
 const dict = new Map(), pats = [], memo = new Map(), misses = new Set();
 let logOn = false;
-try { logOn = /i18nlog/.test(location.search + location.hash); } catch {}
+try { logOn = /i18nlog/.test(location.search + location.hash); if (logOn) window.__i18nMissing = misses; } catch {}
 const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 function addPattern(k, v) {
