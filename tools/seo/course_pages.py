@@ -24,7 +24,8 @@ def lessons_of(c):
 def samples(c, k=2):
     out = []
     for l in lessons_of(c):
-        for q in l.get("qs", []):
+        fresh = [q for q in l.get("qs", []) if not q.get("legacy")]   # a rewritten lesson shows its new questions
+        for q in fresh or l.get("qs", []):
             if q.get("options") and isinstance(q.get("answer"), int):
                 out.append(q); break
         if len(out) == k:
@@ -42,7 +43,7 @@ def key_ideas(c, k=6):
 
 def faqs_for(c, n):
     lv = LEVELS[c["level"]]["name"]
-    return [(f"Is the {c['title']} course free?", "Yes. Lessons, quizzes and practice are free. Sign in once with your mobile number or Google to start."),
+    return [(f"Is the {c['title']} course free?", "Yes. Lessons, quizzes and practice are free and open to everyone, with no account needed. Create a free account only if you want to save your progress across devices and earn the certificate."),
             (f"Who is the {c['title']} course for?", f"It is a {lv.lower()}-level course with {n} short lessons, written in plain language for beginners and for people who advise others on money."),
             ("Can I learn this in Hindi or Gujarati?", "The app screens switch between English, Hindi and Gujarati at any time, and many quiz questions have translations. Lesson text is in English for now."),
             ("Do I get a certificate?", "Yes. Pass the course exams to earn a certificate that anyone can verify online."),

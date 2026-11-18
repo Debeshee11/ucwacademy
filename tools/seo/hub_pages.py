@@ -17,7 +17,7 @@ def personal_finance():
     blocks += "".join(f"<section><h3>{esc(t['name'])}</h3><p>{esc(t['blurb'])}</p>{course_cards(t.get('courses', []))}</section>" for t in more)
     fq = [("Where should I start with personal finance?", "Start with a budget and an emergency fund, then cover insurance, clear costly debt, and only then begin investing through a SIP."),
           ("How much should an emergency fund be?", "A common rule is three to six months of essential expenses, kept in a safe and easy-to-withdraw place such as a savings account or liquid fund."),
-          ("Is this personal finance course free?", "Yes. All lessons, quizzes and practice are free. Sign in once with your mobile number or Google."),
+          ("Is this personal finance course free?", "Yes. All lessons, quizzes and practice are free and open to everyone, with no account needed. A free account saves your progress across devices and unlocks certificates."),
           ("Can I learn personal finance in Hindi or Gujarati?", "Partly. Every screen, menu and button switches between English, Hindi and Gujarati, and about a third of the lesson quiz questions have Hindi and Gujarati versions. Lesson text and NISM mock tests are in English for now."),
           ("Is this financial advice?", "No. It is education only. Speak to a qualified adviser before you act on your own money.")]
     body = f"""{crumbs_html(crumbs)}

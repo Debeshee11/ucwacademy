@@ -51,7 +51,7 @@ def faqs_for(e, n_mocks):
         (f"What is the passing score for {e['code']}?", f"The pass mark is {e['pass']}%. Aim to clear {min(e['pass'] + 15, 95)}% in practice mocks before you book the real exam."),
         (f"Is there negative marking in {e['code']}?", (f"Yes. The negative marking is {neg}. Practise leaving a question blank when you are unsure." if neg else "No. There is no negative marking, so attempt every question.")),
         (f"Is the {e['code']} study guide free?", f"Yes. UpperCrust Academy gives a free {e.get('pages', '')}-page study guide PDF for {e['code']}, written unit by unit." if e.get("pages") else f"Yes. UpperCrust Academy gives a free study guide PDF for {e['code']}."),
-        (f"Are the {e['code']} mock tests free?", f"Yes. You get {n_mocks} full-length mock tests with the answer and the reason for every question. Sign in once with your mobile number or Google to start."),
+        (f"Are the {e['code']} mock tests free?", f"Yes. You get {n_mocks} full-length mock tests with the answer and the reason for every question. The study guide and unit notes open without an account; a free account is needed for the mock tests so your scores are saved."),
         ("Is this affiliated with NISM?", "No. UpperCrust Academy is independent preparation material from UpperCrust Wealth. Confirm the latest syllabus and exam rules on the official NISM website."),
     ]
 
