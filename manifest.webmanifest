@@ -1,7 +1,7 @@
 {
   "name": "UpperCrust Academy",
   "short_name": "UC Academy",
-  "description": "Free personal finance courses and NISM mock tests. English, Hindi and Gujarati.",
+  "description": "Personal finance courses and NISM mock tests. English, Hindi and Gujarati.",
   "start_url": "./?utm_source=homescreen#/",
   "scope": "./",
   "display": "standalone",

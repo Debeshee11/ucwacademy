@@ -14,7 +14,7 @@ Everything here is added on top of the existing app. No learner data, lesson num
 | No calculators | Eight calculators at `#/tools`, and inside lessons |
 | Budgeting course: five glossary lessons | Five full lessons to the new standard |
 
-Still behind a free account, because they are marked on the server or carry a name: course exams, NISM mocks, refreshers, certificates, the leaderboard, reviews.
+Still behind an account, because they are marked on the server or carry a name: course exams, NISM mocks, refreshers, certificates, the leaderboard, reviews.
 
 ## Second round (same rules: added on top, nothing removed)
 
