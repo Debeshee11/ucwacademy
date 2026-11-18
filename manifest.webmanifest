@@ -1,0 +1,24 @@
+{
+  "name": "UpperCrust Academy",
+  "short_name": "UC Academy",
+  "description": "Free personal finance courses and NISM mock tests. English, Hindi and Gujarati.",
+  "start_url": "./?utm_source=homescreen#/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFB703",
+  "lang": "en-IN",
+  "categories": ["education", "finance"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Continue learning", "url": "./#/courses" },
+    { "name": "Daily five", "url": "./#/quiz/daily" },
+    { "name": "NISM prep", "url": "./#/nism" }
+  ]
+}
