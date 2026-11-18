@@ -100,7 +100,7 @@ def main():
         if cid not in T[tid]["courses"]: T[tid]["courses"].append(cid)
     for m in mods:
         c = m.COURSE
-        names = {"safety": ("Scam and fraud safety", "Spot and stop fraud before it costs you."), "succession": ("Wealth succession", "Wills, nominations and passing wealth on."), "fixed": ("Bonds and fixed income", "Government and corporate bonds, explained."), "global": ("Global investing", "Investing in overseas markets from India.")}
+        names = {"safety": ("Scam and fraud safety", "Spot and stop fraud before it costs you."), "succession": ("Wealth succession", "Wills, nominations and passing wealth on."), "fixed": ("Bonds and fixed income", "Government and corporate bonds, explained."), "global": ("Global investing", "Investing in overseas markets from India."), "research": ("Research and analysis", "Statements, valuation, charts and the rules analysts work under.")}
         nm = names.get(c["track"], ("", ""))
         track(c["sec"], c["track"], nm[0], nm[1], c["id"])
     dump(C, os.path.join(CT, "courses.json")); dump(L, os.path.join(CT, "lessons.json")); dump(E, os.path.join(CT, "exams.json"))
