@@ -959,3 +959,10 @@ a.crow:hover { border-color: var(--sc); transform: translateX(2px); }
 .pk-d-everyday .door { border-left: 6px solid #1E8E56; } .pk-d-pro .door { border-left: 6px solid #2556B8; }
 .pk-d-everyday .door[aria-pressed="true"] { background: #E3F6EB; } .pk-d-pro .door[aria-pressed="true"] { background: #E4ECFC; }
 .nmfor { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; } .nmfor .chip { display: inline-flex; align-items: center; height: 34px; }
+
+/* Story mode banner on Home */
+.story-banner{display:flex;align-items:center;gap:14px;padding:14px 16px;border:2px solid var(--honey-line,#E7C766);border-radius:18px;background:#FFF8E1;color:inherit;text-decoration:none;min-height:64px}
+.story-banner:hover{background:#FFF1C2}
+.sb-coin{width:58px;height:58px;border-radius:50%;background:#D8ECFF;border:3px solid #2B2118;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;flex:none}.sb-coin svg{display:block}
+.sb-t{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}.sb-t b{font-size:17px}.sb-t span{font-size:13px;line-height:1.35;opacity:.8}
+.sb-go{background:#FFC531;border:2px solid #2B2118;border-radius:99px;padding:8px 16px;font-weight:800;min-height:40px;display:inline-flex;align-items:center}
