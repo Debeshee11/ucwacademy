@@ -108,4 +108,4 @@ def main():
     dump(meta, os.path.join(OUT, "examkeys", "_meta.json"))
     print("LEAKS", len(LEAKS)); [print("  ", x) for x in LEAKS]
     print("courses", len(C["courses"]), "lessons", len(L), "new lessons from", nxt - 50, "to", nxt - 1)
-main()
+if __name__ == "__main__": main()
