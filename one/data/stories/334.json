@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "Dadi has built ₹1 crore and has stopped earning. She wants ₹50,000 a month from it. That is an SWP, and it depends on how the market behaves in the first few years."
+ },
+ {
+  "k": "dialog",
+  "h": "Dadi's question",
+  "lines": [
+   [
+    "dadi",
+    "Can I take ₹50,000 every month from my ₹1 crore and still leave something for the grandchildren?"
+   ],
+   [
+    "sikka",
+    "It may work. But the same withdrawals can end very differently in two markets. Let us watch both."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "drain",
+  "corpus": 10000000,
+  "withdraw": 50000,
+  "years": 25,
+  "paths": [
+   {
+    "name": "Steady 9% a year",
+    "rates": [
+     0.09
+    ]
+   },
+   {
+    "name": "Falls early, then 7%",
+    "rates": [
+     -0.25,
+     -0.1,
+     0.07
+    ]
+   }
+  ],
+  "h": "Same withdrawals, two markets",
+  "alt": "Two lines showing what is left in the fund when withdrawals continue",
+  "caps": [
+   [
+    0.3,
+    "Both Dadis withdraw ₹50,000 a month, which is 6% of the corpus each year."
+   ],
+   [
+    2.5,
+    "In the steady market the fund keeps growing while she withdraws."
+   ],
+   [
+    5.0,
+    "In the market that falls early, the withdrawals bite into a smaller pile, and it never recovers."
+   ],
+   [
+    9.0,
+    "The order of good and bad years matters. That is sequence risk."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "A two-year buffer",
+  "stops": [
+   [
+    "Sells no equity in a fall",
+    true
+   ],
+   [
+    "Pays 24 months of income",
+    true
+   ],
+   [
+    "Fixes a withdrawal rate too high",
+    false
+   ],
+   [
+    "Guarantees the corpus lasts",
+    false
+   ]
+  ],
+  "h": "What the buffer does",
+  "alt": "A shield with a buffer's strengths and limits",
+  "caps": [
+   [
+    0.3,
+    "The answer is a buffer: two years of withdrawals in a steady fund."
+   ],
+   [
+    3.0,
+    "In a fall, Dadi draws from the buffer and sells no equity at low prices."
+   ],
+   [
+    5.5,
+    "It does not fix a rate that is too high, or promise the money lasts forever."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s334q1",
+  "h": "Check yourself",
+  "q": "Dadi's ₹1 crore falls 25% in her first year, and she keeps withdrawing ₹6 lakh a year. Why does this hurt more than the same fall in year 15?",
+  "opts": [
+   "An early fall shrinks the pile that all later withdrawals are paid from",
+   "Funds charge a higher expense ratio in the early years of a plan",
+   "Withdrawals made in year one are taxed more heavily than later ones",
+   "The market always recovers faster in the later years of any plan"
+  ],
+  "ans": 0,
+  "why": [
+   "Withdrawals take money out while prices are low, so fewer units are left to recover when the market turns. This is sequence risk.",
+   "Expense ratio is a yearly percentage of the fund's value. It does not depend on which year the withdrawal falls in.",
+   "Tax is on the gain portion of each withdrawal. It does not rise because the market fell in the first year.",
+   "No one can say later years recover faster. The point is that a fall hurts more when a withdrawal plan is already running."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s334q2",
+  "h": "Check yourself",
+  "q": "Dadi redeems ₹1,00,000 from an equity fund. The units she sold had cost ₹60,000. How is the withdrawal taxed?",
+  "opts": [
+   "All ₹1,00,000 is taxed as income",
+   "Nothing is taxed because it is her own money",
+   "Only the ₹40,000 gain portion counts as capital gain",
+   "Only the ₹60,000 she originally invested is taxed"
+  ],
+  "ans": 2,
+  "why": [
+   "The part that was her own capital is returned to her. Taxing the whole amount would count that capital as profit.",
+   "Her capital comes back untaxed, but the gain on it does count. Tax rules apply to the profit in each withdrawal.",
+   "Each SWP payment is part cost and part gain. Only the gain is taxed, at the capital gains rate that applies to her holding period.",
+   "The ₹60,000 is her cost and is not taxed. Taxing it would charge her on money she already paid tax on."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s334q3",
+  "h": "Check yourself",
+  "q": "Dadi asks for ₹50,000 a month from ₹1 crore. What is the sound reply?",
+  "opts": [
+   "That is only 6% a year, so the money will certainly last as long as she lives",
+   "It is 6% a year and may work, but an early fall could drain it, so hold a buffer",
+   "Never withdraw more than ₹10,000 a month from any corpus, whatever its size",
+   "An SWP only works with a bank fixed deposit and not with a mutual fund"
+  ],
+  "ans": 1,
+  "why": [
+   "'As long as she lives' is a promise nobody can keep. If returns come in below withdrawals, the corpus shrinks.",
+   "It names the rate, admits the risk of an early fall and gives a plan: a buffer and a yearly review.",
+   "There is no universal limit like this. The safe rate depends on the corpus, the mix of funds and the time she needs it.",
+   "An SWP is a feature of mutual funds. A bank fixed deposit has its own way of paying interest each month."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s334q4",
+  "h": "Check yourself",
+  "q": "Why keep one to two years of withdrawals in a lower-risk fund?",
+  "opts": [
+   "It raises the return earned by the equity part of the whole corpus",
+   "So she never has to sell equity after a fall to pay her monthly needs",
+   "It removes the tax that would otherwise apply to each withdrawal",
+   "It lets her withdraw more each month than the plan would allow"
+  ],
+  "ans": 1,
+  "why": [
+   "The buffer earns a low return. It supports the plan in a fall, it does not raise what equity earns.",
+   "In a falling market, bills are paid from the calm fund while equity has time to recover.",
+   "The tax on gains still applies to each redemption, whichever fund it comes from.",
+   "The buffer cannot raise a safe rate. A rate that is too high stays too high."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An SWP redeems a fixed amount on a schedule. Only the gain part is taxed.",
+   "The order of good and bad years matters: an early fall plus withdrawals is the danger.",
+   "Keep one to two years of withdrawals in a steady fund."
+  ]
+ }
+]

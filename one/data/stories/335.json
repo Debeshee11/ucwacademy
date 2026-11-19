@@ -1,0 +1,152 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Meena wants ₹50 lakh for her daughter's college, twelve years from now. The cost in twelve years is not ₹50 lakh. It is a bigger number, and the mix of funds has to change as the day nears."
+ },
+ {
+  "k": "dialog",
+  "h": "A goal with a date",
+  "lines": [
+   [
+    "meena",
+    "I want ₹50 lakh for my daughter's college in 12 years. How much should I save?"
+   ],
+   [
+    "sikka",
+    "First, the price of that college will rise. Then we choose the funds. Watch both change together."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "glide",
+  "goal": "Daughter's college",
+  "target": 50,
+  "infl": 0.06,
+  "eq": [
+   80,
+   80,
+   80,
+   80,
+   80,
+   80,
+   80,
+   80,
+   80,
+   60,
+   40,
+   20
+  ],
+  "h": "The goal and the mix",
+  "alt": "Twelve bars shifting from equity to safer funds as a cost figure rises with inflation",
+  "caps": [
+   [
+    0.2,
+    "Today the college costs ₹50 lakh."
+   ],
+   [
+    2.5,
+    "Each year the price rises with inflation, about 6% in this example."
+   ],
+   [
+    5.0,
+    "For the first nine years most of the money can sit in equity."
+   ],
+   [
+    6.2,
+    "In the last three years it moves into safer funds, so a fall near the end cannot ruin the goal."
+   ],
+   [
+    8.5,
+    "The goal is about ₹1 crore by then, not ₹50 lakh."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s335q1",
+  "h": "Check yourself",
+  "q": "A college costs ₹50 lakh today. With about 6% yearly inflation, roughly what will it cost in 12 years?",
+  "opts": [
+   "About ₹53 lakh",
+   "About ₹86 lakh",
+   "About ₹1 crore",
+   "About ₹62 lakh"
+  ],
+  "ans": 2,
+  "why": [
+   "₹53 lakh is one year of inflation, not twelve. The price rises every year, and each rise builds on the last.",
+   "₹86 lakh adds 6% of ₹50 lakh for twelve years, without letting each year's rise build on the one before.",
+   "Each year multiplies by 1.06, and twelve years gives about double. Inflation compounds, just like returns.",
+   "₹62 lakh is far below even the simple sum. Twelve years of rising prices cannot add only a quarter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s335q2",
+  "h": "Check yourself",
+  "q": "A family needs a car down payment of ₹4 lakh in 18 months. Where does the money belong?",
+  "opts": [
+   "Mostly in equity, to chase the highest return available",
+   "In a low-risk fund such as a liquid or short-duration fund",
+   "In a sector fund, since a short goal needs a quick gain",
+   "In gold, since gold keeps rising whenever shares fall"
+  ],
+  "ans": 1,
+  "why": [
+   "With 18 months to go, a 20% fall leaves no time to recover, and the car cannot wait for the market.",
+   "A short goal needs the money to be steady and easy to get. Low-risk funds fit that need.",
+   "Sector funds swing a lot and can stay down for years. That is the opposite of what a short goal needs.",
+   "Gold can fall too. No asset only rises, so none is safe to bet a short goal on."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s335q3",
+  "h": "Check yourself",
+  "q": "Why does the plan move money from equity to safer funds in the last three years before the goal?",
+  "opts": [
+   "Equity stops earning anything in the last three years before a goal",
+   "A late fall leaves no time to recover, so what is saved needs protecting",
+   "SEBI requires goal-based investments to turn safer as the date nears",
+   "Safer funds always earn more than equity near the end of a goal"
+  ],
+  "ans": 1,
+  "why": [
+   "Equity does not stop. The reason is the risk of a fall at the wrong time, not the end of returns.",
+   "The closer the date, the less time to recover. Moving to safer funds locks in much of what has been built.",
+   "SEBI has no such rule for an ordinary investor's goal. This is a planning habit, not a regulation.",
+   "Safer funds usually earn less. The trade is a lower return for a lower risk of loss when it matters."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s335q4",
+  "h": "Check yourself",
+  "q": "Why keep a separate fund or folio for each goal?",
+  "opts": [
+   "Funds held in separate folios earn higher returns than a single folio",
+   "Progress on each goal is easy to see, and no goal is raided for another",
+   "It lowers the expense ratio that is charged on each separate folio",
+   "It lets the investor skip the yearly review of each goal's plan"
+  ],
+  "ans": 1,
+  "why": [
+   "A folio is only a record. The return depends on the fund, not on how many folios hold it.",
+   "With one pot, it is hard to tell which goal is on track and easy to borrow from the wrong one.",
+   "Expense ratios are set by the fund and do not change with the number of folios.",
+   "Goals change, so each folio still needs a yearly look at income, cost and date."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Write the goal, the amount in future rupees, and the date. Inflate the amount.",
+   "Long horizon: more equity. Short horizon: safer funds.",
+   "Move to safer funds as the date nears, and review each year."
+  ]
+ }
+]

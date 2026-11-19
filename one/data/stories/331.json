@@ -1,0 +1,212 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Rohan puts ₹5,000 into a mutual fund SIP on the 5th of every month. This is the story of his first six months, and the number most people get wrong about it."
+ },
+ {
+  "k": "dialog",
+  "h": "A phone call",
+  "lines": [
+   [
+    "rohan",
+    "Markets are down 15% since I started. My cousin says pause the SIP until things look better. Should I?"
+   ],
+   [
+    "sikka",
+    "Good that you asked before pressing pause. First let us see what your ₹5,000 actually bought each month."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "navs": [
+   100,
+   90,
+   80,
+   85,
+   95,
+   105
+  ],
+  "amt": 5000,
+  "h": "Watch ₹5,000 a month",
+  "alt": "Six monthly instalments buying different numbers of units as the price moves",
+  "caps": [
+   [
+    0.2,
+    "Month 1. The price is ₹100, so ₹5,000 buys 50 units."
+   ],
+   [
+    1.9,
+    "The price slips to ₹90. The same ₹5,000 buys more units."
+   ],
+   [
+    3.6,
+    "At ₹80 it buys the most: 62.5 units. Nobody had to be clever."
+   ],
+   [
+    5.3,
+    "The price climbs back, so each instalment buys fewer units."
+   ],
+   [
+    8.7,
+    "Six months done."
+   ],
+   [
+    10.8,
+    "₹30,000 bought 327 units. Average cost ₹91.7, under the average price of ₹92.5."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Stops at month 3",
+  "b": "Carries on",
+  "rows": [
+   [
+    "Units held",
+    168.1,
+    327.1
+   ],
+   [
+    "Worth at ₹105 (₹ thousand)",
+    17.6,
+    34.3
+   ]
+  ],
+  "h": "What if Rohan pauses?",
+  "alt": "Two bars: stopping after three months versus carrying on",
+  "caps": [
+   [
+    0.3,
+    "Same fund, same prices. Rohan A stops after the dip. Rohan B carries on."
+   ],
+   [
+    2.2,
+    "B holds nearly twice the units, because he kept buying at ₹85, ₹95 and ₹105 too."
+   ],
+   [
+    4.2,
+    "And the units bought cheap at ₹80 are worth the same to both. Pausing only means skipping the next buys."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "navs": [
+   100,
+   90,
+   80,
+   70,
+   60,
+   50
+  ],
+  "amt": 5000,
+  "h": "The honest limit",
+  "alt": "A SIP when the price falls every month",
+  "scale": 1.1,
+  "caps": [
+   [
+    0.2,
+    "Now imagine the price never turns back."
+   ],
+   [
+    3.4,
+    "Each instalment buys more units, but every unit is worth less."
+   ],
+   [
+    10.8,
+    "₹30,000 became 422.8 units, worth about ₹21,141 at ₹50. A SIP lowers your average cost. It does not remove a fall."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s331q1",
+  "h": "Check yourself",
+  "q": "Rohan's six instalments of ₹5,000 were made at NAVs of ₹100, 90, 80, 85, 95 and 105. His average cost came to about ₹91.7, below the ₹92.5 average of those NAVs. Why?",
+  "opts": [
+   "The fund house gives a small discount on each instalment that you pay on time",
+   "Fixed money buys more units when the NAV is low, fewer when high",
+   "Units from an SIP are always allotted at the lowest NAV recorded in the month",
+   "The high months and the low months cancel out, leaving a lower overall figure"
+  ],
+  "ans": 1,
+  "why": [
+   "No discount exists. Every instalment is allotted at that day's NAV, so the saving cannot come from a price cut.",
+   "Fixed money divided by a low NAV gives more units, so cheap months carry more weight in the average cost.",
+   "Allotment follows the NAV of the day the money is accepted. It is never chosen as the month's lowest price.",
+   "Months do not cancel out. If they did, the cost would equal the plain average, which is ₹92.5 here."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s331q2",
+  "h": "Check yourself",
+  "q": "After a 15% fall, Rohan's cousin says: stop the SIP now and restart when the market looks safe. What does stopping really do?",
+  "opts": [
+   "It protects the units he already holds from any further fall in the market",
+   "It cancels the units he already holds at the next NAV the fund declares",
+   "It has no effect, since units from an SIP are bought at average prices anyway",
+   "It stops him buying at today's lower prices and leaves a restart date to guess"
+  ],
+  "ans": 3,
+  "why": [
+   "Units he holds still move with the NAV. Stopping the SIP only changes what he buys from now on.",
+   "Existing units stay in his folio until he redeems them. Pausing an SIP does not cancel anything.",
+   "Each instalment is bought at that day's NAV, not at an average, so skipping one means skipping a cheap buy.",
+   "Fewer instalments mean fewer units at low NAVs, and the restart date is a timing guess that SIPs exist to avoid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s331q3",
+  "h": "Check yourself",
+  "q": "A client's two-year SIP shows a loss. Markets are 13% lower and most of her instalments were bought at higher prices. Which reply is honest?",
+  "opts": [
+   "A SIP cannot show a loss, so the statement she received must be a printing mistake",
+   "It will certainly recover within six months, so there is nothing to worry about at all",
+   "An SIP is a method, so it follows the fund: a paper loss now, with time on her side",
+   "SIPs only work in rising markets, so she should move all of it to a fixed deposit now"
+  ],
+  "ans": 2,
+  "why": [
+   "Any fund can show a loss on paper when the NAV is below the average cost. The statement is likely right.",
+   "No one can promise a recovery date. A confident promise that fails costs the client's trust.",
+   "It names the method, admits the paper loss and points to the holding period, which is the part that is true.",
+   "SIPs also buy through falls. Moving everything away after a drop turns a paper loss into a real one."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s331q4",
+  "h": "Check yourself",
+  "q": "Rohan's SIP has run for three years. Which figure measures his return fairly?",
+  "opts": [
+   "XIRR, because each instalment has been invested for a different time",
+   "The simple average of all the NAVs he bought at over the three years",
+   "Today's NAV minus the NAV of his first instalment, shown as a percentage",
+   "The expense ratio of the fund, since it shows what he earned each year"
+  ],
+  "ans": 0,
+  "why": [
+   "XIRR gives each instalment its own start date, so the return reflects how long every rupee was invested.",
+   "A plain average ignores how many units were bought at each NAV and how long each instalment has been held.",
+   "His later instalments started at other prices, so one NAV difference misses most of what he bought.",
+   "The expense ratio is a yearly cost taken from the fund. It says nothing about his own return."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A SIP buys with a fixed amount, so low NAVs buy more units.",
+   "It lowers your average cost. It does not stop a fall or promise a profit.",
+   "Measure it with XIRR, and stop only when the goal changes, not when the market does."
+  ]
+ }
+]

@@ -1,0 +1,137 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Rohan's SIP bounced twice. He has no idea why, and he is afraid it will be cancelled. The answer sits in two dates on the calendar."
+ },
+ {
+  "k": "dialog",
+  "h": "A failed instalment",
+  "lines": [
+   [
+    "rohan",
+    "My SIP failed twice this year. Is it cancelled? I have money in my account most of the month."
+   ],
+   [
+    "sikka",
+    "Most of the month is not the same as on the day. Let us follow the money across the month, twice."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "mandate",
+  "salary": 7,
+  "sip1": 5,
+  "sip2": 10,
+  "amt": 10000,
+  "low": 2000,
+  "high": 60000,
+  "h": "Payday and the SIP date",
+  "alt": "A month strip showing salary on the 7th and an SIP on the 5th, then moved to the 10th",
+  "caps": [
+   [
+    0.4,
+    "Rohan's salary arrives on the 7th. His SIP is set for the 5th."
+   ],
+   [
+    3.5,
+    "On the 5th the account holds only ₹2,000. The instalment bounces, and the bank may charge a fee."
+   ],
+   [
+    6.8,
+    "Now the SIP date moves to the 10th, three days after payday."
+   ],
+   [
+    10.5,
+    "The money is there, so the instalment is paid."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s336q1",
+  "h": "Check yourself",
+  "q": "Rohan's salary credits on the 7th and his SIP debits on the 5th. What is the best fix?",
+  "opts": [
+   "Move the SIP date to a few days after salary arrives",
+   "Change to a different fund house",
+   "Keep the date and top up the account on the 4th each month",
+   "Stop the SIP and invest a lump sum each year"
+  ],
+  "ans": 0,
+  "why": [
+   "A debit date shortly after payday matches money to the mandate, and it is a one-time change.",
+   "The fund house is not the problem. The date falls before the money arrives, whichever house it is.",
+   "Topping up on the 4th works only if he remembers every month. One slip and it bounces again.",
+   "A yearly lump sum gives up the habit and the averaging that made the SIP worth doing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s336q2",
+  "h": "Check yourself",
+  "q": "Rohan's SIP has bounced twice. He is told 'a third miss in a row may cancel it'. What should he do?",
+  "opts": [
+   "Wait to see whether a third instalment also fails before doing anything",
+   "Change the date, keep a buffer, and check the mandate is still active",
+   "Cancel the SIP himself so that the record on his folio stays clean",
+   "Start a second SIP in another fund to make up for the missed ones"
+  ],
+  "ans": 1,
+  "why": [
+   "Waiting risks the third miss and the loss of the SIP. The fix is available now.",
+   "Moving the date and keeping a cushion fix the cause, and checking the mandate shows nothing has already lapsed.",
+   "Cancelling ends the habit he wants to keep. Bounces are about timing, not about the SIP being a bad idea.",
+   "A second SIP adds a second mandate to bounce, and fixes nothing about the date."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s336q3",
+  "h": "Check yourself",
+  "q": "When is a 'pause' or 'skip' option on an SIP a fair use?",
+  "opts": [
+   "When the market falls sharply and he feels nervous about his units",
+   "For a genuine cash need, such as a medical bill, with a plan to restart",
+   "Whenever he sees an advertisement for a better fund than his own",
+   "Whenever the NAV has gone up compared with the month before"
+  ],
+  "ans": 1,
+  "why": [
+   "A fall is when the same instalment buys more units. Pausing out of nerves means skipping the cheap months.",
+   "A real cash need is what the option is for, and a restart date keeps the habit.",
+   "Chasing a new fund each month adds cost and timing guesses, and the SIP loses its steady habit.",
+   "A higher NAV means fewer units this month, not a reason to stop. Over time, high and low months even out."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s336q4",
+  "h": "Check yourself",
+  "q": "Why does an emergency fund protect an SIP?",
+  "opts": [
+   "It pays the fund's own expense ratio each year on his behalf",
+   "So a sudden bill does not force him to stop or sell equity in a hurry",
+   "It raises the return the SIP earns on every instalment he makes",
+   "It cancels the mandate automatically whenever a crisis arrives"
+  ],
+  "ans": 1,
+  "why": [
+   "The expense ratio is deducted from the fund itself, so an emergency fund has no role in paying it at all.",
+   "With six months of cash set aside, a bill never touches the SIP or forces a sale at a bad price.",
+   "An emergency fund earns a small return of its own. It does not change what the SIP earns.",
+   "A mandate stays active until he cancels it, or repeated misses end it. A cash buffer helps avoid those misses."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Set the SIP date a few days after payday.",
+   "Keep a buffer in the account, so an instalment never bounces.",
+   "Pause for real cash needs, not for market fear, and keep an emergency fund."
+  ]
+ }
+]

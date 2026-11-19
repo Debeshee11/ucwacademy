@@ -1,0 +1,166 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Rohan can only spare ₹10,000 a month. He knows his salary will grow. This is what happens if his SIP grows with it."
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan's plan",
+  "lines": [
+   [
+    "rohan",
+    "I can only invest ₹10,000 now. But my salary will rise every year. Is a flat SIP enough?"
+   ],
+   [
+    "sikka",
+    "Let us give the SIP a staircase. Raise it 10% each year, and watch what ten years does."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stairs",
+  "years": 10,
+  "start": 10000,
+  "step": 0.1,
+  "flat": "₹23.0 lakh",
+  "up": "₹33.4 lakh",
+  "h": "The staircase",
+  "alt": "Ten bars of yearly instalment rising 10% a year against a flat dashed line",
+  "caps": [
+   [
+    0.2,
+    "Year 1. Both SIPs start at ₹10,000 a month."
+   ],
+   [
+    2.8,
+    "Each year the green step rises 10%. The dashed line is the flat SIP."
+   ],
+   [
+    5.6,
+    "By year 10 the instalment is ₹23,579 a month."
+   ],
+   [
+    8.0,
+    "At an assumed 12% a year, the flat SIP reaches about ₹23 lakh and the step-up about ₹33 lakh. An illustration, not a promise."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Flat SIP",
+  "b": "10% step-up",
+  "rows": [
+   [
+    "Money put in (₹ lakh)",
+    12,
+    19.1
+   ],
+   [
+    "Worth after 10 years (₹ lakh)",
+    23.0,
+    33.4
+   ]
+  ],
+  "h": "Where the extra comes from",
+  "alt": "Two bars: money put in and final value, flat against step-up",
+  "caps": [
+   [
+    0.3,
+    "The step-up put in ₹7.1 lakh more over ten years."
+   ],
+   [
+    2.4,
+    "That extra money, invested while income was higher, is most of the gap. The step gives you a habit, not a better fund."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s332q1",
+  "h": "Check yourself",
+  "q": "Rohan's 10% step-up SIP ends ten years about ₹10 lakh ahead of his flat SIP. What explains most of that gap?",
+  "opts": [
+   "Step-up SIPs earn a higher rate of return than flat SIPs in the same fund",
+   "It invests about ₹7 lakh more, and the extra goes in as income rises",
+   "Banks pay a loyalty bonus when the instalment rises every single year",
+   "The fund house waives its expense ratio on the extra stepped-up amount"
+  ],
+  "ans": 1,
+  "why": [
+   "Return depends on the fund, not on how the instalment is set. Both SIPs here earn the same assumed rate.",
+   "Total invested is ₹19.1 lakh against ₹12 lakh. More money working for longer is where most of the gap comes from.",
+   "No such bonus exists. Banks only run the mandate, and the instalment size has no effect on any payout.",
+   "Expense ratio is charged on the whole fund value either way. There is no waiver for a stepped-up amount."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s332q2",
+  "h": "Check yourself",
+  "q": "A client earns ₹40,000 a month and expects raises of about 6% a year. He asks for a 25% yearly step-up to build wealth faster. What do you say?",
+  "opts": [
+   "Agree to 25%, since a bigger step always builds a bigger corpus for him",
+   "Suggest a step near his raises, 5 to 8% a year, and review it yearly",
+   "Tell him step-ups are only meant for people who earn above ₹1 lakh a month",
+   "Suggest a flat SIP instead, because any step-up adds extra risk to the fund"
+  ],
+  "ans": 1,
+  "why": [
+   "A step he cannot keep up leads to missed instalments, and a stopped SIP gives a smaller corpus than a modest step.",
+   "A step near his income growth feels light, so he is likely to keep it. The yearly review lets him adjust.",
+   "Step-ups work at any income. What matters is that the step fits the cash he really has to spare.",
+   "A step-up changes how much goes in, not what the fund holds. It adds no risk beyond the fund's own."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s332q3",
+  "h": "Check yourself",
+  "q": "Rohan starts at ₹10,000 a month and steps up by 10% each year. What is his monthly instalment in year 4?",
+  "opts": [
+   "₹13,000",
+   "₹14,000",
+   "₹13,310",
+   "₹12,100"
+  ],
+  "ans": 2,
+  "why": [
+   "₹13,000 adds ₹1,000 a year to the first amount. A step-up of 10% grows on the latest instalment each time.",
+   "₹14,000 treats the step as 10% a year for four full years on the first amount, which counts one year too many.",
+   "Each year multiplies by 1.10: ₹11,000, then ₹12,100, then ₹13,310 in year 4. The steps compound.",
+   "₹12,100 is the year 3 figure. Year 1 has no step, so year 4 has taken three steps, not two."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s332q4",
+  "h": "Check yourself",
+  "q": "Which risk comes from setting the yearly step too high?",
+  "opts": [
+   "Missed instalments when cash is tight, which can stop the SIP",
+   "A lower NAV on the units bought later in the year",
+   "The fund house cancelling the mandate for being too large",
+   "A higher tax rate on the gains from the larger instalments"
+  ],
+  "ans": 0,
+  "why": [
+   "A bounced or skipped instalment breaks the habit, and repeated misses can cancel the SIP, so the corpus falls short.",
+   "NAV follows the market, not the size of the instalment. A larger step does not change the price you pay.",
+   "Fund houses accept any amount above the minimum. They do not cancel a mandate for being too large.",
+   "Tax depends on how long you hold and the gain made, not on how big each instalment was."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Step up with income, in small steps you can sustain.",
+   "Most of the extra corpus comes from putting more money in.",
+   "Review the step every year, with the goal."
+  ]
+ }
+]

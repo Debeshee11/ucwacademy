@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "house",
+  "h": "Before you start",
+  "big": "Meena sells a plot and receives ₹30 lakh in one go. The question is not what to buy. It is how to walk it into the market."
+ },
+ {
+  "k": "dialog",
+  "h": "Meena's worry",
+  "lines": [
+   [
+    "meena",
+    "I have ₹30 lakh from the plot. If I put it all in today and the market falls next week, I will never forgive myself."
+   ],
+   [
+    "sikka",
+    "That fear is common, and it is a reason to choose a method. One method is the STP. Let us watch it work."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "pipes",
+  "months": 12,
+  "total": 3000000,
+  "from": "Liquid fund",
+  "to": "Equity fund",
+  "rate": 0.06,
+  "h": "The STP pipe",
+  "alt": "Money moving from a liquid fund jar to an equity fund jar each month",
+  "caps": [
+   [
+    0.2,
+    "All ₹30 lakh starts in a calm liquid fund."
+   ],
+   [
+    1.5,
+    "Every month ₹2.5 lakh moves across to the equity fund."
+   ],
+   [
+    5.0,
+    "The money still waiting keeps earning a small return."
+   ],
+   [
+    8.0,
+    "After twelve months it has all moved. At an assumed 6% a year, the waiting money earned about ₹97,500."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What an STP does",
+  "stops": [
+   [
+    "Earns on money waiting",
+    true
+   ],
+   [
+    "Spares timing regret",
+    true
+   ],
+   [
+    "Beats a lump sum when markets rise",
+    false
+   ],
+   [
+    "Removes market risk",
+    false
+   ]
+  ],
+  "h": "Fair claims, and unfair ones",
+  "alt": "A shield with four statements, two true and two false",
+  "caps": [
+   [
+    0.3,
+    "An STP is a way to enter, not a shield for the market."
+   ],
+   [
+    3.0,
+    "It earns on the waiting money and softens the regret of one bad day."
+   ],
+   [
+    5.5,
+    "But if markets rise straight away, the lump sum wins. And the equity part is still equity."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s333q1",
+  "h": "Check yourself",
+  "q": "Meena has ₹30 lakh and is afraid of a fall just after she invests. Which plan fits her fear best?",
+  "opts": [
+   "Put all of it into equity today, so that no single day of gains is missed",
+   "Hold it in a liquid fund and move it to equity in monthly steps with an STP",
+   "Start an SIP for the full ₹30 lakh from her bank account in the first month",
+   "Keep it in a savings account until the market looks cheap enough to enter"
+  ],
+  "ans": 1,
+  "why": [
+   "A lump sum is a fair choice for someone who can sit through a fall. Meena has said she cannot, so it is a poor fit.",
+   "An STP gives her a fixed entry plan, earns something while the money waits, and cuts the regret of a single bad entry day.",
+   "An SIP is built from regular income. It cannot be used to invest a sum already in hand, because the mandate is a few thousand rupees.",
+   "Waiting for a cheap market is a timing guess. The money earns little, and 'cheap' is clear only afterwards."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s333q2",
+  "h": "Check yourself",
+  "q": "A market rise of 15% arrives in the month after Meena starts her 12-month STP. How does she compare with someone who invested the whole ₹30 lakh that day?",
+  "opts": [
+   "She earns more, because the STP buys the units at lower prices than the lump sum did",
+   "She earns the same, because both of them put the same money in on the same day",
+   "She earns less this time, as most of her money was still in the liquid fund",
+   "She loses money, because an STP cannot make a gain when the market is rising"
+  ],
+  "ans": 2,
+  "why": [
+   "The STP buys at whatever the price is each month. In a market that only rises it buys at higher prices, not lower.",
+   "The two do not put the same money in at the same time. Most of her money was still in the liquid fund as the market rose.",
+   "A rising market rewards money that was already invested. She trades some of that gain for a smoother entry.",
+   "She still gains on the part moved over, plus interest on the rest. The STP does not stop gains, it only delays some."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s333q3",
+  "h": "Check yourself",
+  "q": "What is the usual choice for the 'from' fund in an STP?",
+  "opts": [
+   "A sector fund with a high-growth theme",
+   "A liquid or short-duration debt fund",
+   "A fund with a high exit load",
+   "A gold ETF"
+  ],
+  "ans": 1,
+  "why": [
+   "A sector fund moves a lot. The waiting money should be calm, otherwise the parking spot is as risky as the destination.",
+   "These funds hold the money steadily and can be redeemed quickly, which suits money that moves out on a schedule.",
+   "An exit load would take a cut on each monthly transfer. The parking fund should charge little to leave.",
+   "Gold can swing in price and does not give the steady, small return that waiting money should earn."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s333q4",
+  "h": "Check yourself",
+  "q": "Which statement about lump sum, SIP and STP is honest?",
+  "opts": [
+   "The STP is the best method in every market",
+   "A lump sum always beats an SIP because more money works from day one",
+   "The best method is the one the investor can follow without panic",
+   "An SIP removes the risk that markets fall"
+  ],
+  "ans": 2,
+  "why": [
+   "In rising markets the lump sum can win. No method wins every time, so 'always the best' is a false promise.",
+   "Lump sums win when markets rise soon and lose when they fall. 'Always' is wrong in both directions.",
+   "A plan the investor sticks with beats a better plan that is dropped halfway. Match the method to the person.",
+   "An SIP spreads out the price you pay, but it does not stop the market from falling or protect against loss."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Lump sum goes in at once. SIP spreads new savings. STP walks a lump sum from debt to equity.",
+   "An STP earns on the waiting money, but it can lag a lump sum in a rising market.",
+   "Choose the method the client can stick to."
+  ]
+ }
+]
