@@ -1,4 +1,5 @@
 /* The Academy's own structure: Doors (who you are), Realms (what you need), Seals (what you own), Today, the Assessment Centre. */
+import { mascot } from "./mascot.js";
 import { RULES, CONTACT_EMAIL } from "./config.js";
 import { h, icon, plural, toast, isoDay, dayMs } from "./dom.js";
 import { D, course, level, TIERS } from "./data.js";
@@ -97,12 +98,18 @@ export function today() {
     h("p", { class: "small" }, "Start with: ", path.filter(x => !s.quiz["x:" + x.id]?.passed).slice(0, 3).map((x, i) => [i ? ", " : "", h("a", { class: "linkish", href: "#/course/" + x.id }, x.title)]).flat())) 
     : h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Make this yours"), h("p", { class: "mute" }, "Tell us your age group and what you want to learn, and we will put the right courses first."), h("a", { class: "btn ghost", href: "#/me" }, "Set up my plan"));
 
+  /* Story mode: short narrated stories with Arjun. */
+  const storyCard = h("a", { class: "story-banner", href: "#/stories" },
+    (() => { const e = h("span", { class: "sb-coin", "aria-hidden": "true" }); e.innerHTML = mascot({ view: "head", px: 50, mood: "happy" }); return e; })(),
+    h("span", { class: "sb-t" }, h("b", {}, "Story mode"), h("span", {}, "Nine short stories. Arjun reads them aloud.")),
+    h("span", { class: "sb-go" }, "Play"));
+
   const fresh = !Object.keys(s.done).length && !Object.keys(s.part).length && !p.done;
   const heading = h("div", { class: "stack stack-s" },
       h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
       h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in Progress to personalise this page."));
   const rest = h("div", { class: "cols" },
-      h("div", { class: "stack stack-l" }, hero, plan, p.done ? null : guide, nismBanner(),
+      h("div", { class: "stack stack-l" }, storyCard, hero, plan, p.done ? null : guide, nismBanner(),
         h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recommended for you"),
           h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
             return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
@@ -117,7 +124,7 @@ export function today() {
           h("p", { class: "small" }, h("b", {}, rk.title), ` · ${xp} points`, rk.next ? ` · ${rk.need} to ${rk.next}` : ""),
           h("a", { class: "linkish", href: "#/board" }, "See the leaderboard"))));
   /* a brand-new learner sees one big first step; everything else waits behind a fold */
-  if (fresh) { hero.classList.add("first"); return widePage(heading, hero, h("details", { class: "explore" }, h("summary", {}, "Explore everything else"), rest)); }
+  if (fresh) { hero.classList.add("first"); return widePage(heading, storyCard, hero, h("details", { class: "explore" }, h("summary", {}, "Explore everything else"), rest)); }
   return widePage(heading, rest);
 }
 

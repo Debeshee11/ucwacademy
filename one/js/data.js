@@ -16,6 +16,11 @@ export async function loadData() {
 export async function loadTx(lang) {
   if (lang === "en" || D.tx[lang]) return;
   try { D.tx[lang] = await getOne(`tx-${lang}`); } catch { D.tx[lang] = {}; }
+  /* Lesson text (title, key facts, client talk, remember) in this language, by lesson number. Lessons without it stay in English. */
+  try {
+    const lt = await getOne(`lt-${lang}`);
+    for (const [n, v] of Object.entries(lt || {})) { const l = D.lessons[n]; if (!l) continue; if (l._o) Object.assign(l._o, v); Object.assign(l, v); }
+  } catch {}
 }
 
 /* Text that may be a plain string or {en,hi,gu}. */

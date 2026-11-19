@@ -33,6 +33,7 @@ import * as Nism from "./nism.js";
 import { toolsPage, toolPage, toolById } from "./tools.js";
 import { backend } from "./fb.js";
 import { quotesPage } from "./quotes.js";
+import { stories } from "./stories.js";
 import { course as courseById } from "./data.js";
 
 const root = document.getElementById("app");
@@ -73,7 +74,10 @@ const ROUTES = [
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
+  [/^stories$/, () => stories(root), "", "Stories", true],
+  [/^story\/([\w-]+)$/, id => stories(root, id), "", "Stories", true],
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],
+  [/^lesson\/(\d+)\/classic$/, n => renderLesson(root, +n, true), "", "Lesson", true],
   [/^quiz\/module\/([\w-]+)\/(\d+)$/, (c, i) => Q.moduleQuiz(root, c, +i), "", "Quiz", true],
   [/^quiz\/exam\/([\w-]+)(?:\/([bih]))?$/, (c, t) => Q.exam(root, c, t || "b"), "", "Exam", true, "Course exams are marked on our servers and lead to a certificate in your name, so they need an account. Lessons and practice quizzes stay open."],
   [/^syllabus\/([\w-]+)\/([bih])$/, (c, t) => Syl.syllabus(c, t), "courses", "Syllabus"],
@@ -151,7 +155,7 @@ async function boot() {
   const sl = Store.get().lang || "en";
   if (I18n.hasPref()) { if (sl !== I18n.getLang()) Store.setLang(I18n.getLang()); }
   else if (sl !== "en" && I18n.remember(sl)) { location.reload(); return; }
-  await loadTx(Store.get().lang);
+  await loadTx(I18n.getLang());
   applyAudience();
   document.addEventListener("one:syncerror", () => toast("Progress saved on this device only. We'll retry."));
   const np = Auth.takeProfile(); if (np) { const { fresh, ...prof } = np; Store.setProfile(prof); if (fresh) track("signup", true); }

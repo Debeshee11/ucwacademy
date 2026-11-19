@@ -5,9 +5,12 @@ import { D, lesson, courseOf, moduleIndexOf, partsOf, liveQs } from "./data.js";
 import { toolCard } from "./tools.js";
 import { fmtMonth } from "./dom.js";
 import * as Store from "./store.js";
+import { tr } from "./i18n.js";
 import { runQuiz } from "./quiz.js";
 import { nextLessonAfter } from "./path.js";
 import { levelTag } from "./ui.js";
+import { stories } from "./stories.js";
+import { buildStory, handStory } from "./storify.js";
 
 /* Who is reading: someone who advises others sees the client wording; everyone else reads it as their own money. */
 const isPro = () => Store.isStaff() || ["partner", "team"].includes(Store.get().door);
@@ -64,9 +67,30 @@ function partBody(l, k) {
   return h("div");
 }
 
-export function renderLesson(root, n) {
+/* Every lesson opens as a story: illustrated cards, Arjun reading aloud. "/classic" opens the earlier page-by-page view (it also holds the calculators). */
+async function storyLesson(root, n) {
+  const l = lesson(n), c = courseOf(n);
+  Store.openLesson(n);
+  const hand = await handStory(n);
+  const next = nextLessonAfter(n), m = moduleIndexOf(c, n), mod = c.modules[m];
+  const acts = [];
+  const finish = () => { const first = !Store.get().done[n]; Store.finishLesson(n); if (first) cheer("+20 points", 22);
+    const modDone = mod.lessons.every(x => Store.get().done[x]);
+    acts.length = 0;
+    if (modDone && !Store.get().quiz[`m:${c.id}:${m}`]?.passed) acts.push({ label: tr("Take the module quiz"), href: `#/quiz/module/${c.id}/${m}`, go: true }, { label: tr("Back to course"), href: `#/course/${c.id}` });
+    else if (next) acts.push({ label: tr("Next lesson"), href: `#/lesson/${next}`, go: true }, { label: tr("Back to course"), href: `#/course/${c.id}` });
+    else acts.push({ label: tr("Back to course"), href: `#/course/${c.id}`, go: true });
+  };
+  const story = buildStory(l, n, { pro: isPro(), hand });
+  /* The finish screen reads custom.next when it is drawn, after finish() has run. */
+  const custom = { lesson: story, exit: `#/course/${c.id}`, answer: (id, ok) => Store.recordAnswer(id, ok), finish, get next() { return acts; } };
+  stories(root, null, custom);
+}
+
+export function renderLesson(root, n, classic) {
   const l = lesson(n);
   if (!l) { location.hash = "#/courses"; return; }
+  if (!classic) { storyLesson(root, n); return; }
   const c = courseOf(n), parts = partsOf(l, isPro());
   let idx = Math.min(Store.get().part[n] || 0, parts.length - 1);
   Store.openLesson(n);
