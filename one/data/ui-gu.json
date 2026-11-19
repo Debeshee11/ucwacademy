@@ -1271,7 +1271,7 @@
  "Students, working people, homemakers, business owners, retired people": "વિદ્યાર્થીઓ, નોકરિયાત લોકો, ગૃહિણીઓ, વ્યવસાયીઓ, નિવૃત્ત લોકો",
  "I work in finance": "હું નાણાકીય ક્ષેત્રમાં કાર્યરત છું",
  "Advisers, distributors, analysts, planners": "સલાહકારો, વિતરકો, વિશ્લેષકો, આયોજકો",
- "Which describes you?": "તમારો પરિચય શું છે?",
+ "Which describes you?": "તમે કોણ છો?",
  "School or college": "શાળા અથવા કૉલેજ",
  "Money habits before your first salary": "પહેલા પગાર પહેલાંની પૈસા-સંબંધી આદતો",
  "First job": "પહેલી નોકરી",
@@ -1360,11 +1360,15 @@
  "Move a slider and watch the number change. No account needed.": "સ્લાઇડર ખસેડો અને જુઓ કે સંખ્યા કેવી રીતે બદલાય છે. ખાતાની જરૂર નથી.",
  "They are saved on this device only. Create an account to keep them safe, learn on any device and earn certificates.": "તે ફક્ત આ જ ઉપકરણમાં સચવાયેલા છે. તેમને સુરક્ષિત રાખવા, કોઈપણ ઉપકરણ પર શીખવા અને પ્રમાણપત્રો મેળવવા માટે ખાતું બનાવો.",
  "It takes a minute, and everything you have done on this device comes with you.": "તેમાં એક મિનિટ લાગે છે, અને આ ઉપકરણ પર તમે જે કંઈ કર્યું છે તે બધું તમારી સાથે આવી જાય છે.",
- " Which describes you?": " તમે કોણ છો?",
- " Which role do you work in?": " તમે કઈ ભૂમિકામાં કામ કરો છો?",
- " Which of these fits you best?": " આમાંથી કયું તમને સૌથી યોગ્ય છે?",
  "Step 1": "પગલું 1",
  "Step 2": "પગલું 2",
  "✓ Chosen": "✓ પસંદ કર્યું",
- "Exams for you": "તમારા માટે પરીક્ષાઓ"
+ "Exams for you": "તમારા માટે પરીક્ષાઓ",
+ "Which role do you work in?": "તમે કઈ ભૂમિકામાં કામ કરો છો?",
+ "Which of these fits you best?": "આમાંથી કયું તમને સૌથી યોગ્ય છે?",
+ "Story mode": "વાર્તા મોડ",
+ "Play": "ચલાવો",
+ "Nine short stories. Arjun reads them aloud.": "નવ ટૂંકી વાર્તાઓ. અર્જુન તે બોલીને સંભળાવે છે.",
+ "Open the calculator": "કેલ્ક્યુલેટર ખોલો",
+ "Try it with your own numbers": "તમારા પોતાના આંકડાથી અજમાવો"
 }

@@ -1271,7 +1271,7 @@
  "Students, working people, homemakers, business owners, retired people": "विद्यार्थी, नौकरीपेशा लोग, गृहिणियाँ, व्यवसायी, सेवानिवृत्त जन",
  "I work in finance": "मैं वित्त क्षेत्र में कार्यरत हूँ",
  "Advisers, distributors, analysts, planners": "सलाहकार, वितरक, विश्लेषक, योजनाकार",
- "Which describes you?": "आपका परिचय क्या है?",
+ "Which describes you?": "आप कौन हैं?",
  "School or college": "विद्यालय या महाविद्यालय",
  "Money habits before your first salary": "पहले वेतन से पहले की धन-संबंधी आदतें",
  "First job": "पहली नौकरी",
@@ -1360,11 +1360,15 @@
  "Move a slider and watch the number change. No account needed.": "स्लाइडर हिलाइए और देखिए कि संख्या कैसे बदलती है। खाते की आवश्यकता नहीं।",
  "They are saved on this device only. Create an account to keep them safe, learn on any device and earn certificates.": "ये केवल इसी उपकरण में सहेजे गए हैं। इन्हें सुरक्षित रखने, किसी भी उपकरण पर सीखने और प्रमाणपत्र अर्जित करने के लिए खाता बनाइए।",
  "It takes a minute, and everything you have done on this device comes with you.": "इसमें एक मिनट लगता है, और इस उपकरण पर आपने जो कुछ किया है, वह सब आपके साथ आ जाता है।",
- " Which describes you?": " आप कौन हैं?",
- " Which role do you work in?": " आप किस भूमिका में काम करते हैं?",
- " Which of these fits you best?": " इनमें से कौन आपके लिए सबसे उपयुक्त है?",
  "Step 1": "चरण 1",
  "Step 2": "चरण 2",
  "✓ Chosen": "✓ चुना गया",
- "Exams for you": "आपके लिए परीक्षाएँ"
+ "Exams for you": "आपके लिए परीक्षाएँ",
+ "Which role do you work in?": "आप किस भूमिका में काम करते हैं?",
+ "Which of these fits you best?": "इनमें से कौन आपके लिए सबसे उपयुक्त है?",
+ "Story mode": "कहानी मोड",
+ "Play": "चलाइए",
+ "Nine short stories. Arjun reads them aloud.": "नौ छोटी कहानियाँ। अर्जुन उन्हें बोलकर सुनाता है।",
+ "Open the calculator": "कैलकुलेटर खोलिए",
+ "Try it with your own numbers": "अपने आँकड़ों से आज़माइए"
 }
