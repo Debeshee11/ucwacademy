@@ -74,6 +74,15 @@ input[type=range]{width:100%;height:44px;accent-color:#2556B8}
 .pt i{width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);flex:none;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800}
 .seg2{display:flex;gap:8px}.seg2 button{flex:1;border:3px solid var(--ink);background:#fff;border-radius:14px;min-height:48px;font-weight:800;font-size:15px}.seg2 button[aria-pressed=true]{background:var(--gold)}
 .note{font-size:12px;color:var(--mute);text-align:center;padding:6px 0}
+/* lively player: drifting backdrop, floating coins, a coin on the progress bar, a framed stage on wide screens */
+.player{position:relative;overflow:hidden}.player>*{position:relative;z-index:1}
+.player::before{content:"";position:absolute;inset:-10%;z-index:0;pointer-events:none;background:radial-gradient(circle at 10% 18%,rgba(255,197,49,.38) 0 44px,transparent 46px),radial-gradient(circle at 90% 82%,rgba(255,255,255,.6) 0 70px,transparent 72px),radial-gradient(circle at 72% 10%,rgba(255,255,255,.55) 0 34px,transparent 36px),radial-gradient(circle at 30% 92%,rgba(255,197,49,.25) 0 54px,transparent 56px)}
+.bgc{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}.bgc i{position:absolute;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE08A,#F2B01E);border:3px solid #C98600;font:800 16px Figtree,sans-serif;font-style:normal;color:#7A4F00;opacity:.8}
+.bgc i:nth-child(1){left:6%;top:30%}.bgc i:nth-child(2){left:46%;top:84%;width:28px;height:28px}.bgc i:nth-child(3){left:93%;top:46%;width:30px;height:30px}.bgc i:nth-child(4){left:60%;top:6%;width:26px;height:26px}
+.bars i.cur{position:relative;background:var(--ink)}.bars i.cur::after{content:"₹";position:absolute;right:-9px;top:-9px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#FFE08A,#F2B01E);border:2px solid #C98600;font:800 11px Figtree,sans-serif;color:#7A4F00;z-index:2}
+.hud b{display:inline-block;padding:3px 10px;border-radius:999px;background:#fff;border:2px solid var(--ink)}
+@media (prefers-reduced-motion:no-preference){.bgc i{animation:cfloat 6s ease-in-out infinite}.bgc i:nth-child(2){animation-delay:-2s}.bgc i:nth-child(3){animation-delay:-4s}.bgc i:nth-child(4){animation-delay:-1s}@keyframes cfloat{50%{transform:translateY(-16px) rotate(18deg)}}.player::before{animation:stdrift 14s ease-in-out infinite alternate}@keyframes stdrift{to{transform:translate(2%,-2%) scale(1.04)}}.guide svg{animation:bob 3.6s ease-in-out infinite}.art svg{animation:artf 5s ease-in-out infinite}@keyframes artf{50%{transform:translateY(-8px)}}}
+@media(min-width:1000px){.player>.body{background:rgba(255,255,255,.62);border:3px solid var(--ink);border-bottom-width:8px;border-radius:36px;padding:30px 40px;justify-content:center;align-items:center;text-align:center;box-shadow:0 22px 40px -28px rgba(43,33,24,.5)}.fact .art svg,.body>.art svg{width:min(320px,100%);height:auto}.fact .big{font-size:32px;line-height:1.28;max-width:760px}.fact .num{padding:2px 12px;border-radius:14px}.player>.guide svg{width:230px}.player>.guide .tipb{font-size:15px;padding:12px 14px}.hud b{font-size:15px}.bars i{height:8px}}
 @media (prefers-reduced-motion:no-preference){.pop{animation:pop .25s ease-out}@keyframes pop{from{transform:scale(.96);opacity:.4}to{transform:none;opacity:1}}}
 
 .player{position:relative}
@@ -275,7 +284,7 @@ const LESSONS = [
 const S = { xp: 0, combo: 0, best: 0, right: 0, asked: 0, fx: null, line: 1, tiles: [], pick: [], nv: { pot: 100, net: 100, units: 5, amt: 10000 }, auto: false, stop: 0, ord: [], bad: 0, view: "home", li: 0, ci: 0, done: {}, sip: 3000, budget: [50, 50, 0], rate: 12, ins: false, flags: [false, false, false, false], myth: null };
 try { S.done = JSON.parse(localStorage.getItem("uc.stories") || "{}") || {}; } catch (e) {}
 let app = appEl, $ = s => app.querySelector(s), timer = 0, speaking = false;
-const stopAll = () => { try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (e) {} clearTimeout(timer); speaking = false; if (app) app.classList.remove("talk"); };
+const stopAll = () => { try { if (recAudio) { recAudio.pause(); recAudio = null; } } catch (e) {} try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (e) {} clearTimeout(timer); speaking = false; if (app) app.classList.remove("talk"); };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 /* ---------- voice ---------- */
 const VL = { en: "en-IN", hi: "hi-IN", gu: "gu-IN" };
@@ -290,7 +299,25 @@ const voiceFor = () => { try {
   const best = vs.map(v => [sc(v), v]).filter(x => x[0] >= 0).sort((a, b) => b[0] - a[0]); return best.length ? best[0][1] : null;
 } catch (e) { return null; } };
 /* Says the text. done() runs when it ends, or straight away if this device has no voice for the language. Returns false when there is no voice. */
-function speak(text, done) {
+/* Recorded voice. one/audio/index.json maps "lang/hash" to a file extension; made by scripts/voice/make_audio.py with the Sarvam API.
+   When a recording exists for the text it plays; otherwise the device's own voice is used. */
+const hashOf = s => { let x = 2166136261; for (let i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return (x >>> 0).toString(16).padStart(8, "0"); };
+let REC = null, recAudio = null;
+try { fetch("one/audio/index.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => { REC = j; }).catch(() => {}); } catch (e) {}
+function playRec(text, done) {
+  const k = vlang() + "/" + hashOf(text), ext = REC && REC[k]; if (!ext) return false;
+  try {
+    if (recAudio) { recAudio.pause(); recAudio = null; }
+    const a = new Audio(`one/audio/${k}.${ext}`); recAudio = a; a.playbackRate = 1;
+    a.onplay = () => { speaking = true; app.classList.add("talk"); };
+    const end = () => { speaking = false; app.classList.remove("talk"); if (recAudio === a) recAudio = null; if (done) done(); };
+    a.onended = end; a.onerror = () => { if (recAudio === a) recAudio = null; if (!speakDevice(text, done)) end(); };
+    const pr = a.play(); if (pr && pr.catch) pr.catch(() => { if (recAudio === a) recAudio = null; if (!speakDevice(text, done)) end(); });
+    return true;
+  } catch (e) { return false; }
+}
+function speak(text, done) { if (window.__ucCollect) { window.__ucCollect(vlang(), hashOf(text), text); setTimeout(() => done && done(), 0); return true; } return playRec(text, done) || speakDevice(text, done); }
+function speakDevice(text, done) {
   noVoice = false;
   try {
     const ss = window.speechSynthesis; if (!ss) throw 0;
@@ -444,8 +471,8 @@ const spokenOf = c => [c.k === "anim" && speakOf(c, tx), c.lines && c.lines.map(
 const ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B2118" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
 function player() {
   const L = LESSONS[S.li], c = L.cards[S.ci], tot = L.cards.length;
-  const bars = L.cards.map((_, i) => `<i class="${i <= S.ci ? "on" : ""}"></i>`).join("");
-  return `<div class="player" style="background:${L.color}"><div class="bars">${bars}</div>
+  const bars = L.cards.map((_, i) => `<i class="${i <= S.ci ? "on" : ""}${i === S.ci ? " cur" : ""}"></i>`).join("");
+  return `<div class="player" style="background:${L.color}"><div class="bgc" aria-hidden="true"><i>₹</i><i>%</i><i>₹</i><i>%</i></div><div class="bars">${bars}</div>
   <div class="bar2"><span>${esc(tx(L.title))} · ${esc(fill(tx(U.cardOf), S.ci + 1, tot))}</span><span class="hud"><b class="xp">⚡ ${S.xp}</b>${S.combo > 1 ? `<b class="cb">🔥 x${S.combo}</b>` : ""}</span><button class="x" data-home aria-label="Close">✕</button></div>
   ${S.fx ? `<div class="fx ${S.fx.t}" aria-live="polite">${esc(S.fx.txt)}</div>` : ""}<div class="body pop" id="body">${cardHtml(c, L)}</div>
   ${noVoice ? `<div class="small">${esc(tx(U.novoice))}</div>` : ""}
@@ -479,8 +506,10 @@ function go(d) {
   stopAll(); noVoice = false; S.myth = null; S.stop = 0; S.ord = []; S.bad = 0; S.line = 1; S.tiles = []; S.pick = []; S.flags = [false, false, false, false];
   const L = LESSONS[S.li], n = S.ci + d; if (n < 0) return;
   if (n >= L.cards.length) { if (custom) { try { custom.finish && custom.finish(); } catch (e) {} } else { S.done[L.id] = 1; try { localStorage.setItem("uc.stories", JSON.stringify(S.done)); } catch (e) {} } S.view = "done"; render(); if (S.auto) speak(tx(U.complete) + ". " + tx(L.title)); return; }
+  if (d > 0 && !custom_seen(S.li, S.ci)) { S.xp += 3; S.fx = { t: "ok", txt: "+3 ⚡" }; }
   S.ci = n; render(); enter();
 }
+const SEEN = new Set(); const custom_seen = (li, ci) => { const k = LESSONS[li].id + ":" + ci; if (SEEN.has(k)) return true; SEEN.add(k); return false; };
 function bind() {
   app.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { stopAll(); I18n.setLanguage(b.dataset.lang); });
   app.querySelectorAll("[data-exit]").forEach(b => b.onclick = () => { stopAll(); location.hash = "#/"; });
@@ -509,6 +538,7 @@ function bind() {
   const cp = app.querySelector("[data-copy]"); if (cp) cp.onclick = () => { const t = tx(L.title) + " — " + tx(L.sub) + "\n" + tx(U.brand) + "\nhttps://ucwacademy.in/#/story/" + L.id; try { navigator.clipboard.writeText(t).then(() => { $("#cp").textContent = tx(U.copied); }, () => { $("#cp").textContent = t; }); } catch (e) { $("#cp").textContent = t; } };
 }
 if (custom) LESSONS.push(custom.lesson);
+if (window.__ucCollect && custom) { try { custom.lesson.cards.forEach(c => { const x = spokenOf(c); if (x) window.__ucCollect(vlang(), hashOf(x), x); }); window.__ucCollect(vlang(), hashOf(tx(U.complete) + ". " + tx(custom.lesson.title)), tx(U.complete) + ". " + tx(custom.lesson.title)); } catch (e) {} }
 const first = custom ? LESSONS.length - 1 : startId && LESSONS.findIndex(l => l.id === startId);
 if (first >= 0) { S.view = "play"; S.li = first; S.ci = 0; S.xp = 0; S.combo = 0; S.best = 0; S.right = 0; S.asked = 0; }
 try { window.speechSynthesis && window.speechSynthesis.getVoices(); } catch (e) {}
