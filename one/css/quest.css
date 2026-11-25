@@ -119,3 +119,5 @@
   .yr { max-width:100%; } .yg-body { padding:0 4px 18px; }
 }
 @media (max-width:640px){ .rg svg { width:100%; height:100%; } .qs.rank { overflow:hidden; } .qs.rank .rg-in svg { width:16px; height:16px; } }
+.yl { max-width:min(200px,42vw); } .yl b { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+@media (max-width:640px){ .yl { max-width:44vw; } .yl b { font-size:12.5px; padding:5px 9px; } .yn.lr .yl, .yn.rl .yl { margin:0 10px; } .yn.check .yl, .yn.boss .yl { margin:0 24px; } }
