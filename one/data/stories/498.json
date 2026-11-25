@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Dadi's house is worth ₹1 crore to rebuild. She insures it for ₹50 lakh to save on premium. A fire causes ₹10 lakh of damage. She expects ₹10 lakh. The insurer pays ₹5 lakh.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Half insured, half paid",
+  "lines": [
+   [
+    "dadi",
+    "I paid the premium faithfully. Why only half?"
+   ],
+   [
+    "sikka",
+    "Because the house was insured for half of its value. Many policies pay in the same proportion. That is underinsurance, and the gap falls on you."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Insured fully",
+  "b": "Insured at half",
+  "rows": [
+   [
+    "Sum insured (₹ lakh)",
+    100,
+    50
+   ],
+   [
+    "Paid on a ₹10 lakh loss (₹ lakh)",
+    10,
+    5
+   ]
+  ],
+  "h": "A ₹1 crore house, ₹10 lakh fire",
+  "alt": "Bars comparing the sum insured and the payout for a fully insured and a half insured house",
+  "caps": [
+   [
+    0.3,
+    "Two identical houses, each worth ₹1 crore to rebuild."
+   ],
+   [
+    2.2,
+    "One is insured for ₹1 crore and the other for ₹50 lakh."
+   ],
+   [
+    4.0,
+    "A fire causes a ₹10 lakh loss in each."
+   ],
+   [
+    5.6,
+    "The first is paid in full. The second is paid only half, ₹5 lakh."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four ideas for property",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "Fire and allied perils",
+    "Cover for fire, lightning, floods and similar listed events"
+   ],
+   [
+    "Home contents",
+    "Furniture, appliances and belongings inside"
+   ],
+   [
+    "Reinstatement value",
+    "The cost to rebuild or replace as new"
+   ],
+   [
+    "Underinsurance",
+    "Sum insured below the true value, so claims are cut"
+   ]
+  ],
+  "note": "Insure the building for its rebuilding cost, which is not the same as its market price."
+ },
+ {
+  "k": "pick",
+  "id": "s498q1",
+  "h": "Check yourself",
+  "q": "Meena's flat is insured for ₹30 lakh, but it would cost ₹60 lakh to rebuild. A ₹10 lakh loss occurs. What is likely?",
+  "opts": [
+   "A full payment of ₹10 lakh in all",
+   "A part payment, in proportion",
+   "No payment at all",
+   "A payment of ₹30 lakh"
+  ],
+  "ans": 1,
+  "why": [
+   "A full payment ignores the underinsurance clause that many policies carry.",
+   "With half the cover needed, the claim may be paid in the same proportion.",
+   "A policy still pays something, so no payment is not the likely result.",
+   "The sum insured is a ceiling, and it is not paid when the loss is lower."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s498q2",
+  "h": "Check yourself",
+  "q": "What does reinstatement value mean?",
+  "opts": [
+   "What the property would sell for today",
+   "The price that was paid long ago",
+   "The value that the tax office sets",
+   "The cost to rebuild or replace as new"
+  ],
+  "ans": 3,
+  "why": [
+   "That is market value, which can be very different from the rebuilding cost.",
+   "The old purchase price may be far below today's rebuilding cost.",
+   "A tax office value is a separate matter and may differ from rebuilding cost.",
+   "It is the cost of rebuilding or replacing, as new, at current prices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s498q3",
+  "h": "Check yourself",
+  "q": "Rohan's television is stolen from his flat. Which cover is meant for this?",
+  "opts": [
+   "Fire cover alone",
+   "Third-party motor cover",
+   "Home contents cover",
+   "A term life plan"
+  ],
+  "ans": 2,
+  "why": [
+   "A fire policy pays for fire and allied perils, not for a theft.",
+   "Motor third-party cover is about vehicles, not belongings in a flat.",
+   "Contents cover protects belongings inside the home, including against theft.",
+   "A term plan pays on death, and it does not cover belongings."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s498q4",
+  "h": "Check yourself",
+  "q": "Dadi buys a home policy. Which sum insured is a better guide?",
+  "opts": [
+   "The cost to rebuild the building",
+   "The price a buyer might pay today",
+   "The lowest figure that saves premium",
+   "A round figure that sounds good"
+  ],
+  "ans": 0,
+  "why": [
+   "Rebuilding cost is what is needed to restore the house after a loss.",
+   "Market price includes land and location, which are not rebuilt.",
+   "The lowest figure invites underinsurance and a cut in the claim.",
+   "A round figure may not match the real cost of rebuilding."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Insure for the cost to rebuild, not for the market price.",
+   "Underinsurance can cut your claim in proportion.",
+   "Contents cover is separate from cover on the building."
+  ]
+ }
+]

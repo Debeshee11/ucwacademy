@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "A global fund gains 10% in dollars in a year. The rupee weakens 4% and the fund gains more in rupees. Next year, the rupee strengthens and the same fund returns less in rupees. The fund did not change. The currency did.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Four global risks",
+  "lines": [
+   [
+    "rohan",
+    "Going global sounds safer. Is it?"
+   ],
+   [
+    "sikka",
+    "It spreads risk, but adds new ones. Currency moves change your returns. Too much in one country or theme concentrates risk. Index funds can lag their index. And some funds pause new money when limits are reached."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Rupee weakens 4%",
+  "b": "Rupee strengthens 4%",
+  "rows": [
+   [
+    "Dollar gain of the fund (%)",
+    10,
+    10
+   ],
+   [
+    "Gain in rupees (%)",
+    14.4,
+    5.6
+   ]
+  ],
+  "h": "Same 10% dollar gain, made-up",
+  "alt": "Bars showing how the same dollar gain becomes larger or smaller in rupees depending on the rupee move",
+  "caps": [
+   [
+    0.3,
+    "A global fund gains 10% in dollars."
+   ],
+   [
+    2.2,
+    "If the rupee weakens 4%, the gain in rupees is about 14.4%."
+   ],
+   [
+    4.0,
+    "If the rupee strengthens 4%, the gain is about 5.6%."
+   ],
+   [
+    5.6,
+    "The currency changed the result. This is currency risk."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four risks",
+  "intro": "For global investing.",
+  "rows": [
+   [
+    "Currency risk",
+    "Exchange moves change what your return is worth in rupees"
+   ],
+   [
+    "Concentration risk",
+    "Too much in one country, sector or theme"
+   ],
+   [
+    "Tracking error",
+    "The gap between an index fund's return and its index"
+   ],
+   [
+    "Subscription limit",
+    "A cap on new money into an overseas fund, which may pause investing"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "pick",
+  "id": "s483q1",
+  "h": "Check yourself",
+  "q": "A global fund gains 10% in dollars and the rupee weakens. What happens to the gain in rupees?",
+  "opts": [
+   "It is smaller",
+   "It disappears",
+   "It turns into a loss",
+   "It is larger"
+  ],
+  "ans": 3,
+  "why": [
+   "It would be smaller only if the rupee strengthened.",
+   "It does not disappear because of the rupee.",
+   "A weaker rupee does not turn a gain into a loss.",
+   "A weaker rupee makes the same dollar gain larger in rupees."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s483q2",
+  "h": "Check yourself",
+  "q": "Meena holds mostly a few global technology stocks. What is this risk?",
+  "opts": [
+   "Liquidity risk",
+   "Concentration risk",
+   "Reinvestment risk",
+   "Credit risk"
+  ],
+  "ans": 1,
+  "why": [
+   "Liquidity risk is about selling quickly.",
+   "Too much in one theme is concentration risk.",
+   "Reinvestment risk is about reinvesting interest.",
+   "Credit risk is about a borrower failing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s483q3",
+  "h": "Check yourself",
+  "q": "An index fund returns slightly less than its index. What is this gap?",
+  "opts": [
+   "A bonus share issue",
+   "A dividend payout",
+   "Tracking error",
+   "A premium on a policy"
+  ],
+  "ans": 2,
+  "why": [
+   "A bonus is an extra share issue.",
+   "A dividend is a share of profit.",
+   "It is the gap between the fund and the index.",
+   "A premium is paid for insurance."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s483q4",
+  "h": "Check yourself",
+  "q": "A feeder fund stops accepting new money for a while. What is likely the reason?",
+  "opts": [
+   "A subscription limit was reached",
+   "The fund has been closed for ever",
+   "SEBI banned it",
+   "The fund lost all its money"
+  ],
+  "ans": 0,
+  "why": [
+   "Funds investing overseas can face caps on new money.",
+   "A pause does not mean a closure. It does not answer what was asked.",
+   "SEBI did not ban it for this. The details here point elsewhere.",
+   "A pause does not mean all money was lost. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Currency moves can raise or cut your return in rupees.",
+   "Too much in one country or theme is concentration risk.",
+   "Funds may pause new money when a subscription limit is reached."
+  ]
+ }
+]

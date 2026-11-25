@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena sold US shares at a profit. She assumed the gain stays abroad and out of sight. But India taxes a resident's global income, and she must list the foreign account in her return. Missing it can bring a penalty.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Tax on global investing",
+  "lines": [
+   [
+    "meena",
+    "Do I pay tax in India on gains from overseas shares?"
+   ],
+   [
+    "sikka",
+    "Yes, if you are a resident. The type of asset and holding period decide the rate. Dividends may have tax withheld abroad, and you can claim credit for it. List foreign assets in Schedule FA."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four items",
+  "intro": "Tax and reporting.",
+  "rows": [
+   [
+    "Capital gains on overseas assets",
+    "Taxed in India by asset type, holding period and rates in force"
+   ],
+   [
+    "Schedule FA",
+    "Where residents list foreign assets and accounts in the return"
+   ],
+   [
+    "Withholding on dividends",
+    "Tax deducted abroad before the dividend reaches you"
+   ],
+   [
+    "Foreign tax credit",
+    "Offsets tax paid abroad against Indian tax on the same income"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Tax and reporting",
+  "stops": [
+   [
+    "Residents list foreign assets in Schedule FA",
+    true
+   ],
+   [
+    "Overseas gains are not taxed in India",
+    false
+   ],
+   [
+    "Foreign tax credit offsets tax paid abroad",
+    true
+   ],
+   [
+    "Dividends arrive with no tax deducted abroad",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is part of the Indian tax return."
+   ],
+   [
+    2.2,
+    "Residents are taxed on global income."
+   ],
+   [
+    4.0,
+    "It prevents the same income being taxed twice."
+   ],
+   [
+    5.6,
+    "Many countries withhold tax on dividends."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s484q1",
+  "h": "Check yourself",
+  "q": "Rohan opens a brokerage account in the US. Where does he disclose it in India?",
+  "opts": [
+   "Schedule FA of his return",
+   "A shop receipt kept at home",
+   "A post on social media",
+   "Nowhere, as it is abroad"
+  ],
+  "ans": 0,
+  "why": [
+   "Schedule FA lists foreign assets and accounts.",
+   "A shop receipt is not a tax disclosure.",
+   "A social media post is not a tax disclosure.",
+   "Not disclosing it risks a penalty."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s484q2",
+  "h": "Check yourself",
+  "q": "Meena sells overseas shares at a gain. How does India treat it?",
+  "opts": [
+   "Exempt, since it arose abroad",
+   "A gift from the broker",
+   "Taxed as a capital gain",
+   "Tax-exempt abroad only"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not exempt just because it arose abroad.",
+   "A gain is not a gift. That does not match this case.",
+   "Residents are taxed on global capital gains. This fits the facts given.",
+   "The gain is still taxable in India. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s484q3",
+  "h": "Check yourself",
+  "q": "A US dividend reaches Rohan after tax was deducted abroad. What may he claim?",
+  "opts": [
+   "A bonus from the broker",
+   "Foreign tax credit in India",
+   "A gift card from the bank",
+   "A refund from the shop"
+  ],
+  "ans": 1,
+  "why": [
+   "A bonus is a share issue. That does not match this case.",
+   "Credit can offset the tax already paid abroad.",
+   "A gift card is not a tax matter. It does not answer what was asked.",
+   "A shop does not refund tax. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s484q4",
+  "h": "Check yourself",
+  "q": "What decides the rate of tax on an overseas gain?",
+  "opts": [
+   "The colour of the account",
+   "The logo of the broker",
+   "The weekday of the sale",
+   "Asset type and holding time"
+  ],
+  "ans": 3,
+  "why": [
+   "Colour has no role. It does not fit the facts given.",
+   "A logo has no role. It does not answer what was asked.",
+   "The weekday has no role. The details here point elsewhere.",
+   "The asset and holding period are key tests."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Residents are taxed on global capital gains.",
+   "List foreign assets in Schedule FA of the return.",
+   "Claim foreign tax credit for tax withheld abroad, as rules allow."
+  ]
+ }
+]

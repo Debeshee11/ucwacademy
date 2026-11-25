@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A footnote reveals that the company guaranteed a loan taken by its promoter's other firm. No ratio would have shown it. The three statements connect, and the notes tell what the numbers hide. Read them as one story.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "One story",
+  "lines": [
+   [
+    "meena",
+    "Which number matters most?"
+   ],
+   [
+    "sikka",
+    "None alone. Consolidated accounts combine the parent and its subsidiaries. Return on equity shows profit on the owners' money. Debt to equity shows reliance on borrowing. Notes to accounts explain policies, contingent liabilities and related-party deals."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Ratios, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Return on equity",
+    "₹18 profit per ₹100 of owners' capital: 18%"
+   ],
+   [
+    "Debt to equity",
+    "₹150 crore against ₹100 crore: 1.5 times"
+   ],
+   [
+    "Consolidated accounts",
+    "one combined profit for five subsidiaries"
+   ],
+   [
+    "Notes to accounts",
+    "a footnote shows a guarantee for a promoter's firm"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s525q1",
+  "h": "Check yourself",
+  "q": "A firm earns ₹18 for every ₹100 of owners' capital in a year. What is the return on equity?",
+  "opts": [
+   "1.8%",
+   "18%",
+   "82%",
+   "118%"
+  ],
+  "ans": 1,
+  "why": [
+   "1.8% would mean only ₹1.80 of profit.",
+   "18 ÷ 100 gives a return on equity of 18%.",
+   "82% is the remaining share, not the return.",
+   "118% adds the two numbers, which is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s525q2",
+  "h": "Check yourself",
+  "q": "A firm has borrowed ₹150 crore against ₹100 crore of owners' money. What is the debt to equity?",
+  "opts": [
+   "1.5 times",
+   "0.67 times",
+   "250 times",
+   "15 times"
+  ],
+  "ans": 0,
+  "why": [
+   "150 ÷ 100 is 1.5 times.",
+   "0.67 inverts the ratio.",
+   "250 adds, which is wrong.",
+   "15 is not supported."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s525q3",
+  "h": "Check yourself",
+  "q": "A group with five subsidiaries reports a single combined profit. What are these accounts?",
+  "opts": [
+   "Standalone accounts only",
+   "Notes to the accounts",
+   "Consolidated accounts",
+   "A cash flow memo only"
+  ],
+  "ans": 2,
+  "why": [
+   "Standalone covers the parent only. It does not fit the facts given.",
+   "Notes explain, they do not combine. It does not answer what was asked.",
+   "They combine the parent and its subsidiaries. That matches the case described.",
+   "A memo is not the combined set. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s525q4",
+  "h": "Check yourself",
+  "q": "Where would a guarantee for a promoter's other firm usually be disclosed?",
+  "opts": [
+   "On a sign in a shop",
+   "In a daily weather report",
+   "Nowhere at all, ever",
+   "In the notes to accounts"
+  ],
+  "ans": 3,
+  "why": [
+   "A shop sign is not a disclosure. It does not fit the facts given.",
+   "Weather is irrelevant. It does not answer what was asked.",
+   "It should be disclosed. The details here point elsewhere.",
+   "Notes disclose contingent liabilities and related-party deals."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "ROE = net profit ÷ equity. Debt to equity = borrowings ÷ owners' capital.",
+   "Consolidated accounts combine parent and subsidiaries.",
+   "Notes to accounts reveal what the numbers hide."
+  ]
+ }
+]

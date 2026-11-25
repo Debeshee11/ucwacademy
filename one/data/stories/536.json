@@ -1,0 +1,149 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Before judging any company, ask about its industry. How big is it? How much of it is already served? How fast can it grow? A great firm in a shrinking industry is a hard climb.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Size first",
+  "lines": [
+   [
+    "meena",
+    "Why start with the industry?"
+   ],
+   [
+    "sikka",
+    "Because the industry sets the ceiling. Total addressable market is the full sales a product could earn if it reached every buyer. Penetration is the share of buyers already served. Market share is one company's slice. Demand drivers, like rising incomes, make customers buy more."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Market share, made up",
+  "rows": [
+   {
+    "name": "Scooters bought, per 100",
+    "segs": [
+     [
+      "One brand: 30",
+      30,
+      "#3CC47A"
+     ],
+     [
+      "Everyone else: 70",
+      70,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar showing one brand with 30 of every 100 scooters",
+  "caps": [
+   [
+    0.3,
+    "100 scooters are bought."
+   ],
+   [
+    2.2,
+    "One brand sells 30 of them."
+   ],
+   [
+    4.0,
+    "That is a 30% market share."
+   ],
+   [
+    5.6,
+    "Low penetration means room to grow."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s536q1",
+  "h": "Check yourself",
+  "q": "One brand sells 30 of every 100 scooters bought. What is this?",
+  "opts": [
+   "Penetration",
+   "Total addressable market",
+   "A demand driver",
+   "Market share"
+  ],
+  "ans": 3,
+  "why": [
+   "Penetration is the share of possible customers already using it.",
+   "TAM is the full potential sales. The details here point elsewhere.",
+   "A demand driver raises buying. That does not match this case.",
+   "Market share is one company's slice of industry sales."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s536q2",
+  "h": "Check yourself",
+  "q": "Only a small fraction of households own an air conditioner. What does this show?",
+  "opts": [
+   "High penetration, fully served",
+   "Low penetration, room to grow",
+   "No demand drivers at all",
+   "A saturated market already"
+  ],
+  "ans": 1,
+  "why": [
+   "A small fraction owning means low penetration.",
+   "Few owners means plenty of possible buyers remain.",
+   "Demand drivers may still exist. It does not fit the facts given.",
+   "Low penetration is the opposite of saturated."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s536q3",
+  "h": "Check yourself",
+  "q": "A start-up estimates how many households could buy its water purifier. What is this?",
+  "opts": [
+   "Total addressable market",
+   "Market share held now",
+   "Penetration of buyers",
+   "Pricing power over buyers"
+  ],
+  "ans": 0,
+  "why": [
+   "TAM is sales if every possible buyer was reached.",
+   "Market share is a current slice. It does not fit the facts given.",
+   "Penetration is current usage. It does not answer what was asked.",
+   "Pricing power is about prices. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s536q4",
+  "h": "Check yourself",
+  "q": "Rising incomes lead more families to buy cars. What is rising income here?",
+  "opts": [
+   "A barrier to entry",
+   "A regulator",
+   "A demand driver",
+   "A value chain"
+  ],
+  "ans": 2,
+  "why": [
+   "A barrier makes entry hard. It does not fit the facts given.",
+   "A regulator makes rules. It does not answer what was asked.",
+   "It is a factor that makes customers buy more.",
+   "A value chain is a series of steps. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "TAM: full potential sales. Market share: one company's slice.",
+   "Penetration: share of buyers already served.",
+   "A demand driver makes customers buy more."
+  ]
+ }
+]

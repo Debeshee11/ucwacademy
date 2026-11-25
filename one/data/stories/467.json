@@ -1,0 +1,171 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan earns dirhams in Dubai and sends money home. Back in India, he also earns rent from a flat. If he puts both in one account, he mixes money that can go back abroad with money that can't easily.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three accounts",
+  "lines": [
+   [
+    "rohan",
+    "Which account do I use for what?"
+   ],
+   [
+    "sikka",
+    "NRE for money you earn abroad. NRO for income earned in India. FCNR(B) for a deposit held in a foreign currency. Mixing them causes tax and transfer trouble later."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three accounts, side by side",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "NRE",
+    "Rupees from foreign earnings. Fully repatriable. Interest generally tax-exempt"
+   ],
+   [
+    "NRO",
+    "Rupees for Indian income. Interest taxable. Repatriation capped"
+   ],
+   [
+    "FCNR(B)",
+    "A deposit in a foreign currency, with no exchange-rate risk on principal"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "NRE, NRO and FCNR(B)",
+  "stops": [
+   [
+    "NRE is for money earned abroad",
+    true
+   ],
+   [
+    "NRO interest is tax-exempt",
+    false
+   ],
+   [
+    "FCNR(B) is held in a foreign currency",
+    true
+   ],
+   [
+    "NRE money can never be sent abroad",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Foreign earnings go into NRE."
+   ],
+   [
+    2.2,
+    "NRO interest is taxable in India."
+   ],
+   [
+    4.0,
+    "So the principal is protected from rupee moves."
+   ],
+   [
+    5.6,
+    "NRE balances are freely repatriable."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s467q1",
+  "h": "Check yourself",
+  "q": "Rohan gets monthly rent on his flat in India. Which account suits it?",
+  "opts": [
+   "NRE",
+   "FCNR(B)",
+   "NRO",
+   "A resident account"
+  ],
+  "ans": 2,
+  "why": [
+   "NRE is meant for money earned abroad.",
+   "FCNR(B) is a foreign currency deposit, not for rent.",
+   "Income earned in India belongs in an NRO account.",
+   "He is an NRI, so a resident account is not right."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s467q2",
+  "h": "Check yourself",
+  "q": "Meena wants her foreign savings in India to be easy to send back later. Which account fits?",
+  "opts": [
+   "NRE",
+   "NRO",
+   "A resident account",
+   "A joint account with a resident"
+  ],
+  "ans": 0,
+  "why": [
+   "NRE balances and interest are freely repatriable.",
+   "NRO money is capped on repatriation.",
+   "A resident account is not for NRI foreign earnings.",
+   "A joint resident account does not make money repatriable."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s467q3",
+  "h": "Check yourself",
+  "q": "Which deposit shields Rohan's principal from rupee moves?",
+  "opts": [
+   "NRO fixed deposit",
+   "Savings account",
+   "A rupee bond",
+   "FCNR(B)"
+  ],
+  "ans": 3,
+  "why": [
+   "An NRO deposit is in rupees, so it is exposed to rupee moves.",
+   "A rupee savings account is exposed to rupee moves.",
+   "A rupee bond carries rupee exposure as well.",
+   "FCNR(B) is held in a foreign currency, so it avoids rupee risk."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s467q4",
+  "h": "Check yourself",
+  "q": "What does repatriation mean?",
+  "opts": [
+   "Moving money between two banks within India",
+   "Sending money back to where you live",
+   "Paying income tax on earnings in India",
+   "Opening a new bank account in a foreign land"
+  ],
+  "ans": 1,
+  "why": [
+   "Moving money within India is only an ordinary bank transfer.",
+   "It is sending money from India back to where you live.",
+   "Paying tax is a separate duty and not repatriation.",
+   "Opening an account is a step before any money moves."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NRE for foreign earnings, NRO for Indian income.",
+   "FCNR(B) is a foreign currency deposit with no rupee risk on principal.",
+   "Repatriation means sending money back abroad."
+  ]
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "health",
+  "h": "Before you start",
+  "big": "Meena has paid her premium for six years without a claim, and then switches insurer for a cheaper price. She loses something valuable without realising it. Keeping a policy healthy is a long game.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The long game",
+  "lines": [
+   [
+    "meena",
+    "I never made a claim in six years. Did I just waste the money?"
+   ],
+   [
+    "sikka",
+    "No. Cover is what you were buying. And a clean claim record can add to it. But switching carelessly can cost you."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   10,
+   11,
+   12,
+   13
+  ],
+  "labels": [
+   "Start",
+   "Y1",
+   "Y2",
+   "Y3"
+  ],
+  "big": "₹13 lakh cover",
+  "small": "₹10 lakh + 10% of it each year without a claim",
+  "h": "A no-claim bonus",
+  "alt": "Bars showing the sum insured rising by ₹1 lakh each year without a claim",
+  "caps": [
+   [
+    0.3,
+    "A ₹10 lakh cover with a 10% no-claim bonus."
+   ],
+   [
+    2.0,
+    "After one year without a claim, the cover rises to ₹11 lakh at no extra premium."
+   ],
+   [
+    3.8,
+    "After three years, it is ₹13 lakh."
+   ],
+   [
+    5.2,
+    "Plans differ in the rate and the cap. Check yours."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four things to keep healthy",
+  "intro": "A few habits protect your cover.",
+  "rows": [
+   [
+    "No-claim bonus",
+    "Extra cover or lower premium for years without a claim"
+   ],
+   [
+    "Portability",
+    "Move insurer and keep credit for waiting periods already served"
+   ],
+   [
+    "Network hospital",
+    "A hospital agreed for cashless claims"
+   ],
+   [
+    "Pre and post hospitalisation",
+    "Costs before admission and after discharge"
+   ]
+  ],
+  "note": "Apply to port well before renewal, since the move needs time to be approved."
+ },
+ {
+  "k": "pick",
+  "id": "s455q1",
+  "h": "Check yourself",
+  "q": "Meena has gone six years without a claim. How is the no-claim bonus useful?",
+  "opts": [
+   "It returns all her premiums in cash after six years",
+   "It can raise her cover or lower her premium, by plan",
+   "It cancels the waiting periods on her policy for good",
+   "It lets her claim twice over in the seventh year"
+  ],
+  "ans": 1,
+  "why": [
+   "A bonus raises cover or trims premium. It does not hand back the premiums in cash.",
+   "Plans reward years without a claim with extra cover or lower premium, within their own rules.",
+   "Waiting periods are separate and are not cancelled by the bonus.",
+   "The bonus does not give extra claims. It increases the amount available."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s455q2",
+  "h": "Check yourself",
+  "q": "Rohan wants to move to another insurer and keep the waiting periods he has already served. What should he use?",
+  "opts": [
+   "Portability, and he should apply well before the renewal date",
+   "A fresh purchase, since the old policy ends on the day he leaves",
+   "A claim, since every claim carries over to the new insurer",
+   "Nothing, since waiting periods always restart on a new policy"
+  ],
+  "ans": 0,
+  "why": [
+   "Portability lets him carry credit for waiting periods served, and it needs time to process.",
+   "A fresh purchase restarts the waiting periods, which is the loss he wants to avoid.",
+   "Claims do not carry credit. Portability is what preserves the waiting period credit.",
+   "Waiting periods restart only when he does not port, so porting avoids that."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s455q3",
+  "h": "Check yourself",
+  "q": "Meena's policy has pre and post hospitalisation cover of 30 and 60 days. What does it pay for?",
+  "opts": [
+   "Only the days she spends lying in the hospital bed",
+   "Her travel costs to the hospital on the day of admission",
+   "Medical costs just before admission and after discharge",
+   "The premium for the year in which she was in hospital"
+  ],
+  "ans": 2,
+  "why": [
+   "That is the in-patient stay itself. This feature covers the days around it.",
+   "Travel is not part of this cover, though some plans add an ambulance.",
+   "It pays tests and medicines before admission and follow-up after discharge.",
+   "The premium is not refunded just because of a hospital stay at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s455q4",
+  "h": "Check yourself",
+  "q": "A policyholder switches to a cheaper insurer without porting. What is the likely cost?",
+  "opts": [
+   "None, since the new policy is identical to the old one",
+   "The old insurer pays all future claims for six months more",
+   "The new insurer must cover everything right from day one",
+   "Waiting periods may restart, so some illnesses go uncovered"
+  ],
+  "ans": 3,
+  "why": [
+   "Prices may match, but waiting periods do not carry over without porting.",
+   "Once the policy ends, the old insurer has no future liability.",
+   "A new policy has its own initial and long waiting periods.",
+   "A fresh policy restarts waiting periods, so some conditions are excluded again."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A no-claim bonus can raise your cover or lower your premium.",
+   "Port your policy instead of buying afresh, so waiting periods carry over.",
+   "Check the network hospital list and the pre and post hospitalisation days."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An analyst's valuation says ₹900. Change one assumption and it says ₹600. A valuation is only as good as its assumptions. So test them, with sensitivity and scenarios, and beware cheap shares that are cheap for a reason.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Testing the answer",
+  "lines": [
+   [
+    "meena",
+    "How sure is a target price?"
+   ],
+   [
+    "sikka",
+    "Not very. Sensitivity analysis shows how value moves when growth or the discount rate changes. Scenario analysis values best, base and worst stories. A target price is an estimate over a stated period. And a valuation trap looks cheap only because profits keep shrinking."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Testing assumptions, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Sensitivity",
+    "value at three growth rates × three discount rates"
+   ],
+   [
+    "Scenarios",
+    "demand booms, holds, collapses"
+   ],
+   [
+    "Target price",
+    "₹900 in twelve months: an estimate"
+   ],
+   [
+    "Valuation trap",
+    "low multiple, shrinking profits"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s530q1",
+  "h": "Check yourself",
+  "q": "An analyst shows the value at three growth rates and three discount rates. What is this?",
+  "opts": [
+   "Sensitivity analysis",
+   "Scenario analysis done",
+   "Target price estimate",
+   "Relative valuation done"
+  ],
+  "ans": 0,
+  "why": [
+   "It shows how value changes when assumptions change.",
+   "Scenario analysis uses distinct stories.",
+   "A target price is a forecast of price.",
+   "Relative valuation compares with peers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s530q2",
+  "h": "Check yourself",
+  "q": "A report gives separate values if demand booms, holds or collapses. What is this?",
+  "opts": [
+   "Sensitivity analysis",
+   "A margin of safety",
+   "Scenario analysis",
+   "Terminal value"
+  ],
+  "ans": 2,
+  "why": [
+   "Sensitivity changes numbers, not stories. That does not match this case.",
+   "A margin of safety is a gap. That does not match this case.",
+   "It values best, base and worst cases. This fits the facts given.",
+   "Terminal value is a DCF part. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s530q3",
+  "h": "Check yourself",
+  "q": "A report says the share could reach ₹900 in twelve months. What is ₹900?",
+  "opts": [
+   "The intrinsic value, certain",
+   "The market price today",
+   "A guaranteed return",
+   "A target price"
+  ],
+  "ans": 3,
+  "why": [
+   "Intrinsic value is an estimate, not certain.",
+   "The market price is today's price. It does not fit the facts given.",
+   "Nothing is guaranteed. It does not answer what was asked.",
+   "It is an analyst's estimate over a stated period."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s530q4",
+  "h": "Check yourself",
+  "q": "A share trades at a very low multiple because its profits keep shrinking. What is this?",
+  "opts": [
+   "A margin of safety",
+   "A valuation trap",
+   "A breakout",
+   "A bonus issue"
+  ],
+  "ans": 1,
+  "why": [
+   "A margin of safety is a real gap. It does not fit the facts given.",
+   "It looks cheap because the business is getting worse.",
+   "A breakout is a chart term. The details here point elsewhere.",
+   "A bonus issue gives extra shares. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sensitivity analysis changes assumptions. Scenario analysis changes stories.",
+   "A target price is an estimate, not a promise.",
+   "A valuation trap looks cheap but the business is worsening."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Rohan paid ₹1 lakh tax in India on a gain. His country of residence also wants tax on the same gain. Without help he pays twice. With a treaty and the right papers, he claims credit and pays the higher of the two, not both.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Treaties",
+  "lines": [
+   [
+    "rohan",
+    "Is there a way to stop being taxed twice?"
+   ],
+   [
+    "sikka",
+    "Yes. A DTAA between the two countries decides who taxes what. A tax residency certificate and a foreign tax credit help you claim it. When both countries say you are resident, a tie-breaker decides."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four tools",
+  "intro": "Avoiding double tax.",
+  "rows": [
+   [
+    "DTAA",
+    "A treaty deciding who may tax which income, and at what rate"
+   ],
+   [
+    "Tax residency certificate",
+    "Proof you live in your country for tax"
+   ],
+   [
+    "Foreign tax credit",
+    "Offsets tax paid in one country against the other"
+   ],
+   [
+    "Tie-breaker rule",
+    "Decides which country treats you as resident"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Treaties and double tax",
+  "stops": [
+   [
+    "A DTAA decides who may tax which income",
+    true
+   ],
+   [
+    "Foreign tax credit adds tax in both countries",
+    false
+   ],
+   [
+    "A tie-breaker decides residence when both claim you",
+    true
+   ],
+   [
+    "A residency certificate is never needed",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It names the country and the rate."
+   ],
+   [
+    2.2,
+    "It reduces tax in one country by tax paid in the other."
+   ],
+   [
+    4.0,
+    "It looks at a permanent home or centre of interests."
+   ],
+   [
+    5.6,
+    "It is often needed to claim treaty benefits."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s473q1",
+  "h": "Check yourself",
+  "q": "Meena paid tax on a gain in India and again in her country. What reduces the double burden?",
+  "opts": [
+   "Foreign tax credit under the treaty",
+   "Doing nothing and paying twice",
+   "Paying the tax a second time",
+   "Hiding the gain from both countries"
+  ],
+  "ans": 0,
+  "why": [
+   "A credit offsets tax already paid in the other country.",
+   "Doing nothing leaves the double burden in place.",
+   "Paying a second time adds to the burden further.",
+   "Hiding the gain is illegal and carries penalties."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s473q2",
+  "h": "Check yourself",
+  "q": "Which document proves Rohan lives in his country for tax?",
+  "opts": [
+   "A bus ticket for a journey",
+   "A shop bill for a purchase",
+   "A tax residency certificate",
+   "A hotel room key card"
+  ],
+  "ans": 2,
+  "why": [
+   "A bus ticket proves nothing about tax residence.",
+   "A shop bill proves nothing about tax residence.",
+   "His country's tax office issues it as proof of residence.",
+   "A hotel key proves nothing about tax residence."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s473q3",
+  "h": "Check yourself",
+  "q": "Two countries both claim Meena as a tax resident. What helps?",
+  "opts": [
+   "The toss of a coin by the officer",
+   "The tie-breaker rule in the treaty",
+   "The mood of the tax officer",
+   "A wild guess from a friend"
+  ],
+  "ans": 1,
+  "why": [
+   "A coin toss is not a legal test of residence.",
+   "It uses tests such as a permanent home for the person.",
+   "A mood is not a legal test of residence.",
+   "A guess is not a legal test of residence."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s473q4",
+  "h": "Check yourself",
+  "q": "What does a DTAA do?",
+  "opts": [
+   "Removes all tax on all income",
+   "Doubles the tax on all income",
+   "Cancels the PAN of the holder",
+   "Decides which country taxes"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not remove tax on all income, only avoids doubling.",
+   "It aims to prevent double tax, and does not double it.",
+   "It has no link to the PAN of the holder.",
+   "It allocates taxing rights between two countries."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A DTAA decides which country taxes which income.",
+   "Claim foreign tax credit with a tax residency certificate.",
+   "A tie-breaker rule settles which country treats you as resident."
+  ]
+ }
+]

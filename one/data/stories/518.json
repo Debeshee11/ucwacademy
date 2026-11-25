@@ -1,0 +1,165 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An IPO has 10 lakh shares on offer for retail investors. 5 lakh people apply, wanting one lot each. That is far more demand than supply. Not everyone can get shares. A lottery decides.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "When demand is huge",
+  "lines": [
+   [
+    "rohan",
+    "I applied and got nothing. Did I do something wrong?"
+   ],
+   [
+    "sikka",
+    "Probably not. When an issue is oversubscribed, retail allotment can be by lottery. Many people receive nothing. It is normal and not a mistake."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Shares on offer",
+  "b": "Shares applied for",
+  "rows": [
+   [
+    "Retail portion (lakh shares)",
+    10,
+    40
+   ]
+  ],
+  "h": "A made-up oversubscribed issue",
+  "alt": "Bars showing shares applied for being four times the shares on offer",
+  "caps": [
+   [
+    0.3,
+    "The retail portion offers 10 lakh shares."
+   ],
+   [
+    2.2,
+    "Applications come in for 40 lakh shares."
+   ],
+   [
+    4.0,
+    "That is four times the offer, so the issue is 4 times subscribed."
+   ],
+   [
+    5.6,
+    "Not everyone can be allotted shares, so a lottery may decide."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four terms",
+  "intro": "Around allotment.",
+  "rows": [
+   [
+    "Oversubscription",
+    "More bids than shares on offer"
+   ],
+   [
+    "Allotment",
+    "Giving shares to applicants, by lottery if retail demand is large"
+   ],
+   [
+    "Listing gain",
+    "Listing price less issue price. It can also be a loss"
+   ],
+   [
+    "Investor categories",
+    "Retail, non-institutional and qualified institutional buyers"
+   ]
+  ],
+  "note": "Each category has its own share of the issue."
+ },
+ {
+  "k": "pick",
+  "id": "s518q1",
+  "h": "Check yourself",
+  "q": "An issue has 10 lakh shares on offer and receives bids for 30 lakh. What is this?",
+  "opts": [
+   "An undersubscribed issue of shares",
+   "Oversubscription",
+   "A bonus issue",
+   "A stock split"
+  ],
+  "ans": 1,
+  "why": [
+   "Undersubscribed would mean fewer bids than shares.",
+   "Bids of 30 lakh against 10 lakh on offer make it three times subscribed.",
+   "A bonus issue gives extra shares to existing holders.",
+   "A split divides shares and has no link to bids."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s518q2",
+  "h": "Check yourself",
+  "q": "Meena applied in an oversubscribed IPO and got no shares. What is the likely reason?",
+  "opts": [
+   "A lottery, and she was not picked",
+   "She made a mistake in the form",
+   "The company disliked her name",
+   "SEBI banned her from the issue"
+  ],
+  "ans": 0,
+  "why": [
+   "Retail allotment can be by lottery when demand is high.",
+   "Missing out in a lottery is not a mistake by the applicant.",
+   "A company does not pick investors by liking them.",
+   "SEBI does not ban someone for missing a lottery."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s518q3",
+  "h": "Check yourself",
+  "q": "Rohan's IPO shares list at ₹210 against an issue price of ₹190. What is the gain per share?",
+  "opts": [
+   "₹210",
+   "₹190",
+   "₹400",
+   "₹20"
+  ],
+  "ans": 3,
+  "why": [
+   "₹210 is the listing price, and not the gain.",
+   "₹190 is the issue price that he paid for a share.",
+   "₹400 adds the two prices, which is not how a gain works.",
+   "The gain is listing price less issue price: ₹210 less ₹190."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s518q4",
+  "h": "Check yourself",
+  "q": "Why is a listing gain not guaranteed?",
+  "opts": [
+   "Listing always lowers the price of shares",
+   "SEBI sets the listing price in advance",
+   "Shares can list below issue price",
+   "The company sets it after the listing day"
+  ],
+  "ans": 2,
+  "why": [
+   "Listing does not always lower the price either.",
+   "SEBI does not set the listing price. The market does.",
+   "Demand decides the listing price, so it can be lower than the issue price.",
+   "After listing, the market decides, and not the company."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Oversubscription means more bids than shares. Retail allotment may be a lottery.",
+   "A listing gain is listing price less issue price. It can be a loss.",
+   "Missing out in a lottery is normal."
+  ]
+ }
+]

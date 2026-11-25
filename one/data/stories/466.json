@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Rohan moves to Dubai for a job. Overnight he becomes a non-resident Indian. His old savings account, his mutual funds and his flat all come under new rules, and some of his old habits will now break the law.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A new status",
+  "lines": [
+   [
+    "rohan",
+    "I am still an Indian citizen. What changes when I move abroad?"
+   ],
+   [
+    "sikka",
+    "Your bank accounts, your investing and your tax all follow different rules. Two laws matter: FEMA for foreign exchange, and the tax law for tax residence. They use different tests."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four terms",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "NRI",
+    "An Indian citizen living abroad for work, business or a long stay"
+   ],
+   [
+    "FEMA",
+    "The law governing foreign exchange, and the accounts NRIs may hold"
+   ],
+   [
+    "Tax residency",
+    "Decided by days spent in India, not by citizenship"
+   ],
+   [
+    "OCI",
+    "A person of Indian origin with a foreign passport and a lifelong card"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Who counts as an NRI",
+  "stops": [
+   [
+    "FEMA sets the rules for NRI accounts",
+    true
+   ],
+   [
+    "Tax residence depends on citizenship alone",
+    false
+   ],
+   [
+    "Days spent in India decide tax residence",
+    true
+   ],
+   [
+    "An OCI holder is an Indian citizen",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "FEMA governs foreign exchange and NRI accounts."
+   ],
+   [
+    2.2,
+    "Citizenship does not decide tax residence."
+   ],
+   [
+    4.0,
+    "The count of days in India in a year is what matters."
+   ],
+   [
+    5.6,
+    "An OCI holds a foreign passport, so is not a citizen."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s466q1",
+  "h": "Check yourself",
+  "q": "Rohan moves to Dubai for work. Which law governs his bank accounts and investments in India?",
+  "opts": [
+   "The Sale of Goods Act",
+   "FEMA",
+   "A local municipal rule",
+   "The Motor Vehicles Act"
+  ],
+  "ans": 1,
+  "why": [
+   "That law is about the sale of goods, not about foreign exchange.",
+   "FEMA governs foreign exchange and what NRIs may hold.",
+   "A municipal rule has no say in NRI accounts.",
+   "That law deals with vehicles, so it does not apply."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s466q2",
+  "h": "Check yourself",
+  "q": "What mainly decides whether Meena's world income is taxed in India?",
+  "opts": [
+   "Her passport colour and design",
+   "Her job title at the company",
+   "Her bank's name and branch",
+   "Her days in India that year"
+  ],
+  "ans": 3,
+  "why": [
+   "A passport's colour has no part in tax residence tests.",
+   "A job title does not decide where income is taxed.",
+   "A bank's name does not decide the tax residence at all.",
+   "Tax residence is decided by counting the days spent in India."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s466q3",
+  "h": "Check yourself",
+  "q": "Dadi's grandson holds a foreign passport and an OCI card. How does he stand?",
+  "opts": [
+   "A person of Indian origin",
+   "An Indian citizen who lives abroad",
+   "A person with no rights in India at all",
+   "A tax resident of India by default"
+  ],
+  "ans": 0,
+  "why": [
+   "OCI holders are treated much like NRIs in investing rules.",
+   "An OCI holder has a foreign passport, so is no citizen.",
+   "An OCI card gives him many rights, so not none at all.",
+   "Tax residence depends on days in India, not on the card."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s466q4",
+  "h": "Check yourself",
+  "q": "Why should Rohan inform his Indian bank after he moves abroad?",
+  "opts": [
+   "He may then get a much bigger loan",
+   "His PAN card would be cancelled by the bank",
+   "His account may need to become an NRI account",
+   "His tax duty would stop in every country"
+  ],
+  "ans": 2,
+  "why": [
+   "A move abroad does not make a loan any bigger for him.",
+   "A PAN is still needed for his Indian income and tax.",
+   "Resident accounts need re-classifying once he is an NRI.",
+   "Tax duties do not stop only because a person has moved."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FEMA governs foreign exchange. Tax residence is a separate test.",
+   "Days spent in India decide tax residence, not citizenship.",
+   "Tell your bank when you move, and move to the right account."
+  ]
+ }
+]

@@ -1,0 +1,173 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "A family of four has one policy of ₹5 lakh. In a bad year, one hospital stay uses most of it. Then a second person falls ill. What was meant to protect the whole family has run out.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Enough cover?",
+  "lines": [
+   [
+    "rohan",
+    "Should we each have our own policy, or one for the whole family?"
+   ],
+   [
+    "sikka",
+    "Both work. The better question is what happens when one big claim arrives. Let us stack a cheap extra layer on top."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A ₹20 lakh bill, two layers",
+  "alt": "A bar showing a base policy paying ₹5 lakh and a super top-up paying ₹15 lakh",
+  "rows": [
+   {
+    "name": "₹5 lakh base + ₹50 lakh super top-up",
+    "segs": [
+     [
+      "Base ₹5L",
+      25,
+      "#8EC5FF"
+     ],
+     [
+      "Super top-up ₹15 lakh",
+      75,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "A ₹20 lakh bill arrives. The base policy pays its ₹5 lakh."
+   ],
+   [
+    2.4,
+    "The super top-up starts after ₹5 lakh and pays the remaining ₹15 lakh."
+   ],
+   [
+    4.4,
+    "Its premium is low, because it pays only on big claims."
+   ],
+   [
+    5.8,
+    "A cheap second layer can protect savings from a very large bill."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Choosing a shape",
+  "intro": "Each style suits a different family.",
+  "rows": [
+   [
+    "Family floater",
+    "One shared sum insured, usually cheaper"
+   ],
+   [
+    "Individual policy",
+    "Each person has their own sum insured"
+   ],
+   [
+    "Super top-up",
+    "Extra cover that starts after a set amount"
+   ],
+   [
+    "Restoration",
+    "Refills the sum insured after it is used"
+   ]
+  ],
+  "note": "Parents usually do better with their own policy, since their claims can drain a shared one."
+ },
+ {
+  "k": "pick",
+  "id": "s454q1",
+  "h": "Check yourself",
+  "q": "A family floater of ₹10 lakh covers four people. One claim uses ₹8 lakh. What is left for the others that year?",
+  "opts": [
+   "₹10 lakh each, since each person has their own cover",
+   "₹8 lakh, since the insurer refills it for the family",
+   "₹2 lakh shared among the rest, since the sum is shared",
+   "Nothing, since a claim ends the cover for everyone"
+  ],
+  "ans": 2,
+  "why": [
+   "A floater shares one sum insured. It is not separate for each person.",
+   "Refilling is a separate feature, and it often applies only for unrelated illnesses.",
+   "The shared sum insured is reduced by the claim, so only ₹2 lakh remains for the rest.",
+   "Cover continues for the remaining balance. A claim does not end it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s454q2",
+  "h": "Check yourself",
+  "q": "A ₹5 lakh base policy and a ₹50 lakh super top-up with a ₹5 lakh deductible face a ₹20 lakh claim. What does the top-up pay?",
+  "opts": [
+   "₹15 lakh, the part above the deductible",
+   "₹20 lakh, since the whole bill is covered by the top-up",
+   "₹5 lakh, since that is the deductible amount set",
+   "Nothing, since the base policy has already paid its share"
+  ],
+  "ans": 0,
+  "why": [
+   "The base pays ₹5 lakh, then the top-up pays the next ₹15 lakh above it.",
+   "The top-up starts above the deductible, so it skips the first part of the bill.",
+   "₹5 lakh is only the threshold for the top-up, not what it pays out.",
+   "A top-up exists to pay after the base is used, so it still pays out."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s454q3",
+  "h": "Check yourself",
+  "q": "Meena's parents are in their sixties. Why might an individual policy suit them better than being added to a floater?",
+  "opts": [
+   "Individual policies never have waiting periods for anyone at all",
+   "Their larger claims could use up the shared sum for all",
+   "Floaters cannot include anyone above sixty years of age, ever",
+   "Individual policies always cost less than a floater does"
+  ],
+  "ans": 1,
+  "why": [
+   "Waiting periods apply to individual policies too, so that statement is wrong.",
+   "Older members claim more, and a big claim can exhaust a shared sum.",
+   "Many floaters cover older members, but the cost and shared limit make it unwise.",
+   "Individual policies are usually costlier in total, not always cheaper."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s454q4",
+  "h": "Check yourself",
+  "q": "What does a restoration benefit do?",
+  "opts": [
+   "It doubles the sum insured at renewal each and every year",
+   "It returns your premium to you if you make no claim at all",
+   "It lets you claim twice over for exactly the same hospital bill",
+   "It refills the sum insured once used, often for another illness"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not double the sum insured at renewal, which is a different feature.",
+   "Returning premium is not what restoration does, so this is not a match.",
+   "A bill cannot be claimed twice. The refill applies only to new claims.",
+   "Restoration refills cover after use, usually for unrelated illnesses."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A floater shares one sum insured. Individual policies give each person their own.",
+   "A super top-up is a cheap layer that pays only after a set amount.",
+   "Restoration refills the cover, often for a different illness."
+  ]
+ }
+]

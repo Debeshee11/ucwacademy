@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A trader decides in advance to exit if the share falls five per cent. Another decides after it falls. Tools help only when the rules are set before the trade. Most trading mistakes are broken rules. Education, not a call to trade.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rules first",
+  "lines": [
+   [
+    "meena",
+    "Which tool should I trust?"
+   ],
+   [
+    "sikka",
+    "None alone. A stop-loss is a preset exit to limit loss. A risk-reward ratio compares possible loss with possible gain. Confirmation means waiting for a second signal. Backtesting checks a rule on past data, which is not a promise for the future."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A trade plan, made up",
+  "intro": "Made-up numbers.",
+  "rows": [
+   [
+    "Stop-loss",
+    "exit if the share falls 5% from entry"
+   ],
+   [
+    "Risk-reward",
+    "risk ₹10 to try to make ₹30: 1 to 3"
+   ],
+   [
+    "Confirmation",
+    "wait for a strong close above the ceiling"
+   ],
+   [
+    "Backtest",
+    "crossover rule over ten years of prices"
+   ]
+  ],
+  "note": "Backtests describe the past. They do not promise future results."
+ },
+ {
+  "k": "pick",
+  "id": "s535q1",
+  "h": "Check yourself",
+  "q": "A trader decides in advance to exit if the share falls 5% from entry. What is this?",
+  "opts": [
+   "A stop-loss",
+   "A target price",
+   "A dividend",
+   "A margin of safety"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a preset price to close a position.",
+   "A target price is an estimate of price.",
+   "A dividend is a payout. That does not match this case.",
+   "A margin of safety is a valuation gap."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s535q2",
+  "h": "Check yourself",
+  "q": "A trade risks ₹10 to try to make ₹30. What is this ratio?",
+  "opts": [
+   "A P/E ratio of 30",
+   "A hurdle rate of 10%",
+   "Risk-reward of 1 to 3",
+   "A margin of safety of 3%"
+  ],
+  "ans": 2,
+  "why": [
+   "P/E is a valuation multiple. The details here point elsewhere.",
+   "A hurdle rate is a return threshold. That does not match this case.",
+   "It compares the possible loss with the possible gain.",
+   "A margin is a different ratio. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s535q3",
+  "h": "Check yourself",
+  "q": "A trader waits for a strong close above the ceiling before buying. What is this?",
+  "opts": [
+   "A stop-loss",
+   "Backtesting",
+   "A divergence",
+   "Confirmation"
+  ],
+  "ans": 3,
+  "why": [
+   "A stop-loss is an exit. That does not match this case.",
+   "Backtesting tests on past data. It does not fit the facts given.",
+   "Divergence is a disagreement between price and an indicator.",
+   "It is waiting for a second signal. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s535q4",
+  "h": "Check yourself",
+  "q": "An analyst checks how a crossover rule would have done over ten years of prices. What is this?",
+  "opts": [
+   "Confirmation",
+   "Backtesting",
+   "A breakout",
+   "Sensitivity analysis"
+  ],
+  "ans": 1,
+  "why": [
+   "Confirmation is waiting for a signal.",
+   "It tests a rule on past data.",
+   "A breakout is a move through a level.",
+   "Sensitivity analysis is a valuation method."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Set the rules before the trade: stop-loss, risk-reward, confirmation.",
+   "Backtesting tests a rule on the past. It does not promise the future.",
+   "Tools help only with discipline."
+  ]
+ }
+]

@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Rohan tried three budgets in one year and quit each by March. The method was not the problem. The setup was. Let us look at what actually makes a budget stick.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A budget that lasts",
+  "lines": [
+   [
+    "rohan",
+    "I cannot keep track of every rupee. Is there a simpler way?"
+   ],
+   [
+    "sikka",
+    "Yes. Start with one rule, one habit and one trick. The rule splits your pay, the habit saves first and the trick handles yearly bills."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "The 50-30-20 split on ₹60,000",
+  "alt": "A bar split into needs, wants and savings",
+  "rows": [
+   {
+    "name": "₹60,000 take-home",
+    "segs": [
+     [
+      "Needs ₹30,000",
+      50,
+      "#8EC5FF"
+     ],
+     [
+      "Wants ₹18,000",
+      30,
+      "#FFC531"
+     ],
+     [
+      "Saving ₹12,000",
+      20,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "About half goes to needs: rent, food, bills, EMIs, insurance."
+   ],
+   [
+    2.4,
+    "About 30% goes to wants: eating out, travel, shopping."
+   ],
+   [
+    4.4,
+    "About 20% goes to savings and investing, taken out first."
+   ],
+   [
+    6.0,
+    "A starting point, not a law. If rent is high, adjust the split and keep saving."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Yearly costs without the shock",
+  "intro": "A sinking fund spreads a yearly cost over twelve months.",
+  "rows": [
+   [
+    "Insurance premium",
+    "₹24,000"
+   ],
+   [
+    "School fees",
+    "₹36,000"
+   ],
+   [
+    "Festival spending",
+    "₹24,000"
+   ],
+   [
+    "=",
+    "Total yearly costs",
+    "₹84,000"
+   ],
+   [
+    "=",
+    "Set aside each month",
+    "₹7,000"
+   ]
+  ],
+  "note": "Total divided by twelve. The big bills then arrive to money that is already waiting."
+ },
+ {
+  "k": "pick",
+  "id": "s457q1",
+  "h": "Check yourself",
+  "q": "Rohan saves whatever is left at the end of the month. By month-end, little is left. What habit fixes this?",
+  "opts": [
+   "Spend much less in the first week, so more remains for saving later on",
+   "Keep a note of the savings goal on the fridge as a daily reminder",
+   "Wait until the end of the month and decide how much to save then",
+   "Move savings out on salary day by standing instruction, before spending"
+  ],
+  "ans": 3,
+  "why": [
+   "Willpower in week one does not last. A rule that does not rely on mood works better.",
+   "A reminder depends on memory and effort, while an automatic transfer does not.",
+   "Deciding at month-end repeats the problem, since spending has already taken what is left.",
+   "Paying yourself first means the saving leaves on salary day and the rest is spent from what remains."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s457q2",
+  "h": "Check yourself",
+  "q": "Meena earns ₹60,000 and her rent plus bills are already ₹38,000. How should she use the 50-30-20 rule?",
+  "opts": [
+   "Drop the rule entirely, since it does not match her situation at all",
+   "Use it as a guide, shrink wants, and still protect her saving",
+   "Cut her saving to zero so that needs and wants both fit",
+   "Move to a cheaper house within a week, whatever it takes"
+  ],
+  "ans": 1,
+  "why": [
+   "The rule is a starting point. When it does not fit, adjust it rather than throw it away.",
+   "Needs above half mean wants must shrink, but saving should still come first, even if smaller.",
+   "Cutting saving to zero leaves nothing for emergencies or goals, so it should be the last cut.",
+   "A rushed move can add costs and stress. Adjusting the split is quicker and gentler."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s457q3",
+  "h": "Check yourself",
+  "q": "A family's yearly costs are ₹72,000 across insurance, school fees and festivals. What does a sinking fund suggest?",
+  "opts": [
+   "Keep the money in the main account and hope the bills do not clash",
+   "Pay each bill on its due date from whatever is left that month",
+   "Set aside ₹6,000 each month in a separate place for these bills",
+   "Borrow on a credit card when the bills arrive and repay slowly"
+  ],
+  "ans": 2,
+  "why": [
+   "Leaving it in the main account lets everyday spending eat into it, and the bills still arrive.",
+   "Paying from what is left is what makes big bills feel like shocks in the month they land.",
+   "Dividing ₹72,000 by twelve gives ₹6,000 a month, and the money is ready when each bill comes.",
+   "Card interest is high, so borrowing for expected bills is the costliest way to handle them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s457q4",
+  "h": "Check yourself",
+  "q": "Which describes a zero-based budget?",
+  "opts": [
+   "Every rupee is given a job, so income minus plans comes to zero",
+   "A budget that sets all spending to zero for the whole month ahead",
+   "A plan that only covers the single costs that are above ₹10,000 a month",
+   "A budget that starts afresh every year with no use of past data"
+  ],
+  "ans": 0,
+  "why": [
+   "Each rupee is assigned to a need, want, saving or debt before the month starts.",
+   "It does not mean zero spending. Zero is what is left unassigned after every rupee has a job.",
+   "It covers all income and spending, not only large items above a set amount.",
+   "The word zero refers to the unassigned balance, not to restarting the plan each year."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Start with 50-30-20 as a guide, then adjust to your own costs.",
+   "Pay yourself first: move savings out on salary day.",
+   "Use a sinking fund so yearly bills do not wreck a month."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Rohan's car is damaged on a Friday night. He is tempted to repair it first and tell the insurer later. If he does, the insurer may refuse, since it was never allowed to see the damage.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Claim the right way",
+  "lines": [
+   [
+    "rohan",
+    "What is the right order of steps when I need to claim?"
+   ],
+   [
+    "sikka",
+    "Tell the insurer at once, keep the damage as it is for the surveyor, send the documents asked for, and read the exclusions beforehand so no claim surprises you."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A claim, step by step",
+  "intro": "From loss to payment.",
+  "rows": [
+   [
+    "1. Intimation",
+    "Inform the insurer promptly, within the time the policy allows"
+   ],
+   [
+    "2. Survey",
+    "A licensed surveyor inspects and assesses the loss"
+   ],
+   [
+    "3. Documents",
+    "Send the forms, bills and proofs asked for"
+   ],
+   [
+    "4. Settlement",
+    "The insurer pays, or explains any exclusion that applies"
+   ]
+  ],
+  "note": "An exclusion is a situation the policy does not cover. Read the list when you buy, not after the loss."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Making a claim",
+  "stops": [
+   [
+    "Inform the insurer promptly after a loss",
+    true
+   ],
+   [
+    "Repair first and inform later is always fine",
+    false
+   ],
+   [
+    "A surveyor is appointed to assess the loss",
+    true
+   ],
+   [
+    "Exclusions can be ignored at claim time",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Delay can lead to a refused claim, so intimate within the time allowed."
+   ],
+   [
+    2.2,
+    "If the damage is repaired first, the insurer cannot assess it."
+   ],
+   [
+    4.0,
+    "A licensed surveyor inspects and reports the extent of the loss."
+   ],
+   [
+    5.6,
+    "Exclusions are not covered, so read them when you buy."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s500q1",
+  "h": "Check yourself",
+  "q": "Meena's vehicle is damaged in an accident. What should she do first?",
+  "opts": [
+   "Repair it first and tell them later",
+   "Wait for the insurer to call her",
+   "Sell the vehicle as it is",
+   "Inform the insurer promptly"
+  ],
+  "ans": 3,
+  "why": [
+   "Repairing first stops the insurer from assessing the damage.",
+   "The insurer cannot act until it is informed, so waiting for a call is risky.",
+   "Selling the vehicle is not needed and can complicate the claim.",
+   "Claim intimation within the allowed time keeps her claim valid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s500q2",
+  "h": "Check yourself",
+  "q": "Who is the surveyor in a claim?",
+  "opts": [
+   "A licensed person the insurer appoints",
+   "A friend of the policyholder",
+   "A person selected by the repair shop",
+   "A person from the newspaper"
+  ],
+  "ans": 0,
+  "why": [
+   "A surveyor is licensed and is appointed by the insurer.",
+   "A friend has no licence or role in assessing a loss.",
+   "A repair shop's person would not be an independent assessor.",
+   "A newspaper person has no role in a claim at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s500q3",
+  "h": "Check yourself",
+  "q": "Rohan's claim is for a cause that the policy lists as an exclusion. What is likely?",
+  "opts": [
+   "The insurer pays double the amount",
+   "The sum insured is raised at once",
+   "The insurer may not pay for that cause",
+   "The exclusion is cancelled automatically"
+  ],
+  "ans": 2,
+  "why": [
+   "Insurers do not pay extra for an excluded cause.",
+   "A claim does not raise the sum insured on any basis.",
+   "An exclusion is a situation the policy does not cover.",
+   "Exclusions stay in force, and are not cancelled by a claim."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s500q4",
+  "h": "Check yourself",
+  "q": "Meena buys a new policy and finds that the terms differ from what she was told. What can she do?",
+  "opts": [
+   "Do nothing, since the money is paid",
+   "Use the review window to return it",
+   "Wait until a claim and then complain",
+   "Tear up the papers and forget them"
+  ],
+  "ans": 1,
+  "why": [
+   "Paying does not take away her right to review it.",
+   "A short review window lets her return it for a refund, under terms.",
+   "Waiting until a claim is too late, as the window is short.",
+   "Tearing up the papers loses the proof she needs."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Tell the insurer promptly. Do not repair before the survey.",
+   "A surveyor assesses the loss. Send every document asked for.",
+   "Read the exclusions when you buy, not after the loss."
+  ]
+ }
+]

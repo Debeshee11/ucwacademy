@@ -1,0 +1,167 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena has ₹2 lakh of spare money. Rohan says to invest it. Dadi says to pay down the loan. The truth depends on one number: the rate her loan charges.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Paying extra",
+  "lines": [
+   [
+    "meena",
+    "If I pay extra, will the bank let me, and does it really help?"
+   ],
+   [
+    "sikka",
+    "Yes, on most floating-rate loans to individuals there is no penalty. Every rupee prepaid stops earning interest for the lender."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two ways to prepay",
+  "intro": "Same ₹30 lakh loan at 9%, 20 years.",
+  "rows": [
+   [
+    "Extra ₹5,000 a month",
+    "Done in about 13.6 years"
+   ],
+   [
+    "₹2 lakh once, in year 2",
+    "Done about 2.7 years sooner"
+   ],
+   [
+    "=",
+    "Total paid, ₹2 lakh case",
+    "₹58.1 lakh against ₹64.8 lakh"
+   ]
+  ],
+  "note": "Choose to keep the EMI and shorten the tenure. This saves the most."
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "No prepayment",
+  "b": "₹2 lakh in year 2",
+  "rows": [
+   [
+    "Years to finish the loan",
+    20,
+    17.3
+   ],
+   [
+    "Total repaid (₹ lakh)",
+    64.8,
+    58.1
+   ]
+  ],
+  "h": "Same ₹30 lakh loan at 9%",
+  "alt": "Two sets of bars comparing loan years and total repaid with and without a prepayment",
+  "caps": [
+   [
+    0.3,
+    "Two borrowers with the same loan."
+   ],
+   [
+    2.2,
+    "One pays only the EMI and finishes in 20 years."
+   ],
+   [
+    4.0,
+    "The other adds ₹2 lakh in year 2 and finishes in 17.3 years."
+   ],
+   [
+    5.6,
+    "That one payment saves about ₹6.7 lakh of the total."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s463q1",
+  "h": "Check yourself",
+  "q": "Rohan prepays ₹1 lakh early in a long loan. What does that do?",
+  "opts": [
+   "Stops interest on that money for years",
+   "Raises the interest rate on the rest",
+   "Cancels the whole loan right away at once",
+   "Has no effect until the final month"
+  ],
+  "ans": 0,
+  "why": [
+   "Money prepaid early no longer earns interest, and early years are the biggest.",
+   "Prepaying does not raise the rate. It lowers the amount that interest is charged on.",
+   "A part payment lowers the balance, but it does not clear the whole loan.",
+   "The effect begins from the next interest period, not at the end."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s463q2",
+  "h": "Check yourself",
+  "q": "Meena prepays and has to pick: shorter tenure or lower EMI. Which saves more interest?",
+  "opts": [
+   "Lower the EMI and keep the tenure",
+   "Both save exactly the same amount",
+   "Keep the EMI and shorten the tenure",
+   "Neither, since prepayment never saves interest"
+  ],
+  "ans": 2,
+  "why": [
+   "A lower EMI eases the month but leaves more interest to build in later years.",
+   "The two choices do not save the same, since one cuts the years.",
+   "Keeping the EMI clears the balance faster, so less interest piles up.",
+   "Prepayment does save interest, since it lowers the balance."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s463q3",
+  "h": "Check yourself",
+  "q": "Rohan's friend offers 8.75% against Rohan's 9.5% on a ₹20 lakh, 15-year loan. What should he do first?",
+  "opts": [
+   "Move at once, since a lower rate is always better",
+   "Add up all costs, then ask his lender to match",
+   "Ignore it, since lenders never change rates",
+   "Pay the processing fee without reading the terms"
+  ],
+  "ans": 1,
+  "why": [
+   "A lower rate helps only if the savings are bigger than the costs of moving.",
+   "Fees and charges can eat the gain, and his own lender may match the rate.",
+   "Offers can be matched, so ignoring the chance is a loss for him.",
+   "Paying fees unread is how hidden costs get through."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s463q4",
+  "h": "Check yourself",
+  "q": "Which number shows the full cost of borrowing, fees included?",
+  "opts": [
+   "The headline rate in the advertisement",
+   "The EMI quoted by a friend for his loan",
+   "The lender's brand ranking among banks",
+   "The APR in the Key Facts Statement"
+  ],
+  "ans": 3,
+  "why": [
+   "A headline rate can leave out fees, so a cheaper-looking loan may cost more.",
+   "A friend's EMI is for a different loan, so it tells her nothing here.",
+   "Rankings do not show what this particular loan will cost her.",
+   "The annual percentage rate adds processing fees and other charges to the interest."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Prepay early, when the balance is high and years remain.",
+   "Keep the EMI and shorten the tenure for the biggest saving.",
+   "Compare loans by APR and total cost, and ask your lender to match first."
+  ]
+ }
+]

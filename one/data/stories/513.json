@@ -1,0 +1,157 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Dadi wants to lend money to someone who will certainly pay her back. The safest borrower in India is the government itself. She can buy its bonds, and since 2021 she can do it directly through RBI's retail platform.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Lending to the government",
+  "lines": [
+   [
+    "dadi",
+    "Are government bonds completely safe?"
+   ],
+   [
+    "sikka",
+    "Very low risk of default, since the government repays from its own taxes and borrowing. But their prices can still move when interest rates change, so they are not without risk."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The government's bond family",
+  "intro": "Four members.",
+  "rows": [
+   [
+    "G-Sec",
+    "A bond from the central government, with very low credit risk"
+   ],
+   [
+    "Treasury bill",
+    "A short-term security, sold at a discount and repaid at face value"
+   ],
+   [
+    "State development loan",
+    "A bond from a state government, sold at an auction"
+   ],
+   [
+    "RBI Retail Direct",
+    "A platform where individuals buy government securities directly"
+   ]
+  ],
+  "note": "Treasury bills are issued for 91, 182 and 364 days."
+ },
+ {
+  "k": "eg",
+  "h": "A treasury bill, made-up numbers",
+  "intro": "No coupon, only a discount.",
+  "rows": [
+   [
+    "Face value",
+    "₹100"
+   ],
+   [
+    "She pays",
+    "₹97.50"
+   ],
+   [
+    "After 364 days she gets",
+    "₹100"
+   ],
+   [
+    "=",
+    "Gain on ₹97.50",
+    "about 2.56%"
+   ]
+  ],
+  "note": "The gain comes from the gap between the price paid and the face value."
+ },
+ {
+  "k": "pick",
+  "id": "s513q1",
+  "h": "Check yourself",
+  "q": "Meena buys a treasury bill at ₹97.50 with a face value of ₹100. What happens at maturity?",
+  "opts": [
+   "She receives ₹100",
+   "She receives ₹97.50",
+   "She receives a coupon only",
+   "She receives nothing"
+  ],
+  "ans": 0,
+  "why": [
+   "A bill is repaid at face value, so she gains the gap.",
+   "That is what she paid, so there would be no gain.",
+   "A bill pays no coupon. Its gain is the discount.",
+   "The central government repays at maturity, so nothing is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s513q2",
+  "h": "Check yourself",
+  "q": "Why is a central government security seen as having very low credit risk?",
+  "opts": [
+   "The price never changes at any time",
+   "It pays the highest return of all bonds",
+   "It can raise money to repay its own debt",
+   "It is run by a bank, not the state"
+  ],
+  "ans": 2,
+  "why": [
+   "Prices of government securities do move when interest rates change.",
+   "Low risk usually goes with lower returns, not the highest.",
+   "The government repays in its own currency from taxes and borrowing.",
+   "It is issued by the government, not by a bank."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s513q3",
+  "h": "Check yourself",
+  "q": "Rohan wants to buy government securities directly, without a middleman fund. What can he use?",
+  "opts": [
+   "A shop counter",
+   "RBI Retail Direct",
+   "A chit fund",
+   "A social media group"
+  ],
+  "ans": 1,
+  "why": [
+   "A shop counter does not sell government securities.",
+   "It is a platform where individuals buy government securities directly.",
+   "A chit fund is a different arrangement and not a government security.",
+   "A social media group is not a safe way to buy securities."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s513q4",
+  "h": "Check yourself",
+  "q": "A state government borrows by issuing bonds through an auction. What is this bond called?",
+  "opts": [
+   "A treasury bill of the centre",
+   "An NCD from a company",
+   "A fixed deposit in a bank",
+   "A state development loan"
+  ],
+  "ans": 3,
+  "why": [
+   "A treasury bill is a short-term central security.",
+   "An NCD is a bond issued by a company, not a state.",
+   "A fixed deposit is placed with a bank and is not a state bond.",
+   "States raise funds by selling these loans at auctions."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A G-Sec is a government bond with very low credit risk.",
+   "A treasury bill is sold at a discount and repaid at face value.",
+   "RBI Retail Direct lets individuals buy government securities directly."
+  ]
+ }
+]

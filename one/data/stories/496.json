@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan's car gets a ₹30,000 dent. His insurer pays ₹25,000, not ₹30,000. The ₹5,000 difference is not a mistake. It is a word on the first page of his policy.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Four words, read once",
+  "lines": [
+   [
+    "rohan",
+    "Why did the insurer not pay the full bill?"
+   ],
+   [
+    "sikka",
+    "Most likely the deductible. It is the part you pay yourself before the insurer pays. Learn four words and your policy stops being a mystery."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rohan's claim",
+  "intro": "A made-up repair bill.",
+  "rows": [
+   [
+    "Repair bill",
+    "₹30,000"
+   ],
+   [
+    "Deductible, paid by Rohan",
+    "₹5,000"
+   ],
+   [
+    "=",
+    "Insurer pays",
+    "₹25,000"
+   ],
+   [
+    "Sum insured is the most it can pay",
+    "Stated on page one"
+   ]
+  ],
+  "note": "A higher deductible usually means a lower premium, but you carry more of each small loss."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Insurance words",
+  "stops": [
+   [
+    "The premium is what you pay to keep the policy in force",
+    true
+   ],
+   [
+    "The sum insured is what you pay at each claim",
+    false
+   ],
+   [
+    "A deductible is the part of a loss you pay yourself",
+    true
+   ],
+   [
+    "A policy renews itself with no premium",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "You pay the premium to keep the cover alive."
+   ],
+   [
+    2.2,
+    "The sum insured is the most the insurer will pay."
+   ],
+   [
+    4.0,
+    "The deductible comes out of each claim before the insurer pays."
+   ],
+   [
+    5.6,
+    "Renewal needs the premium paid before the policy lapses."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s496q1",
+  "h": "Check yourself",
+  "q": "Meena's repair bill is ₹40,000 and her deductible is ₹10,000. What does the insurer pay?",
+  "opts": [
+   "₹40,000",
+   "₹10,000",
+   "₹30,000",
+   "₹50,000"
+  ],
+  "ans": 2,
+  "why": [
+   "₹40,000 would ignore the deductible she has agreed to carry.",
+   "₹10,000 is her own share, and not what the insurer pays.",
+   "The insurer pays the bill less her deductible: ₹40,000 less ₹10,000.",
+   "₹50,000 adds the deductible to the bill, which is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s496q2",
+  "h": "Check yourself",
+  "q": "What is the sum insured?",
+  "opts": [
+   "The most the insurer pays",
+   "The premium that Rohan pays every year",
+   "The amount of tax saved on the premium paid",
+   "The commission earned by the agent who sold it"
+  ],
+  "ans": 0,
+  "why": [
+   "It is the upper limit of what the insurer will pay for a claim.",
+   "The premium is what Rohan pays. The sum insured is what he can claim.",
+   "Tax savings, if any, are a separate matter from the sum insured.",
+   "An agent's commission is not related to what the policy pays."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s496q3",
+  "h": "Check yourself",
+  "q": "Meena forgets to renew her policy and the date passes. What may happen?",
+  "opts": [
+   "It continues for another term at no cost",
+   "The policy may lapse, and cover can stop",
+   "The insurer pays double at the next claim",
+   "The sum insured grows to make up for it"
+  ],
+  "ans": 1,
+  "why": [
+   "A term continues only if the premium is paid on time.",
+   "Renewal needs the premium before it lapses, or cover stops.",
+   "No insurer pays double for a missed renewal.",
+   "A sum insured does not grow on its own, whatever happens."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s496q4",
+  "h": "Check yourself",
+  "q": "Rohan picks a higher deductible to cut his premium. What is the trade-off?",
+  "opts": [
+   "A higher premium and a much bigger payout",
+   "No change in what he pays or in what he gets",
+   "The insurer pays his deductible for him each time",
+   "A lower premium, with more paid by him"
+  ],
+  "ans": 3,
+  "why": [
+   "A higher deductible does not raise the premium or the payout.",
+   "It changes both what he pays each year and what he pays at a claim.",
+   "The point of a deductible is that he pays it himself.",
+   "A larger deductible lowers the premium, but he bears more of every loss."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The premium keeps the policy in force. Renew before it lapses.",
+   "The sum insured is the most the insurer will pay.",
+   "A deductible is the part of a loss you pay yourself."
+  ]
+ }
+]

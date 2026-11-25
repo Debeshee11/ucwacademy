@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "A buyer deducts tax at a high rate when Rohan sells his flat in India. He lives in the UK, where he will pay tax on the same gain. Without a treaty, he could pay twice. With one, he claims credit and pays once.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two countries, one income",
+  "lines": [
+   [
+    "rohan",
+    "Will India and my country both tax the same money?"
+   ],
+   [
+    "sikka",
+    "They may, but a treaty called DTAA exists to avoid being taxed twice. You may need a tax residency certificate from your country to claim its benefits."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four terms",
+  "intro": "For an NRI's tax.",
+  "rows": [
+   [
+    "DTAA",
+    "A treaty between two countries to avoid double tax"
+   ],
+   [
+    "TDS on NRIs",
+    "Often at higher rates than for residents. Refund possible"
+   ],
+   [
+    "Tax residency certificate",
+    "From your country, proving you live there for tax"
+   ],
+   [
+    "Indian-source income",
+    "Rent, NRO interest and gains in India. Taxable in India"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Tax for NRIs",
+  "stops": [
+   [
+    "A DTAA helps avoid being taxed twice",
+    true
+   ],
+   [
+    "TDS on NRIs is always lower than for residents",
+    false
+   ],
+   [
+    "Rent from an Indian flat is taxable in India",
+    true
+   ],
+   [
+    "An NRI can never claim a TDS refund",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A treaty decides who may tax which income."
+   ],
+   [
+    2.2,
+    "TDS rates for NRIs are often higher."
+   ],
+   [
+    4.0,
+    "Income arising in India is taxable in India."
+   ],
+   [
+    5.6,
+    "An NRI can claim a refund if too much was deducted."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s469q1",
+  "h": "Check yourself",
+  "q": "Rohan's rent from his Indian flat is paid to him in Dubai. Where is it taxable?",
+  "opts": [
+   "Nowhere, since he lives abroad",
+   "Only in the country of the UAE",
+   "Only if he visits India that year",
+   "In India, as Indian-source income"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not tax-free just because he lives abroad.",
+   "India has the first claim on Indian-source income.",
+   "Tax does not depend on whether he visits that year.",
+   "Income arising in India is taxable in India."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s469q2",
+  "h": "Check yourself",
+  "q": "Meena's TDS on a sale was more than her actual tax. What can she do?",
+  "opts": [
+   "Forget it and move on with life",
+   "File a return and claim a refund",
+   "Ask her bank to repay the excess",
+   "Ask the buyer to return the money"
+  ],
+  "ans": 1,
+  "why": [
+   "Forgetting it leaves her money with the tax office.",
+   "A return lets her claim back the excess tax deducted.",
+   "The bank cannot refund tax already paid to the tax office.",
+   "The buyer already paid the tax over to the government."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s469q3",
+  "h": "Check yourself",
+  "q": "Rohan applies for treaty benefit. Which document may be asked for?",
+  "opts": [
+   "A shop receipt from a store",
+   "A gym membership card",
+   "A tax residency certificate",
+   "A library borrower card"
+  ],
+  "ans": 2,
+  "why": [
+   "A shop receipt has no role in treaty claims.",
+   "A gym card proves nothing about tax residency.",
+   "His country's tax office issues it as proof of residence.",
+   "A library card proves nothing about tax residency."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s469q4",
+  "h": "Check yourself",
+  "q": "Why does a DTAA exist?",
+  "opts": [
+   "To avoid double taxation",
+   "To raise tax in both the countries",
+   "To stop all investing across borders",
+   "To replace the PAN with a new number"
+  ],
+  "ans": 0,
+  "why": [
+   "A treaty reduces the burden of being taxed in two places.",
+   "Its aim is to prevent double tax and not to raise it.",
+   "It does not stop investing across borders in any way.",
+   "A PAN is still needed in India, whatever the treaty says."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A DTAA helps avoid double tax. Claim it with a residency certificate.",
+   "TDS on NRIs is often higher, but excess can be refunded.",
+   "Indian-source income is taxable in India."
+  ]
+ }
+]

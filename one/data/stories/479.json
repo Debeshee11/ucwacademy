@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan parks ₹10 lakh of foreign earnings in an NRE deposit, and ₹5 lakh of rent in an NRO deposit. A year later one can go abroad freely and its interest is tax-exempt in India. The other cannot, and its interest is taxed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three deposits",
+  "lines": [
+   [
+    "rohan",
+    "What is the difference between NRE, NRO and FCNR deposits?"
+   ],
+   [
+    "sikka",
+    "NRE and NRO are rupee deposits. NRE is for foreign earnings and is repatriable. NRO is for Indian income and is taxable. FCNR is in a foreign currency, so rupee moves do not touch your principal."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Dollar worth ₹80",
+  "b": "Dollar worth ₹88",
+  "rows": [
+   [
+    "Rupee deposit, in $ thousand",
+    10,
+    9.1
+   ],
+   [
+    "FCNR deposit, in $ thousand",
+    10,
+    10
+   ]
+  ],
+  "h": "A weaker rupee, made-up numbers",
+  "alt": "Bars comparing a rupee deposit and a dollar deposit when the rupee weakens",
+  "caps": [
+   [
+    0.3,
+    "Rohan holds ₹8 lakh in rupees, and another $10,000 in a dollar deposit."
+   ],
+   [
+    2.2,
+    "The rupee weakens from 80 to 88 per dollar."
+   ],
+   [
+    4.0,
+    "The rupee deposit is now worth about $9,100 in his home currency."
+   ],
+   [
+    5.6,
+    "The dollar deposit still holds $10,000. That is currency risk in action."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four ideas",
+  "intro": "Deposits for NRIs.",
+  "rows": [
+   [
+    "NRE deposit",
+    "Rupee deposit from foreign earnings, repatriable, interest generally tax-exempt"
+   ],
+   [
+    "NRO deposit",
+    "Rupee deposit for Indian income, taxable, limited repatriation"
+   ],
+   [
+    "FCNR deposit",
+    "Held in a foreign currency, no exchange risk on the principal"
+   ],
+   [
+    "Currency risk",
+    "Exchange moves can change what your rupees are worth abroad"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "pick",
+  "id": "s479q1",
+  "h": "Check yourself",
+  "q": "Rohan's foreign earnings need a rupee deposit that is repatriable. Which fits?",
+  "opts": [
+   "An NRE deposit",
+   "An NRO deposit",
+   "A resident deposit",
+   "A postal gift"
+  ],
+  "ans": 0,
+  "why": [
+   "NRE deposits are repatriable and for foreign earnings.",
+   "An NRO deposit is for Indian income, with limits.",
+   "A resident deposit does not suit an NRI. It does not fit the facts given.",
+   "A postal gift is not a deposit. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s479q2",
+  "h": "Check yourself",
+  "q": "Meena keeps rent in an NRO deposit. How is its interest treated?",
+  "opts": [
+   "Exempt in India",
+   "Paid in dollars",
+   "Taxable in India",
+   "Never paid"
+  ],
+  "ans": 2,
+  "why": [
+   "NRE interest, not NRO, is generally exempt.",
+   "NRO deposits are in rupees. That does not match this case.",
+   "NRO interest is taxable in India. This fits the facts given.",
+   "Interest is paid on deposits. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s479q3",
+  "h": "Check yourself",
+  "q": "Rohan wants to avoid rupee moves on his principal. Which deposit helps?",
+  "opts": [
+   "An NRE deposit",
+   "An FCNR deposit",
+   "An NRO deposit",
+   "A rupee savings account"
+  ],
+  "ans": 1,
+  "why": [
+   "NRE is in rupees, so rupee moves affect its value abroad. That does not match this case.",
+   "An FCNR deposit is in foreign currency, so there is no exchange risk on principal.",
+   "NRO is in rupees too. It does not answer what was asked. The details here point elsewhere.",
+   "A rupee savings account has the same exposure. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s479q4",
+  "h": "Check yourself",
+  "q": "The rupee weakens against the dollar. What happens to the value of Meena's rupee deposit in dollars?",
+  "opts": [
+   "It rises",
+   "It stays the same",
+   "It doubles",
+   "It falls"
+  ],
+  "ans": 3,
+  "why": [
+   "It would rise only if the rupee strengthened.",
+   "It changes with the exchange rate.",
+   "A small move does not double it.",
+   "A weaker rupee buys fewer dollars."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NRE: foreign earnings, repatriable, interest generally exempt.",
+   "NRO: Indian income, interest taxable, limited repatriation.",
+   "FCNR keeps the principal in foreign currency, so no rupee risk."
+  ]
+ }
+]

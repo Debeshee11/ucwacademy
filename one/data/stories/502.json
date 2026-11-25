@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Dadi gets a call: 'Madam, your bank account will be blocked today. Please share the code sent to you.' She almost does. The code is the key to her money, and the caller is a thief.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The phone is the door",
+  "lines": [
+   [
+    "dadi",
+    "The caller knew my name and my bank. He sounded very polite."
+   ],
+   [
+    "sikka",
+    "Names and banks are easy to find or buy. Polite is part of the act. The rule is simple: never share the code, the PIN or the password with anyone."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Phone frauds",
+  "stops": [
+   [
+    "Never share an OTP with anyone, even a bank officer",
+    true
+   ],
+   [
+    "Approving a UPI collect request means you receive money",
+    false
+   ],
+   [
+    "A fake link can steal your password or card details",
+    true
+   ],
+   [
+    "A support agent may ask for a screen-sharing app",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A bank never needs your OTP. Whoever asks for it wants your money."
+   ],
+   [
+    2.2,
+    "A collect request takes money out of your account when you approve it."
+   ],
+   [
+    4.0,
+    "Phishing links lead to look-alike pages that copy what you type."
+   ],
+   [
+    5.6,
+    "A screen-sharing app lets the fraudster see and control your phone."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What each trick wants",
+  "intro": "Four tricks, one goal: your approval.",
+  "rows": [
+   [
+    "Phishing",
+    "A fake link to get your password or card details"
+   ],
+   [
+    "UPI collect fraud",
+    "A request that looks like money coming in, but takes it out"
+   ],
+   [
+    "OTP sharing",
+    "The code that completes a payment in your name"
+   ],
+   [
+    "Remote access app",
+    "A tool that lets a stranger run your phone"
+   ]
+  ],
+  "note": "Money coming in never needs your PIN. If a screen asks for your PIN, you are paying."
+ },
+ {
+  "k": "pick",
+  "id": "s502q1",
+  "h": "Check yourself",
+  "q": "A buyer on a marketplace says: 'I have sent you a request. Approve it with your PIN to receive the payment.' What is this?",
+  "opts": [
+   "A normal way to receive money from a buyer",
+   "A bank's security check",
+   "A refund from the marketplace seller",
+   "A collect fraud, where approving pays out"
+  ],
+  "ans": 3,
+  "why": [
+   "To receive money, a person needs to share only a UPI ID, and no PIN.",
+   "A bank does not ask customers to approve security checks with a PIN.",
+   "A genuine refund arrives on its own, with no PIN from the buyer.",
+   "Receiving money never needs a PIN, and approving a request pays the sender."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s502q2",
+  "h": "Check yourself",
+  "q": "A caller says he is from Rohan's bank and needs the OTP to stop a fraud. What should Rohan do?",
+  "opts": [
+   "Share the OTP, since the call is about safety",
+   "Hang up, and call the bank on its printed number",
+   "Share only half of the OTP digits",
+   "Ask the caller to send the same message again"
+  ],
+  "ans": 1,
+  "why": [
+   "The OTP lets the caller complete a payment in his name, so it must stay private.",
+   "A real bank never asks for an OTP, so hanging up and calling the printed number is safe.",
+   "Half a code can still help a fraudster, so he should share none of it.",
+   "Repeating the message adds nothing, since the request itself is the fraud."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s502q3",
+  "h": "Check yourself",
+  "q": "A text says Meena's account is blocked and shows a link to 'update KYC'. What is the safest step?",
+  "opts": [
+   "Ignore it, and open the bank's app herself",
+   "Click the link, since it came by text message",
+   "Reply with her card number to prove who she is",
+   "Forward the text to her contacts to warn them"
+  ],
+  "ans": 0,
+  "why": [
+   "A link in a text may lead to a fake page, so she should use the official app or site.",
+   "The text itself is the trick, so the link should not be opened at all.",
+   "Sharing her card number gives the fraudster what he came for.",
+   "Forwarding can spread the link and does not check whether it is real."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s502q4",
+  "h": "Check yourself",
+  "q": "A 'support agent' asks Rohan to install a screen-sharing app to fix a payment problem. What is the risk?",
+  "opts": [
+   "The app will speed up all of his payments",
+   "The bank will refund him much sooner",
+   "The agent can control his phone",
+   "The app will remove his old messages"
+  ],
+  "ans": 2,
+  "why": [
+   "A screen-sharing tool does nothing to speed up payments.",
+   "A bank does not ask customers to install such tools to process a refund.",
+   "Such tools give a stranger full view and control, including over banking apps.",
+   "Removing messages is not the aim. Access to his phone and money is."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Never share an OTP, PIN or password. No real bank asks for them.",
+   "Money coming in never needs your PIN. If it asks for a PIN, you are paying.",
+   "Do not click links or install apps at a stranger's request."
+  ]
+ }
+]

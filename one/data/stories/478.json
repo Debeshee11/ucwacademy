@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Meena buys a flat in Pune for her parents. Rent from it flows in monthly, and the tenant deducts tax before paying. Years later she sells it. The money lands in an NRO account, and sending it abroad needs paperwork.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Property from abroad",
+  "lines": [
+   [
+    "meena",
+    "What can an NRI buy in India, and what happens to the money later?"
+   ],
+   [
+    "sikka",
+    "Residential and commercial property, yes. Agricultural land, plantations and farmhouses, no. Rent is taxed and tax is deducted at source. Sale money sits in NRO, and sending it abroad is limited each year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four rules",
+  "intro": "For NRI property.",
+  "rows": [
+   [
+    "Permitted",
+    "Residential and commercial property"
+   ],
+   [
+    "Restricted",
+    "Agricultural land, plantations and farmhouses"
+   ],
+   [
+    "Rental income TDS",
+    "Deducted by the tenant before rent reaches you"
+   ],
+   [
+    "Sale proceeds",
+    "Held in NRO, with a yearly limit to send abroad"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Buying property",
+  "stops": [
+   [
+    "NRIs may buy residential property in India",
+    true
+   ],
+   [
+    "NRIs may buy farmhouses freely",
+    false
+   ],
+   [
+    "Tenants may deduct tax on rent paid to an NRI",
+    true
+   ],
+   [
+    "Sale proceeds can always go abroad at once",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Residential and commercial property is permitted."
+   ],
+   [
+    2.2,
+    "Farmland, plantations and farmhouses are restricted."
+   ],
+   [
+    4.0,
+    "Rental income TDS is deducted at source."
+   ],
+   [
+    5.6,
+    "A yearly limit and documents apply."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s478q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to buy a flat for his parents in India. What is the position?",
+  "opts": [
+   "Banned for all NRIs",
+   "Allowed only on Sundays",
+   "Allowed only with a bonus",
+   "Permitted for an NRI"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not banned, so this is wrong. The details here point elsewhere.",
+   "Days of the week have no link. The details here point elsewhere.",
+   "A bonus has no link to the rule. That does not match this case.",
+   "Residential property is permitted for NRIs. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s478q2",
+  "h": "Check yourself",
+  "q": "A tenant pays rent to Meena in Singapore. What does the tenant usually do first?",
+  "opts": [
+   "Keep the whole rent for himself",
+   "Deduct tax at source",
+   "Pay the rent in gold coins",
+   "Wait ten years before paying"
+  ],
+  "ans": 1,
+  "why": [
+   "The tenant must pay the rent over. That does not match this case.",
+   "TDS is deducted on rent paid to an NRI. This fits the facts given.",
+   "Rent is paid in money, not gold. It does not answer what was asked.",
+   "There is no waiting rule. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s478q3",
+  "h": "Check yourself",
+  "q": "Rohan sells his flat. Where do the proceeds usually land first?",
+  "opts": [
+   "A gift card",
+   "A resident's piggy bank",
+   "An NRO account",
+   "A bonus account"
+  ],
+  "ans": 2,
+  "why": [
+   "A gift card is not a bank account. That does not match this case.",
+   "A resident's piggy bank is not his account. It does not fit the facts given.",
+   "Sale proceeds sit in NRO, with limits on sending abroad.",
+   "There is no bonus account for this. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s478q4",
+  "h": "Check yourself",
+  "q": "Meena inherits farmland in India. Which is true?",
+  "opts": [
+   "Special rules, so ask an adviser",
+   "She must give the land away",
+   "It is tax-exempt for ever after",
+   "She can sell it with no paperwork"
+  ],
+  "ans": 0,
+  "why": [
+   "Restricted property has special rules, including for inheritance.",
+   "She does not have to give it away. It does not answer what was asked.",
+   "It is not exempt from tax for ever. The details here point elsewhere.",
+   "A sale needs papers. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NRIs may buy residential and commercial property, not farmland or farmhouses.",
+   "Tenants deduct TDS on rent paid to an NRI.",
+   "Sale proceeds sit in NRO, with a yearly limit to send abroad."
+  ]
+ }
+]

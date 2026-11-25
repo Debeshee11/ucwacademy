@@ -1,0 +1,144 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A note shows ₹700, ₹900 and ₹500 for the same share. Three values, three stories. Research is useful only when the reader can understand and check it. That takes plain language, named sources and honest updates.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "For the reader",
+  "lines": [
+   [
+    "meena",
+    "What makes research easy to check?"
+   ],
+   [
+    "sikka",
+    "Plain language, one sentence for a ratio, not jargon. Base, bull and bear cases show the likely, the hopeful and the pessimistic view. Name the data source under each chart. And when new facts arrive, update the call and say why it changed."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Base, bull and bear values, ₹, made up",
+  "vals": [
+   700,
+   900,
+   500
+  ],
+  "labels": [
+   "Base",
+   "Bull",
+   "Bear"
+  ],
+  "big": "₹500 to ₹900",
+  "small": "three stories for one share",
+  "alt": "Bars of base, bull and bear case values",
+  "caps": [
+   [
+    0.3,
+    "The base case: the most likely view, ₹700."
+   ],
+   [
+    2.2,
+    "The bull case: the optimistic view, ₹900."
+   ],
+   [
+    4.0,
+    "The bear case: the pessimistic view, ₹500."
+   ],
+   [
+    5.6,
+    "Show all three, with the reasons."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s545q1",
+  "h": "Check yourself",
+  "q": "A report explains a ratio in one sentence instead of using jargon. What is this?",
+  "opts": [
+   "A guarantee",
+   "A conflict",
+   "Plain language",
+   "A trading restriction"
+  ],
+  "ans": 2,
+  "why": [
+   "A guarantee is a promise. It does not answer what was asked.",
+   "A conflict is a gain at stake. The details here point elsewhere.",
+   "It is writing clearly so the reader can understand and act.",
+   "A restriction bars trading. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s545q2",
+  "h": "Check yourself",
+  "q": "A note shows values of ₹700, ₹900 and ₹500 for the same share. What are these?",
+  "opts": [
+   "Base, bull and bear cases",
+   "Three ratings of one share",
+   "Three data sources cited",
+   "Three disclosures made"
+  ],
+  "ans": 0,
+  "why": [
+   "They are the likely, optimistic and pessimistic views.",
+   "Ratings are buy, hold or sell. That does not match this case.",
+   "Data sources are origins of numbers. It does not fit the facts given.",
+   "Disclosures are statements of holdings. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s545q3",
+  "h": "Check yourself",
+  "q": "A table cites the company's annual report and exchange filings under each chart. What is this?",
+  "opts": [
+   "A guarantee of gains",
+   "A bear case of value",
+   "A rating given by her",
+   "Naming the data source"
+  ],
+  "ans": 3,
+  "why": [
+   "A guarantee is a promise. That does not match this case.",
+   "A bear case is a pessimistic view. It does not fit the facts given.",
+   "A rating is a call. It does not answer what was asked.",
+   "The origin of each number is named so readers can check."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s545q4",
+  "h": "Check yourself",
+  "q": "After a profit warning, the analyst revises the rating and explains why. What is this?",
+  "opts": [
+   "A conflict of interest",
+   "Update and review",
+   "A Chinese wall",
+   "A trading restriction"
+  ],
+  "ans": 1,
+  "why": [
+   "A conflict is a gain at stake. It does not fit the facts given.",
+   "It is revisiting a call when new facts arrive.",
+   "A Chinese wall is a barrier. The details here point elsewhere.",
+   "A restriction bars trading. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Plain language: clear and simple.",
+   "Base, bull and bear: the likely, optimistic and pessimistic cases.",
+   "Name data sources. Update and explain when facts change."
+  ]
+ }
+]

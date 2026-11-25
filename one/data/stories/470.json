@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Meena's bank freezes her account because her NRI paperwork is out of date. She is abroad, her mother needs money, and she cannot reach the account. A little paperwork each year would have avoided this.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Paperwork that protects you",
+  "lines": [
+   [
+    "meena",
+    "Why do banks ask so many forms of NRIs?"
+   ],
+   [
+    "sikka",
+    "Because global rules like FATCA and CRS make banks report foreign tax residents. Keep your KYC current, and use a power of attorney only with care."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four items",
+  "intro": "NRI paperwork.",
+  "rows": [
+   [
+    "FATCA and CRS",
+    "Rules under which banks share details of foreign tax residents"
+   ],
+   [
+    "NRI KYC",
+    "Passport, visa and overseas address, to open accounts and invest"
+   ],
+   [
+    "Power of attorney",
+    "Lets a trusted person act for you, so keep it narrow"
+   ],
+   [
+    "Repatriation limit",
+    "NRO funds can go abroad up to a yearly cap, with papers"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Compliance and paperwork",
+  "stops": [
+   [
+    "Banks collect details under FATCA and CRS",
+    true
+   ],
+   [
+    "A power of attorney should be as wide as possible",
+    false
+   ],
+   [
+    "NRI KYC needs an overseas address",
+    true
+   ],
+   [
+    "NRO funds can go abroad without any limit",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Rules require sharing of foreign tax residents' details."
+   ],
+   [
+    2.2,
+    "Keep it limited to specific tasks, and drafted with care."
+   ],
+   [
+    4.0,
+    "Passport, visa and overseas address are typical."
+   ],
+   [
+    5.6,
+    "There is a yearly cap on NRO transfers, with conditions."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s470q1",
+  "h": "Check yourself",
+  "q": "A bank asks Rohan for a self-declaration of his tax residency. What is the reason?",
+  "opts": [
+   "The bank manager's passing mood",
+   "FATCA and CRS reporting rules",
+   "A new bank holiday on the calendar",
+   "A local festival in the town"
+  ],
+  "ans": 1,
+  "why": [
+   "A mood has nothing to do with banking regulation.",
+   "These rules make banks collect foreign tax residency details.",
+   "A bank holiday has no link to the form being asked.",
+   "A festival has no link to a regulatory form."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s470q2",
+  "h": "Check yourself",
+  "q": "Meena gives a relative a very wide power of attorney. What is the risk?",
+  "opts": [
+   "Misuse of her accounts and assets",
+   "None, since relatives are always safe",
+   "Her PAN lapses",
+   "Her bank closes"
+  ],
+  "ans": 0,
+  "why": [
+   "A wide power can be used to act far beyond what she wanted.",
+   "Trust does not remove the risk of misuse.",
+   "A PAN does not lapse because of a power.",
+   "A bank does not close because of a power."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s470q3",
+  "h": "Check yourself",
+  "q": "What is the usual cap on moving NRO funds abroad?",
+  "opts": [
+   "No limit of any kind at all",
+   "A monthly cap of a single rupee",
+   "A yearly limit, with documents",
+   "Only on bank holidays of the year"
+  ],
+  "ans": 2,
+  "why": [
+   "There is a limit, so this claim is wrong.",
+   "The limit is not a monthly cap of one rupee.",
+   "The cap is yearly, and it needs documents and conditions.",
+   "Holidays have no link to the limit on transfers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s470q4",
+  "h": "Check yourself",
+  "q": "Which habit avoids a frozen account?",
+  "opts": [
+   "Never reply to any message from the bank",
+   "Change the name on the account often",
+   "Give a wrong address when asked",
+   "Keep KYC and overseas address current"
+  ],
+  "ans": 3,
+  "why": [
+   "Ignoring the bank leads to the account being frozen.",
+   "Changing the name often causes mismatch trouble.",
+   "A wrong address is a legal risk and gives trouble later.",
+   "Current KYC keeps the account active and compliant."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FATCA and CRS make banks collect foreign tax residency details.",
+   "Keep NRI KYC current. Keep a power of attorney narrow.",
+   "NRO transfers abroad have a yearly limit and need papers."
+  ]
+ }
+]

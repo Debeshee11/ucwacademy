@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Rohan's payslip shows two lines he never thinks about: 'EPF employee' and 'EPF employer'. Every month, money is moving into a pot that will be his at retirement.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two quiet savers",
+  "lines": [
+   [
+    "rohan",
+    "I have an EPF through my job. My uncle, who runs a shop, has a PPF. Are they the same?"
+   ],
+   [
+    "sikka",
+    "Both are long-term, government-linked savings. EPF is for salaried people and comes with the job. PPF is open to anyone, and you open it yourself."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rohan's EPF, made-up numbers",
+  "intro": "To see how the pot builds.",
+  "rows": [
+   [
+    "Basic pay a month",
+    "₹40,000"
+   ],
+   [
+    "He puts in (12%)",
+    "₹4,800"
+   ],
+   [
+    "Employer puts in (12%)",
+    "₹4,800"
+   ],
+   [
+    "=",
+    "Goes in each month",
+    "₹9,600"
+   ]
+  ],
+  "note": "Not all of the employer share goes to the EPF account, since part goes to a pension scheme. Check your own payslip."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "EPF and PPF",
+  "stops": [
+   [
+    "EPF is for salaried staff, and the employer adds",
+    true
+   ],
+   [
+    "PPF matures in five years",
+    false
+   ],
+   [
+    "The PPF rate is set by the government from time to time",
+    true
+   ],
+   [
+    "VPF is a loan from your employer",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Both sides contribute a share of salary to the EPF account."
+   ],
+   [
+    2.2,
+    "PPF has a fifteen-year term, with the option to extend."
+   ],
+   [
+    4.0,
+    "The government sets and reviews the PPF rate, so it can change."
+   ],
+   [
+    5.6,
+    "VPF is extra money you choose to add to your own EPF."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s492q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to save more for retirement through his payroll. Which option adds extra to his provident fund?",
+  "opts": [
+   "VPF, the voluntary provident fund",
+   "A bank locker for cash notes",
+   "A credit card with a high limit",
+   "A shop loan from a relative"
+  ],
+  "ans": 0,
+  "why": [
+   "VPF lets an employee add more than the required share to the provident fund.",
+   "A locker stores items but earns nothing toward retirement.",
+   "A credit card is borrowing and not a way of saving.",
+   "A loan from a relative is debt and does not build a retirement pot."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s492q2",
+  "h": "Check yourself",
+  "q": "Meena is self-employed. Which of these can she open on her own?",
+  "opts": [
+   "An EPF account through her employer",
+   "A gratuity from an employer",
+   "A PPF account",
+   "An employer-matched fund"
+  ],
+  "ans": 2,
+  "why": [
+   "EPF comes through an employer, so she has none to use.",
+   "Gratuity is paid by an employer, and she has none.",
+   "PPF is open to individuals, whether or not they have a job with an employer.",
+   "Employer matching needs an employer, which she does not have."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s492q3",
+  "h": "Check yourself",
+  "q": "Rohan's PPF account reaches its 15-year mark. What can he do?",
+  "opts": [
+   "Nothing, since the money is gone for all time",
+   "Extend it in blocks of five years, or withdraw it",
+   "Only withdraw it, since extension is not allowed",
+   "Move it into a credit card account"
+  ],
+  "ans": 1,
+  "why": [
+   "The money is not lost. It becomes available at the end of the term.",
+   "On maturity the holder can withdraw or extend, under the scheme rules.",
+   "Extension is allowed, so withdrawal is not the only choice.",
+   "A PPF balance cannot be moved to a credit card account."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s492q4",
+  "h": "Check yourself",
+  "q": "The PPF rate is announced by the government. What does this mean for Meena?",
+  "opts": [
+   "The rate is fixed forever on the day she opens it",
+   "The rate is set by her bank's branch manager",
+   "The rate rises whenever she pays more",
+   "The rate can change over the years"
+  ],
+  "ans": 3,
+  "why": [
+   "A rate reviewed from time to time is not locked for the whole term.",
+   "A branch manager does not set the PPF rate. The government does.",
+   "The rate does not depend on how much she pays in.",
+   "The government reviews and sets the rate, so it may move in future."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "EPF is for salaried people, and the employer adds a share.",
+   "PPF is open to anyone, with a 15-year term and a government-set rate.",
+   "VPF is extra you add to your own EPF."
+  ]
+ }
+]

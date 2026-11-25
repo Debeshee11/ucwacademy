@@ -1,0 +1,133 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A firm reports ₹100 crore of profit but collects only ₹60 crore of cash. Profit alone cannot tell you that. The cash flow statement shows how cash actually moved.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Cash tells the truth",
+  "lines": [
+   [
+    "meena",
+    "Why not just read the profit?"
+   ],
+   [
+    "sikka",
+    "Because profit is booked before cash moves. Operating cash flow shows what the core business generates. Capital expenditure is spending on plants and machines. Free cash flow is what is left after both. Cash conversion shows how much profit became cash."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Cash conversion, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Reported profit",
+    "₹100 crore"
+   ],
+   [
+    "Operating cash collected",
+    "₹60 crore"
+   ],
+   [
+    "=",
+    "Cash conversion",
+    "60%"
+   ],
+   [
+    "After capex, free cash flow",
+    "e.g. ₹50 crore left"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s523q1",
+  "h": "Check yourself",
+  "q": "A firm reports ₹100 crore of profit but collects only ₹60 crore of cash. What is the cash conversion?",
+  "opts": [
+   "60%",
+   "40%",
+   "160%",
+   "6%"
+  ],
+  "ans": 0,
+  "why": [
+   "60 ÷ 100 is 60%. That matches the case described.",
+   "40% is the shortfall, not the conversion.",
+   "160% adds, which is wrong. That does not match this case.",
+   "6% divides wrongly. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s523q2",
+  "h": "Check yourself",
+  "q": "A cement maker builds a new kiln. What is this spending called?",
+  "opts": [
+   "Operating cash flow",
+   "Revenue",
+   "Capital expenditure",
+   "A dividend"
+  ],
+  "ans": 2,
+  "why": [
+   "Operating cash flow is from core business.",
+   "Revenue is earned money. That does not match this case.",
+   "It buys or upgrades long-lasting assets.",
+   "A dividend is a payout. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s523q3",
+  "h": "Check yourself",
+  "q": "After running the business and buying new machines, ₹50 crore is left. What is this?",
+  "opts": [
+   "Net profit booked",
+   "Free cash flow",
+   "Equity held",
+   "EBITDA reported"
+  ],
+  "ans": 1,
+  "why": [
+   "Net profit is an accounting figure. That does not match this case.",
+   "It is cash left after operating needs and capital spending.",
+   "Equity is the owners' stake. It does not answer what was asked.",
+   "EBITDA is before capex. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s523q4",
+  "h": "Check yourself",
+  "q": "What does the cash flow statement show that profit alone cannot?",
+  "opts": [
+   "The value of all shares",
+   "The company's logo",
+   "The auditor's salary",
+   "How cash actually moved"
+  ],
+  "ans": 3,
+  "why": [
+   "Share value is not in it.",
+   "A logo is not data.",
+   "Salary is not its subject.",
+   "It shows cash in and out."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Operating cash flow: cash from the core business.",
+   "Capex: spending on long-lasting assets. Free cash flow: what remains after both.",
+   "Cash conversion = operating cash ÷ reported profit."
+  ]
+ }
+]

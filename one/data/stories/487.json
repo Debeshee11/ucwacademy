@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Two investors each make ₹1 lakh. One sold equity fund units. The other sold a debt fund. Their tax bills can be very different, since each type of asset follows its own rules.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Not all gains are equal",
+  "lines": [
+   [
+    "meena",
+    "Is the tax the same for shares, equity funds and debt funds?"
+   ],
+   [
+    "sikka",
+    "No. Each follows its own rules, and Budgets change them. Learn the idea first, then always check the current rule."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Same gain, different treatment",
+  "intro": "Plain pictures of the main cases.",
+  "rows": [
+   [
+    "Shares and equity funds",
+    "Short and long holding are taxed at different rates"
+   ],
+   [
+    "Debt funds",
+    "For many, the gain is added to income and taxed at slab rate"
+   ],
+   [
+    "Dividends",
+    "Added to income and taxed at slab rate"
+   ],
+   [
+    "STT",
+    "A small tax added on each listed trade"
+   ]
+  ],
+  "note": "Exact rates and limits change with each Budget. Check the current rule on the official tax site or with a tax adviser."
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Equity fund gain",
+  "b": "Debt fund gain",
+  "rows": [
+   [
+    "Taxed at (made-up, %)",
+    10,
+    30
+   ],
+   [
+    "Tax on ₹1 lakh gain (₹ thousand)",
+    10,
+    30
+   ]
+  ],
+  "h": "Made-up rates, to show the idea",
+  "alt": "Two sets of bars comparing tax at assumed rates for an equity fund and a debt fund",
+  "caps": [
+   [
+    0.3,
+    "Two people, each with a ₹1 lakh gain."
+   ],
+   [
+    2.2,
+    "The equity fund follows its own gains rate. Assume 10%."
+   ],
+   [
+    4.0,
+    "The debt fund gain is added to income. Assume a 30% slab."
+   ],
+   [
+    5.6,
+    "Assumed rates for the sums only. Real rates change, so check before acting."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s487q1",
+  "h": "Check yourself",
+  "q": "Rohan sells units of a debt fund and makes a gain. How is it often taxed?",
+  "opts": [
+   "At zero, since debt funds are safe",
+   "Taxed at his slab rate",
+   "At a flat rate set by the fund house",
+   "Only after ten years of holding"
+  ],
+  "ans": 1,
+  "why": [
+   "Safety of a fund has no link to whether its gains are taxed.",
+   "For many debt funds, the gain is taxed at the investor's slab rate.",
+   "Tax rates are set by law and not by a fund house.",
+   "There is no rule that waits ten years before taxing a debt fund gain."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s487q2",
+  "h": "Check yourself",
+  "q": "Meena gets a dividend from a fund. How does tax treat it?",
+  "opts": [
+   "It is never taxed at any stage",
+   "It is taxed only if she reinvests",
+   "It is taxed at the fund's rate, never hers",
+   "It is taxed at her slab rate"
+  ],
+  "ans": 3,
+  "why": [
+   "Dividends are taxed, so they are not a tax-exempt income.",
+   "Tax falls on receiving the dividend, whether or not she reinvests.",
+   "The investor's own slab applies, and the fund's rate is not used.",
+   "Dividends are added to the investor's income and taxed at her slab rate."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s487q3",
+  "h": "Check yourself",
+  "q": "What is STT?",
+  "opts": [
+   "A bonus paid by the exchange to investors",
+   "A fee the bank charges for each new account",
+   "A small tax charged on listed trades",
+   "The tax on a salary credited every month"
+  ],
+  "ans": 2,
+  "why": [
+   "It is a charge, not a bonus, and it is paid by the investor.",
+   "Bank account fees are a separate matter from STT.",
+   "Securities transaction tax is added to certain trades on the exchange.",
+   "Salary tax is deducted from pay and has nothing to do with STT."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s487q4",
+  "h": "Check yourself",
+  "q": "Rohan hears a friend say 'tax on funds is a flat 10% for everyone'. What should he do?",
+  "opts": [
+   "Check the current rule for his type of fund",
+   "Accept it, as friends know the law",
+   "Assume the rate stays the same every year",
+   "Skip tax forms since it is flat"
+  ],
+  "ans": 0,
+  "why": [
+   "Rates differ by fund type and change, so check the current rule.",
+   "A friend's claim is not a source. Official rules are.",
+   "Rates are changed from time to time, so they are not fixed forever.",
+   "Tax forms are still needed, whatever the rate turns out to be."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Equity and debt gains follow different rules.",
+   "Dividends are added to income and taxed at your slab rate.",
+   "Rates change with Budgets. Check the current rule before acting."
+  ]
+ }
+]

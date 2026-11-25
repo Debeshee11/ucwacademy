@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A resident of India is taxed on income from anywhere in the world. An NRI is taxed in India only on income earned or received in India. Meena earns a salary in Singapore and rent in Pune. Only the rent counts.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What India taxes",
+  "lines": [
+   [
+    "meena",
+    "Is my Singapore salary taxable in India?"
+   ],
+   [
+    "sikka",
+    "Not while you are a non-resident. India taxes your Indian income. Interest on an NRE account is generally exempt in India. Payers deduct tax at source on Indian income, often at higher rates."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Meena's incomes",
+  "intro": "Made-up illustration.",
+  "rows": [
+   [
+    "Salary in Singapore",
+    "Not taxed in India while she is an NRI"
+   ],
+   [
+    "Rent from a Pune flat",
+    "Taxed in India, with TDS"
+   ],
+   [
+    "NRO interest",
+    "Taxed in India"
+   ],
+   [
+    "NRE interest",
+    "Generally exempt in India"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What India taxes",
+  "stops": [
+   [
+    "Residents are taxed on world income in India",
+    true
+   ],
+   [
+    "NRIs are taxed on income earned abroad in India",
+    false
+   ],
+   [
+    "NRO interest is taxable in India",
+    true
+   ],
+   [
+    "NRE interest is generally taxed in India",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Global income is taxed for residents."
+   ],
+   [
+    2.2,
+    "NRIs are taxed on Indian-sourced income."
+   ],
+   [
+    4.0,
+    "It arises in India, so India taxes it."
+   ],
+   [
+    5.6,
+    "NRE interest is generally exempt while non-resident."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s472q1",
+  "h": "Check yourself",
+  "q": "Meena earns a salary in Singapore as an NRI. Does India tax it?",
+  "opts": [
+   "Yes, in full, as he is Indian",
+   "Yes, but only half of the salary",
+   "Generally not, earned abroad",
+   "Only on festival days of the year"
+  ],
+  "ans": 2,
+  "why": [
+   "A salary earned abroad is generally not taxed here.",
+   "There is no half-and-half rule for a foreign salary.",
+   "India taxes NRIs on income sourced in India.",
+   "Festival days have no link to tax on salary."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s472q2",
+  "h": "Check yourself",
+  "q": "Rohan receives rent in his NRO account. What follows?",
+  "opts": [
+   "It is taxable in India",
+   "It is exempt, as she lives abroad",
+   "It is taxed only in outer space",
+   "It is treated as a gift to her"
+  ],
+  "ans": 0,
+  "why": [
+   "Rent from Indian property is Indian-source income.",
+   "It is not exempt, since it arises in India.",
+   "No tax of that kind exists anywhere in the law.",
+   "Rent is income and is not treated as a gift."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s472q3",
+  "h": "Check yourself",
+  "q": "What is generally true of interest on an NRE account?",
+  "opts": [
+   "Taxed at a very high rate there",
+   "Never paid on such an account",
+   "Paid in gold bars at maturity",
+   "Exempt in India while non-resident"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not taxed at a very high rate in India.",
+   "Interest is paid on such accounts every year.",
+   "It is paid in rupees and not in gold bars.",
+   "NRE interest is generally exempt while the holder is an NRI."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s472q4",
+  "h": "Check yourself",
+  "q": "A buyer deducts tax at a higher rate on a payment to an NRI. What is this?",
+  "opts": [
+   "A fee charged by the bank",
+   "TDS on NRI income",
+   "A gift sent by the buyer",
+   "An insurance premium paid"
+  ],
+  "ans": 1,
+  "why": [
+   "A bank's fee is a charge by the bank and not by the buyer.",
+   "Tax is deducted at source, often at higher rates for NRIs.",
+   "It is not a gift, since it goes to the tax office.",
+   "It is not an insurance charge of any kind."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Residents are taxed on world income. NRIs on Indian-source income.",
+   "NRO interest is taxable. NRE interest is generally exempt.",
+   "Payers deduct TDS on NRI income, often at higher rates."
+  ]
+ }
+]

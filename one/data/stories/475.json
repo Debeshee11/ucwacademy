@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan never told his UK tax office about his Indian rent, assuming India's tax was enough. His home country taxes world income. A letter arrived two years later, with interest and a penalty.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two tax offices",
+  "lines": [
+   [
+    "rohan",
+    "I paid tax in India. Is that all?"
+   ],
+   [
+    "sikka",
+    "Not necessarily. Your country of residence may tax worldwide income. Declare it there, keep your records, and ask a qualified adviser when rules in two countries meet."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four habits",
+  "intro": "Staying compliant.",
+  "rows": [
+   [
+    "Self-certification",
+    "Declare your countries of tax residence to banks and fund houses"
+   ],
+   [
+    "Foreign income reporting",
+    "Declare Indian income where you live, as that country may tax it"
+   ],
+   [
+    "Record keeping",
+    "Save statements, TDS certificates and remittance proofs every year"
+   ],
+   [
+    "Professional advice",
+    "Ask a qualified adviser when two countries' rules meet"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Staying compliant",
+  "stops": [
+   [
+    "Declare Indian income where you live too",
+    true
+   ],
+   [
+    "Records need not be kept",
+    false
+   ],
+   [
+    "Self-certification states your tax residence",
+    true
+   ],
+   [
+    "One country's tax always covers the other",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Your home country may tax world income."
+   ],
+   [
+    2.2,
+    "Keep records for every year."
+   ],
+   [
+    4.0,
+    "Banks and funds collect it under reporting rules."
+   ],
+   [
+    5.6,
+    "Each country has its own rules."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s475q1",
+  "h": "Check yourself",
+  "q": "Meena earns rent in India. Where should she declare it?",
+  "opts": [
+   "Nowhere, since it is only rent",
+   "In India and where she lives",
+   "Only on her social media page",
+   "Only to a close friend of hers"
+  ],
+  "ans": 1,
+  "why": [
+   "Not declaring is a legal risk with penalties.",
+   "Both countries may need to know, and credit can be claimed.",
+   "Social media is not a tax authority of any country.",
+   "A friend is not a tax authority of any country."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s475q2",
+  "h": "Check yourself",
+  "q": "A bank gives Rohan a form to state his countries of tax residence. What is it?",
+  "opts": [
+   "Self-certification",
+   "A loan application form",
+   "A gift declaration form",
+   "A lottery entry form"
+  ],
+  "ans": 0,
+  "why": [
+   "It declares in which countries he is a tax resident.",
+   "It is not a loan form, but a residency declaration.",
+   "It is not a gift form, but a residency declaration.",
+   "It is not a lottery form, but a residency declaration."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s475q3",
+  "h": "Check yourself",
+  "q": "Which habit helps at tax time?",
+  "opts": [
+   "Throwing every single paper away at once",
+   "Keeping no records of any kind",
+   "Saving statements and TDS certificates",
+   "Changing the name on the papers"
+  ],
+  "ans": 2,
+  "why": [
+   "Throwing papers away loses the proof that is needed.",
+   "Having no records means having no proof for claims.",
+   "Records support claims for credit or refund later.",
+   "Changing names causes mismatches in the records."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s475q4",
+  "h": "Check yourself",
+  "q": "When rules of two countries interact, what is wise?",
+  "opts": [
+   "Make a guess and hope it works",
+   "Ask a stranger on an online forum",
+   "Ignore the problem until it grows",
+   "Ask a qualified tax adviser"
+  ],
+  "ans": 3,
+  "why": [
+   "Guessing is risky when two countries' laws are involved.",
+   "A stranger online may be wrong about the rules.",
+   "Ignoring it may bring penalties and interest later.",
+   "The answer depends on facts, so an adviser helps."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Declare Indian income where you live too.",
+   "Self-certify your tax residence, and keep records every year.",
+   "Ask a qualified adviser when two countries' rules meet."
+  ]
+ }
+]

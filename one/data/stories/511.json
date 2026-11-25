@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "When Meena buys a bond, she does not buy a piece of a company. She lends money. The borrower promises regular interest and the return of her money on a fixed date. That promise is the whole idea.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Lender, not owner",
+  "lines": [
+   [
+    "meena",
+    "So a bond is the opposite of a share?"
+   ],
+   [
+    "sikka",
+    "Close. A share makes you an owner, with no promise. A bond makes you a lender, with a promise to pay interest and return the principal. The promise is only as good as the borrower."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A made-up bond",
+  "intro": "Four terms in one example.",
+  "rows": [
+   [
+    "Face value",
+    "₹1,00,000, repaid at the end"
+   ],
+   [
+    "Coupon",
+    "8% a year, so ₹8,000 each year"
+   ],
+   [
+    "Maturity",
+    "10 years from the issue"
+   ],
+   [
+    "=",
+    "Interest over 10 years",
+    "₹80,000"
+   ]
+  ],
+  "note": "At maturity, the investor also gets the ₹1,00,000 face value back."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Bond basics",
+  "stops": [
+   [
+    "A bond is a loan to a government or company",
+    true
+   ],
+   [
+    "A bondholder owns part of the company",
+    false
+   ],
+   [
+    "The coupon is the regular interest on a bond",
+    true
+   ],
+   [
+    "Face value is paid out every month",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The issuer promises interest and the return of the principal."
+   ],
+   [
+    2.2,
+    "A bondholder is a lender, not an owner."
+   ],
+   [
+    4.0,
+    "The coupon is stated as a percentage of face value."
+   ],
+   [
+    5.6,
+    "Face value is repaid at maturity, once."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s511q1",
+  "h": "Check yourself",
+  "q": "Rohan buys a bond with a face value of ₹1,00,000 and a 7% coupon. How much interest does he get each year?",
+  "opts": [
+   "₹70,000",
+   "₹700",
+   "₹7,000",
+   "₹1,07,000"
+  ],
+  "ans": 2,
+  "why": [
+   "₹70,000 would be 70% of the face value, which is far too large.",
+   "₹700 would be only 0.7%, which is too small.",
+   "Seven percent of ₹1,00,000 is ₹7,000 each year.",
+   "₹1,07,000 adds the interest of one year to the face value."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s511q2",
+  "h": "Check yourself",
+  "q": "What does a bondholder have in the issuing company?",
+  "opts": [
+   "A claim as a lender",
+   "A share of ownership and profits",
+   "A seat on the board",
+   "A vote on every decision"
+  ],
+  "ans": 0,
+  "why": [
+   "A bondholder lends money and is promised interest and the principal back.",
+   "Ownership and profit-sharing belong to shareholders, not bondholders.",
+   "A board seat comes with ownership or special rights, not a bond.",
+   "Votes on decisions come with shares, not with a bond."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s511q3",
+  "h": "Check yourself",
+  "q": "When does a bond repay its face value?",
+  "opts": [
+   "Every month",
+   "Only if the price rises",
+   "Only if the holder asks twice",
+   "At maturity"
+  ],
+  "ans": 3,
+  "why": [
+   "Interest may be paid in parts, but the face value is repaid once.",
+   "Repayment does not depend on the price of the bond in the market.",
+   "The issuer repays on the date, and the holder need not ask.",
+   "Maturity is the date on which the principal is repaid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s511q4",
+  "h": "Check yourself",
+  "q": "How is a bond different from a share?",
+  "opts": [
+   "A bond gives votes, and a share does not",
+   "A bond is a loan, a share is ownership",
+   "A bond has no risk, and a share has some",
+   "They are the same thing, in different names"
+  ],
+  "ans": 1,
+  "why": [
+   "Votes come with shares, and not with bonds at all.",
+   "A bond is a promise to pay. A share is ownership.",
+   "A bond still carries risks, such as a borrower failing.",
+   "They are different, since one is lending, one owning."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A bond is a loan that pays a coupon and returns face value at maturity.",
+   "A bondholder is a lender, not an owner.",
+   "The promise is only as good as the borrower."
+  ]
+ }
+]

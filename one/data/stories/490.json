@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Rohan invests ₹1.5 lakh in a tax-saving fund and expects to pay less tax. But he chose the new regime, which does not allow that deduction. His effort saved nothing.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two ways to compute tax",
+  "lines": [
+   [
+    "rohan",
+    "Which regime should I pick? Everyone tells me something different."
+   ],
+   [
+    "sikka",
+    "Work out both for your own numbers. The old regime allows many deductions. The new one has different slabs. Whichever gives the lower bill for you, wins."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two regimes",
+  "intro": "The idea, in plain words.",
+  "rows": [
+   [
+    "Old regime",
+    "More deductions allowed, with their own conditions"
+   ],
+   [
+    "New regime",
+    "Different slab rates, with fewer deductions"
+   ],
+   [
+    "Deduction",
+    "An amount the law lets you subtract from income"
+   ],
+   [
+    "ELSS",
+    "A tax-saving fund with a three-year lock-in"
+   ]
+  ],
+  "note": "Rules and limits change with Budgets. Compare both regimes each year, using the current rules."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Regimes and filing",
+  "stops": [
+   [
+    "You can compare both regimes before choosing",
+    true
+   ],
+   [
+    "A tax-saving fund helps in every regime",
+    false
+   ],
+   [
+    "ELSS units cannot be redeemed for three years",
+    true
+   ],
+   [
+    "Missing the due date has no cost",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Work out the tax both ways and pick the lower bill."
+   ],
+   [
+    2.2,
+    "Some deductions apply only under the old regime."
+   ],
+   [
+    4.0,
+    "ELSS has a lock-in of three years from each investment."
+   ],
+   [
+    5.6,
+    "A late return can cost a penalty, and the loss carry-forward."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s490q1",
+  "h": "Check yourself",
+  "q": "Meena earns a lot but has few deductions. Which step is wise?",
+  "opts": [
+   "Pick the regime her friend chose",
+   "Pick the old regime, since it is older",
+   "Skip filing since she has few deductions",
+   "Work out her tax in both regimes"
+  ],
+  "ans": 3,
+  "why": [
+   "A friend's case can differ from hers, so copying is risky.",
+   "Age of a regime does not decide which one is cheaper for her.",
+   "Filing is needed, whatever her deductions may be.",
+   "Her own numbers decide which regime costs her less."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s490q2",
+  "h": "Check yourself",
+  "q": "Rohan invests in an ELSS fund. When can he sell those units?",
+  "opts": [
+   "Whenever he likes, at any point",
+   "After the three-year lock-in",
+   "After one month of holding it",
+   "Only when he reaches retirement"
+  ],
+  "ans": 1,
+  "why": [
+   "He cannot sell within the lock-in, so 'whenever' is wrong.",
+   "ELSS units have a three-year lock-in from the date of investment.",
+   "A month falls well inside the lock-in, so he cannot sell yet.",
+   "The lock-in ends after three years, not at retirement."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s490q3",
+  "h": "Check yourself",
+  "q": "Meena is in the new regime. Does an ELSS investment cut her tax under the old-regime deduction?",
+  "opts": [
+   "No, only the old regime allows it",
+   "Yes, in every regime without exception",
+   "Yes, but only after five years",
+   "Only if she tells her bank first"
+  ],
+  "ans": 0,
+  "why": [
+   "That deduction applies only if she chooses the old regime.",
+   "Deductions differ between regimes, so not every regime allows it.",
+   "The time period is not what decides this. The regime is.",
+   "Her bank does not decide which deduction she gets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s490q4",
+  "h": "Check yourself",
+  "q": "Rohan has a loss to carry forward but files his return after the due date. What may happen?",
+  "opts": [
+   "Nothing, since the due date is only a suggestion",
+   "The loss is paid back to him in cash",
+   "He may lose the right to carry the loss forward",
+   "The loss turns into a gain"
+  ],
+  "ans": 2,
+  "why": [
+   "The due date has real effects, and not only a penalty.",
+   "A tax loss is not paid back to him in cash form.",
+   "Carry forward usually needs a return filed on time.",
+   "A loss does not turn into a gain by itself, ever."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Compare both regimes with your own numbers each year.",
+   "A deduction helps only if your regime allows it. ELSS locks in for three years.",
+   "File on time. A late return can cost a penalty and the loss carry-forward."
+  ]
+ }
+]

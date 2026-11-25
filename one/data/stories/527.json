@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A company has ₹200 crore left each year after costs, tax and new investment. What is that stream worth today? Discounted cash flow answers by adding up future cash after adjusting for time and risk.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Adding up the future",
+  "lines": [
+   [
+    "meena",
+    "How do you value cash that has not arrived?"
+   ],
+   [
+    "sikka",
+    "Forecast the free cash flow to the firm. Convert each year to today's value with a discount rate, higher for riskier firms. Add a terminal value for everything beyond the forecast. WACC, the blended cost of debt and equity, is often the rate."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A discount rate, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Safer business",
+    "discount at 10% a year"
+   ],
+   [
+    "Riskier business",
+    "discount at 13% a year"
+   ],
+   [
+    "Forecast",
+    "ten years, plus one terminal value"
+   ],
+   [
+    "Result",
+    "a higher rate gives a lower value today"
+   ]
+  ],
+  "note": "WACC blends cheap loans and costlier shareholder money into one rate."
+ },
+ {
+  "k": "pick",
+  "id": "s527q1",
+  "h": "Check yourself",
+  "q": "Which term is the cash a business generates after expenses and investment, available to all capital providers?",
+  "opts": [
+   "Terminal value beyond a forecast",
+   "Free cash flow to the firm",
+   "Discount rate for the cash",
+   "Target price of an analyst"
+  ],
+  "ans": 1,
+  "why": [
+   "Terminal value is the worth beyond the forecast.",
+   "It is what remains before paying lenders and owners.",
+   "Discount rate converts future cash. That does not match this case.",
+   "A target price is a forecast of price. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s527q2",
+  "h": "Check yourself",
+  "q": "A riskier business is valued at 13% a year instead of 10%. What is 13%?",
+  "opts": [
+   "The dividend yield",
+   "The tax rate",
+   "The inflation rate",
+   "The discount rate"
+  ],
+  "ans": 3,
+  "why": [
+   "A dividend yield is payout over price. The details here point elsewhere.",
+   "A tax rate is set by law. That does not match this case.",
+   "Inflation is a price change. It does not fit the facts given.",
+   "It converts future cash to today's value and reflects risk."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s527q3",
+  "h": "Check yourself",
+  "q": "After projecting ten years, an analyst adds one figure for everything that comes later. What is it?",
+  "opts": [
+   "Terminal value",
+   "Margin of safety",
+   "Free float",
+   "Exit load"
+  ],
+  "ans": 0,
+  "why": [
+   "Terminal value covers cash flows beyond the forecast.",
+   "A margin of safety is a gap. It does not fit the facts given.",
+   "Free float is a share count. It does not answer what was asked.",
+   "An exit load is a charge. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s527q4",
+  "h": "Check yourself",
+  "q": "What does WACC blend?",
+  "opts": [
+   "Revenue and profit together",
+   "Assets and liabilities together",
+   "The cost of debt and of equity",
+   "Price and volume together"
+  ],
+  "ans": 2,
+  "why": [
+   "Revenue and profit are income figures. It does not fit the facts given.",
+   "Assets and liabilities are balance sheet items. It does not answer what was asked.",
+   "It is the weighted average cost of both funding sources.",
+   "Price and volume are market data. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "DCF adds up future free cash flow, converted to today's value.",
+   "A higher discount rate lowers today's value.",
+   "Terminal value covers the years beyond the forecast. WACC is often the rate."
+  ]
+ }
+]

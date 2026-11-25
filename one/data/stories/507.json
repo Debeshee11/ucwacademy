@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena's mother wrote a note on a plain page saying 'my flat goes to my daughter'. She signed it but no one else did. When she passed away, her sons disputed it. A will needs a few simple steps to stand firm.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Making a will",
+  "lines": [
+   [
+    "meena",
+    "Do I need a lawyer to make a will?"
+   ],
+   [
+    "sikka",
+    "Not by law, but a lawyer helps you avoid mistakes. The key steps are simple: write it clearly, sign it in front of two witnesses, and name someone to carry it out."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A will, step by step",
+  "intro": "The core pieces.",
+  "rows": [
+   [
+    "Will",
+    "A legal declaration of who gets what after your death"
+   ],
+   [
+    "Executor",
+    "The person named to carry out the will"
+   ],
+   [
+    "Witnesses",
+    "At least two people who see you sign, and sign too"
+   ],
+   [
+    "Codicil",
+    "A supplement that changes or adds to an existing will"
+   ]
+  ],
+  "note": "Registering a will is not compulsory, but it can make it harder to dispute. A lawyer can guide you on your own case."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Wills",
+  "stops": [
+   [
+    "A will is a legal declaration of who gets what",
+    true
+   ],
+   [
+    "A will needs no witnesses",
+    false
+   ],
+   [
+    "An executor carries out the instructions in a will",
+    true
+   ],
+   [
+    "A will can never be changed once it is written",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It states in writing who should receive which assets."
+   ],
+   [
+    2.2,
+    "The law requires at least two witnesses who see the maker sign."
+   ],
+   [
+    4.0,
+    "The executor sees that the will is followed."
+   ],
+   [
+    5.6,
+    "A codicil changes or adds to a will, and you can also write a new will."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s507q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to make a will. Which step is needed for it to be valid?",
+  "opts": [
+   "Signing before two witnesses",
+   "Telling his neighbours the contents",
+   "Printing it on stamp paper only",
+   "Paying a fee to the bank"
+  ],
+  "ans": 0,
+  "why": [
+   "The law needs at least two witnesses who watch him sign and sign too.",
+   "Telling neighbours is not required and may even cause disputes.",
+   "Stamp paper is not what makes a will valid. The signing and witnessing are.",
+   "A bank does not validate a will, and no such fee is needed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s507q2",
+  "h": "Check yourself",
+  "q": "Meena names her friend to carry out her will. What is the friend called?",
+  "opts": [
+   "The nominee",
+   "The witness",
+   "The executor",
+   "The surveyor"
+  ],
+  "ans": 2,
+  "why": [
+   "A nominee is named to receive an asset held with a bank or fund.",
+   "A witness only watches the signing and does not carry out the will.",
+   "An executor is named in a will to carry out its instructions.",
+   "A surveyor assesses an insurance loss and has no role in a will."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s507q3",
+  "h": "Check yourself",
+  "q": "Dadi opens a new bank account after writing her will. How can she bring it in?",
+  "opts": [
+   "Do nothing, since the bank will know",
+   "Add a codicil, or write a fresh will",
+   "Tell a stranger orally",
+   "Cross out lines on the old will at random"
+  ],
+  "ans": 1,
+  "why": [
+   "A bank does not read her will and cannot add the account.",
+   "A codicil or a fresh will brings the new account into her wishes.",
+   "An oral word to a stranger has no legal effect on the will.",
+   "Random changes can confuse the document and cause disputes."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s507q4",
+  "h": "Check yourself",
+  "q": "Why might a person ask a lawyer to help draft a will?",
+  "opts": [
+   "Because the law bans writing it alone",
+   "Because a lawyer becomes the heir",
+   "Because a will needs a court order first",
+   "To avoid errors that could lead to disputes"
+  ],
+  "ans": 3,
+  "why": [
+   "The law does not ban writing it alone, but help lowers errors.",
+   "A lawyer does not become an heir by helping to draft a will.",
+   "A will does not need a court order to be made at all.",
+   "A lawyer can spot gaps that families end up fighting over."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A will states who gets what, and needs two witnesses.",
+   "The executor carries out the will. A codicil changes it.",
+   "A lawyer helps avoid mistakes. Update the will after big changes."
+  ]
+ }
+]

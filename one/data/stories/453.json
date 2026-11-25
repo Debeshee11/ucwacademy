@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena buys a health policy in March and is diagnosed with a heart condition in April. The claim is rejected. She is angry, but the policy had a clause she never read.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The fine print",
+  "lines": [
+   [
+    "meena",
+    "I paid my premium on time. Why was my claim refused?"
+   ],
+   [
+    "sikka",
+    "Most refusals come from waiting periods, exclusions and things not told at purchase. Let us check each."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Waiting and exclusions",
+  "stops": [
+   [
+    "A new policy covers every illness from day one",
+    false
+   ],
+   [
+    "Existing illnesses are covered only after a waiting period",
+    true
+   ],
+   [
+    "Hiding an illness can get a claim rejected",
+    true
+   ],
+   [
+    "Cosmetic surgery is usually covered",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Cover for some illnesses starts only after a waiting period."
+   ],
+   [
+    2.2,
+    "An illness you already had is covered after its own waiting period."
+   ],
+   [
+    4.0,
+    "Not telling the insurer about it can lead to rejection."
+   ],
+   [
+    5.6,
+    "Cosmetic and some other treatments are excluded."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four terms",
+  "intro": "Under current rules the waiting for existing illnesses is capped, but plans differ. Check your policy.",
+  "rows": [
+   [
+    "Pre-existing disease",
+    "An illness you had before buying"
+   ],
+   [
+    "Waiting period",
+    "Time before certain claims become payable"
+   ],
+   [
+    "Exclusion",
+    "Something the policy never covers"
+   ],
+   [
+    "Moratorium",
+    "After five continuous years, claims cannot be contested for non-disclosure, except fraud"
+   ]
+  ],
+  "note": "Waiting periods run from the start of the policy and restart if you move to a new insurer without porting."
+ },
+ {
+  "k": "pick",
+  "id": "s453q1",
+  "h": "Check yourself",
+  "q": "Rohan buys a policy and develops a covered illness in week two. A 30-day initial wait applies. What happens?",
+  "opts": [
+   "Usually rejected, since it falls in the initial wait",
+   "The claim is paid, since he paid the premium on time",
+   "The claim is paid half, since he waited two weeks",
+   "The insurer cancels the policy and refunds the premium"
+  ],
+  "ans": 0,
+  "why": [
+   "Illness claims in the initial wait period are usually not payable, apart from accidents.",
+   "The premium alone does not make a claim payable. The wait rules still apply.",
+   "There is no half-payment rule. The claim falls in a period where it is not payable.",
+   "The policy stays active. Only the claim in the wait period is affected."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s453q2",
+  "h": "Check yourself",
+  "q": "Meena had diabetes before buying a policy and told the insurer. What is the likely outcome?",
+  "opts": [
+   "Covered from day one, since she told the insurer about it",
+   "She cannot buy any health policy at all in India",
+   "Covered only after the pre-existing waiting period ends",
+   "All her claims are excluded forever, whatever the illness is"
+  ],
+  "ans": 2,
+  "why": [
+   "Disclosure keeps the claim honest, but the waiting period still applies.",
+   "Insurers do sell policies to people with existing conditions, usually with waiting periods.",
+   "Pre-existing illnesses are covered after a waiting period, even if disclosed.",
+   "Cover begins after the wait, and other illnesses are covered in the normal way."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s453q3",
+  "h": "Check yourself",
+  "q": "Rohan did not mention his blood pressure when buying. A claim arises two years later. What is the risk?",
+  "opts": [
+   "None, since the policy is already in force for years",
+   "The insurer must pay, since two full years have passed",
+   "The premium simply rises by a small amount at renewal",
+   "It may be rejected for non-disclosure of a material fact"
+  ],
+  "ans": 3,
+  "why": [
+   "A policy in force can still be challenged for hiding a material fact.",
+   "The moratorium protects after five continuous years, not two, and not for fraud.",
+   "The consequence can be a rejected claim, not just a higher premium.",
+   "Material facts must be disclosed, and hiding them can lead to rejection."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s453q4",
+  "h": "Check yourself",
+  "q": "What does the moratorium period mean?",
+  "opts": [
+   "A period when the premium cannot be raised for any reason at all",
+   "Continuous cover after which claims are safe, apart from fraud",
+   "The time within which a claim must be made after discharge from care",
+   "A pause in cover while the insurer checks your documents"
+  ],
+  "ans": 1,
+  "why": [
+   "It does not freeze premiums. It protects claims from being contested.",
+   "After continuous cover, claims are protected from challenge, except for fraud.",
+   "Claim filing deadlines are separate rules. This term is about contesting claims.",
+   "Cover does not pause. The term refers to protection after continuous years of cover."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Cover for some illnesses starts only after a waiting period.",
+   "Tell the insurer everything that matters when you buy.",
+   "Exclusions are things the policy never covers, so read the list."
+  ]
+ }
+]

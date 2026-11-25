@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An analyst owns shares in the company she is about to rate. Would you trust a buy rating from her without being told? Readers must be told about anything that could colour the view.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Telling the reader",
+  "lines": [
+   [
+    "meena",
+    "What is a conflict of interest?"
+   ],
+   [
+    "sikka",
+    "A situation where the analyst's own gain could affect objectivity. A disclosure states holdings and relationships in the report. A trading restriction bars trading around publication. A Chinese wall stops sensitive information passing between departments."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Guard rails",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Conflict",
+    "an analyst owns shares in the company she will rate"
+   ],
+   [
+    "Disclosure",
+    "the report says employees hold shares in the company"
+   ],
+   [
+    "Trading restriction",
+    "no buying in the weeks before and after her report"
+   ],
+   [
+    "Chinese wall",
+    "investment banking cannot share deal details with research"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s543q1",
+  "h": "Check yourself",
+  "q": "An analyst owns shares in the company she is about to rate. What is this?",
+  "opts": [
+   "A Chinese wall",
+   "A trading restriction",
+   "A conflict of interest",
+   "A disclosure"
+  ],
+  "ans": 2,
+  "why": [
+   "A Chinese wall is a barrier between departments. The details here point elsewhere.",
+   "A restriction bars her trading. The details here point elsewhere.",
+   "Her own gain could affect her objectivity. That matches the case described.",
+   "A disclosure is a statement in the report. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s543q2",
+  "h": "Check yourself",
+  "q": "A report states that the firm's employees hold shares in the company it covers. What is this?",
+  "opts": [
+   "A disclosure",
+   "A conflict of interest",
+   "A rating given",
+   "A thesis put forward"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a statement of holdings that could affect the view.",
+   "A conflict is the situation itself. That does not match this case.",
+   "A rating is a call. It does not fit the facts given.",
+   "A thesis is the central reason. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s543q3",
+  "h": "Check yourself",
+  "q": "An analyst cannot buy a share in the weeks before and after releasing her report on it. What is this?",
+  "opts": [
+   "A Chinese wall of rules",
+   "A rating given to it",
+   "A disclosure made to all",
+   "A trading restriction"
+  ],
+  "ans": 3,
+  "why": [
+   "A Chinese wall is about information flow.",
+   "A rating is a call on a security.",
+   "A disclosure is a statement in the report.",
+   "It bars trading around the time of publication."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s543q4",
+  "h": "Check yourself",
+  "q": "The investment banking team cannot share a deal's details with the research team. What is this?",
+  "opts": [
+   "A trading restriction",
+   "A Chinese wall",
+   "A research report",
+   "Fair presentation"
+  ],
+  "ans": 1,
+  "why": [
+   "A restriction bars trading. It does not fit the facts given.",
+   "It stops sensitive information passing between departments.",
+   "A research report is a document. The details here point elsewhere.",
+   "Fair presentation is a balanced report. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Conflict of interest: an analyst's gain could colour the view.",
+   "Disclose holdings and relationships in the report.",
+   "Trading restrictions and Chinese walls protect objectivity."
+  ]
+ }
+]

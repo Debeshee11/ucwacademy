@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A new price cap suddenly cuts the earnings of drug makers. A tax on foreign steel lifts local producers. Rules, taxes and incentives can change an industry's profits almost overnight.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The rule-maker",
+  "lines": [
+   [
+    "meena",
+    "Who sets the rules?"
+   ],
+   [
+    "sikka",
+    "A regulator, a government body that makes and enforces them: SEBI for securities markets, RBI for banks. Import duty can protect local producers. A production-linked incentive pays firms for what they make in the country. Policy risk is the chance a change hurts the industry."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Policy levers",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Regulator",
+    "SEBI for markets, RBI for banks"
+   ],
+   [
+    "Import duty",
+    "higher tax on foreign steel protects local steel"
+   ],
+   [
+    "Production-linked incentive",
+    "support for each extra phone assembled locally"
+   ],
+   [
+    "Policy risk",
+    "a price cap cuts drug makers' earnings"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s539q1",
+  "h": "Check yourself",
+  "q": "SEBI oversees securities markets and RBI oversees banks. What are they?",
+  "opts": [
+   "Competitors",
+   "Regulators",
+   "Suppliers",
+   "Substitutes"
+  ],
+  "ans": 1,
+  "why": [
+   "They do not compete with firms. It does not answer what was asked.",
+   "A regulator makes and enforces rules for an industry.",
+   "They do not supply goods. That does not match this case.",
+   "They are not substitutes. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s539q2",
+  "h": "Check yourself",
+  "q": "A higher tax on foreign steel makes it costlier than local steel. What is this tax?",
+  "opts": [
+   "A production-linked incentive",
+   "A dividend",
+   "A moat",
+   "An import duty"
+  ],
+  "ans": 3,
+  "why": [
+   "A PLI rewards local production. The details here point elsewhere.",
+   "A dividend is a payout. That does not match this case.",
+   "A moat is a lasting advantage. It does not fit the facts given.",
+   "It taxes imports and can protect local producers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s539q3",
+  "h": "Check yourself",
+  "q": "A phone maker receives support for each additional unit it assembles locally. What is this?",
+  "opts": [
+   "A production-linked reward",
+   "An import duty on goods",
+   "A price cap by the state",
+   "A capital call on a fund"
+  ],
+  "ans": 0,
+  "why": [
+   "It rewards firms based on local output. That matches the case described.",
+   "Import duty is a tax on imports. It does not answer what was asked.",
+   "A price cap limits prices. It does not answer what was asked.",
+   "A capital call is an AIF demand. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s539q4",
+  "h": "Check yourself",
+  "q": "A new price cap suddenly cuts the earnings of drug makers. What is this?",
+  "opts": [
+   "A demand driver",
+   "A breakout",
+   "Policy risk",
+   "Penetration"
+  ],
+  "ans": 2,
+  "why": [
+   "A demand driver raises buying. It does not fit the facts given.",
+   "A breakout is a chart move. It does not answer what was asked.",
+   "It is a rule change that hurts an industry.",
+   "Penetration is customer usage. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A regulator makes and enforces industry rules.",
+   "Import duty protects local producers; PLI rewards local output.",
+   "Policy risk: a rule change can hurt an industry overnight."
+  ]
+ }
+]

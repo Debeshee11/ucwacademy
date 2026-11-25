@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A scheme paid its first members 10% a month. They told their friends and brought in more money. For a year, everyone was happy. Then fewer people joined, and the payments stopped overnight.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where does the profit come from?",
+  "lines": [
+   [
+    "meena",
+    "My cousin got paid every month for six months. Is that not proof?"
+   ],
+   [
+    "sikka",
+    "Ask where the money comes from. If it comes from new members and not from real business, the scheme must collapse when new money slows."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "New money in",
+  "b": "Promised out",
+  "rows": [
+   [
+    "Month 1 (₹ lakh)",
+    10,
+    3
+   ],
+   [
+    "Month 6 (₹ lakh)",
+    12,
+    9
+   ],
+   [
+    "Month 12 (₹ lakh)",
+    8,
+    18
+   ]
+  ],
+  "h": "A made-up scheme",
+  "alt": "Bars showing a scheme where promises grow faster than new money coming in",
+  "caps": [
+   [
+    0.3,
+    "Early on, new money easily covers what is promised."
+   ],
+   [
+    2.2,
+    "By month six, promises have grown close to the new money."
+   ],
+   [
+    4.0,
+    "By month twelve, fewer people join, and promises are bigger."
+   ],
+   [
+    5.6,
+    "The gap cannot be covered, so the payments stop. This is a Ponzi scheme."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four common tricks",
+  "intro": "Plain pictures.",
+  "rows": [
+   [
+    "Ponzi scheme",
+    "Old members are paid from the money of new members"
+   ],
+   [
+    "Pump and dump",
+    "A group hypes a stock, then sells to those who follow"
+   ],
+   [
+    "Fake trading app",
+    "Shows made-up profit, then blocks the withdrawal"
+   ],
+   [
+    "Impersonation call",
+    "A fake official threatens you and demands money"
+   ]
+  ],
+  "note": "No genuine officer demands payment on a phone call or video call, and none puts people under 'digital arrest'."
+ },
+ {
+  "k": "pick",
+  "id": "s503q1",
+  "h": "Check yourself",
+  "q": "A scheme pays old members with money from new members. What is it called?",
+  "opts": [
+   "A mutual fund",
+   "A Ponzi scheme",
+   "A fixed deposit",
+   "A bond issue"
+  ],
+  "ans": 1,
+  "why": [
+   "A mutual fund invests in a portfolio of securities, under strict regulation.",
+   "Paying old members from new members' money is the mark of a Ponzi scheme.",
+   "A fixed deposit earns interest from the bank's lending business.",
+   "A bond is a loan that the issuer repays from its own business."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s503q2",
+  "h": "Check yourself",
+  "q": "A group urges members to buy a little-known stock today, before 'the big jump'. What may be going on?",
+  "opts": [
+   "A safe tip from some honest experts",
+   "A government plan to lift the stock price",
+   "A rule that the stock must rise",
+   "A pump and dump, to sell to followers"
+  ],
+  "ans": 3,
+  "why": [
+   "Honest experts do not rush strangers into little-known stocks.",
+   "Government plans are not announced in private chat groups.",
+   "No rule makes a stock rise, so this claim is false.",
+   "A group can hype a stock, push the price up and then sell to those who follow."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s503q3",
+  "h": "Check yourself",
+  "q": "Rohan's trading app shows growing profit, but blocks his withdrawal and asks for more money first. What is likely?",
+  "opts": [
+   "A fake trading app",
+   "A normal delay in payment",
+   "A way to cut his tax",
+   "A bonus for loyal users"
+  ],
+  "ans": 0,
+  "why": [
+   "Made-up profits and blocked withdrawals are the mark of a fake app.",
+   "Real platforms process withdrawals without asking for more deposits.",
+   "Tax has nothing to do with a blocked withdrawal.",
+   "A genuine bonus does not come with a demand for more money."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s503q4",
+  "h": "Check yourself",
+  "q": "A caller says he is an officer and demands money to avoid arrest. What should Meena do?",
+  "opts": [
+   "Pay quickly to avoid any trouble",
+   "Stay on the video call as he asks her",
+   "Hang up and report it as a fraud",
+   "Share her bank details to prove who she is"
+  ],
+  "ans": 2,
+  "why": [
+   "Paying only feeds the fraud, and the demands will grow.",
+   "Staying on the line gives the fraudster more time to pressure her.",
+   "No genuine officer demands payment over the phone, so she should report it.",
+   "Her bank details would help the fraudster take money from her."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A Ponzi scheme pays old members from new members' money, and collapses.",
+   "Made-up profits and blocked withdrawals are a fake app's mark.",
+   "No real officer demands money over a call."
+  ]
+ }
+]

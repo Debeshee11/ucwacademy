@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan's fund went from ₹1 lakh to ₹1.4 lakh. He feels ₹40,000 richer. The taxman does not see it that way. Until he sells, nothing has been earned in the eyes of the tax law.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Paper gain or real gain",
+  "lines": [
+   [
+    "rohan",
+    "My portfolio is up a lot this year. Do I owe tax on that?"
+   ],
+   [
+    "sikka",
+    "Not yet. Tax comes only when you sell and lock the profit in. Until then it is a gain on paper, and prices can move again."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A capital gain, step by step",
+  "intro": "Made-up numbers, to show the sums.",
+  "rows": [
+   [
+    "Bought units for",
+    "₹1,00,000"
+   ],
+   [
+    "Sold units for",
+    "₹1,40,000"
+   ],
+   [
+    "=",
+    "Capital gain",
+    "₹40,000"
+   ],
+   [
+    "If he does not sell",
+    "No gain realised, no tax yet"
+   ]
+  ],
+  "note": "Tax rates change with each Budget, so this course works with made-up rates. Always check the current rate before you act."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Capital gains basics",
+  "stops": [
+   [
+    "Only a gain you have realised by selling is taxed",
+    true
+   ],
+   [
+    "A rise in portfolio value is taxed every year",
+    false
+   ],
+   [
+    "How long you held an asset can change the tax rate",
+    true
+   ],
+   [
+    "A loss is the same thing as a gain",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Tax applies when you sell and the gain is locked in."
+   ],
+   [
+    2.2,
+    "A rise in value that you have not sold is only a paper gain."
+   ],
+   [
+    4.0,
+    "Short and long holding are taxed differently, so the holding period matters."
+   ],
+   [
+    5.6,
+    "A loss is the opposite of a gain, and it can sometimes be used to cut tax."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s486q1",
+  "h": "Check yourself",
+  "q": "Meena's shares rose 30% but she has not sold any. What tax does she owe on this rise?",
+  "opts": [
+   "Tax on the full 30% this year",
+   "Half the tax now and half later",
+   "None yet, as she has not sold",
+   "Tax only if the market falls"
+  ],
+  "ans": 2,
+  "why": [
+   "A rise she has not sold is not taxed in the year it happens.",
+   "There is no half-and-half rule for unsold holdings.",
+   "Tax applies when she sells, not while she holds.",
+   "A fall does not trigger tax. Selling does."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s486q2",
+  "h": "Check yourself",
+  "q": "Rohan bought fund units at ₹50,000 and sold them for ₹58,000. What is his capital gain?",
+  "opts": [
+   "₹8,000",
+   "₹58,000",
+   "₹50,000",
+   "₹1,08,000"
+  ],
+  "ans": 0,
+  "why": [
+   "The gain is sale value less cost of acquisition: ₹58,000 less ₹50,000.",
+   "₹58,000 is the sale value, and it includes his own original money.",
+   "₹50,000 is what he paid. It is the cost, not the gain.",
+   "₹1,08,000 adds the two numbers together, which is not how a gain is found."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s486q3",
+  "h": "Check yourself",
+  "q": "Why does the holding period matter to the tax?",
+  "opts": [
+   "It decides the fund's name",
+   "It can change the tax rate",
+   "It sets the broker's fee for the year",
+   "It has no link to tax at all"
+  ],
+  "ans": 1,
+  "why": [
+   "A fund's name has nothing to do with how long a person holds it.",
+   "The law treats gains from short and long holding differently, often at different rates.",
+   "Broker fees depend on trade terms and not on the tax treatment.",
+   "The period is one of the main facts used to decide the tax."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s486q4",
+  "h": "Check yourself",
+  "q": "Meena's portfolio is up ₹2 lakh on paper. A friend says she should sell it all 'to avoid tax'. What is wrong with that?",
+  "opts": [
+   "Selling always brings no tax",
+   "Tax on paper gains is due each December",
+   "Friends decide a person's tax rate",
+   "Selling is what creates the tax"
+  ],
+  "ans": 3,
+  "why": [
+   "Selling a gain is exactly what can bring a tax bill.",
+   "Paper gains are not taxed each December. Only realised gains are.",
+   "The tax rate comes from law and not from friends.",
+   "Tax arises on selling, so selling to avoid it is backwards."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A capital gain is sale value less cost. Only a realised gain is taxed.",
+   "A rise you have not sold is a paper gain, with no tax yet.",
+   "Holding period can change the tax rate, so check current rules."
+  ]
+ }
+]

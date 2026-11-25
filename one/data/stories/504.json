@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Before paying ₹20,000 to a 'stock adviser', Rohan spent two minutes on the regulator's website. The name was not there. He kept his ₹20,000.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Two minutes of checking",
+  "lines": [
+   [
+    "rohan",
+    "Who has time to check everyone who calls me?"
+   ],
+   [
+    "sikka",
+    "Only check before you pay or share something. It takes minutes, and the habits are few: look it up, use the official app, add a second step, and call back yourself."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Verify before you trust",
+  "stops": [
+   [
+    "Look up an adviser on the regulator's official list",
+    true
+   ],
+   [
+    "A link sent by message is as safe as the official app",
+    false
+   ],
+   [
+    "A second sign-in step protects you if a password leaks",
+    true
+   ],
+   [
+    "Calling the number the caller gives is a good check",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A registration check takes minutes, and the list is public."
+   ],
+   [
+    2.2,
+    "Type the official address or use the app, never a link from a stranger."
+   ],
+   [
+    4.0,
+    "Two-factor sign-in adds a step that a thief does not have."
+   ],
+   [
+    5.6,
+    "Call back on the number printed on your card or on the official site."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four quick checks",
+  "intro": "Habits that take only minutes.",
+  "rows": [
+   [
+    "Registration check",
+    "Search the regulator's list for the adviser, broker or fund"
+   ],
+   [
+    "Official channel",
+    "Type the address or open the app. Skip links from strangers"
+   ],
+   [
+    "Two-factor sign-in",
+    "Turn on the second step for broker and bank logins"
+   ],
+   [
+    "Call-back",
+    "Hang up, and call the printed official number yourself"
+   ]
+  ],
+  "note": "For advisers and brokers, the SEBI website lists registered names. Banks print official numbers on cards and statements."
+ },
+ {
+  "k": "pick",
+  "id": "s504q1",
+  "h": "Check yourself",
+  "q": "Meena is asked to pay a person for stock advice. What should she do first?",
+  "opts": [
+   "Ask for a screenshot of his past profits",
+   "Pay a small amount to test him first",
+   "Check the regulator's list for his name",
+   "Check how many people follow him online"
+  ],
+  "ans": 2,
+  "why": [
+   "Screenshots are easy to fake, so they prove nothing about the person.",
+   "Even a small payment can start a longer fraud and is not a check.",
+   "The regulator's list shows whether the person may legally give such advice.",
+   "Followers can be bought, so their number proves nothing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s504q2",
+  "h": "Check yourself",
+  "q": "A message with a link says Rohan's broker account needs an update. What is the safe step?",
+  "opts": [
+   "Open the broker's app himself",
+   "Click the link to finish the update quickly",
+   "Reply with his login details at once",
+   "Forward the link to a friend to test it out"
+  ],
+  "ans": 0,
+  "why": [
+   "Using the official app or a typed address avoids fake look-alike pages.",
+   "Clicking the link may take him to a fake page that steals his details.",
+   "Login details given in a reply go straight to the fraudster.",
+   "Forwarding the link puts his friend at risk and checks nothing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s504q3",
+  "h": "Check yourself",
+  "q": "Why switch on two-factor sign-in for a broker account?",
+  "opts": [
+   "It makes the password quite unnecessary",
+   "It protects a leaked-password account",
+   "It speeds up every trade he makes",
+   "It lowers the brokerage that is charged"
+  ],
+  "ans": 1,
+  "why": [
+   "The password is still needed, and the second step comes on top of it.",
+   "A second step, such as a code, blocks a thief who has only the password.",
+   "It adds a step, so it does not make trades faster.",
+   "Brokerage charges are not affected by security settings."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s504q4",
+  "h": "Check yourself",
+  "q": "A caller claims to be from Meena's bank and asks for details. What is the best check?",
+  "opts": [
+   "Call back the number the caller gives her",
+   "Ask him to send an email with the request",
+   "Give half of the details now, half later",
+   "Hang up, and call the printed number"
+  ],
+  "ans": 3,
+  "why": [
+   "A number given by the caller may lead straight back to the fraudster.",
+   "An email can be forged as easily as a call, so it proves nothing.",
+   "Half the details can still be used, so none should be shared.",
+   "She picks the number herself, so she reaches the real bank."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Check the regulator's list before you pay any adviser.",
+   "Use the official app or a typed address, never a stranger's link.",
+   "Turn on two-factor sign-in, and call back on the printed number yourself."
+  ]
+ }
+]

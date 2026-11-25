@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A share rallied hard for a week and its momentum reading is very high. Is it about to fall? Not necessarily. Momentum tools show how strongly price is moving, not what comes next. Education, not a call to trade.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "How strong is the move?",
+  "lines": [
+   [
+    "meena",
+    "What does RSI of 75 mean?"
+   ],
+   [
+    "sikka",
+    "RSI runs from 0 to 100. Above 70 hints that a rally may be stretched, called overbought. VWAP is the day's average price weighted by volume. Divergence is when price makes a new high but the indicator makes a lower high, hinting the trend may weaken."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Momentum tools",
+  "intro": "Made-up share.",
+  "rows": [
+   [
+    "RSI above 70",
+    "rally may be stretched: overbought"
+   ],
+   [
+    "Overbought",
+    "may be due for a pause or fall, not certain"
+   ],
+   [
+    "VWAP",
+    "day's volume-weighted average price"
+   ],
+   [
+    "Divergence",
+    "new price high, lower indicator high"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s534q1",
+  "h": "Check yourself",
+  "q": "A momentum indicator runs from 0 to 100. A reading above 70 hints at a stretched rally. Which is it?",
+  "opts": [
+   "MACD",
+   "VWAP",
+   "RSI",
+   "WACC"
+  ],
+  "ans": 2,
+  "why": [
+   "MACD is a trend indicator.",
+   "VWAP is a volume-weighted price.",
+   "RSI is a 0 to 100 momentum indicator.",
+   "WACC is a cost of capital."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s534q2",
+  "h": "Check yourself",
+  "q": "After a sharp week-long rally, momentum readings are very high. What is the share described as?",
+  "opts": [
+   "Overbought",
+   "Oversold",
+   "Undervalued",
+   "Delisted"
+  ],
+  "ans": 0,
+  "why": [
+   "It has risen quickly and may pause. This fits the facts given.",
+   "Oversold is the opposite. It does not fit the facts given.",
+   "Valuation is a different matter. It does not answer what was asked.",
+   "It is still listed. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s534q3",
+  "h": "Check yourself",
+  "q": "An intraday trader compares the current price with the day's volume-weighted average. What is that average?",
+  "opts": [
+   "RSI",
+   "VWAP",
+   "MACD",
+   "EBITDA"
+  ],
+  "ans": 1,
+  "why": [
+   "RSI is a momentum indicator. That does not match this case.",
+   "VWAP weights the average price by volume. That matches the case described.",
+   "MACD is a trend indicator. It does not answer what was asked.",
+   "EBITDA is an accounting figure. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s534q4",
+  "h": "Check yourself",
+  "q": "A share makes a new high but its momentum reading makes a lower high. What is this?",
+  "opts": [
+   "A breakout",
+   "A golden cross",
+   "A margin call",
+   "Divergence"
+  ],
+  "ans": 3,
+  "why": [
+   "A breakout is a move through a level.",
+   "A golden cross is an average event.",
+   "A margin call is a futures demand.",
+   "Price and indicator move in opposite directions."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "RSI: 0 to 100 momentum. Above 70 hints at a stretched rally.",
+   "Overbought is a hint, not a prediction. VWAP: volume-weighted average price.",
+   "Divergence: price and indicator disagree, hinting at weakness."
+  ]
+ }
+]

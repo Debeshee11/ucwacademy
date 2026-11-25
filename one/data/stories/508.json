@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Rohan and his wife hold a demat account jointly, with 'either or survivor'. When he passed away, she could continue on her own. A friend's family, with only one name on the account, needed months of paperwork.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Nominee, joint holder, heir",
+  "lines": [
+   [
+    "rohan",
+    "I named my brother as nominee. So everything is his?"
+   ],
+   [
+    "sikka",
+    "Not always. A nominee is a person who receives the asset on death, but the final owner may be decided by the will or by law. That is why a will still matters."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three ideas",
+  "intro": "They sound alike, but they differ.",
+  "rows": [
+   [
+    "Nominee",
+    "Named to receive an asset, but not always its final owner"
+   ],
+   [
+    "Joint holder",
+    "Shares an account, and in some modes the survivor continues"
+   ],
+   [
+    "Mode of holding",
+    "How the joint account is operated, such as either or survivor"
+   ],
+   [
+    "Transmission",
+    "Moving assets to heirs after death, once documents are given"
+   ]
+  ],
+  "note": "Check the exact rules of each bank, fund house and depository. They can differ."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nominee and joint holding",
+  "stops": [
+   [
+    "A nominee receives it, but may not own it finally",
+    true
+   ],
+   [
+    "Naming a nominee replaces the need for a will",
+    false
+   ],
+   [
+    "In either or survivor, the survivor can carry on",
+    true
+   ],
+   [
+    "Transmission happens with no documents",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The will or the law can decide who finally owns it."
+   ],
+   [
+    2.2,
+    "A will is still needed to say who should own what."
+   ],
+   [
+    4.0,
+    "Either or survivor lets the other holder carry on after a death."
+   ],
+   [
+    5.6,
+    "Heirs submit papers to the bank or fund house to move the assets."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s508q1",
+  "h": "Check yourself",
+  "q": "Meena names her brother as nominee on a bank deposit. After her death, what is true?",
+  "opts": [
+   "He is the final owner no matter what the will says",
+   "The bank keeps the whole deposit",
+   "He receives it, owner may differ",
+   "Her will is cancelled by this"
+  ],
+  "ans": 2,
+  "why": [
+   "A nominee is not always the final owner, so this is too strong.",
+   "A bank does not keep the money when there is a nominee or heir.",
+   "The nominee receives it, and the will or law sets the owner.",
+   "A nomination does not cancel a will in any way."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s508q2",
+  "h": "Check yourself",
+  "q": "Rohan and his wife choose 'either or survivor' for a joint account. What does it allow?",
+  "opts": [
+   "The survivor can keep operating it",
+   "Both must always sign every time",
+   "The account closes on one death",
+   "The bank decides who operates it"
+  ],
+  "ans": 0,
+  "why": [
+   "In this mode, the surviving holder can continue to hold and operate it.",
+   "That describes a stricter mode, where both must act together.",
+   "The account does not have to close when one holder passes away.",
+   "The holders choose the mode when the account is opened."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s508q3",
+  "h": "Check yourself",
+  "q": "A fund house moves units to a legal heir after receiving papers. What is this called?",
+  "opts": [
+   "Renewal",
+   "Transmission",
+   "Redemption of a premium",
+   "Underinsurance"
+  ],
+  "ans": 1,
+  "why": [
+   "Renewal is continuing an insurance policy for another term.",
+   "Transmission is the process of moving assets to heirs after a death.",
+   "A premium is paid for insurance, and it is not redeemed.",
+   "Underinsurance means too low a sum insured."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s508q4",
+  "h": "Check yourself",
+  "q": "Dadi has several accounts with no nominee. What is a wise step?",
+  "opts": [
+   "Leave it all and hope",
+   "Tell no one about the accounts",
+   "Close each of them at once",
+   "Add a nominee on each account"
+  ],
+  "ans": 3,
+  "why": [
+   "Hoping is not a plan, and the family may struggle to claim.",
+   "Telling no one keeps the accounts hidden when the family needs them.",
+   "Closing accounts is not needed, and it removes her savings from use.",
+   "A nominee gives a clear person to receive the asset and eases claims."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A nominee receives an asset, but is not always its final owner.",
+   "Either or survivor lets the survivor keep operating a joint account.",
+   "Transmission moves assets to heirs once documents are given."
+  ]
+ }
+]

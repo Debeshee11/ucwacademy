@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Rohan falls ill on a trip abroad. The hospital asks for ₹3 lakh at the counter. His travel policy covers it, but only if he follows the right claim route. Which route he takes decides how soon he gets his money.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Pay first or not?",
+  "lines": [
+   [
+    "rohan",
+    "What is the difference between a cashless claim and a reimbursement claim?"
+   ],
+   [
+    "sikka",
+    "In a cashless claim the insurer pays the provider directly, and you avoid paying upfront. In a reimbursement claim you pay first, then send the bills and wait for repayment."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two ways to claim",
+  "intro": "Same bill, different route.",
+  "rows": [
+   [
+    "Cashless claim",
+    "The insurer pays the provider directly, for approved treatment"
+   ],
+   [
+    "Reimbursement claim",
+    "You pay first, and then send the bills to the insurer"
+   ],
+   [
+    "Travel insurance",
+    "Covers medical costs, delays and lost baggage on a trip"
+   ],
+   [
+    "Personal accident cover",
+    "Pays a sum on death or disability from an accident"
+   ]
+  ],
+  "note": "Cashless usually works only at hospitals in the insurer's network. Keep every bill and report for a reimbursement claim."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Travel and accident cover",
+  "stops": [
+   [
+    "Travel insurance can cover medical costs on a trip",
+    true
+   ],
+   [
+    "Personal accident cover pays for every illness",
+    false
+   ],
+   [
+    "In a cashless claim, the insurer pays the provider",
+    true
+   ],
+   [
+    "A reimbursement claim needs no bills",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It covers medical costs, delays and lost baggage on a trip, as stated."
+   ],
+   [
+    2.2,
+    "Accident cover pays on death or disability from an accident, not illness."
+   ],
+   [
+    4.0,
+    "A cashless route spares you from paying upfront at approved providers."
+   ],
+   [
+    5.6,
+    "Reimbursement needs every bill and report. Keep them safe."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s499q1",
+  "h": "Check yourself",
+  "q": "Meena gets treated at a network hospital and the insurer pays the hospital directly. What is this?",
+  "opts": [
+   "A cashless claim",
+   "A reimbursement claim",
+   "A deductible",
+   "A renewal"
+  ],
+  "ans": 0,
+  "why": [
+   "The insurer pays the provider directly, so she avoids paying upfront.",
+   "In reimbursement she pays first and is repaid later, which did not happen here.",
+   "A deductible is the part of a loss that she pays herself.",
+   "A renewal is continuing a policy for another term."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s499q2",
+  "h": "Check yourself",
+  "q": "Rohan pays a clinic abroad from his own pocket. What should he do to claim?",
+  "opts": [
+   "Tell the clinic to bill the insurer next year",
+   "Wait to see if the insurer calls him up",
+   "Keep the bills, and file a reimbursement claim",
+   "Throw away the bills to save some space"
+  ],
+  "ans": 2,
+  "why": [
+   "A clinic abroad will not usually wait for an insurer a year later.",
+   "The insurer cannot pay until a claim with proof is filed.",
+   "He paid first, so he files a reimbursement claim with the bills.",
+   "Without bills, a reimbursement claim cannot be supported."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s499q3",
+  "h": "Check yourself",
+  "q": "Which cover pays a sum if an accident causes a serious disability?",
+  "opts": [
+   "Home contents cover",
+   "Third-party motor cover",
+   "Fire cover",
+   "Personal accident cover"
+  ],
+  "ans": 3,
+  "why": [
+   "Home contents cover protects belongings and not a person's health.",
+   "Third-party motor cover pays for harm caused to others.",
+   "Fire cover protects property against fire and similar events.",
+   "Personal accident cover pays on death or disability caused by an accident."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s499q4",
+  "h": "Check yourself",
+  "q": "Meena's bag is lost on a trip. Which cover may help?",
+  "opts": [
+   "Personal accident cover",
+   "Travel insurance",
+   "A term life plan",
+   "Home fire cover"
+  ],
+  "ans": 1,
+  "why": [
+   "Accident cover pays on death or disability, and not for lost bags.",
+   "Travel insurance can include lost baggage and delays, as the policy says.",
+   "A term plan pays only on death, so it does not help here.",
+   "Fire cover is for the home, so it does not apply to a lost bag."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Cashless: the insurer pays the provider. Reimbursement: you pay first.",
+   "Keep every bill and report for a reimbursement claim.",
+   "Personal accident cover pays on death or disability from an accident."
+  ]
+ }
+]

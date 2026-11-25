@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Before an IPO, a stranger says: 'The grey market shows a 60% listing gain. Apply now.' Rohan applies with his savings. The shares list flat. The grey market was a rumour, and a rumour is not a promise.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Noise before the issue",
+  "lines": [
+   [
+    "rohan",
+    "The grey market premium looked so confident. How wrong can it be?"
+   ],
+   [
+    "sikka",
+    "It is unofficial and unregulated. It can be very wrong. Treat it as noise and not as a signal. Learn the real risks instead."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four cautions",
+  "intro": "Before you apply.",
+  "rows": [
+   [
+    "Grey market premium",
+    "An unofficial price rumour, not reliable"
+   ],
+   [
+    "Lock-in",
+    "A period when certain holders cannot sell after the IPO"
+   ],
+   [
+    "SME IPO",
+    "A small company on a separate platform, usually riskier"
+   ],
+   [
+    "Anchor investor",
+    "A large institution that commits just before the issue opens"
+   ]
+  ],
+  "note": "An anchor investor taking part is not a guarantee of a good price. It only shows some institutions applied."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Risks and cautions",
+  "stops": [
+   [
+    "The grey market premium is unofficial and unreliable",
+    true
+   ],
+   [
+    "A lock-in stops certain holders from selling for a time",
+    true
+   ],
+   [
+    "An SME IPO is usually less risky than a large IPO",
+    false
+   ],
+   [
+    "Anchor investors guarantee that the price will rise",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is a rumour and not a regulated price."
+   ],
+   [
+    2.2,
+    "Pre-IPO holders often cannot sell for a set time after listing."
+   ],
+   [
+    4.0,
+    "Small companies on this platform are usually riskier."
+   ],
+   [
+    5.6,
+    "Anchors show institutional interest, not a promise."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s520q1",
+  "h": "Check yourself",
+  "q": "A message says the grey market premium means the IPO will list at a big gain. What is the right view?",
+  "opts": [
+   "It is a guaranteed listing price",
+   "It is set by SEBI",
+   "It is set by the exchange",
+   "It is unofficial and can be wrong"
+  ],
+  "ans": 3,
+  "why": [
+   "No listing price is guaranteed by a rumour.",
+   "SEBI does not set or endorse the grey market premium.",
+   "The exchange does not set it either, as it is unofficial.",
+   "The grey market is unregulated, so the premium is not reliable."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s520q2",
+  "h": "Check yourself",
+  "q": "Pre-IPO investors cannot sell their shares for six months after listing. What is this called?",
+  "opts": [
+   "An oversubscription",
+   "A lock-in",
+   "A split",
+   "A codicil"
+  ],
+  "ans": 1,
+  "why": [
+   "Oversubscription means more bids than shares.",
+   "A lock-in bars some holders from selling for a set time.",
+   "A split divides shares into more shares.",
+   "A codicil changes a will and has no link to an IPO at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s520q3",
+  "h": "Check yourself",
+  "q": "Meena sees a small company listing on the SME platform. What is a sensible view?",
+  "opts": [
+   "It is usually riskier",
+   "It is safer than large IPOs, always",
+   "It has no risk at all, ever",
+   "It is guaranteed by the exchange"
+  ],
+  "ans": 0,
+  "why": [
+   "Small companies on this platform usually carry higher risk.",
+   "It is not safer than a large IPO. It is usually riskier.",
+   "No IPO has zero risk, and SME issues have more.",
+   "An exchange does not guarantee the issue."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s520q4",
+  "h": "Check yourself",
+  "q": "A big institution has agreed to buy shares a day before the issue opens to the public. What is it called?",
+  "opts": [
+   "A named nominee",
+   "A licensed surveyor",
+   "An anchor investor",
+   "A will executor"
+  ],
+  "ans": 2,
+  "why": [
+   "A nominee receives an asset after a holder's death.",
+   "A surveyor assesses an insurance loss on a claim.",
+   "An anchor investor is a big institution that commits early.",
+   "An executor carries out the terms of a will."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The grey market premium is a rumour. Do not rely on it.",
+   "A lock-in stops certain holders from selling for a time.",
+   "SME IPOs are usually riskier. Anchors are not a guarantee."
+  ]
+ }
+]

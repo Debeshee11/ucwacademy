@@ -1,0 +1,180 @@
+[
+ {
+  "k": "fact",
+  "art": "health",
+  "h": "Before you start",
+  "big": "Rohan's policy has a ₹10 lakh cover. He picks a fancy hospital room. After the claim, he is surprised: the insurer paid much less than he expected, though nothing in the policy was excluded.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where did the money go?",
+  "lines": [
+   [
+    "rohan",
+    "My bill was covered but the insurer still paid less. How?"
+   ],
+   [
+    "sikka",
+    "Four small clauses cause most of the surprises: co-payment, deductible, room rent limit and sub-limit."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A ₹1 lakh bill, two clauses",
+  "alt": "Two bars showing who pays under a 20% co-payment and under a room rent limit",
+  "rows": [
+   {
+    "name": "20% co-payment",
+    "segs": [
+     [
+      "Insurer ₹80,000",
+      80,
+      "#3CC47A"
+     ],
+     [
+      "You ₹20,000",
+      20,
+      "#FF9C6B"
+     ]
+    ]
+   },
+   {
+    "name": "Room costs twice the limit",
+    "segs": [
+     [
+      "Insurer ₹50,000",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "You ₹50,000",
+      50,
+      "#FF9C6B"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "With a 20% co-payment, you pay a fifth of every claim."
+   ],
+   [
+    2.4,
+    "If your room costs twice the limit, many policies cut related charges in the same proportion."
+   ],
+   [
+    4.4,
+    "So a ₹1 lakh bill can leave you paying ₹50,000, though it was all covered."
+   ],
+   [
+    6.0,
+    "Read these clauses before you buy, not after the claim."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two more clauses",
+  "intro": "These also reduce what you receive.",
+  "rows": [
+   [
+    "Deductible",
+    "You bear the first part of a claim, say ₹50,000"
+   ],
+   [
+    "Sub-limit",
+    "A cap on one illness, such as ₹40,000 for cataract"
+   ]
+  ],
+  "note": "A higher deductible lowers the premium, but only suits someone who can bear that part on their own."
+ },
+ {
+  "k": "pick",
+  "id": "s452q1",
+  "h": "Check yourself",
+  "q": "A policy has a 20% co-payment. Meena's covered bill is ₹1.5 lakh. How much does the insurer pay?",
+  "opts": [
+   "₹1.5 lakh, since the whole bill is covered",
+   "₹1.2 lakh, since she bears 20%, which is ₹30,000",
+   "₹1.35 lakh, since the co-payment is only 10%",
+   "₹30,000, since the insurer pays the co-payment share"
+  ],
+  "ans": 1,
+  "why": [
+   "Co-payment means she shares each claim, so the insurer does not pay the whole bill.",
+   "Twenty percent of ₹1.5 lakh is ₹30,000, which she pays, and the insurer pays ₹1.2 lakh.",
+   "The co-payment is 20% here, not 10%, so the arithmetic is different.",
+   "The insurer pays the larger share. The co-payment is the part she pays herself."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s452q2",
+  "h": "Check yourself",
+  "q": "A policy has a ₹50,000 deductible. Rohan's claim is ₹2 lakh. What does the insurer pay?",
+  "opts": [
+   "₹2 lakh, since the claim is within the cover",
+   "₹50,000, since that is what the policy sets",
+   "Nothing, since the claim is larger than the deductible",
+   "₹1.5 lakh, since he bears the first ₹50,000"
+  ],
+  "ans": 3,
+  "why": [
+   "A deductible is a part Rohan bears first, so the insurer does not pay it all.",
+   "₹50,000 is his own share of the bill, not what the insurer pays out.",
+   "A claim above the deductible is paid beyond it. It is not rejected.",
+   "He bears the first ₹50,000, and the insurer pays the remaining ₹1.5 lakh."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s452q3",
+  "h": "Check yourself",
+  "q": "A policy caps room rent at ₹5,000 a day. Meena takes a ₹10,000 room. What is the risk?",
+  "opts": [
+   "None, since the room is part of the covered bill",
+   "The insurer will refuse the whole claim for choosing the room",
+   "Related charges may be cut in proportion, so she pays much more",
+   "The sum insured will be reduced for the next year"
+  ],
+  "ans": 2,
+  "why": [
+   "A room limit can reduce other charges too, so the room choice does matter.",
+   "The claim is not refused for this. It is reduced in proportion.",
+   "Many policies cut related charges in proportion, so a costly room raises her share.",
+   "The sum insured for next year does not shrink because of a room choice."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s452q4",
+  "h": "Check yourself",
+  "q": "Rohan has a cataract sub-limit of ₹40,000 and his bill is ₹60,000. What does he receive?",
+  "opts": [
+   "₹40,000, since the sub-limit caps this treatment",
+   "₹60,000, since the bill is within the sum insured",
+   "₹20,000, since the insurer pays only the extra amount",
+   "Nothing, since cataract is excluded by every policy"
+  ],
+  "ans": 0,
+  "why": [
+   "The sub-limit caps what is paid for this illness, so he gets ₹40,000 and pays ₹20,000.",
+   "A sub-limit overrides the sum insured for this treatment, so the full bill is not paid.",
+   "The insurer pays up to the limit, not only the amount above it.",
+   "Cataract is usually covered after a waiting period, within its sub-limit."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Co-payment, deductible, room rent limit and sub-limit all cut what you receive.",
+   "A bill can be fully covered and still leave you paying a large share.",
+   "Read these four clauses before you buy."
+  ]
+ }
+]

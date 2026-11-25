@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Three brothers inherited a shop from their father. For years they argued over who owned what share. A short written agreement, signed by all, would have ended the quarrel on day one.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Structures for families",
+  "lines": [
+   [
+    "meena",
+    "I keep hearing about HUF, trusts and gift deeds. Which one is for me?"
+   ],
+   [
+    "sikka",
+    "They are different tools for different needs. Learn what each does, and then ask a lawyer and a tax adviser which fits your family. Education only, not advice."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four family tools",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "HUF",
+    "A Hindu undivided family, a separate entity for tax"
+   ],
+   [
+    "Family trust",
+    "Trustees hold assets for named beneficiaries, as per the deed"
+   ],
+   [
+    "Gift deed",
+    "A document that transfers an asset without payment"
+   ],
+   [
+    "Family settlement",
+    "An agreement among family members on sharing property"
+   ]
+  ],
+  "note": "A gift of property usually needs a registered deed. Tax and stamp duty rules apply, so check first."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Family structures",
+  "stops": [
+   [
+    "An HUF is a separate entity for tax",
+    true
+   ],
+   [
+    "A family trust is a kind of bank account",
+    false
+   ],
+   [
+    "A gift deed transfers an asset without payment",
+    true
+   ],
+   [
+    "A family settlement makes disputes more likely",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It applies to Hindu, Buddhist, Jain and Sikh families."
+   ],
+   [
+    2.2,
+    "In a trust, trustees hold assets for named beneficiaries under a deed."
+   ],
+   [
+    4.0,
+    "A parent can gift a flat to a child by a registered deed."
+   ],
+   [
+    5.6,
+    "A written settlement is meant to prevent disputes."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s509q1",
+  "h": "Check yourself",
+  "q": "Parents want assets held by trustees for their child, as set out in a deed. Which tool is this?",
+  "opts": [
+   "A gift deed",
+   "A codicil",
+   "A succession certificate",
+   "A family trust"
+  ],
+  "ans": 3,
+  "why": [
+   "A gift deed transfers an asset to another person without payment.",
+   "A codicil changes or adds to an existing will.",
+   "A succession certificate confirms who may claim a dead person's assets.",
+   "In a family trust, trustees hold assets for named beneficiaries."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s509q2",
+  "h": "Check yourself",
+  "q": "Rohan wants to give his flat to his daughter during his life. Which document is used?",
+  "opts": [
+   "A shop receipt for the flat",
+   "A registered gift deed",
+   "A bank brochure on the flat",
+   "A verbal promise made to her"
+  ],
+  "ans": 1,
+  "why": [
+   "A shop receipt cannot transfer a flat to anyone.",
+   "A gift deed transfers an asset, and property needs registration.",
+   "A brochure describes products and cannot transfer ownership.",
+   "A verbal promise does not transfer ownership of a flat."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s509q3",
+  "h": "Check yourself",
+  "q": "Siblings sign a written agreement on how to share an ancestral property. What is this?",
+  "opts": [
+   "An HUF tax return form",
+   "A premium notice letter",
+   "A family settlement",
+   "A stop-loss order type"
+  ],
+  "ans": 2,
+  "why": [
+   "An HUF return is a tax filing and not an agreement among siblings.",
+   "A premium notice is from an insurer and has no link to property.",
+   "A family settlement is an agreement that settles how property is shared.",
+   "A stop-loss is an order type in share trading."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s509q4",
+  "h": "Check yourself",
+  "q": "Dadi hears that an HUF helps with tax. What should she do first?",
+  "opts": [
+   "Ask a lawyer and a tax adviser",
+   "Form one at once, since friends did",
+   "Ignore it, as tax never changes",
+   "Tell the bank to make one for her"
+  ],
+  "ans": 0,
+  "why": [
+   "Rules depend on the family and facts, so ask experts first.",
+   "A friend's choice may not suit her family, so copying is risky.",
+   "Tax rules do change, so ignoring them is not a plan.",
+   "A bank does not form an HUF for any customer."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A family trust: trustees hold assets for named beneficiaries.",
+   "A gift deed transfers an asset. Property gifts usually need registration.",
+   "A written family settlement can prevent disputes."
+  ]
+ }
+]

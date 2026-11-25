@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Meena, an NRI in Singapore, wants to buy Indian shares, a flat and a pension account. Each has its own door, and some doors are closed to her. The route she picks decides what she can send back.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which doors are open",
+  "lines": [
+   [
+    "meena",
+    "Can I invest in India the way residents do?"
+   ],
+   [
+    "sikka",
+    "Mostly yes, but through set routes. Shares through a PIS account. Mutual funds through fund houses that accept your country. Residential and commercial property, yes. Farmland, no."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four doors",
+  "intro": "What an NRI can do.",
+  "rows": [
+   [
+    "PIS account",
+    "Buy and sell shares through an RBI-approved bank account"
+   ],
+   [
+    "Mutual funds",
+    "Allowed, though some fund houses decline some countries"
+   ],
+   [
+    "Property",
+    "Residential and commercial yes. Farmland and farmhouses no"
+   ],
+   [
+    "NPS",
+    "An NRI can open a pension account, as per its rules"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Investing in India",
+  "stops": [
+   [
+    "NRIs can buy shares through a PIS account",
+    true
+   ],
+   [
+    "NRIs may buy agricultural land freely",
+    false
+   ],
+   [
+    "Some fund houses do not accept some countries",
+    true
+   ],
+   [
+    "NRIs cannot open an NPS account",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A designated bank account approved by the RBI is used."
+   ],
+   [
+    2.2,
+    "Farmland, plantations and farmhouses are restricted."
+   ],
+   [
+    4.0,
+    "Local rules abroad can limit who a fund house accepts."
+   ],
+   [
+    5.6,
+    "NPS is open to NRIs, subject to its rules."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s468q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to buy Indian shares from Dubai. Which route is used?",
+  "opts": [
+   "A PIS account with an authorised bank",
+   "Cash handed to a friend at a broker",
+   "Using a resident relative's demat account",
+   "A local chit fund run by neighbours"
+  ],
+  "ans": 0,
+  "why": [
+   "The Portfolio Investment Scheme runs via a designated bank.",
+   "Cash to a friend skips the rules and leaves no record.",
+   "Using a resident's account breaks the rules for NRIs.",
+   "A chit fund is not a route to buy listed shares."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s468q2",
+  "h": "Check yourself",
+  "q": "Meena wants to buy a farmhouse in India. What is the position?",
+  "opts": [
+   "It is allowed freely for every NRI",
+   "It is allowed only once in a year",
+   "It is not allowed freely",
+   "It needs nothing more than a PAN card"
+  ],
+  "ans": 2,
+  "why": [
+   "They are not allowed freely, so this is not the position.",
+   "There is no once-a-year rule for such property.",
+   "Farmhouses and farmland are restricted for NRIs.",
+   "A PAN alone does not open up the restricted category."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s468q3",
+  "h": "Check yourself",
+  "q": "A fund house declines an application from an NRI in a particular country. What is the likely reason?",
+  "opts": [
+   "The investor's first name or surname",
+   "Local rules that bind the fund house",
+   "The month of the year of the form",
+   "The colour of the paper of the form"
+  ],
+  "ans": 1,
+  "why": [
+   "A name is not the cause of a country-level limit.",
+   "Some fund houses avoid some countries due to local laws.",
+   "The month of the year has no role in the restriction.",
+   "The colour of a form has no link to such a limit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s468q4",
+  "h": "Check yourself",
+  "q": "Meena wants a retirement account in India. Which can she consider?",
+  "opts": [
+   "A resident's PPF in her own name",
+   "An EPF account with no employer",
+   "Nothing at all is open to NRIs",
+   "NPS, under its own rules"
+  ],
+  "ans": 3,
+  "why": [
+   "PPF has its own rules, and fresh accounts are closed to NRIs.",
+   "EPF needs an employer in India, which she may not have.",
+   "NPS is open to NRIs, so some options do exist for her.",
+   "NRIs can open an NPS account, subject to its rules."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Shares go through a PIS account at an authorised bank.",
+   "Farmland, plantations and farmhouses are restricted.",
+   "Check if a fund house accepts your country, then invest."
+  ]
+ }
+]

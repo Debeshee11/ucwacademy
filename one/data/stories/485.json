@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A social media page promises easy returns on global trading through an app nobody has heard of. Dadi's neighbour sent ₹2 lakh. The app showed a profit, then asked for more to release it. The money never came back.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Staying safe",
+  "lines": [
+   [
+    "dadi",
+    "How do I know a global platform is genuine?"
+   ],
+   [
+    "sikka",
+    "Use only a regulated channel, an authorised bank, broker or fund house. Be wary of apps promising easy global profits. Spread your money, and match your time horizon to the risk."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four safety habits",
+  "intro": "Before you invest.",
+  "rows": [
+   [
+    "Regulated channel",
+    "A broker, bank or fund house authorised by the regulator"
+   ],
+   [
+    "Diversification",
+    "Spread across assets, countries and sectors"
+   ],
+   [
+    "Unregistered app",
+    "No approval, easy-profit promises, a common fraud route"
+   ],
+   [
+    "Time horizon",
+    "How long you can leave the money invested"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Staying safe",
+  "stops": [
+   [
+    "Use only a regulated channel for your money",
+    true
+   ],
+   [
+    "An unregistered app promising profits is safe",
+    false
+   ],
+   [
+    "Diversification spreads risk",
+    true
+   ],
+   [
+    "Money needed in a year suits risky assets",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Check the authorisation of the broker, bank or fund house."
+   ],
+   [
+    2.2,
+    "Easy-profit promises are a common fraud route."
+   ],
+   [
+    4.0,
+    "It spreads money across assets, countries and sectors."
+   ],
+   [
+    5.6,
+    "Short horizons call for safer assets."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s485q1",
+  "h": "Check yourself",
+  "q": "An app promises easy global profits but has no regulatory approval. What is the right view?",
+  "opts": [
+   "Join it quickly before it closes",
+   "Avoid it, as it may be a fraud",
+   "Put in all savings at once",
+   "Invite friends to join him"
+  ],
+  "ans": 1,
+  "why": [
+   "Joining quickly is what a fraudster wants.",
+   "Unregistered apps are a common route for fraud.",
+   "Putting in all savings is far too risky.",
+   "Inviting friends spreads the risk to them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s485q2",
+  "h": "Check yourself",
+  "q": "Rohan needs his money in one year. Which approach suits?",
+  "opts": [
+   "A risky theme fund of shares",
+   "A single risky stock pick",
+   "Safer assets, short horizon",
+   "A fraud app with big promises"
+  ],
+  "ans": 2,
+  "why": [
+   "A risky fund can fall just when he needs cash.",
+   "A single stock concentrates the risk. It does not fit the facts given.",
+   "A short horizon should match a lower risk. This fits the facts given.",
+   "A fraud app can take the money. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s485q3",
+  "h": "Check yourself",
+  "q": "What does diversification do?",
+  "opts": [
+   "Doubles every gain made",
+   "Removes all the risk",
+   "Guarantees a profit each year",
+   "Spreads money across assets"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not double gains. That does not match this case.",
+   "It reduces, not removes, risk. It does not fit the facts given.",
+   "No investment guarantees a profit. It does not answer what was asked.",
+   "It spreads across assets, countries and sectors."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s485q4",
+  "h": "Check yourself",
+  "q": "Which is a regulated channel?",
+  "opts": [
+   "A regulator-approved broker",
+   "A stranger on a chat app",
+   "A page with many followers",
+   "An app from an unknown source"
+  ],
+  "ans": 0,
+  "why": [
+   "Authorised brokers and fund houses are regulated.",
+   "A stranger has no authorisation. It does not answer what was asked.",
+   "Followers do not prove authorisation. The details here point elsewhere.",
+   "An unknown source has no authorisation. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Use only regulated channels for your money.",
+   "Be wary of apps that promise easy global profits.",
+   "Diversify, and match your time horizon to the risk."
+  ]
+ }
+]

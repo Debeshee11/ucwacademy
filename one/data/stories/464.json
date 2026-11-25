@@ -1,0 +1,187 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Two colleagues earn very different salaries. The lower earner has a score of 790 and the higher earner has 640. The score does not look at salary at all. It looks at behaviour.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is in a score",
+  "lines": [
+   [
+    "rohan",
+    "My salary is good. Why was my card application refused?"
+   ],
+   [
+    "sikka",
+    "Income is not part of the score. Late payments and a maxed-out card are. Let us see what moves it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Credit score habits",
+  "stops": [
+   [
+    "Paying on time carries the most weight",
+    true
+   ],
+   [
+    "A higher income raises your score",
+    false
+   ],
+   [
+    "Using most of your card limit can lower it",
+    true
+   ],
+   [
+    "Checking your own report lowers the score",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Payment history counts most, and a few days late is recorded."
+   ],
+   [
+    2.2,
+    "Income is not part of the score. Behaviour is."
+   ],
+   [
+    4.0,
+    "Keep use of your limit below about 30% to show you are not stretched."
+   ],
+   [
+    5.6,
+    "Checking your own report is safe, and it helps you catch errors."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   10,
+   30,
+   60
+  ],
+  "labels": [
+   "₹10k",
+   "₹30k",
+   "₹60k"
+  ],
+  "big": "30% of limit",
+  "small": "a common ceiling for card use",
+  "h": "Use of a ₹1 lakh limit (%)",
+  "alt": "Bars showing credit card use against a ₹1 lakh limit",
+  "caps": [
+   [
+    0.3,
+    "A card has a ₹1 lakh limit. Bars show the share used."
+   ],
+   [
+    2.0,
+    "Using ₹10,000 is 10% of the limit, which looks comfortable."
+   ],
+   [
+    3.8,
+    "Using ₹30,000 is 30%, the usual ceiling."
+   ],
+   [
+    5.2,
+    "At ₹60,000, 60%, the card looks stretched, and the score can fall."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s464q1",
+  "h": "Check yourself",
+  "q": "Meena earns a lot but pays her card two weeks late. What happens to her score?",
+  "opts": [
+   "It rises, because her income is high",
+   "It stays the same, since it ignores payments",
+   "It resets to zero for a year",
+   "It can fall, since late payment is recorded"
+  ],
+  "ans": 3,
+  "why": [
+   "Income is not part of the score, so a high one does not offset lateness.",
+   "Payments are the main input, so the score does not ignore them.",
+   "A late payment lowers the score. It does not reset it to zero.",
+   "Payment history carries the most weight, so late payment drags the score down."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s464q2",
+  "h": "Check yourself",
+  "q": "Rohan's card limit is ₹2 lakh. Which monthly spend keeps use near 30%?",
+  "opts": [
+   "About ₹1.5 lakh",
+   "About ₹60,000",
+   "About ₹1.9 lakh",
+   "The full ₹2 lakh"
+  ],
+  "ans": 1,
+  "why": [
+   "₹1.5 lakh is 75% of the limit, which is high and can hurt the score.",
+   "Thirty percent of ₹2 lakh is ₹60,000, in line with the usual ceiling.",
+   "₹1.9 lakh is 95%, very close to the limit and a warning sign.",
+   "Using the full limit shows the highest strain on a card."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s464q3",
+  "h": "Check yourself",
+  "q": "Meena checks her own credit report and finds a loan she never took. What should she do?",
+  "opts": [
+   "Ignore it, since it will vanish on its own",
+   "Pay the loan to be safe",
+   "Raise a dispute with the bureau and the lender",
+   "Close all her cards at once"
+  ],
+  "ans": 2,
+  "why": [
+   "Wrong entries do not vanish by themselves, and they can hurt her score.",
+   "Paying a loan she never took would be a loss, and leaves the error on record.",
+   "Errors can be corrected, but only if she raises a dispute with them.",
+   "Closing cards does not remove a wrong loan from her report."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s464q4",
+  "h": "Check yourself",
+  "q": "A stranger says he can 'fix your score fast' for a fee. What is the honest view?",
+  "opts": [
+   "Be careful, scores improve with behaviour",
+   "Pay him, since fast fixes are common",
+   "Give him your card details to speed things up",
+   "Take a new loan to help him out"
+  ],
+  "ans": 0,
+  "why": [
+   "A score is rebuilt slowly by paying on time and keeping card use low.",
+   "Quick-fix claims for a fee are a warning sign, and nothing is gained by paying.",
+   "Sharing card details is risky and can lead to fraud.",
+   "A new loan does not fix a score, and it adds debt."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Income is not in the score. Payment history and card use are.",
+   "Pay on time, and keep card use below about 30% of the limit.",
+   "Check your own report for errors. Beware of anyone selling a fast fix."
+  ]
+ }
+]

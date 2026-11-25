@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A toothpaste maker raises prices slightly and sales barely change. A telecom start-up needs licences and huge spending just to begin. Profit goes to companies that rivals cannot easily copy.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why rivals matter",
+  "lines": [
+   [
+    "meena",
+    "How do I judge competition?"
+   ],
+   [
+    "sikka",
+    "Porter's five forces: rivals, new entrants, substitutes, buyers and suppliers. Barriers to entry keep new firms out. An economic moat is a lasting advantage, such as a loved brand. Pricing power is raising prices without losing many customers."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Five forces, a checklist",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Rivals",
+    "how fierce is the fight?"
+   ],
+   [
+    "New entrants",
+    "how easily can new firms join?"
+   ],
+   [
+    "Substitutes",
+    "what else could buyers choose?"
+   ],
+   [
+    "Buyers and suppliers",
+    "how much power do they hold?"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s537q1",
+  "h": "Check yourself",
+  "q": "An analyst checks how easily new firms can enter and how much power customers hold. Which framework is this?",
+  "opts": [
+   "Porter's five forces",
+   "Sum of the parts model",
+   "A DCF model for cash",
+   "A moving average line"
+  ],
+  "ans": 0,
+  "why": [
+   "It judges competition through five forces. That matches the case described.",
+   "Sum of the parts is a valuation method. That does not match this case.",
+   "A DCF is a valuation method. That does not match this case.",
+   "A moving average is a chart tool. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s537q2",
+  "h": "Check yourself",
+  "q": "A telecom start-up needs licences and huge spending on airwaves. What are these?",
+  "opts": [
+   "Pricing power gained",
+   "A demand driver now",
+   "Barriers to entry",
+   "A discount rate used"
+  ],
+  "ans": 2,
+  "why": [
+   "Pricing power is about raising prices.",
+   "A demand driver raises buying.",
+   "They make it hard for new firms to join.",
+   "A discount rate is a valuation input."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s537q3",
+  "h": "Check yourself",
+  "q": "A well-loved brand keeps customers even when cheaper options appear. What is this?",
+  "opts": [
+   "A valuation trap",
+   "An economic moat",
+   "A breakout",
+   "A capital call"
+  ],
+  "ans": 1,
+  "why": [
+   "A valuation trap is cheap for a reason. It does not fit the facts given.",
+   "A lasting advantage that protects profits. That matches the case described.",
+   "A breakout is a chart move. It does not answer what was asked.",
+   "A capital call is an AIF demand. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s537q4",
+  "h": "Check yourself",
+  "q": "A toothpaste maker raises prices slightly and sales barely change. What does it have?",
+  "opts": [
+   "A margin call",
+   "High penetration",
+   "A hurdle rate",
+   "Pricing power"
+  ],
+  "ans": 3,
+  "why": [
+   "A margin call is a futures demand. It does not fit the facts given.",
+   "Penetration is about usage. It does not answer what was asked.",
+   "A hurdle rate is a return threshold. The details here point elsewhere.",
+   "It can raise prices without losing many customers."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Porter's five forces: rivals, entrants, substitutes, buyers, suppliers.",
+   "Barriers to entry and a moat protect profits.",
+   "Pricing power: raising prices without losing customers."
+  ]
+ }
+]

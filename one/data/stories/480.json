@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena sells her flat and wants to send ₹80 lakh to her bank in Singapore. Her bank asks for a chartered accountant's certificate and a tax declaration first. Without them, nothing moves.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Moving money out",
+  "lines": [
+   [
+    "meena",
+    "Why is sending my own money abroad so hard?"
+   ],
+   [
+    "sikka",
+    "It is not hard, but it follows rules. FEMA governs cross-border flows. For NRO funds there is a yearly limit. For many payments, you need Forms 15CA and 15CB before the bank sends."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four things",
+  "intro": "Sending money abroad.",
+  "rows": [
+   [
+    "Repatriation",
+    "Sending money from India to your country of residence"
+   ],
+   [
+    "NRO yearly limit",
+    "A cap each year on NRO funds sent abroad, with conditions"
+   ],
+   [
+    "Forms 15CA and 15CB",
+    "A tax declaration and a chartered accountant's certificate"
+   ],
+   [
+    "FEMA",
+    "The law governing cross-border money flows"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Sending money abroad",
+  "stops": [
+   [
+    "NRO funds have a yearly cap on repatriation",
+    true
+   ],
+   [
+    "Forms 15CA and 15CB are never needed",
+    false
+   ],
+   [
+    "FEMA governs cross-border money flows",
+    true
+   ],
+   [
+    "Any amount can move abroad on a phone call",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Conditions and documents apply."
+   ],
+   [
+    2.2,
+    "Many payments abroad need these forms."
+   ],
+   [
+    4.0,
+    "Banks follow it when sending money out."
+   ],
+   [
+    5.6,
+    "Banks need documents before they send."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s480q1",
+  "h": "Check yourself",
+  "q": "Meena wants to send NRO sale proceeds abroad. What should she expect?",
+  "opts": [
+   "No rules apply to the transfer",
+   "A yearly limit and documents",
+   "An instant transfer on request",
+   "A gift from the bank"
+  ],
+  "ans": 1,
+  "why": [
+   "There are rules, so this is wrong. The details here point elsewhere.",
+   "NRO transfers have a yearly cap with documents.",
+   "NRO transfers are not instant. That does not match this case.",
+   "A bank does not give a gift for this. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s480q2",
+  "h": "Check yourself",
+  "q": "Which papers does a bank usually ask for before sending certain payments abroad?",
+  "opts": [
+   "A cinema ticket for a film",
+   "A gym membership card",
+   "Forms 15CA and 15CB",
+   "A school progress report"
+  ],
+  "ans": 2,
+  "why": [
+   "A cinema ticket has no role here. The details here point elsewhere.",
+   "A gym card has no role here. That does not match this case.",
+   "They are a tax declaration and a CA certificate.",
+   "A school report has no role here. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s480q3",
+  "h": "Check yourself",
+  "q": "Which law governs cross-border money flows in India?",
+  "opts": [
+   "The Sale of Goods Act",
+   "A municipal bylaw",
+   "A club rule",
+   "FEMA"
+  ],
+  "ans": 3,
+  "why": [
+   "That law is about the sale of goods. That does not match this case.",
+   "A municipal bylaw does not govern exchange. It does not fit the facts given.",
+   "A club rule has no legal force here. It does not answer what was asked.",
+   "FEMA governs foreign exchange and cross-border flows."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s480q4",
+  "h": "Check yourself",
+  "q": "What is repatriation?",
+  "opts": [
+   "Sending money back to where you live",
+   "Moving money between two Indian banks",
+   "Paying a fee to the bank",
+   "Closing an old account"
+  ],
+  "ans": 0,
+  "why": [
+   "It is sending money back to where you live.",
+   "Moving money within India is not repatriation.",
+   "A bank fee is a charge, and not repatriation.",
+   "Closing an account is a different step."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NRO funds have a yearly cap for sending abroad, with documents.",
+   "Forms 15CA and 15CB are often needed before the bank sends.",
+   "FEMA governs cross-border money flows."
+  ]
+ }
+]

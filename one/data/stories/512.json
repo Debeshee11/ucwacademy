@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan holds a ₹100 bond that pays 8%. Then new bonds start paying 9%. Nobody wants his 8% bond at ₹100 any more. To sell it, he must cut the price. This one idea explains most of the bond market.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Seesaw",
+  "lines": [
+   [
+    "rohan",
+    "I thought a bond was safe. Why can its price fall?"
+   ],
+   [
+    "sikka",
+    "Safe from default is one thing. Safe from price changes is another. When market rates rise, old bonds with lower coupons lose value. They move like a seesaw."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "2-year bond",
+  "b": "10-year bond",
+  "rows": [
+   [
+    "Price when rates are 8% (₹)",
+    100,
+    100
+   ],
+   [
+    "Price when rates rise to 9% (₹)",
+    98.2,
+    93.6
+   ]
+  ],
+  "h": "An 8% bond, ₹100 face value",
+  "alt": "Bars showing the price of a two year and a ten year bond after rates rise",
+  "caps": [
+   [
+    0.3,
+    "Both bonds pay 8% and are priced at ₹100."
+   ],
+   [
+    2.2,
+    "Rates in the market rise to 9%."
+   ],
+   [
+    4.0,
+    "The 2-year bond slips to about ₹98.2."
+   ],
+   [
+    5.6,
+    "The 10-year bond falls further, to about ₹93.6. Longer bonds are more sensitive."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four risks and measures",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "Yield to maturity",
+    "The yearly return if you buy at today's price and hold to maturity"
+   ],
+   [
+    "Interest rate risk",
+    "Rising rates push the prices of existing bonds down"
+   ],
+   [
+    "Duration",
+    "How sensitive a bond's price is to rates. Higher means more"
+   ],
+   [
+    "Reinvestment risk",
+    "Interest received may have to be reinvested at lower rates"
+   ]
+  ],
+  "note": "Prices here are made up from a standard formula, to show the idea. They are not forecasts."
+ },
+ {
+  "k": "pick",
+  "id": "s512q1",
+  "h": "Check yourself",
+  "q": "Market rates rise. What usually happens to the price of Meena's existing bond that pays a lower coupon?",
+  "opts": [
+   "It rises",
+   "It falls",
+   "It stays exactly the same",
+   "It doubles"
+  ],
+  "ans": 1,
+  "why": [
+   "A rise would make sense only if market rates had fallen.",
+   "New bonds pay more, so old ones must be cheaper to attract a buyer.",
+   "Prices of existing bonds do move when rates change.",
+   "Doubling has no link to a small change in rates."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s512q2",
+  "h": "Check yourself",
+  "q": "Which bond is likely to fall more when rates rise by 1%?",
+  "opts": [
+   "A 2-year bond",
+   "A bond that matures next week",
+   "Both fall exactly the same",
+   "A 10-year bond"
+  ],
+  "ans": 3,
+  "why": [
+   "A shorter bond has a lower duration, so it reacts less.",
+   "A bond close to maturity is hardly affected by a change in rates.",
+   "They do not fall equally, since duration differs.",
+   "A longer bond has a higher duration, so its price reacts more."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s512q3",
+  "h": "Check yourself",
+  "q": "Rohan buys a bond below its face value and holds it to maturity. What does the yield to maturity tell him?",
+  "opts": [
+   "The yearly return at his price",
+   "Only the coupon rate printed on the bond",
+   "The profit if the bond is sold next week",
+   "The tax he must pay"
+  ],
+  "ans": 0,
+  "why": [
+   "Yield to maturity includes the coupon and the gain from the price he paid.",
+   "The coupon alone ignores the price paid, which changes the return.",
+   "A quick sale depends on the price then, so the yield does not tell him this.",
+   "Tax is a separate matter from the yield on the bond."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s512q4",
+  "h": "Check yourself",
+  "q": "Meena's bond pays a coupon, and rates have fallen. What is the reinvestment risk?",
+  "opts": [
+   "The bond losing all of its face value",
+   "The issuer changing its name soon",
+   "Reinvesting at a lower rate",
+   "The coupon being paid twice a year"
+  ],
+  "ans": 2,
+  "why": [
+   "Face value is repaid at maturity, and reinvestment risk is not about that.",
+   "A change of name has no link to reinvestment of interest.",
+   "When rates fall, the interest she receives may earn less when reinvested.",
+   "A coupon is paid once on its date, so this is not the risk."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "When rates rise, existing bond prices fall, like a seesaw.",
+   "Longer bonds, with higher duration, move more.",
+   "Yield to maturity counts the price you paid."
+  ]
+ }
+]

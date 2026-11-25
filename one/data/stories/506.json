@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Dadi's neighbour passed away without telling anyone where his accounts were. His family spent two years finding them, and some were never found. The money was there. The map was not.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why plan at all",
+  "lines": [
+   [
+    "rohan",
+    "Why plan for something that happens after I am gone?"
+   ],
+   [
+    "sikka",
+    "Because the people you love will be the ones dealing with it. A little planning now saves them months of work and many arguments later."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four words, plainly",
+  "intro": "What families meet first.",
+  "rows": [
+   [
+    "Estate",
+    "Everything a person owns at death"
+   ],
+   [
+    "Legal heir",
+    "A person entitled by law or by a will to inherit"
+   ],
+   [
+    "Intestate succession",
+    "How assets pass under personal law when there is no valid will"
+   ],
+   [
+    "Succession certificate",
+    "A court document confirming who may claim certain assets"
+   ]
+  ],
+  "note": "Rules depend on a person's religion and personal law. Ask a lawyer about your own case."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Why plan",
+  "stops": [
+   [
+    "An estate is everything a person owns at death",
+    true
+   ],
+   [
+    "Without a will, assets pass as the family chooses",
+    false
+   ],
+   [
+    "A legal heir is entitled by law or by a will",
+    true
+   ],
+   [
+    "A succession certificate is never needed",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Property, savings, investments and belongings all count."
+   ],
+   [
+    2.2,
+    "Without a will, personal law decides who inherits, not the family."
+   ],
+   [
+    4.0,
+    "A spouse and children are among those entitled by law."
+   ],
+   [
+    5.6,
+    "A court may ask for it before releasing some assets, such as bank balances."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s506q1",
+  "h": "Check yourself",
+  "q": "Rohan dies without a valid will. Who decides how his assets pass?",
+  "opts": [
+   "The bank that holds his savings",
+   "The neighbour who knew him best",
+   "Whoever claims first",
+   "Personal law and its rules"
+  ],
+  "ans": 3,
+  "why": [
+   "A bank holds assets but does not decide who the heirs are.",
+   "A neighbour has no legal role in deciding who inherits.",
+   "First come, first served is not the rule for inheritance.",
+   "Without a will, the rules of personal law decide who inherits."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s506q2",
+  "h": "Check yourself",
+  "q": "Meena's father leaves a house, savings and shares. What is the word for all of it together?",
+  "opts": [
+   "His premium",
+   "His estate",
+   "His deductible",
+   "His nominee"
+  ],
+  "ans": 1,
+  "why": [
+   "A premium is a payment for insurance, and not a name for assets.",
+   "An estate is everything a person owns at death.",
+   "A deductible is the part of an insurance loss that a person pays.",
+   "A nominee is a person named to receive an asset, not the assets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s506q3",
+  "h": "Check yourself",
+  "q": "A bank asks Meena's family for a document confirming who can claim her late mother's balance. What may that be?",
+  "opts": [
+   "A succession certificate",
+   "A bank brochure on savings",
+   "A credit score report card",
+   "A shop receipt for a purchase"
+  ],
+  "ans": 0,
+  "why": [
+   "A court issues it to confirm who may claim certain assets.",
+   "A brochure describes products and has no role here.",
+   "A credit report records borrowing, and does not say who the heirs are.",
+   "A shop receipt has no link to who may claim the balance."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s506q4",
+  "h": "Check yourself",
+  "q": "Which step helps a family most in the first months after a death?",
+  "opts": [
+   "Searching for the papers after the funeral",
+   "Leaving accounts for others to guess",
+   "Knowing where every account and paper is kept",
+   "Closing all accounts quickly without records"
+  ],
+  "ans": 2,
+  "why": [
+   "Searching afterwards is the slow, stressful route that planning avoids.",
+   "Guessing leaves some assets unclaimed or lost.",
+   "A clear list of accounts and papers saves months of searching.",
+   "Closing accounts without records can lose assets and cause disputes."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An estate is everything a person owns at death.",
+   "Without a valid will, personal law decides who inherits.",
+   "A succession certificate may be needed to claim some assets."
+  ]
+ }
+]

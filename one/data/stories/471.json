@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Dadi's grandson, Kabir, spends 140 days in India, and the rest in Canada. His friend spends 200 days in India. At the end of the year, one is likely to be taxed on world income in India. The other is not. Days decide.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two tests",
+  "lines": [
+   [
+    "rohan",
+    "I read there are two definitions of NRI. Is that true?"
+   ],
+   [
+    "sikka",
+    "Yes. One under foreign exchange law, FEMA. One under tax law. They count different things, and you can be an NRI under one and not the other."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four statuses",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "NRI under FEMA",
+    "Lives abroad for work, business or study of uncertain length"
+   ],
+   [
+    "Tax residency",
+    "Decided each year by counting days in India"
+   ],
+   [
+    "OCI",
+    "A foreign citizen of Indian origin, treated like an NRI for many rules"
+   ],
+   [
+    "RNOR",
+    "Resident, but not ordinarily resident. Mainly Indian income is taxed"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Who is an NRI",
+  "stops": [
+   [
+    "NRI status for FEMA and for tax can differ",
+    true
+   ],
+   [
+    "Residence for tax is counted by days",
+    true
+   ],
+   [
+    "RNOR means a person is fully taxed on world income",
+    false
+   ],
+   [
+    "An OCI card makes a person a citizen",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "They are two different tests."
+   ],
+   [
+    2.2,
+    "Days spent in India each year are counted."
+   ],
+   [
+    4.0,
+    "RNOR taxes mainly income from India."
+   ],
+   [
+    5.6,
+    "An OCI is a foreign citizen of Indian origin."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s471q1",
+  "h": "Check yourself",
+  "q": "Kabir spends most days of the year abroad. Which test decides tax residence in India?",
+  "opts": [
+   "The surname of the person concerned",
+   "The count of days spent in India",
+   "The favourite city of the person",
+   "The balance in the person's bank"
+  ],
+  "ans": 1,
+  "why": [
+   "A surname plays no part in the tax residence test.",
+   "Days in India are the main test of tax residence.",
+   "A favourite city plays no part in the test of residence.",
+   "A bank balance plays no part in the test of residence."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s471q2",
+  "h": "Check yourself",
+  "q": "Rohan is an NRI under FEMA. Is he automatically a non-resident for tax too?",
+  "opts": [
+   "Always, since both tests are the same",
+   "Never, since the tests are unrelated",
+   "Only on the first day of the year",
+   "Not always, since the tests differ"
+  ],
+  "ans": 3,
+  "why": [
+   "The tests are separate, so it is not always the same.",
+   "He may be a non-resident under both, so not never.",
+   "The date of the year has no link to the two tests.",
+   "The two tests use different rules, so the result can differ."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s471q3",
+  "h": "Check yourself",
+  "q": "What does RNOR mean?",
+  "opts": [
+   "Resident but not ordinarily resident",
+   "Resident and not an owner of property",
+   "Regular non-owner resident",
+   "Real name on record"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a tax status that limits tax mainly to India income.",
+   "It has nothing to do with owning property.",
+   "That is not what the letters stand for.",
+   "That is not what the letters stand for."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s471q4",
+  "h": "Check yourself",
+  "q": "A person of Indian origin holds a foreign passport and a lifelong card. What is he called?",
+  "opts": [
+   "An Indian citizen by birth",
+   "A resident Indian for tax",
+   "An OCI cardholder",
+   "A holder of an Indian passport"
+  ],
+  "ans": 2,
+  "why": [
+   "He holds a foreign passport, so he is not a citizen.",
+   "Residence is a tax matter and is not decided by the card.",
+   "An OCI is a foreign citizen of Indian origin with a card.",
+   "An OCI holder has a foreign passport, not an Indian one."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FEMA and tax law use different tests for who is an NRI.",
+   "Tax residence is decided each year by days in India.",
+   "RNOR is a tax status, and OCI is a card."
+  ]
+ }
+]

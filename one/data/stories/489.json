@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Meena sold one share at a ₹50,000 profit and another at a ₹30,000 loss. She expected tax on ₹50,000. The law lets her net the two, so only ₹20,000 is taxed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Losses are useful",
+  "lines": [
+   [
+    "meena",
+    "I lost money on a share. Is that loss just gone?"
+   ],
+   [
+    "sikka",
+    "No. In the same year it can cut your gains. If it is not used, it can be carried to later years, but only if you file your return on time."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Set-off in action",
+  "intro": "Made-up numbers.",
+  "rows": [
+   [
+    "Profit on share A",
+    "₹50,000"
+   ],
+   [
+    "Loss on share B",
+    "₹30,000"
+   ],
+   [
+    "=",
+    "Gain to be taxed",
+    "₹20,000"
+   ],
+   [
+    "Loss not used this year",
+    "Carry forward, if the return is filed on time"
+   ]
+  ],
+  "note": "A long-term capital loss can usually be set off only against long-term gains. A short-term loss can be set off against both, subject to the rules."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Losses and advance tax",
+  "stops": [
+   [
+    "A loss can reduce a gain in the same year",
+    true
+   ],
+   [
+    "A loss can be carried forward without filing a return",
+    false
+   ],
+   [
+    "Advance tax is paid in instalments during the year",
+    true
+   ],
+   [
+    "Selling at a loss just for tax is always wise",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Set-off reduces the gain that is taxed."
+   ],
+   [
+    2.2,
+    "Carry forward needs the return filed by the due date."
+   ],
+   [
+    4.0,
+    "Advance tax falls due in instalments on set dates during the year."
+   ],
+   [
+    5.6,
+    "Do not let the tax tail wag the investing dog, so keep the plan in view."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s489q1",
+  "h": "Check yourself",
+  "q": "Rohan has a ₹40,000 gain on one fund and a ₹10,000 loss on another, same type, same year. What is taxed?",
+  "opts": [
+   "₹30,000",
+   "₹40,000",
+   "₹50,000",
+   "₹10,000"
+  ],
+  "ans": 0,
+  "why": [
+   "The loss is set off against the gain, leaving ₹30,000 to tax.",
+   "₹40,000 ignores the loss, which the law allows him to set off.",
+   "₹50,000 adds the loss to the gain, which reverses the idea.",
+   "₹10,000 is only the loss, and not what is left after setting it off."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s489q2",
+  "h": "Check yourself",
+  "q": "Meena has a loss she cannot use this year. What must she do to carry it forward?",
+  "opts": [
+   "Tell her broker in a letter",
+   "Pay extra tax first",
+   "File her return by the due date",
+   "Wait five years and then claim"
+  ],
+  "ans": 2,
+  "why": [
+   "A letter to a broker has no effect on tax records.",
+   "No extra payment is needed to carry a loss forward.",
+   "Carry forward of such losses usually needs a return filed on time.",
+   "Waiting does not help. The loss must be reported each year."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s489q3",
+  "h": "Check yourself",
+  "q": "Rohan sells a fund at a loss only to cut tax, and then wants to invest again for the same goal. What should he keep in mind?",
+  "opts": [
+   "That losses are always a good thing",
+   "That he must never hold the fund again",
+   "That tax rules do not apply to him",
+   "Costs and his plan, not just the tax"
+  ],
+  "ans": 3,
+  "why": [
+   "A loss is not good in itself. It only offsets a gain.",
+   "No rule forbids holding it again, but the plan should lead.",
+   "Tax rules apply to every taxpayer, whatever the case.",
+   "Selling has costs and may break his plan."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s489q4",
+  "h": "Check yourself",
+  "q": "Dadi expects large capital gains this year. What does advance tax ask of her?",
+  "opts": [
+   "Pay everything on the last day of the year",
+   "Pay tax in instalments during the year",
+   "Pay only when the tax office sends a letter",
+   "Pay nothing until she retires"
+  ],
+  "ans": 1,
+  "why": [
+   "Paying everything at the end can mean interest for delay.",
+   "Above a set limit, tax is paid in instalments in the year.",
+   "Waiting for a letter is not how advance tax works.",
+   "Retirement does not pause the tax on her gains."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A loss can cut a gain in the same year. This is called set-off.",
+   "To carry a loss forward, file the return by the due date.",
+   "Advance tax is paid in instalments. Do not sell only for tax."
+  ]
+ }
+]

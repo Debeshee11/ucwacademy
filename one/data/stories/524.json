@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A company books a big profit this quarter from selling land. Next quarter, the land is gone. Not all profit is equal. Some repeats, some is a one-off. Quality of earnings is how you tell them apart.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Repeatable or not?",
+  "lines": [
+   [
+    "meena",
+    "Profit is up 40%. Good news?"
+   ],
+   [
+    "sikka",
+    "Ask why. An exceptional item, like a land sale, will not repeat. Accruals book a sale before cash arrives. Receivable days show how long customers take to pay. And an auditor's qualification says something is wrong with the accounts or the audit."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Warning signs, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Profit jump from land sale",
+    "an exceptional item"
+   ],
+   [
+    "Sale booked in March, cash in June",
+    "an accrual"
+   ],
+   [
+    "Receivable days",
+    "from 45 to 90"
+   ],
+   [
+    "Audit report",
+    "could not verify a large related-party loan"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s524q1",
+  "h": "Check yourself",
+  "q": "A company books a large profit from selling land this quarter. What is this?",
+  "opts": [
+   "Operating cash flow",
+   "A recurring sale",
+   "A liability",
+   "An exceptional item"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not core operating cash. It does not answer what was asked.",
+   "A land sale is not recurring. The details here point elsewhere.",
+   "A liability is owed money. That does not match this case.",
+   "It is an unusual gain not expected to repeat."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s524q2",
+  "h": "Check yourself",
+  "q": "A firm books a sale in March but the customer pays in June. What is this?",
+  "opts": [
+   "A capital call",
+   "An accrual",
+   "Cash in March",
+   "A dividend"
+  ],
+  "ans": 1,
+  "why": [
+   "A capital call is an AIF demand. The details here point elsewhere.",
+   "Accruals are recorded when earned, not when cash moves.",
+   "Cash arrives in June. It does not fit the facts given.",
+   "A dividend is a payout. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s524q3",
+  "h": "Check yourself",
+  "q": "Customers who used to pay in 45 days now take 90. What does this show?",
+  "opts": [
+   "Profit has also doubled",
+   "Debt has now vanished",
+   "Receivable days doubled",
+   "Revenue is now guaranteed"
+  ],
+  "ans": 2,
+  "why": [
+   "Slower payment does not double profit.",
+   "Debt is unaffected. It does not fit the facts given.",
+   "Receivable days measure collection time.",
+   "Slow collection raises doubt, not a guarantee."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s524q4",
+  "h": "Check yourself",
+  "q": "The audit report says the auditor could not verify a large loan to a related firm. What is this?",
+  "opts": [
+   "An auditor's qualification",
+   "A clean audit report issued",
+   "A dividend notice being sent",
+   "A rating upgrade being given"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a remark that the accounts have a problem or the audit was limited.",
+   "A clean audit has no such remark. It does not answer what was asked.",
+   "A dividend notice is unrelated. The details here point elsewhere.",
+   "A rating upgrade is unrelated. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Exceptional items are one-offs, not repeatable earnings.",
+   "Accruals record income when earned, not when cash moves.",
+   "Watch receivable days and auditor's qualifications."
+  ]
+ }
+]

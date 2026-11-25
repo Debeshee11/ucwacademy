@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A stranger on a messaging group says: 'Put in ₹50,000 and get ₹1 lakh in a month, guaranteed.' Thousands of people have lost money to this one sentence, in many different costumes.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Same trick, new costume",
+  "lines": [
+   [
+    "rohan",
+    "The group has hundreds of members, and people post their profits. It must be real?"
+   ],
+   [
+    "sikka",
+    "Profit screenshots are very easy to fake. Look for the shared warning signs instead of the story."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Red flags",
+  "stops": [
+   [
+    "No genuine investment can guarantee high returns",
+    true
+   ],
+   [
+    "A big group of members proves a scheme is safe",
+    false
+   ],
+   [
+    "Pressure to decide today is a warning sign",
+    true
+   ],
+   [
+    "An adviser needs no registration to charge fees",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Markets rise and fall, so a promise of fixed high profit with no risk is false."
+   ],
+   [
+    2.2,
+    "Crowds and screenshots are easy to fake, so they prove nothing."
+   ],
+   [
+    4.0,
+    "Scammers rush you so that you do not have time to check."
+   ],
+   [
+    5.6,
+    "Paid advice needs a registration, which you can verify."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Doubling in a month",
+  "intro": "What the promise would really mean.",
+  "rows": [
+   [
+    "Money put in",
+    "₹50,000"
+   ],
+   [
+    "Promised in one month",
+    "₹1,00,000"
+   ],
+   [
+    "That is a gain of",
+    "100% a month"
+   ],
+   [
+    "Over one year, if repeated",
+    "4,096 times the money"
+   ]
+  ],
+  "note": "No bank, fund or business earns this. A promise like it is not an opportunity. It is the warning sign."
+ },
+ {
+  "k": "pick",
+  "id": "s501q1",
+  "h": "Check yourself",
+  "q": "A caller says Meena's money will double in a month, with no risk. What does this most likely show?",
+  "opts": [
+   "A warning sign of a scam",
+   "A special offer for smart investors",
+   "A deal that banks cannot match yet",
+   "A government scheme with rare access"
+  ],
+  "ans": 0,
+  "why": [
+   "No genuine investment can promise high profit with no risk, so this is a red flag.",
+   "Real investors check claims. A promise this large is not a mark of smartness.",
+   "Banks cannot match it because no honest product can make such a promise.",
+   "Government schemes do not promise doubled money in a month, to anyone."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s501q2",
+  "h": "Check yourself",
+  "q": "A message says: 'Join in the next hour or lose your place.' What should Rohan do?",
+  "opts": [
+   "Pay quickly to secure the place",
+   "Send the link on to his friends",
+   "Slow down, since rushing is a trick",
+   "Share his bank details to hold it"
+  ],
+  "ans": 2,
+  "why": [
+   "Paying in a hurry is exactly what the message is built to cause.",
+   "Forwarding spreads the risk to his friends and does nothing to verify it.",
+   "Urgency is used so that he cannot check, so a pause is the safest step.",
+   "Bank details given in haste can be used to take money from him."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s501q3",
+  "h": "Check yourself",
+  "q": "A social media page sells paid stock tips. Which question matters most before paying?",
+  "opts": [
+   "How many followers does the page have today?",
+   "How bright and neat are the page photos?",
+   "Did a friend of a friend pay for it?",
+   "Is he registered, and can I verify it?"
+  ],
+  "ans": 3,
+  "why": [
+   "Followers can be bought, so the number says little about honesty.",
+   "Photos are made to attract and say nothing about the adviser's standing.",
+   "A friend's payment is not a check, since friends can be fooled too.",
+   "Paid advice needs a registration that can be checked on the regulator's list."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s501q4",
+  "h": "Check yourself",
+  "q": "Meena sees screenshots of big profits in a group. What is the right view?",
+  "opts": [
+   "They prove the scheme works",
+   "They can be faked, proving nothing",
+   "They prove that the group is registered",
+   "They show that the profit is guaranteed"
+  ],
+  "ans": 1,
+  "why": [
+   "A picture of a profit does not show that the scheme is real or sound.",
+   "Screenshots are easy to fake, so they are no evidence at all.",
+   "Registration is shown on the regulator's list and not in a chat group.",
+   "No screenshot can show a guarantee, since no guarantee can be real."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Guaranteed high returns are a lie, since every investment carries risk.",
+   "Pressure to hurry is a trick to stop you checking.",
+   "Paid advice needs a registration. Screenshots and crowds prove nothing."
+  ]
+ }
+]

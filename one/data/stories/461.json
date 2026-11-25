@@ -1,0 +1,179 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Rohan is offered a ₹30 lakh home loan with a smiling line: 'Your EMI is only ₹26,992.' Nobody mentions that over twenty years he will hand back about ₹64.8 lakh.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The friendly number",
+  "lines": [
+   [
+    "rohan",
+    "The EMI fits my salary, so the loan is fine, right?"
+   ],
+   [
+    "sikka",
+    "The EMI is the smallest, friendliest number. Ask for the total you will repay, and what the loan really costs."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rohan's loan, 9% a year",
+  "intro": "A made-up loan, 20 years.",
+  "rows": [
+   [
+    "Loan taken",
+    "₹30 lakh"
+   ],
+   [
+    "EMI each month",
+    "₹26,992"
+   ],
+   [
+    "× 240 months",
+    "₹64.8 lakh"
+   ],
+   [
+    "=",
+    "Interest paid",
+    "₹34.8 lakh"
+   ],
+   [
+    "First EMI: interest part",
+    "₹22,500"
+   ],
+   [
+    "First EMI: principal part",
+    "₹4,492"
+   ]
+  ],
+  "note": "Early on, most of each EMI is interest, since you still owe almost everything."
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "15-year loan",
+  "b": "25-year loan",
+  "rows": [
+   [
+    "EMI each month (₹ thousand)",
+    30,
+    25
+   ],
+   [
+    "Total interest paid (₹ lakh)",
+    25,
+    45
+   ]
+  ],
+  "h": "Same ₹30 lakh at 9%",
+  "alt": "Two sets of bars comparing EMI and total interest for a short and a long loan",
+  "caps": [
+   [
+    0.3,
+    "Same loan, same rate, two tenures."
+   ],
+   [
+    2.2,
+    "Fifteen years: EMI about ₹30,400 a month."
+   ],
+   [
+    4.0,
+    "Twenty-five years: EMI about ₹25,200 a month."
+   ],
+   [
+    5.6,
+    "That ₹5,200 saved each month costs about ₹20 lakh more in interest."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s461q1",
+  "h": "Check yourself",
+  "q": "A lender quotes Meena only the EMI of her loan. Which number should she ask for as well?",
+  "opts": [
+   "The lender's profit made in the last year",
+   "The total she will repay over the whole loan",
+   "The EMI of a loan that her friend took",
+   "The number of branches the lender has"
+  ],
+  "ans": 1,
+  "why": [
+   "The lender's yearly profit says nothing about what her own loan costs her.",
+   "EMI times months, less the principal, shows the true price of the loan.",
+   "A friend's EMI depends on other terms, so it will not show her cost.",
+   "Branch numbers do not tell her what she will repay in total."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s461q2",
+  "h": "Check yourself",
+  "q": "Rohan stretches his loan from 15 to 25 years to get a smaller EMI. What is the trade-off?",
+  "opts": [
+   "A lower EMI, and less interest paid overall",
+   "A higher EMI, but he finishes the loan sooner",
+   "No change in cost, since the rate stays the same",
+   "A lower EMI, but far more interest over the years"
+  ],
+  "ans": 3,
+  "why": [
+   "Interest rises with tenure, so the total cost goes up and not down.",
+   "A longer tenure lowers the EMI, so this describes the opposite choice.",
+   "The rate may stay the same, but the longer time means a bigger total cost.",
+   "A longer tenure cuts the monthly burden but adds many years of interest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s461q3",
+  "h": "Check yourself",
+  "q": "Why is most of the first EMI interest?",
+  "opts": [
+   "Interest runs on the balance, highest at the start",
+   "Lenders always take interest first as a fixed rule",
+   "The principal is paid off before any interest starts",
+   "Early EMIs are always bigger than the later ones in the loan"
+  ],
+  "ans": 0,
+  "why": [
+   "Interest runs on what is owed, and early on almost the whole loan is owed.",
+   "It is not a rule of taking interest first. It follows from the large balance.",
+   "Principal and interest are mixed in each EMI from the first month.",
+   "A standard EMI is the same amount each month for the whole tenure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s461q4",
+  "h": "Check yourself",
+  "q": "Meena takes home ₹80,000 a month. Which total of EMIs follows the 40% guide?",
+  "opts": [
+   "Up to about ₹60,000 a month",
+   "Up to about ₹72,000 a month",
+   "Up to about ₹32,000 a month",
+   "Any amount, if the lender approves"
+  ],
+  "ans": 2,
+  "why": [
+   "₹60,000 is three quarters of her pay, far above a safe share.",
+   "₹72,000 is nine tenths of her pay and leaves almost nothing for life.",
+   "Forty percent of ₹80,000 is ₹32,000, which leaves room if a month goes wrong.",
+   "Lender approval is a limit on the lender's side, not a safe level for her."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Ask for the total repaid, not only the EMI.",
+   "A longer tenure lowers the EMI but raises the interest by a lot.",
+   "Keep all EMIs together under about 40% of take-home pay."
+  ]
+ }
+]

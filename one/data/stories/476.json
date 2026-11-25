@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena in Canada tries to start a SIP in an Indian fund. The application is declined, not because of her, but because that fund house does not accept investors from her country. A single check could have saved her a week.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Before the first SIP",
+  "lines": [
+   [
+    "meena",
+    "Can an NRI invest in Indian mutual funds like anyone else?"
+   ],
+   [
+    "sikka",
+    "Yes, with a few extra steps. Complete NRI KYC, pay from an NRE or NRO account, and check that the fund house accepts your country. Tax is deducted when you redeem."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four things to check",
+  "intro": "Before an NRI invests.",
+  "rows": [
+   [
+    "NRI KYC",
+    "Passport, visa and overseas address, before investing"
+   ],
+   [
+    "Payment source",
+    "An NRE or NRO account, which decides if proceeds can go abroad"
+   ],
+   [
+    "Country restriction",
+    "Some fund houses decline some countries"
+   ],
+   [
+    "Capital gains TDS",
+    "Deducted at non-resident rates when units are redeemed"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Mutual funds for NRIs",
+  "stops": [
+   [
+    "NRI KYC is needed before investing",
+    true
+   ],
+   [
+    "Every fund house accepts every country",
+    false
+   ],
+   [
+    "The payment account affects repatriation",
+    true
+   ],
+   [
+    "No tax is deducted when an NRI redeems",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Identity and overseas address are verified first."
+   ],
+   [
+    2.2,
+    "Some decline investors from certain countries."
+   ],
+   [
+    4.0,
+    "NRE and NRO money follow different repatriation rules."
+   ],
+   [
+    5.6,
+    "TDS is deducted at rates set for non-residents."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s476q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to invest in an Indian fund from Dubai. What does he complete first?",
+  "opts": [
+   "A shop loyalty card sign-up form",
+   "A resident's income tax form",
+   "NRI KYC with passport and address",
+   "A school admission application form"
+  ],
+  "ans": 2,
+  "why": [
+   "A loyalty card has no role in investing. It does not answer what was asked.",
+   "A resident's form does not suit an NRI. The details here point elsewhere.",
+   "Verification with passport, visa and overseas address is the first step.",
+   "A school form has no link to investing. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s476q2",
+  "h": "Check yourself",
+  "q": "Meena pays her SIP from an NRE account. What does this mean for her proceeds?",
+  "opts": [
+   "They can go abroad more easily",
+   "They are locked in for all time",
+   "They are treated as a gift to her",
+   "They are turned into gold bars"
+  ],
+  "ans": 0,
+  "why": [
+   "NRE money is repatriable, so proceeds are easier to send abroad.",
+   "Proceeds are not locked for ever by this choice. It does not fit the facts given.",
+   "Proceeds from an investment are not a gift. It does not fit the facts given.",
+   "Proceeds do not turn into gold. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s476q3",
+  "h": "Check yourself",
+  "q": "A fund house declines Rohan's application because of his country. What is this called?",
+  "opts": [
+   "A stock split by the company",
+   "A bonus issue of extra shares",
+   "A premium waiver on a policy",
+   "A country restriction"
+  ],
+  "ans": 3,
+  "why": [
+   "A stock split divides shares and is not a decline.",
+   "A bonus issue gives extra shares to holders. It does not answer what was asked.",
+   "A premium waiver is an insurance term. It does not answer what was asked.",
+   "Some fund houses limit investors from certain countries."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s476q4",
+  "h": "Check yourself",
+  "q": "Meena redeems units and her credit arrives lower than expected. What is the likely reason?",
+  "opts": [
+   "The fund house keeps a gift share",
+   "Tax deducted at source on gains",
+   "SEBI charges a fee on redemption",
+   "The bank lost the money in transit"
+  ],
+  "ans": 1,
+  "why": [
+   "A fund house does not keep gifts from the gain.",
+   "TDS is deducted at non-resident rates on redemption.",
+   "SEBI does not charge a fee on redemption.",
+   "A bank losing money is not the usual reason."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Complete NRI KYC before investing in an Indian fund.",
+   "The payment account, NRE or NRO, affects what you can send abroad.",
+   "Check country restrictions. Expect TDS on redemption."
+  ]
+ }
+]

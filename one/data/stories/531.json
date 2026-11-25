@@ -1,0 +1,146 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Thousands of trades in a day become one small bar on a chart. A candlestick shows where the price began, how far it moved and where it ended. Charts describe what already happened. Education, not a call to trade.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Reading a candle",
+  "lines": [
+   [
+    "meena",
+    "What is a candlestick?"
+   ],
+   [
+    "sikka",
+    "One bar for one period: the open, high, low and close. Many bars show a trend: up, down or sideways. The timeframe is how long each candle covers. Volume is the number of shares traded in that period."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "One candle's four prices, ₹, made up",
+  "vals": [
+   100,
+   108,
+   96,
+   105
+  ],
+  "labels": [
+   "Open",
+   "High",
+   "Low",
+   "Close"
+  ],
+  "big": "Open 100, close 105",
+  "small": "high 108, low 96",
+  "alt": "Bars for the open, high, low and close of one candle",
+  "caps": [
+   [
+    0.3,
+    "The candle opens at ₹100."
+   ],
+   [
+    2.2,
+    "It reaches a high of ₹108."
+   ],
+   [
+    4.0,
+    "It dips to a low of ₹96."
+   ],
+   [
+    5.6,
+    "It closes at ₹105."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s531q1",
+  "h": "Check yourself",
+  "q": "What does a single daily candlestick show?",
+  "opts": [
+   "The company's annual profit",
+   "The dividend history of the firm",
+   "The open, high, low and close",
+   "The management's names and ages"
+  ],
+  "ans": 2,
+  "why": [
+   "Profit is not on a candle.",
+   "Dividends are not on a candle.",
+   "That is the data in one candle.",
+   "Names are not on a candle."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s531q2",
+  "h": "Check yourself",
+  "q": "A share has made higher peaks and higher lows for six months. What is this?",
+  "opts": [
+   "An uptrend",
+   "A downtrend",
+   "A sideways trend",
+   "A breakout failure"
+  ],
+  "ans": 0,
+  "why": [
+   "Higher peaks and higher lows describe an uptrend.",
+   "A downtrend has lower highs and lows. It does not fit the facts given.",
+   "A sideways trend has flat peaks. It does not fit the facts given.",
+   "It is not a failure. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s531q3",
+  "h": "Check yourself",
+  "q": "A trader checks the weekly chart for direction and the hourly chart for entry. What differs?",
+  "opts": [
+   "The company",
+   "The currency",
+   "The exchange",
+   "The timeframe"
+  ],
+  "ans": 3,
+  "why": [
+   "The company is the same. That does not match this case.",
+   "The currency is the same. It does not fit the facts given.",
+   "The exchange is the same. It does not answer what was asked.",
+   "Timeframe is the length each candle covers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s531q4",
+  "h": "Check yourself",
+  "q": "On a breakout day, three times the usual number of shares change hands. What is this measure?",
+  "opts": [
+   "Trend",
+   "Volume",
+   "Timeframe",
+   "Premium"
+  ],
+  "ans": 1,
+  "why": [
+   "Trend is direction. It does not fit the facts given.",
+   "Volume is the number of shares traded in a period.",
+   "Timeframe is the length of a candle. The details here point elsewhere.",
+   "Premium is an extra price. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A candlestick shows open, high, low and close for one period.",
+   "A trend can be up, down or sideways. Timeframe sets what each candle covers.",
+   "Volume is the number of shares traded."
+  ]
+ }
+]

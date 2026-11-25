@@ -1,0 +1,166 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena spends ₹50,000 a month today. She thinks she needs ₹50,000 a month when she retires in 25 years. At 6% inflation, the same life will cost about ₹2.15 lakh a month.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "How much is enough?",
+  "lines": [
+   [
+    "meena",
+    "I will retire at 60. How do I even know what number to aim for?"
+   ],
+   [
+    "sikka",
+    "Start with what you spend now, grow it by inflation to the year you retire, then see how big a pot can pay that for life."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   50,
+   89.5,
+   160.4,
+   214.6
+  ],
+  "labels": [
+   "Today",
+   "10 yrs",
+   "20 yrs",
+   "25 yrs"
+  ],
+  "big": "About ₹2.15 lakh",
+  "small": "a month in 25 years, if prices rise 6% a year",
+  "h": "The same life costs more",
+  "alt": "Bars showing a monthly expense of fifty thousand rupees rising over twenty-five years, in thousands",
+  "caps": [
+   [
+    0.3,
+    "Meena spends ₹50,000 a month today."
+   ],
+   [
+    2.0,
+    "At 6% a year, ten years on, the same life costs about ₹90,000."
+   ],
+   [
+    3.8,
+    "After twenty years, about ₹1.6 lakh."
+   ],
+   [
+    5.2,
+    "After twenty-five years, about ₹2.15 lakh. An assumed rate, not a forecast."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A rule of thumb for the pot",
+  "intro": "A made-up example, to show the idea.",
+  "rows": [
+   [
+    "Monthly spend at 60",
+    "₹2.15 lakh"
+   ],
+   [
+    "× 12 months",
+    "₹25.8 lakh a year"
+   ],
+   [
+    "× 25 times",
+    "about ₹6.4 crore"
+   ]
+  ],
+  "note": "The 25-times rule matches drawing about 4% a year. It is a rule of thumb and not a promise."
+ },
+ {
+  "k": "pick",
+  "id": "s491q1",
+  "h": "Check yourself",
+  "q": "Rohan spends ₹40,000 a month and will retire in 20 years. What is wrong with planning for ₹40,000 then?",
+  "opts": [
+   "Retirees never spend anything on food or travel",
+   "Savings grow by themselves to cover all of it",
+   "The bank will pay his monthly bills for him",
+   "Prices will rise, so the same life costs more"
+  ],
+  "ans": 3,
+  "why": [
+   "Retirees still spend on food, health and daily needs, so costs do not vanish.",
+   "Savings grow only if they are invested well, and not by themselves.",
+   "A bank does not pay a retiree's bills, so the plan must cover them.",
+   "Inflation lifts prices every year, so the same life needs a bigger monthly sum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s491q2",
+  "h": "Check yourself",
+  "q": "What does longevity risk mean?",
+  "opts": [
+   "The chance that markets rise for many years",
+   "The chance of outliving your savings",
+   "The risk of losing a job before sixty",
+   "The risk of a loan growing in size"
+  ],
+  "ans": 1,
+  "why": [
+   "Rising markets are good news and not a risk to your savings.",
+   "Living longer than planned means savings must last for more years.",
+   "Job loss is a risk to earning years, not the years after retirement.",
+   "A loan growing is a different risk and not about the length of life."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s491q3",
+  "h": "Check yourself",
+  "q": "A retiree withdraws far more than the plan allows in the first years. What is likely?",
+  "opts": [
+   "The corpus grows faster, since money is moving",
+   "Inflation stops for the whole period",
+   "The corpus may run out before life ends",
+   "The withdrawal rate has no effect on the pot"
+  ],
+  "ans": 2,
+  "why": [
+   "Money withdrawn no longer earns, so the pot grows slower and not faster.",
+   "Inflation goes on whatever the retiree does with the withdrawals.",
+   "Heavy early draws shrink the pot, leaving less to earn and to last.",
+   "The rate of withdrawal matters a lot to how long the pot lasts."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s491q4",
+  "h": "Check yourself",
+  "q": "Meena's yearly spend at retirement is ₹10 lakh. Using the 25-times rule, what pot does it point to?",
+  "opts": [
+   "About ₹2.5 crore",
+   "About ₹25 lakh",
+   "About ₹10 crore",
+   "About ₹1 crore"
+  ],
+  "ans": 0,
+  "why": [
+   "Ten lakh times twenty-five is ₹2.5 crore, matching a draw of about 4%.",
+   "₹25 lakh is only two and a half years of her spending.",
+   "₹10 crore is forty times her yearly spend, far above the rule.",
+   "₹1 crore would last about ten years at her spending."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Grow today's spending by inflation to find the cost at retirement.",
+   "A pot of about 25 times yearly spend is a rule of thumb, not a promise.",
+   "Longevity risk is outliving your savings, so plan for a long life."
+  ]
+ }
+]

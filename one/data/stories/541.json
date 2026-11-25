@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A person sells stock recommendations as a business with no SEBI registration. That is not allowed. Research is a regulated activity in India. Analysts need registration and a certification exam.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A regulated job",
+  "lines": [
+   [
+    "meena",
+    "Can anyone publish stock ideas?"
+   ],
+   [
+    "sikka",
+    "Not as a business. A research analyst prepares or publishes research on securities. A research report gives a view and the reasons. The analyst must hold SEBI registration, and prepares through NISM Series XV, the certification for research analysts."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Who may do research",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Research analyst",
+    "prepares or publishes research on securities"
+   ],
+   [
+    "Research report",
+    "a view, with the reasons behind it"
+   ],
+   [
+    "SEBI registration",
+    "the licence needed before offering research"
+   ],
+   [
+    "NISM Series XV",
+    "the analyst certification exam"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s541q1",
+  "h": "Check yourself",
+  "q": "A professional publishes a note rating a listed bank as a buy. Who is she?",
+  "opts": [
+   "A custodian of shares",
+   "A trustee of a fund",
+   "A regulator of markets",
+   "A research analyst"
+  ],
+  "ans": 3,
+  "why": [
+   "A custodian safekeeps securities. It does not answer what was asked.",
+   "A trustee protects unitholders. The details here point elsewhere.",
+   "A regulator makes rules. That does not match this case.",
+   "She prepares or publishes research on securities."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s541q2",
+  "h": "Check yourself",
+  "q": "An individual wants to sell stock recommendations as a business. What must she have?",
+  "opts": [
+   "A shop licence only",
+   "SEBI registration",
+   "A TV channel",
+   "A large following"
+  ],
+  "ans": 1,
+  "why": [
+   "A shop licence is not enough. The details here point elsewhere.",
+   "The licence is required before offering research.",
+   "A TV channel is not a licence. It does not fit the facts given.",
+   "A following is not a licence. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s541q3",
+  "h": "Check yourself",
+  "q": "An aspiring analyst prepares for an exam on research methods and rules. Which is it?",
+  "opts": [
+   "NISM Series XV",
+   "NISM Series VIII",
+   "A bank exam",
+   "A school test"
+  ],
+  "ans": 0,
+  "why": [
+   "It is the certification exam for research analysts.",
+   "Series VIII covers equity derivatives. It does not answer what was asked.",
+   "A bank exam is a different matter. It does not answer what was asked.",
+   "A school test is a different matter. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s541q4",
+  "h": "Check yourself",
+  "q": "A note explains why a firm is expected to grow faster than its peers. What is this?",
+  "opts": [
+   "A capital call",
+   "A dividend notice",
+   "A research report",
+   "A margin note"
+  ],
+  "ans": 2,
+  "why": [
+   "A capital call is an AIF demand. It does not fit the facts given.",
+   "A dividend notice is a payout notice. It does not answer what was asked.",
+   "It is a written analysis giving a view and reasons.",
+   "A margin note belongs to futures. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Research is a regulated activity in India.",
+   "Analysts need SEBI registration.",
+   "NISM Series XV is the research analyst certification."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan buys shares in an Indian company using his NRE account. When he sells, the money can go abroad. His friend bought using NRO funds. When he sells, he faces limits and paperwork. Same share, different route.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two routes",
+  "lines": [
+   [
+    "rohan",
+    "Is there a catch to buying shares as an NRI?"
+   ],
+   [
+    "sikka",
+    "You need a PIS account at an authorised bank. Pay from NRE if you want money to go abroad easily. Pay from NRO and expect limits. There is also a cap on how much of one company foreign investors may hold."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The two routes",
+  "intro": "Where your money comes from.",
+  "rows": [
+   [
+    "PIS account",
+    "An RBI-authorised bank account to trade shares"
+   ],
+   [
+    "Repatriable route",
+    "Buy with NRE funds, and proceeds can go abroad"
+   ],
+   [
+    "Non-repatriable route",
+    "Buy with NRO funds, and sending abroad needs papers and limits"
+   ],
+   [
+    "Holding limit",
+    "A cap on how much of one company foreign investors may own"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Shares through PIS",
+  "stops": [
+   [
+    "A PIS account is needed to trade shares as an NRI",
+    true
+   ],
+   [
+    "NRO funds give the same easy repatriation as NRE",
+    false
+   ],
+   [
+    "There is a cap on foreign holding in a company",
+    true
+   ],
+   [
+    "NRIs trade shares from a normal resident account",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The bank is authorised by the RBI."
+   ],
+   [
+    2.2,
+    "NRO routes carry limits and paperwork."
+   ],
+   [
+    4.0,
+    "A purchase can be blocked when the cap is reached."
+   ],
+   [
+    5.6,
+    "NRIs need the special account for trading."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s477q1",
+  "h": "Check yourself",
+  "q": "Which account must Rohan open to trade shares on Indian exchanges as an NRI?",
+  "opts": [
+   "A resident savings account",
+   "A PIS account at a bank",
+   "A gift account opened at a shop",
+   "A postal recurring deposit"
+  ],
+  "ans": 1,
+  "why": [
+   "A resident savings account does not suit an NRI trader.",
+   "The PIS account runs through an RBI-approved bank.",
+   "A shop gift account is not for trading.",
+   "A recurring deposit is not a trading account."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s477q2",
+  "h": "Check yourself",
+  "q": "Meena wants to send share sale proceeds abroad easily. Which route should she use?",
+  "opts": [
+   "Buy with cash from a friend",
+   "Buy through a resident relative",
+   "Buy with a gift card",
+   "Buy with NRE funds"
+  ],
+  "ans": 3,
+  "why": [
+   "Cash from a friend breaks the rules.",
+   "Using a relative's account breaks the rules.",
+   "A gift card is not an investing route.",
+   "The repatriable route uses NRE money."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s477q3",
+  "h": "Check yourself",
+  "q": "Rohan's purchase is blocked because foreign investors together reached a limit in the company. What is this?",
+  "opts": [
+   "A holding limit",
+   "A price band",
+   "A stop-loss order",
+   "A dividend payout"
+  ],
+  "ans": 0,
+  "why": [
+   "It caps how much of one company foreign investors may own.",
+   "A price band limits daily price moves. It does not fit the facts given.",
+   "A stop-loss is an order to sell at a set price. It does not answer what was asked.",
+   "A dividend is a share of profit. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s477q4",
+  "h": "Check yourself",
+  "q": "Meena used NRO funds to buy shares. What should she expect when she sells?",
+  "opts": [
+   "No rules apply to the transfer",
+   "An instant transfer abroad",
+   "Limits and paperwork",
+   "A tax holiday for the money"
+  ],
+  "ans": 2,
+  "why": [
+   "There are rules, so this is not right. It does not fit the facts given.",
+   "Transfers abroad are not instant for NRO funds. It does not answer what was asked.",
+   "NRO money is subject to limits and papers for sending abroad.",
+   "There is no tax holiday for this. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NRIs trade shares through a PIS account at an authorised bank.",
+   "NRE funds give the repatriable route. NRO funds carry limits.",
+   "A holding cap limits foreign ownership in one company."
+  ]
+ }
+]

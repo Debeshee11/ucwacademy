@@ -1,0 +1,146 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A share at ₹300 earns ₹15 a year. A bank share trades at ₹210 against ₹100 of net worth. A share at 30 times earnings grows 30% a year. Four multiples, four ways to put a price next to something real.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Multiples",
+  "lines": [
+   [
+    "meena",
+    "Which multiple is best?"
+   ],
+   [
+    "sikka",
+    "It depends on the business. P/E compares price with earnings. EV/EBITDA compares the whole business, debt included, with operating profit. P/B suits banks. PEG divides P/E by expected growth, so a P/E of 30 with 30% growth gives one."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Share A",
+  "b": "Share B",
+  "rows": [
+   [
+    "P/E (times)",
+    20,
+    60
+   ],
+   [
+    "EPS, ₹ (price ₹300 each)",
+    15,
+    5
+   ]
+  ],
+  "h": "P/E from the same price, made up",
+  "alt": "Bars comparing P/E and EPS for two shares at the same price",
+  "caps": [
+   [
+    0.3,
+    "Both shares cost ₹300."
+   ],
+   [
+    2.2,
+    "A earns ₹15; B earns ₹5."
+   ],
+   [
+    4.0,
+    "A trades at 20 times, B at 60 times."
+   ],
+   [
+    5.6,
+    "Multiples compare price with earnings."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s528q1",
+  "h": "Check yourself",
+  "q": "A share priced at ₹300 earns ₹15 a year. What is the P/E?",
+  "opts": [
+   "15 times",
+   "300 times",
+   "4,500 times",
+   "20 times"
+  ],
+  "ans": 3,
+  "why": [
+   "15 is the EPS. It does not answer what was asked.",
+   "300 is the price. The details here point elsewhere.",
+   "4,500 multiplies, which is wrong. That does not match this case.",
+   "300 ÷ 15 is 20. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s528q2",
+  "h": "Check yourself",
+  "q": "A bank share trades at ₹210 against ₹100 of net worth per share. What is the P/B?",
+  "opts": [
+   "0.48",
+   "2.1",
+   "21",
+   "310"
+  ],
+  "ans": 1,
+  "why": [
+   "0.48 inverts the ratio.",
+   "210 ÷ 100 is 2.1.",
+   "21 shifts the decimal.",
+   "310 adds, which is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s528q3",
+  "h": "Check yourself",
+  "q": "A share at 30 times earnings grows earnings 30% a year. What is its PEG?",
+  "opts": [
+   "1",
+   "30",
+   "0.3",
+   "900"
+  ],
+  "ans": 0,
+  "why": [
+   "30 ÷ 30 is 1. That matches the case described.",
+   "30 is the P/E. It does not fit the facts given.",
+   "0.3 divides wrongly. It does not answer what was asked.",
+   "900 multiplies, which is wrong. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s528q4",
+  "h": "Check yourself",
+  "q": "Two companies carry different debt loads. Which multiple compares whole-business value against core profit?",
+  "opts": [
+   "Price to book",
+   "PEG ratio",
+   "EV to EBITDA",
+   "Dividend yield"
+  ],
+  "ans": 2,
+  "why": [
+   "P/B compares price with net worth. It does not fit the facts given.",
+   "PEG adds growth to P/E. It does not answer what was asked.",
+   "EV includes debt, so it handles different debt loads.",
+   "Dividend yield is a payout ratio. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "P/E = price ÷ EPS. P/B = price ÷ net worth per share.",
+   "EV/EBITDA compares the whole business with operating profit.",
+   "PEG = P/E ÷ expected earnings growth."
+  ]
+ }
+]

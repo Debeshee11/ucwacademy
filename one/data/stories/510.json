@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena kept one page in a drawer, listing every account, policy and property, and where the papers are. After her mother's death, the family found everything in an afternoon, not in two years.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Keep it organised",
+  "lines": [
+   [
+    "meena",
+    "What do I put in that list, and how often do I update it?"
+   ],
+   [
+    "sikka",
+    "List every account, investment, policy and property, with how to claim each. Review it after big life events, and once a year as a habit."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four habits",
+  "intro": "Small steps that help the most.",
+  "rows": [
+   [
+    "Asset register",
+    "A list of accounts, investments, policies and property"
+   ],
+   [
+    "Digital assets",
+    "Where online accounts and recovery details are kept"
+   ],
+   [
+    "Life event review",
+    "Update nominations and wills after marriage, a child, divorce or a move"
+   ],
+   [
+    "Professional advice",
+    "A lawyer and a tax adviser, since rules depend on facts"
+   ]
+  ],
+  "note": "Keep the list safe, and tell one trusted person where it is. Do not write passwords in plain sight."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Keeping it organised",
+  "stops": [
+   [
+    "An asset register lists accounts, policies and property",
+    true
+   ],
+   [
+    "Nominations never need updating after a marriage",
+    false
+   ],
+   [
+    "Online accounts count as assets family may need",
+    true
+   ],
+   [
+    "Succession rules are the same for every family",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A single list saves a family months of searching."
+   ],
+   [
+    2.2,
+    "Marriage, a child, divorce or a move all call for a review."
+   ],
+   [
+    4.0,
+    "Note where login recovery details are kept, safely."
+   ],
+   [
+    5.6,
+    "Rules depend on personal law and facts, so ask a professional."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s510q1",
+  "h": "Check yourself",
+  "q": "Rohan has accounts in three banks and two fund houses. What helps his family most?",
+  "opts": [
+   "No list, so no one gets confused",
+   "One list of all accounts",
+   "A list kept only in his head",
+   "A list shared on social media"
+  ],
+  "ans": 1,
+  "why": [
+   "No list leaves the family guessing and often missing assets.",
+   "A single list shows the family what exists and how to claim it.",
+   "A list in his head is lost when he is gone.",
+   "Social media makes private details public and invites fraud."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s510q2",
+  "h": "Check yourself",
+  "q": "Meena has a new baby. What should she do about her nominations and will?",
+  "opts": [
+   "Review and update them",
+   "Leave them as they are for ever",
+   "Cancel all her policies",
+   "Name the baby as witness"
+  ],
+  "ans": 0,
+  "why": [
+   "A big life event is the time to update her papers.",
+   "Old nominations may not match her wishes after a new child.",
+   "Cancelling policies would remove protection when it matters most.",
+   "A baby cannot be a witness to a will at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s510q3",
+  "h": "Check yourself",
+  "q": "Dadi keeps her photos and email on cloud accounts. How can she help her family?",
+  "opts": [
+   "Write every password on a postcard",
+   "Delete the accounts before her death",
+   "Tell no one that they exist",
+   "Note where recovery details are kept"
+  ],
+  "ans": 3,
+  "why": [
+   "Passwords on a postcard can be seen and misused.",
+   "Deleting accounts would lose what family may need to reach.",
+   "If no one knows of them, the family cannot find or access them.",
+   "A safe note on where recovery details are kept lets family gain access."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s510q4",
+  "h": "Check yourself",
+  "q": "Why consult a lawyer and a tax adviser on succession?",
+  "opts": [
+   "Because the rules are the same for all",
+   "Because advisers inherit the assets",
+   "Rules depend on law and family facts",
+   "Because the law forbids doing it yourself"
+  ],
+  "ans": 2,
+  "why": [
+   "The rules are not the same for all families, so this is wrong.",
+   "Advisers do not inherit the assets they advise on.",
+   "Personal law and family facts change what is right, so expert help matters.",
+   "The law does not forbid planning on your own, though advice lowers the risk."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Keep one asset register: accounts, policies, property, and how to claim.",
+   "Review nominations and will after big life events.",
+   "Ask a lawyer and a tax adviser, since rules depend on the facts."
+  ]
+ }
+]

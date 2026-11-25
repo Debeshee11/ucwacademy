@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan, a resident in Mumbai, wants to buy US shares. He cannot simply wire money. He must use a bank that handles foreign exchange, state his purpose, and respect a yearly limit under a scheme called LRS.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Sending money out as a resident",
+  "lines": [
+   [
+    "rohan",
+    "Can I send money abroad to invest?"
+   ],
+   [
+    "sikka",
+    "Yes, under the Liberalised Remittance Scheme. There is a yearly limit per person, the purpose must be permitted, and the bank may collect tax at source. Education only, not advice."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "LRS in plain words",
+  "intro": "Four terms.",
+  "rows": [
+   [
+    "LRS",
+    "Lets a resident send up to a set amount abroad each year for permitted purposes"
+   ],
+   [
+    "Permitted purpose",
+    "Investing, education, travel, gifts and similar"
+   ],
+   [
+    "TCS on remittance",
+    "Tax collected at source by the bank, adjustable against your tax"
+   ],
+   [
+    "Authorised dealer bank",
+    "A bank permitted by RBI to handle foreign exchange"
+   ]
+  ],
+  "note": "The limit is USD 250,000 per person each financial year at the time of writing. Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Remittance rules",
+  "stops": [
+   [
+    "LRS has a yearly limit per resident",
+    true
+   ],
+   [
+    "Any bank can handle foreign exchange",
+    false
+   ],
+   [
+    "TCS may be collected on some remittances",
+    true
+   ],
+   [
+    "Investing is not a permitted purpose",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It caps what one person can send each year."
+   ],
+   [
+    2.2,
+    "Only authorised dealer banks can."
+   ],
+   [
+    4.0,
+    "It can usually be adjusted against your tax."
+   ],
+   [
+    5.6,
+    "Investing abroad is permitted under the scheme."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s481q1",
+  "h": "Check yourself",
+  "q": "Meena wants to invest abroad. Under which scheme can a resident send money?",
+  "opts": [
+   "A chit fund rule for all members",
+   "A gold bond scheme rule for all",
+   "The Liberalised Remittance Scheme",
+   "A shop discount scheme for buyers"
+  ],
+  "ans": 2,
+  "why": [
+   "A chit fund is not for this purpose. It does not answer what was asked.",
+   "A gold bond is a different product. The details here point elsewhere.",
+   "LRS allows a resident to send money abroad within limits.",
+   "A shop discount is not a scheme for this. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s481q2",
+  "h": "Check yourself",
+  "q": "Which bank can send money abroad for Rohan?",
+  "opts": [
+   "An authorised dealer bank",
+   "Any shop that has a till",
+   "A friend's mobile wallet",
+   "A neighbourhood chit fund office"
+  ],
+  "ans": 0,
+  "why": [
+   "Only banks permitted by RBI handle foreign exchange.",
+   "A shop cannot handle foreign exchange.",
+   "A wallet cannot handle foreign exchange.",
+   "A chit fund cannot handle foreign exchange."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s481q3",
+  "h": "Check yourself",
+  "q": "The bank collects TCS on Meena's remittance. What can she usually do with it?",
+  "opts": [
+   "Ignore it for all time",
+   "Return it to the bank",
+   "Burn the receipt at home",
+   "Adjust it against her tax"
+  ],
+  "ans": 3,
+  "why": [
+   "She should not ignore it, since it can be claimed.",
+   "It is not returned to the bank. It does not fit the facts given.",
+   "Keeping the record helps her claim it. It does not answer what was asked.",
+   "TCS can usually be adjusted against her tax. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s481q4",
+  "h": "Check yourself",
+  "q": "Which purpose is permitted under LRS?",
+  "opts": [
+   "Buying banned goods",
+   "Investing abroad",
+   "Hiding money",
+   "Evading tax"
+  ],
+  "ans": 1,
+  "why": [
+   "Banned goods are not permitted. It does not fit the facts given.",
+   "Investing, education and travel are permitted purposes.",
+   "Hiding money is not a permitted purpose. The details here point elsewhere.",
+   "Evading tax is illegal. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "LRS lets a resident send money abroad within a yearly limit.",
+   "Use an authorised dealer bank and declare a permitted purpose.",
+   "TCS may be collected, and is usually adjustable against tax."
+  ]
+ }
+]

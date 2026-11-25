@@ -1,0 +1,159 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "If a company owns ₹100 crore and owes ₹60 crore, the owners' stake is ₹40 crore. The balance sheet is a photograph: what a company owns and owes on one day.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A photograph",
+  "lines": [
+   [
+    "meena",
+    "Why does it have two sides?"
+   ],
+   [
+    "sikka",
+    "One side shows assets: cash, stock, plants, customer dues. The other shows liabilities and equity. What is left after paying all liabilities belongs to the owners. Working capital is current assets minus current liabilities, the money tied up in day-to-day operations."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A balance sheet, ₹ crore, made up",
+  "rows": [
+   {
+    "name": "What it owns",
+    "segs": [
+     [
+      "Assets 100",
+      100,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "How it is funded",
+    "segs": [
+     [
+      "Liabilities 60",
+      60,
+      "#FFC531"
+     ],
+     [
+      "Equity 40",
+      40,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "Assets of 100 funded by liabilities of 60 and equity of 40",
+  "caps": [
+   [
+    0.3,
+    "The firm owns ₹100 crore of assets."
+   ],
+   [
+    2.2,
+    "It owes ₹60 crore."
+   ],
+   [
+    4.0,
+    "The owners' stake is ₹40 crore."
+   ],
+   [
+    5.6,
+    "Assets = liabilities + equity."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s522q1",
+  "h": "Check yourself",
+  "q": "A company owns ₹100 crore and owes ₹60 crore. What is the shareholders' equity?",
+  "opts": [
+   "₹160 crore",
+   "₹60 crore",
+   "₹40 crore",
+   "₹100 crore"
+  ],
+  "ans": 2,
+  "why": [
+   "160 adds, which is wrong.",
+   "₹60 crore is the amount owed.",
+   "100 less 60 gives ₹40 crore.",
+   "₹100 crore is the assets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s522q2",
+  "h": "Check yourself",
+  "q": "A firm has a bank loan and unpaid bills to its suppliers. What are these?",
+  "opts": [
+   "Liabilities, owed to others",
+   "Assets, owned by the firm",
+   "Equity, held by the owners",
+   "Revenue, earned from sales"
+  ],
+  "ans": 0,
+  "why": [
+   "Liabilities are amounts owed to others. This fits the facts given.",
+   "Assets are what the firm owns. It does not fit the facts given.",
+   "Equity is the owners' stake. It does not answer what was asked.",
+   "Revenue is money earned. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s522q3",
+  "h": "Check yourself",
+  "q": "What does the balance sheet show?",
+  "opts": [
+   "Its profit over a quarter of a year",
+   "Its cash movement over a full year",
+   "Its share price on that date",
+   "What a firm owns and owes"
+  ],
+  "ans": 3,
+  "why": [
+   "Profit over a period is the income statement.",
+   "Cash movement is the cash flow statement.",
+   "Share price is not in it. It does not answer what was asked.",
+   "It is a photograph on one date. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s522q4",
+  "h": "Check yourself",
+  "q": "A trader holds stock and customer dues but must pay suppliers within weeks. What is the money tied up called?",
+  "opts": [
+   "Net profit made",
+   "Working capital",
+   "Revenue earned",
+   "EBITDA reported"
+  ],
+  "ans": 1,
+  "why": [
+   "Net profit is an income statement figure.",
+   "It is current assets less current liabilities.",
+   "Revenue is money earned. The details here point elsewhere.",
+   "EBITDA is operating earnings. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Assets: owned or owed. Liabilities: owed to others.",
+   "Equity = assets − liabilities.",
+   "Working capital = current assets − current liabilities."
+  ]
+ }
+]

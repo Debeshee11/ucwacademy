@@ -1,0 +1,141 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A share trades at ₹650 this morning. An analyst's work says it is worth ₹800. Price is what the market asks today. Value is what the business may be worth. They are not the same, and the gap is the whole game of valuation.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Price and value",
+  "lines": [
+   [
+    "meena",
+    "If the price is ₹650, isn't that what it is worth?"
+   ],
+   [
+    "sikka",
+    "It is what it trades at. Intrinsic value is an estimate, from the cash the business can generate in future. An investor wants a margin of safety, a gap between her estimate and the price paid, because estimates can be wrong."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Market price",
+  "b": "Estimated value",
+  "rows": [
+   [
+    "Per share, ₹",
+    650,
+    800
+   ]
+  ],
+  "h": "Price against value, made up",
+  "alt": "Bars showing a market price of 650 and an estimated value of 800",
+  "caps": [
+   [
+    0.3,
+    "The share trades at ₹650."
+   ],
+   [
+    2.2,
+    "The analyst estimates ₹800."
+   ],
+   [
+    4.0,
+    "The gap is the margin of safety."
+   ],
+   [
+    5.6,
+    "Estimates can be wrong, so the gap matters."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s526q1",
+  "h": "Check yourself",
+  "q": "A share trades at ₹650 and an analyst estimates ₹800. What is the ₹800?",
+  "opts": [
+   "The market price for today",
+   "The margin of safety gap",
+   "Intrinsic value, an estimate",
+   "The dividend per share paid"
+  ],
+  "ans": 2,
+  "why": [
+   "The market price is ₹650. It does not answer what was asked.",
+   "The margin of safety is a gap. The details here point elsewhere.",
+   "Intrinsic value is the estimated worth from future cash.",
+   "The dividend is a payout. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s526q2",
+  "h": "Check yourself",
+  "q": "What is a margin of safety?",
+  "opts": [
+   "Gap between value and price paid",
+   "A bank deposit for emergencies",
+   "The fee a broker charges you",
+   "The tax on a share gain made"
+  ],
+  "ans": 0,
+  "why": [
+   "It protects against errors in the estimate. This fits the facts given.",
+   "A deposit is a different thing. It does not fit the facts given.",
+   "A fee is not a margin of safety. It does not answer what was asked.",
+   "Tax is separate. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s526q3",
+  "h": "Check yourself",
+  "q": "Which is preferred, ₹100 now or ₹100 after five years?",
+  "opts": [
+   "₹100 after five years, always",
+   "Neither, as they are equal",
+   "Whichever is a round number",
+   "₹100 now, as it can be invested"
+  ],
+  "ans": 3,
+  "why": [
+   "Later money is worth less today.",
+   "They are not equal in value.",
+   "Roundness has no bearing.",
+   "Money received now can be invested."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s526q4",
+  "h": "Check yourself",
+  "q": "A share changes hands at ₹650 this morning. What is ₹650?",
+  "opts": [
+   "The intrinsic value",
+   "The market price",
+   "The terminal value",
+   "The target price"
+  ],
+  "ans": 1,
+  "why": [
+   "Intrinsic value is an estimate. It does not answer what was asked.",
+   "Market price is where it trades right now. This fits the facts given.",
+   "Terminal value is a DCF component. That does not match this case.",
+   "A target price is a forecast. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Market price: where a share trades now. Intrinsic value: an estimate of worth.",
+   "Margin of safety: the gap between estimate and price paid.",
+   "A rupee today is worth more than a rupee later."
+  ]
+ }
+]

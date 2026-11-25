@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A report says buy. Why? A good report shows its thinking, not only its conclusion: the thesis, the rating, the risks and the assumptions behind the numbers.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Show the thinking",
+  "lines": [
+   [
+    "meena",
+    "What makes a report good?"
+   ],
+   [
+    "sikka",
+    "A clear investment thesis, the central reason for the view. A rating, such as buy, hold or sell. Key risks that could prove the view wrong. And stated assumptions, such as sales growing 15% a year for five years."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Parts of a report",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Thesis",
+    "rising demand and falling costs will lift margins"
+   ],
+   [
+    "Rating",
+    "hold: the upside is small"
+   ],
+   [
+    "Key risks",
+    "a weak monsoon, a rule change"
+   ],
+   [
+    "Assumptions",
+    "sales grow 15% a year for five years"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s542q1",
+  "h": "Check yourself",
+  "q": "A note argues that rising demand and falling costs will lift margins. What is this?",
+  "opts": [
+   "The investment thesis",
+   "The rating given",
+   "The key risks listed",
+   "The disclosure made"
+  ],
+  "ans": 0,
+  "why": [
+   "It is the central reason for the view. That matches the case described.",
+   "A rating is a simple call. The details here point elsewhere.",
+   "Key risks could prove the view wrong. That does not match this case.",
+   "A disclosure states conflicts. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s542q2",
+  "h": "Check yourself",
+  "q": "A report labels a share a hold because the upside is small. What is a hold?",
+  "opts": [
+   "A thesis",
+   "An assumption",
+   "A rating",
+   "A risk"
+  ],
+  "ans": 2,
+  "why": [
+   "A thesis is the central reason. That does not match this case.",
+   "An assumption is an input. That does not match this case.",
+   "A rating is the analyst's simple call. This fits the facts given.",
+   "A risk is something that could go wrong. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s542q3",
+  "h": "Check yourself",
+  "q": "A weak monsoon or a change in rules could hurt the forecast. What are these?",
+  "opts": [
+   "Assumptions",
+   "Key risks",
+   "Ratings",
+   "Data sources"
+  ],
+  "ans": 1,
+  "why": [
+   "Assumptions are stated inputs. It does not fit the facts given.",
+   "They could make the analyst's view wrong. That matches the case described.",
+   "Ratings are calls. It does not answer what was asked.",
+   "Data sources are origins of numbers. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s542q4",
+  "h": "Check yourself",
+  "q": "A model states that sales will grow 15% a year for five years. What is this?",
+  "opts": [
+   "A rating",
+   "A conflict",
+   "A disclosure",
+   "An assumption"
+  ],
+  "ans": 3,
+  "why": [
+   "A rating is a call. It does not fit the facts given.",
+   "A conflict is a gain at stake. It does not answer what was asked.",
+   "A disclosure is a statement of holdings. The details here point elsewhere.",
+   "It is a stated input behind a forecast. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Thesis: the central reason for the view.",
+   "Rating: buy, hold or sell. Key risks: what could prove it wrong.",
+   "Assumptions are stated inputs behind a forecast."
+  ]
+ }
+]

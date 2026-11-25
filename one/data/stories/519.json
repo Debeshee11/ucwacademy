@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two IPOs raise ₹1,000 crore each. In the first, the company gets all of it to build new plants. In the second, the existing owners sell their shares and the company gets nothing. Same size, very different meaning.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where does the money go?",
+  "lines": [
+   [
+    "meena",
+    "Both IPOs raise the same amount. Why does it matter?"
+   ],
+   [
+    "sikka",
+    "A fresh issue puts money into the company. An offer for sale puts money into the pockets of existing shareholders. Check which, and check what the company plans to do with its money."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reading an IPO",
+  "intro": "Four checks.",
+  "rows": [
+   [
+    "Fresh issue",
+    "New shares, and the money goes to the company"
+   ],
+   [
+    "Offer for sale",
+    "Existing holders sell, and the money goes to them"
+   ],
+   [
+    "Use of proceeds",
+    "How the company says it will spend the money"
+   ],
+   [
+    "Valuation",
+    "The price compared with earnings, assets or similar companies"
+   ]
+  ],
+  "note": "A high price against low earnings may mean you are paying for a story. Compare with listed peers."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Judging an IPO",
+  "stops": [
+   [
+    "In a fresh issue, the money goes to the company",
+    true
+   ],
+   [
+    "In an offer for sale, the money goes to the company",
+    false
+   ],
+   [
+    "The offer document states how the funds will be used",
+    true
+   ],
+   [
+    "A famous brand means the IPO must be fairly priced",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "New shares bring new money into the business."
+   ],
+   [
+    2.2,
+    "In an offer for sale, existing holders receive the money."
+   ],
+   [
+    4.0,
+    "Use of proceeds says whether the money repays debt or builds a plant."
+   ],
+   [
+    5.6,
+    "Even a good brand can be priced too high. Compare valuation."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s519q1",
+  "h": "Check yourself",
+  "q": "In an offer for sale, who receives the money?",
+  "opts": [
+   "The company",
+   "SEBI",
+   "The sellers",
+   "The exchange"
+  ],
+  "ans": 2,
+  "why": [
+   "The company receives money only from a fresh issue.",
+   "SEBI regulates the market, and does not receive the money.",
+   "Existing shareholders sell their shares and keep the money.",
+   "The exchange earns fees, and not the sale proceeds."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s519q2",
+  "h": "Check yourself",
+  "q": "A company's offer document says most of the money will repay old debt. What does Rohan learn?",
+  "opts": [
+   "The money may not fund growth",
+   "The company will surely grow",
+   "The shares will certainly rise",
+   "The debt will rise"
+  ],
+  "ans": 0,
+  "why": [
+   "Use of proceeds tells him the money repays debt and not growth plans.",
+   "Repaying debt does not prove that the company will grow.",
+   "No document can say that shares will certainly rise.",
+   "Repaying debt lowers it, so the debt is not going to rise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s519q3",
+  "h": "Check yourself",
+  "q": "Meena compares an IPO's price with similar listed companies. What is she checking?",
+  "opts": [
+   "Allotment",
+   "Valuation",
+   "Oversubscription",
+   "Transmission"
+  ],
+  "ans": 1,
+  "why": [
+   "Allotment is how shares are given to applicants.",
+   "Comparing price with earnings or peers is a check on valuation.",
+   "Oversubscription means more bids than shares.",
+   "Transmission moves assets to heirs after a death."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s519q4",
+  "h": "Check yourself",
+  "q": "An IPO is mostly an offer for sale by early investors. What should Rohan ask?",
+  "opts": [
+   "How colourful is the logo design?",
+   "How many ads were shown on TV?",
+   "What is the age of the CEO?",
+   "Why are early holders selling?"
+  ],
+  "ans": 3,
+  "why": [
+   "A logo says nothing about the business or price.",
+   "Ads show marketing spend and not value for money.",
+   "One person's age does not decide whether the issue is good.",
+   "It helps to know why holders are cashing out, as the company gets nothing."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Fresh issue: money to the company. Offer for sale: money to sellers.",
+   "Use of proceeds shows how the money will be spent.",
+   "Compare valuation with listed peers before applying."
+  ]
+ }
+]

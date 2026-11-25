@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "An IPO states a price band of ₹180 to ₹190. Meena wants 70 shares. She does not know the final price. The system lets her bid, and block her money, without paying until she is allotted shares.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "How to apply",
+  "lines": [
+   [
+    "meena",
+    "If I do not know the final price, how much do I bid?"
+   ],
+   [
+    "sikka",
+    "You can bid at the cut-off, which means you accept whatever final price is set within the band. Your bank blocks the money for the upper price, and releases any extra later."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Meena's application",
+  "intro": "Made-up numbers.",
+  "rows": [
+   [
+    "Price band",
+    "₹180 to ₹190"
+   ],
+   [
+    "Shares she wants",
+    "70"
+   ],
+   [
+    "Amount blocked, at upper price",
+    "₹13,300"
+   ],
+   [
+    "If the final price is ₹185",
+    "₹12,950 is used, the rest is released"
+   ]
+  ],
+  "note": "With ASBA through UPI, the money stays in your account, blocked, and is debited only if shares are allotted."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Price and application",
+  "stops": [
+   [
+    "The price band is the range in which you may bid",
+    true
+   ],
+   [
+    "Book building collects bids to find the final price",
+    true
+   ],
+   [
+    "Money is taken out of your account the moment you apply",
+    false
+   ],
+   [
+    "Cut-off means you choose any price you like",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The issue states a lower and an upper price."
+   ],
+   [
+    2.2,
+    "Demand from bidders helps set the final price."
+   ],
+   [
+    4.0,
+    "With ASBA, money is blocked, and is debited only on allotment."
+   ],
+   [
+    5.6,
+    "Cut-off means you accept the final price set within the band."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s517q1",
+  "h": "Check yourself",
+  "q": "Rohan applies at cut-off in an IPO with a band of ₹180 to ₹190. What does he agree to?",
+  "opts": [
+   "Any final price in the band",
+   "Only the price of ₹180 a share",
+   "Only the price of ₹190 a share",
+   "Any price that he likes best"
+  ],
+  "ans": 0,
+  "why": [
+   "Cut-off means he accepts whatever final price is set within the band.",
+   "He is not tied to the lower end, since the price may be higher.",
+   "The final price may be lower than the upper end.",
+   "The price must fall within the band, and it is not his to choose."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s517q2",
+  "h": "Check yourself",
+  "q": "Meena applies using ASBA with UPI. When is her money actually debited?",
+  "opts": [
+   "The moment she applies",
+   "At listing, whatever happens",
+   "Only if shares are allotted",
+   "Never"
+  ],
+  "ans": 2,
+  "why": [
+   "At application the money is only blocked, not taken.",
+   "If no shares are allotted, the block is released without debit.",
+   "The amount is blocked and debited only on allotment.",
+   "If she is allotted shares, the money is debited."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s517q3",
+  "h": "Check yourself",
+  "q": "What is book building?",
+  "opts": [
+   "Writing a book on the company itself",
+   "Building the company's head office",
+   "Recording the company's yearly accounts",
+   "Collecting bids to find the final price"
+  ],
+  "ans": 3,
+  "why": [
+   "It has nothing to do with writing a book about the firm.",
+   "Book building is a pricing process and not a construction.",
+   "Accounts are kept by the company and are a different matter.",
+   "Demand within the band helps the issuer settle the final price."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s517q4",
+  "h": "Check yourself",
+  "q": "The band is ₹180 to ₹190. Meena wants 70 shares at the upper price. How much is blocked?",
+  "opts": [
+   "₹12,600",
+   "₹13,300",
+   "₹190",
+   "₹70"
+  ],
+  "ans": 1,
+  "why": [
+   "₹12,600 would be 70 shares at ₹180, the lower end.",
+   "70 shares at ₹190 each is ₹13,300.",
+   "₹190 is the price of one share, not for 70.",
+   "₹70 is the number of shares and not the amount."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Cut-off: you accept the final price set within the band.",
+   "ASBA with UPI blocks money and debits it only on allotment.",
+   "Book building uses demand to find the final price."
+  ]
+ }
+]

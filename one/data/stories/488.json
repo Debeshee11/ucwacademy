@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Dadi's bank deducted tax on her fixed deposit interest before the money reached her. Her son asked how she would know, at filing time, that the tax was really deposited with the government.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Tax taken before you see it",
+  "lines": [
+   [
+    "dadi",
+    "The bank cut some of my interest. How do I know it was paid?"
+   ],
+   [
+    "sikka",
+    "Your PAN keeps a record. Form 26AS and the AIS list the tax deducted and many of your income transactions. Check them before you file."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four words to know",
+  "intro": "Plain and short.",
+  "rows": [
+   [
+    "TDS",
+    "Tax deducted at source by the payer, before you receive the income"
+   ],
+   [
+    "Form 26AS and AIS",
+    "Statements on your PAN showing tax deducted and income reported"
+   ],
+   [
+    "Interest",
+    "Deposit interest is added to income and taxed at your slab"
+   ],
+   [
+    "Forms 15G and 15H",
+    "Asks the bank not to cut tax when income is below the limit"
+   ]
+  ],
+  "note": "15G is for those below 60, and 15H is for senior citizens. They apply only if your total tax is nil."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "TDS and statements",
+  "stops": [
+   [
+    "TDS is cut by the payer before the money reaches you",
+    true
+   ],
+   [
+    "Interest on deposits is exempt if you reinvest it",
+    false
+   ],
+   [
+    "Match your AIS with your records before filing",
+    true
+   ],
+   [
+    "Anyone can submit Form 15H",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A bank can deduct tax from interest, and deposit it on your PAN."
+   ],
+   [
+    2.2,
+    "Interest is taxed even if you reinvest it, since you earned it."
+   ],
+   [
+    4.0,
+    "Mismatches in AIS can be reported, so check them early."
+   ],
+   [
+    5.6,
+    "Form 15H is for senior citizens with total tax nil."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s488q1",
+  "h": "Check yourself",
+  "q": "A bank cuts TDS on Rohan's interest. Where can he check the tax was deposited?",
+  "opts": [
+   "A shop receipt",
+   "The bank's brochure",
+   "A friend's tax return",
+   "Form 26AS or the AIS"
+  ],
+  "ans": 3,
+  "why": [
+   "A shop receipt has no link to his deposit interest or tax paid.",
+   "A brochure describes products and does not record his tax.",
+   "A friend's return records the friend's tax and not his.",
+   "These statements list tax deducted on his PAN, so he can match it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s488q2",
+  "h": "Check yourself",
+  "q": "Meena reinvests her fixed deposit interest instead of withdrawing it. How does tax treat it?",
+  "opts": [
+   "It is still taxed as interest income",
+   "It is exempt, since she did not spend it",
+   "It is taxed only on withdrawal",
+   "It is taxed at half the normal rate"
+  ],
+  "ans": 0,
+  "why": [
+   "Interest is taxed as she earns it, even if she reinvests.",
+   "Reinvesting does not make interest exempt from tax.",
+   "Tax is not postponed until she withdraws for ordinary deposit interest.",
+   "No half rate applies to interest that she reinvests."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s488q3",
+  "h": "Check yourself",
+  "q": "Dadi is a senior citizen with total income below the taxable limit. What can she give her bank to avoid TDS?",
+  "opts": [
+   "Form 16",
+   "A bank statement",
+   "Form 15H",
+   "A PAN card copy only"
+  ],
+  "ans": 2,
+  "why": [
+   "Form 16 is a certificate that an employer gives about salary and tax.",
+   "A statement shows balances but is not a declaration against TDS.",
+   "Form 15H is the declaration meant for senior citizens in this case.",
+   "A PAN copy identifies her but does not ask for tax not to be cut."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s488q4",
+  "h": "Check yourself",
+  "q": "Rohan notices in his AIS an income he did not earn. What should he do?",
+  "opts": [
+   "Ignore it and hope it disappears",
+   "Give feedback in the portal",
+   "Pay tax on it without checking",
+   "Close his PAN"
+  ],
+  "ans": 1,
+  "why": [
+   "Ignoring an error can lead to a notice or a wrong tax demand.",
+   "The AIS lets him give feedback so that wrong entries can be fixed.",
+   "Paying without checking may mean paying tax he does not owe.",
+   "A PAN is not closed to fix an error in a statement."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "TDS is tax cut by the payer before you receive the income.",
+   "Check Form 26AS and the AIS before filing your return.",
+   "Forms 15G and 15H ask the bank not to cut tax when your total tax is nil."
+  ]
+ }
+]

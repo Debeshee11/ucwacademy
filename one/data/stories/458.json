@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan's laptop is stolen, then a family member needs a surgery, in the same month. He has no cushion. He borrows on a card at 3% a month. One emergency has now become a long-term debt.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The cushion",
+  "lines": [
+   [
+    "rohan",
+    "How much should I keep aside, and where do I even put it?"
+   ],
+   [
+    "sikka",
+    "Add up your essential costs for a month and multiply by six. Then keep it where it is safe and reachable in a day."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Sizing the fund",
+  "intro": "Only essentials count. Leave out eating out and shopping.",
+  "rows": [
+   [
+    "Rent or home loan EMI",
+    "₹18,000"
+   ],
+   [
+    "Food and bills",
+    "₹12,000"
+   ],
+   [
+    "Insurance and medicines",
+    "₹4,000"
+   ],
+   [
+    "Other EMIs",
+    "₹6,000"
+   ],
+   [
+    "=",
+    "Essential month",
+    "₹40,000"
+   ],
+   [
+    "=",
+    "Six months of it",
+    "₹2.4 lakh"
+   ]
+  ],
+  "note": "Six months is a common target. Single earners or people with unstable income may prefer nine to twelve."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   0.4,
+   0.8,
+   1.2,
+   1.6,
+   2.0,
+   2.4
+  ],
+  "labels": [
+   "M2",
+   "M4",
+   "M6",
+   "M8",
+   "M10",
+   "M12"
+  ],
+  "big": "₹2.4 lakh ready",
+  "small": "₹20,000 a month for 12 months, in ₹ lakh",
+  "h": "Building it, month by month",
+  "alt": "Bars growing as the emergency fund builds",
+  "caps": [
+   [
+    0.3,
+    "₹20,000 a month goes in on salary day."
+   ],
+   [
+    2.4,
+    "Halfway, six months of saving is ₹1.2 lakh, about three months of essentials."
+   ],
+   [
+    4.4,
+    "By month twelve, ₹2.4 lakh covers six months of essentials."
+   ],
+   [
+    5.8,
+    "It is built slowly. The point is to start and not to stop."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s458q1",
+  "h": "Check yourself",
+  "q": "Where should an emergency fund be kept?",
+  "opts": [
+   "In equity funds, since they usually grow faster than a savings account",
+   "In gold jewellery, since it keeps its value for many years to come",
+   "In a savings account or liquid option, safe and reachable in a day",
+   "In a five-year fixed deposit, for the highest interest available"
+  ],
+  "ans": 2,
+  "why": [
+   "Equity can be down 20% in the very month you need the money, which defeats the purpose.",
+   "Jewellery is slow and costly to sell, so it is not an emergency tool.",
+   "The fund has two jobs: stay safe and be reachable within a day. Returns come last.",
+   "A long lock-in makes the money hard to reach, and early exit usually carries a penalty."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s458q2",
+  "h": "Check yourself",
+  "q": "Meena's essentials are ₹30,000 a month. She has ₹1.2 lakh saved. How many months does she have covered?",
+  "opts": [
+   "Four months, since ₹1.2 lakh divided by ₹30,000 is four",
+   "Six months, since that is the standard target for everyone",
+   "Twelve months, since the fund counts a full year of savings",
+   "Two months, since part of it must be kept for non-essentials"
+  ],
+  "ans": 0,
+  "why": [
+   "₹1,20,000 divided by ₹30,000 gives four months of essentials covered.",
+   "Six months is a target. Her actual cover depends on the amount she has saved.",
+   "She has covered four months, not a year. The fund is smaller than she may think.",
+   "The fund is for essentials only, so the whole amount counts toward them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s458q3",
+  "h": "Check yourself",
+  "q": "A phone sale offers 40% off. Rohan wants to use his emergency fund for it. What is the sound choice?",
+  "opts": [
+   "Use it, because a discount of 40% is a rare chance that is worth the money",
+   "Use half of it, so that some cushion is left for later",
+   "Use it now and refill it within a few years, whenever it is convenient",
+   "Leave the fund alone, since a sale is not an emergency"
+  ],
+  "ans": 3,
+  "why": [
+   "A sale is a want. The fund is for real emergencies such as a job loss or a medical bill.",
+   "Using half still weakens the cushion for a want. The rule is that it is for emergencies only.",
+   "Waiting years to refill leaves a gap when an emergency can strike, so refill promptly.",
+   "The fund is for real emergencies only, and a bargain, however good, is not one."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s458q4",
+  "h": "Check yourself",
+  "q": "Rohan uses ₹80,000 of his fund for a hospital bill. What should he do next?",
+  "opts": [
+   "Nothing, since the fund has done its job and can simply stay lower now",
+   "Refill it before other goals, so the cushion is ready again",
+   "Switch the whole fund into shares to rebuild it much faster",
+   "Stop all other saving until the fund is back to full again"
+  ],
+  "ans": 1,
+  "why": [
+   "A reduced fund leaves him exposed to the next surprise, so it should be rebuilt.",
+   "After using it, refill it first. Other goals wait until the cushion is restored.",
+   "Shares can fall just when he needs the money, so they are the wrong place for the fund.",
+   "Stopping all saving is not needed. Refilling is the priority, and other goals can pause briefly."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Aim for about six months of essential costs.",
+   "Keep it safe and reachable within a day. Returns come last.",
+   "Use it only for real emergencies, and refill it first after using it."
+  ]
+ }
+]

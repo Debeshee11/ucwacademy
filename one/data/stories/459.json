@@ -1,0 +1,169 @@
+[
+ {
+  "k": "fact",
+  "art": "loan",
+  "h": "Before you start",
+  "big": "Meena has a credit card dues of ₹50,000, a personal loan and a home loan. She sends a bit to each every month and still the total barely moves. The order of payment matters.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which debt first?",
+  "lines": [
+   [
+    "meena",
+    "I have three loans. Where should my spare ₹5,000 go?"
+   ],
+   [
+    "sikka",
+    "To the one that costs the most per month, after you have paid the minimum on all. Let us compare what each costs."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Credit card",
+  "b": "Home loan",
+  "rows": [
+   [
+    "One month on ₹50,000 (₹)",
+    1500,
+    354
+   ]
+  ],
+  "h": "What ₹50,000 of debt costs",
+  "alt": "Two bars comparing one month of interest on a card and on a home loan",
+  "caps": [
+   [
+    0.3,
+    "₹50,000 owed on a card (3% a month) costs ₹1,500 in a single month."
+   ],
+   [
+    2.4,
+    "The same ₹50,000 on a home loan at 8.5% a year costs about ₹354 a month."
+   ],
+   [
+    4.2,
+    "These are assumed rates. The gap is the point: the card costs over four times as much."
+   ],
+   [
+    5.6,
+    "Pay the costliest debt first, after minimums on all."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A sensible order",
+  "intro": "For most households, this order works.",
+  "rows": [
+   [
+    "1",
+    "Never miss a minimum payment or EMI"
+   ],
+   [
+    "2",
+    "Keep a small starter cushion"
+   ],
+   [
+    "3",
+    "Pay off the costliest debt, usually cards"
+   ],
+   [
+    "4",
+    "Then build the full emergency fund"
+   ],
+   [
+    "5",
+    "Invest alongside cheaper loans like a home loan"
+   ]
+  ],
+  "note": "Missed payments damage your credit score, so minimums always come first."
+ },
+ {
+  "k": "pick",
+  "id": "s459q1",
+  "h": "Check yourself",
+  "q": "A card charges 3% a month. Rohan pays only the minimum amount due each month. What happens?",
+  "opts": [
+   "The debt clears quickly, since the bank wants it settled on time",
+   "Most of the balance stays and keeps attracting interest at a high rate",
+   "The interest stops once he pays the minimum for three months",
+   "The balance is cut each month by the amount of interest charged"
+  ],
+  "ans": 1,
+  "why": [
+   "The minimum is a small slice of the bill, so the debt can linger for a very long time.",
+   "The minimum covers little of the balance, so the rest keeps growing at the card's high rate.",
+   "Interest keeps running on the unpaid part. Paying the minimum does not stop it.",
+   "Interest is added to the balance. The minimum rarely cuts it by much."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s459q2",
+  "h": "Check yourself",
+  "q": "Meena has a card at 3% a month and a home loan at 8.5% a year. She has ₹5,000 spare above all minimums. Where does it go?",
+  "opts": [
+   "To the home loan, since it is the larger debt overall in rupees",
+   "Split equally between the two, so neither of them feels ignored",
+   "Into shares, since returns will certainly beat both of the loan rates",
+   "To the card, since it costs far more each month than the home loan does"
+  ],
+  "ans": 3,
+  "why": [
+   "Size does not decide it. The cost of each rupee of debt does, and the card costs more.",
+   "Splitting leaves the costly card running longer than it should.",
+   "Share returns are uncertain, while the card's interest is certain and very high.",
+   "The card's rate is many times higher, so paying it first saves the most interest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s459q3",
+  "h": "Check yourself",
+  "q": "What is the avalanche method of repaying several debts?",
+  "opts": [
+   "Pay minimums on all, then put spare money on the highest-rate debt",
+   "Pay the smallest balance first, to get some quick wins early on",
+   "Pay every debt an equal amount, regardless of the interest rate it carries",
+   "Pay the oldest debt first, since it has been running the longest"
+  ],
+  "ans": 0,
+  "why": [
+   "The avalanche targets the highest rate first, which saves the most total interest.",
+   "That is the snowball method. It is motivating, but not the cheapest.",
+   "Equal payments ignore which debt is most costly, so more interest is paid in all.",
+   "Age does not decide the cost. The interest rate does."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s459q4",
+  "h": "Check yourself",
+  "q": "Rohan has a home loan at a moderate rate and also ₹20,000 spare each month. What is a sensible plan?",
+  "opts": [
+   "Put every rupee into the loan, since all debt must be cleared as fast as it can be",
+   "Stop paying the EMI, since the spare money is enough to cover it for her",
+   "Let the home loan run, and invest alongside once costlier debts are cleared",
+   "Take a new loan to invest, since returns are always higher than loan rates"
+  ],
+  "ans": 2,
+  "why": [
+   "Not all debt needs to be rushed. A moderate-rate loan can run while other goals progress.",
+   "Missing EMIs harms the credit score and adds charges, so the EMI must be paid on time.",
+   "A moderate-rate home loan can run while he invests, once costlier debt is cleared.",
+   "Borrowing to invest adds risk. Returns are uncertain while the loan cost is certain."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Pay minimums on every debt first, so nothing goes overdue.",
+   "Then send spare money to the costliest debt, usually a card.",
+   "A moderate-rate home loan can run while you also invest."
+  ]
+ }
+]

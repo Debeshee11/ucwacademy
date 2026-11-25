@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Mobile phones moved from rapid growth to a mature, replacement-driven market. Online payment apps changed how people pay. To judge an industry, combine size, competition, cycles and policy into one view.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "One view",
+  "lines": [
+   [
+    "meena",
+    "How do I put it all together?"
+   ],
+   [
+    "sikka",
+    "Trace the value chain, where each step adds value and takes a share of profit. Place the industry in its life cycle: birth, growth, maturity, decline. Compare the company with peers. And watch for disruption, new technology that upends how profit is earned."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Putting it together",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Value chain (footwear)",
+    "design, manufacturing, branding, retail: each earns a margin"
+   ],
+   [
+    "Life cycle",
+    "mobile phones: growth, then mature"
+   ],
+   [
+    "Peer comparison",
+    "a bank's loan growth beside other private banks"
+   ],
+   [
+    "Disruption",
+    "payment apps changed how people pay"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s540q1",
+  "h": "Check yourself",
+  "q": "In footwear, design, manufacturing, branding and retail each earn a different margin. What is this?",
+  "opts": [
+   "A life cycle",
+   "A moat",
+   "A value chain",
+   "A policy risk"
+  ],
+  "ans": 2,
+  "why": [
+   "A life cycle is birth to decline. It does not answer what was asked.",
+   "A moat is a lasting advantage. The details here point elsewhere.",
+   "It is the series of steps from raw material to customer.",
+   "Policy risk is a rule change. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s540q2",
+  "h": "Check yourself",
+  "q": "Mobile phones moved from rapid growth to a mature, replacement-driven market. What is this pattern?",
+  "opts": [
+   "The industry life cycle",
+   "A commodity price cycle",
+   "Capacity utilisation rate",
+   "A moving average line"
+  ],
+  "ans": 0,
+  "why": [
+   "Industries pass through birth, growth, maturity and decline.",
+   "A commodity cycle is about raw material prices.",
+   "Capacity utilisation is about plants. It does not fit the facts given.",
+   "A moving average is a chart tool. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s540q3",
+  "h": "Check yourself",
+  "q": "A bank's loan growth is set beside that of other private banks. What is this?",
+  "opts": [
+   "Disruption",
+   "A sensitivity test",
+   "A value chain",
+   "Peer comparison"
+  ],
+  "ans": 3,
+  "why": [
+   "Disruption is a new technology effect. It does not fit the facts given.",
+   "A sensitivity test changes assumptions. It does not answer what was asked.",
+   "A value chain traces steps. It does not answer what was asked.",
+   "It judges a company against similar firms. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s540q4",
+  "h": "Check yourself",
+  "q": "Online payment apps changed how people pay across shops and banks. What is this?",
+  "opts": [
+   "Policy risk",
+   "Disruption",
+   "Penetration",
+   "A regulator"
+  ],
+  "ans": 1,
+  "why": [
+   "Policy risk is a rule change. It does not fit the facts given.",
+   "New technology upended how an industry earns profit.",
+   "Penetration is customer usage. The details here point elsewhere.",
+   "A regulator makes rules. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Value chain: each step adds value and takes a share of profit.",
+   "Life cycle: birth, growth, maturity, decline.",
+   "Compare peers. Watch for disruption."
+  ]
+ }
+]

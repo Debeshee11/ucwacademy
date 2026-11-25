@@ -1,0 +1,180 @@
+[
+ {
+  "k": "fact",
+  "art": "home",
+  "h": "Before you start",
+  "big": "Shalini's EMI never changed in five years. Yet her bank's statement showed she now had two more years of payments left. The rate had risen, and the tenure quietly grew.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "When the rate moves",
+  "lines": [
+   [
+    "meena",
+    "My loan is floating. What happens when the Reserve Bank changes the repo rate?"
+   ],
+   [
+    "sikka",
+    "Your rate follows at the next reset. Then either the EMI rises or the tenure stretches. Often the lender picks tenure, because you do not feel it."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rate rises from 9% to 10%",
+  "intro": "Same ₹30 lakh loan, five years in.",
+  "rows": [
+   [
+    "Balance after 5 years",
+    "₹26.6 lakh"
+   ],
+   [
+    "EMI kept at",
+    "₹26,992"
+   ],
+   [
+    "Years left before",
+    "15"
+   ],
+   [
+    "=",
+    "Years left now",
+    "about 17.3"
+   ],
+   [
+    "Or raise EMI to",
+    "₹28,598"
+   ]
+  ],
+  "note": "An unchanged EMI hid about two years and four months of extra payments."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Fixed and floating",
+  "stops": [
+   [
+    "A floating rate follows a benchmark such as the repo rate",
+    true
+   ],
+   [
+    "A rate rise can add years instead of raising the EMI",
+    true
+   ],
+   [
+    "You must accept whatever the lender decides",
+    false
+   ],
+   [
+    "Floating always costs less than fixed",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The rate is the benchmark plus the lender's spread, and it resets."
+   ],
+   [
+    2.2,
+    "If the EMI stays put, the tenure grows, and you may not notice."
+   ],
+   [
+    4.0,
+    "You can ask for a higher EMI, a longer tenure or a mix, or prepay a part."
+   ],
+   [
+    5.6,
+    "Neither is always cheaper. Rates can fall or rise over a long loan."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s462q1",
+  "h": "Check yourself",
+  "q": "The repo rate rises and Meena's floating-rate loan resets. What can happen?",
+  "opts": [
+   "Her rate stays the same until the loan ends",
+   "Her loan is cancelled and the bank refunds her",
+   "Her rate rises, so the EMI or the tenure goes up",
+   "Her principal is cut by the same amount"
+  ],
+  "ans": 2,
+  "why": [
+   "A floating rate does not stay still, since it follows the benchmark at resets.",
+   "A rate change does not cancel a loan or bring any refund to the borrower.",
+   "The rate follows the benchmark, so either the EMI or the tenure has to give.",
+   "The principal is what she borrowed, and a rate change does not reduce it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s462q2",
+  "h": "Check yourself",
+  "q": "Rohan's EMI stayed the same after a rate rise. What is the likely reason?",
+  "opts": [
+   "The tenure was lengthened without much notice",
+   "The rate did not change at all during those years",
+   "The bank paid the extra interest from its own funds",
+   "His principal was cleared by the bank after the reset"
+  ],
+  "ans": 0,
+  "why": [
+   "A longer tenure absorbs the higher interest, so the EMI can stay unchanged.",
+   "The rate rose, so something else had to take the higher cost.",
+   "Banks do not pay a borrower's extra interest from their own pocket.",
+   "The principal is not cleared by a rate change, so this does not fit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s462q3",
+  "h": "Check yourself",
+  "q": "Meena can afford a higher EMI after a rate rise. What is usually the cheaper choice?",
+  "opts": [
+   "Let the tenure grow and keep the EMI",
+   "Stop paying until the rate falls again",
+   "Take a fresh loan to pay the old one",
+   "Raise the EMI, keep the tenure"
+  ],
+  "ans": 3,
+  "why": [
+   "A longer tenure feels painless but adds interest in every extra year.",
+   "Stopping payment brings penalties and harms her credit record.",
+   "A fresh loan adds new costs and fees, and does not fix the rate issue.",
+   "A higher EMI keeps the years short, so less interest builds up in the end."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s462q4",
+  "h": "Check yourself",
+  "q": "Which borrower is better placed to choose a fixed rate?",
+  "opts": [
+   "Someone who hopes to guess where rates are going",
+   "Someone whose budget cannot take a higher EMI",
+   "Someone who never reads the loan statement",
+   "Someone who wants the longest possible tenure"
+  ],
+  "ans": 1,
+  "why": [
+   "Guessing future rates is not a plan, and nobody can do it well.",
+   "A fixed rate gives a steady EMI, which suits a tight budget.",
+   "Reading the statement matters under both types of rate.",
+   "Tenure is a separate choice and does not decide fixed or floating."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A floating rate is a benchmark plus a spread, and it resets.",
+   "An unchanged EMI can hide years of extra payments.",
+   "Read your loan statement once a year, and choose EMI or tenure on purpose."
+  ]
+ }
+]

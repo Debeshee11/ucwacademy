@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena wants US technology shares without opening a foreign account. An Indian fund buys them for her, and she invests in rupees. That is one of three routes to the world, each with its own cost and effort.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three routes",
+  "lines": [
+   [
+    "meena",
+    "How can I invest abroad without leaving India?"
+   ],
+   [
+    "sikka",
+    "Through a feeder fund in rupees, through a fund of funds, or through a direct foreign account under LRS. The first two are easier. The third gives more control, with more paperwork and tax reporting."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Ways to invest abroad",
+  "intro": "From easy to hands-on.",
+  "rows": [
+   [
+    "Feeder fund",
+    "An Indian fund investing in an overseas fund. You pay in rupees"
+   ],
+   [
+    "Fund of funds",
+    "Invests in other funds, not directly in shares"
+   ],
+   [
+    "Direct foreign account",
+    "A brokerage account abroad under LRS"
+   ],
+   [
+    "Overseas index",
+    "A benchmark of foreign companies that a fund may track"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Ways to invest abroad",
+  "stops": [
+   [
+    "A feeder fund lets you invest in rupees",
+    true
+   ],
+   [
+    "A direct foreign account needs no reporting",
+    false
+   ],
+   [
+    "A fund of funds invests in other funds",
+    true
+   ],
+   [
+    "An overseas index can be bought directly",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It invests in an overseas fund for you."
+   ],
+   [
+    2.2,
+    "Residents must report foreign accounts."
+   ],
+   [
+    4.0,
+    "It holds units of other funds."
+   ],
+   [
+    5.6,
+    "An index is a benchmark, not a product."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s482q1",
+  "h": "Check yourself",
+  "q": "Rohan wants global exposure but does not want to send money abroad himself. What fits?",
+  "opts": [
+   "A foreign brokerage account",
+   "A feeder fund",
+   "A friend's account abroad",
+   "A bank locker"
+  ],
+  "ans": 1,
+  "why": [
+   "A foreign brokerage account needs LRS and extra paperwork.",
+   "A feeder fund invests overseas for him, in rupees.",
+   "A friend's account abroad is a legal risk.",
+   "A locker holds items and has no link to investing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s482q2",
+  "h": "Check yourself",
+  "q": "What is a fund of funds?",
+  "opts": [
+   "A fund that holds only gold bars",
+   "A fund that lends to friends",
+   "A fund that has no costs",
+   "A fund that invests in other funds"
+  ],
+  "ans": 3,
+  "why": [
+   "A gold fund holds gold, which is different.",
+   "Funds do not lend to friends. That does not match this case.",
+   "Every fund has some costs. It does not fit the facts given.",
+   "It holds units of other funds rather than shares directly."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s482q3",
+  "h": "Check yourself",
+  "q": "Meena opens a brokerage account abroad using LRS. What must she do each year?",
+  "opts": [
+   "Report it in her tax return",
+   "Hide it from the tax office",
+   "Close it each March",
+   "Ask a friend to file for her"
+  ],
+  "ans": 0,
+  "why": [
+   "Residents declare foreign assets in the return.",
+   "Hiding it is illegal. It does not fit the facts given.",
+   "No rule requires closing it each March.",
+   "A friend cannot file her return for her."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s482q4",
+  "h": "Check yourself",
+  "q": "What does an overseas index like a US large-company index measure?",
+  "opts": [
+   "The rupee exchange rate itself",
+   "India's gross domestic product",
+   "How foreign firms perform",
+   "A bank's fixed deposit rate"
+  ],
+  "ans": 2,
+  "why": [
+   "An index of companies is not an exchange rate.",
+   "It does not measure India's GDP. It does not answer what was asked.",
+   "It is a benchmark of foreign companies. This fits the facts given.",
+   "It does not measure a bank's rate. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A feeder fund invests abroad for you, in rupees.",
+   "A fund of funds holds units of other funds.",
+   "A direct foreign account needs LRS and tax reporting."
+  ]
+ }
+]

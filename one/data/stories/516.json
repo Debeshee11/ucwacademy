@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A bakery that started in a small shop wants to open ten more outlets. It needs money, and does not want a bank loan. So it invites the public to buy a small slice of the company. That invitation is an IPO.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "First sale to the public",
+  "lines": [
+   [
+    "rohan",
+    "An IPO sounds like a lottery ticket. Is it?"
+   ],
+   [
+    "sikka",
+    "It is a company selling shares for the first time. Some do well, some do not. It is only as good as the business and the price. The offer document tells you the story and the risks."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two markets",
+  "intro": "Where shares live.",
+  "rows": [
+   [
+    "Primary market",
+    "New shares sold by the company, as in an IPO"
+   ],
+   [
+    "Secondary market",
+    "Existing shares traded on the exchange after listing"
+   ],
+   [
+    "IPO",
+    "The first sale of shares to the public, followed by listing"
+   ],
+   [
+    "Offer document",
+    "The prospectus: business, risks and use of money"
+   ]
+  ],
+  "note": "In the primary market the money goes to the company. In the secondary market, it goes to the selling investor."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "IPO basics",
+  "stops": [
+   [
+    "An IPO is a company's first sale of shares to the public",
+    true
+   ],
+   [
+    "Later trades on the exchange are in the primary market",
+    false
+   ],
+   [
+    "The offer document describes risks and the use of funds",
+    true
+   ],
+   [
+    "Every IPO is guaranteed to list at a profit",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The company sells shares and then lists on an exchange."
+   ],
+   [
+    2.2,
+    "After listing, shares trade in the secondary market among investors."
+   ],
+   [
+    4.0,
+    "Read the risk section before you apply."
+   ],
+   [
+    5.6,
+    "No IPO is guaranteed to rise. Some list at a loss."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s516q1",
+  "h": "Check yourself",
+  "q": "Meena buys shares directly from a company during its IPO. Which market is this?",
+  "opts": [
+   "The secondary market",
+   "The primary market",
+   "The bond market",
+   "The grey market"
+  ],
+  "ans": 1,
+  "why": [
+   "The secondary market is where existing shares trade among investors.",
+   "New shares sold by the company are in the primary market.",
+   "A bond market deals in loans, not shares in an IPO.",
+   "The grey market is unofficial and is not where an IPO is bought."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s516q2",
+  "h": "Check yourself",
+  "q": "After listing, Rohan buys the shares from another investor on the exchange. Where does his money go?",
+  "opts": [
+   "To the company itself",
+   "To SEBI, the regulator",
+   "To the broker alone",
+   "To the seller"
+  ],
+  "ans": 3,
+  "why": [
+   "The company gets money only when it issues new shares.",
+   "SEBI regulates the market and does not receive trade proceeds.",
+   "A broker earns brokerage, and the sale money goes to the seller.",
+   "In the secondary market, the money goes to the investor who sold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s516q3",
+  "h": "Check yourself",
+  "q": "Which document should Meena read before applying for an IPO?",
+  "opts": [
+   "A friend's message",
+   "A shop brochure",
+   "The offer document",
+   "A forwarded video"
+  ],
+  "ans": 2,
+  "why": [
+   "A friend's message is opinion and may skip the risks.",
+   "A shop brochure has no link to the issue at all.",
+   "The offer document covers the business and its risks.",
+   "A forwarded video may be hype, and not facts."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s516q4",
+  "h": "Check yourself",
+  "q": "An agent says a new IPO is certain to list at a big profit. What is the right view?",
+  "opts": [
+   "No IPO has a guaranteed outcome",
+   "It must be true since an agent said it",
+   "It is true if many people apply",
+   "It is true if the price band is high"
+  ],
+  "ans": 0,
+  "why": [
+   "Listing prices depend on demand, so none is guaranteed.",
+   "An agent's claim is no evidence, and may be a sales tactic.",
+   "Many applicants do not make a profit certain.",
+   "A high band is no guarantee of gain, and may be a costly entry."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An IPO is a company's first sale of shares to the public.",
+   "Primary market: new shares. Secondary market: existing shares.",
+   "Read the offer document. No IPO is guaranteed to gain."
+  ]
+ }
+]

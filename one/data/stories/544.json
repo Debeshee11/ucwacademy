@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A message claims a stock will surely double in six months. A research analyst must never make such a promise. How an analyst behaves matters as much as what the report says.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Conduct",
+  "lines": [
+   [
+    "meena",
+    "Can an analyst promise returns?"
+   ],
+   [
+    "sikka",
+    "Never. Guaranteed returns are not allowed. A report should show fair presentation: a balanced picture, facts apart from opinions. Records of research and data must be kept for the regulator's period. And public appearances carry disclosures too."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Conduct checks",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Fair presentation",
+    "risks shown as clearly as the upside"
+   ],
+   [
+    "Guaranteed returns",
+    "never allowed: a stock will 'surely double'"
+   ],
+   [
+    "Record keeping",
+    "show the workings behind a call from two years ago"
+   ],
+   [
+    "Public appearance",
+    "state holdings before commenting on TV"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s544q1",
+  "h": "Check yourself",
+  "q": "A message claims a stock will surely double in six months. What is this?",
+  "opts": [
+   "Fair presentation of facts",
+   "A guaranteed return, banned",
+   "Record keeping of data",
+   "A disclosure of holdings"
+  ],
+  "ans": 1,
+  "why": [
+   "Fair presentation is balanced. The details here point elsewhere.",
+   "Promises of assured gains are not allowed. That matches the case described.",
+   "Record keeping is preserving data. It does not fit the facts given.",
+   "A disclosure states holdings. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s544q2",
+  "h": "Check yourself",
+  "q": "A note shows the risks as clearly as the upside. What is this?",
+  "opts": [
+   "A guarantee of gains",
+   "A conflict of interest",
+   "A Chinese wall barrier",
+   "Fair presentation"
+  ],
+  "ans": 3,
+  "why": [
+   "A guarantee is a promise.",
+   "A conflict is a gain at stake.",
+   "A Chinese wall is a barrier.",
+   "It gives a balanced picture."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s544q3",
+  "h": "Check yourself",
+  "q": "An analyst can show the workings behind a recommendation made two years ago. What is this?",
+  "opts": [
+   "Record keeping",
+   "A public appearance",
+   "A rating",
+   "A thesis"
+  ],
+  "ans": 0,
+  "why": [
+   "It is the duty to preserve research and data.",
+   "A public appearance is speaking in public.",
+   "A rating is a call. It does not answer what was asked.",
+   "A thesis is a reason. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s544q4",
+  "h": "Check yourself",
+  "q": "An analyst states her holdings before commenting on a news channel. What is this?",
+  "opts": [
+   "A guaranteed return of gains",
+   "A trading restriction on her",
+   "A disclosure in public",
+   "Record keeping of workings"
+  ],
+  "ans": 2,
+  "why": [
+   "A guarantee is a promise. It does not fit the facts given.",
+   "A restriction bars trading. It does not answer what was asked.",
+   "Disclosures apply in public appearances too.",
+   "Record keeping is preserving data. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Research analysts must never promise guaranteed returns.",
+   "Fair presentation: balanced, facts apart from opinions.",
+   "Keep records, and disclose in public appearances."
+  ]
+ }
+]

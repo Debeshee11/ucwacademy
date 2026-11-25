@@ -1,0 +1,150 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "Meena wants to buy a ₹1 lakh laptop for her daughter in nine years. She plans to save ₹1 lakh. That plan has a hole in it, and the hole is called inflation.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Goals in future money",
+  "lines": [
+   [
+    "meena",
+    "The laptop costs ₹1 lakh today. I will just save ₹1 lakh over nine years."
+   ],
+   [
+    "sikka",
+    "Prices rise every year. Let us see what that same laptop is likely to cost when you buy it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   1.0,
+   1.26,
+   1.59,
+   2.0
+  ],
+  "labels": [
+   "Today",
+   "3 yrs",
+   "6 yrs",
+   "9 yrs"
+  ],
+  "big": "About ₹2 lakh",
+  "small": "if prices rise 8% a year",
+  "h": "The ₹1 lakh laptop",
+  "alt": "Bars showing the price rising over nine years in lakh of rupees",
+  "caps": [
+   [
+    0.3,
+    "Today the laptop costs ₹1 lakh."
+   ],
+   [
+    2.0,
+    "At 8% a year, it costs about ₹1.26 lakh in three years."
+   ],
+   [
+    3.8,
+    "In nine years it costs about ₹2 lakh."
+   ],
+   [
+    5.2,
+    "An assumed rate, not a forecast. Goals should be priced in future money."
+   ]
+  ]
+ },
+ {
+  "k": "try",
+  "model": "inflation"
+ },
+ {
+  "k": "pick",
+  "id": "s460q1",
+  "h": "Check yourself",
+  "q": "A goal costs ₹5 lakh today. Prices rise about 6% a year. Roughly what will it cost in 12 years?",
+  "opts": [
+   "About ₹10 lakh, since prices roughly double at 6% over 12 years",
+   "₹5 lakh, since the cost is fixed once the goal is set",
+   "About ₹5.6 lakh, since 6% is added once to the original cost",
+   "About ₹15 lakh, since prices triple over any 12-year period"
+  ],
+  "ans": 0,
+  "why": [
+   "At 6% a year, prices roughly double in 12 years, so about ₹10 lakh is a fair estimate.",
+   "Prices do not freeze when you set a goal. They keep rising every year.",
+   "Growth compounds each year. Adding 6% once understates the rise by a wide margin.",
+   "Tripling would need a much higher rate. At 6% a year the rise is about double."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s460q2",
+  "h": "Check yourself",
+  "q": "Why does automating a SIP or standing instruction help a goal?",
+  "opts": [
+   "It guarantees a profit on every single instalment that you make",
+   "Money that moves by itself gets saved; money that waits often does not",
+   "It removes the need to review the goal as the years go by at all",
+   "It makes the money fully tax-exempt while it sits in the account"
+  ],
+  "ans": 1,
+  "why": [
+   "Automation does not guarantee a profit. It guarantees the habit of saving.",
+   "Automation turns saving into a default, so it happens even in busy or tempting months.",
+   "Goals still need an annual review, since costs and dates change.",
+   "Automation does not change tax. It only moves the money on a set date."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s460q3",
+  "h": "Check yourself",
+  "q": "Rohan's pay rises 20%, and his spending rises 20% too. Savings stay the same in rupees. What is this called, and what helps?",
+  "opts": [
+   "Market inflation; moving all the money into shares helps a lot",
+   "Budget drift; tracking every rupee of spending for a year helps",
+   "Savings fatigue; stopping all saving for a month helps a bit",
+   "Lifestyle inflation; raising savings with each raise helps"
+  ],
+  "ans": 3,
+  "why": [
+   "Market inflation is about prices. This is about personal spending rising with pay.",
+   "Tracking helps awareness, but the term for spending rising with pay is lifestyle inflation.",
+   "Stopping for a month does not address the pattern and can weaken the habit.",
+   "Spending rises to match income, so savings stay flat. Raising savings with each raise beats it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s460q4",
+  "h": "Check yourself",
+  "q": "When should Meena review her goals?",
+  "opts": [
+   "Only when she feels the plan is not working out for her",
+   "Every week, so that nothing ever drifts off course",
+   "Yearly, and after big changes like a new job, marriage or loan",
+   "Never, since a plan set once stays correct for many years"
+  ],
+  "ans": 2,
+  "why": [
+   "Waiting for a feeling lets problems grow. A fixed review date catches them early.",
+   "Weekly checks create noise, and markets and costs rarely change that fast.",
+   "A yearly review and one after each big change keeps amounts and dates in line with life.",
+   "Costs, income and priorities change, so an unreviewed plan drifts out of date."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Price goals in future money, not today's.",
+   "Automate saving on the day after your salary arrives.",
+   "Review once a year and after any big life change."
+  ]
+ }
+]

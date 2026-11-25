@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Meena's buyer deducted ₹3 lakh in TDS on her flat sale. Her real tax came to ₹1.8 lakh. The extra ₹1.2 lakh sits with the tax office until she files a return and claims it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Getting money back",
+  "lines": [
+   [
+    "meena",
+    "Can I get the extra TDS back?"
+   ],
+   [
+    "sikka",
+    "Yes, through a return. You need a PAN. You can also apply in advance for a lower deduction certificate so the payer deducts less in the first place."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Meena's refund, made-up",
+  "intro": "Where the money sits.",
+  "rows": [
+   [
+    "TDS deducted",
+    "₹3,00,000"
+   ],
+   [
+    "Her actual tax",
+    "₹1,80,000"
+   ],
+   [
+    "=",
+    "Refund to claim",
+    "₹1,20,000"
+   ],
+   [
+    "To avoid it",
+    "Apply for a lower deduction certificate in advance"
+   ]
+  ],
+  "note": "Rules change, so check the current rule with your bank or a qualified adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Returns and refunds",
+  "stops": [
+   [
+    "A TDS refund is claimed by filing a return",
+    true
+   ],
+   [
+    "An NRI never needs a PAN",
+    false
+   ],
+   [
+    "A lower deduction certificate cuts TDS in advance",
+    true
+   ],
+   [
+    "Excess TDS is returned without any filing",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The excess is returned through the return."
+   ],
+   [
+    2.2,
+    "A PAN is needed for most Indian financial activity."
+   ],
+   [
+    4.0,
+    "The tax officer allows the payer to deduct less."
+   ],
+   [
+    5.6,
+    "The refund needs a return to be filed."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s474q1",
+  "h": "Check yourself",
+  "q": "Rohan's TDS exceeded his tax liability. How does he get the excess back?",
+  "opts": [
+   "Ask the buyer to send it back",
+   "Wait patiently for ten years",
+   "Ask a neighbour for a refund",
+   "File an income tax return"
+  ],
+  "ans": 3,
+  "why": [
+   "The buyer already paid the tax over to the tax office.",
+   "Waiting does not by itself trigger any refund of tax.",
+   "A neighbour has no power to refund tax paid.",
+   "A return lets him claim the excess tax back as a refund."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s474q2",
+  "h": "Check yourself",
+  "q": "What is a PAN?",
+  "opts": [
+   "A mobile phone number of a person",
+   "The ten-character tax account number",
+   "A branch code of a bank",
+   "The number printed on a passport"
+  ],
+  "ans": 1,
+  "why": [
+   "It is not a mobile number, but a tax number.",
+   "It is the tax number used for most financial activity.",
+   "It is not a bank branch code, but a tax number.",
+   "It is not a passport number, but a tax number."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s474q3",
+  "h": "Check yourself",
+  "q": "Meena wants less tax deducted on a coming sale. What can she apply for?",
+  "opts": [
+   "A monthly bus pass for travel",
+   "A library membership card for books",
+   "A lower deduction certificate",
+   "A ration card for food items"
+  ],
+  "ans": 2,
+  "why": [
+   "A bus pass has no part in tax deduction.",
+   "A library card has no part in tax deduction.",
+   "The tax officer can allow a lower deduction in advance.",
+   "A ration card has no part in tax deduction."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s474q4",
+  "h": "Check yourself",
+  "q": "When does an NRI generally need to file a return?",
+  "opts": [
+   "On crossing the limit or for a refund",
+   "Never, since NRIs are all exempt from it",
+   "Only on a birthday in the same year",
+   "Only if a friend asks them to do so"
+  ],
+  "ans": 0,
+  "why": [
+   "Income above the limit or a refund claim needs a return.",
+   "There are cases where filing is needed, so not never.",
+   "A birthday has no link to the duty to file.",
+   "A friend's request has no link to the duty to file."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "File a return to claim excess TDS back.",
+   "A PAN is needed for most Indian financial activity.",
+   "A lower deduction certificate cuts TDS in advance."
+  ]
+ }
+]

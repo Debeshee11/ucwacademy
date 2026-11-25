@@ -1,0 +1,144 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Steel and cement firms earn much more in boom years than in slowdowns. Soap and medicine makers keep selling when money is tight. Know whether an industry is cyclical or defensive, and where you are in the cycle.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Boom or steady",
+  "lines": [
+   [
+    "meena",
+    "Why did that cement firm's profit swing so much?"
+   ],
+   [
+    "sikka",
+    "Cyclical industries rise and fall with the economy. Defensive ones stay steady. Capacity utilisation shows how much of a plant's output is used. A commodity price cycle, the repeated rise and fall of raw material prices, drives profits of related industries."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "A plant's output, units out of 100, made up",
+  "vals": [
+   95,
+   78,
+   55
+  ],
+  "labels": [
+   "Boom",
+   "Normal",
+   "Slowdown"
+  ],
+  "big": "78% utilisation",
+  "small": "a factory that could make 100 runs at 78",
+  "alt": "Bars of capacity utilisation across a cycle",
+  "caps": [
+   [
+    0.3,
+    "In a boom, the plant runs near full."
+   ],
+   [
+    2.2,
+    "In a normal year, it runs at 78."
+   ],
+   [
+    4.0,
+    "In a slowdown, output falls."
+   ],
+   [
+    5.6,
+    "Cyclical profits swing with it."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s538q1",
+  "h": "Check yourself",
+  "q": "Steel and cement firms earn much more in boom years than in slowdowns. What kind of industry is this?",
+  "opts": [
+   "A defensive industry",
+   "A regulated utility",
+   "A cyclical industry",
+   "A start-up sector"
+  ],
+  "ans": 2,
+  "why": [
+   "Defensive demand stays steady. It does not answer what was asked.",
+   "Regulation is a different matter. The details here point elsewhere.",
+   "Sales and profits rise and fall with the economy.",
+   "These are established industries. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s538q2",
+  "h": "Check yourself",
+  "q": "People keep buying soap and medicines even when money is tight. What kind of industry is this?",
+  "opts": [
+   "A defensive industry",
+   "A cyclical industry",
+   "A commodity cycle",
+   "A disrupted industry"
+  ],
+  "ans": 0,
+  "why": [
+   "Demand stays steady in good and bad times.",
+   "Cyclical demand swings with the economy.",
+   "A commodity cycle is about raw material prices.",
+   "Disruption is about new technology."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s538q3",
+  "h": "Check yourself",
+  "q": "A factory that could make 100 units is running at 78. What is this?",
+  "opts": [
+   "A market share of 78%",
+   "A profit margin of 78%",
+   "A P/E ratio of 78 times",
+   "Capacity use of 78%"
+  ],
+  "ans": 3,
+  "why": [
+   "Market share is a slice of industry sales.",
+   "Margin is profit over sales. It does not fit the facts given.",
+   "P/E is price over earnings. It does not answer what was asked.",
+   "It is the share of possible output actually produced."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s538q4",
+  "h": "Check yourself",
+  "q": "Metal prices climb for two years, then fall for two. What is this?",
+  "opts": [
+   "A defensive trend of demand",
+   "A commodity price cycle",
+   "A breakout of a price",
+   "A hedge by a short seller"
+  ],
+  "ans": 1,
+  "why": [
+   "Defensive demand is steady. It does not fit the facts given.",
+   "It is the repeated rise and fall of raw material prices.",
+   "A breakout is a chart move. The details here point elsewhere.",
+   "A hedge is a protective position. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Cyclical: profits follow the economy. Defensive: steady demand.",
+   "Capacity utilisation: share of possible output actually made.",
+   "Commodity price cycles drive related industries' profits."
+  ]
+ }
+]

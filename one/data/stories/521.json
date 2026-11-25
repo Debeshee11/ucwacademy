@@ -1,0 +1,146 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Revenue ₹100 crore. After suppliers, staff, the bank and the tax office, ₹8 crore remains. The income statement tells that story in order: what was earned, what it cost, what was kept.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Earned and kept",
+  "lines": [
+   [
+    "meena",
+    "Is revenue the same as profit?"
+   ],
+   [
+    "sikka",
+    "No. Revenue is money from selling goods or services in a period. EBITDA is a rough measure of operating earnings before interest, tax and write-offs. Operating margin is operating profit over revenue. Net profit is what is left after everything and belongs to the shareholders."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "From revenue to net profit, ₹ crore, made up",
+  "vals": [
+   100,
+   20,
+   14,
+   8
+  ],
+  "labels": [
+   "Sales",
+   "EBITDA",
+   "Op.",
+   "Net"
+  ],
+  "big": "₹8 crore kept",
+  "small": "of ₹100 crore of sales",
+  "alt": "Bars falling from revenue to net profit",
+  "caps": [
+   [
+    0.3,
+    "Revenue: ₹100 crore."
+   ],
+   [
+    2.2,
+    "EBITDA: a rough operating earnings measure."
+   ],
+   [
+    4.0,
+    "Operating profit, after depreciation."
+   ],
+   [
+    5.6,
+    "Net profit: what remains for shareholders."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s521q1",
+  "h": "Check yourself",
+  "q": "A mobile maker records the value of every phone it sold this quarter. What is this?",
+  "opts": [
+   "Net profit",
+   "Revenue",
+   "Equity",
+   "Liability"
+  ],
+  "ans": 1,
+  "why": [
+   "Net profit is after all costs. It does not answer what was asked.",
+   "Revenue is money earned from selling goods or services.",
+   "Equity is on the balance sheet. That does not match this case.",
+   "A liability is owed money. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s521q2",
+  "h": "Check yourself",
+  "q": "A firm keeps ₹14 of operating profit from every ₹100 of sales. What is the operating margin?",
+  "opts": [
+   "1.4%",
+   "86%",
+   "114%",
+   "14%"
+  ],
+  "ans": 3,
+  "why": [
+   "1.4% would mean only ₹1.40 of profit.",
+   "86% is the cost share, not the margin.",
+   "114% adds the two numbers, which is wrong.",
+   "14 ÷ 100 gives an operating margin of 14%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s521q3",
+  "h": "Check yourself",
+  "q": "What is EBITDA?",
+  "opts": [
+   "A rough operating earnings measure",
+   "The total cash in the bank today",
+   "The final profit after all tax",
+   "The value of all the shares"
+  ],
+  "ans": 0,
+  "why": [
+   "It is profit before interest, tax, depreciation and amortisation.",
+   "Cash is on the balance sheet. It does not fit the facts given.",
+   "Final profit is net profit. It does not answer what was asked.",
+   "Share value is market capitalisation. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s521q4",
+  "h": "Check yourself",
+  "q": "After paying suppliers, staff, the bank and the tax office, ₹8 crore remains. What is this?",
+  "opts": [
+   "Revenue",
+   "EBITDA",
+   "Net profit",
+   "Working capital"
+  ],
+  "ans": 2,
+  "why": [
+   "Revenue is before costs. It does not fit the facts given.",
+   "EBITDA is before interest and tax. It does not answer what was asked.",
+   "It is what is left for shareholders. This fits the facts given.",
+   "Working capital is a balance sheet figure. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Revenue: money from sales in a period.",
+   "EBITDA: rough operating earnings. Operating margin = operating profit ÷ revenue.",
+   "Net profit: what remains after all costs, interest and tax."
+  ]
+ }
+]

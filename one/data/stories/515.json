@@ -1,0 +1,168 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena has ₹6 lakh to lend. Instead of putting it all in one five-year deposit, she splits it into three parts maturing in one, three and five years. Every year or two, some money comes back, ready to be used or reinvested.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Ladders",
+  "lines": [
+   [
+    "meena",
+    "Why split it? One deposit is simpler."
+   ],
+   [
+    "sikka",
+    "A ladder gives you money back at regular intervals, and spreads the risk of reinvesting at the wrong time. It is a way of not betting everything on one date or one rate."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   2,
+   2,
+   2
+  ],
+  "labels": [
+   "Year 1",
+   "Year 3",
+   "Year 5"
+  ],
+  "big": "₹2 lakh back",
+  "small": "at each rung of the ladder",
+  "h": "A simple ladder (₹ lakh)",
+  "alt": "Three equal bars showing money returning in years one, three and five",
+  "caps": [
+   [
+    0.3,
+    "Meena splits ₹6 lakh into three equal parts."
+   ],
+   [
+    2.2,
+    "One part matures in the first year."
+   ],
+   [
+    4.0,
+    "Another matures in year three."
+   ],
+   [
+    5.6,
+    "The last matures in year five. Money returns at regular intervals."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four tools",
+  "intro": "In plain words.",
+  "rows": [
+   [
+    "Fixed deposit",
+    "Fixed interest for a set time, insured up to a limit per bank"
+   ],
+   [
+    "NCD",
+    "A company bond that cannot be converted into shares"
+   ],
+   [
+    "Floating rate bond",
+    "Interest resets with a benchmark rate"
+   ],
+   [
+    "Bond ladder",
+    "Bonds of different maturities, so money returns in steps"
+   ]
+  ],
+  "note": "Deposit insurance covers up to ₹5 lakh per depositor per bank, including interest. NCDs and company deposits are not covered the same way."
+ },
+ {
+  "k": "pick",
+  "id": "s515q1",
+  "h": "Check yourself",
+  "q": "Rohan splits money into bonds maturing in 1, 3 and 5 years. What is this called?",
+  "opts": [
+   "A bond ladder",
+   "A stock split",
+   "A bonus issue",
+   "A sum insured"
+  ],
+  "ans": 0,
+  "why": [
+   "Bonds of different maturities form a ladder.",
+   "A split is a share action, not a way of holding bonds.",
+   "A bonus issue gives extra shares, not maturities.",
+   "A sum insured is an insurance term, not a bond."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s515q2",
+  "h": "Check yourself",
+  "q": "A bank holds a depositor's ₹8 lakh in one account. If the bank fails, how much is insured, as a rule?",
+  "opts": [
+   "All ₹8 lakh",
+   "Nothing at all",
+   "Up to ₹5 lakh",
+   "Up to ₹50 lakh"
+  ],
+  "ans": 2,
+  "why": [
+   "The cover has a limit, so not all ₹8 lakh is insured.",
+   "Bank deposits are insured up to a limit, so not nothing.",
+   "Deposit insurance covers up to ₹5 lakh per depositor per bank.",
+   "₹50 lakh is far above the insured limit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s515q3",
+  "h": "Check yourself",
+  "q": "What is an NCD?",
+  "opts": [
+   "A bank savings account that earns interest",
+   "A government treasury bill for a year",
+   "A share that pays no dividend at all",
+   "A company bond, not convertible"
+  ],
+  "ans": 3,
+  "why": [
+   "A savings account is held with a bank and is not a bond.",
+   "A treasury bill is issued by the government.",
+   "An NCD is a bond, so it is not a share.",
+   "A non-convertible debenture is a company bond that stays debt."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s515q4",
+  "h": "Check yourself",
+  "q": "Meena's floating rate bond pays interest linked to a benchmark. Rates rise. What happens to her coupon?",
+  "opts": [
+   "It falls",
+   "It rises at the reset",
+   "It stays fixed for ever and ever",
+   "It is cancelled"
+  ],
+  "ans": 1,
+  "why": [
+   "A rise in the benchmark does not lower a floating rate.",
+   "A floating rate resets with the benchmark, so it rises.",
+   "A fixed rate bond stays fixed, but a floating one does not.",
+   "A rate change does not cancel the coupon."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A ladder returns money in steps, and spreads the reinvestment risk.",
+   "Deposit insurance is up to ₹5 lakh per depositor per bank.",
+   "An NCD is a company bond, and carries credit risk."
+  ]
+ }
+]

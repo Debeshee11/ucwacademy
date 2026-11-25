@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A company offers 13% on its bond, while a government bond pays 7%. Rohan is tempted. The extra 6% is not a gift. It is the price of a risk he must understand.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Paid for the risk",
+  "lines": [
+   [
+    "rohan",
+    "A company bond pays more. Why not just buy that?"
+   ],
+   [
+    "sikka",
+    "Because a company can fail to pay. The extra interest is what the market charges for that chance. Ratings help you judge how big the chance is."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Credit and liquidity",
+  "stops": [
+   [
+    "A higher rating usually means a safer borrower",
+    true
+   ],
+   [
+    "A high coupon always means a safe bond",
+    false
+   ],
+   [
+    "Default risk is the chance a borrower fails to pay",
+    true
+   ],
+   [
+    "Every bond can be sold quickly at a fair price",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Rating agencies give their opinion on repayment."
+   ],
+   [
+    2.2,
+    "A high coupon often signals higher risk."
+   ],
+   [
+    4.0,
+    "A company may miss interest or principal."
+   ],
+   [
+    5.6,
+    "A little-traded bond may find no buyer at a fair price."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four terms",
+  "intro": "For corporate bonds.",
+  "rows": [
+   [
+    "Credit rating",
+    "An agency's opinion on how likely repayment is"
+   ],
+   [
+    "Default risk",
+    "The chance that a borrower fails to pay"
+   ],
+   [
+    "Corporate bond",
+    "A bond from a company, paying more than a government bond"
+   ],
+   [
+    "Liquidity risk",
+    "Difficulty selling quickly at a fair price"
+   ]
+  ],
+  "note": "A rating is an opinion and can change. It is not a promise."
+ },
+ {
+  "k": "pick",
+  "id": "s514q1",
+  "h": "Check yourself",
+  "q": "Two bonds: one rated high, one rated low. Which usually pays a higher coupon?",
+  "opts": [
+   "The high-rated bond, since it is safer",
+   "Both pay exactly the same",
+   "Neither pays any coupon",
+   "The low-rated bond, for taking more risk"
+  ],
+  "ans": 3,
+  "why": [
+   "A safer borrower can afford to pay less, so the coupon is lower.",
+   "Coupons differ, as they reflect risk and other terms.",
+   "Both bonds pay a coupon, and the amounts differ.",
+   "A riskier borrower has to offer more to attract lenders."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s514q2",
+  "h": "Check yourself",
+  "q": "A company misses an interest payment on its bond. What is this called?",
+  "opts": [
+   "A renewal",
+   "A default",
+   "A split",
+   "A bonus"
+  ],
+  "ans": 1,
+  "why": [
+   "A renewal is continuing a policy for another term.",
+   "Failing to pay interest or principal on time is a default.",
+   "A split is a share corporate action and not a missed payment.",
+   "A bonus issue gives extra shares and has no link to missed interest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s514q3",
+  "h": "Check yourself",
+  "q": "Meena holds a little-traded bond and needs cash next week. What is the risk?",
+  "opts": [
+   "The bond becomes a share by itself",
+   "The coupon doubles on her need",
+   "She may not find a fair buyer",
+   "The company vanishes at once"
+  ],
+  "ans": 2,
+  "why": [
+   "A bond does not turn into a share by itself.",
+   "Coupons are fixed and do not double when she needs cash.",
+   "Liquidity risk means selling quickly may be hard or costly.",
+   "That is not what liquidity risk means, since it is about selling."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s514q4",
+  "h": "Check yourself",
+  "q": "Rohan sees a bond offering 15% from a firm with a low rating. What should he conclude?",
+  "opts": [
+   "The high coupon reflects high risk",
+   "It is a safe bargain",
+   "It is guaranteed by SEBI",
+   "It will certainly be repaid early"
+  ],
+  "ans": 0,
+  "why": [
+   "A very high coupon on a low rating signals a higher chance of default.",
+   "A high coupon is not proof of safety. It often warns of risk.",
+   "SEBI regulates markets but does not guarantee a bond.",
+   "Nothing suggests early repayment. A riskier bond is not more certain."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A higher coupon usually means higher risk.",
+   "A rating is an opinion on repayment, not a promise.",
+   "Liquidity risk: you may not sell quickly at a fair price."
+  ]
+ }
+]

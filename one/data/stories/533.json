@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The 50-day line crosses above the 200-day line. Some call it a golden cross. Indicators turn price history into simple signals, but they describe the past and can mislead. Education, not a call to trade.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Smoothing the noise",
+  "lines": [
+   [
+    "meena",
+    "What is a moving average?"
+   ],
+   [
+    "sikka",
+    "The average price over a set number of days, updated daily to smooth out noise. A 200-day line shows long-term direction. A golden cross is a short average rising above a long one. MACD uses the gap between a fast and a slow average. A trendline joins lows or highs."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Trend tools",
+  "intro": "Made-up share.",
+  "rows": [
+   [
+    "200-day moving average",
+    "long-term direction"
+   ],
+   [
+    "Golden cross",
+    "50-day crosses above 200-day"
+   ],
+   [
+    "MACD",
+    "12-day and 26-day averages vs a signal line"
+   ],
+   [
+    "Trendline",
+    "joins the last four higher lows"
+   ]
+  ],
+  "note": "Signals can fail. Use confirmation."
+ },
+ {
+  "k": "pick",
+  "id": "s533q1",
+  "h": "Check yourself",
+  "q": "A 200-day line shows the long-term direction of a share. What is it?",
+  "opts": [
+   "A candlestick bar",
+   "A volume bar chart",
+   "A target price figure",
+   "A moving average"
+  ],
+  "ans": 3,
+  "why": [
+   "A candlestick is one period's open, high, low, close.",
+   "A volume bar counts shares traded. The details here point elsewhere.",
+   "A target price is a forecast. That does not match this case.",
+   "It is the average price over 200 days. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s533q2",
+  "h": "Check yourself",
+  "q": "The 50-day line crosses above the 200-day line. What is this called?",
+  "opts": [
+   "A head and shoulders",
+   "A golden cross",
+   "A breakdown",
+   "A margin call"
+  ],
+  "ans": 1,
+  "why": [
+   "Head and shoulders is a peak pattern. The details here point elsewhere.",
+   "A short average rising above a long one is a golden cross.",
+   "A breakdown is a fall through support. It does not fit the facts given.",
+   "A margin call is a futures demand. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s533q3",
+  "h": "Check yourself",
+  "q": "A line built from a 12-day and a 26-day average crosses its signal line. Which indicator is this?",
+  "opts": [
+   "MACD",
+   "RSI",
+   "VWAP",
+   "PEG"
+  ],
+  "ans": 0,
+  "why": [
+   "MACD is based on fast and slow averages. That matches the case described.",
+   "RSI is a momentum indicator. It does not answer what was asked.",
+   "VWAP is a volume-weighted price. The details here point elsewhere.",
+   "PEG is a valuation ratio. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s533q4",
+  "h": "Check yourself",
+  "q": "A line joining the last four higher lows slopes upwards. What is this?",
+  "opts": [
+   "A resistance level",
+   "A candlestick",
+   "A trendline",
+   "A hurdle rate"
+  ],
+  "ans": 2,
+  "why": [
+   "Resistance is a ceiling level.",
+   "A candlestick is one period's bar.",
+   "A trendline is drawn along lows or highs.",
+   "A hurdle rate is a return threshold."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Moving average: average price over a set number of days.",
+   "Golden cross: a short average above a long one. MACD: gap between fast and slow averages.",
+   "A trendline joins lows or highs. Signals can fail."
+  ]
+ }
+]

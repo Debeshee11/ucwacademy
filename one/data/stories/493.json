@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Meena has no employer pension. She wants a retirement account she opens herself, with low costs and a choice of how it is invested. NPS was built for people like her.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A pension you choose",
+  "lines": [
+   [
+    "meena",
+    "In NPS, who decides where my money goes?"
+   ],
+   [
+    "sikka",
+    "You do, within limits. You pick how much goes to equity, bonds and government securities, or let an automatic option shift it by age."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "NPS, the basics",
+  "intro": "Four ideas, in plain words.",
+  "rows": [
+   [
+    "Tier I",
+    "The main retirement account, with rules on withdrawal"
+   ],
+   [
+    "Tier II",
+    "A flexible account, with no such restrictions"
+   ],
+   [
+    "Asset choice",
+    "How much goes to equity, bonds and government securities"
+   ],
+   [
+    "Annuity",
+    "A pension bought with part of the pot at exit"
+   ]
+  ],
+  "note": "NPS is regulated by PFRDA. The exact exit rules are set by PFRDA and can change, so check the current ones."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "About NPS",
+  "stops": [
+   [
+    "Tier I is the main retirement account",
+    true
+   ],
+   [
+    "NPS lets you pick how the money is invested",
+    true
+   ],
+   [
+    "You can take out the whole pot at exit, with no pension",
+    false
+   ],
+   [
+    "NPS is run by the bank you save with",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Tier I holds your long-term retirement money, with withdrawal rules."
+   ],
+   [
+    2.2,
+    "Within limits, you choose the mix, or use an automatic life-stage option."
+   ],
+   [
+    4.0,
+    "A set part of the pot must buy an annuity at exit, under PFRDA rules."
+   ],
+   [
+    5.6,
+    "NPS is regulated by PFRDA, and not run by a single bank."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s493q1",
+  "h": "Check yourself",
+  "q": "Rohan wants his NPS to move towards safer assets as he nears retirement, without his involvement. What suits him?",
+  "opts": [
+   "A fixed choice of all equity for good",
+   "Closing the account every year",
+   "An automatic life-stage choice",
+   "Using Tier II as the main pot"
+  ],
+  "ans": 2,
+  "why": [
+   "All equity for the whole period does not reduce risk near retirement.",
+   "Closing the account each year would break the long-term plan.",
+   "An automatic option shifts the mix with age, so he does not need to.",
+   "Tier II is flexible, but it is not meant to be the main retirement pot."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s493q2",
+  "h": "Check yourself",
+  "q": "Meena reaches NPS exit age. What must she do with part of the pot?",
+  "opts": [
+   "Use a set share to buy an annuity",
+   "Hand it all over to the government",
+   "Reinvest all of it in shares",
+   "Leave it idle for another ten years"
+  ],
+  "ans": 0,
+  "why": [
+   "The rules require part of the pot to buy an annuity, a regular pension.",
+   "The pot belongs to her, and it is not handed over in full to anyone.",
+   "No rule demands reinvesting it all in shares.",
+   "Idle money does not meet the rule, which asks for an annuity."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s493q3",
+  "h": "Check yourself",
+  "q": "A friend says NPS Tier I and Tier II are the same. What is the difference?",
+  "opts": [
+   "Tier I is for the old, and Tier II for the young",
+   "Tier II must be kept for sixty years",
+   "There is no difference between them",
+   "Tier I has withdrawal rules, and Tier II is flexible"
+  ],
+  "ans": 3,
+  "why": [
+   "Age does not decide the tier. The purpose and the rules do.",
+   "Tier II has no such lock, so it is the flexible one.",
+   "The tiers differ in how freely money can be taken out.",
+   "Tier I is the main retirement account with rules. Tier II is flexible."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s493q4",
+  "h": "Check yourself",
+  "q": "Who regulates the National Pension System?",
+  "opts": [
+   "SEBI alone",
+   "PFRDA",
+   "IRDAI",
+   "Your own employer"
+  ],
+  "ans": 1,
+  "why": [
+   "SEBI regulates securities markets and not the pension system.",
+   "PFRDA is the pension regulator that oversees NPS in India.",
+   "IRDAI regulates insurers and is not the pension regulator.",
+   "An employer may offer NPS, but it does not regulate it."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "NPS is a voluntary pension account regulated by PFRDA.",
+   "Tier I is the main account. Tier II is flexible.",
+   "A set part of the pot must buy an annuity. Check the current exit rules."
+  ]
+ }
+]

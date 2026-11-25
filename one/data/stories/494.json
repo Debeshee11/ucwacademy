@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Dadi gets ₹10 lakh when her husband's job ends. She wants steady income, not a big risk. Which tools exist for her, and which are for other people?",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Beyond EPF and NPS",
+  "lines": [
+   [
+    "dadi",
+    "I am sixty-three and want regular money every quarter. What can I use?"
+   ],
+   [
+    "sikka",
+    "The Senior Citizens Savings Scheme is made for that. Others, like Atal Pension Yojana and gratuity, are for different people at different times."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four more tools",
+  "intro": "Who each one is for.",
+  "rows": [
+   [
+    "SCSS",
+    "Older people, with regular interest paid every quarter"
+   ],
+   [
+    "Atal Pension Yojana",
+    "Workers in the unorganised sector, for a fixed pension later"
+   ],
+   [
+    "Gratuity",
+    "A lump sum from an employer after long service"
+   ],
+   [
+    "SWP",
+    "A fixed amount paid from a mutual fund at intervals"
+   ]
+  ],
+  "note": "Each tool has its own conditions and limits. Read the current terms before you commit."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Other pension tools",
+  "stops": [
+   [
+    "SCSS pays regular interest to older people",
+    true
+   ],
+   [
+    "Gratuity is paid by your bank",
+    false
+   ],
+   [
+    "SWP takes a fixed sum from a fund at intervals",
+    true
+   ],
+   [
+    "Atal Pension Yojana is for large companies only",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "SCSS is a government-backed scheme that pays interest each quarter."
+   ],
+   [
+    2.2,
+    "Gratuity comes from an employer, after years of service."
+   ],
+   [
+    4.0,
+    "An SWP pays you a set amount, and the fund value changes."
+   ],
+   [
+    5.6,
+    "Atal Pension Yojana is meant for workers outside formal pension cover."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s494q1",
+  "h": "Check yourself",
+  "q": "Dadi wants a regular quarterly interest on a lump sum, from a government-backed scheme. What fits?",
+  "opts": [
+   "A share of a small new company in the market",
+   "The Senior Citizens Savings Scheme",
+   "A gratuity from her former employer",
+   "A credit card reward scheme"
+  ],
+  "ans": 1,
+  "why": [
+   "A share of a small company is risky and pays nothing steady.",
+   "SCSS is built for older people, and pays interest every quarter.",
+   "Gratuity is an employer's lump sum and not a place to put savings.",
+   "Card rewards are not a source of retirement income."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s494q2",
+  "h": "Check yourself",
+  "q": "Rohan leaves a company after many years of service. What may he receive from the employer?",
+  "opts": [
+   "A refund of his tax paid",
+   "An SCSS account from the company",
+   "A home loan on easy terms",
+   "Gratuity, under the rules"
+  ],
+  "ans": 3,
+  "why": [
+   "A tax refund is a separate matter between him and the tax office.",
+   "An employer does not open an SCSS account for a leaving employee.",
+   "A leaving employee is not owed a home loan by his old employer.",
+   "Gratuity is a lump sum paid by an employer after long service."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s494q3",
+  "h": "Check yourself",
+  "q": "A retiree sets an SWP of ₹30,000 a month from a fund. What should she watch?",
+  "opts": [
+   "Whether the fund can keep paying for many years",
+   "That the fund never changes in value at all",
+   "That the money is paid as a gift",
+   "That her SWP matches a friend's SWP"
+  ],
+  "ans": 0,
+  "why": [
+   "The fund value moves, so large draws may use up the pot sooner than planned.",
+   "Fund values do change, so expecting no change is a mistake.",
+   "An SWP is her own money coming back, not a gift.",
+   "Her need decides her SWP, and a friend's plan is no guide."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s494q4",
+  "h": "Check yourself",
+  "q": "A domestic worker with no employer pension wants a fixed pension after 60. Which scheme is made for her?",
+  "opts": [
+   "Senior Citizens Savings Scheme",
+   "Gratuity from her employer",
+   "Atal Pension Yojana",
+   "A credit card with rewards"
+  ],
+  "ans": 2,
+  "why": [
+   "SCSS is for people who are already sixty or older, and not for saving earlier.",
+   "Gratuity needs an employer who pays it, and she may have none.",
+   "Atal Pension Yojana is a government scheme for workers outside formal pension cover.",
+   "Rewards are not a pension and carry no promise of income."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SCSS pays regular interest to older people, from a government-backed scheme.",
+   "Gratuity comes from an employer after long service.",
+   "An SWP pays a fixed sum from a fund, so watch how long the pot lasts."
+  ]
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "health",
+  "h": "Before you start",
+  "big": "Dadi is admitted to hospital for three days. The bill is ₹2 lakh. Whether the family pays it from savings or the insurer pays it directly depends on a few words on one page of the policy.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What does cover mean?",
+  "lines": [
+   [
+    "rohan",
+    "I have a ₹10 lakh health policy. Does that mean the insurer will pay any bill up to ₹10 lakh?"
+   ],
+   [
+    "sikka",
+    "Up to ₹10 lakh in a policy year, for what the policy covers. Let us see how a claim actually flows."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Cashless claim",
+  "b": "Reimbursement claim",
+  "rows": [
+   [
+    "Paid by you at the hospital (₹ thousand)",
+    10,
+    200
+   ],
+   [
+    "Refunded to you later (₹ thousand)",
+    0,
+    190
+   ]
+  ],
+  "h": "A ₹2 lakh bill, two routes",
+  "alt": "Two sets of bars showing what the patient pays upfront and what is refunded later",
+  "caps": [
+   [
+    0.3,
+    "A ₹2 lakh bill, of which ₹10,000 is not covered."
+   ],
+   [
+    2.2,
+    "In a cashless claim at a network hospital, the family pays only the ₹10,000."
+   ],
+   [
+    4.2,
+    "In a reimbursement claim, the family pays ₹2 lakh first and gets ₹1.9 lakh back after the bills are checked."
+   ],
+   [
+    5.8,
+    "Same cover, very different cash needs on the day. Know your network hospitals."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The four words",
+  "intro": "Learn these before you buy.",
+  "rows": [
+   [
+    "Sum insured",
+    "The most the insurer pays in one policy year"
+   ],
+   [
+    "Premium",
+    "The yearly price of the cover"
+   ],
+   [
+    "Cashless",
+    "Insurer pays the network hospital directly"
+   ],
+   [
+    "Reimbursement",
+    "You pay first, then claim a refund"
+   ]
+  ],
+  "note": "The premium goes up with age, with the sum insured and with the city you live in."
+ },
+ {
+  "k": "pick",
+  "id": "s451q1",
+  "h": "Check yourself",
+  "q": "Rohan has a ₹10 lakh sum insured. A covered bill comes to ₹12 lakh in one policy year. What happens?",
+  "opts": [
+   "The insurer pays all ₹12 lakh, since the bill is covered",
+   "The insurer pays nothing, since the bill is over the limit",
+   "The insurer pays ₹6 lakh, which is half of the bill",
+   "The insurer pays up to ₹10 lakh and Rohan pays the rest"
+  ],
+  "ans": 3,
+  "why": [
+   "The sum insured is the most paid in a year. A larger bill is not paid in full.",
+   "A bill over the limit is paid up to the limit. It is not rejected in full.",
+   "There is no halving rule. The insurer pays up to the sum insured on covered costs.",
+   "Cover stops at the sum insured, so Rohan pays the remaining ₹2 lakh himself."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s451q2",
+  "h": "Check yourself",
+  "q": "Meena is treated at a hospital that is not on her insurer's network list. What is the likely route?",
+  "opts": [
+   "Cashless: the insurer pays every hospital directly anyway",
+   "Reimbursement: she pays first and claims a refund later",
+   "No claim is possible outside the network at all",
+   "She must change her insurer before she can claim"
+  ],
+  "ans": 1,
+  "why": [
+   "Direct payment needs an agreement with the hospital, which a non-network hospital lacks.",
+   "Outside the network, cashless is usually unavailable, so she pays and then claims.",
+   "A claim is still possible. It simply follows the reimbursement route.",
+   "She does not need a new insurer. The same policy handles a reimbursement claim."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s451q3",
+  "h": "Check yourself",
+  "q": "A 25-year-old and a 55-year-old buy the same ₹10 lakh cover. What is likely about their premiums?",
+  "opts": [
+   "The 55-year-old pays more, since premiums rise with age",
+   "The same, since the sum insured is the same for both",
+   "The 25-year-old pays more, since young people claim more",
+   "Premiums are fixed by the insurer's choice of colour plan"
+  ],
+  "ans": 0,
+  "why": [
+   "Older people are more likely to claim, so the premium rises with age.",
+   "Premium depends on age and city as well as the sum insured, so it is not identical.",
+   "Younger buyers generally pay less, since they are less likely to claim.",
+   "There are no colour plans. Premiums come from age, sum insured, city and plan features."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s451q4",
+  "h": "Check yourself",
+  "q": "Why does it help to check the insurer's network hospital list before you buy?",
+  "opts": [
+   "It lowers the premium by the number of hospitals listed",
+   "It makes the policy start earlier than the stated date",
+   "It shows which hospitals near you allow cashless claims",
+   "It raises the sum insured when a nearby hospital is listed"
+  ],
+  "ans": 2,
+  "why": [
+   "The list does not change the price. Premium comes from age, cover and city.",
+   "Policy start dates are fixed by the policy terms, not by the list.",
+   "Cashless treatment works at network hospitals, so check that your family's hospitals are on it.",
+   "The sum insured is chosen by you at purchase and is unrelated to the list."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sum insured is the most the insurer pays in a policy year.",
+   "Cashless means the insurer pays the network hospital. Reimbursement means you pay first.",
+   "Premiums rise with age, so starting early costs less."
+  ]
+ }
+]

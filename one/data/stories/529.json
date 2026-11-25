@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A conglomerate has telecom, retail and energy arms. One P/E cannot describe all three. Different businesses call for different tools: sum of the parts, assets, dividends or comparison with peers.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Choose the tool",
+  "lines": [
+   [
+    "meena",
+    "Is DCF enough for every company?"
+   ],
+   [
+    "sikka",
+    "No. A conglomerate is valued arm by arm. A land-rich firm is valued on its plots less its loans. A mature utility is valued on its steady dividends. A paint maker is judged against other listed paint makers."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four tools",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Sum of the parts",
+    "value each arm, then add"
+   ],
+   [
+    "Asset-based",
+    "plots at market value less loans"
+   ],
+   [
+    "Dividend discount model",
+    "present value of expected dividends"
+   ],
+   [
+    "Relative valuation",
+    "compare with similar listed firms"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s529q1",
+  "h": "Check yourself",
+  "q": "A conglomerate with telecom, retail and energy arms is valued arm by arm. What is this?",
+  "opts": [
+   "Relative valuation",
+   "Asset-based valuation",
+   "Sum of the parts",
+   "Dividend discount model"
+  ],
+  "ans": 2,
+  "why": [
+   "Relative valuation compares with peers.",
+   "Asset-based uses what a company owns less owes.",
+   "Each business is valued separately and added.",
+   "A DDM uses dividends. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s529q2",
+  "h": "Check yourself",
+  "q": "A land-rich firm is valued on its plots at market value less its loans. What is this?",
+  "opts": [
+   "Asset-based valuation",
+   "Sum of the parts method",
+   "Relative valuation method",
+   "A margin of safety figure"
+  ],
+  "ans": 0,
+  "why": [
+   "It is based on what is owned minus what is owed.",
+   "Sum of the parts splits by business. It does not fit the facts given.",
+   "Relative valuation uses peers. It does not fit the facts given.",
+   "A margin of safety is a gap. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s529q3",
+  "h": "Check yourself",
+  "q": "A mature utility pays steady payouts. Which model values it on those payouts?",
+  "opts": [
+   "Sum of the parts",
+   "Dividend discount model",
+   "Asset-based valuation",
+   "Scenario analysis"
+  ],
+  "ans": 1,
+  "why": [
+   "Sum of the parts splits by business. That does not match this case.",
+   "It values a share as the present value of expected dividends.",
+   "Asset-based looks at owned assets. It does not answer what was asked.",
+   "Scenario analysis tests stories. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s529q4",
+  "h": "Check yourself",
+  "q": "A paint maker is judged against other listed paint makers. What is this?",
+  "opts": [
+   "Sum of the parts",
+   "Asset-based valuation",
+   "Dividend discount model",
+   "Relative valuation"
+  ],
+  "ans": 3,
+  "why": [
+   "Sum of the parts splits by arm. It does not fit the facts given.",
+   "Asset-based uses net assets. It does not answer what was asked.",
+   "A DDM uses dividends. The details here point elsewhere.",
+   "It compares a company with similar companies."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sum of the parts: value each business, then add.",
+   "Asset-based: assets minus liabilities. DDM: present value of dividends.",
+   "Relative valuation: compare with similar companies."
+  ]
+ }
+]

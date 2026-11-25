@@ -1,0 +1,180 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Rohan spends ₹40,000 on his card and pays only the minimum due, ₹2,000. The bank is happy. He feels fine. Next month the interest begins to pile on the other ₹38,000.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Borrowing smart",
+  "lines": [
+   [
+    "rohan",
+    "A card gives me weeks to pay. Where is the catch?"
+   ],
+   [
+    "sikka",
+    "There is none, if you pay the whole statement by the due date. The trap is the minimum due, and borrowing for things that do not last."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Cards and loans",
+  "stops": [
+   [
+    "Paying the full bill on time costs no interest",
+    true
+   ],
+   [
+    "The minimum due clears the bill",
+    false
+   ],
+   [
+    "A secured loan usually carries a lower rate",
+    true
+   ],
+   [
+    "Borrowing is fine for any kind of spending",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "On time and in full, a card is a short loan with no interest."
+   ],
+   [
+    2.2,
+    "The minimum only keeps the account from being overdue. Interest runs on the rest."
+   ],
+   [
+    4.0,
+    "The lender can take the asset behind a secured loan, so it charges less."
+   ],
+   [
+    5.6,
+    "Borrow for things that last or grow, such as a home or education."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What carrying a balance costs",
+  "intro": "A made-up card, 3.5% a month.",
+  "rows": [
+   [
+    "Bill",
+    "₹40,000"
+   ],
+   [
+    "Minimum paid",
+    "₹2,000"
+   ],
+   [
+    "Left unpaid",
+    "₹38,000"
+   ],
+   [
+    "=",
+    "Interest next month",
+    "about ₹1,330"
+   ],
+   [
+    "Interest per year",
+    "about 42%"
+   ]
+  ],
+  "note": "Card rates are among the highest in lending, so carrying a balance is costly."
+ },
+ {
+  "k": "pick",
+  "id": "s465q1",
+  "h": "Check yourself",
+  "q": "Meena pays her full card statement by the due date every month. What does she pay in interest?",
+  "opts": [
+   "A small fixed amount each month",
+   "None on those purchases",
+   "Interest on the whole yearly spend",
+   "Interest only on the minimum due"
+  ],
+  "ans": 1,
+  "why": [
+   "There is no fixed monthly charge when the statement is cleared on time.",
+   "Paid in full by the due date, no interest is charged on purchases.",
+   "Interest does not build on a year of spending if she pays each bill in full.",
+   "The minimum due is not what interest is charged on."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s465q2",
+  "h": "Check yourself",
+  "q": "Rohan pays only the minimum due on his card. What is the main result?",
+  "opts": [
+   "Interest runs on the unpaid balance",
+   "The whole bill is cleared by the bank",
+   "His credit limit is doubled by the bank",
+   "His score rises at once, as a reward"
+  ],
+  "ans": 0,
+  "why": [
+   "The minimum avoids a late mark, but the rest keeps building interest.",
+   "The minimum is a small share of the bill, so the bill is not cleared.",
+   "Paying the minimum does not increase his limit.",
+   "Carrying a balance can strain his score, not lift it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s465q3",
+  "h": "Check yourself",
+  "q": "Why does a home loan usually cost less than a personal loan?",
+  "opts": [
+   "Homes never lose any value over time",
+   "Personal loans are meant to be charged more as a rule",
+   "The home backs the loan, so risk is lower",
+   "Banks give home loans as a favour"
+  ],
+  "ans": 2,
+  "why": [
+   "Homes can lose value, so the lower rate comes from security instead.",
+   "Rates follow the lender's risk, and are not set as a form of punishment.",
+   "A secured loan is backed by an asset, so risk and rate are lower.",
+   "Banks lend to earn a return, so security is the real reason."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s465q4",
+  "h": "Check yourself",
+  "q": "Meena already pays ₹30,000 in EMIs on a take-home of ₹90,000. A friend suggests a loan for a holiday. What is wise?",
+  "opts": [
+   "Borrow, since holidays are good for mind and body",
+   "Take two loans so each EMI stays small",
+   "Skip her current EMIs to pay for the holiday",
+   "Hold off, since she is near a safe limit already"
+  ],
+  "ans": 3,
+  "why": [
+   "A holiday may be a joy, but borrowing for it adds cost with no lasting value.",
+   "Two loans add up to the same strain, and cost more in fees.",
+   "Skipping EMIs brings penalties and damages her credit record.",
+   "Thirty thousand is a third of her pay, so more debt for a trip is not wise."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Pay the full statement by the due date and a card costs no interest.",
+   "The minimum due is a trap. Interest runs on everything left.",
+   "Borrow for things that last or grow. Keep total EMIs within a safe share."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Rohan sent ₹80,000 to a fraudster at 4 pm. He called the cyber helpline within the hour. Part of the money was held before it could leave the system. Minutes made the difference.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Act at once",
+  "lines": [
+   [
+    "rohan",
+    "I shared my OTP before I understood what was happening. Is it too late?"
+   ],
+   [
+    "sikka",
+    "Not yet. The first hour matters most. Call 1930, call your bank to block, save the proof and file the complaint online."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The first hour",
+  "intro": "Four steps, in order.",
+  "rows": [
+   [
+    "1",
+    "Call 1930, the national cyber fraud helpline"
+   ],
+   [
+    "2",
+    "Call your bank to block cards, UPI or the account"
+   ],
+   [
+    "3",
+    "Save messages, screenshots and transaction details"
+   ],
+   [
+    "4",
+    "File the complaint on the cybercrime portal"
+   ]
+  ],
+  "note": "For problems with a listed company or a registered broker, you can also file on SEBI SCORES."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "If it happens",
+  "stops": [
+   [
+    "Report financial cyber fraud quickly on 1930",
+    true
+   ],
+   [
+    "Waiting a few weeks makes no difference",
+    false
+   ],
+   [
+    "Screenshots and transaction details help the complaint",
+    true
+   ],
+   [
+    "Deleting the chat protects you from more fraud",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The helpline exists to act quickly, and speed can stop money leaving."
+   ],
+   [
+    2.2,
+    "Delay lets the money move on, and it is then harder to trace."
+   ],
+   [
+    4.0,
+    "Evidence helps the bank and police follow the money."
+   ],
+   [
+    5.6,
+    "Deleting the chat destroys the proof. Save everything instead."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s505q1",
+  "h": "Check yourself",
+  "q": "Meena realises she has paid a fraudster a few minutes ago. What is the first step?",
+  "opts": [
+   "Wait to see whether the money comes back",
+   "Call the cyber helpline 1930 at once",
+   "Post about it on social media first",
+   "Pay the fraudster again to stop him"
+  ],
+  "ans": 1,
+  "why": [
+   "Waiting lets the money move on, and it gets harder to trace each hour.",
+   "Quick reporting can stop money from leaving the system, so calling 1930 comes first.",
+   "A post does not stop the money, and it may warn the fraudster.",
+   "Paying again only gives the fraudster more of her money."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s505q2",
+  "h": "Check yourself",
+  "q": "Rohan shared his card details with a caller. What should he ask his bank to do?",
+  "opts": [
+   "Raise the card limit for a few days",
+   "Send the card details to the caller",
+   "Block the card, and stop any misuse",
+   "Close his savings account at once"
+  ],
+  "ans": 2,
+  "why": [
+   "A higher limit would let a thief take much more.",
+   "Sending details to the caller repeats the original mistake.",
+   "Blocking the card at once stops a thief from using what Rohan shared.",
+   "Closing the account is too much and cuts off his own access."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s505q3",
+  "h": "Check yourself",
+  "q": "What should Meena keep after a fraud?",
+  "opts": [
+   "Nothing, so that she can try to forget it",
+   "Only the amount that she has lost",
+   "Only the name that the caller gave her",
+   "Messages, screenshots and receipts"
+  ],
+  "ans": 3,
+  "why": [
+   "Forgetting it destroys the proof, and the complaint will be weaker.",
+   "The amount alone does not show who took it or how.",
+   "A name given by a fraudster is usually false and proves little.",
+   "Messages, numbers and receipts show what happened and help the complaint."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s505q4",
+  "h": "Check yourself",
+  "q": "Dadi has a complaint against a registered broker who has not returned her securities. Where can she file it online?",
+  "opts": [
+   "SEBI SCORES",
+   "A social media group",
+   "A shopping website",
+   "Her local grocer"
+  ],
+  "ans": 0,
+  "why": [
+   "SEBI SCORES is the online system for complaints against listed companies and intermediaries.",
+   "A social media group cannot act against a broker, so it is no remedy.",
+   "A shopping website has nothing to do with market complaints.",
+   "A grocer has no way of acting on a complaint against a broker."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Act within the first hour. Call 1930, then your bank.",
+   "Block cards, UPI or accounts, and save every proof.",
+   "File on the cybercrime portal, and on SEBI SCORES for market complaints."
+  ]
+ }
+]

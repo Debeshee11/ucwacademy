@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A share has bounced three times near ₹480 and failed to cross ₹620 several times. Traders watch such levels because many decisions were made there before. Levels are guides, not guarantees. Education, not a call to trade.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Floors and ceilings",
+  "lines": [
+   [
+    "meena",
+    "What are support and resistance?"
+   ],
+   [
+    "sikka",
+    "Support is a level where buying has tended to stop a fall. Resistance is a level where selling has tended to stop a rise. A breakout is a move through one of them, ideally on strong volume. Head and shoulders is a pattern often seen as a reversal sign."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Levels, made up",
+  "intro": "Made-up share.",
+  "rows": [
+   [
+    "Support",
+    "₹480: bounced three times"
+   ],
+   [
+    "Resistance",
+    "₹620: failed several times"
+   ],
+   [
+    "Breakout",
+    "a close above ₹620 on heavy volume"
+   ],
+   [
+    "Head and shoulders",
+    "peak, higher peak, lower peak, then down"
+   ]
+  ],
+  "note": "Levels can fail. Confirm with other signals."
+ },
+ {
+  "k": "pick",
+  "id": "s532q1",
+  "h": "Check yourself",
+  "q": "A share has bounced three times near ₹480. What is ₹480?",
+  "opts": [
+   "A resistance level",
+   "A support level",
+   "A target price",
+   "An intrinsic value"
+  ],
+  "ans": 1,
+  "why": [
+   "Resistance is where a rise stops. The details here point elsewhere.",
+   "Support is where buying has stopped a fall. That matches the case described.",
+   "A target price is an estimate. That does not match this case.",
+   "Intrinsic value is an estimate of worth. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s532q2",
+  "h": "Check yourself",
+  "q": "A share has failed to cross ₹620 on several attempts. What is ₹620?",
+  "opts": [
+   "A support level here",
+   "The volume traded here",
+   "The timeframe in use",
+   "A resistance level"
+  ],
+  "ans": 3,
+  "why": [
+   "Support is where a fall stops. The details here point elsewhere.",
+   "Volume counts shares traded. That does not match this case.",
+   "Timeframe is candle length. It does not fit the facts given.",
+   "Resistance is where selling has stopped a rise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s532q3",
+  "h": "Check yourself",
+  "q": "A share closes above its long-standing ceiling on heavy trading. What is this?",
+  "opts": [
+   "A breakout",
+   "A head and shoulders",
+   "A support bounce",
+   "A margin call"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a move through resistance with strong volume.",
+   "Head and shoulders is a reversal pattern. It does not answer what was asked.",
+   "A support bounce is a rise from a floor. The details here point elsewhere.",
+   "A margin call is a futures demand. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s532q4",
+  "h": "Check yourself",
+  "q": "A rally makes a peak, a higher peak, then a lower peak before prices turn down. What is this pattern?",
+  "opts": [
+   "A golden cross type",
+   "A breakout of a level",
+   "Head and shoulders",
+   "A straddle with options"
+  ],
+  "ans": 2,
+  "why": [
+   "A golden cross is a moving average event.",
+   "A breakout is a move through a level.",
+   "Three peaks with the middle highest.",
+   "A straddle is an options strategy."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Support: buying has stopped falls. Resistance: selling has stopped rises.",
+   "Breakout: a move through a level, ideally on strong volume.",
+   "Head and shoulders is often seen as a reversal sign, not a certainty."
+  ]
+ }
+]

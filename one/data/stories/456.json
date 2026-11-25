@@ -1,0 +1,215 @@
+[
+ {
+  "k": "fact",
+  "art": "wallet",
+  "h": "Before you start",
+  "big": "Meena earns ₹60,000 a month and cannot explain where it goes. By the 20th the account is nearly empty. She is not careless. She just has never looked at the full picture.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where did it go?",
+  "lines": [
+   [
+    "meena",
+    "I do not buy anything big. So why am I always short?"
+   ],
+   [
+    "sikka",
+    "Usually because of many small things. Let us sort every rupee into piles and see."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A ₹60,000 month, sorted",
+  "alt": "A bar split into fixed costs, variable costs and savings",
+  "rows": [
+   {
+    "name": "Before she looks",
+    "segs": [
+     [
+      "Fixed",
+      45,
+      "#8EC5FF"
+     ],
+     [
+      "Variable",
+      51,
+      "#FF9C6B"
+     ],
+     [
+      "Saved",
+      4,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "After one month of tracking",
+    "segs": [
+     [
+      "Fixed",
+      45,
+      "#8EC5FF"
+     ],
+     [
+      "Variable",
+      40,
+      "#FF9C6B"
+     ],
+     [
+      "Saved",
+      15,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "Fixed costs are the same every month: rent, EMI, school fees, insurance."
+   ],
+   [
+    2.4,
+    "Variable costs move: food, travel, orders, shopping. This is where the money hides."
+   ],
+   [
+    4.4,
+    "Once she tracked it, 11% of the pay moved from variable spending into savings."
+   ],
+   [
+    6.0,
+    "Her savings rate went from about 4% to 15%. Same salary, clearer picture."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   1250,
+   2500,
+   3750,
+   5000,
+   6250
+  ],
+  "labels": [
+   "5",
+   "10",
+   "15",
+   "20",
+   "25"
+  ],
+  "fmt": "inr",
+  "big": "₹6,250 a month",
+  "small": "25 small orders of ₹250",
+  "h": "Small orders add up",
+  "alt": "Bars growing as the number of ₹250 orders in a month rises",
+  "caps": [
+   [
+    0.3,
+    "One ₹250 order feels like nothing."
+   ],
+   [
+    2.4,
+    "Ten orders in a month is ₹2,500."
+   ],
+   [
+    4.2,
+    "Twenty-five orders is ₹6,250, which is more than many people's monthly SIP."
+   ],
+   [
+    5.6,
+    "Small and frequent is how variable spending hides."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s456q1",
+  "h": "Check yourself",
+  "q": "Meena saved ₹9,000 out of her ₹60,000 take-home pay. What is her savings rate?",
+  "opts": [
+   "15%, since savings divided by take-home pay is 9,000 over 60,000",
+   "9%, since that is the rupee amount divided by 1,000 in each case",
+   "30%, since savings are compared with her fixed costs only",
+   "6.7%, since the saving is divided by the amount she spent"
+  ],
+  "ans": 0,
+  "why": [
+   "Savings rate is saved money divided by take-home pay. Nine thousand over sixty thousand is 15%.",
+   "Rupee amounts are not a rate. A savings rate compares savings with what she takes home.",
+   "Fixed costs are not the base. The rate is measured against all the pay she receives.",
+   "The base is take-home pay, not spending. Dividing by spending gives a different, misleading figure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s456q2",
+  "h": "Check yourself",
+  "q": "Rohan wants to find money to save. His fixed costs are ₹30,000 and his variable spending is ₹25,000. Where is the easier saving?",
+  "opts": [
+   "In the fixed pile, since it is the largest part of his spending each month",
+   "In neither, since both piles are essential to his daily life",
+   "In the variable pile, where small trims add up without big changes",
+   "In the fixed pile, since rent can be renegotiated every month"
+  ],
+  "ans": 2,
+  "why": [
+   "Fixed costs are hard to change quickly. They are the harder place to find savings.",
+   "Variable spending includes wants, so some of it can be trimmed. Not all of it is essential.",
+   "Variable costs move month to month, and small trims add up without changing his life much.",
+   "Rent is fixed for a term and cannot be renegotiated every month, so it is slow to change."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s456q3",
+  "h": "Check yourself",
+  "q": "Dadi owns a house worth ₹50 lakh and a savings of ₹5 lakh, and owes ₹10 lakh on a loan. What is her net worth?",
+  "opts": [
+   "₹55 lakh, which is everything she owns added together",
+   "₹45 lakh, which is what she owns minus what she owes",
+   "₹10 lakh, which is the loan that she has to repay",
+   "₹5 lakh, which is the cash that she has at hand"
+  ],
+  "ans": 1,
+  "why": [
+   "Adding assets ignores what she owes. Net worth subtracts the debts from what she owns.",
+   "Net worth is assets minus debts: ₹55 lakh owned minus ₹10 lakh owed gives ₹45 lakh.",
+   "The loan is a debt, so it is subtracted from what she owns, not used as her net worth.",
+   "Cash is only part of what she owns. Net worth counts all assets and all debts."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s456q4",
+  "h": "Check yourself",
+  "q": "Rohan tracks his spending for a month and finds ₹4,000 of food orders he did not notice. What is the best next step?",
+  "opts": [
+   "Ignore it, since a single month of data cannot prove anything useful at all",
+   "Cancel every food app for good and never order food again, from any place",
+   "Stop tracking, since looking at it only makes him feel worse",
+   "Set a monthly limit, so the spending is a choice and not a habit"
+  ],
+  "ans": 3,
+  "why": [
+   "A month of data is enough to show a pattern. Ignoring it wastes the point of tracking.",
+   "A total ban rarely lasts. A limit he can keep works better than a rule he will break.",
+   "Tracking is what exposes the leaks. Stopping removes the information he needs to improve.",
+   "A limit turns unnoticed spending into a choice he makes on purpose, without banning it entirely."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sort spending into fixed and variable. Variable is where small leaks hide.",
+   "Savings rate is what you saved divided by your take-home pay.",
+   "Net worth is what you own minus what you owe. Check it twice a year."
+  ]
+ }
+]
