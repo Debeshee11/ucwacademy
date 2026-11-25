@@ -12,6 +12,7 @@ import { questionById } from "./quiz.js";
 import { mascot } from "./mascot.js";
 import { cheer } from "./cheer.js";
 import { duelRecord } from "./challenge.js";
+import * as K from "./unlock.js";
 
 const best = k => { try { return +localStorage.getItem("uc.best." + k) || 0; } catch { return 0; } };
 const setBest = (k, v) => { try { localStorage.setItem("uc.best." + k, String(v)); } catch {} };
@@ -169,15 +170,14 @@ export function weakIds() {
    For you, Remember, Play, Compete, Test, Tools. Only one tab is open at a time. */
 const mode = (href, cls, ic, title, sub, badge, meta) => h("a", { class: "ar-mode " + cls, href }, h("span", { class: "ar-ic" }, icon(ic, 28)), h("b", {}, title), h("small", {}, sub), meta ? h("span", { class: "ar-meta" }, meta) : null, badge ? h("span", { class: "ar-badge" }, badge) : null);
 const tool = (href, ic, title, sub) => h("a", { class: "ar-tool", href }, h("span", {}, icon(ic, 22)), h("div", {}, h("b", {}, title), h("small", {}, sub)), icon("chev", 18));
-const TABS = [["you", "For you", "star", "Your best next step, picked for today."], ["remember", "Remember", "flame", "Short rounds that move lessons into long-term memory."], ["play", "Play", "bolt", "Quick games for fun. Points and personal bests."],
-  ["compete", "Compete", "trophy", "Challenge friends, earn trophies, climb the board."], ["test", "Test", "check", "Longer quizzes and exams to see where you stand."], ["tools", "Tools", "trend", "Calculators and reading for real-life money questions."]];
+const TABS = [["today", "Today", "star", "Your best next step, picked for today."], ["play", "Play", "bolt", "Quick games. Every right answer earns points, and points open new doors."], ["challenge", "Challenge", "trophy", "Duel friends, collect trophies, climb the board."]];
 const TABKEY = "uc.practice.tab";
 
 export function arena() {
   const a = Store.todayAct(), due = Store.dueIds().length, s = Store.get(), streak = Store.streakNow(), labN = Object.keys(s.lab || {}).length, weak = weakIds().length;
   const renew = Creds.all().filter(c => c.kind === "course" && Creds.standing(c) !== "valid"), rec = duelRecord(), sb = best("speed"), rb = best("rw"), vb = best("surv");
-  let tab = "you"; try { tab = sessionStorage.getItem(TABKEY) || "you"; } catch {}
-  if (!TABS.some(x => x[0] === tab)) tab = "you";
+  let tab = "today"; try { tab = sessionStorage.getItem(TABKEY) || "you"; } catch {}
+  if (!TABS.some(x => x[0] === tab)) tab = "today";
 
   /* one clear recommendation */
   const R = due && !a.r ? { href: "#/quiz/revise", ic: "flame", cls: "m-orange", t: "Revise what is due", why: `${plural(due, "question")} ${due === 1 ? "is" : "are"} ready for review. Doing it now keeps them in memory.`, meta: "About 2 min" }
@@ -202,29 +202,23 @@ export function arena() {
     revise: () => mode("#/quiz/revise", "m-orange", "flame", "Revise", due ? `${plural(due, "question")} due for review` : "Nothing due right now", a.r ? "Done" : due ? String(due) : "", "Reminds you just in time"),
     weak: () => mode("#/quiz/weak", "m-blue", "shuffle", "Weak-spot trainer", weak ? `${plural(weak, "question")} you often miss` : "Answer more to unlock", weak ? "Train" : "", "8 questions"),
     speed: () => mode("#/game/speed", "m-gold", "bolt", "Speed round", "60 seconds. Build a combo.", sb ? `Best ${sb}` : "New", "1 min"),
-    rw: () => mode("#/game/rw", "m-green", "check", "Right or wrong", "Ten quick calls. Spot the trap.", rb ? `Best ${rb}/10` : "New", "2 min"),
-    surv: () => mode("#/game/survive", "m-pink", "shield", "Survival", "Three hearts. How far can you go?", vb ? `Best ${vb}` : "New", "Until 3 misses"),
-    duel: () => mode("#/challenge", "m-violet", "team", "Duel a friend", "Send a link. See who wins.", rec.w + rec.l + rec.t ? `${rec.w}W ${rec.l}L` : "Share", "3 min")
+    rw: () => K.isOpen("rw") ? mode("#/game/rw", "m-green", "check", "Right or wrong", "Ten quick calls. Spot the trap.", rb ? `Best ${rb}/10` : "New", "2 min") : K.lockedTile(K.gate("rw")),
+    surv: () => K.isOpen("surv") ? mode("#/game/survive", "m-pink", "shield", "Survival", "Three hearts. How far can you go?", vb ? `Best ${vb}` : "New", "Until 3 misses") : K.lockedTile(K.gate("surv")),
+    duel: () => K.isOpen("duel") ? mode("#/challenge", "m-violet", "team", "Duel a friend", "Send a link. See who wins.", rec.w + rec.l + rec.t ? `${rec.w}W ${rec.l}L` : "Share", "3 min") : K.lockedTile(K.gate("duel"))
   };
   const grid = (...ks) => h("div", { class: "ar-modes" }, ks.map(k => modes[k]()));
   const sec = (title, sub, ...kids) => h("section", { class: "stack stack-s" }, h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, title), sub ? h("p", { class: "small mute" }, sub) : null), ...kids);
   const renewBox = renew.length ? sec("Renew a certificate", "Your certificate needs a quick refresher.", h("div", { class: "ar-modes" }, renew.map(c => mode(`#/quiz/refresh/${c.key}`, "m-pink", "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null;
+  const more = h("div", { class: "ar-more" }, h("b", {}, "More"), [["#/quiz/place", "Find my level"], ["#/quiz/fund", "Fund quiz"], ["#/quiz/market", "Market quiz"], ["#/tools", "Calculators"], ["#/news", "Market desk"], ["#/quotes", "Quote bank"]].map(([hr, l]) => h("a", { href: hr }, l)));
   const VIEW = {
-    you: () => [renewBox, flow, sec("Play something quick", null, grid("speed", "rw", "duel")), sec("Pick up where it is weak", "Training grounds. Pick a module and ten questions.", grounds())],
-    remember: () => [renewBox, dailyCard(), sec("More ways to remember", null, grid("revise", "weak")), sec("Training grounds", "Pick a module. Ten questions. Watch the bar fill as you master it.", grounds())],
-    play: () => [sec("Games", "Each takes a few minutes. Every right answer counts toward your points.", grid("speed", "rw", "surv"))],
-    compete: () => [sec("Challenge a friend", "Send a link on WhatsApp. They play the same questions. See who wins.", grid("duel")), trophies(), tool("#/board", "trophy", "Leaderboard", "See where you stand")],
-    test: () => [sec("Quiz arenas", "Longer quizzes on one topic.", h("div", { class: "ar-modes small" },
-      mode("#/quiz/fund", "m-blue", "book", "Fund quiz", "Factsheets, returns, risk, tax", "", "10 questions"), mode("#/quiz/market", "m-violet", "trend", "Market quiz", "Indices, economy, markets", "", "10 questions"),
-      D.holdQs.some(q => q.tags.includes("holdings")) ? mode("#/quiz/holdings", "m-green", "trend", "Holdings quiz", "New every month", "", "10 questions") : null, mode("#/quiz/place", "m-gold", "check", "Placement test", "Find your level", "", "24 questions"))),
-      sec("Exams", "Ready to prove it? Pass a course exam and earn a certificate.", tool("#/assess", "award", "Course exams", "Pass one to earn a certificate"))],
-    tools: () => [sec("Tools", "Real-life money helpers.", h("div", { class: "ar-tools" }, tool("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement"), isPro() ? tool("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`) : null,
-      tool("#/news", "trend", "Market desk", "Today's headlines, explained"), tool("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures")))]
+    today: () => [renewBox, flow, K.keyCard(), sec("Keep it fresh", null, grid("revise", "weak")), dailyCard(), sec("Training grounds", "Pick a module. Ten questions. Watch the bar fill as you master it.", grounds()), more],
+    play: () => [sec("Games", "Each takes a few minutes.", grid("speed", "rw", "surv")), K.keyCard()],
+    challenge: () => [sec("Duel a friend", "Send a link on WhatsApp. They play the same questions. See who wins.", grid("duel")), trophies(), tool("#/board", "trophy", "Leaderboard", "See where you stand"), K.keyCard()]
   };
   function setTab(id) {
     tab = id; try { sessionStorage.setItem(TABKEY, id); } catch {}
     tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.id === id)));
-    lead.textContent = id === "you" ? "" : TABS.find(x => x[0] === id)[3]; lead.hidden = id === "you"; body.replaceChildren(...VIEW[id]().filter(Boolean)); body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
+    lead.textContent = id === "today" ? "" : TABS.find(x => x[0] === id)[3]; lead.hidden = id === "today"; body.replaceChildren(...VIEW[id]().filter(Boolean)); body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
   }
   setTab(tab);
   const m = page(hero, next, tabs, lead, body); m.classList.add("ar-page"); return m;

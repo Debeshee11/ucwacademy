@@ -23,6 +23,8 @@ import * as Ac from "./academy.js";
 import * as Syl from "./syllabus.js";
 import * as P from "./practice.js";
 import * as A from "./arena.js";
+import * as K from "./unlock.js";
+import * as PV from "./proveit.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
 import { review } from "./review.js";
@@ -47,7 +49,7 @@ document.body.prepend(skip);
 /* route table: [pattern, view, nav id, title, focus?] */
 const ROUTES = [
   [/^$/, () => questHome(), "home", "Home"],
-  [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Exams"],
+  [/^assess(?:\/([\w-]+))?$/, id => PV.assess(id), "assess", "Exams"],
   [/^courses$/, () => Ac.courses(), "home", "Courses"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "home", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
@@ -58,7 +60,7 @@ const ROUTES = [
   [/^indices$/, () => Lib.indices(), "desk", "Indices"],
   [/^index\/([\w-]+)$/, id => Lib.index(id), "desk", "Index"],
   [/^practice$/, () => P.practice(), "practice", "Practice"],
-  [/^tools$/, () => toolsPage(), "practice", "Money calculators"],
+  [/^tools$/, () => (K.isOpen("tools") ? toolsPage() : K.lockPage(null, "tools")), "practice", "Money calculators"],
   [/^tool\/([\w-]+)$/, id => toolPage(id, courseById(toolById(id)?.course)?.title) || notFound("That calculator does not exist."), "practice", "Calculator"],
   [/^news$/, () => P.desk(), "desk", "News & Markets"],
   [/^desk$/, () => P.desk(), "desk", "News & Markets"],
@@ -77,7 +79,7 @@ const ROUTES = [
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
-  [/^challenge(?:\/([\w-]+))?$/, c => challenge(root, c), "", "Challenge a friend", true],
+  [/^challenge(?:\/([\w-]+))?$/, c => (c ? challenge(root, c) : K.guard("duel", () => challenge(root, c), root)), "", "Challenge a friend", true],
   [/^stories$/, () => stories(root), "", "Stories", true],
   [/^story\/([\w-]+)$/, id => stories(root, id), "", "Stories", true],
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],
@@ -88,9 +90,9 @@ const ROUTES = [
   [/^nism\/([\w-]+)\/mock\/(\d)$/, (id, n) => Nism.mock(root, id, +n, /review=1/.test(location.hash)), "", "NISM mock", true, "Mock exams are marked on our servers and your scores are saved to your account. The study guides and unit notes stay open."],
   [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true, "Refreshers renew a certificate, so they need an account."],
   [/^game\/speed$/, () => A.speedRound(root), "", "Speed round", true],
-  [/^game\/survive$/, () => A.survival(root), "", "Survival", true],
+  [/^game\/survive$/, () => K.guard("surv", () => A.survival(root), root), "", "Survival", true],
   [/^quiz\/drill\/([\w-]+)\/(\d+)$/, (c, i) => Q.drill(root, c, +i), "", "Train", true],
-  [/^game\/rw$/, () => A.rightWrong(root), "", "Right or wrong", true],
+  [/^game\/rw$/, () => K.guard("rw", () => A.rightWrong(root), root), "", "Right or wrong", true],
   [/^quiz\/weak$/, () => Q.weak(root), "", "Weak-spot trainer", true],
   [/^quiz\/daily$/, () => Q.daily(root), "", "Daily five", true],
   [/^quiz\/revise$/, () => Q.revise(root), "", "Revise", true],
@@ -120,6 +122,7 @@ function route() {
       clear(root).append(h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "Something went wrong."), h("p", { class: "mute" }, "Reload the page. If it keeps happening, tell the administrator."), h("a", { class: "btn primary", href: "#/" }, "Home")));
     }
     if (!focus) window.scrollTo(0, 0);
+    setTimeout(() => { try { K.celebrate(); } catch {} }, 700);
     return;
   }
   ui.show(true); clear(root).append(notFound());
