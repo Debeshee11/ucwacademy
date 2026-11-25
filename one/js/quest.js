@@ -124,12 +124,16 @@ export function questHome() {
   const region = (st, i) => {
     const state = st.passed ? "done" : i === nowIx ? "now" : i < nowIx ? "done" : "next", pct = st.lessons ? Math.round(100 * st.did / st.lessons) : 0;
     const body = h("div", { class: "yg-body" });
-    const open = () => {
+    let full = false;
+    const draw = () => {
       const nodes = nodesOf(st.cs, s); let at = nodes.findIndex(n => !n.done && n.k !== "flag" && n.k !== "soon");
       if (st.rc.length === 0) { body.replaceChildren(h("p", { class: "mute yg-empty" }, "This region is being written. Check back soon.")); return; }
-      if (at < 0) at = -1;
-      body.replaceChildren(road(nodes, at));
+      let view = nodes, cur = at;
+      if (!full && at >= 0 && nodes.length > 8) { const a = Math.max(0, at - 2), b = Math.min(nodes.length, a + 7); view = nodes.slice(a, b); cur = at - a; }
+      const more = view.length < nodes.length;
+      body.replaceChildren(road(view, cur), more || full ? h("button", { class: "btn ghost sm yg-more", type: "button", onclick: () => { full = !full; draw(); } }, full ? "Show less" : `Show the whole road (${nodes.length} stops)`) : null);
     };
+    const open = draw;
     const head = h("button", { class: "yg-head", type: "button", "aria-expanded": String(i === nowIx) },
       scene(i),
       h("span", { class: "yg-t" }, h("small", {}, `Region ${i + 1}`), h("b", {}, st.t), h("em", {}, st.g)),
