@@ -146,3 +146,5 @@ body[data-sec="assess"] .page.stack-xl > * + *, body[data-sec="me"] .page.stack-
 .sc-stats:has(> :nth-child(3):last-child) { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .sc-stats:has(> :nth-child(3):last-child) > div { grid-template-columns:1fr; justify-items:center; text-align:center; row-gap:2px; padding:12px 6px; }
 @media (max-width:640px){ .lg-row, .lg-row.head { grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,.9fr)); } .lg-realm b { font-size:13.5px; line-height:1.2; overflow-wrap:anywhere; } .lg-cell { font-size:13px; padding-inline:2px; } body[data-sec="assess"] .as-card { padding:14px; } }
+.ar-more { display:flex; flex-wrap:wrap; gap:8px; align-items:center; } .ar-more b { font:800 13px var(--font); color:var(--mute); text-transform:uppercase; letter-spacing:.07em; margin-right:4px; } .ar-more a { padding:8px 14px; border-radius:99px; background:#fff; border:2px solid var(--line2); border-bottom-width:4px; font:800 13.5px var(--font); color:var(--ink2); text-decoration:none; }
+.ar-tabs { display:grid; grid-template-columns:repeat(3,1fr); overflow:visible; } .ar-tab { justify-content:center; padding:10px 8px; }
