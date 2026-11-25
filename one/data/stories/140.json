@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client says, 'Just tell me what I will have at 60.' No honest advisor can. The role is to build a written plan, state its assumptions and keep revising it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The advisor's role",
+  "lines": [
+   [
+    "meena",
+    "What should I do first?"
+   ],
+   [
+    "sikka",
+    "Begin with her goals, ages, dependants, health, income, assets and liabilities. Build a written plan with assumptions for inflation, returns, retirement age and longevity, showing a base case and a bad case. Involve a CA for tax. Revisit after life events. And never promise outcomes: say what is assumed, what you cannot control and what she can change."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A good planning process",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Start",
+    "goals, ages, dependants, health, income, assets, liabilities"
+   ],
+   [
+    "Write",
+    "a plan with assumptions; base case and bad case"
+   ],
+   [
+    "Involve",
+    "a CA for tax filing and structure"
+   ],
+   [
+    "Revisit",
+    "yearly and after life events"
+   ]
+  ],
+  "note": "Do not promise outcomes."
+ },
+ {
+  "k": "pick",
+  "id": "s140q1",
+  "h": "Check yourself",
+  "q": "Where should planning begin?",
+  "opts": [
+   "The latest hot fund on the list",
+   "The RM's target for the month",
+   "Client goals, full picture",
+   "A forecast of the index level"
+  ],
+  "ans": 2,
+  "why": [
+   "A hot fund is not a basis. It does not answer what was asked.",
+   "An RM target is not the client's need. The details here point elsewhere.",
+   "The client's picture comes first. That matches the case described.",
+   "Forecasts are not allowed. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s140q2",
+  "h": "Check yourself",
+  "q": "Why show a base case and a bad case?",
+  "opts": [
+   "To test against weaker outcomes",
+   "To promise the better outcome",
+   "To hide the assumptions made",
+   "To cut the fees being charged"
+  ],
+  "ans": 0,
+  "why": [
+   "A bad case shows resilience.",
+   "No outcome can be promised.",
+   "Assumptions must be shown.",
+   "Fees are not the aim."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s140q3",
+  "h": "Check yourself",
+  "q": "Who should handle tax filing and structure?",
+  "opts": [
+   "Any friend",
+   "The fund brochure",
+   "A social media page",
+   "A CA"
+  ],
+  "ans": 3,
+  "why": [
+   "A friend may not be.",
+   "A brochure is not advice.",
+   "A page is not advice.",
+   "A CA is qualified for it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s140q4",
+  "h": "Check yourself",
+  "q": "What should an advisor say about outcomes?",
+  "opts": [
+   "That they are fully guaranteed",
+   "What is assumed, what can change",
+   "That nothing can ever change",
+   "That the market is predictable"
+  ],
+  "ans": 1,
+  "why": [
+   "Outcomes cannot be guaranteed. It does not answer what was asked.",
+   "Honesty about assumptions builds trust. This fits the facts given.",
+   "Clients can change inputs. The details here point elsewhere.",
+   "Markets are not predictable. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Start with the client's goals and full picture.",
+   "Write a plan with assumptions; show a base and a bad case.",
+   "Never promise outcomes. Revisit yearly."
+  ]
+ }
+]

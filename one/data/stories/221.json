@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty PSU Bank is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty PSU Bank?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty PSU Bank track?"
+   ],
+   [
+    "sikka",
+    "The Nifty PSU Bank Index captures the performance of the PSU Banks. It holds 12 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty PSU Bank, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "7.22"
+   ],
+   [
+    "P/B",
+    "1.11"
+   ],
+   [
+    "Dividend yield",
+    "0.8%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+6.5% / +26.4%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty PSU Bank: biggest holdings, % weight",
+  "vals": [
+   33.33,
+   12.47,
+   11.71
+  ],
+  "labels": [
+   "SBI",
+   "Bank",
+   "Canara"
+  ],
+  "big": "Top 10 add to 99.0%",
+  "small": "A concentrated index",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: State Bank of India 33.33%."
+   ],
+   [
+    2.2,
+    "Next: Bank of Baroda 12.47%."
+   ],
+   [
+    4.0,
+    "Then: Canara Bank 11.71%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 99.0%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty PSU Bank facts",
+  "stops": [
+   [
+    "It holds 12 stocks",
+    true
+   ],
+   [
+    "It holds 25 stocks",
+    false
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "7.22 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s221q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty PSU Bank hold?",
+  "opts": [
+   "12 stocks in the index",
+   "10 stocks in the index",
+   "20 stocks in the index",
+   "25 stocks in the index"
+  ],
+  "ans": 0,
+  "why": [
+   "The factsheet shows 12 stocks in the index.",
+   "10 is not the stated count of stocks.",
+   "20 is not the stated count of stocks.",
+   "25 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s221q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty PSU Bank, and what weight?",
+  "opts": [
+   "Bank of Baroda, with 33.33%",
+   "Canara Bank, with 99.0%",
+   "State Bank of India, with 33.33%",
+   "State Bank of India, with 11.71%"
+  ],
+  "ans": 2,
+  "why": [
+   "Bank ranks second, so it cannot lead at 33.33%.",
+   "99.0% is the top 10 total, not one stock's weight.",
+   "It leads the index at 33.33%, as per the lesson.",
+   "11.71% is the weight of Canara, not SBI."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s221q3",
+  "h": "Check yourself",
+  "q": "The Nifty PSU Bank P/E is 7.22 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Higher than the Nifty 50's P/E",
+   "Lower than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever"
+  ],
+  "ans": 1,
+  "why": [
+   "7.22 is below 19.36, so this reverses the facts.",
+   "7.22 is below the Nifty 50's 19.36, as stated.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s221q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +26.4% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all",
+   "Past returns are no forecast"
+  ],
+  "ans": 3,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year.",
+   "Past returns do not predict future returns."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty PSU Bank: State Bank of India leads at 33.33%; top 10 add to 99.0%.",
+   "Top 10 hold 99.0%: concentrated.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

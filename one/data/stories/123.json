@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "An AIF is a privately pooled fund for sophisticated investors, with a usual minimum of ₹1 crore. SEBI sorts AIFs into three categories, and the category tells you what kind of risk the fund may take.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three categories",
+  "lines": [
+   [
+    "meena",
+    "Why three categories?"
+   ],
+   [
+    "sikka",
+    "Because the risks differ. Category I backs the economy, like start-ups and infrastructure. Category II covers private equity and debt funds without leverage beyond daily needs. Category III uses complex strategies and may use leverage."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The three AIF categories",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Category I",
+    "start-ups, venture capital, infrastructure, social ventures"
+   ],
+   [
+    "Category II",
+    "private equity and debt funds, no leverage beyond day-to-day"
+   ],
+   [
+    "Category III",
+    "hedge and long-short funds, leverage and derivatives"
+   ],
+   [
+    "Usual minimum",
+    "₹1 crore; angel funds lower"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "AIF categories",
+  "stops": [
+   [
+    "Category I includes venture capital and start-up funds",
+    true
+   ],
+   [
+    "Category III funds never use leverage",
+    false
+   ],
+   [
+    "The usual AIF minimum is ₹1 crore",
+    true
+   ],
+   [
+    "AIFs are meant for small first-time investors",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "They support the economy."
+   ],
+   [
+    2.2,
+    "They may use leverage and derivatives."
+   ],
+   [
+    4.0,
+    "Angel funds have a lower threshold."
+   ],
+   [
+    5.6,
+    "They are for sophisticated investors."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s123q1",
+  "h": "Check yourself",
+  "q": "A fund invests in start-ups and infrastructure. Which AIF category fits?",
+  "opts": [
+   "Category II",
+   "Category I",
+   "Category III",
+   "None of them"
+  ],
+  "ans": 1,
+  "why": [
+   "Category II covers private equity and debt funds.",
+   "Category I covers venture capital, start-ups and infrastructure.",
+   "Category III covers complex strategies. That does not match this case.",
+   "It fits Category I. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s123q2",
+  "h": "Check yourself",
+  "q": "Which category may use leverage and trade in derivatives?",
+  "opts": [
+   "Category I",
+   "Category II",
+   "Angel funds only",
+   "Category III"
+  ],
+  "ans": 3,
+  "why": [
+   "Category I backs the economy. The details here point elsewhere.",
+   "Category II does not use leverage beyond daily needs.",
+   "Angel funds are venture-style. It does not fit the facts given.",
+   "Category III uses complex strategies, leverage and derivatives."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s123q3",
+  "h": "Check yourself",
+  "q": "What is the usual minimum investment in an AIF?",
+  "opts": [
+   "₹1 crore",
+   "₹50 lakh",
+   "₹500",
+   "₹10,000"
+  ],
+  "ans": 0,
+  "why": [
+   "The general minimum is ₹1 crore.",
+   "₹50 lakh is the PMS minimum.",
+   "₹500 is a mutual fund ticket size.",
+   "₹10,000 is far below the minimum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s123q4",
+  "h": "Check yourself",
+  "q": "Who are AIFs designed for?",
+  "opts": [
+   "First-time small savers",
+   "Children",
+   "Sophisticated investors",
+   "Anyone with ₹100"
+  ],
+  "ans": 2,
+  "why": [
+   "The minimum rules out small savers. It does not fit the facts given.",
+   "Children are not the target. It does not answer what was asked.",
+   "They are privately pooled funds for sophisticated investors.",
+   "₹100 is far below the minimum. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "AIFs: privately pooled funds, usual minimum ₹1 crore.",
+   "Cat I supports the economy. Cat II is PE and debt. Cat III uses complex strategies.",
+   "Meant for sophisticated investors."
+  ]
+ }
+]

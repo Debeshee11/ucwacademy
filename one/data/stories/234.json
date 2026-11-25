@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Infrastructure is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Infrastructure?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Infrastructure track?"
+   ],
+   [
+    "sikka",
+    "Tracks up to 30 F&O-eligible companies from telecom, power, ports, airlines, roads, railways, shipping and other utility services in the Nifty 500. It holds 30 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Infrastructure, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "21.84"
+   ],
+   [
+    "P/B",
+    "2.6"
+   ],
+   [
+    "Dividend yield",
+    "1%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-3.0% / +11.7%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Infrastructure: biggest holdings, % weight",
+  "vals": [
+   19.86,
+   14.5,
+   11.94
+  ],
+  "labels": [
+   "Reliance",
+   "Airtel",
+   "L&T"
+  ],
+  "big": "Top 10 add to 69.6%",
+  "small": "Largest sector: Oil, Gas & Consumable Fuels",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Reliance Industries 19.86%."
+   ],
+   [
+    2.2,
+    "Next: Bharti Airtel 14.5%."
+   ],
+   [
+    4.0,
+    "Then: Larsen & Toubro 11.94%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 69.6%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Infrastructure facts",
+  "stops": [
+   [
+    "It holds 30 stocks",
+    true
+   ],
+   [
+    "It holds 10 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "21.84 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s234q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Infrastructure hold?",
+  "opts": [
+   "25 stocks in the index",
+   "20 stocks in the index",
+   "30 stocks in the index",
+   "10 stocks in the index"
+  ],
+  "ans": 2,
+  "why": [
+   "25 is not the stated count of stocks.",
+   "20 is not the stated count of stocks.",
+   "The factsheet shows 30 stocks in the index.",
+   "10 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s234q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Infrastructure, and what weight?",
+  "opts": [
+   "Reliance Industries, with 19.86%",
+   "Bharti Airtel, with 19.86%",
+   "Larsen & Toubro, with 69.6%",
+   "Reliance Industries, with 11.94%"
+  ],
+  "ans": 0,
+  "why": [
+   "It leads the index at 19.86%, as per the lesson.",
+   "Airtel ranks second, so it cannot lead at 19.86%.",
+   "69.6% is the top 10 total, not one stock's weight.",
+   "11.94% is the weight of L&T, not Reliance."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s234q3",
+  "h": "Check yourself",
+  "q": "The Nifty Infrastructure P/E is 21.84 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Lower than the Nifty 50's P/E",
+   "Higher than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever"
+  ],
+  "ans": 1,
+  "why": [
+   "21.84 is above 19.36, so this reverses the facts.",
+   "21.84 is above the Nifty 50's 19.36, as stated.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s234q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +11.7% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all",
+   "Past returns are no forecast"
+  ],
+  "ans": 3,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year.",
+   "Past returns do not predict future returns."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Infrastructure: Reliance Industries leads at 19.86%; top 10 add to 69.6%.",
+   "Largest sector: Oil, Gas & Consumable Fuels at 27.42%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A 1% yearly cost sounds tiny. On ₹10 lakh over 20 years, at 12% against 11%, the gap is about ₹16 lakh. Small each year, big over time.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Cost compounds",
+  "lines": [
+   [
+    "meena",
+    "What is 1% extra cost? It is tiny."
+   ],
+   [
+    "sikka",
+    "The expense ratio is charged daily and is already inside the NAV. A 1% lower return for 20 years costs far more than 1% of the final amount. Direct plans cost less since they carry no distributor commission. But cost is one factor, so explain what the client gets for it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "₹10 lakh for 20 years, assumed",
+  "vals": [
+   96.5,
+   80.6
+  ],
+  "labels": [
+   "At 12%",
+   "At 11%"
+  ],
+  "big": "gap about ₹16 lakh",
+  "small": "from a 1% yearly difference",
+  "alt": "Bars of two ending values at 12% and 11%",
+  "caps": [
+   [
+    0.3,
+    "₹10 lakh at an assumed 12%: about ₹96 lakh."
+   ],
+   [
+    2.2,
+    "At 11% it is about ₹81 lakh."
+   ],
+   [
+    4.0,
+    "The 1% gap costs about ₹16 lakh."
+   ],
+   [
+    5.6,
+    "Costs compound like returns do."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s109q1",
+  "h": "Check yourself",
+  "q": "₹10 lakh grows at 12% against 11% for 20 years. The final gap is roughly:",
+  "opts": [
+   "₹1 lakh",
+   "₹10 lakh",
+   "₹16 lakh",
+   "₹0.2 lakh"
+  ],
+  "ans": 2,
+  "why": [
+   "₹1 lakh is only a 1% slice of the sum.",
+   "₹10 lakh is the starting amount.",
+   "96.5 − 80.6 is about ₹15.8 lakh.",
+   "₹0.2 lakh is far too small."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s109q2",
+  "h": "Check yourself",
+  "q": "Where is a fund's expense ratio deducted?",
+  "opts": [
+   "Inside the NAV, daily",
+   "As a bill sent to the investor",
+   "Only at the time of redemption",
+   "Only at the time of purchase"
+  ],
+  "ans": 0,
+  "why": [
+   "The NAV is already net of running costs. This fits the facts given.",
+   "No separate bill is sent. That does not match this case.",
+   "It is not an exit-only charge. It does not fit the facts given.",
+   "It is not a one-time entry charge. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s109q3",
+  "h": "Check yourself",
+  "q": "Which statement about cost is most balanced?",
+  "opts": [
+   "Only the cheapest fund will do",
+   "Cost matters, and so does value",
+   "Cost does not matter to returns",
+   "Regular plans are illegal in India"
+  ],
+  "ans": 1,
+  "why": [
+   "The cheapest fund may still disappoint.",
+   "Be clear on cost and clear on value.",
+   "Cost does reduce what you keep.",
+   "Regular plans are legal and regulated."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s109q4",
+  "h": "Check yourself",
+  "q": "Why do direct plans have lower expense ratios?",
+  "opts": [
+   "They invest in different shares",
+   "They are run by different managers",
+   "They are exempt from regulation",
+   "They carry no distributor commission"
+  ],
+  "ans": 3,
+  "why": [
+   "The portfolio is the same.",
+   "The same team manages both.",
+   "Both are fully regulated.",
+   "The commission is the difference."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Costs compound, just like returns.",
+   "The expense ratio is inside the NAV.",
+   "Be ready to explain value for cost."
+  ]
+ }
+]

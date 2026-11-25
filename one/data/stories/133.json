@@ -1,0 +1,214 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client has ₹3 lakh of long-term gain on paper in equity funds. Every year the first ₹1.25 lakh of such gain is exempt. If she does nothing, the exemption is wasted. If she realises ₹1.25 lakh and buys again, she resets her cost higher and pays no tax this year.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Using the yearly allowance",
+  "lines": [
+   [
+    "meena",
+    "Why sell something I want to keep?"
+   ],
+   [
+    "sikka",
+    "Because the yearly exemption does not carry forward. Selling and re-buying within it lifts your cost price, so future tax is lower. It is a year-end routine, not a trade."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Without harvesting",
+  "b": "With harvesting",
+  "rows": [
+   [
+    "Cost price after year 1 (₹ thousand per 100 units)",
+    50,
+    62.5
+   ],
+   [
+    "Taxable future gain on ₹1.25L (₹ thousand)",
+    125,
+    0
+   ]
+  ],
+  "h": "Made-up example",
+  "alt": "Bars comparing cost price and future taxable gain with and without harvesting",
+  "caps": [
+   [
+    0.3,
+    "A client has a long-term gain of ₹1.25 lakh on paper."
+   ],
+   [
+    2.2,
+    "She sells to use this year's exemption, then buys again."
+   ],
+   [
+    4.0,
+    "Her cost price rises by ₹1.25 lakh, to the new price."
+   ],
+   [
+    5.6,
+    "That gain is never taxed later. This is tax harvesting."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Harvesting, made-up numbers",
+  "intro": "Using the exemption.",
+  "rows": [
+   [
+    "Unrealised long-term gain",
+    "₹3,00,000"
+   ],
+   [
+    "Harvest this year",
+    "₹1,25,000"
+   ],
+   [
+    "Tax this year",
+    "nil, within the exemption"
+   ],
+   [
+    "=",
+    "Tax avoided later on that gain, at 12.5%",
+    "about ₹15,625"
+   ]
+  ],
+  "note": "Rates and limits are as per current rules and change with Budgets. Confirm each year."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Tax harvesting",
+  "stops": [
+   [
+    "The yearly exemption does not carry forward",
+    true
+   ],
+   [
+    "Harvesting lowers the cost price",
+    false
+   ],
+   [
+    "Exit loads and costs can erase the benefit",
+    true
+   ],
+   [
+    "Short-term gains are exempt up to the limit",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Use it each year or lose it."
+   ],
+   [
+    2.2,
+    "It resets the cost price higher."
+   ],
+   [
+    4.0,
+    "Check loads and transaction costs first."
+   ],
+   [
+    5.6,
+    "Short-term gains are taxed at a higher rate."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s133q1",
+  "h": "Check yourself",
+  "q": "A client has ₹1.25 lakh of long-term gain and has used no exemption this year. What does harvesting do?",
+  "opts": [
+   "Realises gain within exemption, lifts cost",
+   "Adds tax of 20% on the full gain made",
+   "Cancels her units and the gain too",
+   "Doubles her gain on paper and in tax paid"
+  ],
+  "ans": 0,
+  "why": [
+   "Selling within the exemption realises the gain with no tax and resets the cost.",
+   "Long-term gains within the limit attract no tax. The details here point elsewhere.",
+   "She re-buys, so her units are not cancelled. That does not match this case.",
+   "It does not double the gain. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s133q2",
+  "h": "Check yourself",
+  "q": "Why is harvesting a yearly routine and not a one-time act?",
+  "opts": [
+   "The tax office sends a reminder each year",
+   "Markets close for the year each March",
+   "The limit is yearly and does not carry over",
+   "Units expire at the end of each year"
+  ],
+  "ans": 2,
+  "why": [
+   "A reminder is not the reason. The details here point elsewhere.",
+   "Markets do not close for the year in March. That does not match this case.",
+   "The limit applies each year and unused amounts are lost.",
+   "Units do not expire each year. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s133q3",
+  "h": "Check yourself",
+  "q": "A client's fund has an exit load on units held under a year. What should the adviser check before harvesting?",
+  "opts": [
+   "Whether the fund's logo has been changed",
+   "Whether loads and costs exceed the saving",
+   "Whether the fund house runs many ads",
+   "Whether the NAV looks like a round number"
+  ],
+  "ans": 1,
+  "why": [
+   "A logo has no bearing on the decision. That does not match this case.",
+   "Costs can cancel the benefit, so the saving must be larger.",
+   "Ads have no bearing on the decision. It does not answer what was asked.",
+   "A round NAV has no bearing on the decision. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s133q4",
+  "h": "Check yourself",
+  "q": "A client wants to harvest a ₹20,000 gain to save tax. What is the sensible view?",
+  "opts": [
+   "Always harvest, whatever the amount involved",
+   "Never harvest at any time, for any reason",
+   "Harvest only on Fridays at the year end",
+   "The saving is small, so costs may outweigh it"
+  ],
+  "ans": 3,
+  "why": [
+   "Costs make 'always' a poor rule. It does not fit the facts given.",
+   "Harvesting can help when gains and savings are large.",
+   "Weekdays do not matter. The details here point elsewhere.",
+   "When savings are tiny, costs and effort may exceed them."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The ₹1.25 lakh long-term exemption is per year and does not carry forward.",
+   "Harvesting sells and re-buys to lift the cost price.",
+   "Skip it when loads and costs exceed the saving."
+  ]
+ }
+]

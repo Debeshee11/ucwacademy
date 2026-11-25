@@ -1,0 +1,290 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "A client needs money in 6 months. There are more than a dozen SEBI debt fund categories on offer, and most of them are sorted by one number: duration. Pick the wrong band and a price swing can eat the interest.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which fund for 6 months?",
+  "lines": [
+   [
+    "rohan",
+    "Which debt fund category suits money I need in 6 months?"
+   ],
+   [
+    "sikka",
+    "First see how SEBI lines up the categories by duration. Then we match the band to your date."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   0,
+   3,
+   6,
+   12,
+   12,
+   36,
+   48,
+   84
+  ],
+  "labels": [
+   "Over",
+   "Liq",
+   "Ultra",
+   "Low",
+   "Mon",
+   "Shrt",
+   "Med",
+   "M-L"
+  ],
+  "big": "Longer band, bigger rate swing",
+  "small": "Top of each band, in months",
+  "h": "The duration ladder",
+  "alt": "Bars of the longest duration each SEBI debt fund category may have, in months",
+  "caps": [
+   [
+    0.3,
+    "SEBI sorts most debt funds by duration. Overnight funds hold securities maturing in 1 day."
+   ],
+   [
+    1.5,
+    "Liquid funds hold up to 91 days. Ultra short has a duration of 3 to 6 months, and low duration 6 to 12."
+   ],
+   [
+    3.5,
+    "Money market funds hold instruments up to 1 year. Short duration is 1 to 3 years, medium 3 to 4."
+   ],
+   [
+    5.4,
+    "Medium to long runs to 7 years, and long duration is above 7. Bars show the top of each band, in months."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "rows": [
+   {
+    "name": "Gilt",
+    "segs": [
+     [
+      "G-secs, at least 80%",
+      80,
+      "#8EC5FF"
+     ],
+     [
+      "Open",
+      20,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Corporate bond",
+    "segs": [
+     [
+      "AA+ and above, 80%+",
+      80,
+      "#3CC47A"
+     ],
+     [
+      "Open",
+      20,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Credit risk",
+    "segs": [
+     [
+      "AA and below, 65%+",
+      65,
+      "#E8573D"
+     ],
+     [
+      "Open",
+      35,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Banking and PSU",
+    "segs": [
+     [
+      "Banks, PSUs, PFIs, 80%+",
+      80,
+      "#FFC531"
+     ],
+     [
+      "Open",
+      20,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ],
+  "h": "Credit rules, not just duration",
+  "alt": "Four fund categories with the minimum each must hold and the part left to the manager",
+  "caps": [
+   [
+    0.3,
+    "Gilt funds must hold at least 80% in government securities."
+   ],
+   [
+    1.4,
+    "Corporate bond funds: at least 80% in AA+ and above."
+   ],
+   [
+    2.5,
+    "Credit risk funds: at least 65% in AA and below."
+   ],
+   [
+    3.6,
+    "Banking and PSU funds: at least 80% in banks, PSUs and public financial institutions."
+   ],
+   [
+    5.4,
+    "Striped parts are the manager's choice. Read the category and the scheme document."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Long duration",
+  "b": "Liquid fund",
+  "rows": [
+   [
+    "Price fall if yields rise 1% (%)",
+    7.0,
+    0.2
+   ],
+   [
+    "Months of yield to earn it back",
+    11.2,
+    0.4
+   ]
+  ],
+  "h": "Six months: liquid or long?",
+  "alt": "Liquid fund against a long-duration fund: price fall for a 1% rise in yields and months of yield to recover it",
+  "caps": [
+   [
+    0.3,
+    "A long duration fund starts above 7 years of duration. A liquid fund has about 0.2 years."
+   ],
+   [
+    2.0,
+    "Yields rise 1%: the long fund's price falls about 7%. The liquid fund's falls about 0.2%."
+   ],
+   [
+    3.9,
+    "At assumed yields of 7.5% and 6.5%, the long fund needs about 11 months of income to earn it back."
+   ],
+   [
+    5.4,
+    "The liquid fund needs under half a month."
+   ],
+   [
+    6.4,
+    "A 6-month goal needs a band that recovers within the wait."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s117q1",
+  "h": "Check yourself",
+  "q": "Rohan has a goal in 6 months and a bank balance he can set aside today. Which category fits that date best?",
+  "opts": [
+   "Long duration, because a rate cut is expected within the half-year",
+   "Liquid, because the holdings mature within 91 days and swings stay tiny",
+   "Corporate bond, because AA+ and above holdings cannot lose value",
+   "Medium duration, because it still falls inside the next four years"
+  ],
+  "ans": 1,
+  "why": [
+   "Long duration needs years, not months, to average out. A single rate rise in six months could cost more than the interest.",
+   "Liquid funds hold securities up to 91 days. Their short duration keeps price swings small, so they fit money needed soon.",
+   "Credit quality is not rate risk. AA+ bonds with long maturities can still fall in price when yields rise.",
+   "Medium duration runs 3 to 4 years. A six-month goal ends long before the swings have time to average out."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s117q2",
+  "h": "Check yourself",
+  "q": "Meena puts ₹3 lakh, needed in one year, into a gilt fund because it carries no credit risk. What has she overlooked?",
+  "opts": [
+   "Gilt funds are the only debt funds that pay tax at slab rate",
+   "Gilt funds invest only in bonds that mature within a year",
+   "Gilt funds can hold long G-secs, so rate swings can be large",
+   "Gilt funds can be redeemed only after a one-year lock-in"
+  ],
+  "ans": 2,
+  "why": [
+   "Tax treatment does not depend on the gilt label alone. It depends on whether the fund counts as specified debt-oriented.",
+   "Gilt funds are not limited to one year. They can hold G-secs of any maturity, which is why they can swing a lot.",
+   "A gilt fund holds at least 80% in G-secs, with no cap on maturity. Credit is safe but long G-secs swing a lot.",
+   "Open-ended gilt funds have no lock-in. The risk is price swings from duration, not the ability to redeem."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s117q3",
+  "h": "Check yourself",
+  "q": "A factsheet shows a fund's Macaulay duration at 3.4 years. Which SEBI category does that fit?",
+  "opts": [
+   "Medium duration, 3 to 4 years",
+   "Short duration, 1 to 3 years",
+   "Medium to long duration, 4 to 7 years",
+   "Low duration, 6 to 12 months"
+  ],
+  "ans": 0,
+  "why": [
+   "Medium duration funds have a Macaulay duration of 3 to 4 years, and 3.4 sits inside that band.",
+   "Short duration is 1 to 3 years. A duration of 3.4 years is above that band, so it does not fit.",
+   "Medium to long runs 4 to 7 years. At 3.4 years the fund is below that band.",
+   "Low duration is 6 to 12 months. A fund at 3.4 years is far above that, so it is not low duration."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s117q4",
+  "h": "Check yourself",
+  "q": "A client's fund shows 70% in bonds rated AA and below, and the rest in AAA. Its category label is hidden. Which category's rule does that portfolio fit?",
+  "opts": [
+   "Corporate bond, which needs at least 80% in AA+ and above",
+   "Banking and PSU, which needs at least 80% in banks and PSUs",
+   "Gilt, which needs at least 80% in government securities",
+   "Credit risk, which needs at least 65% in AA and below"
+  ],
+  "ans": 3,
+  "why": [
+   "A corporate bond fund holds at least 80% in AA+ and above. This portfolio has 70% in AA and below, which breaks that rule.",
+   "Banking and PSU funds hold at least 80% in banks, PSUs and public financial institutions. This portfolio is mostly lower-rated papers.",
+   "A gilt fund holds mostly government securities. Bonds rated AA and below are company bonds, so 70% of them rules gilt out.",
+   "Credit risk funds must hold at least 65% in AA and below. A 70% share meets that rule."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Duration drives the category: overnight, liquid, money market, ultra short, low, short, medium, medium to long, long.",
+   "Gilt means G-secs, and credit risk means lower-rated papers. Always read the scheme document.",
+   "Match the holding period to the category's duration."
+  ]
+ }
+]

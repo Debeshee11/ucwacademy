@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The Nifty 50 is the market's headline index. It is made of 50 large companies and moves with overall market mood. Its factsheet gives a quick health check: valuation, returns and who sits on top.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty 50?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty 50 actually track?"
+   ],
+   [
+    "sikka",
+    "It tracks 50 well-diversified large companies, with weights that follow free float market capitalisation. It is rebalanced twice a year. HDFC Bank, ICICI Bank and Reliance are the three biggest holdings."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty 50, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "19.36"
+   ],
+   [
+    "P/B",
+    "2.78"
+   ],
+   [
+    "Dividend yield",
+    "1.22%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-8.1% / +5.1%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty 50: biggest holdings, % weight",
+  "vals": [
+   10.38,
+   9.05,
+   7.58
+  ],
+  "labels": [
+   "HDFC",
+   "ICICI",
+   "Reliance"
+  ],
+  "big": "Top 10 add to 52.3%",
+  "small": "Largest sector: Financial Services",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: HDFC Bank 10.38%."
+   ],
+   [
+    2.2,
+    "Next: ICICI Bank 9.05%."
+   ],
+   [
+    4.0,
+    "Then: Reliance 7.58%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 52.3%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty 50 facts",
+  "stops": [
+   [
+    "The Nifty 50 holds 50 companies",
+    true
+   ],
+   [
+    "Weights follow equal weighting",
+    false
+   ],
+   [
+    "Financial Services is its largest sector",
+    true
+   ],
+   [
+    "Past returns predict the future",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A diversified large-company index."
+   ],
+   [
+    2.2,
+    "They follow free float market cap."
+   ],
+   [
+    4.0,
+    "At 37.45%."
+   ],
+   [
+    5.6,
+    "They do not."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s201q1",
+  "h": "Check yourself",
+  "q": "How are Nifty 50 weights set?",
+  "opts": [
+   "By equal shares for every stock",
+   "By the founder's age in years",
+   "By the alphabet of the names",
+   "By free float market cap"
+  ],
+  "ans": 3,
+  "why": [
+   "Equal weighting is not used here. The details here point elsewhere.",
+   "Age plays no role. The details here point elsewhere.",
+   "The alphabet plays no role. That does not match this case.",
+   "Weights follow free float market cap. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s201q2",
+  "h": "Check yourself",
+  "q": "Which sector is the largest in the Nifty 50, as per the lesson?",
+  "opts": [
+   "Capital Goods, with 20.25%",
+   "Financial Services, 37.45%",
+   "Healthcare, with about 5%",
+   "Mining, with about 40%"
+  ],
+  "ans": 1,
+  "why": [
+   "Capital Goods leads the Nifty Next 50, not Nifty 50.",
+   "Financial Services is the largest at 37.45%.",
+   "Healthcare is not the largest. It does not fit the facts given.",
+   "Mining is not the largest. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s201q3",
+  "h": "Check yourself",
+  "q": "The index shows -8.1% over 1 year and +5.1% a year over 5 years. What does it show?",
+  "opts": [
+   "Returns differ by period",
+   "A sure profit in every year",
+   "A sure loss in every year",
+   "That the index is broken"
+  ],
+  "ans": 0,
+  "why": [
+   "Different periods show different results.",
+   "A one-year loss disproves a sure profit.",
+   "The five-year figure is positive.",
+   "Normal index movement is not a fault."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s201q4",
+  "h": "Check yourself",
+  "q": "Which holding is biggest, as per the lesson?",
+  "opts": [
+   "ICICI Bank at 10.38%",
+   "Reliance at 9.05%",
+   "HDFC Bank at 10.38%",
+   "HDFC Bank at 52.3%"
+  ],
+  "ans": 2,
+  "why": [
+   "ICICI Bank is 9.05%. It does not answer what was asked.",
+   "Reliance is 7.58%. It does not answer what was asked.",
+   "HDFC Bank is 10.38%. This fits the facts given.",
+   "52.3% is the top 10's total. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty 50: HDFC Bank 10.38% leads; top 10 add to 52.3%.",
+   "Largest sector: Financial Services at 37.45%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

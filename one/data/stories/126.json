@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "There was a gap in the middle. Ordinary mutual funds on one side. PMS and AIFs on the other. From 1 April 2025, SEBI added Specialised Investment Funds, SIFs, in between.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The new middle ground",
+  "lines": [
+   [
+    "meena",
+    "What makes a SIF different?"
+   ],
+   [
+    "sikka",
+    "It is run by a mutual fund house, with a minimum of ₹10 lakh per investor, counted across the fund house's SIF strategies. SIFs may use strategies ordinary funds cannot, such as limited short exposure through derivatives, called long-short. Strategy names, limits and rules are set by SEBI, so read the scheme document carefully."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "SIF basics",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Since",
+    "1 April 2025, between MFs and PMS/AIFs"
+   ],
+   [
+    "Run by",
+    "mutual fund houses"
+   ],
+   [
+    "Minimum",
+    "₹10 lakh per investor across a fund house's SIFs"
+   ],
+   [
+    "Extra tools",
+    "limited short exposure via derivatives (long-short)"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s126q1",
+  "h": "Check yourself",
+  "q": "What is the SIF minimum in the lesson?",
+  "opts": [
+   "₹10 lakh per investor",
+   "₹500 per investor",
+   "₹50 lakh per investor",
+   "₹1 crore per investor"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives ₹10 lakh.",
+   "₹500 is a mutual fund level.",
+   "₹50 lakh is the PMS level.",
+   "₹1 crore is the AIF level."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s126q2",
+  "h": "Check yourself",
+  "q": "Who runs SIFs?",
+  "opts": [
+   "Only commercial banks",
+   "Only life insurers",
+   "Mutual fund houses",
+   "Only stock brokers"
+  ],
+  "ans": 2,
+  "why": [
+   "Banks are not named.",
+   "Insurers are not named.",
+   "The lesson says fund houses.",
+   "Brokers are not named."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s126q3",
+  "h": "Check yourself",
+  "q": "What can SIFs do that ordinary funds cannot?",
+  "opts": [
+   "Guarantee every return paid",
+   "Avoid all the regulation",
+   "Hold no securities at all",
+   "Limited short exposure"
+  ],
+  "ans": 3,
+  "why": [
+   "No return is guaranteed. That does not match this case.",
+   "SEBI sets the rules. It does not fit the facts given.",
+   "They hold securities. It does not answer what was asked.",
+   "Long-short strategies are allowed within limits."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s126q4",
+  "h": "Check yourself",
+  "q": "Where should an RM read the strategy limits?",
+  "opts": [
+   "On a friend's blog",
+   "In the scheme document",
+   "In a social media post",
+   "On a street poster"
+  ],
+  "ans": 1,
+  "why": [
+   "A blog is not a source. It does not fit the facts given.",
+   "SEBI sets limits; the scheme document states them.",
+   "A post is not a source. The details here point elsewhere.",
+   "A poster is not a source. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SIFs started 1 April 2025, between MFs and PMS/AIFs.",
+   "Minimum ₹10 lakh per investor.",
+   "Read the scheme document: SEBI sets the limits."
+  ]
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Two funds both gave 14%. One fell 38% at its worst, the other 22%. Same return, different journey. Return alone is half the story.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Reading risk numbers",
+  "lines": [
+   [
+    "meena",
+    "Both gave 14%. Why call one riskier?"
+   ],
+   [
+    "sikka",
+    "Standard deviation shows the swing. Maximum drawdown shows the worst fall from a peak. Beta above 1 means bigger moves than the benchmark. Sharpe is return above a safe-deposit rate per unit of volatility. All of them look backwards."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Same 14% return, made up",
+  "vals": [
+   38,
+   22
+  ],
+  "labels": [
+   "Fund A",
+   "Fund B"
+  ],
+  "big": "-38% vs -22%",
+  "small": "worst fall from a peak",
+  "alt": "Bars of the maximum drawdown of two funds",
+  "caps": [
+   [
+    0.3,
+    "Both funds gave 14%."
+   ],
+   [
+    2.2,
+    "Fund A fell 38% at its worst."
+   ],
+   [
+    4.0,
+    "Fund B fell 22%."
+   ],
+   [
+    5.6,
+    "The second may be easier to stay with."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s108q1",
+  "h": "Check yourself",
+  "q": "What does maximum drawdown measure?",
+  "opts": [
+   "The average yearly return made",
+   "The fund's expense ratio charged",
+   "The number of holdings it has",
+   "The largest peak-to-trough fall"
+  ],
+  "ans": 3,
+  "why": [
+   "Average return is a different measure.",
+   "The expense ratio is a cost figure.",
+   "Holdings count is not a risk number.",
+   "It is the deepest decline a holder sat through."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s108q2",
+  "h": "Check yourself",
+  "q": "A fund has a beta of 1.3. What does that suggest?",
+  "opts": [
+   "It never falls in a weak market",
+   "It moves more than the benchmark",
+   "It moves half as much as markets",
+   "It carries no risk whatsoever"
+  ],
+  "ans": 1,
+  "why": [
+   "No fund is immune to falls. The details here point elsewhere.",
+   "Beta above 1 amplifies moves. This fits the facts given.",
+   "Half the market would be a beta of 0.5. It does not fit the facts given.",
+   "Every fund carries some risk. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s108q3",
+  "h": "Check yourself",
+  "q": "Why compare Sharpe ratios only across similar funds?",
+  "opts": [
+   "Categories carry different risks",
+   "Sharpe only works for equity funds",
+   "SEBI sets the ratios for each fund",
+   "The ratio never changes with time"
+  ],
+  "ans": 0,
+  "why": [
+   "A fair comparison needs like-with-like.",
+   "Sharpe is used across asset types.",
+   "SEBI does not set these ratios.",
+   "It changes with the period used."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s108q4",
+  "h": "Check yourself",
+  "q": "What do risk numbers tell us about the future?",
+  "opts": [
+   "Exactly what will happen next",
+   "That the fund cannot fall again",
+   "Nothing certain, they look backwards",
+   "That the past will repeat in full"
+  ],
+  "ans": 2,
+  "why": [
+   "They cannot predict exactly.",
+   "No number rules out falls.",
+   "They describe what happened.",
+   "Repeats are never certain."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Return alone is half the story.",
+   "Drawdown shows the real pain.",
+   "Compare like with like. Risk numbers look backwards."
+  ]
+ }
+]

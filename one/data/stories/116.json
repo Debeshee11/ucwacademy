@@ -1,0 +1,273 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "The RBI has just cut the repo rate. The headline says rates are falling, and a client wants to rush into a long-term debt fund. But a bond fund is priced off a whole curve, not a single rate.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A headline reaction",
+  "lines": [
+   [
+    "meena",
+    "RBI cut rates. Should I buy a long-term debt fund?"
+   ],
+   [
+    "sikka",
+    "Maybe. But which rates fell: the short ones or the long ones? Let us draw the curve and watch what a cut moves."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "curve",
+  "h": "The yield curve",
+  "alt": "A line of yields rising with the years to maturity",
+  "points": [
+   [
+    "3M",
+    6.5
+   ],
+   [
+    "1Y",
+    6.6
+   ],
+   [
+    "3Y",
+    6.9
+   ],
+   [
+    "5Y",
+    7.1
+   ],
+   [
+    "10Y",
+    7.3
+   ],
+   [
+    "30Y",
+    7.5
+   ]
+  ],
+  "caps": [
+   [
+    0.3,
+    "A yield curve plots the yield of bonds against their maturity. Here a 3-month bond yields 6.5%."
+   ],
+   [
+    3.0,
+    "Longer bonds pay more. At 10 years the yield is 7.3%, which is 0.8 points above the 3-month rate."
+   ],
+   [
+    6.0,
+    "An upward slope is a normal curve: you are paid to lend for longer. These yields are made up."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Steep curve",
+  "b": "Flat curve",
+  "rows": [
+   [
+    "10-year extra yield over 1-year (pts)",
+    1.8,
+    0.2
+   ],
+   [
+    "Price fall if yields rise 1% (%)",
+    7,
+    7
+   ],
+   [
+    "Years of extra yield to repay it",
+    3.9,
+    35
+   ]
+  ],
+  "h": "Is extending worth it?",
+  "alt": "Steep curve versus flat curve: extra yield for lending ten years instead of one against the price fall if yields rise",
+  "caps": [
+   [
+    0.3,
+    "Steep curve: a 10-year bond yields 1.8 points more than a 1-year bond. Flat curve: just 0.2 points."
+   ],
+   [
+    2.2,
+    "Either way, a 10-year bond has a duration of about 7, so a 1% rise in yields cuts its price about 7%."
+   ],
+   [
+    4.5,
+    "Steep: about 3.9 years of extra yield repays that fall. Flat: about 35 years."
+   ],
+   [
+    6.2,
+    "A steep curve rewards extending maturity. A flat or inverted curve does not."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "curve",
+  "h": "After the RBI cuts 0.50%",
+  "alt": "The yield curve moving after a repo rate cut",
+  "points": [
+   [
+    "3M",
+    6.5
+   ],
+   [
+    "1Y",
+    6.6
+   ],
+   [
+    "3Y",
+    6.9
+   ],
+   [
+    "5Y",
+    7.1
+   ],
+   [
+    "10Y",
+    7.3
+   ],
+   [
+    "30Y",
+    7.5
+   ]
+  ],
+  "points2": [
+   [
+    "3M",
+    6.0
+   ],
+   [
+    "1Y",
+    6.2
+   ],
+   [
+    "3Y",
+    6.8
+   ],
+   [
+    "5Y",
+    7.1
+   ],
+   [
+    "10Y",
+    7.3
+   ],
+   [
+    "30Y",
+    7.5
+   ]
+  ],
+  "caps": [
+   [
+    0.3,
+    "Before the cut: 3-month yield 6.5%, 10-year yield 7.3%. Then the repo rate is cut by 0.50%."
+   ],
+   [
+    5.0,
+    "The curve is drawn. Now the cut arrives."
+   ],
+   [
+    8.3,
+    "The short end follows the repo rate straight away: the 3-month yield falls to 6.0%."
+   ],
+   [
+    11.0,
+    "The 10-year yield stays near 7.3%. A long-duration fund gains little from this cut."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s116q1",
+  "h": "Check yourself",
+  "q": "The RBI cuts the repo rate by 0.50%. The 3-month yield falls from 6.5% to 6.0%, but the 10-year stays at 7.3%. A client wants a long-duration fund because rates are falling. What is the fair reply?",
+  "opts": [
+   "Do it now, since a repo cut always lowers every yield on the curve",
+   "The long end moves first, so a long fund will gain before short ones do",
+   "Avoid all debt funds for a year until the new repo rate settles in",
+   "The cut moved the short end only, so a long fund gains little from it alone"
+  ],
+  "ans": 3,
+  "why": [
+   "The repo rate mainly anchors the short end. The long end follows growth, inflation and bond supply, so it may not follow.",
+   "The short end responds first, as it tracks the repo rate. The long end responds to other things, and here it did not.",
+   "Waiting a year is not a plan. Short-duration funds could benefit from the lower short-end yields right away.",
+   "The long end did not fall, so long bond prices did not rise. Her gain would depend on a later fall in long yields."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s116q2",
+  "h": "Check yourself",
+  "q": "The curve is inverted: the 1-year yield is 7.4% and the 10-year yield is 6.8%. A client wants a home for money she needs in one year. Which reading is sound?",
+  "opts": [
+   "Long bonds pay less here, so a short fund earns more with less rate risk",
+   "Go long, since the 10-year bond has the biggest price upside in a rate cut",
+   "Wait, since inverted curves mean every debt fund will fall next month",
+   "Pick the 10-year bond, as it pays 6.8% for ten years of safety"
+  ],
+  "ans": 0,
+  "why": [
+   "Short yields exceed long ones, so there is no reward for taking duration. A short fund yields more and swings less.",
+   "The 10-year pays less than the 1-year, and its price would swing much more. She needs the money in a year anyway.",
+   "An inverted curve does not predict a debt fund fall next month. It only shows that short yields are above long ones.",
+   "A 10-year bond is not 'safer' for ten years. It carries more price risk than a 1-year bond, and she needs her money in one."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s116q3",
+  "h": "Check yourself",
+  "q": "On a steep curve, a 10-year bond yields 1.8 points more than a 1-year bond and has a duration of about 7. If yields rise 1% at once, about how long does the extra yield take to repay the price fall?",
+  "opts": [
+   "About 7 years, since the repayment time equals the duration",
+   "About 0.3 years, since 1.8 is much bigger than 1",
+   "About 3.9 years, which is 7% divided by 1.8% a year",
+   "It never repays, because a price fall is permanent"
+  ],
+  "ans": 2,
+  "why": [
+   "The repayment time is the fall divided by the extra yield, not simply the duration. Here that gives 3.9, not 7.",
+   "1.8% extra a year is not enough to cover a 7% fall in under a year. Dividing 1 by 1.8 is not the right sum here.",
+   "A price fall of about 7% against 1.8% extra a year takes 3.9 years of extra yield to make up.",
+   "A price fall can be made up by extra income, and the bond is pulled back to face value as it nears maturity."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s116q4",
+  "h": "Check yourself",
+  "q": "A client with a goal in two years wants a long-duration fund because a rate cut is expected. Which advice fits what the lesson says about duration?",
+  "opts": [
+   "Go all in, since a cut is expected and the fund can wait out any dip",
+   "Skip debt completely, because rate cuts only help equity funds",
+   "Choose the longest fund, because longer maturity always pays more",
+   "Treat duration as a rate bet: size it small, match her horizon"
+  ],
+  "ans": 3,
+  "why": [
+   "An expected cut is not a delivered one. If yields do not fall, a long fund can dip within her two-year window.",
+   "Rate cuts can help bond prices as well as equities. The issue is sizing duration, not avoiding debt.",
+   "Longer maturity pays more only on a normal curve, and only if rates behave. It also raises risk.",
+   "Duration is a view on the path of rates, so keep it small, and check that the horizon is not shorter than the duration."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A normal curve slopes upward. Flat pays little extra to lend longer. Inverted means short yields exceed long ones.",
+   "The repo rate mostly anchors the short end. The long end follows growth, inflation and bond supply.",
+   "Long duration is a view on the path of rates. Size it carefully."
+  ]
+ }
+]

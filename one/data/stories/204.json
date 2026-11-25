@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Add mid-sized companies to the large ones and you get the Nifty 200: a wider slice of India's listed economy. Its P/E sits a little above the Nifty 50's. Why would a broader index carry a higher valuation?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty 200?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty 200 actually track?"
+   ],
+   [
+    "sikka",
+    "It is designed to reflect large and mid market-cap companies. It holds 200 stocks, with weights that follow free float market capitalisation. It is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty 200, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "20.45"
+   ],
+   [
+    "P/B",
+    "3.02"
+   ],
+   [
+    "Dividend yield",
+    "1.08%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-4.2% / +7.2%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty 200: biggest holdings, % weight",
+  "vals": [
+   6.72,
+   5.86,
+   4.91
+  ],
+  "labels": [
+   "HDFC",
+   "ICICI",
+   "Reliance"
+  ],
+  "big": "Top 10 add to 33.8%",
+  "small": "Largest sector: Financial Services",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: HDFC Bank 6.72%."
+   ],
+   [
+    2.2,
+    "Next: ICICI Bank 5.86%."
+   ],
+   [
+    4.0,
+    "Then: Reliance 4.91%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 33.8%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty 200 facts",
+  "stops": [
+   [
+    "It reflects large and mid market-cap companies",
+    true
+   ],
+   [
+    "It holds only 100 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "It has no financial services weight",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "That is its stated design."
+   ],
+   [
+    2.2,
+    "It holds 200 stocks."
+   ],
+   [
+    4.0,
+    "20.45 against 19.36."
+   ],
+   [
+    5.6,
+    "Financial Services is 32.53%."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s204q1",
+  "h": "Check yourself",
+  "q": "What does the Nifty 200 reflect?",
+  "opts": [
+   "Large and mid-cap companies",
+   "Only micro-cap companies listed",
+   "Only government bonds issued",
+   "Only banks and no one else"
+  ],
+  "ans": 0,
+  "why": [
+   "It is designed to capture large and mid caps.",
+   "Micro caps are not its focus. The details here point elsewhere.",
+   "It is an equity index. That does not match this case.",
+   "It spans many sectors. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s204q2",
+  "h": "Check yourself",
+  "q": "The Nifty 200 P/E is 20.45 and the Nifty 50 P/E is 19.36. What can be said?",
+  "opts": [
+   "Nifty 200 has the lower P/E",
+   "They are equal",
+   "Nifty 200 has the higher P/E",
+   "P/E cannot be compared"
+  ],
+  "ans": 2,
+  "why": [
+   "The Nifty 200 figure is higher. That does not match this case.",
+   "The two figures differ. It does not fit the facts given.",
+   "20.45 is above 19.36. This fits the facts given.",
+   "They can be compared. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s204q3",
+  "h": "Check yourself",
+  "q": "What is the Nifty 200's largest sector, as per the lesson?",
+  "opts": [
+   "Capital Goods, with 20.25%",
+   "Financial Services, 32.53%",
+   "Health, with about 60%",
+   "Media, with about 32%"
+  ],
+  "ans": 1,
+  "why": [
+   "Capital Goods leads the Next 50.",
+   "Financial Services leads at 32.53%.",
+   "Health is not the largest.",
+   "Media is not the largest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s204q4",
+  "h": "Check yourself",
+  "q": "Which is its biggest holding, as per the lesson?",
+  "opts": [
+   "ICICI Bank, at 6.72%",
+   "Reliance, at 5.86%",
+   "HDFC Bank, at 33.8%",
+   "HDFC Bank, at 6.72%"
+  ],
+  "ans": 3,
+  "why": [
+   "ICICI Bank is 5.86%. It does not answer what was asked.",
+   "Reliance is 4.91%. It does not answer what was asked.",
+   "33.8% is the top 10's total. The details here point elsewhere.",
+   "HDFC Bank leads at 6.72%. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty 200: HDFC Bank 6.72% leads; top 10 add to 33.8%.",
+   "Largest sector: Financial Services at 32.53%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

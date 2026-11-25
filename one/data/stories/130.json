@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client asks, 'Which one gave more, this PMS or that AIF?' One quotes gross returns, the other net. Comparing them is unfair. Responsible selling starts with the client, not the numbers.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Selling responsibly",
+  "lines": [
+   [
+    "meena",
+    "What is the process?"
+   ],
+   [
+    "sikka",
+    "Start with suitability: goal, horizon, liquidity, existing portfolio, risk capacity and experience. Share the Disclosure Document or PPM and explain fees, lock-ins, risks and exit terms in plain words. Never promise returns, never compare gross with net, and disclose conflicts such as commissions. Size it as a satellite and review every year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A responsible process",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "First",
+    "suitability: goal, horizon, liquidity, risk capacity"
+   ],
+   [
+    "Share",
+    "Disclosure Document or PPM; fees, lock-ins, exits"
+   ],
+   [
+    "Never",
+    "promise returns or compare gross with net"
+   ],
+   [
+    "Always",
+    "disclose conflicts; size small; review yearly"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s130q1",
+  "h": "Check yourself",
+  "q": "What comes first when selling a PMS or AIF?",
+  "opts": [
+   "The commission",
+   "The brochure",
+   "Suitability",
+   "The target"
+  ],
+  "ans": 2,
+  "why": [
+   "Commission is not the basis.",
+   "A brochure is not the basis.",
+   "Suitability shapes everything.",
+   "A target is not the basis."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s130q2",
+  "h": "Check yourself",
+  "q": "What should be shared with the client?",
+  "opts": [
+   "The Disclosure Document or PPM",
+   "Only a glossy flyer on top of it",
+   "Only a rumour from a friend",
+   "Nothing at all, to anyone, ever"
+  ],
+  "ans": 0,
+  "why": [
+   "It lists fees, risks and exits. This fits the facts given.",
+   "A flyer is not enough. It does not fit the facts given.",
+   "A rumour is not a document. It does not answer what was asked.",
+   "Sharing is required. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s130q3",
+  "h": "Check yourself",
+  "q": "Why not compare gross and net figures?",
+  "opts": [
+   "Net is always much lower here",
+   "Gross is illegal to quote",
+   "Both are exactly the same thing",
+   "They are not like-for-like"
+  ],
+  "ans": 3,
+  "why": [
+   "Net is lower only by the fees charged.",
+   "Gross figures are legal to quote.",
+   "The two differ by fees and costs.",
+   "Basis must match for a fair comparison."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s130q4",
+  "h": "Check yourself",
+  "q": "What conflicts must be disclosed?",
+  "opts": [
+   "The RM's lunch menu today, any day",
+   "Commissions and distribution fees",
+   "The office's wall colour choice",
+   "The make of the office lift here"
+  ],
+  "ans": 1,
+  "why": [
+   "Lunch is not a conflict.",
+   "Commissions can bias advice.",
+   "Colour is not a conflict.",
+   "A lift is not a conflict."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Start with suitability, then share the document.",
+   "Never promise returns or mix gross and net.",
+   "Disclose conflicts; size small; review every year."
+  ]
+ }
+]

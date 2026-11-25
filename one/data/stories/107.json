@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A parent needs ₹50 lakh for college in 12 years. By then, ₹50 lakh of today's money is not enough. At 8% education inflation, it is about ₹126 lakh. Plan with that.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "From goal to monthly amount",
+  "lines": [
+   [
+    "meena",
+    "How do I find the monthly SIP?"
+   ],
+   [
+    "sikka",
+    "Three steps. Write the goal in today's money and the date. Inflate it. Then solve for the monthly amount using an assumed return that fits the mix and the time. Short goals need lower, steadier assumptions. Review every year."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "₹50 lakh goal, 8% inflation, 12 years",
+  "vals": [
+   50,
+   126
+  ],
+  "labels": [
+   "Today",
+   "In 12 yrs"
+  ],
+  "big": "about ₹126 lakh",
+  "small": "the goal in future money",
+  "alt": "Bars of a goal in today's money and after inflation",
+  "caps": [
+   [
+    0.3,
+    "₹50 lakh in today's money."
+   ],
+   [
+    2.2,
+    "Education costs rise about 8% a year."
+   ],
+   [
+    4.0,
+    "In 12 years it is about ₹126 lakh."
+   ],
+   [
+    5.6,
+    "The SIP is solved for this figure."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s107q1",
+  "h": "Check yourself",
+  "q": "A goal of ₹50 lakh in today's money, with 8% inflation for 12 years, becomes about:",
+  "opts": [
+   "₹50 lakh flat",
+   "₹126 lakh",
+   "₹60 lakh only",
+   "₹96 lakh only"
+  ],
+  "ans": 1,
+  "why": [
+   "₹50 lakh ignores inflation. It does not answer what was asked.",
+   "50 × 1.08^12 is about ₹126 lakh. That matches the case described.",
+   "₹60 lakh is far too low for 12 years. That does not match this case.",
+   "₹96 lakh is still below the compounded figure. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s107q2",
+  "h": "Check yourself",
+  "q": "What is the first step in goal-based SIP planning?",
+  "opts": [
+   "Choose the fund that has rallied most",
+   "Pick the highest-return scheme going",
+   "Decide the commission on the sale made",
+   "Set the goal in today's money, and date"
+  ],
+  "ans": 3,
+  "why": [
+   "Fund choice comes after the goal. That does not match this case.",
+   "Chasing returns is not planning. That does not match this case.",
+   "Commission is not a planning step. It does not fit the facts given.",
+   "Everything else depends on the amount and date."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s107q3",
+  "h": "Check yourself",
+  "q": "A client's goal is 2 years away. Which approach is most sensible?",
+  "opts": [
+   "A lower, steadier assumption",
+   "Assume 15% a year and go ahead higher",
+   "Put the whole sum into small caps",
+   "Ignore the goal and just wait and see"
+  ],
+  "ans": 0,
+  "why": [
+   "Short horizons cannot ride out large falls.",
+   "A high assumption overstates what is likely.",
+   "Small caps can fall hard in two years.",
+   "Ignoring the goal helps no one."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s107q4",
+  "h": "Check yourself",
+  "q": "How often should a goal plan be reviewed?",
+  "opts": [
+   "Never after the start",
+   "Only when markets rise",
+   "At least once a year",
+   "Every 20 years only"
+  ],
+  "ans": 2,
+  "why": [
+   "Plans need updates after the start. It does not fit the facts given.",
+   "Falls need reviews too, not only rises. It does not answer what was asked.",
+   "Income, markets and goals change, so review yearly.",
+   "Twenty years is far too long. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Goal → inflate → solve for the SIP.",
+   "Match the assumed return to the horizon.",
+   "Review every year."
+  ]
+ }
+]

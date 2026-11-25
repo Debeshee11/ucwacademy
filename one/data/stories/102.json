@@ -1,0 +1,166 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two friends each put ₹1 lakh at 10%. One earns interest only on the ₹1 lakh. The other earns interest on interest too. After 20 years, the second has far more. Time makes the gap.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two ways to grow",
+  "lines": [
+   [
+    "meena",
+    "Both get 10%. Why do the totals differ?"
+   ],
+   [
+    "sikka",
+    "Simple interest is paid only on the original sum. Compound interest is paid on the sum plus past interest. The longer you wait, the wider the gap."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Simple vs compound, 10%",
+  "intro": "₹1 lakh, 3 years.",
+  "rows": [
+   [
+    "Simple: 10,000 each year",
+    "₹1,30,000"
+   ],
+   [
+    "Compound: interest on interest",
+    "₹1,33,100"
+   ],
+   [
+    "=",
+    "Gap after 3 years",
+    "₹3,100"
+   ],
+   [
+    "Rule of 72 at 8%",
+    "72 ÷ 8 = about 9 years to double"
+   ]
+  ],
+  "note": "Made-up figures, for learning only. The rule works best between about 6% and 12%."
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Simple",
+  "b": "Compound",
+  "rows": [
+   [
+    "Value after 20 years (₹ lakh)",
+    3,
+    6.7
+   ]
+  ],
+  "h": "Made-up example",
+  "alt": "Two bars comparing simple and compound growth over twenty years",
+  "caps": [
+   [
+    0.3,
+    "Both start with ₹1 lakh at 10%."
+   ],
+   [
+    2.2,
+    "Simple adds the same amount every year."
+   ],
+   [
+    4.0,
+    "Compound adds interest on past interest."
+   ],
+   [
+    5.6,
+    "After 20 years, compound is more than double."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s102q1",
+  "h": "Check yourself",
+  "q": "At 12% a year, about how long does money take to double by the Rule of 72?",
+  "opts": [
+   "About 6 years",
+   "About 12 years",
+   "About 3 years",
+   "About 24 years"
+  ],
+  "ans": 0,
+  "why": [
+   "72 ÷ 12 gives about 6 years.",
+   "12 years would suit a rate of 6%.",
+   "3 years would need a rate near 24%.",
+   "24 years would suit a rate near 3%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s102q2",
+  "h": "Check yourself",
+  "q": "₹1,00,000 at 10% for 3 years. How does the simple interest total compare with compound?",
+  "opts": [
+   "It is higher, at ₹1,40,000",
+   "It is the same as compound",
+   "It is lower, at ₹1,30,000",
+   "It is ₹1,10,000"
+  ],
+  "ans": 2,
+  "why": [
+   "Compounding gives more than simple, not less.",
+   "The two differ once interest earns interest.",
+   "Simple adds ₹10,000 a year: ₹1,30,000, below ₹1,33,100.",
+   "₹1,10,000 is only one year of simple interest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s102q3",
+  "h": "Check yourself",
+  "q": "A loan at 18% compounds against the borrower. What does that show?",
+  "opts": [
+   "Compounding only helps the savers",
+   "Compounding works against borrowers",
+   "Loans never compound on balances",
+   "Rates do not matter for loans here"
+  ],
+  "ans": 1,
+  "why": [
+   "Compounding applies to both sides.",
+   "Debts grow the same way savings do.",
+   "Many loans do compound on unpaid balances.",
+   "Higher rates make loans grow faster."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s102q4",
+  "h": "Check yourself",
+  "q": "A client says the Rule of 72 gives exact answers. What is the right reply?",
+  "opts": [
+   "It is exact at every rate used",
+   "It works only for loans taken out",
+   "It works only for gold and silver",
+   "An estimate, best at 6% to 12%"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not exact, at any rate. It does not fit the facts given.",
+   "It applies to any compounding growth. It does not answer what was asked.",
+   "It applies to any asset or debt that compounds. The details here point elsewhere.",
+   "The rule is a quick estimate that suits mid-range rates."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Simple interest is on the original sum. Compound is on sum plus interest.",
+   "Rule of 72: years to double ≈ 72 ÷ rate.",
+   "Compounding works on loans and costs too."
+  ]
+ }
+]

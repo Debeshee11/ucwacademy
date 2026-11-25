@@ -1,0 +1,268 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Rohan is in the 30% slab and has a fixed deposit and a debt fund. Both earn about the same before tax. He wants to know which one the taxman treats better. The honest answer has one surprise.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "FD or debt fund?",
+  "lines": [
+   [
+    "rohan",
+    "Is a debt fund more tax-efficient than a fixed deposit?"
+   ],
+   [
+    "sikka",
+    "Let us look at the rate first, and then at the timing. They are two different questions."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "rows": [
+   {
+    "name": "Bank FD: ₹1,00,000 interest",
+    "segs": [
+     [
+      "Tax 31.2%",
+      31.2,
+      "#E8573D"
+     ],
+     [
+      "He keeps 68.8%",
+      68.8,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "Debt fund: ₹1,00,000 gain",
+    "segs": [
+     [
+      "Tax 31.2%",
+      31.2,
+      "#E8573D"
+     ],
+     [
+      "He keeps 68.8%",
+      68.8,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "h": "Same slab rate",
+  "alt": "Two bars: FD interest and debt fund gain, each split into tax and what Rohan keeps",
+  "caps": [
+   [
+    0.3,
+    "Rohan is in the 30% slab. His FD earns ₹1,00,000 of interest. A debt fund also earns ₹1,00,000 of gain."
+   ],
+   [
+    1.8,
+    "Both are taxed at his slab rate. With 4% cess, 30% becomes 31.2%, which is ₹31,200 on each."
+   ],
+   [
+    3.2,
+    "No holding period lowers it, and there is no indexation for these funds."
+   ],
+   [
+    4.2,
+    "So the rate is the same. The difference is in the timing."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "₹100 after tax, by year",
+  "series": [
+   {
+    "name": "Bank FD",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     105.5,
+     111.3,
+     117.4,
+     123.9,
+     130.7,
+     137.9,
+     145.5,
+     153.5,
+     162.0,
+     170.9
+    ]
+   },
+   {
+    "name": "Debt fund",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     105.5,
+     111.4,
+     117.9,
+     124.8,
+     132.3,
+     140.4,
+     149.1,
+     158.5,
+     168.7,
+     179.7
+    ]
+   }
+  ],
+  "h": "Tax now, or tax later",
+  "alt": "Two lines of 100 rupees growing at 8 percent before tax: a bank FD taxed each year and a debt fund taxed when sold",
+  "caps": [
+   [
+    0.3,
+    "₹100 goes into each. Both earn 8% before tax (assumed), and Rohan pays 31.2% on the gain."
+   ],
+   [
+    2.5,
+    "The FD is taxed every year, so tax leaves each year and less money is left to compound."
+   ],
+   [
+    5.0,
+    "The debt fund is taxed only when sold. The yellow line is what he keeps if he sells in that year."
+   ],
+   [
+    8.4,
+    "After 10 years: about ₹180 for the fund and ₹171 for the FD. Same rate, later tax."
+   ],
+   [
+    10.0,
+    "A real but modest benefit. Fund costs are ignored here, and the FD has none."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Debt fund tax in short",
+  "stops": [
+   [
+    "Gains taxed at slab rate, any holding period",
+    true
+   ],
+   [
+    "Tax is paid when you redeem, not yearly",
+    true
+   ],
+   [
+    "Indexation lowers the taxable gain",
+    false
+   ],
+   [
+    "These rules can never change",
+    false
+   ]
+  ],
+  "h": "Debt fund tax in short",
+  "alt": "A shield with what holds and what does not for debt fund taxation",
+  "caps": [
+   [
+    0.3,
+    "Under the rules in force since 1 April 2023, specified debt-oriented funds are taxed at slab rate."
+   ],
+   [
+    3.0,
+    "The tax falls due when you redeem. That deferral is the benefit that remains."
+   ],
+   [
+    5.5,
+    "No indexation, and Budgets can change the rules. Equity-oriented funds follow equity rules."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s119q1",
+  "h": "Check yourself",
+  "q": "Rohan is in the 30% slab. A debt fund held for 4 years takes his ₹10 lakh to ₹12 lakh. Taking tax at 31.2% with cess, about how much tax is due on the gain?",
+  "opts": [
+   "₹62,400, taxed at his slab rate whatever the holding period",
+   "₹25,000, taxed at the 12.5% long-term rate",
+   "₹40,000, taxed at 20% with indexation after three years",
+   "₹31,200, since only half the gain counts after a long hold"
+  ],
+  "ans": 0,
+  "why": [
+   "The gain of ₹2 lakh at 31.2% gives ₹62,400. Specified debt funds are taxed at slab rate, however long they are held.",
+   "12.5% is a long-term rate for equity-oriented funds. A debt-oriented fund does not use it.",
+   "That was the older rule for funds held over three years. Specified debt funds no longer get that rate or indexation.",
+   "No rule halves the gain for long holdings. The full gain is taxed, whatever the holding period."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s119q2",
+  "h": "Check yourself",
+  "q": "Meena asks whether a debt fund is more tax-efficient than a fixed deposit. She is in the 30% slab. What is the fair reply?",
+  "opts": [
+   "Yes, since indexation brings the taxable gain close to zero",
+   "Yes, since a fund held for over three years gets a lower long-term rate",
+   "No, because a debt fund's gains are taxed every year like FD interest",
+   "Not in rate, but the fund taxes you only when you redeem"
+  ],
+  "ans": 3,
+  "why": [
+   "Indexation is not available for these funds. The full gain is taxed at the slab rate.",
+   "No such long-term rate applies to specified debt funds today. The gain is taxed at slab rate, whatever the period.",
+   "The fund's tax is on redemption, not each year. The FD is the one taxed on interest as it accrues.",
+   "Same slab rate on both. A fund defers tax until redemption, while FD interest is taxed each year. That is the remaining edge."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s119q3",
+  "h": "Check yourself",
+  "q": "₹10 lakh at 8% before tax for ten years, taxed at 31.2%: the FD ends near ₹17.1 lakh and the debt fund, redeemed at the end, near ₹18.0 lakh. Why does the fund end ahead at the same rate?",
+  "opts": [
+   "The fund earns a higher return before tax than an FD by design",
+   "FD tax leaves yearly so less compounds; the fund pays once at the end",
+   "Indexation cuts the fund's tax bill at the end by a large amount",
+   "FD interest is taxed at a higher slab rate than fund gains are"
+  ],
+  "ans": 1,
+  "why": [
+   "Both were set to earn 8% before tax. The gap comes from when the tax is paid, not from the return.",
+   "Yearly tax removes money that would have compounded. Deferring it to the end leaves more working for ten years.",
+   "Indexation is not available for these funds. The tax at the end is the full 31.2% on the gain.",
+   "Both are taxed at his slab rate. The rate is the same, so the gap cannot come from it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s119q4",
+  "h": "Check yourself",
+  "q": "Meena's debt fund pays her ₹40,000 as IDCW this year. She is in the 30% slab. How is it taxed?",
+  "opts": [
+   "Only 10% is due, which is ₹4,000, since that is the TDS",
+   "It adds to her income and is taxed at slab rate: about ₹12,480 with cess",
+   "Only the gain part counts, about ₹5,000, since the rest is capital",
+   "It is tax-exempt, since it is her own capital coming back"
+  ],
+  "ans": 1,
+  "why": [
+   "TDS is an advance deduction. The final tax is at her slab rate, so ₹4,000 would leave a balance to pay.",
+   "The full ₹40,000 is added to her income and taxed at 31.2%, which is ₹12,480. TDS may apply above a limit.",
+   "The gain-only treatment fits redemptions. IDCW is taxed in full as income, not split into capital and gain.",
+   "IDCW is treated as income in her hands, not as return of capital, and is taxed at her slab rate."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Specified debt funds are taxed at slab rate on gains, whatever the holding period. No indexation.",
+   "The remaining benefit is deferral: tax on redemption, not every year.",
+   "Rules change by Budget. Confirm the current definition and ask a CA."
+  ]
+ }
+]

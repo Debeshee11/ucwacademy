@@ -1,0 +1,256 @@
+[
+ {
+  "k": "fact",
+  "art": "wallet",
+  "h": "Before you start",
+  "big": "A client has ₹10 lakh in a savings account and wants more than the bank pays, without taking equity risk. Your job is not to find the highest yield. It is to match the fund to the date, and to say what can go wrong.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Safer than equity, better than savings",
+  "lines": [
+   [
+    "meena",
+    "I want something safer than equity that beats my savings account. This money has sat in the bank for 3 years."
+   ],
+   [
+    "sikka",
+    "Safer than equity, yes. But I avoid the word safe. First, what is the money for, and when do you need it?"
+   ],
+   [
+    "meena",
+    "₹3 lakh is my emergency money. The rest I will not touch for 3 years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "rows": [
+   {
+    "name": "₹3 lakh, may be needed any day",
+    "segs": [
+     [
+      "Overnight or liquid",
+      100,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "₹7 lakh, not needed for 3 years",
+    "segs": [
+     [
+      "Short duration, high quality",
+      100,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "Same ₹7 lakh, if she understands credit risk",
+    "segs": [
+     [
+      "Short duration, high quality",
+      90,
+      "#3CC47A"
+     ],
+     [
+      "10%",
+      10,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "h": "Split by date, not by yield",
+  "alt": "Three bars showing emergency money in a liquid fund, three-year money in a short duration fund and an optional credit risk slice",
+  "caps": [
+   [
+    0.3,
+    "First split the ₹10 lakh by date, not by yield. ₹3 lakh may be needed any day."
+   ],
+   [
+    1.4,
+    "That ₹3 lakh sits apart, in an overnight or liquid fund."
+   ],
+   [
+    2.5,
+    "The other ₹7 lakh is not needed for 3 years: a short duration fund of high-quality bonds."
+   ],
+   [
+    3.8,
+    "Only if she understands the risk, a small slice, here 10%, could go to a credit risk fund."
+   ],
+   [
+    5.2,
+    "This shows the method. It is not advice for anyone."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   4.8,
+   6.4,
+   6.9,
+   7.2,
+   7.3
+  ],
+  "labels": [
+   "1 yr",
+   "2 yr",
+   "3 yr",
+   "4 yr",
+   "5 yr"
+  ],
+  "big": "Back near 7% by year 3",
+  "small": "Duration 3 fund, yield 7% to 8% (assumed)",
+  "h": "Hold at least as long as the duration",
+  "alt": "Five bars of yearly return after a 1 percent rise in yields, climbing back to about 7 percent by year 3",
+  "caps": [
+   [
+    0.3,
+    "A fund with duration 3 yields 7%. Then yields jump to 8% on day one (assumed)."
+   ],
+   [
+    1.4,
+    "The price drops about 3% at once. After one year the investor has earned only 4.8% a year."
+   ],
+   [
+    3.2,
+    "By year 3, the same as the duration, the yearly return is back to about 6.9%."
+   ],
+   [
+    4.7,
+    "Hold at least as long as the duration, and the price swing averages out."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "How to say it",
+  "stops": [
+   [
+    "It can fall if rates rise or a bond is cut",
+    true
+   ],
+   [
+    "Hold at least as long as its duration",
+    true
+   ],
+   [
+    "It is safe",
+    false
+   ],
+   [
+    "It is like an FD",
+    false
+   ]
+  ],
+  "h": "How to say it",
+  "alt": "A shield with what to say about a debt fund and what never to say",
+  "caps": [
+   [
+    0.3,
+    "Name what can go wrong: rate moves, downgrade, default and liquidity."
+   ],
+   [
+    3.0,
+    "Match holding period to duration, and check the emergency fund and tax slab first."
+   ],
+   [
+    5.5,
+    "Never call a debt fund safe or like an FD. It has no guarantee and no fixed return."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s120q1",
+  "h": "Check yourself",
+  "q": "Rohan has ₹10 lakh in savings. ₹2 lakh is his emergency money and the rest he will not need for three years. He wants better than savings without equity risk. Which plan fits?",
+  "opts": [
+   "All ₹10 lakh in a credit risk fund for the best yield over three years",
+   "All ₹10 lakh in a long-duration fund, since the highest yield wins",
+   "₹2 lakh in a liquid fund and ₹8 lakh in a short duration, high-quality fund",
+   "All ₹10 lakh in an overnight fund, since three years is a long time to wait"
+  ],
+  "ans": 2,
+  "why": [
+   "Credit risk is meant for a small part, and only for a client who understands it. It is not a plan for everything.",
+   "A long fund can swing far more than three years allows. It ignores both the date and the emergency need.",
+   "The emergency money stays reachable and the three-year money sits in a band that matches its date and quality.",
+   "Overnight funds are safe for money needed soon, but they give up the extra yield that three years of patience can earn."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s120q2",
+  "h": "Check yourself",
+  "q": "A client needs ₹5 lakh in 8 months for a tuition fee. A long-duration fund shows a higher yield than a liquid fund. What do you say?",
+  "opts": [
+   "Stay with liquid or money market, as 8 months is too short for a long fund",
+   "Credit risk gives a higher yield that would cover any dip in 8 months",
+   "Medium duration is the sound middle path, as three to four years averages out",
+   "A long fund is fine, since rates usually fall within a year"
+  ],
+  "ans": 0,
+  "why": [
+   "The holding period should be at least the duration. Overnight, liquid or money market funds fit a date this near.",
+   "A credit risk fund adds default risk on top of rate risk. A higher yield does not make an 8-month date safe.",
+   "Medium duration means 3 to 4 years. It needs a holding period at least as long as that, which she does not have.",
+   "Nobody can promise rates fall within a year. If they rise, a long fund can dip below what she paid in."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s120q3",
+  "h": "Check yourself",
+  "q": "Meena asks whether a short duration fund is basically the same as a fixed deposit. Which answer is honest?",
+  "opts": [
+   "Yes, both hold high-quality debt, so the safety is the same",
+   "It is safer than an FD, since the fund holds many bonds",
+   "Yes, SEBI regulates both the fund and the deposit in the same way",
+   "No: the fund has no fixed return and can dip in a bad rate year"
+  ],
+  "ans": 3,
+  "why": [
+   "A fund's NAV moves each day with bond prices. An FD pays the rate agreed at the start, so the safety is not the same.",
+   "Many bonds reduce the damage from one failure, but they do not remove it. It is wrong to call it safer than a deposit.",
+   "SEBI regulates mutual funds, while banks sit under a different framework. The two are not covered alike.",
+   "The fund has no promised rate. Price moves, a downgrade, a default or a liquidity squeeze can all show in NAV."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s120q4",
+  "h": "Check yourself",
+  "q": "A client with ₹12 lakh asks to put ₹6 lakh in a credit risk fund for the higher yield. What is the sound advice?",
+  "opts": [
+   "Half is fine, as a diversified fund spreads the credit risk away",
+   "Put the emergency money there too, since it yields more than liquid",
+   "A small slice only, and only if she understands defaults hit NAV",
+   "Credit risk funds are not meant for individual clients at all"
+  ],
+  "ans": 2,
+  "why": [
+   "Diversification reduces credit risk but does not remove it. Half the portfolio is far too large a bet.",
+   "Emergency money belongs in liquid or overnight funds. Lower-rated funds can be hard to exit in stress.",
+   "Use high-quality debt for stability, and a small slice of credit risk only for a client who understands it.",
+   "Individuals can buy credit risk funds. The question is how much, and whether she understands the risk."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Match the holding period to the fund's duration: at least as long.",
+   "High-quality debt first. A credit risk fund is a small slice, for a client who understands it.",
+   "Never say safe or like an FD. Name rate moves, downgrade, default and liquidity."
+  ]
+ }
+]

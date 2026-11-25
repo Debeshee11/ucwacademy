@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Pharma is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Pharma?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Pharma track?"
+   ],
+   [
+    "sikka",
+    "Nifty Pharma Index captures the performance of the pharmaceutical sector. It holds 20 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Pharma, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "40.9"
+   ],
+   [
+    "P/B",
+    "4.98"
+   ],
+   [
+    "Dividend yield",
+    "0.54%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+23.2% / +12.8%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Pharma: biggest holdings, % weight",
+  "vals": [
+   19.51,
+   11.98,
+   7.82
+  ],
+  "labels": [
+   "Sun Phar",
+   "Divi's",
+   "Laurus"
+  ],
+  "big": "Top 10 add to 78.2%",
+  "small": "A concentrated index",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Sun Pharmaceutical Industries 19.51%."
+   ],
+   [
+    2.2,
+    "Next: Divi's Laboratories 11.98%."
+   ],
+   [
+    4.0,
+    "Then: Laurus Labs 7.82%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 78.2%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Pharma facts",
+  "stops": [
+   [
+    "It holds 20 stocks",
+    true
+   ],
+   [
+    "It holds 30 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "40.9 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s226q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Pharma hold?",
+  "opts": [
+   "25 stocks in the index",
+   "10 stocks in the index",
+   "20 stocks in the index",
+   "30 stocks in the index"
+  ],
+  "ans": 2,
+  "why": [
+   "25 is not the stated count of stocks.",
+   "10 is not the stated count of stocks.",
+   "The factsheet shows 20 stocks in the index.",
+   "30 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s226q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Pharma, and what weight?",
+  "opts": [
+   "Sun Pharmaceutical Industries, with 19.51%",
+   "Divi's Laboratories, with 19.51%",
+   "Laurus Labs, with 78.2%",
+   "Sun Pharmaceutical Industries, with 7.82%"
+  ],
+  "ans": 0,
+  "why": [
+   "It leads the index at 19.51%, as per the lesson.",
+   "Divi's ranks second, so it cannot lead at 19.51%.",
+   "78.2% is the top 10 total, not one stock's weight.",
+   "7.82% is the weight of Laurus, not Sun Phar."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s226q3",
+  "h": "Check yourself",
+  "q": "The Nifty Pharma P/E is 40.9 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Lower than the Nifty 50's P/E",
+   "Higher than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever"
+  ],
+  "ans": 1,
+  "why": [
+   "40.9 is above 19.36, so this reverses the facts.",
+   "40.9 is above the Nifty 50's 19.36, as stated.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s226q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +12.8% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all",
+   "Past returns are no forecast"
+  ],
+  "ans": 3,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year.",
+   "Past returns do not predict future returns."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Pharma: Sun Pharmaceutical Industries leads at 19.51%; top 10 add to 78.2%.",
+   "Top 10 hold 78.2%: concentrated.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

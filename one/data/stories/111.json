@@ -1,0 +1,227 @@
+[
+ {
+  "k": "fact",
+  "art": "loan",
+  "h": "Before you start",
+  "big": "Meena lends ₹1,000 to a company for 5 years and is promised ₹80 every year. Is that a fixed 8% with no risk? Follow the money first, then the price tag.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A client's assumption",
+  "lines": [
+   [
+    "meena",
+    "My bond pays a fixed 8% coupon. A bond gives a fixed rate, so there is no risk, right?"
+   ],
+   [
+    "sikka",
+    "The coupon is fixed, yes. But a bond has a price too, and the price is not fixed. Let us watch one bond."
+   ],
+   [
+    "meena",
+    "Same bond, different price? How?"
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   80,
+   80,
+   80,
+   80,
+   1080
+  ],
+  "fmt": "inr",
+  "big": "₹1,400 comes back",
+  "small": "₹400 of coupons + ₹1,000 face value",
+  "h": "One bond, five years",
+  "alt": "Five bars showing four coupons of ₹80 and a last year of ₹80 plus ₹1,000",
+  "caps": [
+   [
+    0.2,
+    "A bond is a loan. Meena lends ₹1,000, the face value, for 5 years at an 8% coupon."
+   ],
+   [
+    1.0,
+    "Each year the issuer pays 8% of ₹1,000, which is ₹80. The coupon is worked on face value, not on price."
+   ],
+   [
+    3.7,
+    "In year 5 the last ₹80 arrives together with the ₹1,000 face value."
+   ],
+   [
+    5.0,
+    "₹80 × 5 plus ₹1,000 is ₹1,400 back, if the issuer pays everything as promised."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Paid ₹920",
+  "b": "Paid ₹1,080",
+  "rows": [
+   [
+    "Coupon each year (₹)",
+    80,
+    80
+   ],
+   [
+    "Yield to maturity (%)",
+    10.1,
+    6.1
+   ]
+  ],
+  "h": "Same bond, two prices",
+  "alt": "Two buyers pay different prices for the same bond and earn different yields",
+  "caps": [
+   [
+    0.3,
+    "The same bond, 5 years left, ₹80 coupon. One buyer pays ₹920 and another pays ₹1,080."
+   ],
+   [
+    1.9,
+    "Both get ₹80 a year. The coupon cannot change, so only the price differs."
+   ],
+   [
+    3.5,
+    "Paying ₹920 and getting ₹1,000 back gives a yield to maturity of about 10.1%."
+   ],
+   [
+    5.0,
+    "Paying ₹1,080 for the same cash gives only about 6.1%."
+   ],
+   [
+    6.1,
+    "Coupon fixed, price moves, yield moves."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What 'fixed' really fixes",
+  "stops": [
+   [
+    "The coupon in rupees is fixed",
+    true
+   ],
+   [
+    "A G-sec carries sovereign credit",
+    true
+   ],
+   [
+    "The market price stays fixed",
+    false
+   ],
+   [
+    "A company bond cannot default",
+    false
+   ]
+  ],
+  "h": "What 'fixed' really fixes",
+  "alt": "A shield with what a bond fixes and what it does not",
+  "caps": [
+   [
+    0.3,
+    "A bond fixes the coupon and the face value due back at maturity."
+   ],
+   [
+    3.0,
+    "A government security carries the government's credit. A company bond carries the company's."
+   ],
+   [
+    5.5,
+    "But the market price moves, and a company can miss a payment. Fixed does not mean no risk."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s111q1",
+  "h": "Check yourself",
+  "q": "Meena's bond has a face value of ₹1,000 and a 7.5% coupon. She bought it in the market for ₹950. How much does the issuer pay her each year?",
+  "opts": [
+   "₹75 a year, as the coupon is 7.5% of face value",
+   "₹71.25 a year, as 7.5% of the ₹950 she paid",
+   "₹79 a year, as that is the yield on her ₹950",
+   "It moves with the price, so nobody can tell her"
+  ],
+  "ans": 0,
+  "why": [
+   "The coupon is a fixed share of face value, so 7.5% of ₹1,000 is ₹75, whatever price she paid for the bond.",
+   "The coupon is never worked on the price paid. A lower price changes her yield, not the rupees the issuer pays.",
+   "7.9% is the current yield (₹75 ÷ ₹950), a ratio. The issuer's payment is still ₹75; only the yield changes.",
+   "The coupon is set when the bond is issued and printed on it. The price moves and the yield with it; the coupon does not."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s111q2",
+  "h": "Check yourself",
+  "q": "After bad news about a company, its 5-year bond with an ₹80 coupon and ₹1,000 face value trades at ₹800. Rohan says his return is still 8%. What is closer to the truth?",
+  "opts": [
+   "Exactly 8%, because the coupon on a bond never changes",
+   "Lower than 8%, because a fall in the price cuts the yield",
+   "About 13.8% if all is paid, which signals the market's doubt",
+   "Zero until the price returns to ₹1,000, as interest waits for par"
+  ],
+  "ans": 2,
+  "why": [
+   "The coupon is fixed, but 8% is only what a ₹1,000 buyer earns. Paying less raises the yield, so 8% is wrong here.",
+   "A lower price raises the yield for a new buyer, because the same ₹80 and the ₹1,000 come back on less money.",
+   "He pays ₹800, gets ₹80 a year and ₹1,000 at the end, which is about 13.8%. The market wants this because it fears a default.",
+   "Interest is paid on dates, whatever the price. A fall in price does not suspend the coupon unless the issuer defaults."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s111q3",
+  "h": "Check yourself",
+  "q": "A 10-year G-sec yields 7.1%. A company bond of the same tenor yields 8.6%. Meena sees the extra 1.5% as a bonus. What is the best reply?",
+  "opts": [
+   "It is a bonus, since both bonds carry a fixed coupon for the same ten years",
+   "It covers inflation, which hits company bonds more than G-secs do",
+   "It exists because company bonds have a higher face value than G-secs",
+   "It pays for the company's credit risk, the chance of a missed payment"
+  ],
+  "ans": 3,
+  "why": [
+   "Both have fixed coupons, but only one is backed by the government. The same tenor does not mean the same risk.",
+   "Inflation hits both kinds of bond alike. The gap between them is mainly about who might not pay.",
+   "Face value is a printed amount and does not explain a yield gap. The gap is the price of credit risk.",
+   "The G-sec has sovereign credit. The company could miss a payment, so lenders ask for extra yield as compensation."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s111q4",
+  "h": "Check yourself",
+  "q": "Meena may need ₹5 lakh in 2 years but is offered a bond that matures in 8 years. Her cousin says fixed rate means safe. What should the adviser point out?",
+  "opts": [
+   "She cannot sell it before maturity, so the money would be stuck",
+   "In year 2 she would get the market price, possibly below face value",
+   "Her coupon would be cut if she sold the bond before maturity",
+   "She would get the ₹1,000 face value back whenever she sells"
+  ],
+  "ans": 1,
+  "why": [
+   "Bonds can be sold in the market. The real catch is the price she will receive, not whether a sale is allowed.",
+   "Face value is due only at maturity. Before that, the market price applies, and it can be lower after a rate rise.",
+   "The coupon is set by the issuer and does not change when she sells. The buyer simply gets the remaining coupons.",
+   "Face value is repaid at maturity only. A seller in year 2 gets the market price, which can be above or below it."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The coupon is fixed. The price and the yield move.",
+   "A G-sec carries sovereign credit. A corporate bond carries the company's credit risk.",
+   "Fixed does not mean no risk: you can sell below face value, and a company can miss a payment."
+  ]
+ }
+]

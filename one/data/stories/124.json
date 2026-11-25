@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client asks, 'Which is more tax efficient, PMS or AIF?' The honest answer starts with, 'It depends on the structure.' Tax follows facts, and the rules change. An adviser should not guess.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Broad strokes only",
+  "lines": [
+   [
+    "meena",
+    "Just tell me who pays the tax."
+   ],
+   [
+    "sikka",
+    "In a PMS, each trade is taxed in your hands. In Cat I and II AIFs, income is generally taxed in the investor's hands in the nature it arises. In many Cat III structures, tax is at the fund level. Always ask a CA before advising."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Where tax falls, in broad strokes",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "PMS",
+    "client pays on each trade"
+   ],
+   [
+    "Cat I and II AIF",
+    "generally pass-through to investors"
+   ],
+   [
+    "Cat III AIF",
+    "often taxed at fund level"
+   ],
+   [
+    "Extra layers",
+    "TDS, GST on fees, STT"
+   ]
+  ],
+  "note": "PMS listed equity: short term 20%, long term 12.5% above ₹1.25 lakh a year (current rules; confirm)."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Tax in PMS and AIF",
+  "stops": [
+   [
+    "PMS trades are taxed in the client's hands",
+    true
+   ],
+   [
+    "All AIFs are taxed the same way",
+    false
+   ],
+   [
+    "Cat III AIFs are often taxed at the fund level",
+    true
+   ],
+   [
+    "Tax treatment never depends on structure",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Each trade counts."
+   ],
+   [
+    2.2,
+    "It depends on category and structure."
+   ],
+   [
+    4.0,
+    "So distributions may be after tax."
+   ],
+   [
+    5.6,
+    "It depends on structure and facts."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s124q1",
+  "h": "Check yourself",
+  "q": "In a PMS, who pays tax on each trade's gain?",
+  "opts": [
+   "The manager",
+   "SEBI",
+   "The depository",
+   "The client"
+  ],
+  "ans": 3,
+  "why": [
+   "The manager does not pay the client's tax. The details here point elsewhere.",
+   "SEBI does not pay tax for clients. The details here point elsewhere.",
+   "The depository does not pay the tax. That does not match this case.",
+   "Securities are in the client's name, so the client is taxed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s124q2",
+  "h": "Check yourself",
+  "q": "Cat I and Cat II AIFs are generally what, for tax?",
+  "opts": [
+   "Taxed only at fund level",
+   "Pass-through to investors",
+   "Always exempt",
+   "Taxed at 100%"
+  ],
+  "ans": 1,
+  "why": [
+   "Fund-level tax is the Cat III pattern. That does not match this case.",
+   "Income is generally taxed in investors' hands.",
+   "They are not always exempt. It does not fit the facts given.",
+   "100% is not a tax rate here. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s124q3",
+  "h": "Check yourself",
+  "q": "What extra cost layers can apply to PMS and AIF?",
+  "opts": [
+   "Only a stamp on the brochure",
+   "Only a courier fee",
+   "TDS, GST on fees and STT",
+   "None of any kind"
+  ],
+  "ans": 2,
+  "why": [
+   "A brochure stamp is not a cost layer.",
+   "A courier fee is not a cost layer here.",
+   "These add to the cost layers.",
+   "These layers do exist and add up."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s124q4",
+  "h": "Check yourself",
+  "q": "A client wants a firm tax answer on an AIF. What should the adviser do?",
+  "opts": [
+   "Ask a CA, as structure matters",
+   "Guess the answer from memory",
+   "Say it is always exempt",
+   "Say that tax never applies"
+  ],
+  "ans": 0,
+  "why": [
+   "Tax depends on structure and facts, so ask a CA.",
+   "Guessing risks wrong advice. It does not answer what was asked.",
+   "It is not always exempt. The details here point elsewhere.",
+   "Tax can apply. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "PMS: each trade is taxed in the client's hands.",
+   "Cat I and II AIFs are generally pass-through. Cat III is often taxed at fund level.",
+   "Ask a CA. Tax depends on structure."
+  ]
+ }
+]

@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client invests ₹10,000 every month for three years. Her app shows one return figure. How? Each instalment sat in the fund for a different time. A simple average of years would be wrong. XIRR solves it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Dates matter",
+  "lines": [
+   [
+    "meena",
+    "My first instalment is old, my last is new. How is that one rate?"
+   ],
+   [
+    "sikka",
+    "XIRR finds the yearly rate that fits every cash flow on its own date. Money you put in is negative. The final value is positive. The same rate links them all."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What goes into XIRR",
+  "intro": "A tiny made-up case.",
+  "rows": [
+   [
+    "1 Jan: invest",
+    "−₹10,000"
+   ],
+   [
+    "1 Jul: invest",
+    "−₹10,000"
+   ],
+   [
+    "31 Dec: final value",
+    "+₹21,500"
+   ],
+   [
+    "=",
+    "XIRR",
+    "found by a spreadsheet"
+   ]
+  ],
+  "note": "Made-up figures, for learning only. In a sheet: =XIRR(values, dates)."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "XIRR",
+  "stops": [
+   [
+    "XIRR uses each cash flow with its own date",
+    true
+   ],
+   [
+    "XIRR assumes a single start and end",
+    false
+   ],
+   [
+    "Fund apps often show SIP returns as XIRR",
+    true
+   ],
+   [
+    "Averaging the years of each instalment is exact",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It annualises all flows together."
+   ],
+   [
+    2.2,
+    "That is CAGR, not XIRR."
+   ],
+   [
+    4.0,
+    "Factsheets and apps use it widely."
+   ],
+   [
+    5.6,
+    "Each instalment has run for a different time."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s104q1",
+  "h": "Check yourself",
+  "q": "Which cash flows suit XIRR?",
+  "opts": [
+   "One lump sum with no other flows",
+   "Only fixed deposits",
+   "SIPs, top-ups and part-withdrawals",
+   "Only a fund's NAV history"
+  ],
+  "ans": 2,
+  "why": [
+   "A single lump sum is simply a CAGR case.",
+   "XIRR is not limited to deposits.",
+   "XIRR handles many flows at many dates.",
+   "NAV history alone has no investor cash flows."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s104q2",
+  "h": "Check yourself",
+  "q": "In an XIRR sheet, how are instalments and the final value entered?",
+  "opts": [
+   "All positive",
+   "Instalments negative, final value positive",
+   "All negative",
+   "Final value negative, instalments positive"
+  ],
+  "ans": 1,
+  "why": [
+   "All positive leaves no investment outflow. That does not match this case.",
+   "Money out is negative and the closing value is positive.",
+   "All negative leaves no closing value to earn from.",
+   "The signs are the wrong way round here. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s104q3",
+  "h": "Check yourself",
+  "q": "Why is a simple average of instalment ages wrong?",
+  "opts": [
+   "Instalments are always equal in age",
+   "XIRR ignores dates entirely",
+   "Averages are illegal in finance",
+   "Each one earned for a different time"
+  ],
+  "ans": 3,
+  "why": [
+   "Equal amounts at different dates still differ in age.",
+   "XIRR relies on dates. It does not fit the facts given.",
+   "Averages are not illegal, only misleading here.",
+   "Money invested earlier had longer to grow."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s104q4",
+  "h": "Check yourself",
+  "q": "A client compares her SIP's XIRR with a fund's 1-year return. Is this a fair comparison?",
+  "opts": [
+   "No, they measure different things",
+   "Yes, they are identical, in fact",
+   "Yes, if the fund is large",
+   "No, XIRR cannot be positive"
+  ],
+  "ans": 0,
+  "why": [
+   "XIRR covers dated flows, while 1-year is a point-to-point figure.",
+   "They are built differently and need not match.",
+   "Size does not make them comparable. The details here point elsewhere.",
+   "XIRR can be positive. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "XIRR fits each cash flow and its date.",
+   "Outflows negative, final value positive.",
+   "Use it for SIPs and part-withdrawals, not CAGR."
+  ]
+ }
+]

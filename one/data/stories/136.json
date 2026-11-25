@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A 35-year-old thinks, 'Retirement is far away.' But the plan has two phases: building a corpus, and then living off it for 25 to 35 years. The second phase needs as much thought as the first.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The shape of the problem",
+  "lines": [
+   [
+    "meena",
+    "What makes retirement hard to plan?"
+   ],
+   [
+    "sikka",
+    "Unknowns: how long you live, inflation, returns, the order of returns, and health costs. Start with expenses in today's money, inflate them to the retirement date, and plan for 25 to 35 years after. Income can come from EPF, NPS, pension, annuity, rent, interest and fund withdrawals. Plan for a surviving spouse and a medical buffer."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two phases",
+  "intro": "Figures as given in the lesson; confirm current rules before advising.",
+  "rows": [
+   [
+    "Accumulation",
+    "building the corpus"
+   ],
+   [
+    "Decumulation",
+    "living off it for 25 to 35 years"
+   ],
+   [
+    "Unknowns",
+    "longevity, inflation, returns, health costs"
+   ],
+   [
+    "Also plan",
+    "a surviving spouse and a medical buffer"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s136q1",
+  "h": "Check yourself",
+  "q": "What are the two phases of retirement planning?",
+  "opts": [
+   "Buying a house, then selling it",
+   "Earning a salary, then a bonus",
+   "Opening a bank account, then closing it",
+   "Building a corpus, then living off it"
+  ],
+  "ans": 3,
+  "why": [
+   "That is not retirement planning.",
+   "That is not retirement planning.",
+   "That is not retirement planning.",
+   "Accumulation and decumulation."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s136q2",
+  "h": "Check yourself",
+  "q": "How long should the plan cover after retirement?",
+  "opts": [
+   "2 to 3 years",
+   "25 to 35 years",
+   "40 to 60 days",
+   "Exactly 1 year"
+  ],
+  "ans": 1,
+  "why": [
+   "2 to 3 years is far too short. That does not match this case.",
+   "People may live long after retiring. This fits the facts given.",
+   "Days are far too short. It does not fit the facts given.",
+   "One year is far too short. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s136q3",
+  "h": "Check yourself",
+  "q": "Where should the expense estimate start?",
+  "opts": [
+   "Today's money, then inflated",
+   "Last year's electric bill alone",
+   "A neighbour's spending figure",
+   "A random round number"
+  ],
+  "ans": 0,
+  "why": [
+   "Inflate today's expenses to the date.",
+   "One bill is not the whole picture.",
+   "A neighbour's costs are not yours.",
+   "A random number has no basis."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s136q4",
+  "h": "Check yourself",
+  "q": "Who else should the plan consider?",
+  "opts": [
+   "Only the retiree's hobbies list",
+   "Only the fund house's profit",
+   "A surviving spouse, medical costs",
+   "Nobody else at all, ever"
+  ],
+  "ans": 2,
+  "why": [
+   "Hobbies are not the main need.",
+   "Fund house profit is not the goal.",
+   "Spouse and health costs matter.",
+   "Others depend on the plan."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Two phases: accumulation and decumulation.",
+   "Unknowns: longevity, inflation, returns, health costs.",
+   "Plan 25 to 35 years, and for a surviving spouse."
+  ]
+ }
+]

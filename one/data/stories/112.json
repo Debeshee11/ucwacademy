@@ -1,0 +1,256 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Meena holds a bond that pays 7% a year. Then new bonds start paying 8%. Her bond has not changed at all, yet the market now values it less. This is why debt funds can dip.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why did it go down?",
+  "lines": [
+   [
+    "meena",
+    "Why did my debt fund go down? Debt funds are supposed to be safe."
+   ],
+   [
+    "sikka",
+    "A fund values its bonds every day at market prices. Let us see what one rate rise does to one bond."
+   ],
+   [
+    "meena",
+    "But the bond still pays the same coupon!"
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "10-year bond",
+  "b": "2-year bond",
+  "rows": [
+   [
+    "Fall when yields rise 1% (₹)",
+    67.1,
+    17.8
+   ],
+   [
+    "The same fall, as % of ₹1,000",
+    6.7,
+    1.8
+   ]
+  ],
+  "h": "One rate rise, two bonds",
+  "alt": "Bars of the price fall for a 10-year and a 2-year bond when yields rise by 1%",
+  "caps": [
+   [
+    0.3,
+    "Two bonds, both 7% coupon, both priced at ₹1,000. Then market yields rise from 7% to 8%."
+   ],
+   [
+    2.4,
+    "New bonds now pay ₹80. Nobody pays full price for an old bond that pays ₹70."
+   ],
+   [
+    3.9,
+    "The 10-year bond falls to about ₹933, a loss of ₹67. The 2-year bond slips only to about ₹982."
+   ],
+   [
+    5.4,
+    "Same rate rise, but the longer bond fell almost four times as much."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The 10-year 7% bond at other yields",
+  "intro": "Face value ₹1,000, coupon ₹70 a year, ten years left. Each price is the value of all future payments at that yield.",
+  "rows": [
+   [
+    "Market yield 6%",
+    "₹1,074"
+   ],
+   [
+    "Market yield 7%",
+    "₹1,000"
+   ],
+   [
+    "Market yield 8%",
+    "₹933"
+   ],
+   [
+    "Market yield 9%",
+    "₹872"
+   ]
+  ],
+  "note": "Rates up, price down. Rates down, price up. The prices are computed by discounting every payment at the yield."
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "Price of a ₹100 bond, 7% coupon",
+  "series": [
+   {
+    "name": "Yields stay 7%",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0,
+     100.0
+    ]
+   },
+   {
+    "name": "Yields to 8%",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     93.8,
+     94.3,
+     94.8,
+     95.4,
+     96.0,
+     96.7,
+     97.4,
+     98.2,
+     99.1,
+     100.0
+    ]
+   },
+   {
+    "name": "Yields to 9%",
+    "color": "#E8573D",
+    "vals": [
+     100.0,
+     88.0,
+     88.9,
+     89.9,
+     91.0,
+     92.2,
+     93.5,
+     94.9,
+     96.5,
+     98.2,
+     100.0
+    ]
+   }
+  ],
+  "h": "Hold on, and the price comes home",
+  "alt": "Three lines of a ten-year bond price: flat, falling after a jump to 8% and falling after a jump to 9%, all returning to 100",
+  "caps": [
+   [
+    0.3,
+    "One 10-year bond with a 7% coupon, priced at ₹100. These paths are made up."
+   ],
+   [
+    2.5,
+    "In year 1 market yields jump to 8% or to 9%, and the price drops at once."
+   ],
+   [
+    5.0,
+    "Each year the bond has less time left, so the price drifts back up towards ₹100."
+   ],
+   [
+    8.4,
+    "Hold to maturity and you collect every coupon plus ₹100 back. The dip was only on paper."
+   ],
+   [
+    10.0,
+    "A fund must mark its bonds daily, so its NAV shows the dip."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s112q1",
+  "h": "Check yourself",
+  "q": "Meena owns a 7% ₹1,000 bond with ten years left. New 10-year bonds are now issued at 8%. A buyer offers her about ₹933 for hers. Why would anyone pay less than face value?",
+  "opts": [
+   "Second-hand bonds always sell at a 7% discount to face value",
+   "The issuer has cut the coupon on old bonds after the rate rise",
+   "A new bond pays ₹80, so the older ₹70 bond has to be cheaper",
+   "The buyer wants a profit before the issuer repays face value"
+  ],
+  "ans": 2,
+  "why": [
+   "There is no fixed discount. The price depends on the yield buyers want and the time left, here ₹933 for ten years.",
+   "Coupons on existing bonds never change. What changed is the market yield, which lowers the price of the old bond.",
+   "A new bond pays ₹80 on ₹1,000. To match that, the old ₹70 bond has to sell at a price that makes its yield about 8%.",
+   "A buyer's profit does come from price and coupon, but the discount exists because of the new 8% yield, not a wish for profit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s112q2",
+  "h": "Check yourself",
+  "q": "A client's long-duration debt fund shows -2.1% for the month after the RBI raised rates. She says debt funds are safe and wants to know if the fund has defaulted. What is the fair explanation?",
+  "opts": [
+   "The fund has missed coupon payments, and she should plan to exit",
+   "The fund's bonds were repriced for higher yields, and the coupons are still being earned",
+   "The fund house has charged a one-time fee that month for the rate rise",
+   "The NAV only moves when the fund sells a bond, so some sale must have gone wrong"
+  ],
+  "ans": 1,
+  "why": [
+   "A missed coupon is a default, which is a credit event. Nothing in the story says that. A rate rise explains the dip.",
+   "The NAV marks every bond to the market each day. Prices fell on the rate rise, while the fund still earns its coupons.",
+   "No such fee exists. The cost of a fund is the expense ratio, spread across each day's NAV, not a lump sum for a rate move.",
+   "NAV is marked to market daily, whether or not the fund sells anything. A fall in bond prices is enough to dip it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s112q3",
+  "h": "Check yourself",
+  "q": "Both a 2-year and a 10-year bond pay a 7% coupon at ₹1,000. Yields rise from 7% to 8%. About how much does each fall in price?",
+  "opts": [
+   "Both fall by about ₹10, one point of yield being ₹10 of price",
+   "Both fall by about ₹70, which is the full coupon on ₹1,000",
+   "About ₹67 for the 2-year and about ₹18 for the 10-year bond",
+   "About ₹18 for the 2-year and about ₹67 for the 10-year bond"
+  ],
+  "ans": 3,
+  "why": [
+   "Price moves are not the same for every bond. The longer one is hit far harder by the same rate rise.",
+   "₹70 is one year of coupon, not the loss in price. Neither bond falls that much from a 1% yield rise.",
+   "This reverses the rule. The short bond has less time to suffer the lower coupon, so it falls less, not more.",
+   "The 2-year drops to about ₹982 and the 10-year to about ₹933. Longer maturity, bigger swing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s112q4",
+  "h": "Check yourself",
+  "q": "Rohan's 10-year 7% bond is down on paper after a rate rise. The issuer is sound and he does not need the money for nine more years. What happens to the price if he simply holds?",
+  "opts": [
+   "It drifts back towards ₹1,000 as maturity nears",
+   "It stays at the lower price for as long as rates stay high",
+   "It falls further each year, as less time is left before maturity",
+   "It returns to ₹1,000 the day the RBI stops raising rates"
+  ],
+  "ans": 0,
+  "why": [
+   "At maturity the issuer repays face value, so the price is pulled towards ₹1,000 and he is paid coupons all along.",
+   "With each year the bond has less time left, so the price is pulled back towards face value even if yields stay high.",
+   "Time works the other way. With fewer years left the discount shrinks, so the price rises towards face value.",
+   "A pause in rate rises does not reset prices. Price depends on yields and time left, and neither jumps back on a pause."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Rates up, prices down. Rates down, prices up.",
+   "The longer the bond, the bigger the price swing for the same rate change.",
+   "A fund marks bonds daily, so the swing shows in NAV. Held to maturity, the bond still pays face value."
+  ]
+ }
+]

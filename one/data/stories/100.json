@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client says, 'Put my emergency fund in the REIT. It pays more than my deposit.' A good RM says no. Units can fall, and emergency money must be there when needed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Selling honestly",
+  "lines": [
+   [
+    "meena",
+    "Who suits REITs and InvITs?"
+   ],
+   [
+    "sikka",
+    "Clients who understand market-linked units, can hold for several years and want a stream of rental or infrastructure income as part of a plan. Not as a replacement for a fixed deposit, emergency money or money needed within a few years. Keep it small, never promise or call payouts assured, and document why it suits the client."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Selling honestly",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Suits",
+    "informed, several-year holders wanting income in a diversified plan"
+   ],
+   [
+    "Does not suit",
+    "deposit replacement, emergency money, money needed soon"
+   ],
+   [
+    "Sizing",
+    "small; no single unit dominates"
+   ],
+   [
+    "Words",
+    "never 'guaranteed' or 'assured'"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s100q1",
+  "h": "Check yourself",
+  "q": "Who may suit REITs and InvITs?",
+  "opts": [
+   "Clients needing money next month",
+   "Clients wanting a deposit copy",
+   "Informed, multi-year clients",
+   "Clients seeking assured payouts"
+  ],
+  "ans": 2,
+  "why": [
+   "Short horizons do not suit. It does not answer what was asked.",
+   "Units are not a deposit. The details here point elsewhere.",
+   "They need market understanding and time. That matches the case described.",
+   "Payouts are not assured. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s100q2",
+  "h": "Check yourself",
+  "q": "Can a REIT replace an emergency fund?",
+  "opts": [
+   "No, units can fall",
+   "Yes, it pays more",
+   "Yes, it is insured",
+   "Yes, it is fixed"
+  ],
+  "ans": 0,
+  "why": [
+   "Emergency money must stay safe.",
+   "A higher yield is not safety.",
+   "Units carry no insurance.",
+   "Unit prices are not fixed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s100q3",
+  "h": "Check yourself",
+  "q": "How should an RM size these units?",
+  "opts": [
+   "As the largest holding",
+   "As the entire portfolio",
+   "As a borrowed bet",
+   "Small, so none dominates"
+  ],
+  "ans": 3,
+  "why": [
+   "Largest increases risk. It does not fit the facts given.",
+   "All-in is concentrated. It does not answer what was asked.",
+   "Borrowing adds risk. It does not answer what was asked.",
+   "A small allocation limits risk. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s100q4",
+  "h": "Check yourself",
+  "q": "Which wording is not allowed?",
+  "opts": [
+   "Explaining the risks in words",
+   "Calling payouts assured",
+   "Noting the client's goal down",
+   "Recording the client's horizon"
+  ],
+  "ans": 1,
+  "why": [
+   "Explaining is required.",
+   "Payouts are market-linked.",
+   "Goals are to be noted.",
+   "Horizons are to be recorded."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Suits informed clients with a multi-year horizon.",
+   "Not a deposit or emergency-fund replacement.",
+   "Small size, honest words, documented reasons."
+  ]
+ }
+]

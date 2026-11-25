@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The Nifty 100 joins the Nifty 50 and the Nifty Next 50 into one picture of India's 100 largest listed companies. A broader net than the Nifty 50, but still dominated by big banks and Reliance.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty 100?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty 100 actually track?"
+   ],
+   [
+    "sikka",
+    "It represents the top 100 companies by full market capitalisation, drawn from the Nifty 500. Weights follow free float market capitalisation. It is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty 100, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "19.14"
+   ],
+   [
+    "P/B",
+    "2.87"
+   ],
+   [
+    "Dividend yield",
+    "1.19%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-6.2% / +5.9%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty 100: biggest holdings, % weight",
+  "vals": [
+   8.41,
+   7.34,
+   6.15
+  ],
+  "labels": [
+   "HDFC",
+   "ICICI",
+   "Reliance"
+  ],
+  "big": "Top 10 add to 42.4%",
+  "small": "Largest sector: Financial Services",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: HDFC Bank 8.41%."
+   ],
+   [
+    2.2,
+    "Next: ICICI Bank 7.34%."
+   ],
+   [
+    4.0,
+    "Then: Reliance 6.15%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 42.4%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty 100 facts",
+  "stops": [
+   [
+    "The Nifty 100 holds the top 100 companies",
+    true
+   ],
+   [
+    "Its weights are equal for each stock",
+    false
+   ],
+   [
+    "Financial Services is its largest sector",
+    true
+   ],
+   [
+    "Its year-to-date return is positive",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Ranked by full market cap."
+   ],
+   [
+    2.2,
+    "They follow free float market cap."
+   ],
+   [
+    4.0,
+    "At 33.7%."
+   ],
+   [
+    5.6,
+    "It is -11.1%."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s203q1",
+  "h": "Check yourself",
+  "q": "What does the Nifty 100 represent?",
+  "opts": [
+   "The 100 oldest companies listed",
+   "The top 100 by full market cap",
+   "The 100 cheapest shares listed",
+   "100 bonds from the government"
+  ],
+  "ans": 1,
+  "why": [
+   "Age is not the test. It does not answer what was asked.",
+   "It picks the top 100 from the Nifty 500.",
+   "Price is not the test. That does not match this case.",
+   "It is an equity index. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s203q2",
+  "h": "Check yourself",
+  "q": "How does the Nifty 100 relate to the Nifty 50 and Next 50?",
+  "opts": [
+   "It is smaller than the Nifty 50",
+   "It is unrelated to them",
+   "It excludes the Nifty 50",
+   "It covers both together"
+  ],
+  "ans": 3,
+  "why": [
+   "It has 100 stocks, so it is larger. That does not match this case.",
+   "It overlaps them fully. That does not match this case.",
+   "It includes the Nifty 50. It does not fit the facts given.",
+   "The top 100 include the Nifty 50 plus the Next 50."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s203q3",
+  "h": "Check yourself",
+  "q": "What is the Nifty 100's largest sector, as per the lesson?",
+  "opts": [
+   "Capital Goods, with 20.25%",
+   "Energy, with about 60%",
+   "Financial Services, 33.7%",
+   "Textiles, with about 34%"
+  ],
+  "ans": 2,
+  "why": [
+   "Capital Goods leads the Next 50.",
+   "Energy is not the largest.",
+   "Financial Services leads at 33.7%.",
+   "Textiles is not the largest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s203q4",
+  "h": "Check yourself",
+  "q": "The Nifty 100's year-to-date return is -11.1%. What should an RM say?",
+  "opts": [
+   "A past figure, not a forecast",
+   "It will recover by next December",
+   "It will keep falling in the new year",
+   "It is the five-year return figure"
+  ],
+  "ans": 0,
+  "why": [
+   "Past returns do not predict the future.",
+   "No recovery date can be promised.",
+   "No further fall can be promised.",
+   "Year-to-date is not the five-year figure."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty 100: HDFC Bank 8.41% leads; top 10 add to 42.4%.",
+   "Largest sector: Financial Services at 33.7%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

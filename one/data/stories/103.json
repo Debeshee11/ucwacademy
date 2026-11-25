@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A fund's value doubles from ₹1 lakh to ₹2 lakh. Is that good? It depends: in 3 years it is excellent, in 10 years it is modest. Absolute return hides time. CAGR puts time back.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "One number for many years",
+  "lines": [
+   [
+    "meena",
+    "The fund gave 100%. Is that a lot?"
+   ],
+   [
+    "sikka",
+    "Over how many years? CAGR is the steady yearly rate that takes a start value to an end value. Same 100%: about 26% a year over 3 years, about 7% over 10."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "CAGR step by step",
+  "intro": "₹1,00,000 to ₹1,44,000 in 2 years.",
+  "rows": [
+   [
+    "End ÷ start",
+    "1.44"
+   ],
+   [
+    "Raise to 1 ÷ 2 (square root)",
+    "1.2"
+   ],
+   [
+    "=",
+    "CAGR",
+    "20% a year"
+   ],
+   [
+    "Check: 1.2 × 1.2",
+    "1.44, so it fits"
+   ]
+  ],
+  "note": "Made-up figures, for learning only. CAGR = (End ÷ Start)^(1/years) − 1."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "CAGR",
+  "stops": [
+   [
+    "CAGR is a steady yearly rate over the period",
+    true
+   ],
+   [
+    "100% in 3 and 10 years is the same return",
+    false
+   ],
+   [
+    "CAGR suits a lump sum held throughout",
+    true
+   ],
+   [
+    "CAGR is the right tool for a monthly SIP",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It smooths the ride into one rate."
+   ],
+   [
+    2.2,
+    "The same gain over more years is a lower rate."
+   ],
+   [
+    4.0,
+    "One start and one end."
+   ],
+   [
+    5.6,
+    "Use XIRR for SIPs."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s103q1",
+  "h": "Check yourself",
+  "q": "₹1,00,000 grows to ₹1,44,000 in 2 years. What is the CAGR?",
+  "opts": [
+   "44% a year",
+   "22% a year",
+   "72% a year",
+   "20% a year"
+  ],
+  "ans": 3,
+  "why": [
+   "44% is the total gain, not the yearly rate.",
+   "22% is half of 44% and ignores compounding.",
+   "72% is not supported by the numbers.",
+   "The square root of 1.44 is 1.2, so 20% a year."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s103q2",
+  "h": "Check yourself",
+  "q": "Fund A doubled in 3 years and Fund B doubled in 10. Which grew faster per year?",
+  "opts": [
+   "Fund A",
+   "Fund B",
+   "They are equal",
+   "Neither can be known"
+  ],
+  "ans": 0,
+  "why": [
+   "The same gain in less time means a higher yearly rate.",
+   "Fund B took longer, so its yearly rate is lower.",
+   "Equal gains over different periods are not equal rates.",
+   "CAGR lets you compare them. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s103q3",
+  "h": "Check yourself",
+  "q": "A fund falls 30% in one year. Can its 5-year CAGR still look healthy?",
+  "opts": [
+   "No, one bad year ruins the CAGR",
+   "No, CAGR ignores all years of falls",
+   "Yes, if other years gain enough",
+   "Yes, only if it falls again once more"
+  ],
+  "ans": 2,
+  "why": [
+   "One year does not decide the five-year rate.",
+   "CAGR does include every year's change.",
+   "CAGR smooths the ride across all years.",
+   "A further fall would lower the CAGR."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s103q4",
+  "h": "Check yourself",
+  "q": "Which return measure suits a client's monthly SIP?",
+  "opts": [
+   "CAGR of a lump sum",
+   "XIRR",
+   "Absolute return",
+   "Simple interest"
+  ],
+  "ans": 1,
+  "why": [
+   "CAGR assumes one start and one end.",
+   "XIRR handles cash flows on different dates.",
+   "Absolute return ignores time altogether.",
+   "Simple interest is not a measure of fund returns."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "CAGR = (End ÷ Start)^(1/years) − 1.",
+   "Absolute return ignores time. CAGR includes it.",
+   "Use CAGR for a lump sum. Use XIRR for SIPs."
+  ]
+ }
+]

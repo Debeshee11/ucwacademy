@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty IT is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty IT?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty IT track?"
+   ],
+   [
+    "sikka",
+    "Tracks the 10 largest IT companies in the Nifty 500 by free-float market capitalisation, with preference to stocks available in F&O. It holds 10 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty IT, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "17.43"
+   ],
+   [
+    "P/B",
+    "4.85"
+   ],
+   [
+    "Dividend yield",
+    "2.89%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-17.7% / -4.6%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty IT: biggest holdings, % weight",
+  "vals": [
+   31.3,
+   19.08,
+   11.81
+  ],
+  "labels": [
+   "Infosys",
+   "TCS",
+   "HCL"
+  ],
+  "big": "Top 10 add to 100.0%",
+  "small": "Largest sector: Information Technology",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Infosys 31.3%."
+   ],
+   [
+    2.2,
+    "Next: Tata Consultancy Services 19.08%."
+   ],
+   [
+    4.0,
+    "Then: HCL Technologies 11.81%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 100.0%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty IT facts",
+  "stops": [
+   [
+    "It holds 10 stocks",
+    true
+   ],
+   [
+    "It holds 30 stocks",
+    false
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "17.43 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s231q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty IT hold?",
+  "opts": [
+   "20 stocks in the index",
+   "25 stocks in the index",
+   "10 stocks in the index",
+   "30 stocks in the index"
+  ],
+  "ans": 2,
+  "why": [
+   "20 is not the stated count of stocks.",
+   "25 is not the stated count of stocks.",
+   "The factsheet shows 10 stocks in the index.",
+   "30 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s231q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty IT, and what weight?",
+  "opts": [
+   "Infosys, with 31.3%",
+   "Tata Consultancy Services, with 31.3%",
+   "HCL Technologies, with 100.0%",
+   "Infosys, with 11.81%"
+  ],
+  "ans": 0,
+  "why": [
+   "It leads the index at 31.3%, as per the lesson.",
+   "TCS ranks second, so it cannot lead at 31.3%.",
+   "100.0% is the top 10 total, not one stock's weight.",
+   "11.81% is the weight of HCL, not Infosys."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s231q3",
+  "h": "Check yourself",
+  "q": "The Nifty IT P/E is 17.43 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Higher than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever",
+   "Lower than the Nifty 50's P/E"
+  ],
+  "ans": 3,
+  "why": [
+   "17.43 is below 19.36, so this reverses the facts.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices.",
+   "17.43 is below the Nifty 50's 19.36, as stated."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s231q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is -4.6% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "Past returns are no forecast",
+   "It is guaranteed to come back",
+   "It carries no risk at all"
+  ],
+  "ans": 1,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Past returns do not predict future returns.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty IT: Infosys leads at 31.3%; top 10 add to 100.0%.",
+   "Largest sector: Information Technology at 100%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

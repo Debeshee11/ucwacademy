@@ -1,0 +1,167 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "₹10,000 a month for 10 years is ₹12 lakh put in. At an assumed 12% a year, the maths gives about ₹23 lakh. Nearly half is growth. But 12% is an assumption, not a promise.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The SIP maths",
+  "lines": [
+   [
+    "meena",
+    "So ₹12 lakh becomes ₹23 lakh?"
+   ],
+   [
+    "sikka",
+    "Only if markets deliver the assumed rate. Each instalment compounds from its own date. Treat it as an illustration, never a forecast."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "₹10,000 a month, assumed 12%",
+  "vals": [
+   12,
+   23.2
+  ],
+  "labels": [
+   "Put in",
+   "Corpus"
+  ],
+  "big": "about ₹23 lakh",
+  "small": "an illustration, not a forecast",
+  "alt": "Bars of money put in and the assumed corpus",
+  "caps": [
+   [
+    0.3,
+    "₹10,000 goes in every month."
+   ],
+   [
+    2.2,
+    "Early instalments compound the longest."
+   ],
+   [
+    4.0,
+    "After 10 years: ₹12 lakh put in."
+   ],
+   [
+    5.6,
+    "At an assumed 12%, about ₹23 lakh. Not a forecast."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The formula at work",
+  "intro": "Monthly rate 1%, 120 months.",
+  "rows": [
+   [
+    "Put in",
+    "₹12,00,000"
+   ],
+   [
+    "Corpus at assumed 12% a year",
+    "about ₹23,23,391"
+   ],
+   [
+    "=",
+    "Growth part",
+    "about ₹11,23,391"
+   ],
+   [
+    "Assumed rate, not promised",
+    "markets may do less"
+   ]
+  ],
+  "note": "Made-up figures, for learning only. FV ≈ P × [((1+i)^n − 1) ÷ i] × (1+i)."
+ },
+ {
+  "k": "pick",
+  "id": "s105q1",
+  "h": "Check yourself",
+  "q": "₹10,000 a month for 10 years at an assumed 12% a year gives about what?",
+  "opts": [
+   "₹12 lakh",
+   "₹23 lakh",
+   "₹36 lakh",
+   "₹14 lakh"
+  ],
+  "ans": 1,
+  "why": [
+   "₹12 lakh is only the money put in.",
+   "The standard formula gives about ₹23.2 lakh.",
+   "₹36 lakh is far above what the formula gives.",
+   "₹14 lakh is too low for 12% over 10 years."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s105q2",
+  "h": "Check yourself",
+  "q": "What is the best way to describe such a result to a client?",
+  "opts": [
+   "A promised outcome for her goals",
+   "A guaranteed minimum corpus for her",
+   "An illustration on an assumed rate",
+   "A forecast made by the fund house"
+  ],
+  "ans": 2,
+  "why": [
+   "No result of this kind can be promised.",
+   "Nothing here is a guaranteed minimum.",
+   "The rate is an assumption, so it is an illustration.",
+   "A fund house does not forecast like this."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s105q3",
+  "h": "Check yourself",
+  "q": "What usually helps a long-term SIP more than chasing a higher rate?",
+  "opts": [
+   "Starting early and raising it yearly",
+   "Switching funds every month",
+   "Waiting for a market fall to come",
+   "Stopping when markets dip"
+  ],
+  "ans": 0,
+  "why": [
+   "Time and step-ups matter, since you control them.",
+   "Frequent switching adds cost and tax. It does not answer what was asked.",
+   "Waiting means missing growth. It does not answer what was asked.",
+   "Stopping in dips breaks compounding. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s105q4",
+  "h": "Check yourself",
+  "q": "Why does an early instalment grow more than a late one?",
+  "opts": [
+   "It is larger in amount paid",
+   "It is taxed less than later ones",
+   "It is chosen by SEBI itself",
+   "It compounds for a longer time"
+  ],
+  "ans": 3,
+  "why": [
+   "All instalments in a plain SIP are equal in amount. It does not answer what was asked.",
+   "Tax does not explain the gap between instalments. It does not answer what was asked.",
+   "SEBI plays no part in how instalments grow. The details here point elsewhere.",
+   "Each instalment compounds from its own date, so earlier ones run longer."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A SIP's instalments each compound from their own date.",
+   "The ₹23 lakh figure assumes 12%: an illustration.",
+   "Start early and step up: you control these."
+  ]
+ }
+]

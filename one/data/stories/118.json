@@ -1,0 +1,255 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "An open-ended debt fund promises that you can redeem on any working day. In April 2020 a fund house wound up six debt schemes after redemptions piled up on lower-rated bonds that would not sell. The promise is only as good as the assets behind it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Can I withdraw any day?",
+  "lines": [
+   [
+    "meena",
+    "Can I withdraw from a debt fund any day?"
+   ],
+   [
+    "sikka",
+    "Normally yes, and the money arrives in a day or two. Let us watch what happens when everyone asks at once, and two funds hold different assets."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Fund P",
+  "b": "Fund Q",
+  "rows": [
+   [
+    "Cash and easy-to-sell bonds (₹ crore)",
+    40,
+    5
+   ],
+   [
+    "Redemption requests (₹ crore)",
+    20,
+    20
+   ],
+   [
+    "Hard-to-sell bonds sold in a hurry (₹ crore)",
+    0,
+    15
+   ],
+   [
+    "Loss from a 5% discount (₹ lakh)",
+    0,
+    75
+   ]
+  ],
+  "h": "When everyone asks at once",
+  "alt": "Two funds of 100 crore rupees meet a 20 crore redemption: one holds 40 crore in easy-to-sell assets, the other 5 crore",
+  "caps": [
+   [
+    0.3,
+    "Two funds of ₹100 crore. Fund P keeps ₹40 crore in cash and easy-to-sell bonds. Fund Q keeps ₹5 crore."
+   ],
+   [
+    2.4,
+    "A scare hits. Investors ask for ₹20 crore back from each fund in a week."
+   ],
+   [
+    4.2,
+    "P pays from its liquid ₹40 crore. Q has ₹5 crore, so it must sell ₹15 crore of hard-to-sell bonds."
+   ],
+   [
+    6.2,
+    "In a hurry, buyers pay 5% less. Q's loss is ₹75 lakh, and the investors who stay bear it."
+   ],
+   [
+    8.0,
+    "Daily liquidity is only as good as the assets behind it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "rows": [
+   {
+    "name": "Before: one portfolio",
+    "segs": [
+     [
+      "Healthy bonds, 96%",
+      96,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      4,
+      "#E8573D"
+     ]
+    ]
+   },
+   {
+    "name": "After: main portfolio and side pocket",
+    "segs": [
+     [
+      "Main portfolio, 96%",
+      96,
+      "#3CC47A"
+     ],
+     [
+      "",
+      4,
+      "#FFB3A5"
+     ]
+    ]
+   }
+  ],
+  "h": "A side pocket",
+  "alt": "A fund split into a main portfolio and a side pocket after one bond defaults",
+  "caps": [
+   [
+    0.3,
+    "A fund holds ₹100 crore. A bond worth 4% of it, ₹4 crore, hits a credit event such as a default."
+   ],
+   [
+    1.5,
+    "The fund separates it. The healthy 96% stays in the main portfolio and carries on as before."
+   ],
+   [
+    2.9,
+    "The troubled 4% goes into a side pocket. Every investor holds units in both."
+   ],
+   [
+    4.1,
+    "Recoveries are paid to side pocket holders as they arrive."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a side pocket does",
+  "stops": [
+   [
+    "Separates the bond after a credit event",
+    true
+   ],
+   [
+    "Pays recoveries as they arrive",
+    true
+   ],
+   [
+    "Brings every rupee back at once",
+    false
+   ],
+   [
+    "Removes the loss from the books",
+    false
+   ]
+  ],
+  "h": "What a side pocket does",
+  "alt": "A shield with what a side pocket does and does not do",
+  "caps": [
+   [
+    0.3,
+    "A side pocket is a way to cope with a bad bond, not a repair."
+   ],
+   [
+    3.0,
+    "It keeps the bad bond apart, so the main fund can carry on as normal."
+   ],
+   [
+    5.5,
+    "It cannot make the bond good again. Recoveries come as they happen, and may be less than the loss."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s118q1",
+  "h": "Check yourself",
+  "q": "Meena keeps ₹3 lakh of emergency money in a debt fund that holds mostly lower-rated papers because it yields 9%. Why does her adviser object?",
+  "opts": [
+   "Lower-rated funds cannot be redeemed until the bonds mature",
+   "In stress it may sell hard-to-sell bonds at a loss when she needs cash",
+   "The yield would be taxed twice, once in the fund and once in her hands",
+   "Debt funds can never be sold in the first year after purchase"
+  ],
+  "ans": 1,
+  "why": [
+   "Open-ended funds can be redeemed on working days. The risk is a loss or limit in stress, not a fixed wait until maturity.",
+   "Lower-rated bonds can be hard to sell fast, so in a rush a fund may take losses or face limits when she needs cash.",
+   "Tax is charged once, on her gain. The adviser's worry is liquidity in stress, not double tax on the yield.",
+   "No general first-year bar exists on selling a debt fund. The risk is what happens when many sell together."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s118q2",
+  "h": "Check yourself",
+  "q": "Fund Q sells ₹15 crore of hard-to-sell bonds at a 5% discount to meet redemptions. The investors who redeemed were paid the earlier NAV. Who carries the ₹75 lakh loss?",
+  "opts": [
+   "Only the fund house, which must top it up from its own pocket",
+   "Nobody, since daily NAV averages the loss away",
+   "Those who redeemed, since their requests forced the sale",
+   "The investors who stay in the fund, as it lowers the NAV they hold"
+  ],
+  "ans": 3,
+  "why": [
+   "A fund house is not required to cover a fund's market losses. The loss falls on the unit holders.",
+   "NAV does not average a loss away. A sale at a discount reduces the fund's value for those who still hold units.",
+   "Redeemers already received their money at the earlier NAV. They are not charged for the sale afterwards.",
+   "Redeemers were paid at the earlier NAV. The discount from the forced sale falls on the units that remain."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s118q3",
+  "h": "Check yourself",
+  "q": "A fund holds 4% in a bond that defaults, and creates a side pocket. Rohan holds ₹1,00,000 of units. What does he hold after that?",
+  "opts": [
+   "Units in both: about ₹96,000 in the main portfolio and the rest in the side pocket",
+   "Only ₹96,000 in the main portfolio, as the ₹4,000 is written off",
+   "₹1,00,000 in the main portfolio, while the side pocket belongs to the fund house",
+   "₹96,000 in cash today, with the ₹4,000 returned next month"
+  ],
+  "ans": 0,
+  "why": [
+   "Investors hold units in both. The main portfolio carries on as before, and the side pocket pays out as recoveries arrive.",
+   "The side pocket is not a write-off. He still holds units in it, and recoveries from the bond are paid out to him.",
+   "The side pocket is owned by the investors, not the fund house. Each investor holds units in proportion to his old holding.",
+   "Nothing is paid in cash at the split. Units are created in both portfolios, and the side pocket pays only on recovery."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s118q4",
+  "h": "Check yourself",
+  "q": "A client says SEBI regulates mutual funds, so she can always take her money out the next day. What is the honest reply?",
+  "opts": [
+   "Only after a year, since all debt funds have a minimum holding period",
+   "Always yes, since SEBI guarantees redemption on the next working day",
+   "Normally yes, but stress can bring limits, so use liquid funds",
+   "Only if the fund house agrees, since redemption is at its discretion"
+  ],
+  "ans": 2,
+  "why": [
+   "Debt funds have no such general minimum. The risk is liquidity in stress, not a lock-in on every purchase.",
+   "SEBI regulates the rules but does not guarantee that a fund can pay out on a given day. April 2020 showed this.",
+   "Money normally arrives in a day or two. In extreme stress a fund can face limits, so emergency money goes in liquid or overnight funds.",
+   "Open-ended funds must accept redemptions. The fund cannot refuse at will, though stress can bring limits."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Liquidity risk is real: a fund may not be able to sell a bond fast without a big price cut.",
+   "A side pocket separates a defaulted bond. Investors hold units in both, and recoveries are paid as they happen.",
+   "Emergency money belongs in liquid or overnight funds, not lower-rated ones."
+  ]
+ }
+]

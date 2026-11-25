@@ -1,0 +1,266 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "A gilt fund with a duration of 6 slipped 3% in one month when yields rose by half a percent. One number on the factsheet had already told us how hard it would be hit.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What does duration mean?",
+  "lines": [
+   [
+    "meena",
+    "What does a duration of 6 years mean for my money? My gilt fund's NAV moved a lot last month."
+   ],
+   [
+    "sikka",
+    "It is a rate-sensitivity number. It is not a lock-in. Watch the same 1% rate move hit two funds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Duration 2",
+  "b": "Duration 6",
+  "rows": [
+   [
+    "Price falls if yields rise 1% (%)",
+    2,
+    6
+   ],
+   [
+    "Price rises if yields fall 1% (%)",
+    2,
+    6
+   ],
+   [
+    "On ₹10 lakh, the move is about (₹ thousand)",
+    20,
+    60
+   ]
+  ],
+  "h": "Same rate move, two funds",
+  "alt": "Bars comparing a fund of duration 2 and one of duration 6 for a 1% change in yields",
+  "caps": [
+   [
+    0.3,
+    "Two funds with ₹10 lakh each. Fund A has a modified duration of 2. Fund B has 6."
+   ],
+   [
+    2.2,
+    "Yields rise 1%. Price change is about duration × 1%, so A falls about 2% and B about 6%."
+   ],
+   [
+    4.2,
+    "If yields fall 1%, the same sizes work in reverse: A gains about 2%, B about 6%."
+   ],
+   [
+    6.0,
+    "On ₹10 lakh, that is about ₹20,000 against ₹60,000."
+   ],
+   [
+    7.3,
+    "Longer duration means more rate risk, and more reward if rates fall."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "Value of ₹100 in each fund",
+  "series": [
+   {
+    "name": "Duration 2",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     107.0,
+     114.5,
+     117.9,
+     128.5,
+     142.6,
+     156.9,
+     171.0,
+     179.6,
+     193.1,
+     204.7
+    ]
+   },
+   {
+    "name": "Duration 5",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     107.0,
+     114.5,
+     111.1,
+     121.1,
+     138.1,
+     156.1,
+     174.8,
+     180.9,
+     197.2,
+     209.0
+    ]
+   },
+   {
+    "name": "Duration 8",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     107.0,
+     114.5,
+     104.2,
+     113.6,
+     132.9,
+     154.2,
+     177.3,
+     180.8,
+     199.8,
+     211.8
+    ]
+   }
+  ],
+  "h": "A made-up decade of rates",
+  "alt": "Three lines for funds of duration 2, 5 and 8 through a made-up path of yields",
+  "caps": [
+   [
+    0.3,
+    "A made-up decade. Yields start at 7%, jump to 9% by year 3, then drift down to 6%."
+   ],
+   [
+    3.0,
+    "Duration 8 takes the hit, about 9% down at year 3. Duration 2 keeps on earning."
+   ],
+   [
+    5.5,
+    "As yields fall, the longer fund gains the most."
+   ],
+   [
+    8.4,
+    "The deepest falls: none, about 3% and about 9%. Longer duration, bigger swings."
+   ],
+   [
+    10.0,
+    "Each year is the starting yield minus duration × the change in yield. A guide, not a promise."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A made-up factsheet",
+  "intro": "Four numbers on a gilt fund's factsheet. Only one of them tells you the price move for a 1% change in yields.",
+  "rows": [
+   [
+    "Average maturity",
+    "8.2 years"
+   ],
+   [
+    "Macaulay duration",
+    "5.9 years"
+   ],
+   [
+    "Modified duration",
+    "5.5 years"
+   ],
+   [
+    "Yield to maturity",
+    "7.4%"
+   ],
+   [
+    "=",
+    "Price effect of +1% in yields",
+    "about -5.5%"
+   ]
+  ],
+  "note": "Modified duration is Macaulay duration divided by (1 + yield): 5.9 ÷ 1.074 = 5.5. Use it to estimate the price move."
+ },
+ {
+  "k": "pick",
+  "id": "s113q1",
+  "h": "Check yourself",
+  "q": "Meena holds ₹20 lakh in a gilt fund with a modified duration of 6. Yields rise by 0.5% this month. About how much does the price effect take off her holding?",
+  "opts": [
+   "About ₹1,20,000, which is 6% of ₹20 lakh",
+   "About ₹10,000, which is 0.5% of ₹20 lakh",
+   "About ₹60,000, which is 3% of ₹20 lakh",
+   "Nothing, because a month of coupons covers it"
+  ],
+  "ans": 2,
+  "why": [
+   "That is the effect of a full 1% rise. Her fund saw a rise of 0.5%, so the hit is half of that.",
+   "That is just the change in yield applied to her money. Duration multiplies it, and here the multiplier is 6.",
+   "Price change is about duration × change in yield, so 6 × 0.5% is 3%, and 3% of ₹20 lakh is ₹60,000.",
+   "A month of coupons adds only about 0.6% of value for a 7% portfolio. That is far less than a 3% price drop."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s113q2",
+  "h": "Check yourself",
+  "q": "Meena says a duration of 6 years means her money is locked for six years. What is the sound reply?",
+  "opts": [
+   "It means the fund cannot repay her before six years are over",
+   "No lock-in: it shows price sensitivity, and she can redeem any day",
+   "It means every bond in the fund matures exactly six years from now",
+   "It means the fund loses 6% each year until the six years pass"
+  ],
+  "ans": 1,
+  "why": [
+   "No lock-in exists in an open-ended debt fund. Duration is a sensitivity measure, not a repayment date.",
+   "Duration estimates how much the price moves for a 1% change in yields. Open-ended funds can be redeemed on any business day.",
+   "The portfolio holds many bonds with different maturities. Duration is a weighted average figure, not one date.",
+   "A fund does not lose a fixed 6% a year. Duration scales a move in yields, which can be up or down."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s113q3",
+  "h": "Check yourself",
+  "q": "A factsheet shows average maturity 8.2 years, Macaulay duration 5.9, modified duration 5.5 and YTM 7.4%. For a quick estimate of the price hit from a 1% rise in yields, which figure does the adviser use?",
+  "opts": [
+   "Average maturity, giving about 8.2%",
+   "Macaulay duration, giving about 5.9%",
+   "Modified duration, giving about 5.5%",
+   "Yield to maturity, giving about 7.4%"
+  ],
+  "ans": 2,
+  "why": [
+   "Average maturity ignores when the coupons arrive. It overstates sensitivity because coupons shorten the true timing.",
+   "Macaulay duration is a weighted time to get your cash back. Divide by (1 + yield) to get the price sensitivity.",
+   "Modified duration is Macaulay ÷ (1 + yield), which is 5.9 ÷ 1.074 = 5.5. It links price moves to yield moves directly.",
+   "YTM is an expected annual return. It says what the portfolio earns, not how far the price moves when yields do."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s113q4",
+  "h": "Check yourself",
+  "q": "A 10-year 7% bond at ₹1,000 has a modified duration of 7.02. Yields rise from 7% to 8%. Which estimate of the new price is best?",
+  "opts": [
+   "About ₹1,070, because a higher yield means a higher price",
+   "About ₹993, since a 1% rise cuts only about 0.7% of the price",
+   "About ₹70, because that is the coupon the bond pays",
+   "About ₹930, slightly under the exact ₹933"
+  ],
+  "ans": 3,
+  "why": [
+   "Higher yields push prices down, not up. Price and yield move in opposite directions.",
+   "The 0.7% reading mixes up the decimal. With a duration of 7.02, a 1% rise cuts about 7% of the price, not 0.7%.",
+   "₹70 is the yearly coupon, and it is not a price. The price estimate is ₹1,000 less about ₹70, which is about ₹930.",
+   "7.02 × 1% is about 7%, or ₹70, off ₹1,000. Duration is a straight-line guide, so the exact price of ₹933 differs slightly."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Price change ≈ -modified duration × change in yield.",
+   "Duration is rate risk, not a lock-in: longer duration swings more, both ways.",
+   "Find modified duration on the factsheet. It is not the same as average maturity."
+  ]
+ }
+]

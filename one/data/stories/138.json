@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Two retirees start with the same corpus and withdraw the same amount. One retires just before a market fall, the other just after. The first runs out of money sooner. That is sequence-of-returns risk.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Withdrawing wisely",
+  "lines": [
+   [
+    "meena",
+    "How do retirees draw money?"
+   ],
+   [
+    "sikka",
+    "An SWP pays a fixed amount monthly by redeeming units, so each withdrawal has a capital gain part. Poor returns early hurt more, because withdrawals shrink the corpus when it is low. A bucket plan helps: 2 to 3 years of expenses in safe liquid funds, the next 5 years in debt or hybrid, the rest in equity. Refill the safe bucket in good years and trim spending if needed."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The bucket strategy",
+  "intro": "Figures as given in the lesson; confirm current rules before advising.",
+  "rows": [
+   [
+    "Bucket 1",
+    "2 to 3 years of expenses, safe and liquid"
+   ],
+   [
+    "Bucket 2",
+    "next 5 years, debt or hybrid"
+   ],
+   [
+    "Bucket 3",
+    "the rest, equity for growth"
+   ],
+   [
+    "Habit",
+    "refill bucket 1 in good years"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s138q1",
+  "h": "Check yourself",
+  "q": "What is an SWP?",
+  "opts": [
+   "A fixed monthly redemption",
+   "A one-time bonus unit issue",
+   "A fixed deposit rollover plan",
+   "A refund of the tax paid"
+  ],
+  "ans": 0,
+  "why": [
+   "Units are redeemed each month. That matches the case described.",
+   "It is not a bonus issue. That does not match this case.",
+   "It is not a deposit. That does not match this case.",
+   "It is not a refund. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s138q2",
+  "h": "Check yourself",
+  "q": "Why do early poor returns hurt more?",
+  "opts": [
+   "Taxes triple in the first year",
+   "Funds stop paying their holders",
+   "Withdrawals shrink a low corpus",
+   "Costs vanish in the first year"
+  ],
+  "ans": 2,
+  "why": [
+   "Tax does not triple. That does not match this case.",
+   "Funds keep operating. It does not fit the facts given.",
+   "Selling low locks in losses. This fits the facts given.",
+   "Costs remain. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s138q3",
+  "h": "Check yourself",
+  "q": "What does the safe bucket hold?",
+  "opts": [
+   "All the money in small caps",
+   "Only one month's spend in cash",
+   "Only jewellery kept at home",
+   "2 to 3 years of spending, liquid"
+  ],
+  "ans": 3,
+  "why": [
+   "Small caps are volatile. It does not fit the facts given.",
+   "One month is too thin. It does not fit the facts given.",
+   "Jewellery is not liquid. It does not answer what was asked.",
+   "It covers spending through a fall. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s138q4",
+  "h": "Check yourself",
+  "q": "How is the safe bucket refilled?",
+  "opts": [
+   "From a fresh loan every year",
+   "From growth bucket in good years",
+   "By selling at the crash lows",
+   "By skipping all of the spending"
+  ],
+  "ans": 1,
+  "why": [
+   "A loan adds debt. It does not fit the facts given.",
+   "Good years let you refill without selling low.",
+   "Selling in crashes locks losses. The details here point elsewhere.",
+   "Skipping all spending is not possible. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SWP redeems units, so each withdrawal has a gain part.",
+   "Early poor returns hurt most: sequence risk.",
+   "Buckets: safe, debt or hybrid, equity. Refill in good years."
+  ]
+ }
+]

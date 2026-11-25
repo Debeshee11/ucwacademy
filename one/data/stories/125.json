@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client with ₹2 crore asks, 'Should it all go into a PMS?' First compare the three options: mutual fund, PMS and AIF. Higher cost and a higher minimum must be justified by something a mutual fund cannot offer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which one",
+  "lines": [
+   [
+    "meena",
+    "PMS and AIF sound premium. Are they better?"
+   ],
+   [
+    "sikka",
+    "Not by default. A mutual fund is pooled, liquid, low-cost and well disclosed. PMS and AIF cost more and need big tickets. They must offer something extra: access, customisation or strategy."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Side by side",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Mutual fund",
+    "from ₹100 or ₹500, daily NAV, liquid"
+   ],
+   [
+    "PMS",
+    "min ₹50 lakh, own demat, concentrated"
+   ],
+   [
+    "AIF",
+    "usually ₹1 crore, may be illiquid"
+   ],
+   [
+    "Wealthy clients often hold",
+    "a mix, mutual funds as liquid core"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Comparing the three",
+  "stops": [
+   [
+    "Mutual funds offer daily NAV and high liquidity",
+    true
+   ],
+   [
+    "PMS holdings sit in a pooled account",
+    false
+   ],
+   [
+    "AIFs may be illiquid",
+    true
+   ],
+   [
+    "Higher cost never needs justification",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "They are pooled and well disclosed."
+   ],
+   [
+    2.2,
+    "They sit in the client's own account."
+   ],
+   [
+    4.0,
+    "They can invest in unlisted or complex strategies."
+   ],
+   [
+    5.6,
+    "It must be justified by something extra."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s125q1",
+  "h": "Check yourself",
+  "q": "Which product has a minimum of ₹50 lakh and holdings in the client's name?",
+  "opts": [
+   "PMS",
+   "Mutual fund",
+   "AIF",
+   "Bank deposit"
+  ],
+  "ans": 0,
+  "why": [
+   "PMS has a ₹50 lakh minimum and own-name holdings.",
+   "Mutual funds start from ₹100 or ₹500. That does not match this case.",
+   "AIFs usually start at ₹1 crore. That does not match this case.",
+   "A bank deposit is not a PMS. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s125q2",
+  "h": "Check yourself",
+  "q": "Which product offers daily NAV and the highest liquidity of the three?",
+  "opts": [
+   "PMS",
+   "AIF",
+   "Mutual fund",
+   "All equally"
+  ],
+  "ans": 2,
+  "why": [
+   "PMS holds individual securities. The details here point elsewhere.",
+   "AIFs may be illiquid. That does not match this case.",
+   "Mutual funds publish a daily NAV and are liquid.",
+   "They differ in liquidity. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s125q3",
+  "h": "Check yourself",
+  "q": "What must justify the higher cost and minimum of a PMS or AIF?",
+  "opts": [
+   "A fancier colour brochure",
+   "Something funds cannot offer",
+   "A bigger office in the city",
+   "A longer and grander name"
+  ],
+  "ans": 1,
+  "why": [
+   "A brochure is not a justification. That does not match this case.",
+   "Access, customisation or strategy can justify it.",
+   "An office is not a justification. It does not answer what was asked.",
+   "A name is not a justification. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s125q4",
+  "h": "Check yourself",
+  "q": "What mix do sizeable-wealth clients often hold?",
+  "opts": [
+   "Only AIFs and nothing else",
+   "Only cash kept at home",
+   "Only one stock in the lot",
+   "Funds as the liquid core"
+  ],
+  "ans": 3,
+  "why": [
+   "Only AIFs would be illiquid and concentrated.",
+   "Cash at home is not an investment mix. The details here point elsewhere.",
+   "One stock is concentrated. The details here point elsewhere.",
+   "Mutual funds often form the liquid core. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Mutual fund: pooled, liquid, low cost. PMS: ₹50 lakh, own demat. AIF: ₹1 crore, may be illiquid.",
+   "Higher cost needs a reason: access, customisation, strategy.",
+   "A mix, with mutual funds as the liquid core."
+  ]
+ }
+]

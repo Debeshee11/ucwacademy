@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A salaried client has EPF. She also opened a PPF and an NPS. Three building blocks, each with its own rules for interest, lock-ins and exit. Mixing them up leads to mistakes.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three building blocks",
+  "lines": [
+   [
+    "meena",
+    "How do EPF, PPF and NPS differ?"
+   ],
+   [
+    "sikka",
+    "EPF: for salaried employees, employee and employer contributions earn a notified interest rate, with conditions on withdrawal. PPF: a 15-year government-backed scheme with a yearly deposit limit, and the rate reset by the government each quarter. NPS: a market-linked pension account with equity, corporate bond and government bond choices. Tier I is locked until retirement age, with partial withdrawals in specific cases. At exit, part must buy an annuity. Rules have been updated several times, so check the latest."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three blocks",
+  "intro": "Figures as given in the lesson; confirm current rules before advising.",
+  "rows": [
+   [
+    "EPF",
+    "salaried; employer and employee; notified interest rate"
+   ],
+   [
+    "PPF",
+    "15 years; yearly limit; rate reset each quarter"
+   ],
+   [
+    "NPS",
+    "market-linked; Tier I locked to retirement age"
+   ],
+   [
+    "NPS exit",
+    "part buys an annuity; rules updated often"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s139q1",
+  "h": "Check yourself",
+  "q": "Who is EPF for?",
+  "opts": [
+   "Only farmers",
+   "Salaried employees",
+   "Only students",
+   "Only investors abroad"
+  ],
+  "ans": 1,
+  "why": [
+   "Farmers are not the target.",
+   "It is a salaried employee scheme.",
+   "Students are not the target.",
+   "Abroad investors are not the target."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s139q2",
+  "h": "Check yourself",
+  "q": "How long is the PPF tenure?",
+  "opts": [
+   "5 days",
+   "50 years",
+   "1 month",
+   "15 years"
+  ],
+  "ans": 3,
+  "why": [
+   "Days are not right.",
+   "50 years is too long.",
+   "One month is not right.",
+   "PPF is a 15-year scheme."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s139q3",
+  "h": "Check yourself",
+  "q": "What makes NPS different?",
+  "opts": [
+   "It pays a fixed rate set at joining",
+   "It has no exit rules whatsoever",
+   "Market-linked, equity and bond mix",
+   "It is open only to rich clients"
+  ],
+  "ans": 2,
+  "why": [
+   "The rate is not fixed. That does not match this case.",
+   "Exit rules exist. It does not fit the facts given.",
+   "Returns depend on the chosen mix. That matches the case described.",
+   "It is open to many. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s139q4",
+  "h": "Check yourself",
+  "q": "What must happen to part of the NPS corpus at exit?",
+  "opts": [
+   "It must buy an annuity",
+   "It must be donated away",
+   "It must be burned off",
+   "It must be given as a gift"
+  ],
+  "ans": 0,
+  "why": [
+   "Part must buy an annuity.",
+   "No donation is required.",
+   "No such rule exists.",
+   "No gifting is required."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "EPF: salaried; PPF: 15 years; NPS: market-linked pension.",
+   "NPS Tier I is locked until retirement age.",
+   "Rules change, so check the latest."
+  ]
+ }
+]

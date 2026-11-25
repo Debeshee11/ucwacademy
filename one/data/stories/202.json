@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Take the 100 largest companies. Remove the top 50. What is left is the Nifty Next 50: the next rung of large companies, many of which may one day join the Nifty 50.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Next 50?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Next 50 actually track?"
+   ],
+   [
+    "sikka",
+    "It represents 50 companies from the Nifty 100 after excluding the Nifty 50 companies. Weights follow periodic capped free float. It is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Next 50, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "18.28"
+   ],
+   [
+    "P/B",
+    "3.35"
+   ],
+   [
+    "Dividend yield",
+    "1.04%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+2.8% / +10.5%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Next 50: biggest holdings, % weight",
+  "vals": [
+   4.84,
+   3.95,
+   3.63
+  ],
+  "labels": [
+   "Divi's",
+   "TVS",
+   "HAL"
+  ],
+  "big": "Top 10 add to 33.7%",
+  "small": "Largest sector: Capital Goods",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Divi's Laboratories 4.84%."
+   ],
+   [
+    2.2,
+    "Next: TVS Motor 3.95%."
+   ],
+   [
+    4.0,
+    "Then: HAL 3.63%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 33.7%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Next 50 facts",
+  "stops": [
+   [
+    "It holds the 50 companies after the Nifty 50",
+    true
+   ],
+   [
+    "It includes the Nifty 50 companies",
+    false
+   ],
+   [
+    "Capital Goods is its largest sector",
+    true
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "From the Nifty 100."
+   ],
+   [
+    2.2,
+    "It excludes them."
+   ],
+   [
+    4.0,
+    "At 20.25%."
+   ],
+   [
+    5.6,
+    "18.28 against 19.36."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s202q1",
+  "h": "Check yourself",
+  "q": "Which companies does the Nifty Next 50 represent?",
+  "opts": [
+   "The 50 smallest companies listed",
+   "The same 50 as the Nifty 50 list",
+   "Nifty 100 names beyond the Nifty 50",
+   "50 unlisted firms, not on any exchange"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not the smallest 50. It does not answer what was asked.",
+   "It excludes the Nifty 50 names. The details here point elsewhere.",
+   "It takes the Nifty 100 and excludes the Nifty 50.",
+   "Index members are listed firms. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s202q2",
+  "h": "Check yourself",
+  "q": "The Nifty Next 50 P/E is 18.28 and the Nifty 50 P/E is 19.36. What can be said?",
+  "opts": [
+   "Next 50 has the lower P/E",
+   "Next 50 has the higher P/E",
+   "They are equal",
+   "P/E cannot be compared"
+  ],
+  "ans": 0,
+  "why": [
+   "18.28 is below 19.36. This fits the facts given.",
+   "The Next 50 figure is lower, not higher. It does not fit the facts given.",
+   "The two figures differ. It does not fit the facts given.",
+   "P/E can be compared as a ratio. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s202q3",
+  "h": "Check yourself",
+  "q": "Which sector is largest in the Nifty Next 50, as per the lesson?",
+  "opts": [
+   "Financial Services at 37.45%",
+   "Utilities at 1%",
+   "Media at 50%",
+   "Capital Goods at 20.25%"
+  ],
+  "ans": 3,
+  "why": [
+   "That is the Nifty 50 figure.",
+   "Utilities is not the largest.",
+   "Media is not the largest.",
+   "Capital Goods leads at 20.25%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s202q4",
+  "h": "Check yourself",
+  "q": "Which is its biggest holding, as per the lesson?",
+  "opts": [
+   "HDFC Bank, with 10.38%",
+   "Divi's Labs, at 4.84%",
+   "TVS Motor, with 33.7%",
+   "HAL, with 52.3% weight"
+  ],
+  "ans": 1,
+  "why": [
+   "HDFC Bank belongs to the Nifty 50.",
+   "Divi's Laboratories leads at 4.84%.",
+   "33.7% is the top 10's total.",
+   "52.3% is the Nifty 50 top 10's total."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Next 50: Divi's Laboratories 4.84% leads; top 10 add to 33.7%.",
+   "Largest sector: Capital Goods at 20.25%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

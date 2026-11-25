@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A PMS brochure shows 22% a year. The client's own statement shows far less. The gap? Fees, brokerage, custody, taxes and timing. Reading the fine print is the real skill.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Hurdles and peaks",
+  "lines": [
+   [
+    "meena",
+    "What is a hurdle rate?"
+   ],
+   [
+    "sikka",
+    "It is the return the manager must beat before earning a performance fee. A high-water mark means the fee applies only to gains above the previous peak. Both protect the client."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A performance fee, made up",
+  "intro": "Hurdle 10%, fee 20% of the excess.",
+  "rows": [
+   [
+    "Portfolio return in the year",
+    "15%"
+   ],
+   [
+    "Hurdle",
+    "10%"
+   ],
+   [
+    "Excess above hurdle",
+    "5%"
+   ],
+   [
+    "=",
+    "Performance fee, 20% of 5%",
+    "1% of assets"
+   ]
+  ],
+  "note": "Plus any fixed fee, brokerage, custody and taxes. Figures are made up."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "PMS fees",
+  "stops": [
+   [
+    "A hurdle rate must be beaten before a performance fee",
+    true
+   ],
+   [
+    "A high-water mark charges fees on all gains",
+    false
+   ],
+   [
+    "Brokerage and custody can add to the cost",
+    true
+   ],
+   [
+    "Marketing returns always equal actual returns",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "That protects the client."
+   ],
+   [
+    2.2,
+    "It applies only above the previous peak."
+   ],
+   [
+    4.0,
+    "So can exit loads and taxes."
+   ],
+   [
+    5.6,
+    "Compare after-fee, after-cost figures."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s122q1",
+  "h": "Check yourself",
+  "q": "What is a hurdle rate?",
+  "opts": [
+   "A fee charged at entry time",
+   "The tax on a PMS gain made",
+   "The bar to beat before a fee",
+   "The exit load in the first year"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not an entry fee. It does not answer what was asked.",
+   "Tax is a separate matter. The details here point elsewhere.",
+   "It is the bar before a performance fee applies.",
+   "Exit load is a different charge. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s122q2",
+  "h": "Check yourself",
+  "q": "What does a high-water mark do?",
+  "opts": [
+   "Fee only above the previous peak",
+   "Doubles the fee after a gain",
+   "Sets the minimum investment",
+   "Fixes the manager's monthly salary"
+  ],
+  "ans": 0,
+  "why": [
+   "It prevents paying twice for the same gains.",
+   "It does not double the fee. That does not match this case.",
+   "The minimum is set by SEBI. It does not fit the facts given.",
+   "It has no link to a salary. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s122q3",
+  "h": "Check yourself",
+  "q": "A brochure shows 22%, but the client earned less. What should be compared?",
+  "opts": [
+   "Before-fee figures only",
+   "The brochure's font size",
+   "The manager's year of birth",
+   "After-fee, after-cost figures"
+  ],
+  "ans": 3,
+  "why": [
+   "Before-fee figures hide the costs. That does not match this case.",
+   "Font size is irrelevant. It does not fit the facts given.",
+   "Age is irrelevant. It does not answer what was asked.",
+   "Actual returns net of costs are what the client earns."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s122q4",
+  "h": "Check yourself",
+  "q": "Which document sets out fees, risks and past performance in a standard form?",
+  "opts": [
+   "A newspaper advert page",
+   "The Disclosure Document",
+   "A social media post",
+   "A friend's email note"
+  ],
+  "ans": 1,
+  "why": [
+   "An advert is not a standard form.",
+   "Ask for the Disclosure Document.",
+   "A post is not a standard form.",
+   "An email from a friend is not a source."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Hurdle rate: the bar a manager must beat before a performance fee.",
+   "High-water mark: fee only on gains above the previous peak.",
+   "Ask for the Disclosure Document. Compare after-cost returns."
+  ]
+ }
+]

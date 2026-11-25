@@ -1,0 +1,234 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Two corporate bond funds sit in the same SEBI category. One shows a yield of 9% and the other 7.5%. The gap is not a gift from a cleverer manager. Something is being paid for.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two funds, one category",
+  "lines": [
+   [
+    "rohan",
+    "This fund shows 9% yield but my friend's shows 7.5%. Same category. Why?"
+   ],
+   [
+    "sikka",
+    "Same category does not mean same risk. First see how the market prices a rating, then what the extra yield really buys."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   7.4,
+   8.0,
+   8.8,
+   10.5,
+   12.5
+  ],
+  "labels": [
+   "AAA",
+   "AA+",
+   "AA",
+   "A",
+   "BBB"
+  ],
+  "big": "Lower rating, higher yield",
+  "small": "Made-up yields for 3-year bonds",
+  "h": "What a rating is worth",
+  "alt": "Five bars of made-up yields rising as the rating falls from AAA to BBB",
+  "caps": [
+   [
+    0.3,
+    "Rating agencies grade bonds. AAA is the strongest, then AA+, AA, A, BBB, and below."
+   ],
+   [
+    1.8,
+    "The market asks a higher yield as the grade falls. These yields are made up."
+   ],
+   [
+    3.6,
+    "A BBB issuer must pay about 5 points more than a AAA issuer to attract lenders."
+   ],
+   [
+    5.0,
+    "The extra yield is not a bonus. It is payment for the chance of a missed payment."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Fund Y",
+  "b": "Fund X",
+  "rows": [
+   [
+    "Yield (% a year)",
+    9.0,
+    7.5
+   ],
+   [
+    "Extra income over 3 years (%)",
+    4.5,
+    0
+   ],
+   [
+    "Loss if one 5% holding fails (%)",
+    5,
+    5
+   ]
+  ],
+  "h": "Extra yield against one default",
+  "alt": "Fund X yields 7.5 percent, Fund Y 9 percent; one written-off holding wipes out years of extra income",
+  "caps": [
+   [
+    0.3,
+    "Fund Y holds lower-rated bonds and yields 9.0%. Fund X holds mostly AAA bonds and yields 7.5%."
+   ],
+   [
+    2.0,
+    "Y earns 1.5% a year more. After three years that is 4.5% of extra income."
+   ],
+   [
+    4.2,
+    "But if a 5% holding is written off, the loss is 5% of the fund, in either fund."
+   ],
+   [
+    6.0,
+    "Y needs about 3.3 years of extra yield to repay one such loss. And Y is likelier to have one."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   100.0,
+   95.1,
+   88.4,
+   40
+  ],
+  "fmt": "inr",
+  "labels": [
+   "AA",
+   "Cut to A",
+   "To BBB",
+   "Default"
+  ],
+  "big": "₹100 down to ₹40",
+  "small": "Made-up yields; 40% recovery assumed",
+  "h": "A downgrade hits the price first",
+  "alt": "Four bars of a bond price falling through two downgrades and a default",
+  "caps": [
+   [
+    0.3,
+    "A 3-year bond with a 9% coupon, rated AA, is priced at ₹100."
+   ],
+   [
+    1.3,
+    "Cut to A: buyers now want 11%, so the price falls to about ₹95. No payment has been missed."
+   ],
+   [
+    2.4,
+    "Cut again to BBB: they want 14%, and the price is about ₹88. The issuer is still paying."
+   ],
+   [
+    3.5,
+    "Then it defaults. If 40% is recovered, the bond is worth about ₹40."
+   ],
+   [
+    4.7,
+    "Prices fall on downgrades, long before any default. The NAV shows it as it happens."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s115q1",
+  "h": "Check yourself",
+  "q": "Rohan's friend's corporate bond fund yields 7.5% and his own shows 9%. Same SEBI category, similar maturity. What should Rohan check first?",
+  "opts": [
+   "The credit table, to see how much sits in lower-rated papers",
+   "The expense ratio, since a lower fee explains most of a 1.5% gap",
+   "The last month's return, since a higher yield shows up there",
+   "Whether the plan is direct or regular, since cost sets the yield"
+  ],
+  "ans": 0,
+  "why": [
+   "The gap usually comes from credit quality. The credit table shows how much sits in AAA and how much in lower grades.",
+   "Expense ratios differ by a fraction of a percent. A 1.5% gap in portfolio yield points to what the bonds are, not the fee.",
+   "One month of returns also reflects price moves, and says little about which bonds the fund holds or why it yields more.",
+   "Plan type changes cost by a small amount. The portfolio yield on the factsheet is the same for both plans."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s115q2",
+  "h": "Check yourself",
+  "q": "A fund holds a 4% position in a bond rated AA. Today the agency cuts it to A. No coupon has been missed. What is the likely effect?",
+  "opts": [
+   "No effect, since the issuer is still paying, so the price holds",
+   "The fund must sell the bond immediately at its original price",
+   "Its price usually falls now and the NAV dips, before any default",
+   "The fund cannot report the change until a payment is missed"
+  ],
+  "ans": 2,
+  "why": [
+   "Prices react to the downgrade itself. The market wants a higher yield for the added risk, so the price falls.",
+   "A forced sale at the old price cannot happen. The market sets the price, and buyers will pay less after a cut.",
+   "Buyers price in the higher risk straight away, so the price drops on the news, and the NAV marks it down that day.",
+   "Funds mark holdings to market daily and disclose ratings. They do not wait for a missed payment to show a cut."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s115q3",
+  "h": "Check yourself",
+  "q": "A fund earns 1.8% a year more than a high-quality rival. It holds 4% in one issuer, which defaults with nothing recovered. About how many years of the extra yield does it take to repay that loss?",
+  "opts": [
+   "About 0.5 years, since one default is a rounding error",
+   "None, because diversification removes credit risk entirely",
+   "About 4 years, the same number as the 4% loss",
+   "About 2.2 years, since 4% divided by 1.8% a year"
+  ],
+  "ans": 3,
+  "why": [
+   "The loss is 4% of the fund, which is much larger than half a year of the 1.8% extra yield.",
+   "Spreading across issuers reduces credit risk but cannot remove it. A default still costs the fund its share.",
+   "Treating 4% as 4 years ignores the 1.8% yearly extra. Divide the loss by the extra yield instead.",
+   "A 4% loss at 1.8% a year takes about 2.2 years of extra yield to repay. Diversification limits this but does not remove it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s115q4",
+  "h": "Check yourself",
+  "q": "A client says a AAA rating means her debt fund cannot lose money. What is the honest reply?",
+  "opts": [
+   "Ratings are opinions that can be cut, and AAA prices still move",
+   "Correct, since AAA bonds are guaranteed by the rating agency",
+   "AAA applies only to government bonds, whose prices never move",
+   "The rating is irrelevant, because the coupon is what decides returns"
+  ],
+  "ans": 0,
+  "why": [
+   "AAA means the lowest credit risk, not none. A rating can be cut, and even AAA bond prices fall when rates rise.",
+   "Rating agencies grade risk. They do not guarantee payment or compensate holders if an issuer fails.",
+   "AAA is a grade given to company issuers. Even government bond prices move when yields change.",
+   "The coupon is only part of it. A downgrade or default can change the price and hit NAV whatever the coupon was."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Higher yield usually means more credit risk. The extra yield pays for the risk.",
+   "A downgrade cuts the price before any default, and it shows in NAV.",
+   "Diversification reduces credit risk, it does not remove it. Read the credit table."
+  ]
+ }
+]

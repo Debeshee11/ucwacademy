@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A PMS shows 28% a year. Sounds great. But over what period, gross or net of fees, time-weighted or money-weighted, against which benchmark? A track record without those answers is only a headline.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Reading a record",
+  "lines": [
+   [
+    "meena",
+    "How do I avoid being fooled?"
+   ],
+   [
+    "sikka",
+    "Ask whether returns are time-weighted or money-weighted, gross or net, and for what period. Use the right benchmark over the same period. Look for consistency over many years, and at the worst fall, not only the best year. Beware survivorship: closed products vanish, leaving winners. And ask for the strategy's performance, not the best client account."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Track-record checks",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Basis",
+    "time- or money-weighted, gross or net, which period"
+   ],
+   [
+    "Benchmark",
+    "the right one, over the same period"
+   ],
+   [
+    "Consistency",
+    "many years, and the worst fall"
+   ],
+   [
+    "Survivorship",
+    "closed products vanish; ask for the whole strategy"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s128q1",
+  "h": "Check yourself",
+  "q": "What should be asked about a stated return?",
+  "opts": [
+   "The colour of the report",
+   "Gross or net, and the period",
+   "The font of the table inside",
+   "The name of the report's printer"
+  ],
+  "ans": 1,
+  "why": [
+   "Colour is not data. It does not answer what was asked.",
+   "Basis and period change the meaning.",
+   "Font is not data. That does not match this case.",
+   "A printer is not data. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s128q2",
+  "h": "Check yourself",
+  "q": "Why does the benchmark matter?",
+  "opts": [
+   "A benchmark has no use at all",
+   "Benchmarks are illegal in India",
+   "Any index is exactly the same",
+   "A mismatched one can flatter"
+  ],
+  "ans": 3,
+  "why": [
+   "Benchmarks are useful. The details here point elsewhere.",
+   "Benchmarks are legal. That does not match this case.",
+   "Indices differ. It does not fit the facts given.",
+   "The right comparison keeps it honest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s128q3",
+  "h": "Check yourself",
+  "q": "What is survivorship bias?",
+  "opts": [
+   "Closed funds vanish, winners stay",
+   "All the products live forever",
+   "Winners are always hidden away",
+   "Losers are promoted up the list"
+  ],
+  "ans": 0,
+  "why": [
+   "Lists show only survivors. That matches the case described.",
+   "Not all survive. It does not fit the facts given.",
+   "Winners are shown. It does not answer what was asked.",
+   "Losers vanish. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s128q4",
+  "h": "Check yourself",
+  "q": "What should you look at besides the best year?",
+  "opts": [
+   "Only the single best day seen",
+   "Only the very newest year",
+   "The worst fall and consistency",
+   "Only the logo on the page"
+  ],
+  "ans": 2,
+  "why": [
+   "A best day is too narrow. It does not answer what was asked.",
+   "A single year is too narrow. The details here point elsewhere.",
+   "Risk shows in the worst fall. This fits the facts given.",
+   "A logo is not data. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Ask: gross or net, which period, time- or money-weighted.",
+   "Use the right benchmark over the same period.",
+   "Beware survivorship and one lucky year."
+  ]
+ }
+]

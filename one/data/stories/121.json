@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "In a mutual fund, your money is pooled with thousands of others. In a PMS, the shares sit in your own demat account. You can see every holding. But SEBI sets a minimum of ₹50 lakh.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Your name, your shares",
+  "lines": [
+   [
+    "meena",
+    "What makes a PMS different from a fund?"
+   ],
+   [
+    "sikka",
+    "There is no pooling. The manager trades in your own demat account, so your portfolio and your tax position can differ from the next client's."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three PMS types",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Discretionary",
+    "manager decides and trades"
+   ],
+   [
+    "Non-discretionary",
+    "client approves each trade"
+   ],
+   [
+    "Advisory",
+    "manager advises, client executes"
+   ],
+   [
+    "Minimum per client",
+    "₹50 lakh"
+   ]
+  ],
+  "note": "Check the manager's SEBI registration before recommending."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a PMS is",
+  "stops": [
+   [
+    "PMS holds securities in the client's own demat account",
+    true
+   ],
+   [
+    "PMS pools all clients' money together",
+    false
+   ],
+   [
+    "The SEBI minimum is ₹50 lakh per client",
+    true
+   ],
+   [
+    "Registration with SEBI is optional",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Each client has own holdings."
+   ],
+   [
+    2.2,
+    "There is no pooling."
+   ],
+   [
+    4.0,
+    "As per SEBI rules."
+   ],
+   [
+    5.6,
+    "Managers must be registered with SEBI."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s121q1",
+  "h": "Check yourself",
+  "q": "Where are a PMS client's securities held?",
+  "opts": [
+   "In the client's own demat",
+   "In a pooled fund account",
+   "In the manager's own name",
+   "In a locker at a bank"
+  ],
+  "ans": 0,
+  "why": [
+   "There is no pooling, so holdings sit in the client's name.",
+   "Pooling is how mutual funds work, not PMS.",
+   "The manager trades but does not own them.",
+   "Securities are held in demat, not a locker."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s121q2",
+  "h": "Check yourself",
+  "q": "In which PMS type does the client approve each trade?",
+  "opts": [
+   "Discretionary type only",
+   "Advisory type only",
+   "Non-discretionary type",
+   "The pooled type only"
+  ],
+  "ans": 2,
+  "why": [
+   "The manager decides in the discretionary type.",
+   "In advisory, the client executes the trades.",
+   "The client approves each trade in this type.",
+   "Pooled is not a PMS type here. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s121q3",
+  "h": "Check yourself",
+  "q": "What is the SEBI minimum investment per client for a PMS?",
+  "opts": [
+   "₹1 crore",
+   "₹50 lakh",
+   "₹500",
+   "₹5,000"
+  ],
+  "ans": 1,
+  "why": [
+   "₹1 crore is the usual AIF minimum.",
+   "SEBI sets ₹50 lakh per client.",
+   "₹500 is a mutual fund ticket size.",
+   "₹5,000 is far below the minimum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s121q4",
+  "h": "Check yourself",
+  "q": "Before recommending a PMS provider, what should an RM check?",
+  "opts": [
+   "The colour of its brochure",
+   "The size of its office",
+   "The name of its founder's school",
+   "Its SEBI registration status"
+  ],
+  "ans": 3,
+  "why": [
+   "A brochure's colour proves nothing. It does not answer what was asked.",
+   "Office size proves nothing. It does not answer what was asked.",
+   "A founder's school proves nothing. The details here point elsewhere.",
+   "Providers must be registered with SEBI. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "PMS holds securities in the client's own demat account.",
+   "Types: discretionary, non-discretionary, advisory. Minimum ₹50 lakh.",
+   "Check SEBI registration first."
+  ]
+ }
+]

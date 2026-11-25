@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client gets a ₹12 lakh bonus and fears a market fall. Invest it at once, or in 12 monthly instalments? Neither wins every time. Each solves a different problem.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Choose with honesty",
+  "lines": [
+   [
+    "meena",
+    "Which one is better?"
+   ],
+   [
+    "sikka",
+    "If the market rises, the lump sum does better. If it falls soon, instalments do better. I cannot know which. Instalments can help you stay calm, which is worth something. And whatever return we quote, we state the period, whether annualised, and before or after tax."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Mistakes to avoid",
+  "intro": "A checklist for RMs.",
+  "rows": [
+   [
+    "Averaging yearly returns",
+    "+10, +20, −10, +5 is not 6.25% compounded"
+   ],
+   [
+    "CAGR for a SIP",
+    "use XIRR instead"
+   ],
+   [
+    "Ignoring cost and tax",
+    "returns shown are before these"
+   ],
+   [
+    "An assumed return as expected",
+    "it is an illustration only"
+   ]
+  ],
+  "note": "The four years above compound to about 5.7% a year."
+ },
+ {
+  "k": "pick",
+  "id": "s110q1",
+  "h": "Check yourself",
+  "q": "Which statement is accurate?",
+  "opts": [
+   "Lump sum can win in rises; SIP cuts entry risk",
+   "A SIP always beats a lump sum, in every case",
+   "A lump sum always beats a SIP, in every case",
+   "SIPs guarantee a profit every time, no doubt"
+  ],
+  "ans": 0,
+  "why": [
+   "Neither wins every time.",
+   "A SIP does not always win.",
+   "A lump sum does not always win.",
+   "No SIP guarantees a profit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s110q2",
+  "h": "Check yourself",
+  "q": "Returns are +10%, +20%, −10% and +5%. What is wrong with 'average 6.25%'?",
+  "opts": [
+   "Nothing at all, the average is exact",
+   "Averages cannot be used here at all",
+   "It is too high by exactly one per cent",
+   "Compound growth is below the average"
+  ],
+  "ans": 3,
+  "why": [
+   "The average hides compounding. That does not match this case.",
+   "Averages can be used if labelled. It does not fit the facts given.",
+   "The gap is not exactly 1%. It does not fit the facts given.",
+   "The compounded rate is about 5.7% a year. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s110q3",
+  "h": "Check yourself",
+  "q": "What should accompany any return number you quote?",
+  "opts": [
+   "The fund logo and the tagline on it",
+   "The name of the fund manager here",
+   "Period, annualised or not, and tax basis",
+   "A promise that the return will repeat"
+  ],
+  "ans": 2,
+  "why": [
+   "A logo adds no information. That does not match this case.",
+   "A name tells nothing of the basis. It does not fit the facts given.",
+   "These make a number honest and comparable. That matches the case described.",
+   "Returns cannot be promised. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s110q4",
+  "h": "Check yourself",
+  "q": "Why do SIPs suit salaried investors?",
+  "opts": [
+   "SIPs are tax-exempt in every single case",
+   "They earn monthly, cannot time markets",
+   "SIPs cannot ever lose any value at all",
+   "SIPs have zero fund costs at all, ever, anywhere"
+  ],
+  "ans": 1,
+  "why": [
+   "SIPs have no special tax exemption. It does not answer what was asked.",
+   "Monthly income matches monthly instalments. This fits the facts given.",
+   "SIPs can lose value. The details here point elsewhere.",
+   "SIPs carry the same fund costs as others. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Lump sum versus SIP: no always-winner.",
+   "Quote the period and the basis.",
+   "Avoid averaging yearly returns."
+  ]
+ }
+]

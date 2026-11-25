@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Midcap Select is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Midcap Select?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Midcap Select track?"
+   ],
+   [
+    "sikka",
+    "The Nifty Midcap Select index aims to track the performance of a portfolio of 25 liquid midcap stocks. It holds 25 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Midcap Select, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "29.1"
+   ],
+   [
+    "P/B",
+    "4.12"
+   ],
+   [
+    "Dividend yield",
+    "0.49%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+9.0% / +13.2%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Midcap Select: biggest holdings, % weight",
+  "vals": [
+   6.41,
+   5.96,
+   5.5
+  ],
+  "labels": [
+   "MCX",
+   "Federal",
+   "One97"
+  ],
+  "big": "Top 10 add to 50.0%",
+  "small": "Largest sector: Financial Services",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Multi Commodity Exchange of India 6.41%."
+   ],
+   [
+    2.2,
+    "Next: Federal Bank 5.96%."
+   ],
+   [
+    4.0,
+    "Then: One 97 Communications 5.5%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 50.0%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Midcap Select facts",
+  "stops": [
+   [
+    "It holds 25 stocks",
+    true
+   ],
+   [
+    "It holds 10 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "29.1 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s212q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Midcap Select hold?",
+  "opts": [
+   "20 stocks in the index",
+   "30 stocks in the index",
+   "10 stocks in the index",
+   "25 stocks in the index"
+  ],
+  "ans": 3,
+  "why": [
+   "20 is not the stated count of stocks.",
+   "30 is not the stated count of stocks.",
+   "10 is not the stated count of stocks.",
+   "The factsheet shows 25 stocks in the index."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s212q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Midcap Select, and what weight?",
+  "opts": [
+   "Federal Bank, with 6.41%",
+   "Multi Commodity Exchange of India, with 6.41%",
+   "One 97 Communications, with 50.0%",
+   "Multi Commodity Exchange of India, with 5.5%"
+  ],
+  "ans": 1,
+  "why": [
+   "Federal ranks second, so it cannot lead at 6.41%.",
+   "It leads the index at 6.41%, as per the lesson.",
+   "50.0% is the top 10 total, not one stock's weight.",
+   "5.5% is the weight of One97, not MCX."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s212q3",
+  "h": "Check yourself",
+  "q": "The Nifty Midcap Select P/E is 29.1 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Lower than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Higher than the Nifty 50's P/E",
+   "Not comparable at all, ever"
+  ],
+  "ans": 2,
+  "why": [
+   "29.1 is above 19.36, so this reverses the facts.",
+   "The two figures differ, so they are not equal.",
+   "29.1 is above the Nifty 50's 19.36, as stated.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s212q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +13.2% a year. What should an RM say?",
+  "opts": [
+   "Past returns are no forecast",
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all"
+  ],
+  "ans": 0,
+  "why": [
+   "Past returns do not predict future returns.",
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Midcap Select: Multi Commodity Exchange of India leads at 6.41%; top 10 add to 50.0%.",
+   "Largest sector: Financial Services at 38.51%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

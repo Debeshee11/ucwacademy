@@ -1,0 +1,144 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A deposit pays 7%. Prices rise 6%. The account balance grows, but what it can buy grows by less than 1%. A number on a statement is not the same as buying power.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What you can actually buy",
+  "lines": [
+   [
+    "meena",
+    "My FD gives 7%. That is good, right?"
+   ],
+   [
+    "sikka",
+    "Inflation takes a share first. Real return is about (1 + 7%) ÷ (1 + 6%) − 1, which is 0.9%, before tax. Goals should be written in today's money, then inflated to the date you need it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nominal 7%, inflation 6%",
+  "vals": [
+   7,
+   6,
+   0.9
+  ],
+  "labels": [
+   "Nominal",
+   "Inflation",
+   "Real"
+  ],
+  "big": "about 0.9%",
+  "small": "real return, before tax",
+  "alt": "Bars of a nominal return, inflation and the real return",
+  "caps": [
+   [
+    0.3,
+    "The deposit pays 7% a year."
+   ],
+   [
+    2.2,
+    "Prices rise 6% a year."
+   ],
+   [
+    4.0,
+    "What remains is about 0.9%."
+   ],
+   [
+    5.6,
+    "Tax cuts it further."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s106q1",
+  "h": "Check yourself",
+  "q": "A deposit earns 8% and inflation is 6%. The exact real return is about:",
+  "opts": [
+   "2.00%",
+   "14.00%",
+   "1.89%",
+   "0.00%"
+  ],
+  "ans": 2,
+  "why": [
+   "Subtracting gives 2%, a close shortcut only.",
+   "Adding the two rates is not a real return.",
+   "1.08 ÷ 1.06 − 1 gives about 1.89%.",
+   "0% needs inflation to equal the nominal rate."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s106q2",
+  "h": "Check yourself",
+  "q": "A ₹50,000 monthly expense, with 6% inflation, becomes about what in 10 years?",
+  "opts": [
+   "₹89,542",
+   "₹80,000",
+   "₹50,000",
+   "₹1,00,000"
+  ],
+  "ans": 0,
+  "why": [
+   "50,000 × 1.06^10 is about ₹89,542.",
+   "₹80,000 ignores the compounding of prices.",
+   "₹50,000 assumes no inflation at all.",
+   "₹1,00,000 would need roughly 7.2% inflation."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s106q3",
+  "h": "Check yourself",
+  "q": "Why is looking only at the nominal return misleading?",
+  "opts": [
+   "Nominal returns are always the lower ones",
+   "SEBI has banned nominal return figures",
+   "It leaves out all equity funds",
+   "Rising prices reduce what the sum can buy"
+  ],
+  "ans": 3,
+  "why": [
+   "Nominal figures are higher than real ones, not lower.",
+   "No such ban exists. It does not fit the facts given.",
+   "Nominal returns apply to every asset class.",
+   "Real return shows growth in buying power."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s106q4",
+  "h": "Check yourself",
+  "q": "Why should goals be written in today's money first?",
+  "opts": [
+   "To ignore inflation completely and simply",
+   "To inflate them to the date needed",
+   "To avoid every bit of tax payable",
+   "To guarantee the future returns of it"
+  ],
+  "ans": 1,
+  "why": [
+   "Ignoring inflation understates the real goal.",
+   "Today's money is the base for inflating forward.",
+   "Tax is a separate matter from the goal figure.",
+   "No returns can ever be guaranteed in markets."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Real = (1 + nominal) ÷ (1 + inflation) − 1.",
+   "Goals are in future money.",
+   "Tax cuts the real return further."
+  ]
+ }
+]

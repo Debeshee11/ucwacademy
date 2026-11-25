@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Healthcare is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Healthcare?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Healthcare track?"
+   ],
+   [
+    "sikka",
+    "The Nifty Healthcare Index is designed to reflect the behaviour and performance of the Healthcare companies. It holds 20 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Healthcare, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "42.02"
+   ],
+   [
+    "P/B",
+    "5.33"
+   ],
+   [
+    "Dividend yield",
+    "0.48%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+14.1% / +12.4%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Healthcare: biggest holdings, % weight",
+  "vals": [
+   17.0,
+   10.44,
+   7.43
+  ],
+  "labels": [
+   "Sun Phar",
+   "Divi's",
+   "Apollo"
+  ],
+  "big": "Top 10 add to 75.8%",
+  "small": "A concentrated index",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Sun Pharmaceutical Industries 17%."
+   ],
+   [
+    2.2,
+    "Next: Divi's Laboratories 10.44%."
+   ],
+   [
+    4.0,
+    "Then: Apollo Hospitals Enterprise 7.43%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 75.8%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Healthcare facts",
+  "stops": [
+   [
+    "It holds 20 stocks",
+    true
+   ],
+   [
+    "It holds 30 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "42.02 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s227q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Healthcare hold?",
+  "opts": [
+   "25 stocks in the index",
+   "20 stocks in the index",
+   "10 stocks in the index",
+   "30 stocks in the index"
+  ],
+  "ans": 1,
+  "why": [
+   "25 is not the stated count of stocks.",
+   "The factsheet shows 20 stocks in the index.",
+   "10 is not the stated count of stocks.",
+   "30 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s227q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Healthcare, and what weight?",
+  "opts": [
+   "Divi's Laboratories, with 17%",
+   "Apollo Hospitals Enterprise, with 75.8%",
+   "Sun Pharmaceutical Industries, with 7.43%",
+   "Sun Pharmaceutical Industries, with 17%"
+  ],
+  "ans": 3,
+  "why": [
+   "Divi's ranks second, so it cannot lead at 17%.",
+   "75.8% is the top 10 total, not one stock's weight.",
+   "7.43% is the weight of Apollo, not Sun Phar.",
+   "It leads the index at 17%, as per the lesson."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s227q3",
+  "h": "Check yourself",
+  "q": "The Nifty Healthcare P/E is 42.02 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Higher than the Nifty 50's P/E",
+   "Lower than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever"
+  ],
+  "ans": 0,
+  "why": [
+   "42.02 is above the Nifty 50's 19.36, as stated.",
+   "42.02 is above 19.36, so this reverses the facts.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s227q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +12.4% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "Past returns are no forecast",
+   "It carries no risk at all"
+  ],
+  "ans": 2,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Past returns do not predict future returns.",
+   "Equity indices carry risk of loss in any year."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Healthcare: Sun Pharmaceutical Industries leads at 17%; top 10 add to 75.8%.",
+   "Top 10 hold 75.8%: concentrated.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

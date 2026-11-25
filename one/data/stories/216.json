@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Microcap 250 is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Microcap 250?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Microcap 250 track?"
+   ],
+   [
+    "sikka",
+    "NSE Indices has developed the Nifty Microcap 250 Index which aims to track the performance of microcap stocks listed or permitted to trade on NSE. It holds 254 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Microcap 250, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "27.28"
+   ],
+   [
+    "P/B",
+    "3.17"
+   ],
+   [
+    "Dividend yield",
+    "0.45%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+14.7% / +21.1%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Microcap 250: biggest holdings, % weight",
+  "vals": [
+   1.56,
+   1.43,
+   1.41
+  ],
+  "labels": [
+   "Astra",
+   "Ujjivan",
+   "Sundram"
+  ],
+  "big": "Top 10 add to 12.9%",
+  "small": "Largest sector: Capital Goods",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: Astra Microwave Products 1.56%."
+   ],
+   [
+    2.2,
+    "Next: Ujjivan Small Finance Bank 1.43%."
+   ],
+   [
+    4.0,
+    "Then: Sundram Fasteners 1.41%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 12.9%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Microcap 250 facts",
+  "stops": [
+   [
+    "It holds 254 stocks",
+    true
+   ],
+   [
+    "It holds 150 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "27.28 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s216q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Microcap 250 hold?",
+  "opts": [
+   "250 stocks in the index",
+   "200 stocks in the index",
+   "150 stocks in the index",
+   "254 stocks in the index"
+  ],
+  "ans": 3,
+  "why": [
+   "250 is not the stated count of stocks.",
+   "200 is not the stated count of stocks.",
+   "150 is not the stated count of stocks.",
+   "The factsheet shows 254 stocks in the index."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s216q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Microcap 250, and what weight?",
+  "opts": [
+   "Ujjivan Small Finance Bank, with 1.56%",
+   "Astra Microwave Products, with 1.56%",
+   "Sundram Fasteners, with 12.9%",
+   "Astra Microwave Products, with 1.41%"
+  ],
+  "ans": 1,
+  "why": [
+   "Ujjivan ranks second, so it cannot lead at 1.56%.",
+   "It leads the index at 1.56%, as per the lesson.",
+   "12.9% is the top 10 total, not one stock's weight.",
+   "1.41% is the weight of Sundram, not Astra."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s216q3",
+  "h": "Check yourself",
+  "q": "The Nifty Microcap 250 P/E is 27.28 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Lower than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Higher than the Nifty 50's P/E",
+   "Not comparable at all, ever"
+  ],
+  "ans": 2,
+  "why": [
+   "27.28 is above 19.36, so this reverses the facts.",
+   "The two figures differ, so they are not equal.",
+   "27.28 is above the Nifty 50's 19.36, as stated.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s216q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +21.1% a year. What should an RM say?",
+  "opts": [
+   "Past returns are no forecast",
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all"
+  ],
+  "ans": 0,
+  "why": [
+   "Past returns do not predict future returns.",
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Microcap 250: Astra Microwave Products leads at 1.56%; top 10 add to 12.9%.",
+   "Largest sector: Capital Goods at 21.95%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

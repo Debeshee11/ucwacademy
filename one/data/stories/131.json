@@ -1,0 +1,185 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client redeems ₹6.4 lakh from an equity fund bought for ₹5 lakh, eighteen months ago. She asks, 'Do I pay tax on the whole ₹6.4 lakh?' The answer is no. Tax is on the gain, and part of it may be exempt.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Gain, not the amount",
+  "lines": [
+   [
+    "meena",
+    "I took out ₹6.4 lakh. Is all of that taxed?"
+   ],
+   [
+    "sikka",
+    "Only the gain is taxed, and the gain is the redemption value less the cost of the units sold. Then the holding period and fund type decide the rate."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A long-term gain, current rules",
+  "intro": "Equity fund held 18 months.",
+  "rows": [
+   [
+    "Redeemed",
+    "₹6,40,000"
+   ],
+   [
+    "Cost of units",
+    "₹5,00,000"
+   ],
+   [
+    "=",
+    "Long-term gain",
+    "₹1,40,000"
+   ],
+   [
+    "Exempt up to",
+    "₹1,25,000"
+   ],
+   [
+    "=",
+    "Taxable gain",
+    "₹15,000"
+   ],
+   [
+    "At 12.5%",
+    "about ₹1,875, plus cess"
+   ]
+  ],
+  "note": "Rates and limits are as per current rules and change with Budgets. Confirm each year."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Capital gains on funds",
+  "stops": [
+   [
+    "Tax applies to the gain, not the amount redeemed",
+    true
+   ],
+   [
+    "Equity fund gains within 12 months are long term",
+    false
+   ],
+   [
+    "Debt-oriented fund gains follow the slab rate",
+    true
+   ],
+   [
+    "Cess and surcharge are never added",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The gain is the redemption value less the cost of units sold."
+   ],
+   [
+    2.2,
+    "Within 12 months, equity fund gains are short term."
+   ],
+   [
+    4.0,
+    "For specified debt-oriented funds, the slab rate applies."
+   ],
+   [
+    5.6,
+    "Cess and surcharge are added on top of the tax."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s131q1",
+  "h": "Check yourself",
+  "q": "A client redeems an equity fund after 8 months with a gain of ₹40,000. How is the gain treated?",
+  "opts": [
+   "As long term, taxed at 12.5%",
+   "As short term, taxed at 20%",
+   "As exempt, below the limit",
+   "As taxed at her slab rate"
+  ],
+  "ans": 1,
+  "why": [
+   "Long-term treatment needs a holding of more than 12 months.",
+   "Within 12 months, the gain is short term and taxed at 20%.",
+   "The yearly exemption applies only to long-term gains.",
+   "Slab rate applies to specified debt funds, not equity funds."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s131q2",
+  "h": "Check yourself",
+  "q": "Meena redeems ₹3 lakh of units that cost ₹2.5 lakh. What is the gain?",
+  "opts": [
+   "₹3,00,000",
+   "₹2,50,000",
+   "₹5,50,000",
+   "₹50,000"
+  ],
+  "ans": 3,
+  "why": [
+   "₹3 lakh is the amount redeemed, not the gain.",
+   "₹2.5 lakh is the cost of the units, not the gain.",
+   "₹5.5 lakh adds the two figures, which is wrong.",
+   "Gain is redemption value less cost: ₹3 lakh less ₹2.5 lakh."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s131q3",
+  "h": "Check yourself",
+  "q": "A client holds an equity fund for 20 months and has a long-term gain of ₹1 lakh this year. What follows under current rules?",
+  "opts": [
+   "No tax, as it is below the limit",
+   "Tax at 20% on the whole gain made",
+   "Tax at the slab rate on the gain",
+   "Tax on the whole redemption amount"
+  ],
+  "ans": 0,
+  "why": [
+   "Long-term equity gains are exempt up to ₹1.25 lakh a year.",
+   "20% is the short-term rate, not the long-term rate.",
+   "The slab rate applies to specified debt funds only.",
+   "Tax is on the gain and not on the redemption amount."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s131q4",
+  "h": "Check yourself",
+  "q": "Which fund's gains are taxed at the investor's slab rate, regardless of holding period?",
+  "opts": [
+   "An equity-oriented fund held long",
+   "A fund with 70% held in shares",
+   "A specified debt-oriented fund",
+   "A large-cap index fund, held long"
+  ],
+  "ans": 2,
+  "why": [
+   "Equity-oriented funds have short and long-term rates.",
+   "A fund with 70% in shares is equity-oriented. It does not answer what was asked.",
+   "For specified debt funds, the slab rate applies at any holding period.",
+   "An index fund of large caps is equity-oriented. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Tax is on the gain: redemption value less the cost of units sold.",
+   "Equity funds: 12 months splits short term and long term.",
+   "Specified debt funds follow the slab rate. Confirm rates each year."
+  ]
+ }
+]

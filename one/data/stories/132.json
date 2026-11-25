@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "A client wants to move ₹10 lakh from one fund to another with a better record. She thinks it is a simple switch. It is a sale and a purchase. It can bring tax and an exit load, which may cost more than the new fund's edge.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The cost of a switch",
+  "lines": [
+   [
+    "meena",
+    "It is only a switch inside the same fund house. Why would there be tax?"
+   ],
+   [
+    "sikka",
+    "In law, a switch is a redemption followed by a fresh purchase. Tax may apply on the gain, and an exit load may apply if you leave early. Compare that cost with what the new fund may add."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "FIFO in action",
+  "intro": "Two purchases, one sale.",
+  "rows": [
+   [
+    "Lot A: 100 units, 2 years ago",
+    "₹50 each"
+   ],
+   [
+    "Lot B: 100 units, 8 months ago",
+    "₹70 each"
+   ],
+   [
+    "Sale today: 100 units at",
+    "₹90 each"
+   ],
+   [
+    "Sold first (FIFO)",
+    "Lot A, long-term gain ₹4,000"
+   ]
+  ],
+  "note": "Units are sold first-in, first-out. The oldest units are treated as sold first. Rates and limits are as per current rules and change with Budgets. Confirm each year."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "FIFO and switching",
+  "stops": [
+   [
+    "Redemption uses first-in, first-out",
+    true
+   ],
+   [
+    "A switch between schemes is not a sale",
+    false
+   ],
+   [
+    "Regular to direct is a transfer too",
+    true
+   ],
+   [
+    "Exit load never applies on a switch",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The oldest units are treated as sold first."
+   ],
+   [
+    2.2,
+    "A switch is a redemption plus a fresh purchase."
+   ],
+   [
+    4.0,
+    "Tax and load may apply here as well."
+   ],
+   [
+    5.6,
+    "Load applies to the amount switched, within its period."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s132q1",
+  "h": "Check yourself",
+  "q": "A client sells part of a holding bought in three lots over two years. Which units are treated as sold first?",
+  "opts": [
+   "The newest units",
+   "The cheapest units",
+   "The oldest units",
+   "The most expensive units"
+  ],
+  "ans": 2,
+  "why": [
+   "The newest units would be last-in, first-out, which is not used.",
+   "Price does not decide the order of sale. The details here point elsewhere.",
+   "First-in, first-out treats the oldest units as sold first.",
+   "Cost does not decide the order of sale. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s132q2",
+  "h": "Check yourself",
+  "q": "Meena switches from one scheme to another within the same fund house. How is it treated?",
+  "opts": [
+   "A redemption plus a fresh purchase",
+   "A tax-exempt transfer of units",
+   "A name change of the same units",
+   "A bonus issue of extra new units"
+  ],
+  "ans": 0,
+  "why": [
+   "A switch is treated as selling one scheme and buying another.",
+   "Tax may apply, so it is not a tax-neutral move.",
+   "It involves a real sale and purchase, not a rename.",
+   "A bonus issue gives extra units, which is unrelated."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s132q3",
+  "h": "Check yourself",
+  "q": "A client wants to move from a regular plan to a direct plan of the same scheme. What should the adviser say?",
+  "opts": [
+   "It has no cost, as it is one fund",
+   "It resets the NAV to zero at once",
+   "It is allowed only on bank holidays",
+   "A transfer, so tax and load may apply"
+  ],
+  "ans": 3,
+  "why": [
+   "It may carry tax and load, so it is not without cost.",
+   "The NAV is not reset to zero by a switch. It does not fit the facts given.",
+   "Holidays have no link to this. It does not answer what was asked.",
+   "Plan switches are treated as transfers, so costs may arise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s132q4",
+  "h": "Check yourself",
+  "q": "Before recommending a switch, what should the adviser compare?",
+  "opts": [
+   "The colour of the logo and the brochure",
+   "Tax and load against the new fund's benefit",
+   "The number of ads that the new fund house ran",
+   "The fund manager's age and hometown"
+  ],
+  "ans": 1,
+  "why": [
+   "A logo's colour has nothing to do with the decision.",
+   "The cost of switching must be weighed against what the new fund adds.",
+   "Advertising volume does not show benefit. The details here point elsewhere.",
+   "A manager's age is not the test. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Redemptions use first-in, first-out.",
+   "A switch, even to a direct plan, is a sale plus a fresh purchase.",
+   "Compare tax and exit load with the benefit before switching."
+  ]
+ }
+]

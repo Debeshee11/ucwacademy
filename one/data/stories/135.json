@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client invests ₹1.5 lakh in an ELSS fund to save tax. But she has chosen the new regime, which gives no deduction for it. She is locked in for three years, with nothing saved.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Old or new?",
+  "lines": [
+   [
+    "meena",
+    "Everyone says ELSS saves tax. Why did it not for me?"
+   ],
+   [
+    "sikka",
+    "ELSS gives a deduction only in the old regime. In the new regime, it is just an equity fund with a lock-in. Which regime is better depends on your income and deductions. Work out both each year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "ELSS in the old regime, made-up",
+  "intro": "A 30% slab client.",
+  "rows": [
+   [
+    "Invested in ELSS",
+    "₹1,50,000"
+   ],
+   [
+    "Deduction in old regime",
+    "up to ₹1,50,000"
+   ],
+   [
+    "=",
+    "Tax saved at 30%",
+    "about ₹45,000, plus cess"
+   ],
+   [
+    "Same ELSS in the new regime",
+    "No deduction"
+   ]
+  ],
+  "note": "ELSS has a 3-year lock-in, the shortest among 80C options. Rates and limits are as per current rules and change with Budgets. Confirm each year."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Regimes and ELSS",
+  "stops": [
+   [
+    "The old regime allows deductions such as 80C",
+    true
+   ],
+   [
+    "ELSS gives a deduction in the new regime",
+    false
+   ],
+   [
+    "ELSS has a three-year lock-in",
+    true
+   ],
+   [
+    "One regime is always better for everyone",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It allows up to ₹1.5 lakh under Section 80C."
+   ],
+   [
+    2.2,
+    "In the new regime it has no deduction."
+   ],
+   [
+    4.0,
+    "It is the shortest lock-in among 80C options."
+   ],
+   [
+    5.6,
+    "It depends on income and deductions."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s135q1",
+  "h": "Check yourself",
+  "q": "A client in the old regime invests ₹1.5 lakh in ELSS and is in the 30% slab. What is the approximate tax saved, ignoring cess?",
+  "opts": [
+   "₹1,50,000",
+   "₹45,000",
+   "₹15,000",
+   "Nil"
+  ],
+  "ans": 1,
+  "why": [
+   "₹1.5 lakh is the amount invested, not the saving.",
+   "30% of ₹1.5 lakh is ₹45,000, the tax saved.",
+   "₹15,000 is 10% of the sum, not 30% of it.",
+   "The old regime does allow the deduction, so not nil."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s135q2",
+  "h": "Check yourself",
+  "q": "A client has opted for the new regime and invests in ELSS. What is the position?",
+  "opts": [
+   "No deduction, and a three-year lock-in",
+   "A deduction of ₹1.5 lakh, no lock-in",
+   "A refund of the whole amount paid",
+   "No lock-in, and no deduction either"
+  ],
+  "ans": 0,
+  "why": [
+   "The new regime gives no deduction for ELSS.",
+   "The deduction applies in the old regime only.",
+   "There is no refund of the amount.",
+   "The lock-in applies regardless of regime."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s135q3",
+  "h": "Check yourself",
+  "q": "How should the adviser decide between the two regimes for a client?",
+  "opts": [
+   "Choose the old regime always, for everyone",
+   "Choose the new one always, for everyone",
+   "Compute tax under both on her real figures",
+   "Toss a coin and then pick a regime"
+  ],
+  "ans": 2,
+  "why": [
+   "The old regime is not best for everyone. That does not match this case.",
+   "The new regime is not best for everyone. It does not fit the facts given.",
+   "The better regime depends on income and deductions, so compute both.",
+   "A coin toss is no basis for advice. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s135q4",
+  "h": "Check yourself",
+  "q": "A client wants to withdraw her ELSS units after one year. What is the position?",
+  "opts": [
+   "Allowed at once, if she sends a request",
+   "Allowed after six months of holding",
+   "Allowed on a request made to SEBI",
+   "Not allowed until three years have passed"
+  ],
+  "ans": 3,
+  "why": [
+   "The lock-in stops an early redemption.",
+   "Six months falls within the lock-in.",
+   "SEBI does not unlock units on request.",
+   "ELSS units are locked in for three years."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The old regime allows deductions such as 80C. The new one has lower slabs.",
+   "ELSS gives a deduction only in the old regime, with a 3-year lock-in.",
+   "Calculate both regimes each year with real numbers."
+  ]
+ }
+]

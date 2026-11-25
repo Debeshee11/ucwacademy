@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Midcaps sit between giants and small fry. The Nifty Midcap 50 shows how mid-sized companies move. It has a higher P/E and a stronger five-year return than the Nifty 50. Higher valuation and bigger swings often go together.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Midcap 50?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Midcap 50 actually track?"
+   ],
+   [
+    "sikka",
+    "It captures the midcap segment. It picks the top 50 by six-month average free float market capitalisation from the Nifty Midcap 150. Weights follow free float market capitalisation. It is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Midcap 50, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "30.14"
+   ],
+   [
+    "P/B",
+    "3.69"
+   ],
+   [
+    "Dividend yield",
+    "0.67%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "+6.8% / +15.5%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Midcap 50: biggest holdings, % weight",
+  "vals": [
+   3.91,
+   3.65,
+   3.59
+  ],
+  "labels": [
+   "MCX",
+   "Federal",
+   "Laurus"
+  ],
+  "big": "Top 10 add to 31.6%",
+  "small": "Largest sector: Financial Services",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: MCX 3.91%."
+   ],
+   [
+    2.2,
+    "Next: Federal Bank 3.65%."
+   ],
+   [
+    4.0,
+    "Then: Laurus Labs 3.59%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 31.6%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Midcap 50 facts",
+  "stops": [
+   [
+    "It captures the midcap segment",
+    true
+   ],
+   [
+    "It is a large-cap index",
+    false
+   ],
+   [
+    "Its P/E is well above the Nifty 50's",
+    true
+   ],
+   [
+    "Past returns predict the future",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Top 50 from the Nifty Midcap 150."
+   ],
+   [
+    2.2,
+    "It tracks mid-sized companies."
+   ],
+   [
+    4.0,
+    "30.14 against 19.36."
+   ],
+   [
+    5.6,
+    "They do not."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s209q1",
+  "h": "Check yourself",
+  "q": "Which segment does the Nifty Midcap 50 capture?",
+  "opts": [
+   "The largest 50 companies",
+   "Only small unlisted firms",
+   "Only bonds",
+   "The midcap segment"
+  ],
+  "ans": 3,
+  "why": [
+   "The largest 50 are in the Nifty 50. The details here point elsewhere.",
+   "Index members are listed firms. The details here point elsewhere.",
+   "It is an equity index. That does not match this case.",
+   "It captures the movement of the midcap segment."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s209q2",
+  "h": "Check yourself",
+  "q": "The Midcap 50 P/E is 30.14 and the Nifty 50 P/E is 19.36. What can be said?",
+  "opts": [
+   "Midcap 50 has the higher P/E",
+   "Midcap 50 has the lower P/E",
+   "They are equal",
+   "P/E cannot be compared"
+  ],
+  "ans": 0,
+  "why": [
+   "30.14 is well above 19.36. This fits the facts given.",
+   "The Midcap 50 figure is higher. It does not fit the facts given.",
+   "The two figures differ. It does not answer what was asked.",
+   "They can be compared. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s209q3",
+  "h": "Check yourself",
+  "q": "What is the Midcap 50's largest sector, as per the lesson?",
+  "opts": [
+   "Capital Goods, with 20.25%",
+   "Financial Services, 27.62%",
+   "Energy, with about 60%",
+   "Media, with about 28%"
+  ],
+  "ans": 1,
+  "why": [
+   "Capital Goods leads the Next 50.",
+   "Financial Services leads at 27.62%.",
+   "Energy is not the largest.",
+   "Media is not the largest."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s209q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +15.5% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "Past returns are no forecast",
+   "It carries no risk at all"
+  ],
+  "ans": 2,
+  "why": [
+   "No repeat can be promised. It does not fit the facts given.",
+   "Nothing is guaranteed. It does not answer what was asked.",
+   "Past returns do not predict the future.",
+   "Midcaps carry risk. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Midcap 50: MCX 3.91% leads; top 10 add to 31.6%.",
+   "Largest sector: Financial Services at 27.62%.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Nifty Realty is a snapshot of one slice of the market. Its factsheet answers four quick questions: how many stocks, what is the valuation, who is on top and how concentrated is it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What is the Nifty Realty?",
+  "lines": [
+   [
+    "meena",
+    "What does the Nifty Realty track?"
+   ],
+   [
+    "sikka",
+    "Nifty Realty Index is designed to reflect the behaviour and performance of Real Estate companies. It holds 10 stocks and is rebalanced twice a year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Nifty Realty, factsheet",
+  "intro": "NSE factsheet, 30 Sep 2026, as per the lesson. Past returns do not predict the future.",
+  "rows": [
+   [
+    "P/E (Nifty 50: 19.36)",
+    "35.88"
+   ],
+   [
+    "P/B",
+    "3.7"
+   ],
+   [
+    "Dividend yield",
+    "0.49%"
+   ],
+   [
+    "1-year / 5-year a year",
+    "-2.3% / +10.5%"
+   ]
+  ],
+  "note": "P/E is price relative to earnings. A higher P/E means investors pay more for each rupee of earnings."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Nifty Realty: biggest holdings, % weight",
+  "vals": [
+   20.38,
+   17.05,
+   15.9
+  ],
+  "labels": [
+   "DLF",
+   "Phoenix",
+   "Lodha"
+  ],
+  "big": "Top 10 add to 100.0%",
+  "small": "A concentrated index",
+  "alt": "Bars of the three biggest holdings",
+  "caps": [
+   [
+    0.3,
+    "Biggest: DLF 20.38%."
+   ],
+   [
+    2.2,
+    "Next: Phoenix Mills 17.05%."
+   ],
+   [
+    4.0,
+    "Then: Lodha Developers 15.9%."
+   ],
+   [
+    5.6,
+    "The top 10 together add to 100.0%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Nifty Realty facts",
+  "stops": [
+   [
+    "It holds 10 stocks",
+    true
+   ],
+   [
+    "It holds 30 stocks",
+    false
+   ],
+   [
+    "Its P/E is above the Nifty 50's",
+    true
+   ],
+   [
+    "Its P/E is below the Nifty 50's",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the factsheet."
+   ],
+   [
+    2.2,
+    "The count is fixed by the index rules."
+   ],
+   [
+    4.0,
+    "35.88 against 19.36."
+   ],
+   [
+    5.6,
+    "The comparison goes the other way."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s230q1",
+  "h": "Check yourself",
+  "q": "How many stocks does the Nifty Realty hold?",
+  "opts": [
+   "10 stocks in the index",
+   "20 stocks in the index",
+   "25 stocks in the index",
+   "30 stocks in the index"
+  ],
+  "ans": 0,
+  "why": [
+   "The factsheet shows 10 stocks in the index.",
+   "20 is not the stated count of stocks.",
+   "25 is not the stated count of stocks.",
+   "30 is not the stated count of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s230q2",
+  "h": "Check yourself",
+  "q": "Which holding has the biggest weight in the Nifty Realty, and what weight?",
+  "opts": [
+   "Phoenix Mills, with 20.38%",
+   "Lodha Developers, with 100.0%",
+   "DLF, with 20.38%",
+   "DLF, with 15.9%"
+  ],
+  "ans": 2,
+  "why": [
+   "Phoenix ranks second, so it cannot lead at 20.38%.",
+   "100.0% is the top 10 total, not one stock's weight.",
+   "It leads the index at 20.38%, as per the lesson.",
+   "15.9% is the weight of Lodha, not DLF."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s230q3",
+  "h": "Check yourself",
+  "q": "The Nifty Realty P/E is 35.88 and the Nifty 50 P/E is 19.36. How do they compare?",
+  "opts": [
+   "Lower than the Nifty 50's P/E",
+   "Higher than the Nifty 50's P/E",
+   "Exactly equal to the Nifty 50's",
+   "Not comparable at all, ever"
+  ],
+  "ans": 1,
+  "why": [
+   "35.88 is above 19.36, so this reverses the facts.",
+   "35.88 is above the Nifty 50's 19.36, as stated.",
+   "The two figures differ, so they are not equal.",
+   "A ratio like P/E can be compared across indices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s230q4",
+  "h": "Check yourself",
+  "q": "Its 5-year return is +10.5% a year. What should an RM say?",
+  "opts": [
+   "It will repeat each year again",
+   "It is guaranteed to come back",
+   "It carries no risk at all",
+   "Past returns are no forecast"
+  ],
+  "ans": 3,
+  "why": [
+   "No repeat of any past return can be promised.",
+   "Nothing is guaranteed in a market index.",
+   "Equity indices carry risk of loss in any year.",
+   "Past returns do not predict future returns."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nifty Realty: DLF leads at 20.38%; top 10 add to 100.0%.",
+   "Top 10 hold 100.0%: concentrated.",
+   "Rebalanced semi-annually. Past returns do not predict the future."
+  ]
+ }
+]

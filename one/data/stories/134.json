@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "A client gets ₹30,000 as IDCW from a fund and thinks it is a bonus on top of her returns. It is her own money paid back, and it is added to her income and taxed at her slab rate. In a 30% slab, that is ₹9,000 of tax.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Payouts and statements",
+  "lines": [
+   [
+    "meena",
+    "Why did tax get cut from my payout, and what do I keep for filing?"
+   ],
+   [
+    "sikka",
+    "IDCW is the current name for a payout. It is taxed in your hands at slab rates, and TDS can be cut once payouts cross a limit. Keep your statements, since they feed your return."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A payout, made-up numbers",
+  "intro": "Slab rate case.",
+  "rows": [
+   [
+    "IDCW received",
+    "₹30,000"
+   ],
+   [
+    "Slab rate",
+    "30%"
+   ],
+   [
+    "=",
+    "Tax on it",
+    "₹9,000, plus cess"
+   ],
+   [
+    "Growth plan instead",
+    "No payout, no tax until units are sold"
+   ]
+  ],
+  "note": "Rates and limits are as per current rules and change with Budgets. Confirm each year."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "IDCW, TDS and statements",
+  "stops": [
+   [
+    "IDCW is taxed in the investor's hands at slab rates",
+    true
+   ],
+   [
+    "Growth plans pay a yearly dividend",
+    false
+   ],
+   [
+    "Capital gains statements list each redemption",
+    true
+   ],
+   [
+    "Mismatches with AIS or 26AS never cause notices",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is added to income."
+   ],
+   [
+    2.2,
+    "Growth plans pay nothing out until units are sold."
+   ],
+   [
+    4.0,
+    "CAMS, KFintech and the AMCs provide them."
+   ],
+   [
+    5.6,
+    "Mismatches can trigger a notice."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s134q1",
+  "h": "Check yourself",
+  "q": "A client receives IDCW of ₹20,000 and is in the 20% slab. What is the tax, ignoring cess?",
+  "opts": [
+   "₹20,000",
+   "₹2,000",
+   "Nil",
+   "₹4,000"
+  ],
+  "ans": 3,
+  "why": [
+   "₹20,000 is the payout, not the tax. The details here point elsewhere.",
+   "₹2,000 would be 10%, not 20%. The details here point elsewhere.",
+   "IDCW is taxable, so it is not nil. That does not match this case.",
+   "IDCW is taxed at the slab rate: 20% of ₹20,000."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s134q2",
+  "h": "Check yourself",
+  "q": "Which plan has no payouts and so no tax until units are sold?",
+  "opts": [
+   "IDCW plan",
+   "Growth plan",
+   "A dividend plan",
+   "A payout plan"
+  ],
+  "ans": 1,
+  "why": [
+   "An IDCW plan pays out and is taxed on the payout. That does not match this case.",
+   "A growth plan reinvests everything, so tax comes only on sale.",
+   "A dividend plan is the older name for IDCW. It does not fit the facts given.",
+   "A payout plan pays out, so tax applies. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s134q3",
+  "h": "Check yourself",
+  "q": "Where can a client find a record of each redemption, holding period and gain?",
+  "opts": [
+   "A shop bill kept from the last market visit",
+   "A newspaper column about the stock market",
+   "A capital gains statement from the RTA or AMC",
+   "A bank advert posted in the local branch"
+  ],
+  "ans": 2,
+  "why": [
+   "A shop bill has no investment data. That does not match this case.",
+   "A newspaper column has no personal data. It does not fit the facts given.",
+   "RTAs such as CAMS and KFintech issue these statements.",
+   "A bank advert has no personal data. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s134q4",
+  "h": "Check yourself",
+  "q": "A client's return does not match her AIS or Form 26AS. What may follow?",
+  "opts": [
+   "A notice from the tax office",
+   "A bonus paid by the fund house",
+   "An automatic refund of tax paid",
+   "Nothing at all will follow"
+  ],
+  "ans": 0,
+  "why": [
+   "Mismatches can trigger notices, so check statements before filing.",
+   "A fund does not pay a bonus for a mismatch. It does not answer what was asked.",
+   "A mismatch does not trigger a refund. The details here point elsewhere.",
+   "Mismatches can have consequences. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "IDCW is the current name for a mutual fund payout, taxed at slab rates.",
+   "Growth plans have no payout, so no tax until units are sold.",
+   "Keep statements, and match them with AIS and 26AS before filing."
+  ]
+ }
+]

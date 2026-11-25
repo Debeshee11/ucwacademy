@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A rule of thumb: corpus ≈ 25 times first-year expenses, which is a 4% withdrawal. In the lesson's example, first-year expenses are about ₹30.9 lakh. That points to about ₹7.7 crore. But many planners use 3 to 3.5% for India.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "How big a corpus",
+  "lines": [
+   [
+    "meena",
+    "Is 4% safe for India?"
+   ],
+   [
+    "sikka",
+    "It is a starting point. With India's higher inflation and returns, many planners use a lower rate such as 3 to 3.5% for safety. At 3.5%, the same example needs about ₹8.8 crore. Then work back to the monthly SIP. These are planning aids, not guarantees, so review every year."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Corpus for the lesson's example, ₹ crore",
+  "vals": [
+   7.7,
+   8.8
+  ],
+  "labels": [
+   "4% rule",
+   "3.5% rule"
+  ],
+  "big": "₹7.7 to ₹8.8 crore",
+  "small": "planning aids, not guarantees",
+  "alt": "Bars of the corpus needed at two withdrawal rates",
+  "caps": [
+   [
+    0.3,
+    "First-year expense: about ₹30.9 lakh."
+   ],
+   [
+    2.2,
+    "At 4%, about ₹7.7 crore."
+   ],
+   [
+    4.0,
+    "At 3.5%, about ₹8.8 crore."
+   ],
+   [
+    5.6,
+    "Aids only. Review every year."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s137q1",
+  "h": "Check yourself",
+  "q": "What does the 25 times rule imply?",
+  "opts": [
+   "A 40% draw in the first year",
+   "A 0% draw at all times here",
+   "A 4% draw in the first year",
+   "A 14% draw in every month"
+  ],
+  "ans": 2,
+  "why": [
+   "40% is far too high. It does not answer what was asked.",
+   "Withdrawals are needed. The details here point elsewhere.",
+   "25 times means a 4% first-year draw. That matches the case described.",
+   "14% a month is far too high. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s137q2",
+  "h": "Check yourself",
+  "q": "Why might planners use 3 to 3.5% for India?",
+  "opts": [
+   "Higher inflation, safety margin",
+   "Because tax is nil for retirees",
+   "Because SEBI requires that rate",
+   "Because markets never ever fall"
+  ],
+  "ans": 0,
+  "why": [
+   "A lower rate adds safety. This fits the facts given.",
+   "Tax is not nil. That does not match this case.",
+   "SEBI does not require it. It does not fit the facts given.",
+   "Markets do fall. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s137q3",
+  "h": "Check yourself",
+  "q": "At 3.5%, the lesson's example needs about what?",
+  "opts": [
+   "₹88 lakh",
+   "₹8.8 crore",
+   "₹0.88 crore",
+   "₹88 crore"
+  ],
+  "ans": 1,
+  "why": [
+   "₹88 lakh is too small. That does not match this case.",
+   "A lower rate needs a bigger corpus. That matches the case described.",
+   "₹0.88 crore is too small. It does not answer what was asked.",
+   "₹88 crore is far too large. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s137q4",
+  "h": "Check yourself",
+  "q": "How should these numbers be treated?",
+  "opts": [
+   "As guaranteed outcomes for life",
+   "As fixed numbers for life",
+   "As tips to buy something",
+   "Planning aids, reviewed yearly"
+  ],
+  "ans": 3,
+  "why": [
+   "Nothing here is guaranteed.",
+   "They change as life changes.",
+   "Tips are not education.",
+   "They depend on assumptions."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Corpus ≈ 25 × first-year expenses (a 4% draw) as a start.",
+   "Many use 3 to 3.5% for India; the example needs about ₹7.7 to ₹8.8 crore.",
+   "Planning aids, not guarantees. Review yearly."
+  ]
+ }
+]

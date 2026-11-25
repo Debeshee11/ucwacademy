@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client has ₹60 lakh, but ₹55 lakh of it is her only savings. Should she put ₹50 lakh in a PMS? No. These products suit those with a solid core already in place.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who they suit",
+  "lines": [
+   [
+    "meena",
+    "Who is right for these products?"
+   ],
+   [
+    "sikka",
+    "Clients with a solid core of liquid investments, adequate insurance and an emergency fund. They need to take higher risk, lock in money for years and understand the strategy. Not for money needed soon, for first-time investors, or for those who cannot bear large swings. A PMS may hold 15 to 25 stocks, so one bad bet is more visible."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Suitability checks",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Already has",
+    "liquid core, insurance, emergency fund"
+   ],
+   [
+    "Can do",
+    "take higher risk, lock in for years, understand strategy"
+   ],
+   [
+    "Not for",
+    "money needed soon, first-time investors, low swing tolerance"
+   ],
+   [
+    "Document",
+    "the reasons, based on the client's profile"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s127q1",
+  "h": "Check yourself",
+  "q": "Which client may suit a PMS?",
+  "opts": [
+   "One with no emergency fund at all",
+   "One needing the money next month",
+   "One new to all kinds of investing",
+   "A solid liquid core and insurance"
+  ],
+  "ans": 3,
+  "why": [
+   "No emergency fund is unsuitable.",
+   "Short horizons are unsuitable.",
+   "First-timers are unsuitable.",
+   "A strong base comes first."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s127q2",
+  "h": "Check yourself",
+  "q": "Why is concentration a risk in a PMS?",
+  "opts": [
+   "It holds around 500 stocks",
+   "It may hold only 15 to 25 stocks",
+   "It holds no stocks at all",
+   "It holds only cash and deposits"
+  ],
+  "ans": 1,
+  "why": [
+   "500 is not typical. The details here point elsewhere.",
+   "Fewer holdings make one bad bet visible.",
+   "It holds stocks. It does not fit the facts given.",
+   "It is not only cash. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s127q3",
+  "h": "Check yourself",
+  "q": "What judges suitability?",
+  "opts": [
+   "The product brochure",
+   "The RM's target",
+   "The client's profile",
+   "The sponsor's mood"
+  ],
+  "ans": 2,
+  "why": [
+   "A brochure is not the basis. It does not fit the facts given.",
+   "A target is not the basis. It does not answer what was asked.",
+   "Suitability follows the client. That matches the case described.",
+   "Mood is not a basis. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s127q4",
+  "h": "Check yourself",
+  "q": "What should be recorded?",
+  "opts": [
+   "The reasons it suits the client",
+   "Only the commission on the sale",
+   "Only the logo of the fund house",
+   "Nothing at all about the sale"
+  ],
+  "ans": 0,
+  "why": [
+   "Records protect client and RM. This fits the facts given.",
+   "Commission is not the reason. The details here point elsewhere.",
+   "A logo is not a reason. That does not match this case.",
+   "Records are needed. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Suits clients with a liquid core, insurance and an emergency fund.",
+   "Not for money needed soon or first-time investors.",
+   "A PMS may hold 15 to 25 stocks: one bad bet shows."
+  ]
+ }
+]

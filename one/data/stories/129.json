@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A caller says, 'Guaranteed 24% a year in our private PMS. Invest today.' Every part of that is a warning sign. PMS and AIFs are market-linked, so returns cannot be guaranteed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Red flags",
+  "lines": [
+   [
+    "meena",
+    "What should make me suspicious?"
+   ],
+   [
+    "sikka",
+    "Guaranteed or assured returns. Unregistered portfolio managers, so verify on SEBI's website. Pressure to invest fast, claims of inside information, or returns that look too steady. Hidden or unusually high fees, or refusal to share the Disclosure Document or PPM. Report suspicious offers through SEBI's SCORES system and to the exchange."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Red flags",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Returns",
+    "guaranteed, assured, or too steady"
+   ],
+   [
+    "Registration",
+    "verify on SEBI's website first"
+   ],
+   [
+    "Pressure",
+    "invest fast, inside information"
+   ],
+   [
+    "Documents",
+    "no Disclosure Document or PPM, hidden or high fees"
+   ]
+  ],
+  "note": "Report suspicious offers to SEBI SCORES and the exchange."
+ },
+ {
+  "k": "pick",
+  "id": "s129q1",
+  "h": "Check yourself",
+  "q": "What does a guaranteed return on a PMS signal?",
+  "opts": [
+   "A safe offer",
+   "A legal duty",
+   "A warning sign",
+   "A SEBI approval"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not safe. It does not answer what was asked.",
+   "It is not a duty. The details here point elsewhere.",
+   "These products are market-linked. That matches the case described.",
+   "SEBI does not approve guarantees. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s129q2",
+  "h": "Check yourself",
+  "q": "What should be verified before dealing with a portfolio manager?",
+  "opts": [
+   "Registration on SEBI's website",
+   "The size of their office",
+   "The colour of their card",
+   "Their social media followers"
+  ],
+  "ans": 0,
+  "why": [
+   "Registration shows authorisation. This fits the facts given.",
+   "Office size is not proof. It does not fit the facts given.",
+   "A card is not proof. It does not fit the facts given.",
+   "Followers are not proof. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s129q3",
+  "h": "Check yourself",
+  "q": "Which is a red flag?",
+  "opts": [
+   "Sharing the PPM readily on ask",
+   "Refusing the Disclosure Document",
+   "Explaining all of the fees",
+   "Listing the risks in plain words"
+  ],
+  "ans": 1,
+  "why": [
+   "Sharing is good. That does not match this case.",
+   "Documents should be shared. That matches the case described.",
+   "Explaining is good. It does not answer what was asked.",
+   "Listing is good. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s129q4",
+  "h": "Check yourself",
+  "q": "Where should suspicious offers be reported?",
+  "opts": [
+   "Only on social media sites",
+   "Only to your close friends",
+   "Nowhere at all, ever, to anyone",
+   "SEBI SCORES and the exchange"
+  ],
+  "ans": 3,
+  "why": [
+   "Social media is not a regulator. It does not answer what was asked.",
+   "Friends cannot act. It does not answer what was asked.",
+   "Reporting helps. The details here point elsewhere.",
+   "SCORES is the complaint system. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Guaranteed or too-steady returns are warning signs.",
+   "Verify registration on SEBI's website.",
+   "Report suspicious offers to SCORES and the exchange."
+  ]
+ }
+]
