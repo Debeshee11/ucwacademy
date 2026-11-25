@@ -9,8 +9,11 @@ LP = os.path.join(ROOT, "functions", "content", "lessons.json")
 lessons = json.load(open(LP, encoding="utf-8")); by = {l["n"]: l for l in lessons}
 S = lambda x: x if isinstance(x, str) else x.get("en", "")
 bad = []; done = 0
+CHECK = "--check" in sys.argv; ONLY = next((set(map(int, a[7:].split(","))) for a in sys.argv if a.startswith("--only=")), None)
 for f in sorted(glob.glob(os.path.join(ROOT, "one", "data", "stories", "*.json")), key=lambda p: int(re.sub(r"\D", "", os.path.basename(p)))):
-    n = int(os.path.basename(f)[:-5]); cards = json.load(open(f, encoding="utf-8")); picks = [c for c in cards if c.get("k") == "pick"]
+    n = int(os.path.basename(f)[:-5])
+    if ONLY and n not in ONLY: continue
+    cards = json.load(open(f, encoding="utf-8")); picks = [c for c in cards if c.get("k") == "pick"]
     if n not in by: bad.append(f"{n}: no such lesson"); continue
     if len(picks) < 3: bad.append(f"{n}: needs at least 3 questions, has {len(picks)}")
     ids = set(); answers = []
@@ -31,5 +34,6 @@ for f in sorted(glob.glob(os.path.join(ROOT, "one", "data", "stories", "*.json")
     new = [{"id": c["id"], "prompt": S(c["q"]), "options": [S(x) for x in c["opts"]], "answer": c["ans"], "why": S(c["why"][c["ans"]]), "wrong": [None if k == c["ans"] else S(c["why"][k]) for k in range(4)], "follow": None} for c in picks]
     by[n]["qs"] = old + new; done += 1
 if bad: print("PROBLEMS:\n" + "\n".join(" - " + b for b in bad)); sys.exit(1)
+if CHECK: print(f"{done} stories pass the checks"); sys.exit(0)
 json.dump(lessons, open(LP, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print(f"{done} stories applied")
