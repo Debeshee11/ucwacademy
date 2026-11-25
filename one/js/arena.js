@@ -164,42 +164,68 @@ export function weakIds() {
   return Object.entries(Store.get().q).filter(([id, e]) => e.n >= 1 && e.r / e.n < .7 && questionById(id)).sort((a, b) => a[1].r / a[1].n - b[1].r / b[1].n || b[1].n - a[1].n).map(([id]) => id);
 }
 
-/* ——— the hub ——— */
-const mode = (href, cls, ic, title, sub, badge) => h("a", { class: "ar-mode " + cls, href }, h("span", { class: "ar-ic" }, icon(ic, 28)), h("b", {}, title), h("small", {}, sub), badge ? h("span", { class: "ar-badge" }, badge) : null);
+/* ——— the hub ———
+   Practice makes lessons stick. To keep it simple the page shows one "next best step", then six tabs that each answer one question:
+   For you, Remember, Play, Compete, Test, Tools. Only one tab is open at a time. */
+const mode = (href, cls, ic, title, sub, badge, meta) => h("a", { class: "ar-mode " + cls, href }, h("span", { class: "ar-ic" }, icon(ic, 28)), h("b", {}, title), h("small", {}, sub), meta ? h("span", { class: "ar-meta" }, meta) : null, badge ? h("span", { class: "ar-badge" }, badge) : null);
 const tool = (href, ic, title, sub) => h("a", { class: "ar-tool", href }, h("span", {}, icon(ic, 22)), h("div", {}, h("b", {}, title), h("small", {}, sub)), icon("chev", 18));
+const TABS = [["you", "For you", "star", "Your best next step, picked for today."], ["remember", "Remember", "flame", "Short rounds that move lessons into long-term memory."], ["play", "Play", "bolt", "Quick games for fun. Points and personal bests."],
+  ["compete", "Compete", "trophy", "Challenge friends, earn trophies, climb the board."], ["test", "Test", "check", "Longer quizzes and exams to see where you stand."], ["tools", "Tools", "trend", "Calculators and reading for real-life money questions."]];
+const TABKEY = "uc.practice.tab";
 
 export function arena() {
   const a = Store.todayAct(), due = Store.dueIds().length, s = Store.get(), streak = Store.streakNow(), labN = Object.keys(s.lab || {}).length, weak = weakIds().length;
-  const renew = Creds.all().filter(c => c.kind === "course" && Creds.standing(c) !== "valid"), rec = duelRecord(), sb = best("speed"), rb = best("rw");
+  const renew = Creds.all().filter(c => c.kind === "course" && Creds.standing(c) !== "valid"), rec = duelRecord(), sb = best("speed"), rb = best("rw"), vb = best("surv");
+  let tab = "you"; try { tab = sessionStorage.getItem(TABKEY) || "you"; } catch {}
+  if (!TABS.some(x => x[0] === tab)) tab = "you";
+
+  /* one clear recommendation */
+  const R = due && !a.r ? { href: "#/quiz/revise", ic: "flame", cls: "m-orange", t: "Revise what is due", why: `${plural(due, "question")} ${due === 1 ? "is" : "are"} ready for review. Doing it now keeps them in memory.`, meta: "About 2 min" }
+    : weak >= 3 ? { href: "#/quiz/weak", ic: "shuffle", cls: "m-blue", t: "Fix your weak spots", why: `You have ${plural(weak, "question")} you often miss. Eight of them, right now.`, meta: "About 3 min" }
+    : !a.d ? { href: "#/quiz/daily", ic: "bolt", cls: "m-gold", t: "Do today's Daily five", why: "Five questions that keep your streak alive.", meta: "About 2 min" }
+    : { href: "#/game/speed", ic: "bolt", cls: "m-green", t: sb ? "Beat your Speed round best" : "Try a Speed round", why: sb ? `Your best is ${sb}. 60 seconds to beat it.` : "60 seconds, as many right answers as you can.", meta: "1 min" };
+
   const hero = h("section", { class: "ar-hero" }, html("ar-m", mascot({ mood: "joy", pose: "cheer", view: "bust", px: 118 })),
-    h("div", { class: "ar-ht" }, h("h1", { class: "ar-h1" }, "Practice"), h("p", {}, "Play. Compete. Remember more."),
-      h("div", { class: "ar-chips" }, h("span", {}, icon("flame", 16), `${streak} day streak`), sb ? h("span", {}, icon("bolt", 16), `Speed best ${sb}`) : null, rec.w + rec.l + rec.t ? h("span", {}, icon("trophy", 16), `Duels ${rec.w}-${rec.l}`) : null)));
-  const daily = h("a", { class: "ar-daily" + (a.d ? " done" : ""), href: "#/quiz/daily" }, h("span", { class: "ar-dic" }, icon(a.d ? "check" : "bolt", 30)),
-    h("div", { class: "grow" }, h("small", {}, a.d ? "Done for today" : "Today's challenge"), h("b", {}, "Daily five"), h("span", {}, a.d ? "Come back tomorrow to keep the streak." : "Five questions. Two minutes. Keeps your streak alive.")), a.d ? null : h("span", { class: "ar-go" }, "Play"));
-  return page(hero, daily,
-    renew.length ? h("section", { class: "stack stack-s" }, renew.map(c => mode(`#/quiz/refresh/${c.key}`, "m-pink", "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions"))) : null,
-    h("section", { class: "stack stack-s" }, h("h2", { class: "h2" }, "Game modes"),
-      h("div", { class: "ar-modes" },
-        mode("#/game/speed", "m-gold", "bolt", "Speed round", "60 seconds. Build a combo.", sb ? `Best ${sb}` : "New"),
-        mode("#/game/rw", "m-green", "check", "Right or wrong", "Ten quick calls. Spot the trap.", rb ? `Best ${rb}/10` : "New"),
-        mode("#/game/survive", "m-pink", "shield", "Survival", "Three hearts. How far can you go?", best("surv") ? `Best ${best("surv")}` : "New"),
-        mode("#/challenge", "m-violet", "team", "Duel a friend", "Send a link. See who wins.", rec.w + rec.l + rec.t ? `${rec.w}W ${rec.l}L` : "Share"),
-        mode("#/quiz/weak", "m-blue", "shuffle", "Weak-spot trainer", weak ? `${plural(weak, "question")} to fix` : "Answer more to unlock", weak ? "Train" : ""),
-        mode("#/quiz/revise", "m-orange", "flame", "Revise", due ? `${plural(due, "question")} due` : "Nothing due right now", a.r ? "Done" : due ? String(due) : ""))),
-    h("section", { class: "stack stack-s" }, h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, "Training grounds"), h("p", { class: "small mute" }, "Pick a module. Ten questions. Watch the bar fill as you master it.")), grounds()),
-    trophies(),
-    h("section", { class: "stack stack-s" }, h("h2", { class: "h2" }, "Quiz arenas"),
-      h("div", { class: "ar-modes small" },
-        mode("#/quiz/fund", "m-blue", "book", "Fund quiz", "Factsheets, returns, risk, tax"),
-        mode("#/quiz/market", "m-violet", "trend", "Market quiz", "Indices, economy, markets"),
-        D.holdQs.some(q => q.tags.includes("holdings")) ? mode("#/quiz/holdings", "m-green", "trend", "Holdings quiz", "New every month") : null,
-        mode("#/quiz/place", "m-gold", "check", "Placement test", "24 questions to find your level"))),
-    h("section", { class: "stack stack-s" }, h("h2", { class: "h2" }, "Workshop"),
-      h("div", { class: "ar-tools" },
-        tool("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement"),
-        isPro() ? tool("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`) : null,
-        tool("#/news", "trend", "Market desk", "Today's headlines, explained"),
-        tool("#/assess", "award", "Course exams", "Pass one to earn a certificate"),
-        tool("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures"),
-        tool("#/board", "trophy", "Leaderboard", "See where you stand"))));
+    h("div", { class: "ar-ht" }, h("h1", { class: "ar-h1" }, "Practice"), h("p", {}, "Make what you learned stick."),
+      h("div", { class: "ar-chips" }, h("span", {}, icon("flame", 16), `${streak} day streak`), a.d ? h("span", {}, icon("check", 16), "Daily five done") : null)));
+  const flow = h("div", { class: "ar-flow", "aria-label": "How Learn, Practice and Exams fit together" },
+    [["Learn", "Lessons teach", false], ["Practice", "Practice makes it stick", true], ["Exams", "Exams prove it", false]].map(([a1, b1, on], i) => h("span", { class: "ar-step" + (on ? " on" : "") }, h("i", {}, String(i + 1)), h("b", {}, a1), h("small", {}, b1))));
+  const next = h("a", { class: "ar-next " + R.cls, href: R.href }, h("span", { class: "ar-nic" }, icon(R.ic, 30)), h("div", { class: "grow" }, h("small", {}, "Your next step"), h("b", {}, R.t), h("span", {}, R.why)), h("span", { class: "ar-go" }, "Go"), h("small", { class: "ar-nm" }, R.meta));
+
+  const tabs = h("div", { class: "ar-tabs", role: "tablist", "aria-label": "Practice sections" }, TABS.map(([id, label, ic]) => h("button", { type: "button", role: "tab", class: "ar-tab", "data-id": id, "aria-selected": String(id === tab), on: { click: () => setTab(id) } }, icon(ic, 18), label)));
+  const lead = h("p", { class: "ar-lead" }), body = h("div", { class: "ar-body stack" });
+
+  const dailyCard = () => h("a", { class: "ar-daily" + (a.d ? " done" : ""), href: "#/quiz/daily" }, h("span", { class: "ar-dic" }, icon(a.d ? "check" : "bolt", 30)),
+    h("div", { class: "grow" }, h("small", {}, a.d ? "Done for today" : "Every day"), h("b", {}, "Daily five"), h("span", {}, a.d ? "Come back tomorrow to keep the streak." : "Five questions, two minutes. Keeps your streak alive.")), a.d ? null : h("span", { class: "ar-go" }, "Play"));
+  const modes = {
+    daily: () => dailyCard(),
+    revise: () => mode("#/quiz/revise", "m-orange", "flame", "Revise", due ? `${plural(due, "question")} due for review` : "Nothing due right now", a.r ? "Done" : due ? String(due) : "", "Reminds you just in time"),
+    weak: () => mode("#/quiz/weak", "m-blue", "shuffle", "Weak-spot trainer", weak ? `${plural(weak, "question")} you often miss` : "Answer more to unlock", weak ? "Train" : "", "8 questions"),
+    speed: () => mode("#/game/speed", "m-gold", "bolt", "Speed round", "60 seconds. Build a combo.", sb ? `Best ${sb}` : "New", "1 min"),
+    rw: () => mode("#/game/rw", "m-green", "check", "Right or wrong", "Ten quick calls. Spot the trap.", rb ? `Best ${rb}/10` : "New", "2 min"),
+    surv: () => mode("#/game/survive", "m-pink", "shield", "Survival", "Three hearts. How far can you go?", vb ? `Best ${vb}` : "New", "Until 3 misses"),
+    duel: () => mode("#/challenge", "m-violet", "team", "Duel a friend", "Send a link. See who wins.", rec.w + rec.l + rec.t ? `${rec.w}W ${rec.l}L` : "Share", "3 min")
+  };
+  const grid = (...ks) => h("div", { class: "ar-modes" }, ks.map(k => modes[k]()));
+  const sec = (title, sub, ...kids) => h("section", { class: "stack stack-s" }, h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, title), sub ? h("p", { class: "small mute" }, sub) : null), ...kids);
+  const renewBox = renew.length ? sec("Renew a certificate", "Your certificate needs a quick refresher.", h("div", { class: "ar-modes" }, renew.map(c => mode(`#/quiz/refresh/${c.key}`, "m-pink", "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null;
+  const VIEW = {
+    you: () => [renewBox, flow, sec("Play something quick", null, grid("speed", "rw", "duel")), sec("Pick up where it is weak", "Training grounds. Pick a module and ten questions.", grounds())],
+    remember: () => [renewBox, dailyCard(), sec("More ways to remember", null, grid("revise", "weak")), sec("Training grounds", "Pick a module. Ten questions. Watch the bar fill as you master it.", grounds())],
+    play: () => [sec("Games", "Each takes a few minutes. Every right answer counts toward your points.", grid("speed", "rw", "surv"))],
+    compete: () => [sec("Challenge a friend", "Send a link on WhatsApp. They play the same questions. See who wins.", grid("duel")), trophies(), tool("#/board", "trophy", "Leaderboard", "See where you stand")],
+    test: () => [sec("Quiz arenas", "Longer quizzes on one topic.", h("div", { class: "ar-modes small" },
+      mode("#/quiz/fund", "m-blue", "book", "Fund quiz", "Factsheets, returns, risk, tax", "", "10 questions"), mode("#/quiz/market", "m-violet", "trend", "Market quiz", "Indices, economy, markets", "", "10 questions"),
+      D.holdQs.some(q => q.tags.includes("holdings")) ? mode("#/quiz/holdings", "m-green", "trend", "Holdings quiz", "New every month", "", "10 questions") : null, mode("#/quiz/place", "m-gold", "check", "Placement test", "Find your level", "", "24 questions"))),
+      sec("Exams", "Ready to prove it? Pass a course exam and earn a certificate.", tool("#/assess", "award", "Course exams", "Pass one to earn a certificate"))],
+    tools: () => [sec("Tools", "Real-life money helpers.", h("div", { class: "ar-tools" }, tool("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement"), isPro() ? tool("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`) : null,
+      tool("#/news", "trend", "Market desk", "Today's headlines, explained"), tool("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures")))]
+  };
+  function setTab(id) {
+    tab = id; try { sessionStorage.setItem(TABKEY, id); } catch {}
+    tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.id === id)));
+    lead.textContent = id === "you" ? "" : TABS.find(x => x[0] === id)[3]; lead.hidden = id === "you"; body.replaceChildren(...VIEW[id]().filter(Boolean)); body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
+  }
+  setTab(tab);
+  return page(hero, next, tabs, lead, body);
 }
