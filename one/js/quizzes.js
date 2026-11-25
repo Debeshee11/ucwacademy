@@ -8,6 +8,7 @@ import * as Creds from "./creds.js";
 import { runQuiz, questionById } from "./quiz.js";
 import { runExam } from "./exam.js";
 import { orderedCourses } from "./path.js";
+import { retakePlan } from "./plan.js";
 
 const back = c => `#/course/${c.id}`;
 /* Every question an exam in this course may use, found by id. The server decides which ones are asked. */
@@ -51,7 +52,7 @@ export function exam(root, cid, tier = "b") {
       Store.recordQuiz(TIER_KEY[tier] + cid, res.score, res.passed);
       const next = tier === "b" ? "i" : tier === "i" ? "h" : null, nextT = TIERS().find(t => t.id === next);
       const nextBtn = nextT ? h("a", { class: "btn " + (res.passed ? "primary" : "ghost"), href: `#/syllabus/${cid}/${next}` }, `${nextT.name} syllabus`) : null;
-      if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${pass}%. Read the syllabus again, then retry. A new set of questions is drawn each time.`, actions: [h("a", { class: "btn primary", href: `#/syllabus/${cid}/${tier}` }, "Open the syllabus"), h("a", { class: "btn ghost", href: back(c) }, "Back to course")] };
+      if (!res.passed) return { head: "Not yet.", sub: `${res.score}%. You need ${pass}%. Here is a plan. A new set of questions is drawn each time.`, body: retakePlan(c, tier, res), actions: [h("a", { class: "btn primary", href: `#/syllabus/${cid}/${tier}` }, "Open the syllabus"), h("a", { class: "btn ghost", href: back(c) }, "Back to course")] };
       if (tier !== "b") return { head: `${T.name} exam passed.`, sub: `${res.score}%. ` + (nextT ? `${nextT.name} is now open.` : "That is every exam in this course. Outstanding."), actions: [res.passed && nextBtn, h("a", { class: "btn ghost", href: back(c) }, "Back to course")].filter(Boolean) };
       Creds.absorb(res);
       const r = { cred: res.cred, extra: res.extra || [] };
@@ -83,10 +84,15 @@ export function daily(root) {
   const s = Store.get();
   let pool = questionsFor(Object.keys(s.done).map(Number));
   if (pool.length < RULES.dailyQuestions) pool = questionsFor(orderedCourses()[0].lessons.slice(0, 5));
-  const unseen = pool.filter(q => !s.q[q.id]);
-  const qs = [...pick(unseen, 3), ...pick(pool.filter(q => s.q[q.id]), 5)].slice(0, RULES.dailyQuestions);
+  /* a balanced five: what is due for review, what you keep missing, then something new */
+  const N = RULES.dailyQuestions, inPool = new Set(pool.map(q => q.id)), used = new Set(), take = (ids, k) => { const out = []; for (const id of ids) { if (out.length >= k) break; if (used.has(id) || !inPool.has(id)) continue; const q = questionById(id); if (q) { used.add(id); out.push(q); } } return out; };
+  const due = take(shuffle(Store.dueIds()), 2), weak = take(weakIds(), 2);
+  const fresh = pick(pool.filter(q => !s.q[q.id] && !used.has(q.id)), N - due.length - weak.length);
+  fresh.forEach(q => used.add(q.id));
+  const rest = pick(pool.filter(q => !used.has(q.id)), N);
+  const qs = shuffle([...due, ...weak, ...fresh, ...rest].slice(0, N));
   runQuiz(root, {
-    title: "Daily five", questions: qs.length >= RULES.dailyQuestions ? qs : pick(pool, RULES.dailyQuestions), exit: "#/practice",
+    title: "Daily five", questions: qs.length >= N ? qs : pick(pool, N), exit: "#/practice",
     done: res => { Store.markDaily(); return { head: res.right === res.total ? "Perfect." : "Done for today.", sub: `${res.right} of ${res.total} right. Come back tomorrow.`, actions: [h("a", { class: "btn primary", href: "#/" }, "Back home")] }; }
   });
 }

@@ -27,6 +27,7 @@ import * as K from "./unlock.js";
 import * as PV from "./proveit.js";
 import * as Cases from "./cases.js";
 import * as Films from "./films.js";
+import * as CaseHub from "./casehub.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
 import { review } from "./review.js";
@@ -72,6 +73,12 @@ const ROUTES = [
   [/^lab\/([\w-]+)$/, id => P.labScenario(id), "practice", "Client lab"],
   [/^nism$/, () => Nism.hub(), "assess", "NISM prep"],
   [/^nism\/([\w-]+)$/, id => Nism.examPage(id), "assess", "NISM exam"],
+  [/^cases$/, () => CaseHub.hub(), "cases", "Case studies"],
+  [/^cases\/scams$/, () => Cases.hub("scams"), "cases", "Scams and frauds"],
+  [/^cases\/files$/, () => Cases.hub(), "cases", "Case Files"],
+  [/^cases\/(?:shocks|films)$/, () => Films.hub(), "cases", "Case Films"],
+  [/^films$/, () => Films.hub(), "cases", "Case Films"],
+  [/^film\/([\w-]+)$/, id => Films.play(id), "cases", "Case film"],
   [/^me$/, () => C.me(), "me", "Progress"],
   [/^privacy$/, () => legalPage("privacy"), "", "Privacy notice"],
   [/^terms$/, () => legalPage("terms"), "", "Terms of use"],
@@ -82,9 +89,6 @@ const ROUTES = [
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
   [/^challenge(?:\/([\w-]+))?$/, c => (c ? challenge(root, c) : K.guard("duel", () => challenge(root, c), root)), "", "Challenge a friend", true],
-  [/^films$/, () => Films.hub(), "courses", "Case Films"],
-  [/^film\/([\w-]+)$/, id => Films.play(id), "courses", "Case film"],
-  [/^cases$/, () => Cases.hub(), "courses", "Case Files"],
   [/^case\/([\w-]+)$/, id => Cases.play(root, id), "", "Case file", true],
   [/^stories$/, () => stories(root), "", "Stories", true],
   [/^story\/([\w-]+)$/, id => stories(root, id), "", "Stories", true],

@@ -184,7 +184,7 @@ export function questHome() {
   const news = h("a", { class: "yt-card yt-news", href: "#/news" }, h("span", { class: "yn-ic" }, icon("trend", 22)), h("span", { class: "yd-t" }, h("b", {}, "Market pulse"), h("small", {}, "Today's headlines, explained in plain words.")), h("span", { class: "yd-go" }, icon("chev", 20)));
 
   if (all && quests.length) { const k = "uc.chest." + isoDay(); try { if (!sessionStorage[k]) { sessionStorage[k] = 1; setTimeout(() => confetti(), 500); } } catch (e) {} }
-  return widePage(hud, h("div", { class: "yt" }, h("div", { class: "yt-main" }, cont, world), h("aside", { class: "yt-rail" }, qs, week, duel, ranks, news)));
+  return widePage(hud, h("div", { class: "yt" }, h("div", { class: "yt-main" }, cont, h("a", { class: "fl-promo", href: "#/cases" }, h("span", { class: "fl-pi", "aria-hidden": "true" }, icon("play", 22)), h("span", { class: "fl-pt" }, h("b", {}, "Case studies"), h("small", {}, "Real events in money, explained in short animated films")), icon("chev", 18)), world), h("aside", { class: "yt-rail" }, qs, week, duel, ranks, news)));
 }
 
 /* A short burst of paper coins and confetti. Skipped for anyone who asks for less motion. */

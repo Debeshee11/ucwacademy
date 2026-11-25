@@ -22,10 +22,10 @@ export function hub() {
     h("div", { class: "fl-poster" }, h("img", { src: src(f, "jpg"), alt: "", loading: "lazy", width: 360, height: 640 }), h("span", { class: "fl-play", "aria-hidden": "true" }, icon("play", 26)), h("span", { class: "fl-no" }, `Film ${f.n}`), h("span", { class: "fl-min" }, f.min)),
     h("div", { class: "fl-b" }, h("div", { class: "cf-tags" }, f.tags.map(t => h("span", {}, t)), h("span", { class: "cf-min" }, f.year)),
       h("h3", {}, f.title), h("p", { class: "cf-s" }, f.line), h("span", { class: "cf-go" }, seen[f.id]?.done ? "Watched. Watch again" : "Watch the film", icon("chev", 16))));
-  return h("main", { class: "wrap page stack cf" },
+  return h("main", { class: "wrap page stack csp" },
     h("section", { class: "cf-hero" }, h("div", { class: "cf-ht" }, h("span", { class: "cf-k" }, "Case Films"), h("h1", { class: "h1" }, "Watch how it happened."), h("p", { class: "lead" }, "Real events in money, told in short animated films with a voice-over. Best watched with sound on."))),
     h("div", { class: "fl-grid" }, FILMS.map(card), h("div", { class: "cf-soon" }, h("b", {}, "More coming"), h("small", {}, "New films are added over time."))),
-    h("p", { class: "small" }, "Prefer to tap through? ", h("a", { href: "#/cases" }, "Open the interactive Case Files.")),
+    h("p", { class: "small" }, "Prefer to tap through? ", h("a", { href: "#/cases/files" }, "Open the interactive Case Files.")),
     h("p", { class: "tiny mute" }, "Education only. Facts come from public records and news reports. Not investment advice."));
 }
 
@@ -37,7 +37,7 @@ export function play(id) {
   v.append(h("source", { src: src(f, "mp4"), type: "video/mp4" }), "Your browser cannot play this video.");
   v.addEventListener("ended", () => { mark(f.id, { done: true }); const n = document.querySelector(".fl-next"); if (n) n.hidden = false; });
   return h("main", { class: "wrap page stack fl-page" },
-    h("a", { class: "btn ghost sm", href: "#/films" }, icon("left", 16), "All case films"),
+    h("a", { class: "btn ghost sm", href: "#/cases/shocks" }, icon("left", 16), "All case films"),
     h("div", { class: "fl-wrap" }, v),
     h("div", { class: "fl-info stack stack-s" },
       h("span", { class: "cf-k" }, `Film ${f.n} · ${f.year}`), h("h1", { class: "h1" }, f.title), h("p", { class: "lead" }, f.line),
