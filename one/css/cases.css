@@ -1,0 +1,33 @@
+/* Case Files hub (the film player has its own styles inside its shadow root) */
+.cf-hero { display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center; padding:18px; border-radius:26px; border:3px solid #2B2118; background:linear-gradient(135deg,#FFE9A8,#FFD1C4); box-shadow:0 6px 0 #2B2118; }
+.cf-m svg { width:92px; height:auto; display:block; } .cf-ht { display:grid; gap:6px; justify-items:start; } .cf-ht .h1 { margin:0; } .cf-ht .lead { margin:0; font-weight:600; }
+.cf-k { font:800 12px var(--font); letter-spacing:.1em; text-transform:uppercase; background:#2B2118; color:#FFE9A8; padding:4px 10px; border-radius:8px; }
+.cf-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); }
+.cf-card { display:grid; border:3px solid #2B2118; border-radius:24px; overflow:hidden; background:#fff; text-decoration:none; color:inherit; box-shadow:0 5px 0 #2B2118; transition:transform .18s, box-shadow .18s; }
+.cf-card:hover, .cf-card:focus-visible { transform:translateY(-3px); box-shadow:0 8px 0 #2B2118; } .cf-card:active { transform:translateY(2px); box-shadow:0 2px 0 #2B2118; }
+.cf-art { position:relative; display:grid; place-items:center; height:150px; background:var(--bg); border-bottom:3px solid #2B2118; overflow:hidden; } .cf-art svg { width:70%; max-width:230px; height:auto; }
+.cf-yr { position:absolute; left:14px; top:10px; font:900 30px var(--display); color:var(--c); letter-spacing:-.01em; }
+.cf-b { display:grid; gap:7px; padding:14px 16px 16px; } .cf-b h3 { margin:0; font:900 20px/1.15 var(--display); } .cf-s { margin:0; font-weight:800; font-size:13.5px; color:var(--mute); } .cf-hook { margin:0; font-weight:600; font-size:15px; line-height:1.35; }
+.cf-tags { display:flex; flex-wrap:wrap; gap:6px; } .cf-tags span { font:800 11.5px var(--font); padding:3px 9px; border-radius:99px; background:var(--bg); border:2px solid #2B2118; } .cf-tags .cf-min { margin-left:auto; background:#fff; }
+.cf-go { display:inline-flex; align-items:center; gap:6px; margin-top:4px; font:800 14.5px var(--font); color:#2B2118; } .cf-go svg { background:var(--c); color:#fff; border-radius:50%; padding:2px; width:22px; height:22px; }
+.cf-soon { display:grid; place-content:center; text-align:center; gap:4px; min-height:140px; border:3px dashed #D9C789; border-radius:24px; color:var(--mute); }
+@keyframes cfd { to { stroke-dashoffset:0; } } @keyframes cfg { 50% { opacity:.25; } } @keyframes cfq { 50% { transform:translateX(5px); } } @keyframes cfc { 50% { opacity:.3; } }
+@media (prefers-reduced-motion:no-preference) { .cf-card .cfa-l { stroke-dasharray:260; stroke-dashoffset:260; animation:cfd 2.2s .2s forwards; } .cf-card .cfa-g { animation:cfg 2.4s infinite; } .cf-card .cfa-c { animation:cfc 1.6s infinite; } .cf-card .cfa-q { animation:cfq 1.8s ease-in-out infinite; } }
+@media (max-width:640px) { .cf-hero { grid-template-columns:1fr; text-align:left; } .cf-m svg { width:72px; } }
+
+/* Case Films */
+.fl-grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); }
+.fl-card { display:grid; align-content:start; border:3px solid #2B2118; border-radius:24px; overflow:hidden; background:#fff; text-decoration:none; color:inherit; box-shadow:0 5px 0 #2B2118; transition:transform .18s, box-shadow .18s; }
+.fl-card:hover, .fl-card:focus-visible { transform:translateY(-3px); box-shadow:0 8px 0 #2B2118; }
+.fl-poster { position:relative; aspect-ratio:9/16; background:#FFE08A; overflow:hidden; border-bottom:3px solid #2B2118; }
+.fl-poster img { width:100%; height:100%; object-fit:cover; display:block; }
+.fl-play { position:absolute; inset:0; margin:auto; width:58px; height:58px; border-radius:50%; background:#FFB703; border:3px solid #2B2118; display:grid; place-items:center; color:#2B2118; box-shadow:0 4px 0 #2B2118; }
+.fl-no, .fl-min { position:absolute; top:10px; font:800 12px var(--font); background:#2B2118; color:#FFF8E7; padding:4px 9px; border-radius:8px; } .fl-no { left:10px; } .fl-min { right:10px; }
+.fl-b { display:grid; gap:6px; padding:12px 14px 16px; } .fl-b h3 { margin:0; } .fl-b .cf-s { margin:0; }
+.fl-page { max-width:760px; } .fl-wrap { display:grid; justify-items:center; }
+.fl-video { width:min(100%, 420px); max-height:78vh; aspect-ratio:9/16; background:#141B34; border:3px solid #2B2118; border-radius:22px; box-shadow:0 6px 0 #2B2118; }
+.fl-learn { margin:0; padding-left:20px; display:grid; gap:6px; font-weight:600; }
+.fl-promo { display:flex; align-items:center; gap:12px; padding:12px 14px; border:3px solid #2B2118; border-radius:20px; background:linear-gradient(135deg,#FFE9A8,#FFD1C4); box-shadow:0 4px 0 #2B2118; text-decoration:none; color:#2B2118; }
+.fl-pi { width:40px; height:40px; border-radius:50%; background:#FFB703; border:3px solid #2B2118; display:grid; place-items:center; flex:none; }
+.fl-pt { display:grid; flex:1; gap:2px; } .fl-pt small { font-weight:600; opacity:.8; }
+@media (prefers-reduced-motion: reduce) { .fl-card { transition:none; } }
