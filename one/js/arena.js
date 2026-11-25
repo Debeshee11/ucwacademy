@@ -227,5 +227,5 @@ export function arena() {
     lead.textContent = id === "you" ? "" : TABS.find(x => x[0] === id)[3]; lead.hidden = id === "you"; body.replaceChildren(...VIEW[id]().filter(Boolean)); body.classList.remove("swap"); void body.offsetWidth; body.classList.add("swap");
   }
   setTab(tab);
-  return page(hero, next, tabs, lead, body);
+  const m = page(hero, next, tabs, lead, body); m.classList.add("ar-page"); return m;
 }

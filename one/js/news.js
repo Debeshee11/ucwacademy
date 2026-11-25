@@ -9,7 +9,7 @@ const TOPICS = [["all", "All"], ["markets", "Markets"], ["mf", "Funds"], ["ipo",
 
 export function newsFeed() {
   let items = null, topic = "all", err = "";
-  const list = h("div", { class: "nwlist" }), seg = h("div", { class: "seg", role: "group", "aria-label": "Topic" }), note = h("p", { class: "tiny mute" });
+  const list = h("div", { class: "nwlist" }), seg = h("div", { class: "seg news-seg", role: "group", "aria-label": "Topic" }), note = h("p", { class: "tiny mute" });
   function paint() {
     seg.replaceChildren(...TOPICS.map(([id, t]) => h("button", { "data-t": id, "aria-pressed": String(topic === id), on: { click: () => { topic = id; pop("news:" + id); paint(); } } }, t)));
     list.replaceChildren();
