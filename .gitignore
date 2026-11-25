@@ -4,3 +4,4 @@ __pycache__/
 _site/
 .DS_Store
 private-keys-new/
+.env
