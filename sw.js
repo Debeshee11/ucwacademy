@@ -2,7 +2,7 @@
    It only ever touches this site's own files. Sign-in, the database, the backend and outside data are never intercepted.
 
    How each kind of request is served:
-   - Pages (the app, /learn/ pages): network first, so a new release always shows; the saved copy is used only when offline.
+   - Pages (the app, /learn/ pages): network first, and always checked with the server (the host lets browsers keep pages for 10 minutes), so a new release shows on the next open; the saved copy is used only when offline.
    - Files stamped with ?v=<release> (scripts, styles, lesson files): saved copy first. A new release has a new stamp, so it is fetched fresh.
    - Everything else on this site (fonts, images, language files): saved copy at once, refreshed in the background.
    The deploy writes the release id into VERSION below; a new release clears the previous one's files. */
@@ -28,7 +28,7 @@ self.addEventListener("fetch", ev => {
   if (/\/(sw\.js|__\/)/.test(url.pathname)) return;
 
   if (req.mode === "navigate") {
-    ev.respondWith(fetch(req).then(res => save(req, res)).catch(async () =>
+    ev.respondWith(fetch(req, { cache: "no-cache" }).then(res => save(req, res)).catch(async () =>
       (await caches.match(req, { ignoreSearch: true })) || (await caches.match("./")) || Response.error()));
     return;
   }
