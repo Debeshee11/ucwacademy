@@ -1,0 +1,206 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Two friends invest on the same day. One looks at her fund every morning and panics at each dip. The other checks once a year. Same fund, very different experience.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A shaky month",
+  "lines": [
+   [
+    "meena",
+    "My fund is down 8% this month. Should I sell before it falls more?"
+   ],
+   [
+    "sikka",
+    "First, when do you need this money? Let us look at how three kinds of funds typically move over time."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "Value of ₹100 (made-up paths)",
+  "series": [
+   {
+    "name": "Equity",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     112,
+     96,
+     84,
+     92,
+     108,
+     124,
+     118,
+     136,
+     150,
+     165
+    ]
+   },
+   {
+    "name": "Hybrid",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     106,
+     99,
+     92,
+     97,
+     106,
+     114,
+     112,
+     122,
+     130,
+     139
+    ]
+   },
+   {
+    "name": "Debt",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     103,
+     105,
+     104,
+     107,
+     110,
+     113,
+     116,
+     119,
+     123,
+     127
+    ]
+   }
+  ],
+  "h": "Three bumpy roads",
+  "alt": "Three lines: equity rises most but dips deepest, debt rises slowest and steadiest",
+  "caps": [
+   [
+    0.3,
+    "Equity grows the most over the long run, but it dips the deepest."
+   ],
+   [
+    4.2,
+    "Hybrid sits in the middle, dipping less and growing less."
+   ],
+   [
+    7.0,
+    "Debt is the smoothest, and grows the slowest in this made-up path."
+   ],
+   [
+    9.4,
+    "Made-up paths, not forecasts. The shape is the lesson: more growth, more swing."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reading the riskometer",
+  "intro": "Every fund carries a label showing how risky its holdings are.",
+  "rows": [
+   [
+    "Low",
+    "Very steady, such as short-term debt"
+   ],
+   [
+    "Moderate",
+    "Balanced mixes of shares and bonds"
+   ],
+   [
+    "High / Very high",
+    "Mostly shares, with big swings"
+   ]
+  ],
+  "note": "The label is set by the fund's holdings. Pick one you could sit through when it falls."
+ },
+ {
+  "k": "pick",
+  "id": "s548q1",
+  "h": "Check yourself",
+  "q": "Meena's equity fund is down 8% and she needs the money in 8 years. What is the sound approach?",
+  "opts": [
+   "Sell now, since a fall that has started always keeps going",
+   "Check the goal and time frame still stand, and stay invested if so",
+   "Switch everything into the fund that gained most last month",
+   "Stop looking at the fund until the loss has been fully recovered"
+  ],
+  "ans": 1,
+  "why": [
+   "Falls do not always continue. Selling after one locks in a loss with years left to recover.",
+   "With 8 years left and no change in plan, a dip is part of the ride, so review the goal and stay.",
+   "Chasing last month's winner often means buying high, and it ignores the goal and risk.",
+   "Avoiding the statement does not help. A calm review of the plan is better than looking away."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s548q2",
+  "h": "Check yourself",
+  "q": "Rohan can sleep through falls and has 15 years to go. Meena panics at a 5% dip and needs the money in 3 years. What do they need?",
+  "opts": [
+   "The same fund, since both want good returns from their savings",
+   "Meena should hold more shares, since she needs the money sooner",
+   "Neither needs to look at the riskometer if the fund is well known",
+   "Rohan can hold a higher-risk fund, while Meena needs a steadier one"
+  ],
+  "ans": 3,
+  "why": [
+   "Different time frames and comfort levels mean different funds suit them. Return alone is not the test.",
+   "Needing money soon argues for less risk, not more. A fall near the goal date is harder to recover.",
+   "A well-known name does not change the risk. The riskometer is how you check a fund's swings.",
+   "Rohan's long horizon and calm temperament fit more risk, and Meena's short horizon needs steadiness."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s548q3",
+  "h": "Check yourself",
+  "q": "Which best describes how diversification helps?",
+  "opts": [
+   "It guarantees that your fund will never lose money in any year",
+   "It increases the return by concentrating money in the best company",
+   "It spreads money across many holdings so one bad one cannot sink it",
+   "It removes the need to think about how long you can stay invested"
+  ],
+  "ans": 2,
+  "why": [
+   "Diversification lowers the damage of single failures. It does not make a fund fall-proof.",
+   "Concentrating money in one company is the opposite of spreading it.",
+   "Many holdings mean one failure takes only a small bite out of the whole pool.",
+   "Diversification does not replace thinking about the time you have for the goal."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s548q4",
+  "h": "Check yourself",
+  "q": "A fund gained 30% one year and lost 12% the next. What does this show about it?",
+  "opts": [
+   "It is volatile: big swings are normal for equity, so judge it over years",
+   "The fund is broken, since good funds do not lose money in any year",
+   "The manager was wrong, since a skilled one avoids all losses",
+   "It must be a debt fund, because only debt funds move this way"
+  ],
+  "ans": 0,
+  "why": [
+   "Big swings describe volatility. Judge it over years that match your goal, not one year.",
+   "Equity funds can lose money in a year, even good ones. A single bad year does not prove a broken fund.",
+   "No manager avoids every loss. A single down year says little about skill.",
+   "Equity funds typically swing like this. Debt funds move far less in most years."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "More possible growth always comes with bigger swings.",
+   "Check the riskometer against the amount of fall you could sit through.",
+   "Time and diversification reduce the damage of falls, but do not remove them."
+  ]
+ }
+]

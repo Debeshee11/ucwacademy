@@ -1,0 +1,171 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "Rohan has three places to lend his money: a bank deposit, a company bond and a debt fund. The advertisement for each says 'safe'. They are not safe in the same way.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which one is safest?",
+  "lines": [
+   [
+    "rohan",
+    "All three say safe and steady. How do I tell them apart?"
+   ],
+   [
+    "sikka",
+    "Ask three things: Is it fixed or moving? Who stands behind it? And how fast can I get my money out?"
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three ways to lend",
+  "intro": "A quick comparison of how each one behaves.",
+  "rows": [
+   [
+    "Fixed deposit",
+    "Fixed rate, bank insured up to ₹5 lakh, penalty to exit early"
+   ],
+   [
+    "Debt fund",
+    "Value moves daily, no insurance, usually quick to sell"
+   ],
+   [
+    "Savings account",
+    "Low interest, insured up to the same limit, instant access"
+   ]
+  ],
+  "note": "The insurance limit is ₹5 lakh per depositor per bank, covering all deposits you hold in that one bank."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Deposits and debt funds",
+  "stops": [
+   [
+    "Bank deposits are insured up to ₹5 lakh per bank",
+    true
+   ],
+   [
+    "Debt funds carry the same insurance as deposits",
+    false
+   ],
+   [
+    "A debt fund's value can move every day",
+    true
+   ],
+   [
+    "FD interest is never taxed",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements about deposits and debt funds",
+  "caps": [
+   [
+    0.4,
+    "Deposit insurance covers up to ₹5 lakh per depositor in each bank."
+   ],
+   [
+    2.2,
+    "Debt funds have no such insurance. Their value can fall."
+   ],
+   [
+    4.0,
+    "The unit price moves with the bonds the fund holds."
+   ],
+   [
+    5.6,
+    "Interest is added to your income and taxed at your slab rate."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s554q1",
+  "h": "Check yourself",
+  "q": "Meena keeps ₹8 lakh in a single bank, in one deposit. The bank fails. How much is covered by deposit insurance?",
+  "opts": [
+   "The full ₹8 lakh, since all deposits are covered without any limit",
+   "Up to ₹5 lakh, so spreading deposits across banks can protect more",
+   "Nothing, since deposit insurance covers savings accounts only",
+   "Up to ₹10 lakh, since the limit applies to each separate deposit"
+  ],
+  "ans": 1,
+  "why": [
+   "The cover has a limit. It does not protect the full amount if a depositor holds more.",
+   "The limit is ₹5 lakh per depositor per bank, so spreading across banks raises the covered total.",
+   "The cover applies to deposits of all kinds, including fixed deposits, up to the limit.",
+   "The limit is per depositor per bank, not per deposit, so extra deposits in the same bank do not add cover."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s554q2",
+  "h": "Check yourself",
+  "q": "Rohan holds a debt fund and sees its value dip 2% in a month. What is the right reading?",
+  "opts": [
+   "A mistake by the bank, which must refund the loss to every investor",
+   "A sign that deposit insurance has been withdrawn from the fund",
+   "Proof that the fund has defaulted, so he must sell at once",
+   "Normal for a debt fund, since its value moves with the bonds it holds"
+  ],
+  "ans": 3,
+  "why": [
+   "A debt fund is not a bank deposit, and no one refunds ordinary price moves.",
+   "Debt funds never had deposit insurance, so nothing was withdrawn.",
+   "A small dip is usually a price move, not a default. A default would be a separate event.",
+   "Fund values move daily with bond prices, so a small dip is part of how it works."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s554q3",
+  "h": "Check yourself",
+  "q": "Meena earns ₹10,000 interest on a deposit and is in the 30% tax slab. What is the effect?",
+  "opts": [
+   "She keeps about ₹7,000, since interest is added to income and taxed",
+   "She keeps the full ₹10,000, since deposit interest is outside tax",
+   "She keeps ₹3,000, since the tax is charged on her principal instead",
+   "She keeps ₹10,000 this year and pays the tax in the next"
+  ],
+  "ans": 0,
+  "why": [
+   "Interest is added to income and taxed at the slab, so 30% tax leaves about ₹7,000.",
+   "Interest is taxable income, so it does not go untaxed, whatever the slab.",
+   "Tax applies to the interest earned, not to the principal she deposited.",
+   "Interest is taxed in the year it is earned, so waiting a year does not change the position."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s554q4",
+  "h": "Check yourself",
+  "q": "Rohan wants his emergency money to earn a little more. Which choice is the best?",
+  "opts": [
+   "Put it in a long-term bond fund, since it pays more than a deposit",
+   "Lock it in a five-year deposit, for the highest rate available",
+   "Keep it in a savings account or very short-term option, easy to reach",
+   "Invest it in a company bond with the top interest rate in the market"
+  ],
+  "ans": 2,
+  "why": [
+   "A long-term fund can fall just when he needs the money, which defeats the purpose.",
+   "A long lock-in makes the money hard to reach, and exit usually brings a penalty.",
+   "Emergency money must be there at full value on short notice, so simple and quick wins.",
+   "A top rate usually means higher risk, which is wrong for money that must be there for sure."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Bank deposits are insured up to ₹5 lakh per depositor per bank.",
+   "Debt funds move daily and carry no insurance.",
+   "Keep emergency money simple, safe and easy to reach."
+  ]
+ }
+]

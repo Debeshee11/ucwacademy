@@ -1,0 +1,193 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Dadi has ₹10 lakh to keep safe for five years. She could put it all in one deposit, one bond or one fund. There is a smarter way to spread it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A plan for Dadi",
+  "lines": [
+   [
+    "dadi",
+    "Beta, I do not want to lose sleep. How do I keep it safe and still earn something?"
+   ],
+   [
+    "sikka",
+    "Match the choice to your goal, spread the money, and stagger the end dates. Let us build it step by step."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A ladder of deposits",
+  "alt": "A bar split into four equal parts that end in one, two, three and four years",
+  "rows": [
+   {
+    "name": "₹10 lakh in 4 parts",
+    "segs": [
+     [
+      "Ends in 1 yr",
+      25,
+      "#3CC47A"
+     ],
+     [
+      "Ends in 2 yrs",
+      25,
+      "#8EC5FF"
+     ],
+     [
+      "Ends in 3 yrs",
+      25,
+      "#FFC531"
+     ],
+     [
+      "Ends in 4 yrs",
+      25,
+      "#FF9C6B"
+     ]
+    ]
+   },
+   {
+    "name": "One long deposit",
+    "segs": [
+     [
+      "Ends in 4 yrs",
+      100,
+      "#FF9C6B"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "One deposit ending in four years locks all the money until the end."
+   ],
+   [
+    2.6,
+    "A ladder splits it into four parts ending in one, two, three and four years."
+   ],
+   [
+    4.6,
+    "Each year one part comes due, so some cash is always close at hand."
+   ],
+   [
+    6.0,
+    "Each part can be renewed at the going rate, so you are not stuck with one rate."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A checklist before you lend",
+  "intro": "Run through this for any deposit, bond or debt fund.",
+  "rows": [
+   [
+    "Goal",
+    "When do I need the money, and can I handle a dip?"
+   ],
+   [
+    "Spread",
+    "Not all with one bank, company or fund"
+   ],
+   [
+    "Quality",
+    "Read the credit rating and what the fund holds"
+   ],
+   [
+    "Duration",
+    "Shorter ends mean steadier prices"
+   ]
+  ],
+  "note": "Keep emergency money separate, in simple and easy-to-reach places."
+ },
+ {
+  "k": "pick",
+  "id": "s555q1",
+  "h": "Check yourself",
+  "q": "Rohan needs money for a wedding in two years and wants the highest advertised rate. What does goal matching say?",
+  "opts": [
+   "Pick the highest rate, whatever it holds, since returns are what matter",
+   "Choose a very long bond fund, since it pays the most each year",
+   "Choose something steady that fits two years, even if its rate is lower",
+   "Wait until the wedding is closer before deciding anything about it"
+  ],
+  "ans": 2,
+  "why": [
+   "A very high rate usually carries higher risk, which is a poor fit for a near, fixed need.",
+   "A long bond fund swings the most when rates change, so it is a poor fit for two years.",
+   "A two-year goal needs steadiness more than the top rate, since a dip could land at the wrong time.",
+   "Waiting leaves the money idle. Planning early gives time to choose a fitting option."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s555q2",
+  "h": "Check yourself",
+  "q": "Dadi puts ₹10 lakh into four deposits ending in 1, 2, 3 and 4 years. What is the main benefit of this ladder?",
+  "opts": [
+   "Some money comes due every year, giving cash access and a chance to renew",
+   "It raises the interest rate on every deposit above the going rate",
+   "It removes any chance of losing money at the bank, even above the limit",
+   "It makes all the interest on these deposits tax-exempt in each year"
+  ],
+  "ans": 0,
+  "why": [
+   "Each year a part ends, so cash is near, and it can be renewed at the then-current rate.",
+   "A ladder does not raise the rate. Each deposit earns the rate that applied when it was made.",
+   "A ladder spreads end dates. It does not remove bank risk, so the insurance limit still matters.",
+   "Interest remains taxable whatever the ladder, so no tax saving comes from the structure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s555q3",
+  "h": "Check yourself",
+  "q": "Meena lends ₹6 lakh, all of it to one company through a single bond. What is the main weakness?",
+  "opts": [
+   "The interest will be lower, since big loans always pay less",
+   "The bond cannot be repaid, since it is larger than the usual size",
+   "There is no weakness, because a single rated bond is as safe as any",
+   "One failure could cost her much of the money, so spreading is wiser"
+  ],
+  "ans": 3,
+  "why": [
+   "Loan size does not set the rate. The borrower's risk and the term mostly do.",
+   "Bonds of this size are routinely repaid. The size is not the weakness here.",
+   "A rating lowers risk but cannot remove it, so concentration is still a weakness.",
+   "With everything lent to one borrower, a default hits the whole sum, and spreading limits the damage."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s555q4",
+  "h": "Check yourself",
+  "q": "Before buying a debt fund, Rohan reads its list of holdings. What is he checking?",
+  "opts": [
+   "Whether the fund's name is easy to remember when he talks about it later",
+   "Which borrowers it lends to, and whether the credit quality is high",
+   "How many people work at the fund house, since more staff means less risk",
+   "The colour scheme of the fund's factsheet, since bright ones mean safe"
+  ],
+  "ans": 1,
+  "why": [
+   "A name tells nothing about risk. The holdings tell you what the fund really owns.",
+   "The list shows which borrowers the fund lends to, so he can judge credit quality.",
+   "Staff numbers do not reveal the risk of the fund's holdings.",
+   "Design has no link to risk. The holdings and their ratings do."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Match the tool to the goal and the time you have.",
+   "Ladders and spreading across banks and borrowers reduce risk.",
+   "Read the rating and the holdings before you invest."
+  ]
+ }
+]

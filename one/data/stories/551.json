@@ -1,0 +1,183 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "Dadi has ₹1 lakh she will not need for five years. A company needs money to build a factory. What if she lent it, and the company paid her interest for using it?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Dadi's question",
+  "lines": [
+   [
+    "dadi",
+    "Beta, is a bond the same as a fixed deposit? The agent used both words."
+   ],
+   [
+    "sikka",
+    "Close cousins, Dadi. Both are loans. Let us follow ₹1 lakh lent for five years and see what comes back."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The words you will hear",
+  "intro": "A company issues a bond with a face value of ₹100 and an 8% coupon, ending in 10 years.",
+  "rows": [
+   [
+    "Principal (face value)",
+    "₹100"
+   ],
+   [
+    "Coupon",
+    "8% a year"
+   ],
+   [
+    "=",
+    "Interest each year",
+    "₹8"
+   ],
+   [
+    "Maturity",
+    "After 10 years"
+   ],
+   [
+    "=",
+    "Money back at the end",
+    "₹100"
+   ]
+  ],
+  "note": "The coupon is fixed on the face value when the bond is issued. It does not change with the price you pay later."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   7000,
+   14000,
+   21000,
+   28000,
+   35000
+  ],
+  "labels": [
+   "Y1",
+   "Y2",
+   "Y3",
+   "Y4",
+   "Y5"
+  ],
+  "fmt": "inr",
+  "big": "₹1.35 lakh back",
+  "small": "₹1 lakh + ₹35,000 interest",
+  "h": "₹1 lakh lent at 7% for 5 years",
+  "alt": "Bars showing interest adding up each year until the principal returns",
+  "caps": [
+   [
+    0.3,
+    "Dadi lends ₹1 lakh at a 7% coupon."
+   ],
+   [
+    1.8,
+    "Every year she receives ₹7,000 in interest."
+   ],
+   [
+    3.6,
+    "After five years the interest paid adds up to ₹35,000."
+   ],
+   [
+    5.0,
+    "On the last day the ₹1 lakh principal is returned too."
+   ],
+   [
+    6.2,
+    "Total back: ₹1.35 lakh. That is what lending means."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s551q1",
+  "h": "Check yourself",
+  "q": "Meena lends ₹1 lakh through a bond with a 7% coupon for 5 years. What does she receive in total over the five years?",
+  "opts": [
+   "₹7,000 in total, because the coupon is paid only once at the end",
+   "₹35,000 of interest across the years, plus the ₹1 lakh back at the end",
+   "₹1.07 lakh at the end, since interest is added once at maturity",
+   "₹35,000 and no principal, since interest replaces the repayment"
+  ],
+  "ans": 1,
+  "why": [
+   "The coupon is paid every year, not once. Over five years it adds up to much more than ₹7,000.",
+   "Seven percent of ₹1 lakh is ₹7,000 a year, so ₹35,000 over five years, then the principal returns.",
+   "Interest is paid each year on the bond, not added in a single step at the end of the term.",
+   "Interest is on top of the repayment. The borrower still returns the principal at maturity."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s551q2",
+  "h": "Check yourself",
+  "q": "A bond with an 8% coupon and ₹100 face value is bought today for ₹95. What does the 8% refer to?",
+  "opts": [
+   "8% of the ₹95 paid, since that is the money the buyer actually gave",
+   "A rate that changes every year to follow the bank's savings rate",
+   "The total return across the whole life of the bond to maturity",
+   "8% of the face value of ₹100 each year, whatever price is paid"
+  ],
+  "ans": 3,
+  "why": [
+   "The coupon is set on the face value, not on the price a later buyer pays in the market.",
+   "The coupon is fixed when the bond is issued. It does not float with savings rates.",
+   "Eight percent is a yearly rate. Over many years the total is far larger than 8%.",
+   "The coupon is a fixed 8% of face value, ₹8 a year for each ₹100, however much you paid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s551q3",
+  "h": "Check yourself",
+  "q": "Dadi asks how a bond differs from a fixed deposit. Which answer is correct?",
+  "opts": [
+   "A bond is a tradable loan from a company or government",
+   "A bond is a share in the company, so Dadi would share its profits",
+   "A bond pays no interest at all, while a deposit always pays interest",
+   "A bond is insured by the bank up to ₹5 lakh, while a deposit is not"
+  ],
+  "ans": 0,
+  "why": [
+   "A bond is a loan certificate that can often be sold, issued by companies or governments.",
+   "A bond is a loan, not ownership. Lenders get interest, not a share of profits.",
+   "Bonds pay interest, called the coupon. That is the main reason people buy them.",
+   "Deposit insurance covers bank deposits, not bonds. The reverse of this claim is closer to true."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s551q4",
+  "h": "Check yourself",
+  "q": "On the maturity date of a 10-year bond, what should the borrower do?",
+  "opts": [
+   "Start paying double interest to reward holders who waited for ten years",
+   "Offer new units at a lower price to the people who lent earlier",
+   "Return the principal, along with the final interest payment that is due",
+   "Cancel the bond and keep the principal as a fee for the loan"
+  ],
+  "ans": 2,
+  "why": [
+   "Nothing doubles at maturity. The bond simply ends and the loan is repaid.",
+   "Bonds do not issue units. That wording belongs to mutual funds, and it is not part of repayment.",
+   "Maturity is when the loan ends: the final interest is paid and the principal comes back.",
+   "Keeping the principal would be a default. A borrower must repay it on the maturity date."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A bond is a loan you give, and the borrower pays interest and returns the principal.",
+   "The coupon is a fixed rate set on the face value at the start.",
+   "Maturity is the date the loan ends and the principal comes back."
+  ]
+ }
+]

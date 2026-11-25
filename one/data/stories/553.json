@@ -1,0 +1,167 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "Meena's bond fund is down 4% this month. Nobody defaulted. No company failed. So what pulled the price down?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A puzzling fall",
+  "lines": [
+   [
+    "meena",
+    "My debt fund fell, but no borrower defaulted. How can that happen?"
+   ],
+   [
+    "sikka",
+    "Because bond prices move with interest rates. Let us watch a ₹100 bond paying 7% when market rates change by 1%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Ends in 1 year",
+  "b": "Ends in 10 years",
+  "rows": [
+   [
+    "Price if rates rise to 8% (₹)",
+    99.1,
+    93.3
+   ],
+   [
+    "Price if rates fall to 6% (₹)",
+    100.9,
+    107.4
+   ]
+  ],
+  "h": "Same 7% bond, rates change",
+  "alt": "Two sets of bars showing how a short bond and a long bond move when market rates rise or fall",
+  "caps": [
+   [
+    0.3,
+    "A ₹100 bond pays 7%. Market rates now move by 1%."
+   ],
+   [
+    2.2,
+    "If rates rise to 8%, the 10-year bond drops to about ₹93. The 1-year barely moves."
+   ],
+   [
+    4.2,
+    "If rates fall to 6%, the 10-year bond rises to about ₹107."
+   ],
+   [
+    6.0,
+    "Longer bonds swing more. That sensitivity is called duration."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Is 7% really 7%?",
+  "intro": "Prices rise every year, so what you earn must be compared with that.",
+  "rows": [
+   [
+    "Interest earned",
+    "7% a year"
+   ],
+   [
+    "Prices rise by",
+    "5% a year"
+   ],
+   [
+    "=",
+    "What you really gained (about)",
+    "1.9% a year"
+   ]
+  ],
+  "note": "This is the real return: what your interest earns after taking away rising prices."
+ },
+ {
+  "k": "pick",
+  "id": "s553q1",
+  "h": "Check yourself",
+  "q": "Market interest rates rise. What usually happens to the price of a bond you already hold?",
+  "opts": [
+   "It rises, because higher rates make every existing bond more valuable",
+   "It stays the same, since a bond's price is fixed once it is issued",
+   "It doubles, since the coupon is automatically raised to match the rise",
+   "It falls, because new bonds pay more and yours becomes less attractive"
+  ],
+  "ans": 3,
+  "why": [
+   "Rising rates do the opposite. Older, lower-rate bonds are worth less when new ones pay more.",
+   "A bond's price can change in the market. Only its coupon and face value are fixed.",
+   "A coupon never changes once set. Nothing about a rate rise adjusts it upward.",
+   "New bonds pay higher rates, so buyers pay less for your lower-rate bond, and its price falls."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s553q2",
+  "h": "Check yourself",
+  "q": "Rates rise by 1%. Fund A holds bonds ending in one year, and Fund B holds bonds ending in twenty years. What is likely?",
+  "opts": [
+   "Both fall by the same amount, since the rate rise is the same for each",
+   "Fund B falls more, since longer duration means bigger price swings",
+   "Fund A falls more, because short bonds are the most exposed to rates",
+   "Neither falls, since bond funds are protected from rate changes"
+  ],
+  "ans": 1,
+  "why": [
+   "The same rate change hits bonds differently depending on how long they run.",
+   "Longer-dated bonds are more sensitive, so Fund B swings by more than Fund A.",
+   "Short bonds are the least sensitive, since they end soon and can be reinvested at new rates.",
+   "Bond funds are not protected. Rising rates can lower their value, as in this example."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s553q3",
+  "h": "Check yourself",
+  "q": "A deposit pays 7% a year while prices rise 6% a year. What is the real return, roughly?",
+  "opts": [
+   "About 13%, since interest and inflation are added together",
+   "About 7%, because inflation affects only the cost of goods",
+   "About 1%, so buying power grows only slightly",
+   "About 6%, because inflation is the main part of the earnings"
+  ],
+  "ans": 2,
+  "why": [
+   "Inflation reduces what money buys. It is taken away from the return, not added to it.",
+   "Inflation does reduce what your interest can buy, so the real gain is lower than 7%.",
+   "Seven percent minus six percent leaves about one percent of real growth in buying power.",
+   "Inflation is not part of the earnings. It is the loss in buying power that you must subtract."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s553q4",
+  "h": "Check yourself",
+  "q": "A ₹100 bond with an 8% coupon is bought for ₹95. How does the yield compare with 8%?",
+  "opts": [
+   "Higher, since ₹8 a year and a ₹100 repayment on ₹95 earns more",
+   "Lower, because paying less than face value reduces the earnings",
+   "Exactly 8%, since the coupon always equals the yield",
+   "Zero, since a bond bought below face value pays no interest"
+  ],
+  "ans": 0,
+  "why": [
+   "You pay ₹95 and receive ₹8 a year plus ₹100 at the end, so you earn more than 8% on your money.",
+   "Paying less than face value for the same payments raises the return, not lowers it.",
+   "Yield equals the coupon only when the price equals the face value. Here it does not.",
+   "A bond pays its coupon whatever price the buyer paid. The interest does not disappear."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Bond prices and market interest rates move in opposite directions.",
+   "Longer duration means bigger swings when rates change.",
+   "Judge returns after inflation, since that is what you can actually buy."
+  ]
+ }
+]

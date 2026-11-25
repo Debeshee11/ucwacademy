@@ -1,0 +1,181 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Meena and four friends each have ₹10,000 to invest. None of them knows how to pick shares. So they try something smarter: they pool the money and hand it to one professional.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena's question",
+  "lines": [
+   [
+    "meena",
+    "If we pool ₹50,000, who actually owns what? And what stops the manager from running off with it?"
+   ],
+   [
+    "sikka",
+    "Two good questions. The first is about units. The second is about rules. Let us take them in order."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "How units work",
+  "intro": "A pool of ₹200 crore has been split into 10 crore equal slices called units.",
+  "rows": [
+   [
+    "Pool value after costs",
+    "₹200 crore"
+   ],
+   [
+    "Number of units",
+    "10 crore"
+   ],
+   [
+    "=",
+    "Price of one unit (the NAV)",
+    "₹20"
+   ],
+   [
+    "Meena invests",
+    "₹10,000"
+   ],
+   [
+    "=",
+    "Units Meena gets",
+    "500"
+   ]
+  ],
+  "note": "The NAV is worked out once every business day. Your units stay the same. The price per unit moves."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Who owns what?",
+  "stops": [
+   [
+    "The fund house keeps your money as its own",
+    false
+   ],
+   [
+    "You own units of the pool",
+    true
+   ],
+   [
+    "SEBI sets rules; assets are kept apart",
+    true
+   ],
+   [
+    "Your return is guaranteed",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements about a mutual fund",
+  "caps": [
+   [
+    0.4,
+    "The fund house runs the pool. It does not own it."
+   ],
+   [
+    2.2,
+    "You own units, a share of everything the pool holds."
+   ],
+   [
+    4.0,
+    "SEBI sets the rules and the assets are kept apart from the fund house's own money."
+   ],
+   [
+    5.6,
+    "No return is guaranteed. The unit price moves with the market."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s546q1",
+  "h": "Check yourself",
+  "q": "Meena puts ₹10,000 into a fund whose NAV is ₹20. Next month the NAV is ₹22. What has changed for Meena?",
+  "opts": [
+   "She now holds 550 units because the fund house adds units as the NAV rises",
+   "She now holds 455 units because the higher NAV removes some of her units",
+   "She holds the same 500 units, each now worth more, so her holding is worth ₹11,000",
+   "Nothing has changed until she sells, since the NAV does not affect her holding"
+  ],
+  "ans": 2,
+  "why": [
+   "Units are only added when she invests more. A rising NAV raises the value, not the unit count.",
+   "Units are never removed because the price rises. Her count stays the same at 500 units.",
+   "Units stay fixed. Her 500 units at ₹22 are worth ₹11,000. Only the price per unit moved.",
+   "Her holding is revalued at the new NAV every day, whether or not she ever sells anything."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s546q2",
+  "h": "Check yourself",
+  "q": "A friend worries: 'If the fund house goes bankrupt, my savings in its funds vanish.' What is the most accurate reply?",
+  "opts": [
+   "No, assets are kept separate and belong to the unit holders under SEBI rules",
+   "Yes, because the fund house holds your money in its own accounts for you",
+   "Mostly yes, since the fund house must sell the pool to pay its own debts first",
+   "No, because SEBI guarantees every fund against loss in all situations"
+  ],
+  "ans": 0,
+  "why": [
+   "Assets are held separately and belong to the unit holders. The fund house only manages them.",
+   "The pool's assets are kept apart from the fund house's own money, so this does not hold.",
+   "The fund house's own debts do not claim the pool's assets, which belong to the unit holders.",
+   "SEBI sets rules and oversight. It does not guarantee against market losses in any fund."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s546q3",
+  "h": "Check yourself",
+  "q": "Two funds each hold ₹100 crore of assets. Fund A has 5 crore units and Fund B has 10 crore units. What does this tell you?",
+  "opts": [
+   "Fund A is better because it has fewer units to share between its investors",
+   "Fund B is cheaper because each of its units costs less money to buy",
+   "Fund B has lost value because its units outnumber those of Fund A",
+   "Nothing about quality: Fund A's NAV is ₹20, Fund B's ₹10, same total value"
+  ],
+  "ans": 3,
+  "why": [
+   "Unit count says nothing about quality. It only shows how the same value is sliced up.",
+   "A lower NAV is not cheaper. Each unit is a smaller slice, so you simply get more units.",
+   "Having more units does not mean losing value. It only means a smaller slice per unit.",
+   "Same value, different slicing: ₹100 crore over 5 crore units is ₹20, over 10 crore it is ₹10."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s546q4",
+  "h": "Check yourself",
+  "q": "Rohan says, 'The fund manager picks the shares, so my money is safe from falls.' What is wrong with that?",
+  "opts": [
+   "Nothing, since a professional manager can avoid every fall in the market",
+   "The manager picks holdings, but the unit price still follows those holdings",
+   "He is wrong only if the fund holds shares, since bond funds cannot fall",
+   "He is right as long as the fund house is registered with SEBI"
+  ],
+  "ans": 1,
+  "why": [
+   "No manager can avoid every fall. Skill helps choose holdings but cannot remove market risk.",
+   "The manager decides the holdings. The unit price still follows how those holdings perform.",
+   "Bond funds can also fall in value, for example when interest rates rise or a borrower fails.",
+   "Registration with SEBI shows the fund follows rules. It does not shield units from falling."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A mutual fund pools many people's money and you own units of the pool.",
+   "NAV is the price of one unit, worked out every business day. Your units stay fixed, the price moves.",
+   "SEBI sets the rules, and the pool's assets are kept separate from the fund house's own money."
+  ]
+ }
+]

@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Two bonds, same five years. One pays 7%, the other 9.5%. Which would you take? Most people say the second. The better question is: why does it pay more?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan's tempting offer",
+  "lines": [
+   [
+    "rohan",
+    "A company bond is offering 11% while the government pays 7%. Why would I take 7%?"
+   ],
+   [
+    "sikka",
+    "A good question to ask. A higher rate usually comes with a reason. Let us look at who is on the other side of the loan."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Government bond",
+  "b": "Company bond",
+  "rows": [
+   [
+    "Yearly interest (%)",
+    7,
+    9.5
+   ],
+   [
+    "Safety (made-up, out of 10)",
+    9.5,
+    6
+   ]
+  ],
+  "h": "Higher rate, lower safety",
+  "alt": "Two sets of bars comparing a government bond and a company bond on interest and on safety",
+  "caps": [
+   [
+    0.3,
+    "The government offers a lower rate."
+   ],
+   [
+    2.4,
+    "The company offers more, but it is also more likely to run into trouble."
+   ],
+   [
+    4.2,
+    "The safety scores are made up to show the trade-off, not real ratings."
+   ],
+   [
+    5.6,
+    "The extra interest is the price of taking on more credit risk."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Is a high rate good news?",
+  "stops": [
+   [
+    "A higher rate often means higher credit risk",
+    true
+   ],
+   [
+    "A credit rating is a guarantee of repayment",
+    false
+   ],
+   [
+    "Government bonds carry the lowest default risk",
+    true
+   ],
+   [
+    "All company bonds are equally safe",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements about bond safety",
+  "caps": [
+   [
+    0.4,
+    "Extra interest is usually paid for extra risk."
+   ],
+   [
+    2.2,
+    "A rating is an opinion on repayment, not a promise."
+   ],
+   [
+    4.0,
+    "Government bonds sit at the safe end of rupee bonds."
+   ],
+   [
+    5.6,
+    "Companies differ a lot. Read the rating before you buy."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s552q1",
+  "h": "Check yourself",
+  "q": "A company bond pays 11% while a government bond pays 7%. What does the extra 4% most likely signal?",
+  "opts": [
+   "The company is certain to repay, so the lender gets a bonus for patience",
+   "The government is hiding losses, so its rate is artificially low in the market",
+   "Lenders are paid extra for the higher chance that the company may not repay",
+   "Nothing at all, since bond rates are set at random for each new issue"
+  ],
+  "ans": 2,
+  "why": [
+   "Extra interest does not signal certainty. It more often points to higher doubt about repayment.",
+   "Government rates are low because default risk is low, not because of any hidden losses.",
+   "A higher rate usually compensates for credit risk, so the extra is the price of that doubt.",
+   "Rates are not random. They reflect the borrower's risk, the term and market conditions."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s552q2",
+  "h": "Check yourself",
+  "q": "A bond carries a top credit rating from a rating agency. What does the rating tell you?",
+  "opts": [
+   "The agency sees low default risk, but it is an opinion, not a guarantee",
+   "The bond is insured by the government up to ₹5 lakh per investor",
+   "The borrower can never miss a payment, so the bond has no risk left",
+   "The bond's price will not move, since top ratings fix the price for good"
+  ],
+  "ans": 0,
+  "why": [
+   "A rating is the agency's view of repayment ability. It can be wrong and can change over time.",
+   "Deposit insurance applies to bank deposits. It does not cover bonds, whatever their rating.",
+   "Even top-rated borrowers can run into trouble. A rating lowers the chance, not to zero.",
+   "Prices of bonds, even top-rated ones, move with interest rates. Ratings do not fix prices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s552q3",
+  "h": "Check yourself",
+  "q": "A company misses its scheduled interest payment on a bond. What has happened, and what does it mean for lenders?",
+  "opts": [
+   "A routine delay that the bond rules always allow for each year",
+   "A maturity, so lenders receive their principal back early",
+   "A rating upgrade, since the company is saving cash for growth",
+   "A default, so lenders may have to wait longer or accept a loss"
+  ],
+  "ans": 3,
+  "why": [
+   "A missed payment is not routine. Bond terms set fixed dates, and missing one is a serious event.",
+   "Maturity is a planned end date. It is not the same as missing a payment.",
+   "A missed payment is a warning sign. It leads to downgrades, not upgrades.",
+   "Missing a due payment is a default, and lenders may be paid late, partly, or not at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s552q4",
+  "h": "Check yourself",
+  "q": "For the same time period, which borrower's bond would normally pay the lowest interest rate?",
+  "opts": [
+   "A new company with no track record, because it is easiest to start",
+   "The Government of India, since it carries the lowest default risk",
+   "A mid-sized company with a good rating, since it is well known",
+   "A bank's subsidiary that has just been formed this year"
+  ],
+  "ans": 1,
+  "why": [
+   "A new company is riskier, so it must pay more to attract lenders, not less.",
+   "Lending to the government is treated as the safest rupee loan, so it pays the least extra.",
+   "A good rating still carries more risk than the government, so the rate would be higher.",
+   "A newly formed firm has no history to judge, so lenders would expect a higher rate."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A higher rate usually means higher credit risk.",
+   "A credit rating is an opinion on repayment, not a guarantee.",
+   "Government bonds carry the lowest default risk among rupee bonds."
+  ]
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "Rohan earns a salary every month and gets a bonus once a year. He wants to invest, but he is not sure how to begin, or what to do with each kind of money.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Getting ready",
+  "lines": [
+   [
+    "rohan",
+    "What do I need before I can buy my first fund?"
+   ],
+   [
+    "sikka",
+    "Three things: a one-time KYC, a fund that suits your goal, and a way to pay. Then comes the best part, making it a habit."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Your first-day checklist",
+  "intro": "Do these once and you can invest in any fund.",
+  "rows": [
+   [
+    "KYC",
+    "One-time identity check with PAN and address proof"
+   ],
+   [
+    "Folio",
+    "Your account number with a fund house"
+   ],
+   [
+    "Nominee",
+    "The person who can claim your units"
+   ],
+   [
+    "SIP or lump sum",
+    "Monthly habit, or one bigger amount"
+   ]
+  ],
+  "note": "Add a nominee at the start. It saves your family time and paperwork later."
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "navs": [
+   20,
+   19,
+   18,
+   20,
+   22,
+   21
+  ],
+  "amt": 5000,
+  "scale": 1.0,
+  "h": "Watch a monthly SIP",
+  "alt": "Six monthly instalments of ₹5,000 buying different numbers of units as the price changes",
+  "caps": [
+   [
+    0.2,
+    "Month 1. The unit price is ₹20, so ₹5,000 buys 250 units."
+   ],
+   [
+    1.9,
+    "The price slips to ₹19, so the same money buys more units."
+   ],
+   [
+    3.6,
+    "At ₹18 it buys the most. Nobody had to guess the right day."
+   ],
+   [
+    5.3,
+    "The price rises again. Fewer units, but the earlier ones are worth more."
+   ],
+   [
+    8.0,
+    "A SIP makes investing a habit. It does not promise a profit."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s550q1",
+  "h": "Check yourself",
+  "q": "Rohan skips KYC because 'I will do it when I find the right fund'. What is the problem?",
+  "opts": [
+   "None, since KYC is only needed when he sells the units he holds later",
+   "He needs a fresh KYC for every new fund he buys from any fund house",
+   "KYC is only for investments above ₹10 lakh in a single year",
+   "He cannot invest until the one-time KYC is done, so he should do it first"
+  ],
+  "ans": 3,
+  "why": [
+   "KYC is needed before investing, not only when selling. Skipping it means he cannot start.",
+   "KYC is done once and works across funds. It is not repeated for each fund bought.",
+   "KYC is required for investing in mutual funds whatever the amount. There is no size threshold.",
+   "KYC is a one-time check. Once it is done, he can invest in funds across fund houses."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s550q2",
+  "h": "Check yourself",
+  "q": "Rohan gets his ₹60,000 bonus in March. His goal is a car down payment in four years. What is a sound approach?",
+  "opts": [
+   "Put it all into the highest-risk fund to grow it fast before the car is due",
+   "A fund whose risk fits a four-year goal, invested as a lump sum or in a few parts",
+   "Spend it, since a one-time bonus is too small to be worth investing at all",
+   "Wait for the market to look cheap before investing, however long that takes"
+  ],
+  "ans": 1,
+  "why": [
+   "High risk near a four-year goal can mean a fall just before the money is needed.",
+   "Match the fund to a four-year goal, then invest the lump sum at once or in a few steps.",
+   "A bonus can be invested. Small amounts add up when they are put to work for a goal.",
+   "Waiting for a cheap-looking market is guesswork, and it can mean never starting."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s550q3",
+  "h": "Check yourself",
+  "q": "Meena's SIP buys 250 units at ₹20 and 263 units at ₹19. What does this show?",
+  "opts": [
+   "A fixed amount buys more units when the price is lower, fewer when higher",
+   "The SIP gives bonus units whenever the price happens to drop",
+   "The fund house cuts the unit price for SIP investors every month",
+   "The SIP is certain to make a profit because it collects extra units"
+  ],
+  "ans": 0,
+  "why": [
+   "A fixed amount means lower prices buy more units and higher prices buy fewer.",
+   "The extra units are bought with the same money at a lower price, not given by anyone.",
+   "The price is set by the fund's holdings, not adjusted for SIP investors.",
+   "More units do not guarantee a profit if the price keeps falling. A SIP is a method, not a promise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s550q4",
+  "h": "Check yourself",
+  "q": "A father wants his daughter to be able to claim his investments quickly if something happens to him. What should he have done?",
+  "opts": [
+   "Keep a written note with his passwords in a drawer at home for her",
+   "Invest only in her name, whatever his own goals may be",
+   "Name her as nominee in each folio, so she can claim with less paperwork",
+   "Nothing, because units are always claimed by the fund house"
+  ],
+  "ans": 2,
+  "why": [
+   "A note with passwords is risky and does not give a legal route to claim the units.",
+   "Investing only in her name ignores his own goals and does not fit every situation.",
+   "A nominee named in the folio can claim the units with far less paperwork for the family.",
+   "Units belong to the holder and his heirs, not to the fund house. A nominee smooths the claim."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Complete KYC once and you can invest in any fund.",
+   "A SIP turns investing into a monthly habit. It does not promise a profit.",
+   "Name a nominee so your family can claim without a long process."
+  ]
+ }
+]

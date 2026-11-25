@@ -1,0 +1,166 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Rohan and Meena invest ₹10,000 a month for 20 years into the same fund, assuming the same 12% before costs. They only differ in one thing: the plan they chose.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena's doubt",
+  "lines": [
+   [
+    "meena",
+    "The Regular plan costs only 0.8% more per year. Surely that is nothing?"
+   ],
+   [
+    "sikka",
+    "Let us find out. Watch what 0.8% a year does to a growing balance over twenty years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Direct plan (0.8%)",
+  "b": "Regular plan (1.6%)",
+  "rows": [
+   [
+    "After 10 years (₹ lakh)",
+    22.2,
+    21.1
+   ],
+   [
+    "After 20 years (₹ lakh)",
+    89.7,
+    80.7
+   ]
+  ],
+  "h": "Same fund, different plan",
+  "alt": "Two sets of bars comparing the final amount in a Direct plan and a Regular plan",
+  "caps": [
+   [
+    0.3,
+    "Same fund, same 12% before costs, ₹10,000 every month."
+   ],
+   [
+    2.4,
+    "After 10 years the Direct plan is already ahead."
+   ],
+   [
+    4.4,
+    "After 20 years the gap is about ₹9.03 lakh."
+   ],
+   [
+    6.0,
+    "An assumed rate, not a promise. The point is that costs compound too."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What else costs money",
+  "intro": "Beyond the yearly charge, two choices matter.",
+  "rows": [
+   [
+    "Exit load",
+    "A fee if you sell within a set period, often a year"
+   ],
+   [
+    "Growth option",
+    "Profits stay in and keep compounding, with no payouts"
+   ],
+   [
+    "IDCW option",
+    "Money is paid out to you from time to time, and the unit price drops by that amount"
+   ]
+  ],
+  "note": "Read the exit load before you buy, not when you sell."
+ },
+ {
+  "k": "pick",
+  "id": "s549q1",
+  "h": "Check yourself",
+  "q": "Why does a 1% yearly cost reduce the final sum by so much over twenty years?",
+  "opts": [
+   "Because the fee is charged only in the last year, when the balance is largest",
+   "Because the fee increases by 1% each year until the fund is closed",
+   "It is charged on a growing balance each year, and lost money stops compounding",
+   "Because the fee is paid by you separately and never shows in the fund's value"
+  ],
+  "ans": 2,
+  "why": [
+   "The charge is taken every year, not at the end. Spread over twenty years it adds up steadily.",
+   "The expense ratio is a yearly rate, not a rising one. It does not climb by itself each year.",
+   "Each year's fee takes a slice of a larger balance, and that slice would have kept growing.",
+   "The fee is taken inside the fund, so it lowers the unit price without any separate bill."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s549q2",
+  "h": "Check yourself",
+  "q": "Rohan buys the Direct plan and Meena the Regular plan of the same fund. What is true about their portfolios?",
+  "opts": [
+   "The two plans hold the same companies. Only the yearly charge differs",
+   "Rohan's fund holds better companies because Direct plans have a stronger manager",
+   "Meena's fund holds safer bonds since a distributor guides her choices",
+   "Rohan cannot invest through an SIP because Direct plans need lump sums"
+  ],
+  "ans": 0,
+  "why": [
+   "Same portfolio, same manager. A Regular plan's higher charge pays the distributor's service.",
+   "Both plans share the same manager and holdings. The difference is in how the fund is bought and paid for.",
+   "A Regular plan does not hold different bonds. The distributor sells it but does not change the holdings.",
+   "Direct plans accept SIPs as well as lump sums, through the fund house or platforms."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s549q3",
+  "h": "Check yourself",
+  "q": "A Regular plan costs more. When might it still be worth it?",
+  "opts": [
+   "Never, since Direct plans always give better results to every investor",
+   "Only when the fund is brand new and has no track record to judge",
+   "When you want a higher return, since Regular plans promise more growth",
+   "When adviser help keeps you on plan and you accept paying for it"
+  ],
+  "ans": 3,
+  "why": [
+   "Direct is cheaper, but not always the better outcome if a person would not manage it well alone.",
+   "A fund's age has no link to which plan makes sense, so this is not a real reason.",
+   "Regular plans do not promise higher returns. Their extra cost lowers returns, not raises them.",
+   "Paying for good guidance can be worthwhile if it stops costly mistakes. Know what you are paying."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s549q4",
+  "h": "Check yourself",
+  "q": "Meena sells her units after 9 months and is charged 1% on the amount. What caused this?",
+  "opts": [
+   "The expense ratio, charged on every sale of units",
+   "An exit load, charged because she sold within the set period",
+   "Tax, charged on all sales whatever the holding time",
+   "A penalty for investing through an SIP instead of a lump sum"
+  ],
+  "ans": 1,
+  "why": [
+   "The expense ratio is a yearly charge inside the fund, not a fee on a sale.",
+   "An exit load applies when you sell before the set period ends, often a year, to discourage quick selling.",
+   "Tax is a separate matter and depends on gains and the holding period, not a flat 1%.",
+   "How you bought has no bearing on this. The charge comes from selling too early."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The expense ratio is taken inside the fund every year, so you never see a bill.",
+   "A Direct plan costs less than a Regular plan of the same fund. Same portfolio, smaller charge.",
+   "Check the exit load before you buy, and pick Growth or IDCW on purpose."
+  ]
+ }
+]

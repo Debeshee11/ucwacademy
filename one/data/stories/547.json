@@ -1,0 +1,195 @@
+[
+ {
+  "k": "fact",
+  "art": "pie",
+  "h": "Before you start",
+  "big": "Same ₹1 lakh, three funds. One holds mostly shares, one mostly bonds, one a mix. They will not behave alike, and that is the whole point of choosing well.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan's question",
+  "lines": [
+   [
+    "rohan",
+    "So which type should I pick? My colleague says equity, my father says debt."
+   ],
+   [
+    "sikka",
+    "Both are partly right. It depends on when you need the money. Let us first see what each kind actually holds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What each kind holds",
+  "alt": "Bars showing a typical mix of shares and bonds in equity, hybrid and debt funds",
+  "rows": [
+   {
+    "name": "Equity fund",
+    "segs": [
+     [
+      "Shares",
+      90,
+      "#3CC47A"
+     ],
+     [
+      "Cash",
+      10,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Hybrid fund",
+    "segs": [
+     [
+      "Shares",
+      65,
+      "#3CC47A"
+     ],
+     [
+      "Bonds",
+      35,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Debt fund",
+    "segs": [
+     [
+      "Bonds",
+      90,
+      "#8EC5FF"
+     ],
+     [
+      "Cash",
+      10,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "caps": [
+   [
+    0.3,
+    "An equity fund keeps most of its money in company shares."
+   ],
+   [
+    2.4,
+    "A hybrid fund mixes shares and bonds in one fund."
+   ],
+   [
+    4.4,
+    "A debt fund keeps most of its money in bonds."
+   ],
+   [
+    6.0,
+    "These are typical mixes. Each fund's own paper tells you the real split."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two more kinds",
+  "intro": "These are built a little differently from the three above.",
+  "rows": [
+   [
+    "Index fund",
+    "Copies an index such as the Nifty 50, no manager picking stocks"
+   ],
+   [
+    "ELSS",
+    "An equity fund with a 3-year lock-in, for the old tax regime deduction"
+   ]
+  ],
+  "note": "Under the old tax regime, up to ₹1.5 lakh a year in an ELSS can be claimed as a deduction. Check the current rules before you decide."
+ },
+ {
+  "k": "pick",
+  "id": "s547q1",
+  "h": "Check yourself",
+  "q": "Meena needs ₹3 lakh for a wedding in 18 months. Which choice best fits the goal?",
+  "opts": [
+   "An equity fund, since shares always beat bonds over any period of time",
+   "An ELSS, since the lock-in keeps the money safe from market falls",
+   "A fund chosen only for the highest return in the last year",
+   "A steadier fund, since a fall could hit just when the money is needed"
+  ],
+  "ans": 3,
+  "why": [
+   "Shares can fall for long stretches. Over 18 months there is no guarantee they will beat bonds.",
+   "A lock-in stops withdrawals. It does not stop the value from falling, and it is longer than 18 months.",
+   "Last year's return says little about the next 18 months and ignores the risk behind it.",
+   "With under two years to go, a steadier fund limits the chance of a fall just before the wedding."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s547q2",
+  "h": "Check yourself",
+  "q": "Rohan is 28 and invests for retirement in 30 years. A friend says: 'Put it all in a debt fund, it is safer.' What is the best reply?",
+  "opts": [
+   "Agree, because safer is always better whatever the time frame may be",
+   "With 30 years ahead, equity's swings can even out; debt alone may lag",
+   "Agree, since debt funds cannot lose value in any single year at all",
+   "Disagree, because debt funds are not allowed for retirement goals"
+  ],
+  "ans": 1,
+  "why": [
+   "Safer in a short span is not safer in 30 years. Slow growth can lose to rising prices.",
+   "A long horizon gives equity time to recover from falls, while a debt-only mix may not keep up with prices.",
+   "Debt funds can lose value, for example when interest rates rise or a borrower fails to pay.",
+   "No rule bans debt funds for retirement. They are simply a poor sole choice for a long horizon."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s547q3",
+  "h": "Check yourself",
+  "q": "An index fund and an actively managed equity fund both hold large companies. What is the main difference?",
+  "opts": [
+   "The index fund copies a set list; the active fund's manager picks holdings",
+   "The index fund holds bonds, while the active fund holds shares",
+   "The index fund is guaranteed to match the best fund, while the active fund is not",
+   "The index fund cannot fall when the market falls, since it only tracks it"
+  ],
+  "ans": 0,
+  "why": [
+   "The index fund copies a published list. The active fund's manager decides what to buy and sell.",
+   "Both hold shares here. What differs is who decides the holdings, not the asset type.",
+   "An index fund matches its index, not the best fund, and active funds sometimes do better.",
+   "An index fund falls with its index. Tracking it means following it down as well as up."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s547q4",
+  "h": "Check yourself",
+  "q": "A colleague claims an ELSS is the safest equity fund because of its three-year lock-in. What is the flaw?",
+  "opts": [
+   "There is no flaw, because the lock-in protects the invested amount from loss",
+   "ELSS funds hold bonds, which protect against falls during the lock-in",
+   "The lock-in only stops selling, so the value can still fall in the three years",
+   "The lock-in ends when markets fall, so the money is released for you"
+  ],
+  "ans": 2,
+  "why": [
+   "The lock-in restricts selling. It does not shield the value from changes in the market.",
+   "An ELSS is an equity fund holding mostly shares, not bonds.",
+   "A lock-in limits when you can sell. The fund still holds shares, whose prices can fall.",
+   "The lock-in does not end when markets fall. The three years apply to each instalment."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Equity grows more and swings more. Debt is steadier, but not without risk.",
+   "Hybrid mixes the two. An index fund copies an index. An ELSS is equity with a 3-year lock-in.",
+   "Pick by goal and time frame: soon needs steady, far away can handle swings."
+  ]
+ }
+]
