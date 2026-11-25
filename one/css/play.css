@@ -175,3 +175,16 @@ a.stop-in:hover .coin { transform: translateY(-3px) scale(1.04); }
   .chips.scroll::-webkit-scrollbar { display: none; }
   .chips.scroll .chip { flex: none; white-space: nowrap; }
 }
+.ccard .cover { aspect-ratio: 16 / 6; }
+.stages { display: grid; gap: 12px; }
+.stage { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 16px; border: 2px solid var(--line); border-bottom-width: 5px; border-radius: 22px; background: #fff; }
+.stage.now { border-color: var(--gold-d, #C98F12); background: #FFF8E4; }
+.stage.next { opacity: .92; }
+.stage.done { background: #EAF8F0; border-color: #8FD5AE; }
+.stage-n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font: 800 16px var(--font); background: #F4EDDA; color: #5A4A2A; }
+.stage.now .stage-n { background: var(--gold, #FFC531); color: #2B2118; }
+.stage.done .stage-n { background: #3CC47A; color: #fff; }
+.stage-h { display: flex; gap: 8px; justify-content: space-between; align-items: flex-start; }
+.stage-cs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+.chip { font: 700 12px var(--font); padding: 5px 10px; border-radius: 99px; background: #F4EDDA; color: #3B3224; text-decoration: none; }
+.chip.on { background: #CDEFDB; } .chip.soon { background: transparent; border: 1px dashed #BDB19A; color: #8A7D63; }
