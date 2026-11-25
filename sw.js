@@ -26,6 +26,7 @@ self.addEventListener("fetch", ev => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;                    /* Firebase, Google, data branches: untouched */
   if (/\/(sw\.js|__\/)/.test(url.pathname)) return;
+  if (/\.(mp4|webm)$/.test(url.pathname)) return;                    /* videos are streamed in parts, so the browser handles them */
 
   if (req.mode === "navigate") {
     ev.respondWith(fetch(req, { cache: "no-cache" }).then(res => save(req, res)).catch(async () =>
