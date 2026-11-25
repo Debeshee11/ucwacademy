@@ -77,7 +77,7 @@ export function frame(onLang) {
   document.body.prepend(side); shell.insertBefore(top, shell.firstChild); document.body.append(tabs); document.body.classList.remove("pre");
   return {
     show(on) { document.body.classList.toggle("focus", !on); },
-    active(id) { active = id; paintNav(); paintMenu(); }
+    active(id) { active = id; try { document.body.dataset.sec = id || ""; } catch {} paintNav(); paintMenu(); }
   };
 }
 

@@ -31,13 +31,20 @@ function arrange(q) {
 const shell = (root, ...kids) => { clear(root); const m = h("main", { class: "wrap page gm" }, ...kids); root.append(m); window.scrollTo(0, 0); return m; };
 const exitBtn = () => h("a", { class: "icon-btn", href: "#/practice", "aria-label": "Leave the game" }, icon("x", 22));
 
+/* A question card with Sarthi's face reacting to each answer and a "+10" that floats up. */
+function qcard(label) {
+  const q = h("h1", { class: "gm-q" }), f = h("span", { class: "gm-face" }), pop = h("span", { class: "gm-pop", "aria-hidden": "true" });
+  const set = m => { f.innerHTML = mascot({ mood: m, pose: "stand", view: "head", px: 58 }); }; set("happy");
+  return { el: h("div", { class: "gm-card" }, h("div", { class: "gm-ch" }, h("span", { class: "gm-tag" }, label), f), q, pop), q, set, float: s => { pop.textContent = s; pop.classList.remove("go"); void pop.offsetWidth; pop.classList.add("go"); } };
+}
+
 /* ——— Speed round: 60 seconds, combo multiplier ——— */
 export function speedRound(root) {
   const P = shuffle(pool()), LEN = 60;
   let i = 0, left = LEN, score = 0, combo = 0, bestCombo = 0, right = 0, asked = 0, locked = false, over = false, t;
   const timeBar = h("i", { style: "width:100%" }), timeTxt = h("b", { class: "gm-time" }, LEN), scoreEl = h("b", { class: "gm-score" }, "0"), mult = h("span", { class: "gm-mult" });
-  const qEl = h("h1", { class: "gm-q" }), opts = h("div", { class: "gm-opts" }), fb = h("p", { class: "gm-fb", "aria-live": "polite" });
-  shell(root, h("div", { class: "gm-top" }, exitBtn(), h("div", { class: "gm-bar" }, timeBar), timeTxt), h("div", { class: "gm-hud" }, h("span", {}, "Score ", scoreEl), mult), qEl, opts, fb);
+  const C = qcard("Speed round"), qEl = C.q, opts = h("div", { class: "gm-opts" }), fb = h("p", { class: "gm-fb", "aria-live": "polite" });
+  shell(root, h("div", { class: "gm-top" }, exitBtn(), h("div", { class: "gm-bar" }, timeBar), h("span", { class: "gm-clock" }, "⏱ ", timeTxt)), h("div", { class: "gm-hud" }, h("span", {}, "Score ", scoreEl), mult), C.el, opts, fb);
   const m = () => 1 + Math.min(3, Math.floor(combo / 3));
   function ask() {
     const q = arrange(P[i % P.length]); i++; locked = false; fb.textContent = ""; fb.className = "gm-fb"; qEl.textContent = q.prompt; clear(opts);
@@ -48,8 +55,8 @@ export function speedRound(root) {
     if (locked || over) return; locked = true; asked++;
     const ok = k === q.answer; Store.recordAnswer(q.id, ok);
     opts.querySelectorAll(".gm-opt").forEach((b, j) => { b.disabled = true; if (j === q.answer) b.classList.add("right"); else if (j === k) b.classList.add("wrong"); });
-    if (ok) { combo++; right++; bestCombo = Math.max(bestCombo, combo); const add = 10 * m(); score += add; scoreEl.textContent = score; fb.textContent = `+${add}`; fb.className = "gm-fb ok"; }
-    else { combo = 0; fb.textContent = (q.wrong[k] || q.why || "Not quite.").slice(0, 150); fb.className = "gm-fb bad"; }
+    if (ok) { combo++; right++; bestCombo = Math.max(bestCombo, combo); const add = 10 * m(); score += add; scoreEl.textContent = score; fb.textContent = combo >= 3 ? `+${add}  combo x${m()}` : `+${add}`; fb.className = "gm-fb ok"; C.set("joy"); C.float("+" + add); }
+    else { combo = 0; C.set("think"); try { navigator.vibrate && navigator.vibrate(40); } catch {} fb.textContent = (q.wrong[k] || q.why || "Not quite.").slice(0, 150); fb.className = "gm-fb bad"; }
     mult.textContent = combo >= 3 ? `x${m()} combo` : combo ? `${combo} in a row` : ""; mult.className = "gm-mult" + (combo >= 3 ? " hot" : "");
     setTimeout(() => { if (!over) ask(); }, ok ? 450 : 1500);
   }
@@ -72,7 +79,7 @@ export function speedRound(root) {
 export function rightWrong(root) {
   const N = 10, qs = pick(pool(), N).map(arrange).map(q => { const truth = Math.random() < .5, wrongIdx = shuffle(q.options.map((_, i) => i).filter(i => i !== q.answer))[0]; return { q, shown: truth ? q.answer : wrongIdx, truth }; });
   let i = 0, right = 0, streak = 0, bestS = 0, busy = false;
-  const bar = h("i", { style: "width:0%" }), card = h("div", { class: "rw-card" }), strip = h("div", { class: "gm-fb", "aria-live": "polite" }), stk = h("span", { class: "gm-mult" });
+  const face = h("span", { class: "gm-face" }), bar = h("i", { style: "width:0%" }), card = h("div", { class: "rw-card" }), strip = h("div", { class: "gm-fb", "aria-live": "polite" }), stk = h("span", { class: "gm-mult" });
   const yes = h("button", { class: "rw-btn yes", type: "button", on: { click: () => call(true) } }, icon("check", 26), "Right"), no = h("button", { class: "rw-btn no", type: "button", on: { click: () => call(false) } }, icon("x", 26), "Wrong");
   const next = h("button", { class: "btn gold big", type: "button", hidden: true, on: { click: () => { i++; i < N ? paint() : end(); } } }, "Next");
   shell(root, h("div", { class: "gm-top" }, exitBtn(), h("div", { class: "gm-bar" }, bar), h("b", { class: "gm-time" }, `${N}`)), h("div", { class: "gm-hud" }, h("span", {}, "Is this answer right?"), stk), card, strip, h("div", { class: "rw-btns" }, no, yes), next);
@@ -80,13 +87,13 @@ export function rightWrong(root) {
   document.addEventListener("keydown", keys);
   function paint() {
     const { q, shown } = qs[i]; busy = false; bar.style.width = `${100 * i / N}%`; next.hidden = true; yes.disabled = no.disabled = false; strip.textContent = ""; strip.className = "gm-fb";
-    card.className = "rw-card in"; card.replaceChildren(h("small", {}, `Question ${i + 1} of ${N}`), h("h1", { class: "gm-q" }, q.prompt), h("div", { class: "rw-ans" }, h("small", {}, "Proposed answer"), h("b", {}, q.options[shown])));
+    card.className = "rw-card in"; face.innerHTML = mascot({ mood: "happy", pose: "stand", view: "head", px: 54 }); card.replaceChildren(h("div", { class: "gm-ch" }, h("small", {}, `Question ${i + 1} of ${N}`), face), h("h1", { class: "gm-q" }, q.prompt), h("div", { class: "rw-ans" }, h("small", {}, "Proposed answer"), h("b", {}, q.options[shown])));
   }
   function call(say) {
     if (busy) return; busy = true; const { q, truth } = qs[i], ok = say === truth; Store.recordAnswer(q.id, ok); yes.disabled = no.disabled = true;
     if (ok) { right++; streak++; bestS = Math.max(bestS, streak); } else streak = 0;
     stk.textContent = streak >= 2 ? `${streak} in a row` : ""; stk.className = "gm-mult" + (streak >= 3 ? " hot" : "");
-    card.classList.add(ok ? "ok" : "bad"); strip.className = "gm-fb " + (ok ? "ok" : "bad");
+    card.classList.add(ok ? "ok" : "bad"); face.innerHTML = mascot({ mood: ok ? "joy" : "think", pose: "stand", view: "head", px: 54 }); strip.className = "gm-fb " + (ok ? "ok" : "bad");
     strip.textContent = (ok ? "Correct. " : "Not quite. ") + (truth ? "That answer is right. " : `The right answer: ${q.options[q.answer]}. `) + (q.why || "").slice(0, 160);
     next.hidden = false; next.textContent = i === N - 1 ? "See result" : "Next"; next.focus();
   }
@@ -102,9 +109,9 @@ export function rightWrong(root) {
 /* ——— Survival: three hearts, how far can you go? ——— */
 export function survival(root) {
   const P = shuffle(pool()); let i = 0, hearts = 3, run = 0, locked = false;
-  const hr = h("div", { class: "sv-hearts", "aria-live": "polite" }), cnt = h("b", { class: "gm-score" }, "0"), qEl = h("h1", { class: "gm-q" }), opts = h("div", { class: "gm-opts" }), fb = h("p", { class: "gm-fb" });
+  const hr = h("div", { class: "sv-hearts", "aria-live": "polite" }), cnt = h("b", { class: "gm-score" }, "0"), C = qcard("Survival"), qEl = C.q, opts = h("div", { class: "gm-opts" }), fb = h("p", { class: "gm-fb" });
   const paintH = () => hr.replaceChildren(...[0, 1, 2].map(k => h("span", { class: k < hearts ? "on" : "off" }, "♥")));
-  shell(root, h("div", { class: "gm-top" }, exitBtn(), hr), h("div", { class: "gm-hud" }, h("span", {}, "Answered ", cnt), h("span", { class: "gm-mult" }, "Three misses and it is over")), qEl, opts, fb);
+  shell(root, h("div", { class: "gm-top" }, exitBtn(), hr), h("div", { class: "gm-hud" }, h("span", {}, "Answered ", cnt), h("span", { class: "gm-mult" }, "Three misses and it is over")), C.el, opts, fb);
   const keys = e => { if (!root.isConnected) return document.removeEventListener("keydown", keys); if (/^[1-4]$/.test(e.key)) opts.querySelectorAll(".gm-opt")[+e.key - 1]?.click(); };
   document.addEventListener("keydown", keys);
   function ask() {
@@ -114,8 +121,8 @@ export function survival(root) {
   function pickA(q, k) {
     if (locked) return; locked = true; const ok = k === q.answer; Store.recordAnswer(q.id, ok);
     opts.querySelectorAll(".gm-opt").forEach((b, j) => { b.disabled = true; if (j === q.answer) b.classList.add("right"); else if (j === k) b.classList.add("wrong"); });
-    if (ok) { run++; cnt.textContent = run; fb.textContent = run % 5 === 0 ? `${run} in a row. Keep going.` : "Correct"; fb.className = "gm-fb ok"; }
-    else { hearts--; paintH(); try { navigator.vibrate && navigator.vibrate(40); } catch {} fb.textContent = (q.wrong[k] || q.why || "Not quite.").slice(0, 150); fb.className = "gm-fb bad"; }
+    if (ok) { run++; cnt.textContent = run; fb.textContent = run % 5 === 0 ? `${run} in a row. Keep going.` : "Correct"; fb.className = "gm-fb ok"; C.set("joy"); C.float("+1"); }
+    else { hearts--; paintH(); C.set("think"); try { navigator.vibrate && navigator.vibrate(40); } catch {} fb.textContent = (q.wrong[k] || q.why || "Not quite.").slice(0, 150); fb.className = "gm-fb bad"; }
     if (hearts <= 0) return setTimeout(end, 1400);
     setTimeout(ask, ok ? 500 : 1500);
   }
