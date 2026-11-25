@@ -10,6 +10,7 @@ import { runQuiz } from "./quiz.js";
 import { nextLessonAfter } from "./path.js";
 import { levelTag } from "./ui.js";
 import { stories } from "./stories.js";
+import { rateDue } from "./rate.js";
 import { buildStory, handStory } from "./storify.js";
 
 /* Who is reading: someone who advises others sees the client wording; everyone else reads it as their own money. */
@@ -83,7 +84,7 @@ async function storyLesson(root, n) {
   };
   const story = buildStory(l, n, { pro: isPro(), hand });
   /* The finish screen reads custom.next when it is drawn, after finish() has run. */
-  const custom = { lesson: story, exit: backTo(c), answer: (id, ok) => Store.recordAnswer(id, ok), finish, get next() { return acts; } };
+  const custom = { lesson: story, exit: backTo(c), answer: (id, ok) => Store.recordAnswer(id, ok), finish, get next() { return acts; }, get rateOn() { return rateDue("lesson"); } };
   stories(root, null, custom);
 }
 

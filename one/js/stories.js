@@ -4,6 +4,7 @@
 import * as I18n from "./i18n.js";
 import { mascot } from "./mascot.js";
 import { iconFor, sceneFor } from "./storyart.js";
+import { rateSave, FACES, FIX, waHref, siteUrl } from "./rate.js";
 import { animHtml, startAnim, stopAnim, speakOf } from "./anim.js";
 
 const CSS = `
@@ -74,6 +75,8 @@ input[type=range]{width:100%;height:44px;accent-color:#2556B8}
 .pt i{width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);flex:none;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800}
 .seg2{display:flex;gap:8px}.seg2 button{flex:1;border:3px solid var(--ink);background:#fff;border-radius:14px;min-height:48px;font-weight:800;font-size:15px}.seg2 button[aria-pressed=true]{background:var(--gold)}
 .note{font-size:12px;color:var(--mute);text-align:center;padding:6px 0}
+.rate{width:100%;max-width:460px;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:12px 14px;display:grid;gap:8px;text-align:center}.rate .rq{font-weight:800}.rfaces{display:flex;justify-content:center;gap:8px}.rfaces button{font-size:28px;width:52px;height:52px;border-radius:16px;border:2px solid var(--line);background:#FFF8E7;cursor:pointer;transition:transform .12s}.rfaces button:hover{transform:translateY(-3px) scale(1.08)}.rfaces button.on{background:var(--gold);border-color:var(--ink)}.rout{display:grid;gap:8px;justify-items:center;font-size:14px}.rout .row2{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.rout .chips2{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}.rout .chips2 button{padding:6px 12px;border-radius:999px;border:2px solid var(--ink);background:#fff;font-weight:700;cursor:pointer}
+a.btn,a.btn:visited{color:var(--ink)}
 /* lively player: drifting backdrop, floating coins, a coin on the progress bar, a framed stage on wide screens */
 .player{position:relative;overflow:hidden}.player>*{position:relative;z-index:1}
 .player::before{content:"";position:absolute;inset:-10%;z-index:0;pointer-events:none;background:radial-gradient(circle at 10% 18%,rgba(255,197,49,.38) 0 44px,transparent 46px),radial-gradient(circle at 90% 82%,rgba(255,255,255,.6) 0 70px,transparent 72px),radial-gradient(circle at 72% 10%,rgba(255,255,255,.55) 0 34px,transparent 36px),radial-gradient(circle at 30% 92%,rgba(255,197,49,.25) 0 54px,transparent 56px)}
@@ -485,7 +488,7 @@ function finish() {
   const cf = Array.from({ length: 30 }, (_, i) => `<i style="--x:${(i * 37) % 100}%;--d:${(i % 10) * 0.12}s;--c:${["#FFC531", "#3CC47A", "#8EC5FF", "#FF9C6B", "#D8B4FE"][i % 5]}"></i>`).join("");
   return `<div class="player" style="background:#D9F2E3"><div class="cf" aria-hidden="true">${cf}</div><div class="body" style="align-items:center;justify-content:center;text-align:center;gap:14px">
   <svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Badge"><circle cx="60" cy="54" r="40" fill="#FFC531" ${O}/><circle cx="60" cy="54" r="30" fill="none" stroke="#C99A12" stroke-width="3"/><path d="M42 54l12 12 24-24" fill="none" stroke="#1E8E56" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 90l-8 24 28-12 28 12-8-24" fill="#E8573D" ${O} stroke-linejoin="round"/></svg>
-  <h2 class="h">${esc(tx(U.complete))}</h2><p class="s">${esc(tx(L.title))}</p><div class="stats"><span><b>⚡ ${S.xp}</b>XP</span><span><b>${S.asked ? S.right + "/" + S.asked : "–"}</b>right</span><span><b>🔥 ${S.best}</b>best streak</span></div><div class="guide" style="justify-content:center">${mascot({ view: "full", pose: "cheer", mood: "joy", px: 150 })}</div>
+  <h2 class="h">${esc(tx(U.complete))}</h2><p class="s">${esc(tx(L.title))}</p><div class="stats"><span><b>⚡ ${S.xp}</b>XP</span><span><b>${S.asked ? S.right + "/" + S.asked : "–"}</b>right</span><span><b>🔥 ${S.best}</b>best streak</span></div>${custom && custom.rateOn ? `<div class="rate" data-rate><div class="rq">How was this lesson?</div><div class="rfaces">${FACES.map((f, i) => `<button data-star="${i + 1}" aria-label="${i + 1} of 5">${f}</button>`).join("")}</div><div class="rout"></div></div>` : ""}<div class="guide" style="justify-content:center">${mascot({ view: "full", pose: "cheer", mood: "joy", px: 150 })}</div>
   ${custom ? "" : `<button class="btn" data-copy>${esc(tx(U.copy))}</button><div class="small" id="cp"></div>`}</div>
   <div class="foot">${custom ? (custom.next || []).map(a => `<a class="btn ${a.go ? "go" : ""}" style="justify-content:center;text-decoration:none" href="${esc(a.href)}">${esc(a.label)}</a>`).join("") : `<button class="btn" data-home>${esc(tx(U.all))}</button>`}${!custom && nx ? `<button class="btn go" data-open="${S.li + 1}">${esc(tx(U.nextStory))}</button>` : ""}</div></div>`;
 }
@@ -513,6 +516,12 @@ const SEEN = new Set(); const custom_seen = (li, ci) => { const k = LESSONS[li].
 function bind() {
   app.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { stopAll(); I18n.setLanguage(b.dataset.lang); });
   app.querySelectorAll("[data-exit]").forEach(b => b.onclick = () => { stopAll(); location.hash = "#/"; });
+  app.querySelectorAll("[data-star]").forEach(b => b.onclick = () => { const n = +b.dataset.star; rateSave(n); app.querySelectorAll("[data-star]").forEach(x => { x.disabled = true; x.classList.toggle("on", x === b); });
+    const out = app.querySelector(".rate .rout"); if (!out) return;
+    out.innerHTML = n >= 4 ? `<div>Glad you liked it. Tell a friend?</div><div class="row2"><a class="btn go" target="_blank" rel="noopener" href="${esc(waHref())}" style="text-decoration:none">Share on WhatsApp</a><button class="btn" data-copysite>Copy link</button><a class="btn" href="#/challenge" style="text-decoration:none">Duel a friend</a></div>` : `<div>Sorry about that. What was it?</div><div class="chips2">${FIX.map(f => `<button data-fix>${esc(f)}</button>`).join("")}</div>`;
+    const cp = out.querySelector("[data-copysite]"); if (cp) cp.onclick = async () => { try { await navigator.clipboard.writeText(siteUrl()); cp.textContent = "Copied"; } catch (e) { cp.textContent = "Use WhatsApp"; } };
+    out.querySelectorAll("[data-fix]").forEach(x => x.onclick = () => { x.style.background = "#FFC531"; x.textContent += " ✓"; });
+  });
   app.querySelectorAll("[data-open]").forEach(b => b.onclick = () => { stopAll(); S.view = "play"; S.li = +b.dataset.open; S.ci = 0; S.xp = 0; S.combo = 0; S.best = 0; S.right = 0; S.asked = 0; S.fx = null; S.flags = [false, false, false, false]; S.myth = null; S.stop = 0; S.ord = []; S.bad = 0; S.line = 1; S.tiles = []; S.pick = []; render(); enter(); });
   app.querySelectorAll("[data-home]").forEach(b => b.onclick = () => { stopAll(); if (custom) { location.hash = custom.exit; return; } S.auto = false; S.view = "home"; render(); });
   const nx = app.querySelector("[data-next]"), pv = app.querySelector("[data-prev]"), L = LESSONS[S.li];

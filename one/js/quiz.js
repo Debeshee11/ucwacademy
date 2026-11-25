@@ -3,6 +3,7 @@ import { h, icon, shuffle, clear } from "./dom.js";
 import { D, localize } from "./data.js";
 import * as Store from "./store.js";
 import { ask } from "./ux.js";
+import { rateCard } from "./rate.js";
 
 /* Every question in the course by id, so revision can find the ones that are due. */
 let byId = null;
@@ -118,6 +119,7 @@ export function runQuiz(root, cfg) {
         h("p", { class: "lead" }, out.sub || `${right} of ${total} right.` + (cfg.pass != null ? ` Pass mark ${cfg.pass}%.` : ""))),
       cfg.record !== false ? h("div", {}, h("span", { class: "xp-chip" }, icon("star", 22), `+${earned} points`)) : null,
       out.body || null,
+      cfg.rate && passed !== false ? rateCard("exam", cfg.rate) : null,
       miss.length ? h("details", { class: "details card", style: "text-align:left" },
         h("summary", { class: "row-flex between" }, h("span", { class: "h3" }, `Review ${miss.length} you missed`), h("span", { class: "chev-d" }, icon("chev", 18))),
         h("div", { class: "stack", style: "margin-top:20px" }, miss.map(a => h("div", { class: "stack stack-s" },

@@ -68,9 +68,9 @@ function nodesOf(cs, s) {
 
 /* The winding road and its stones. Positions are percentages so it scales from phone to wide screen. */
 function road(nodes, nowAt) {
-  const GAP = 92, TOP = 64, H = TOP + (nodes.length - 1) * GAP + 80;
-  const pt = (n, i) => ({ x: n.k === "flag" || n.k === "soon" ? 50 : 50 + 27 * Math.sin(i * .95), y: TOP + i * GAP });
-  const P = nodes.map(pt);
+  const GAP = 104, TOP = 70; let yy = TOP - GAP;
+  const P = nodes.map((n, i) => { const flag = n.k === "flag" || n.k === "soon"; yy += GAP + (i && (nodes[i - 1].k === "flag") ? 22 : 0) + (flag && i ? 8 : 0); return { x: flag ? 50 : 50 + 25 * Math.sin(i * .95), y: yy }; });
+  const H = yy + 90;
   let d = `M ${P[0].x * 4} ${P[0].y}`;
   for (let i = 1; i < P.length; i++) { const a = P[i - 1], b = P[i], m = (a.y + b.y) / 2; d += ` C ${a.x * 4} ${m}, ${b.x * 4} ${m}, ${b.x * 4} ${b.y}`; }
   const svg = document.createElementNS(NS, "svg");

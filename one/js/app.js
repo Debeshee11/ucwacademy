@@ -22,6 +22,7 @@ import * as Home from "./home.js";
 import * as Ac from "./academy.js";
 import * as Syl from "./syllabus.js";
 import * as P from "./practice.js";
+import * as A from "./arena.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
 import { review } from "./review.js";
@@ -86,6 +87,11 @@ const ROUTES = [
   [/^syllabus\/([\w-]+)\/([bih])$/, (c, t) => Syl.syllabus(c, t), "courses", "Syllabus"],
   [/^nism\/([\w-]+)\/mock\/(\d)$/, (id, n) => Nism.mock(root, id, +n, /review=1/.test(location.hash)), "", "NISM mock", true, "Mock exams are marked on our servers and your scores are saved to your account. The study guides and unit notes stay open."],
   [/^quiz\/refresh\/([\w-]+)$/, c => Q.refresher(root, c), "", "Refresher", true, "Refreshers renew a certificate, so they need an account."],
+  [/^game\/speed$/, () => A.speedRound(root), "", "Speed round", true],
+  [/^game\/survive$/, () => A.survival(root), "", "Survival", true],
+  [/^quiz\/drill\/([\w-]+)\/(\d+)$/, (c, i) => Q.drill(root, c, +i), "", "Train", true],
+  [/^game\/rw$/, () => A.rightWrong(root), "", "Right or wrong", true],
+  [/^quiz\/weak$/, () => Q.weak(root), "", "Weak-spot trainer", true],
   [/^quiz\/daily$/, () => Q.daily(root), "", "Daily five", true],
   [/^quiz\/revise$/, () => Q.revise(root), "", "Revise", true],
   [/^quiz\/fund(?:\/(ma|def))?$/, g => Q.fundQuiz(root, g), "", "Fund quiz", true],

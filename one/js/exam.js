@@ -1,6 +1,7 @@
 /* The exam runner. Unlike a practice quiz it shows no answers while the exam runs. At the end the chosen options go to the server,
    which marks them against keys the browser never holds, issues or renews the certificate, and sends back the review. */
 import { h, icon, shuffle, clear } from "./dom.js";
+import { rateCard } from "./rate.js";
 import { localize } from "./data.js";
 import * as Store from "./store.js";
 import { fns } from "./fb.js";
@@ -100,6 +101,7 @@ export async function runExam(root, cfg) {
       ring,
       h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, out.head || (res.passed ? "Passed." : "Not yet.")), h("p", { class: "lead" }, out.sub || `${res.right} of ${res.total} right. Pass mark ${res.pass}%.`)),
       out.body || null,
+      cfg.rate && res.passed ? rateCard("exam", cfg.rate) : null,
       missed.length ? h("details", { class: "details card", style: "text-align:left" },
         h("summary", { class: "row-flex between" }, h("span", { class: "h3" }, `Review ${missed.length} you missed`), h("span", { class: "chev-d" }, icon("chev", 18))),
         h("div", { class: "stack", style: "margin-top:20px" }, missed.map(({ q, r }) => h("div", { class: "stack stack-s" },

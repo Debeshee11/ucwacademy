@@ -1,7 +1,8 @@
 /* The kinds of quiz: module, exam, refresher, daily, revision and placement. Each picks questions and decides what happens after. */
 import { RULES } from "./config.js";
 import { D, course, level, questionsFor, TIERS } from "./data.js";
-import { h, pick, shuffle } from "./dom.js";
+import { h, pick, shuffle, toast } from "./dom.js";
+import { weakIds } from "./arena.js";
 import * as Store from "./store.js";
 import * as Creds from "./creds.js";
 import { runQuiz, questionById } from "./quiz.js";
@@ -17,7 +18,7 @@ export function moduleQuiz(root, cid, mi) {
   if (!m) return void (location.hash = "#/courses");
   const key = `m:${cid}:${mi}`;
   runQuiz(root, {
-    title: `${c.title} · Module ${mi + 1}`, questions: pick(questionsFor(m.lessons), RULES.moduleQuestions), pass: RULES.modulePass, exit: back(c),
+    title: `${c.title} · Module ${mi + 1}`, questions: pick(questionsFor(m.lessons), RULES.moduleQuestions), pass: RULES.modulePass, exit: back(c), rate: "this module",
     done: res => {
       Store.recordQuiz(key, res.score, res.passed);
       const all = Store.courseProgress(c).examReady;
@@ -45,7 +46,7 @@ export function exam(root, cid, tier = "b") {
   }
   const pass = RULES.tierPass[tier];
   runExam(root, {
-    title: `${c.title} · ${T.name} exam`, courseId: cid, tier, lookup: finder(c), exit: back(c),
+    rate: "this exam", title: `${c.title} · ${T.name} exam`, courseId: cid, tier, lookup: finder(c), exit: back(c),
     done: res => {
       Store.recordQuiz(TIER_KEY[tier] + cid, res.score, res.passed);
       const next = tier === "b" ? "i" : tier === "i" ? "h" : null, nextT = TIERS().find(t => t.id === next);
@@ -143,4 +144,19 @@ export function holdingsQuiz(root, fundId) {
   if (qs.length < 3) { location.hash = "#/funds"; return; }
   const again = "#/quiz/holdings" + (fundId ? "/" + fundId : "");
   runQuiz(root, { title: "Holdings quiz", questions: pick(qs, 10), record: true, exit: "#/funds", done: finish("Holdings quiz", again, "#/funds") });
+}
+
+/* The questions this learner misses most, eight at a time. */
+export function weak(root) {
+  const ids = weakIds().slice(0, 8), qs = ids.map(questionById).filter(Boolean);
+  if (qs.length < 3) { toast("Answer a few more questions and your weak spots will show up here."); location.hash = "#/practice"; return; }
+  runQuiz(root, { title: "Weak-spot trainer", questions: qs, exit: "#/practice", done: res => ({ head: res.right === qs.length ? "No weak spots left here." : "Good work.", sub: `${res.right} of ${qs.length}. The ones you missed come back sooner.`, actions: [h("a", { class: "btn gold", href: "#/practice" }, "Back to Practice"), h("a", { class: "btn ghost", href: "#/game/speed" }, "Speed round")] }) });
+}
+
+/* Practice one module: eight to ten questions from its lessons. Answers feed revision and mastery, but this never counts as passing the module quiz. */
+export function drill(root, cid, mi) {
+  const c = course(cid), m = c && c.modules[mi]; if (!m) return void (location.hash = "#/practice");
+  const qs = pick(questionsFor(m.lessons), 10); if (qs.length < 3) { toast("This module has too few questions yet."); location.hash = "#/practice"; return; }
+  runQuiz(root, { title: `Train · ${m.title}`, questions: qs, exit: "#/practice", done: res => ({ head: res.score >= 80 ? "Strong." : res.score >= 50 ? "Getting there." : "Keep training.", sub: `${res.right} of ${qs.length}. The ones you missed come back sooner.`,
+    actions: [h("button", { class: "btn gold", type: "button", on: { click: () => drill(root, cid, mi) } }, "Train again"), h("a", { class: "btn ghost", href: "#/practice" }, "Back to Practice")] }) });
 }

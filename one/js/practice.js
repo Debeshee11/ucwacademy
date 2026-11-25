@@ -18,31 +18,7 @@ const tile = (href, ic, title, sub, vars, state) => h("a", { class: "gtile" + (s
   h("span", { class: "gtile-ic" }, icon(ic, 26)), h("span", { class: "gtile-t" }, title), h("span", { class: "gtile-s" }, sub), state === "done" ? h("span", { class: "gtile-badge" }, icon("check", 16), "Done") : null);
 const C = { gold: "--sc:#B97700;--sb:#FFEFC2", green: "--sc:#0B7F57;--sb:#D6F4E7", blue: "--sc:#3450D1;--sb:#E0E7FF", orange: "--sc:#D2501A;--sb:#FFE3D2", violet: "--sc:#7440CF;--sb:#EBE1FF", pink: "--sc:#C72F69;--sb:#FFE0EC" };
 
-export function practice() {
-  const a = Store.todayAct(), due = Store.dueIds().length, labN = Object.keys(Store.get().lab).length;
-  const renew = Creds.all().filter(c => c.kind === "course" && Creds.standing(c) !== "valid");
-  return page(
-    h("div", { class: "stack stack-s" }, h("h1", { class: "h1" }, "Practice"), h("p", { class: "lead mute" }, "Short, regular practice beats long cramming. Pick a game.")),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Today"),
-      h("div", { class: "gtiles two" },
-        tile("#/quiz/daily", "bolt", "Daily five", a.d ? "You did it. Come back tomorrow." : "Five questions, two minutes", C.gold, a.d ? "done" : "big"),
-        tile("#/quiz/revise", "flame", "Revise", due ? plural(due, "question") + " due for review" : "Nothing due right now", C.orange, a.r ? "done" : due ? "big" : "")),
-      renew.length ? h("div", { class: "gtiles" }, renew.map(c => tile(`#/quiz/refresh/${c.key}`, "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions", C.pink))) : null),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Quiz arena"),
-      h("div", { class: "gtiles" },
-        D.holdQs.some(q => q.tags.includes("holdings")) ? tile("#/quiz/holdings", "trend", "Holdings quiz", "New every month, from real portfolios", C.green) : null,
-        tile("#/quiz/fund", "book", "Fund quiz", "Factsheets, returns, risk and tax", C.blue),
-        tile("#/quiz/market", "trend", "Market quiz", "Indices, economy, how markets work", C.violet))),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "More ways to learn"),
-      h("div", { class: "gtiles" },
-        tile("#/news", "trend", "Market desk", "Today's headlines, funds and indices", C.blue),
-        tile("#/assess", "award", "Course exams", "Ready? Pass an exam to earn a certificate", C.gold),
-        tile("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement and more", C.green),
-        isPro() ? tile("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`, C.pink) : null,
-        tile("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures", C.pink),
-        tile("#/quiz/place", "check", "Placement test", "24 questions to find your level", C.green),
-        tile("#/board", "trophy", "Leaderboard", "See where you stand", C.gold))));
-}
+export { arena as practice } from "./arena.js";
 
 /* ——— Market desk ——— */
 export function desk() {
