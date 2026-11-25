@@ -79,14 +79,17 @@ async function storyLesson(root, n) {
     acts.length = 0;
     if (modDone && !Store.get().quiz[`m:${c.id}:${m}`]?.passed) acts.push({ label: tr("Take the module quiz"), href: `#/quiz/module/${c.id}/${m}`, go: true }, { label: tr("Back to course"), href: `#/course/${c.id}` });
     else if (next) acts.push({ label: tr("Next lesson"), href: `#/lesson/${next}`, go: true }, { label: tr("Back to course"), href: `#/course/${c.id}` });
-    else acts.push({ label: tr("Back to course"), href: `#/course/${c.id}`, go: true });
+    else acts.push({ label: tr(backLabel(c)), href: backTo(c), go: true });
   };
   const story = buildStory(l, n, { pro: isPro(), hand });
   /* The finish screen reads custom.next when it is drawn, after finish() has run. */
-  const custom = { lesson: story, exit: `#/course/${c.id}`, answer: (id, ok) => Store.recordAnswer(id, ok), finish, get next() { return acts; } };
+  const custom = { lesson: story, exit: backTo(c), answer: (id, ok) => Store.recordAnswer(id, ok), finish, get next() { return acts; } };
   stories(root, null, custom);
 }
 
+/* Where Close and Finish go: the page the learner came from (Learn home, a course), else the course. */
+const backTo = c => { try { const f = sessionStorage.getItem("uc.from"); if (f && !/^#\/(lesson|quiz)\//.test(f) && f !== "#/lesson") return f; } catch {} return `#/course/${c.id}`; };
+const backLabel = c => { const t = backTo(c); return t === `#/course/${c.id}` ? "Back to course" : /^#\/?(learn)?$/.test(t) ? "Back to Learn" : "Back"; };
 export function renderLesson(root, n, classic) {
   const l = lesson(n);
   if (!l) { location.hash = "#/courses"; return; }
@@ -97,7 +100,7 @@ export function renderLesson(root, n, classic) {
 
   const fill = h("i");
   const title = h("span", { class: "small mute", style: "white-space:nowrap" });
-  const close = h("a", { class: "icon-btn", href: `#/course/${c.id}`, "aria-label": "Close lesson" }, icon("x", 22));
+  const close = h("a", { class: "icon-btn", href: backTo(c), "aria-label": "Close lesson" }, icon("x", 22));
   const top = h("div", { class: "focus-top" }, h("div", { class: "focus-in" }, close, h("div", { class: "bar" }, fill), title));
   const body = h("div", { class: "read" });
   const dock = h("div", { class: "dock" });
@@ -121,7 +124,7 @@ export function renderLesson(root, n, classic) {
 
   function quizPart() {
     runQuiz(root, {
-      title: l.title, questions: liveQs(l).map(q => ({ ...q, n })), exit: `#/course/${c.id}`,
+      title: l.title, questions: liveQs(l).map(q => ({ ...q, n })), exit: backTo(c),
       done: res => ({
         head: res.right === res.total ? "All right." : `${res.right} of ${res.total}.`,
         sub: res.right === res.total ? "You have this one." : "Review what you missed, then carry on.",
@@ -139,7 +142,7 @@ export function renderLesson(root, n, classic) {
     let act;
     if (modDone && !Store.get().quiz[`m:${c.id}:${m}`]?.passed) act = [h("a", { class: "btn primary", href: `#/quiz/module/${c.id}/${m}` }, "Take the module quiz"), h("a", { class: "btn ghost", href: `#/course/${c.id}` }, "Not now")];
     else if (next) act = [h("a", { class: "btn primary", href: `#/lesson/${next}` }, "Next lesson"), h("a", { class: "btn ghost", href: `#/course/${c.id}` }, "Back to course")];
-    else act = [h("a", { class: "btn primary", href: `#/course/${c.id}` }, "Back to course")];
+    else act = [h("a", { class: "btn primary", href: backTo(c) }, backLabel(c))];
     clear(top); dock.remove();
     clear(body).append(h("div", { class: "stack stack-l", style: "text-align:center;padding-top:48px" },
       h("span", { class: "check on", style: "width:64px;height:64px;margin:0 auto" }, icon("check", 30)),

@@ -31,11 +31,11 @@ export function frame(onLang) {
     const s = Store.get(), n = Store.streakNow(), guest = Store.isGuest();
     const initial = (s.name || Store.userEmail() || "?").trim()[0].toUpperCase();
     const btn = h("button", { class: "avatar", "aria-haspopup": "menu", "aria-expanded": String(open), "aria-label": "Account", on: { click: ev => { ev.stopPropagation(); open = !open; paintMenu(); } } }, initial);
-    menuHost.append(
+    menuHost.append(...[
       h("button", { type: "button", class: "pillstat fire", title: "Weekday streak", "aria-label": `${n} day streak`, on: { click: () => toast("Do one lesson or quiz on a weekday to grow your streak.") } }, icon("flame"), n),
       h("button", { type: "button", class: "pillstat xp", title: "Points: 20 per lesson, 2 per right answer, 30 per quiz passed", "aria-label": `${Store.xp()} points`, on: { click: () => toast("Points: 20 per lesson, 2 per right answer, 30 per quiz passed.") } }, icon("star"), Store.xp()),
       guest ? h("button", { type: "button", class: "guest-in", on: { click: () => signIn() } }, "Sign in") : null,
-      btn);
+      btn].filter(Boolean));
     if (open) {
       const lang = h("select", { "aria-label": "Language", on: { change: async ev => { const v = ev.target.value; Store.setLang(v); try { await Store.flush(); } catch {} setLanguage(v); } } },
         LANGS.map(([v, t]) => h("option", { value: v, selected: s.lang === v }, t)));

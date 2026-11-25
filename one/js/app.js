@@ -1,4 +1,6 @@
 /* UpperCrust Academy: boot and routes. */
+import { questHome } from "./quest.js";
+import { challenge } from "./challenge.js";
 import { track, pop } from "./analytics.js";
 import { incoming } from "./growth.js";
 import { contactPage } from "./contact.js";
@@ -43,7 +45,7 @@ document.body.prepend(skip);
 
 /* route table: [pattern, view, nav id, title, focus?] */
 const ROUTES = [
-  [/^$/, () => Ac.today(), "home", "Home"],
+  [/^$/, () => questHome(), "home", "Home"],
   [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Exams"],
   [/^courses$/, () => Ac.courses(), "home", "Courses"],
   [/^course\/([\w-]+)$/, id => Home.coursePage(id), "home", "Course"],
@@ -74,6 +76,7 @@ const ROUTES = [
   [/^admin$/, () => (isAdmin() ? admin() : notFound("Only the administrator can open this.")), "", "Admin"],
   [/^team$/, () => (isAdmin() ? team() : notFound("Only the administrator can open this.")), "", "Team"],
   /* full-screen routes draw into the root themselves */
+  [/^challenge(?:\/([\w-]+))?$/, c => challenge(root, c), "", "Challenge a friend", true],
   [/^stories$/, () => stories(root), "", "Stories", true],
   [/^story\/([\w-]+)$/, id => stories(root, id), "", "Stories", true],
   [/^lesson\/(\d+)$/, n => renderLesson(root, +n), "", "Lesson", true],
@@ -174,6 +177,9 @@ async function boot() {
   ui = frame(route);
   incoming();
   document.addEventListener("one:tour", () => startTour(Store.uidNow()));
+  /* Remember where a lesson was opened from, so Close and Finish return there. */
+  let prevHash = location.hash;
+  addEventListener("hashchange", () => { try { const nh = location.hash, inLesson = x => /^#\/(lesson|quiz)\//.test(x); if (inLesson(nh) && !inLesson(prevHash)) sessionStorage.setItem("uc.from", prevHash || "#/"); } catch {} prevHash = location.hash; });
   addEventListener("hashchange", route);
   document.addEventListener("one:rerender", route);
   route();

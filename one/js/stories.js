@@ -12,6 +12,19 @@ const CSS = `
 button{font:inherit;color:inherit;cursor:pointer}
 .st{display:block;max-width:430px;height:100dvh;color:var(--ink);font-family:"Figtree","Noto Sans Devanagari","Noto Sans Gujarati",system-ui,sans-serif;margin:0 auto;background:var(--cream);position:relative;overflow:hidden;display:flex;flex-direction:column}
 @media(min-width:520px){.st{height:min(900px,100dvh - 32px);margin:16px auto;border:3px solid var(--ink);border-radius:40px}}
+/* Wide screens: the lesson uses the whole stage. The card gets the big left side; Sarthi and the buttons sit in a column on the right. */
+@media(min-width:1000px){
+.st{max-width:1180px;height:min(860px,100dvh - 32px);border-radius:44px}
+.st .player{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto auto minmax(0,1fr) auto auto auto;column-gap:36px;row-gap:12px;padding:22px 34px 26px}
+.player>.bars,.player>.bar2{grid-column:1/-1}
+.player>.body{grid-column:1;grid-row:3/7;padding-right:6px}
+.player>.guide{grid-column:2;grid-row:3;align-self:end;flex-direction:column;align-items:stretch;gap:12px}
+.player>.guide svg{width:170px;height:auto;align-self:center}
+.player>.foot{grid-column:2;grid-row:4}
+.player>.row{grid-column:2;grid-row:5}
+.player>.small{grid-column:2;grid-row:6}
+.h{font-size:46px}.s{font-size:20px}
+}
 .scroll{flex:1;overflow:auto;padding:22px 20px 28px}
 .top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px 6px}
 .lang{display:flex;gap:6px}
@@ -268,7 +281,14 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
 const VL = { en: "en-IN", hi: "hi-IN", gu: "gu-IN" };
 let noVoice = false;
 const vlang = () => (LESSONS[S.li] && LESSONS[S.li].en ? "en" : LANG);
-const voiceFor = () => { try { const w = VL[vlang()].toLowerCase().slice(0, 2), vs = window.speechSynthesis.getVoices(); return vs.find(v => v.lang && v.lang.replace("_", "-").toLowerCase() === VL[vlang()].toLowerCase()) || vs.find(v => v.lang && v.lang.replace("_", "-").toLowerCase().startsWith(w)); } catch (e) { return null; } };
+/* Sarthi is a man, so prefer a male Indian voice when the device has one. Scores each voice: right language and region first, then male names, then anything that sounds female last. */
+const MALE = /ravi|hemant|prabhat|madhur|rishi|neel|niranjan|kabir|rahul|aarav|arjun|male|puru/i, FEMALE = /heera|kalpana|swara|neerja|lekha|priya|veena|aditi|female|google (हिन्दी|hindi)|zira|susan|hazel/i;
+const voiceFor = () => { try {
+  const want = VL[vlang()].toLowerCase(), w = want.slice(0, 2), vs = window.speechSynthesis.getVoices();
+  const sc = v => { const l = (v.lang || "").replace("_", "-").toLowerCase(); let p = l === want ? 100 : l.startsWith(w) ? 60 : -1; if (p < 0) return -1;
+    if (MALE.test(v.name)) p += 30; if (FEMALE.test(v.name)) p -= 30; if (/natural|online/i.test(v.name)) p += 10; if (v.localService === false && !/natural|online/i.test(v.name)) p -= 2; return p; };
+  const best = vs.map(v => [sc(v), v]).filter(x => x[0] >= 0).sort((a, b) => b[0] - a[0]); return best.length ? best[0][1] : null;
+} catch (e) { return null; } };
 /* Says the text. done() runs when it ends, or straight away if this device has no voice for the language. Returns false when there is no voice. */
 function speak(text, done) {
   noVoice = false;
@@ -277,7 +297,7 @@ function speak(text, done) {
     ss.cancel();
     const u = new SpeechSynthesisUtterance(text); u.lang = VL[vlang()];
     const m = voiceFor(); if (m) u.voice = m; else if (LANG !== "en") throw 0;
-    u.rate = 0.95;
+    u.rate = LANG === "en" ? 0.88 : 0.82; u.pitch = 0.9;
     u.onstart = () => { speaking = true; app.classList.add("talk"); };
     const end = () => { speaking = false; app.classList.remove("talk"); if (done) done(); };
     u.onend = end; u.onerror = e => { if (e && e.error === "interrupted") { speaking = false; app.classList.remove("talk"); return; } end(); };
