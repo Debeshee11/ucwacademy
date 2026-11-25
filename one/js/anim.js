@@ -72,7 +72,7 @@ const duel = {
     R2.forEach((r, i) => {
       const hi = Math.max(r[1], r[2]), y = 38 + i * 56, a = seg(t, 0.4 + i * 0.9, 1.3 + i * 0.9);
       s += txt(8, y + 12, r[0], 10.5, "start", 800, "#7A6A55");
-      [[r[1], 24, B, 0], [r[2], 24, G, 1]].forEach(([v, , col, side]) => { const w = (v / hi) * 130 * a, x = side ? 190 : 30 + (130 - w); const xx = side ? 190 : 170 - w;
+      [[r[1], 24, B, 0], [r[2], 24, G, 1]].forEach(([v, , col, side]) => { const w = (v / hi) * 104 * a; const xx = side ? 190 : 170 - w;
         s += `<rect x="${xx}" y="${y + 18}" width="${w}" height="24" rx="8" fill="${col}" stroke="${K}" stroke-width="2.5"/>`; if (a > 0.95) s += txt(side ? 190 + w + 4 : 170 - w - 4, y + 35, (c.fmt === "inr" ? inr(v) : f1(v)), 11, side ? "start" : "end", 800); });
     });
     s += `<path d="M180 30v${R2.length * 56}" stroke="${K}" stroke-width="2" stroke-dasharray="4 5"/>`;
@@ -86,7 +86,7 @@ const guard = {
   draw(c, t) {
     const hit = seg(t, 1.0, 1.9), bounce = seg(t, 1.9, 2.8), items = c.stops || [];
     let s = txt(170, 18, c.title || "", 13, "middle", 800) + `<g transform="translate(78 ${26 - 4 * Math.sin(bounce * 3.14)}) scale(.64)"><path d="M170 30 252 60v64c0 44-34 70-82 88-48-18-82-44-82-88V60z" fill="${B}" stroke="${K}" stroke-width="4.5" stroke-linejoin="round"/><path d="M170 52 232 74v50c0 34-26 54-62 68-36-14-62-34-62-68V74z" fill="#fff" stroke="${K}" stroke-width="3.5"/><path d="M142 124l22 22 40-46" fill="none" stroke="${G}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></g>`;
-    items.forEach((it, i) => { const a = seg(t, 2.4 + i * 0.8, 3.1 + i * 0.8), ok = it[1], y = 158 + i * 42; s += `<g opacity="${a}" transform="translate(${(1 - a) * (i % 2 ? 50 : -50)} 0)"><rect x="16" y="${y}" width="308" height="34" rx="12" fill="${ok ? "#E3F6EB" : "#FFE3E3"}" stroke="${K}" stroke-width="2.5"/>` + txt(170, y + 22, (ok ? "✓  " : "✗  ") + it[0], 12.5, "middle", 800) + `</g>`; });
+    items.forEach((it, i) => { const a = seg(t, 2.4 + i * 0.8, 3.1 + i * 0.8), ok = it[1], y = 158 + i * 42; s += `<g opacity="${a}" transform="translate(${(1 - a) * (i % 2 ? 50 : -50)} 0)"><rect x="16" y="${y}" width="308" height="34" rx="12" fill="${ok ? "#E3F6EB" : "#FFE3E3"}" stroke="${K}" stroke-width="2.5"/>` + txt(170, y + 22, (ok ? "✓  " : "✗  ") + it[0], Math.max(9, Math.min(12.5, 286 / (0.54 * (it[0].length + 3)))), "middle", 800) + `</g>`; });
     const arr = (1 - hit) * 150; if (hit > 0 && hit < 1) s += `<g transform="translate(${-arr} 0)"><path d="M20 84h56" stroke="${R}" stroke-width="6" stroke-linecap="round"/><path d="M68 72l14 12-14 12" fill="none" stroke="${R}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>`;
     return s;
   }
@@ -186,8 +186,134 @@ const mandate = {
   }
 };
 
-export const KINDS = { sipbuy, growbars, duel, guard, stairs, pipes, drain, glide, mandate };
-const H = { sipbuy: 340, growbars: 330, duel: 330, guard: 340, stairs: 330, pipes: 330, drain: 330, glide: 290, mandate: 330 };
+/* ---- The market-cap ladder: companies ranked by size, cut into three buckets ---- */
+const ladder = {
+  dur: () => 12,
+  draw(c, t) {
+    const X0 = 18, X1 = 322, base = 236, N = 80, bw = (X1 - X0) / N, zone = r => r <= 100 ? [B, "Large cap"] : r <= 250 ? [G, "Mid cap"] : [Y, "Small cap"];
+    let s = txt(170, 18, "Every listed company, biggest to smallest", 11.5, "middle", 800, "#7A6A55");
+    const sweep = clamp(t / 4, 0, 1) * N;
+    for (let i = 0; i < N; i++) {
+      const r = i * 5 + 3, h = 170 * Math.pow(r, -0.35) * 1.15, a = clamp(sweep - i, 0, 1); if (a <= 0) continue;
+      s += `<rect x="${X0 + i * bw}" y="${base - h * a}" width="${bw - 1.5}" height="${h * a}" rx="1.5" fill="${zone(r)[0]}"/>`;
+    }
+    s += `<rect x="${X0}" y="${base + 1}" width="${X1 - X0}" height="3" rx="1.5" fill="${K}"/>`;
+    const lab = seg(t, 4.2, 5);
+    if (lab > 0) { const xs = r => X0 + (r / 400) * (X1 - X0); s += `<g opacity="${lab}">` + [[0, 100, "Large", "Rank 1 to 100", B], [100, 250, "Mid", "101 to 250", G], [250, 400, "Small", "251 onward", Y]].map(([a, b, n, sub, col]) => `<rect x="${xs(a) + 2}" y="${base + 14}" width="${xs(b) - xs(a) - 4}" height="38" rx="10" fill="${col}" stroke="${K}" stroke-width="2.5"/>` + txt((xs(a) + xs(b)) / 2, base + 30, n, 12, "middle", 800) + txt((xs(a) + xs(b)) / 2, base + 45, sub, 9.5, "middle", 700, "#5b4a2e")).join("") + `</g>`; }
+    const mv = seg(t, 7, 9.5);
+    if (t > 6.5) { const rx = 96 + 8 * mv, ix = (rx - 3) / 5, x = X0 + ix * bw + bw / 2, h = 170 * Math.pow(rx, -0.35) * 1.15, drop = 26 * mv;
+      s += `<g><path d="M${x} ${base - h - 40 + drop}v22" stroke="${R}" stroke-width="3.5" stroke-linecap="round"/><path d="M${x - 7} ${base - h - 26 + drop}l7 9 7-9" fill="none" stroke="${R}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>` + coin(x, base - h - 52 + drop, 11, "★") + `</g>` + txt(x + 14, base - h - 50 + drop, mv < 0.5 ? "Rank 96: Large" : "Rank 104: Mid", 10.5, "start", 800, mv < 0.5 ? "#1c5d9b" : "#1E8E56"); }
+    return s;
+  }
+};
+
+/* ---- Made-up paths to show the shape of risk, with the deepest fall of each marked ---- */
+const lines = {
+  dur: () => 11,
+  draw(c, t) {
+    const X0 = 28, X1 = 322, Y0 = 232, Y1 = 36, S = c.series, n = S[0].vals.length, all = S.flatMap(q => q.vals), lo = Math.min(...all) * 0.9, hi = Math.max(...all) * 1.04, px = i => X0 + (X1 - X0) * (i / (n - 1)), py = v => Y0 - (Y0 - Y1) * ((v - lo) / (hi - lo)), prog = clamp(t / 8) * (n - 1);
+    let s = `<path d="M${X0} ${Y1}v${Y0 - Y1}h${X1 - X0}" fill="none" stroke="${K}" stroke-width="3" stroke-linecap="round"/>` + txt(X0 + 4, 26, c.ylab || "Value of ₹100", 10.5, "start", 800, "#7A6A55") + txt(X1, Y0 + 15, "years →", 10, "end", 700, "#7A6A55");
+    S.forEach((q, k) => {
+      const pts = []; for (let i = 0; i <= Math.floor(prog); i++) pts.push([px(i), py(q.vals[i])]);
+      const a = Math.floor(prog); if (a < n - 1) { const f = prog - a; pts.push([px(a) + (px(a + 1) - px(a)) * f, py(q.vals[a] + (q.vals[a + 1] - q.vals[a]) * f)]); }
+      s += `<polyline points="${pts.map(x => x.join(",")).join(" ")}" fill="none" stroke="${q.color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`;
+      const last = pts[pts.length - 1]; s += `<circle cx="${last[0]}" cy="${last[1]}" r="5" fill="#fff" stroke="${K}" stroke-width="2.5"/>`;
+      let m = q.vals[0], w = 0, wi = 0, pk = 0; q.vals.forEach((v, i) => { if (v > m) { m = v; pk = i; } if (v / m - 1 < w) { w = v / m - 1; wi = i; } });
+      s += `<rect x="${14 + k * (322 / S.length)}" y="256" width="${322 / S.length - 8}" height="46" rx="10" fill="#fff" stroke="${q.color}" stroke-width="4"/>` + txt(14 + k * (322 / S.length) + (322 / S.length - 8) / 2, 272, q.name, 10.5, "middle", 800) + txt(14 + k * (322 / S.length) + (322 / S.length - 8) / 2, 290, prog >= n - 1.01 ? `₹100 → ₹${Math.round(q.vals[n - 1])}` : "…", 12, "middle", 800);
+      if (prog >= wi && t > 8.2) s += `<g opacity="${seg(t, 8.2, 9.2)}"><path d="M${px(pk)} ${py(q.vals[pk])}L${px(wi)} ${py(q.vals[wi])}" stroke="${R}" stroke-width="2.5" stroke-dasharray="4 4"/>` + txt(px(wi), py(q.vals[wi]) + 16, Math.round(w * 100) + "%", 11, "middle", 800, R) + `</g>`;
+    });
+    return s;
+  }
+};
+
+/* ---- Rows of bars cut into labelled segments: what a fund must hold, and what it is open to choose ---- */
+const stack = {
+  dur: c => c.rows.length * 1.1 + 3,
+  draw(c, t) {
+    let s = ""; const rh = Math.min(66, 280 / c.rows.length);
+    c.rows.forEach((r, i) => {
+      const y = 20 + i * rh, a = seg(t, i * 1.1, i * 1.1 + 0.9); s += txt(14, y + 12, r.name, 12, "start", 800);
+      let x = 14; const tot = r.segs.reduce((q, z) => q + z[1], 0), W = 312 * a;
+      r.segs.forEach(([lab, pc, col, striped]) => { const w = (pc / tot) * W; s += `<rect x="${x}" y="${y + 18}" width="${w}" height="30" rx="7" fill="${striped ? "url(#hatch)" : col}" stroke="${K}" stroke-width="2.5"/>`; const fs = Math.min(10.5, w / (Math.max(1, lab.length) * 0.6)); if (a > 0.9 && lab && fs >= 8) s += txt(x + w / 2, y + 38, lab, fs, "middle", 800); x += w; });
+    });
+    return `<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#fff"/><rect width="4" height="8" fill="#E3E0D6"/></pattern></defs>` + s;
+  }
+};
+
+/* ---- ELSS: every instalment has its own three-year lock ---- */
+const lockin = {
+  dur: () => 14,
+  draw(c, t) {
+    const X0 = 40, X1 = 324, M = 48, rows = 12, mx = m => X0 + (X1 - X0) * (m / M), cur = clamp(t / 11) * M; let s = txt(170, 16, "Each instalment is locked for 36 months from its own date", 10.5, "middle", 800, "#7A6A55");
+    for (let i = 0; i < rows; i++) {
+      const y = 30 + i * 17, st = i, un = i + 36; s += txt(34, y + 10, "M" + (i + 1), 9, "end", 700, "#7A6A55");
+      const a = clamp(cur - st, 0, un - st), unl = clamp(cur - un, 0, M - un);
+      if (a > 0) s += `<rect x="${mx(st)}" y="${y}" width="${mx(st + a) - mx(st)}" height="13" rx="4" fill="#FFB3A5" stroke="${K}" stroke-width="2"/>`;
+      if (unl > 0) s += `<rect x="${mx(un)}" y="${y}" width="${mx(un + unl) - mx(un)}" height="13" rx="4" fill="${G}" stroke="${K}" stroke-width="2"/>`;
+    }
+    s += `<path d="M${mx(cur)} 26V240" stroke="${K}" stroke-width="3" stroke-dasharray="5 4"/><rect x="${X0}" y="240" width="${X1 - X0}" height="3" fill="${K}"/>`;
+    [0, 12, 24, 36, 48].forEach(m => s += txt(mx(m), 256, m ? "Year " + m / 12 : "Start", 9.5, "middle", 700, "#7A6A55"));
+    s += `<rect x="14" y="268" width="14" height="14" rx="3" fill="#FFB3A5" stroke="${K}" stroke-width="2"/>` + txt(34, 280, "Locked", 11, "start", 700) + `<rect x="100" y="268" width="14" height="14" rx="3" fill="${G}" stroke="${K}" stroke-width="2"/>` + txt(120, 280, "Unlocked", 11, "start", 700);
+    s += txt(170, 306, `Month ${Math.min(M, Math.floor(cur) + 1)}: ${Math.max(0, Math.min(rows, Math.floor(cur) - 35))} of 12 instalments are unlocked`, 12.5, "middle", 800);
+    return s;
+  }
+};
+
+/* ---- Boxes joined by arrows, with a coin that travels along each one ---- */
+const flow = {
+  dur: c => c.edges.length * 1.3 + 3,
+  draw(c, t) {
+    const N = c.nodes, bw = c.bw || 116, bh = 40; let s = "";
+    const ctr = i => [N[i].x, N[i].y];
+    c.edges.forEach(([a, b, lab], k) => {
+      const t0 = 1.0 + k * 1.3, p = seg(t, t0, t0 + 0.9); if (p <= 0) return;
+      const [x1, y1] = ctr(a), [x2, y2] = ctr(b), dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy), ux = dx / len, uy = dy / len, sx = x1 + ux * (Math.abs(ux) * bw / 2 + Math.abs(uy) * 0) , sy = y1 + uy * bh / 2 * (Math.abs(uy) > 0.5 ? 1 : 0), ex = x2 - ux * (Math.abs(ux) > 0.5 ? bw / 2 : 0), ey = y2 - uy * (Math.abs(uy) > 0.5 ? bh / 2 : 0);
+      const px = sx + (ex - sx) * p, py = sy + (ey - sy) * p;
+      s += `<path d="M${sx} ${sy}L${px} ${py}" stroke="${K}" stroke-width="3.5" stroke-linecap="round"/>`;
+      if (p > 0.95) s += `<path d="M${ex - ux * 9 - uy * 6} ${ey - uy * 9 + ux * 6}L${ex} ${ey}L${ex - ux * 9 + uy * 6} ${ey - uy * 9 - ux * 6}" fill="none" stroke="${K}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+      if (p < 1) s += coin(px, py, 9);
+      if (lab && p > 0.3) s += txt((sx + ex) / 2 + (Math.abs(ux) > 0.5 ? 0 : 38), (sy + ey) / 2 - (Math.abs(ux) > 0.5 ? 8 : -4), lab, 9.5, "middle", 700, "#5b4a2e", seg(t, t0 + 0.3, t0 + 0.8));
+    });
+    N.forEach((n, i) => { const a = seg(t, i * 0.35, i * 0.35 + 0.5); if (a <= 0) return; s += `<g opacity="${a}"><rect x="${n.x - bw / 2}" y="${n.y - bh / 2}" width="${bw}" height="${bh}" rx="12" fill="${n.col || "#fff"}" stroke="${K}" stroke-width="3"/>` + txt(n.x, n.y + (n.sub ? -2 : 5), n.label, 12, "middle", 800) + (n.sub ? txt(n.x, n.y + 12, n.sub, 9, "middle", 700, "#5b4a2e") : "") + `</g>`; });
+    return s;
+  }
+};
+
+/* ---- A form being ticked off, line by line ---- */
+const checklist = {
+  dur: c => c.items.length * 1.4 + 2.5,
+  draw(c, t) {
+    let s = txt(170, 22, c.title || "", 13, "middle", 800);
+    c.items.forEach(([lab, ok], i) => {
+      const y = 40 + i * 52, a = seg(t, 0.4 + i * 1.4, 1.0 + i * 1.4), tick = seg(t, 0.9 + i * 1.4, 1.5 + i * 1.4);
+      s += `<g opacity="${a}" transform="translate(${(1 - a) * -30} 0)"><rect x="16" y="${y}" width="308" height="42" rx="12" fill="#fff" stroke="${K}" stroke-width="3"/><rect x="26" y="${y + 9}" width="24" height="24" rx="6" fill="${tick > 0.5 ? (ok === false ? R : G) : "#fff"}" stroke="${K}" stroke-width="2.5"/>`;
+      if (tick > 0) s += ok === false ? `<path d="M31 ${y + 14}l14 14M45 ${y + 14}l-14 14" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="${40 * tick} 40"/>` : `<path d="M31 ${y + 22}l7 7 12-14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="${40 * tick} 40"/>`;
+      s += txt(62, y + 26, lab, 11.5, "start", 800) + `</g>`;
+    });
+    return s;
+  }
+};
+
+/* ---- A yield curve: yield against years to maturity, optionally morphing to a second curve ---- */
+const curve = {
+  dur: c => c.points2 ? 13 : 9,
+  draw(c, t) {
+    const P = c.points, n = P.length, X0 = 40, X1 = 316, Y0 = 220, Y1 = 52, all = [...P, ...(c.points2 || [])].map(q => q[1]), lo = Math.floor(Math.min(...all) - 0.4), hi = Math.ceil(Math.max(...all) + 0.4);
+    const px = i => X0 + (X1 - X0) * (i / (n - 1)), py = v => Y0 - (Y0 - Y1) * ((v - lo) / (hi - lo)), m = c.points2 ? seg(t, 8, 11) : 0, val = i => P[i][1] + (c.points2 ? (c.points2[i][1] - P[i][1]) * m : 0), prog = clamp(t / 4) * (n - 1);
+    let s = `<path d="M${X0} ${Y1 - 10}v${Y0 - Y1 + 10}h${X1 - X0 + 10}" fill="none" stroke="${K}" stroke-width="3" stroke-linecap="round"/>` + txt(X0 + 6, 28, "Yield (% a year)", 10.5, "start", 800, "#7A6A55");
+    for (let g = lo; g <= hi; g++) s += txt(X0 - 6, py(g) + 4, g + "%", 9.5, "end", 700, "#7A6A55") + `<path d="M${X0} ${py(g)}h${X1 - X0 + 6}" stroke="#E3DCC8" stroke-width="1.5"/>`;
+    const pts = []; for (let i = 0; i <= Math.floor(prog); i++) pts.push([px(i), py(val(i))]);
+    const a = Math.floor(prog); if (a < n - 1) { const f = prog - a; pts.push([px(a) + (px(a + 1) - px(a)) * f, py(val(a) + (val(a + 1) - val(a)) * f)]); }
+    if (c.points2 && m > 0) s += `<polyline points="${P.map((q, i) => px(i) + "," + py(q[1])).join(" ")}" fill="none" stroke="#B9AE96" stroke-width="3" stroke-dasharray="6 5"/>`;
+    s += `<polyline points="${pts.map(q => q.join(",")).join(" ")}" fill="none" stroke="${R}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    for (let i = 0; i <= Math.floor(prog + 0.001); i++) s += `<circle cx="${px(i)}" cy="${py(val(i))}" r="6" fill="#fff" stroke="${K}" stroke-width="2.5"/>` + txt(px(i) + (i === 0 ? 8 : 0), py(val(i)) - 12, val(i).toFixed(1) + "%", 10.5, i === 0 ? "start" : "middle", 800) + txt(px(i), Y0 + 16, P[i][0], 10, "middle", 700, "#7A6A55");
+    s += txt(170, 262, "Years until the bond matures →", 10.5, "middle", 700, "#7A6A55");
+    return s;
+  }
+};
+
+export const KINDS = { sipbuy, growbars, duel, guard, stairs, pipes, drain, glide, mandate, ladder, lines, stack, lockin, flow, checklist, curve };
+const H = { sipbuy: 340, growbars: 330, duel: 330, guard: 340, stairs: 330, pipes: 330, drain: 330, glide: 290, mandate: 330, ladder: 320, lines: 320, stack: 330, lockin: 320, flow: 330, checklist: 330, curve: 290 };
 
 export function animHtml(c) { return `<div class="anim"><svg id="stage" data-anim viewBox="0 0 340 ${H[c.type] || 330}" role="img" aria-label="${(c.alt || c.h || "Animation").replace(/"/g, "")}"></svg><div class="cap" id="cap"></div><button class="btn" data-replay style="align-self:center">↻ Replay</button></div>`; }
 

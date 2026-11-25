@@ -35,6 +35,8 @@ export function practice() {
         tile("#/quiz/market", "trend", "Market quiz", "Indices, economy, how markets work", C.violet))),
     h("section", { class: "stack" }, h("h2", { class: "h2" }, "More ways to learn"),
       h("div", { class: "gtiles" },
+        tile("#/news", "trend", "Market desk", "Today's headlines, funds and indices", C.blue),
+        tile("#/assess", "award", "Course exams", "Ready? Pass an exam to earn a certificate", C.gold),
         tile("#/tools", "trend", "Money calculators", "SIP, EMI, emergency fund, retirement and more", C.green),
         isPro() ? tile("#/lab", "chat", "Client lab", `${D.sims.length} real client questions · ${labN} tried`, C.pink) : null,
         tile("#/quotes", "star", "Quote bank", "Ideas worth sharing, as pictures", C.pink),

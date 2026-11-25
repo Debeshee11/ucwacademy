@@ -13,7 +13,7 @@ export function standing(me, pos, total, list, k, unit, hidden, xp) {
   const rk = rankOf(xp), ahead = pos > 0 ? list[pos - 1] : null;
   const gap = ahead ? Math.max(1, (ahead[k] || 0) - (list[pos][k] || 0) + 1) : 0;
   let spot;
-  if (hidden) spot = h("div", { class: "lb-spot off" }, icon("lock", 18), h("span", {}, "You are hidden. Turn the leaderboard on in Progress to appear."));
+  if (hidden) spot = h("div", { class: "lb-spot off" }, icon("lock", 18), h("span", {}, "You are hidden. Turn the leaderboard on in Me to appear."));
   else if (pos < 0) spot = h("div", { class: "lb-spot off" }, icon("bolt", 18), h("span", {}, "Finish one lesson to join the board."));
   else spot = h("div", { class: "lb-spot" }, h("div", { class: "lb-num" }, "#" + (pos + 1)), h("div", {}, h("b", {}, `of ${total} learners`), h("div", { class: "small" }, ahead ? `${gap} ${unitOf(gap, unit)} to pass ${ahead.name}` : "You are on top. Keep your streak alive.")));
   return h("section", { class: "lb-me", "aria-label": "Your standing" },

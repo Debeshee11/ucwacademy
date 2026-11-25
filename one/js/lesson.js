@@ -67,7 +67,7 @@ function partBody(l, k) {
   return h("div");
 }
 
-/* Every lesson opens as a story: illustrated cards, Arjun reading aloud. "/classic" opens the earlier page-by-page view (it also holds the calculators). */
+/* Every lesson opens as a story: illustrated cards, Sarthi reading aloud. "/classic" opens the earlier page-by-page view (it also holds the calculators). */
 async function storyLesson(root, n) {
   const l = lesson(n), c = courseOf(n);
   Store.openLesson(n);

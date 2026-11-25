@@ -15,21 +15,21 @@ export const SEGMENTS = [
 export const DOORS = [
   /* everyday */
   { id: "student", seg: "everyday", name: "Student", who: "School or college", hook: "Money habits before your first salary", realms: ["basics", "mf"], exams: ["nism-xii"],
-    track: ["budgeting-emergency-fund", "scam-safety", "loans-credit-scores", "sip-planning", "stock-basics", "mf-foundations", "tax-on-investments", "ipo-investing", "gold-asset", "behaviour"] },
+    track: ["budgeting-emergency-fund", "scam-safety", "loans-credit-scores", "sip-planning", "stock-basics", "mf-start", "tax-on-investments", "ipo-investing", "gold-asset", "behaviour"] },
   { id: "firstjob", seg: "everyday", name: "First job", who: "Starting your career", hook: "Make your first salary work for you", realms: ["basics", "mf"], exams: ["nism-xii"],
-    track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "health-insurance-basics", "term-life-insurance", "mf-foundations", "tax-on-investments", "retirement-epf-ppf-nps", "loans-credit-scores", "stock-basics"] },
+    track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "health-insurance-basics", "term-life-insurance", "mf-start", "tax-on-investments", "retirement-epf-ppf-nps", "loans-credit-scores", "stock-basics"] },
   { id: "salaried", seg: "everyday", name: "Working professional", who: "Building a career and a family", hook: "Payslip to portfolio", realms: ["basics", "mf", "stocks"], exams: ["nism-xii", "nism-v-a"],
-    track: ["health-insurance-basics", "term-life-insurance", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-foundations", "loans-credit-scores", "general-insurance", "equity-funds", "passive-etf", "behaviour", "wealth-succession"] },
+    track: ["health-insurance-basics", "term-life-insurance", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-start", "loans-credit-scores", "general-insurance", "equity-funds", "passive-etf", "behaviour", "wealth-succession"] },
   { id: "homemaker", seg: "everyday", name: "Homemaker", who: "Runs the household money", hook: "Make the household a team", realms: ["basics", "mf"],
     track: ["budgeting-emergency-fund", "scam-safety", "health-insurance-basics", "general-insurance", "term-life-insurance", "gold-asset", "sip-planning", "loans-credit-scores", "silver-asset", "wealth-succession"] },
   { id: "business", seg: "everyday", name: "Business owner", who: "Shop, practice or startup", hook: "Separate you from the business", realms: ["basics", "assets", "mf"],
-    track: ["budgeting-emergency-fund", "loans-credit-scores", "tax-on-investments", "general-insurance", "health-insurance-basics", "term-life-insurance", "debt-funds", "sip-planning", "wealth-succession", "gold-asset"] },
+    track: ["budgeting-emergency-fund", "loans-credit-scores", "tax-on-investments", "general-insurance", "health-insurance-basics", "term-life-insurance", "debt-start", "debt-funds", "sip-planning", "wealth-succession", "gold-asset"] },
   { id: "retiree", seg: "everyday", name: "Retired", who: "Protect and use what you saved", hook: "Make savings last, and stay safe from fraud", realms: ["basics", "assets", "mf"],
     track: ["scam-safety", "health-insurance-basics", "retirement-epf-ppf-nps", "tax-retirement", "bonds-gsecs", "debt-funds", "wealth-succession", "general-insurance", "gold-asset", "hybrid-funds", "behaviour"] },
   { id: "teacher", seg: "everyday", name: "Teacher", who: "Educators and trainers", hook: "Teach money in your classroom", realms: ["basics", "mf", "teach"],
-    track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-foundations", "behaviour"] },
+    track: ["budgeting-emergency-fund", "scam-safety", "sip-planning", "retirement-epf-ppf-nps", "tax-on-investments", "mf-start", "behaviour"] },
   { id: "global", seg: "everyday", name: "Living abroad (NRI)", who: "NRI and overseas Indians", hook: "Money across borders", realms: ["nri", "mf", "basics"], exams: ["nism-xii"],
-    track: ["nri-banking-investing", "nri-tax-residency", "nri-investing-routes", "global-investing", "tax-on-investments", "mf-foundations", "sip-planning"] },
+    track: ["nri-banking-investing", "nri-tax-residency", "nri-investing-routes", "global-investing", "tax-on-investments", "mf-start", "sip-planning"] },
   /* finance professionals */
   { id: "mfd", seg: "pro", name: "Mutual fund distributor", who: "AMFI-registered, ARN holder", hook: "Rules, products and client conversations", realms: ["mf", "basics", "stocks", "assets"], exams: ["nism-v-a", "nism-v-d"],
     track: ["mf-foundations", "regulation", "sip-planning", "equity-funds", "debt-funds", "hybrid-funds", "passive-etf", "fund-analysis", "behaviour", "multi-asset", "financial-maths"] },
@@ -46,7 +46,7 @@ export const DOORS = [
 export const doorOf = id => DOORS.find(d => d.id === id) || null;
 
 /* Courses written for the working side of finance. Everyday learners see them last, under "For finance professionals". */
-export const PRO_ONLY = new Set(["regulation", "fund-analysis", "pms-aif-sif", "pms-explained", "aif-explained", "sif-explained", "financial-maths"]);
+export const PRO_ONLY = new Set(["regulation", "mf-foundations", "fund-analysis", "pms-aif-sif", "pms-explained", "aif-explained", "sif-explained", "financial-maths"]);
 
 export const segOfDoor = d => (d?.seg === "pro" ? "pro" : "everyday");
 export const isPro = () => Store.isStaff() || segOfDoor(doorOf(Store.get().door)) === "pro";

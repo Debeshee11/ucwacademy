@@ -1,5 +1,4 @@
 /* The Academy's own structure: Doors (who you are), Realms (what you need), Seals (what you own), Today, the Assessment Centre. */
-import { mascot } from "./mascot.js";
 import { RULES, CONTACT_EMAIL } from "./config.js";
 import { h, icon, plural, toast, isoDay, dayMs } from "./dom.js";
 import { D, course, level, TIERS } from "./data.js";
@@ -17,6 +16,7 @@ import { signOut } from "./auth.js";
 import { quoteOfDayCard } from "./quotes.js";
 import { aboutYou, personalise, tipFor, intNames } from "./guide.js";
 
+import { stagesFor } from "./curriculum.js";
 import { DOORS, SEGMENTS, doorOf, pathCourses, proCourses, PRO_ONLY, isPro, segOfDoor, T, levelBlurb } from "./audience.js";
 export { DOORS, doorOf, pathCourses };
 export const realms = () => D.sections;
@@ -58,11 +58,12 @@ export function doorPicker(current, onPick) {
 export function today() {
   const s = Store.get(), door = doorOf(s.door), hr = new Date().getHours();
   const first = (s.name || "").split(" ")[0];
-  const path = pathCourses(s.door), pick = path.find(c => !s.quiz["x:" + c.id]?.passed) || path[0];
-  const step = nextUp(pick?.id), c = step?.course || pick, p = Store.courseProgress(c), a = Store.todayAct(), due = Store.dueIds().length;
-  const seals = sealTotals(), xp = Store.xp(), rk = rankOf(xp);
+  const stages = stagesFor(door, door?.track).map(st => ({ ...st, cs: st.c.map(id => { const r = id.replace(/^\+/, ""); return course(r) || { id: r, soon: true, title: r }; }) }));
+  const real = stages.flatMap(st => st.cs.filter(c => !c.soon));
+  const examOk = c => !!s.quiz["x:" + c.id]?.passed;
+  const nextCourse = real.find(c => Store.courseProgress(c).done < c.lessons.length) || real.find(c => !examOk(c)) || real[0];
+  const step = nextUp(nextCourse?.id), c = step?.course || nextCourse, p = c ? Store.courseProgress(c) : { done: 0, pct: 0 };
   const stepLine = !step ? "You have finished everything. Retake an exam to improve your score." : step.kind === "lesson" ? "Lesson · about 8 minutes" : step.kind === "module" ? "Unit check · 10 questions" : "You are ready for the exam";
-
   const lessonTitle = step?.kind === "lesson" ? D.lessons[step.n]?.title || "" : "";
   const hero = h("section", { class: "play-hero", style: c ? realmVars(c.sec) : "" },
     h("div", { class: "ph-copy" },
@@ -73,59 +74,30 @@ export function today() {
       h("div", { class: "row-flex ph-act" }, h("a", { class: "btn gold big", href: step ? hrefFor(step) : "#/courses" }, step ? (step.kind === "lesson" && s.part[step.n] > 0 ? "Continue" : "Start") : "Browse courses"),
         p.done ? h("span", { class: "ph-pct" }, `${p.pct}% of this course`) : null)),
     c ? h("div", { class: "ph-trail" }, trail(c, 5)) : null);
-
-  /* the last seven days, oldest first: filled when the learner did anything that day */
-  const week = (() => { const out = []; for (let k = 6; k >= 0; k--) { const d = isoDay(new Date(Date.now() - k * dayMs)), e = s.act[d]; out.push(h("span", { class: "wk" + (e && (e.l || e.r || e.d) ? " on" : "") + (k === 0 ? " today" : ""), title: d }, new Date(Date.now() - k * dayMs).toLocaleDateString("en", { weekday: "narrow" }))); } return h("div", { class: "week", "aria-label": "Your last seven days" }, out); })();
-
-  const goals = [
-    due ? { t: `Review ${plural(due, "question")}`, sub: "Spaced revision", href: "#/quiz/revise", done: a.r } : null,
-    { t: "Daily five", sub: "Five questions, two minutes", href: "#/quiz/daily", done: a.d }
-  ].filter(Boolean);
-
-  const guide = h("section", { class: "card tint stack stack-s" }, h("h3", { class: "h3" }, "How UpperCrust Academy works"),
-    h("ol", { class: "facts" },
-      h("li", {}, h("b", {}, "Learn"), " – short lessons in a fixed order. Start with the next step above."),
-      h("li", {}, h("b", {}, "Practice"), " – a daily five and revision keep what you learned."),
-      h("li", {}, h("b", {}, "Exams"), " – pass Beginner, Intermediate, Hard to earn seals. NISM prep is here too."),
-      h("li", {}, h("b", {}, "News & Markets"), isPro() ? " – daily headlines and what to tell clients." : " – today's headlines, explained in plain words."),
-      h("li", {}, h("b", {}, "Progress"), " – streak, certificates, leaderboard.")),
-    h("a", { class: "linkish", href: "#/courses" }, "See all courses"));
-  const news = h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "In the news today"), newsPreview(3), h("a", { class: "linkish", href: "#/news" }, "All news & markets"));
-
-  const planTip = tipFor(s), planInts = intNames(s);
-  const plan = planTip || planInts.length ? h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Your plan"),
-    planTip ? h("p", {}, planTip) : null, planInts.length ? h("p", { class: "small mute" }, "You are here for: " + planInts.join(", ") + ".") : null,
-    h("p", { class: "small" }, "Start with: ", path.filter(x => !s.quiz["x:" + x.id]?.passed).slice(0, 3).map((x, i) => [i ? ", " : "", h("a", { class: "linkish", href: "#/course/" + x.id }, x.title)]).flat())) 
-    : h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Make this yours"), h("p", { class: "mute" }, "Tell us your age group and what you want to learn, and we will put the right courses first."), h("a", { class: "btn ghost", href: "#/me" }, "Set up my plan"));
-
-  /* Story mode: short narrated stories with Arjun. */
-  const storyCard = h("a", { class: "story-banner", href: "#/stories" },
-    (() => { const e = h("span", { class: "sb-coin", "aria-hidden": "true" }); e.innerHTML = mascot({ view: "head", px: 50, mood: "happy" }); return e; })(),
-    h("span", { class: "sb-t" }, h("b", {}, "Story mode"), h("span", {}, "Nine short stories. Arjun reads them aloud.")),
-    h("span", { class: "sb-go" }, "Play"));
-
-  const fresh = !Object.keys(s.done).length && !Object.keys(s.part).length && !p.done;
+  /* stage states: done when every written course is finished and the stage exam is passed; the first stage that is not done is "now" */
+  const st2 = stages.map(st => { const rc = st.cs.filter(x => !x.soon), exam = rc[rc.length - 1];
+    const lessons = rc.reduce((n, x) => n + x.lessons.length, 0), did = rc.reduce((n, x) => n + Store.courseProgress(x).done, 0);
+    return { ...st, rc, exam, lessons, did, passed: !!exam && examOk(exam), ready: lessons > 0 && did >= lessons }; });
+  const nowIx = st2.findIndex(x => !x.passed);
+  const stageCard = (st, i) => {
+    const state = st.passed ? "done" : i === nowIx ? "now" : "next", pctv = st.lessons ? Math.round(100 * st.did / st.lessons) : 0;
+    return h("section", { class: "stage " + state },
+      h("div", { class: "stage-n" }, st.passed ? icon("check", 18) : String(i + 1)),
+      h("div", { class: "stage-b stack stack-xs" },
+        h("div", { class: "stage-h" }, h("h3", { class: "h3" }, st.t), h("span", { class: "pill " + (st.passed ? "ok" : state === "now" ? "gold" : "") }, st.passed ? "Passed" : state === "now" ? "You are here" : "Up next")),
+        h("p", { class: "small mute" }, st.g),
+        h("div", { class: "stage-cs" }, st.cs.map(x => x.soon ? h("span", { class: "chip soon" }, "Being written") : h("a", { class: "chip" + (Store.courseProgress(x).done >= x.lessons.length ? " on" : ""), href: "#/course/" + x.id }, x.title))),
+        st.lessons ? h("div", { class: "row-flex between tiny mute" }, h("span", {}, `${st.did} of ${st.lessons} lessons`), h("span", {}, pctv + "%")) : null,
+        st.lessons ? bar(pctv) : null,
+        st.exam ? h("a", { class: "btn " + (st.ready && !st.passed ? "gold" : "ghost") + " sm", href: "#/assess/" + st.exam.id }, st.passed ? "Retake the stage exam" : "Stage exam") : null));
+  };
   const heading = h("div", { class: "stack stack-s" },
-      h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
-      h("p", { class: "mute" }, door ? h("span", {}, `Learning as: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Tell us who you are in Progress to personalise this page."));
-  const rest = h("div", { class: "cols" },
-      h("div", { class: "stack stack-l" }, storyCard, hero, plan, p.done ? null : guide, nismBanner(),
-        h("section", { class: "stack" }, h("h2", { class: "h2" }, "Recommended for you"),
-          h("div", { class: "divide" }, path.slice(0, 6).map(x => { const q = Store.courseProgress(x), done = !!s.quiz["x:" + x.id]?.passed;
-            return h("a", { class: "list-row", href: `#/course/${x.id}` }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, x.title), h("div", { class: "tiny mute" }, realmName(x.sec) + " · " + level(x.level).name), bar(q.pct, done)), h("span", { class: "small mute" }, done ? "Passed" : q.pct + "%")); })),
-          h("a", { class: "linkish", href: "#/courses" }, "Browse all courses"))),
-      h("div", { class: "rail" }, quoteOfDayCard(), news,
-        h("section", { class: "card stack" }, h("h3", { class: "h3" }, "Today's goals"), week,
-          h("div", { class: "divide" }, goals.map(g => h("a", { class: "list-row", href: g.href }, h("span", { class: "check " + (g.done ? "on" : "") }, g.done ? icon("check") : null), h("div", { class: "grow" }, h("div", { class: "list-title" }, g.t), h("div", { class: "tiny mute" }, g.sub)))))),
-        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Progress"),
-          h("div", { class: "seal-row" }, [["Beginner", seals.b], ["Intermediate", seals.i], ["Hard", seals.h]].map(([t, n]) => h("div", { class: "seal-mini" }, h("b", {}, n), h("span", { class: "tiny mute" }, t + " exams")))),
-          h("a", { class: "linkish", href: "#/me" }, "Open Progress")),
-        h("section", { class: "card stack stack-s" }, h("h3", { class: "h3" }, "Leaderboard"),
-          h("p", { class: "small" }, h("b", {}, rk.title), ` · ${xp} points`, rk.next ? ` · ${rk.need} to ${rk.next}` : ""),
-          h("a", { class: "linkish", href: "#/board" }, "See the leaderboard"))));
-  /* a brand-new learner sees one big first step; everything else waits behind a fold */
-  if (fresh) { hero.classList.add("first"); return widePage(heading, storyCard, hero, h("details", { class: "explore" }, h("summary", {}, "Explore everything else"), rest)); }
-  return widePage(heading, rest);
+    h("h1", { class: "h1" }, `${hr < 12 ? "Good morning" : hr < 17 ? "Good afternoon" : "Good evening"}${first ? ", " + first : ""}`),
+    h("p", { class: "mute" }, door ? h("span", {}, `Your path: ${door.name}. `, h("a", { class: "linkish", href: "#/me" }, "Change")) : "Pick who you are in Me and your path appears here."));
+  return widePage(heading, hero,
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Your path"), h("p", { class: "small mute" }, "Finish a stage's lessons, then sit its exam. Each stage builds on the one before."),
+      h("div", { class: "stages" }, st2.map(stageCard))),
+    h("a", { class: "linkish", href: "#/courses" }, "Browse all courses"));
 }
 
 /* ——— Seals ——— */

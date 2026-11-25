@@ -16,7 +16,6 @@ import { showCopy } from "./ux.js";
 import { vendor } from "./fb.js";
 import { nick, grade, brag } from "./certcopy.js";
 import { sharePanel } from "./sharepanel.js";
-import { titleShelf } from "./titleshelf.js";
 
 const stand = c => { const s = Creds.standing(c); return s === "valid" ? h("span", { class: "pill ok" }, "Valid") : s === "soon" ? h("span", { class: "pill gold" }, "Expires soon") : h("span", { class: "pill" }, "Expired"); };
 
@@ -49,7 +48,10 @@ export function me() {
         h("div", {}, icon("award", 22), h("b", {}, creds.length), h("span", {}, "earned")),
         m != null ? h("div", {}, icon("check", 22), h("b", {}, m + "%"), h("span", {}, "first-try accuracy")) : null),
       h("a", { class: "btn ghost sm", href: "#/board" }, "Leaderboard")),
-    titleShelf(),
+    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Exams"),
+      h("div", { class: "divide" },
+        h("a", { class: "list-row", href: "#/assess" }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, "Course exams"), h("div", { class: "tiny mute" }, "Beginner, Intermediate and Hard, with a certificate in your name")), icon("award", 20)),
+        h("a", { class: "list-row", href: "#/nism" }, h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, "NISM exam prep"), h("div", { class: "tiny mute" }, "Study guides and five full mock exams for each series")), icon("award", 20)))),
     ledger(),
     masteryMap(),
     h("section", { class: "stack" },
@@ -58,13 +60,11 @@ export function me() {
         h("a", { class: "grow", href: `#/cert/${c.id}` }, h("div", { class: "list-title" }, c.title), h("div", { class: "small mute" }, `${Creds.kindLabel(c)} · ${fmtDate(c.issued)}`)),
         stand(c), Creds.standing(c) !== "valid" && c.kind === "course" ? h("a", { class: "btn ghost", style: "height:38px;padding:0 16px", href: `#/quiz/refresh/${c.key}` }, "Renew") : null)))
         : h("div", { class: "card tint stack stack-s" }, h("h2", { class: "h2" }, "None yet."), h("p", {}, "Pass a course exam to earn your first certificate. Each one is valid for 12 months and can be verified by anyone with the link."))),
-    h("section", { class: "stack" }, h("h2", { class: "h2" }, "Three kinds of credential"),
-      h("div", { class: "grid3" }, [["Every course", "Course certificate", "Pass the Beginner exam at 80%. Module quizzes help you prepare. Valid 12 months."], ["Every level", "Level credential", "Earned when every course in a level is certified. Practitioner has four courses."], ...(isPro() ? [["Top honour", "UpperCrust Certified Professional", "All courses, plus five Client Lab scenarios. The highest mark of competence."]] : [])].map(([a, b, t]) => h("div", { class: "card stack stack-s" }, h("div", { class: "eyebrow" }, a), h("h3", { class: "h3" }, b), h("p", { class: "small mute" }, t))))),
-    settingsCard(),
-    open.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Still to earn"),
-      h("div", { class: "divide" }, open.map(c => { const p = Store.courseProgress(c); return h("a", { class: "list-row", href: `#/course/${c.id}` },
+    open.length ? h("section", { class: "stack" }, h("h2", { class: "h2" }, "Keep going"),
+      h("div", { class: "divide" }, open.map(c => [c, Store.courseProgress(c)]).sort((a, b) => b[1].pct - a[1].pct).slice(0, 3).map(([c]) => c).map(c => { const p = Store.courseProgress(c); return h("a", { class: "list-row", href: `#/course/${c.id}` },
         h("div", { class: "grow stack stack-xs" }, h("div", { class: "list-title" }, c.title), bar(p.pct)), h("span", { class: "small mute" }, p.pct + "%")); })),
-      h("p", { class: "small mute" }, isPro() ? "Complete both Practitioner courses for the level credential. Complete all courses and five Client Lab scenarios for the Professional credential." : "Complete every course in a level for its level credential.")) : null);
+      h("p", { class: "small mute" }, isPro() ? "Complete both Practitioner courses for the level credential. Complete all courses and five Client Lab scenarios for the Professional credential." : "Complete every course in a level for its level credential.")) : null,
+    h("details", { class: "card stack" }, h("summary", { class: "h3", style: "cursor:pointer" }, "Settings and data"), settingsCard()));
 }
 
 function qrNode(id) {

@@ -15,13 +15,15 @@ export async function handStory(n) {
 
 export function buildStory(l, n, { pro, hand } = {}) {
   const c = courseOf(n), key = sceneKey(l.title, sceneKey(`${c ? c.title : ""} ${(l.tags || []).join(" ")}`)), lang = I18n.getLang();
-  const cards = [{ k: "hook", art: key, h: l.story ? l.story.headline : l.title, s: `${c ? c.title : ""} · ${LEVEL[c && c.level] || ""}` }];
-  if (hand) cards.push(...hand);
+  const cards = [{ k: "hook", art: key, h: l.story && !hand ? l.story.headline : l.title, s: `${c ? c.title : ""} · ${LEVEL[c && c.level] || ""}` }];
+  if (hand) { if (hand[0] && hand[0].k === "hook") cards.shift(); cards.push(...hand); }
   else {
     if (l.story) l.story.paras.forEach(p => cards.push({ k: "fact", art: sceneKey(p, key), big: p, long: p.length > 150 }));
     (l.concept || []).forEach(p => cards.push({ k: "fact", art: sceneKey(p, key), big: p, long: p.length > 150 }));
     if (l.example) cards.push({ k: "eg", h: l.example.title, intro: l.example.intro, rows: l.example.rows.map(r => r[0] === "=" ? r : (l.example.head && r.length > 2 ? [r[0], ...r.slice(1)] : r)), note: l.example.note });
     if (l.client) cards.push({ k: "dialog", h: tr(pro ? "A client asks" : "A common question"), lines: [["meena", strip(l.client.quote)], ["sikka", tr(pro ? "How would you answer her in two sentences? Think, then try the questions." : "What would you say to a friend? Think, then try the questions.")]] });
+    { const tt = `${l.title} ${(l.tags || []).join(" ")}`.toLowerCase(), model = /\bsip\b|systematic invest/.test(tt) ? "sip" : /inflation|purchasing power/.test(tt) ? "inflation" : /\bemi\b|loan|borrow/.test(tt) ? "emi" : /compound|lump ?sum|power of time/.test(tt) ? "lump" : null;
+      if (model) cards.push({ k: "try", model }); }
     liveQs(l).forEach(q0 => { const q = localize(q0, lang), ans = q.answer, why = (q.options || []).map((_, i) => i === ans ? q.why : ((q0.wrong || [])[i] || ""));
       cards.push({ k: "pick", id: q0.id, h: tr("Check yourself"), q: q.prompt, opts: q.options, ans, why }); });
     if (l.talk) cards.push({ k: "fact", art: key, h: !pro ? "The short answer" : "What to tell a client", big: strip(l.talk), long: true });

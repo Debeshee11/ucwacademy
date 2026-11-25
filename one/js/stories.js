@@ -1,4 +1,4 @@
-/* Stories: swipeable, narrated money stories. Arjun reads each card aloud (device voice), and Play story moves on by itself.
+/* Stories: swipeable, narrated money stories. Sarthi reads each card aloud (device voice), and Play story moves on by itself.
    Drawn inside a shadow root so its look cannot touch, or be touched by, the rest of the app. All art is inline SVG; no pictures are downloaded.
    Every string is {en, hi, gu}. Hindi and Gujarati text still needs a native-speaker review before wide release. */
 import * as I18n from "./i18n.js";
@@ -27,6 +27,10 @@ h1{font-size:32px;line-height:1.05;margin:0 0 8px;font-weight:800}
 /* player */
 .player{flex:1;display:flex;flex-direction:column;padding:16px 20px 18px;gap:12px;min-height:0}
 .bars{display:flex;gap:5px}.bars i{flex:1;height:5px;border-radius:3px;background:#2B211833}.bars i.on{background:var(--ink)}
+.hud{display:flex;gap:6px;margin-left:auto;margin-right:4px}.hud b{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:1px 8px;font-size:12px}.hud .cb{background:#FFE08A}
+.fx{position:absolute;left:50%;bottom:170px;transform:translateX(-50%);z-index:5;padding:6px 14px;border:2px solid var(--ink);border-radius:999px;font-weight:900;font-size:14px;pointer-events:none;box-shadow:0 3px 0 var(--ink)}.fx.ok{background:#8DE3AE}.fx.no{background:#FFD0C2}
+.stats{display:flex;gap:10px;justify-content:center}.stats span{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:6px 12px;font-size:12px;font-weight:700;display:flex;flex-direction:column;align-items:center}.stats b{font-size:18px}
+@media (prefers-reduced-motion:no-preference){.fx{animation:fxp 1.4s ease-out forwards}@keyframes fxp{0%{transform:translate(-50%,10px) scale(.7);opacity:0}15%{transform:translate(-50%,0) scale(1.1);opacity:1}80%{opacity:1}100%{transform:translate(-50%,-26px);opacity:0}}}
 .bar2{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:800}
 .x{border:2px solid var(--ink);background:#fff;border-radius:99px;width:40px;height:40px;font-weight:800}
 .body{flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px;min-height:0}
@@ -62,7 +66,7 @@ input[type=range]{width:100%;height:44px;accent-color:#2556B8}
 .player{position:relative}
 .guide{display:flex;align-items:center;gap:8px;min-height:44px}
 .guide .tipb{flex:1;max-width:none;border-radius:4px 14px 14px 14px;font-size:13px}
-.arjun{flex:none}.mo,.ey{transform-box:fill-box;transform-origin:center}
+.sarthi{flex:none}.mo,.ey{transform-box:fill-box;transform-origin:center}
 .trk{display:flex;flex-direction:column;gap:8px}
 .stn{display:flex;align-items:center;gap:10px;opacity:.45;transition:opacity .25s}.stn.past,.stn.now{opacity:1}
 .pin{width:44px;height:44px;border-radius:50%;border:3px solid var(--ink);background:var(--c);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
@@ -84,13 +88,15 @@ input[type=range]{width:100%;height:44px;accent-color:#2556B8}
 .opt.ok{background:#E3F6EB;border-color:var(--green)}.opt.no{background:#FFE3E3;border-color:var(--coral)}.opt[disabled]{opacity:1;cursor:default}
 button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 @media (prefers-reduced-motion:no-preference){
-.arjun{animation:bob 2.6s ease-in-out infinite}.talk .arjun{animation:hop .35s ease-in-out infinite alternate}.talk .mo{animation:mouth .16s ease-in-out infinite alternate}
+.sarthi{animation:bob 2.6s ease-in-out infinite}.talk .sarthi{animation:hop .35s ease-in-out infinite alternate}.talk .mo{animation:mouth .16s ease-in-out infinite alternate}
 .ey{animation:blink 4s infinite}
 .cf i{animation:fall 2.6s var(--d) ease-in forwards}
 @keyframes bob{50%{transform:translateY(-3px)}}@keyframes hop{to{transform:translateY(-5px) rotate(-5deg)}}@keyframes mouth{to{transform:scaleY(2.4)}}
 @keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}}
 .fact{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}.fact .big{font-size:23px;line-height:1.3;font-weight:800}.fact .num{display:inline-block;background:#FFC531;border:3px solid var(--ink);border-radius:10px;padding:0 7px;margin:0 1px;white-space:nowrap}
 .egr{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:3px solid var(--ink);border-radius:14px;padding:9px 12px;font-weight:700;font-size:15px}.egr.sum{background:#FFE9A8}.egr b{font-weight:800}.egr .bar{flex:1;height:12px;border-radius:6px;background:#EFE6D2;overflow:hidden;border:2px solid var(--ink)}.egr .bar i{display:block;height:100%;background:#3CC47A}
+.tr{display:flex;flex-direction:column;gap:12px}.tr-in{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-weight:800;font-size:15px}.tr-in input{grid-column:1/3;width:100%;accent-color:#2B2118;height:28px}.tr-in b{font-size:17px}
+.tr-out{display:flex;flex-direction:column;gap:8px}.tr-lead{font-size:14px;font-weight:800;color:#7A6A55}.tr-big{font-size:38px;line-height:1.05;font-weight:800}.tr-bar{display:flex;height:22px;border:3px solid var(--ink);border-radius:12px;overflow:hidden;background:#fff}.tr-bar i{background:#8EC5FF;transition:width .25s}.tr-bar b{background:#3CC47A;transition:width .25s}.tr-leg{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:800}
 .anim{display:flex;flex-direction:column;gap:8px}.anim svg{width:100%;height:auto;max-height:46vh;background:#fffdf5;border:3px solid var(--ink);border-radius:20px}.cap{min-height:44px;font-size:17px;font-weight:800;line-height:1.3;text-align:center}
 .who{font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;opacity:.75}
 `;
@@ -123,9 +129,9 @@ const U = {
   ordered: T("In order!", "क्रम सही!", "ક્રમ સાચો!"),
   learnaid: T("Learning aid. Exam wording follows the official NISM workbook.", "सीखने का साधन। परीक्षा की भाषा आधिकारिक NISM वर्कबुक के अनुसार होती है।", "શીખવાનું સાધન. પરીક્ષાની ભાષા અધિકૃત NISM વર્કબુક મુજબ હોય છે."),
   exit: T("Back to the Academy", "अकादमी में वापस", "એકેડેમીમાં પાછા"),
-  sikkaSays: T("Arjun reads every card aloud.", "अर्जुन हर कार्ड पढ़कर सुनाता है।", "અર્જુન દરેક કાર્ડ વાંચી સંભળાવે છે."),
+  sikkaSays: T("Sarthi reads every card aloud.", "सारथी हर कार्ड पढ़कर सुनाता है।", "સારથિ દરેક કાર્ડ વાંચી સંભળાવે છે."),
   lessons: T("Pick a story", "एक कहानी चुनिए", "એક વાર્તા પસંદ કરો"),
-  intro: T("Nine money stories. Press Play story and Arjun tells them aloud, or tap to go at your own pace.", "नौ धन-कहानियाँ। 'कहानी चलाइए' दबाइए और अर्जुन उन्हें बोलकर सुनाएगा, या अपनी गति से आगे बढ़िए।", "નવ પૈસાની વાર્તાઓ. 'વાર્તા ચલાવો' દબાવો અને અર્જુન તે બોલીને સંભળાવશે, અથવા તમારી ગતિએ આગળ વધો."),
+  intro: T("Nine money stories. Press Play story and Sarthi tells them aloud, or tap to go at your own pace.", "नौ धन-कहानियाँ। 'कहानी चलाइए' दबाइए और सारथी उन्हें बोलकर सुनाएगा, या अपनी गति से आगे बढ़िए।", "નવ પૈસાની વાર્તાઓ. 'વાર્તા ચલાવો' દબાવો અને સારથિ તે બોલીને સંભળાવશે, અથવા તમારી ગતિએ આગળ વધો."),
   listen: T("Listen", "सुनिए", "સાંભળો"), next: T("Next", "आगे", "આગળ"), back: T("Back", "पीछे", "પાછળ"),
   start: T("Start", "शुरू करें", "શરૂ કરો"), done: T("Done", "पूरा", "પૂર્ણ"), cardOf: T("Card {0} of {1}", "कार्ड {0} / {1}", "કાર્ડ {0} / {1}"),
   novoice: T("No voice for this language on this device.", "इस उपकरण पर इस भाषा की आवाज़ उपलब्ध नहीं है।", "આ ઉપકરણ પર આ ભાષાનો અવાજ ઉપલબ્ધ નથી."),
@@ -253,7 +259,7 @@ const LESSONS = [
 ] }
 ];
 /* ---------- state ---------- */
-const S = { line: 1, tiles: [], pick: [], nv: { pot: 100, net: 100, units: 5, amt: 10000 }, auto: false, stop: 0, ord: [], bad: 0, view: "home", li: 0, ci: 0, done: {}, sip: 3000, budget: [50, 50, 0], rate: 12, ins: false, flags: [false, false, false, false], myth: null };
+const S = { xp: 0, combo: 0, best: 0, right: 0, asked: 0, fx: null, line: 1, tiles: [], pick: [], nv: { pot: 100, net: 100, units: 5, amt: 10000 }, auto: false, stop: 0, ord: [], bad: 0, view: "home", li: 0, ci: 0, done: {}, sip: 3000, budget: [50, 50, 0], rate: 12, ins: false, flags: [false, false, false, false], myth: null };
 try { S.done = JSON.parse(localStorage.getItem("uc.stories") || "{}") || {}; } catch (e) {}
 let app = appEl, $ = s => app.querySelector(s), timer = 0, speaking = false;
 const stopAll = () => { try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (e) {} clearTimeout(timer); speaking = false; if (app) app.classList.remove("talk"); };
@@ -305,6 +311,11 @@ function cardHtml(c, L) {
     case "dialog": {
       return `${head}<div class="chat">${c.lines.slice(0, S.line).map(([w, t], i) => `<div class="msgrow ${w === "dadi" || w === "sikka" ? "r" : ""} pop"><span class="av">${avatar(w)}</span><div class="bub">${esc(tx(t))}</div></div>`).join("")}</div>
       ${S.line < c.lines.length ? `<button class="btn go" style="justify-content:center" data-line>${esc(tx(U.nextline))} →</button>` : ""}`;
+    }
+    case "try": {
+      const m = TRY[c.model] || TRY.sip, key = S.li + ":" + S.ci;
+      if (!S.tv || S.tv._k !== key) S.tv = { _k: key, ...Object.fromEntries(m.inputs.map(i => [i.id, (c.vals && c.vals[i.id]) ?? i.v])) };
+      return `${c.h ? head : `<h2 class="h">${esc(m.h)}</h2>`}<div class="card tr"><div class="small" style="font-weight:800">${esc(tx(c.s) || m.s)}</div>${m.inputs.map(i => `<label class="tr-in"><span>${esc(i.l)}</span><b id="tv-${i.id}">${esc(i.f(S.tv[i.id]))}</b><input type="range" data-try="${i.id}" min="${i.min}" max="${i.max}" step="${i.st}" value="${S.tv[i.id]}" aria-label="${esc(i.l)}"></label>`).join("")}</div><div class="card tr-out" id="tr-out" style="background:#FFF1C2">${tryResult(m, S.tv)}</div>`;
     }
     case "anim": return `${head}${animHtml(c)}`;
     case "fact": {
@@ -394,6 +405,20 @@ function cardHtml(c, L) {
   return "";
 }
 const mood = c => c.k === "pick" ? (S.pick.includes(c.ans) ? "joy" : S.pick.length ? "think" : "happy") : c.k === "myth" ? (S.myth ? (S.myth === c.ans ? "joy" : "warn") : "think") : c.k === "hook" ? "wow" : c.k === "remember" ? "joy" : c.k === "order" ? (S.bad ? "warn" : "think") : "happy";
+/* "Try it": a live calculator card. The learner drags sliders and watches the result move. */
+const inr = n => n >= 1e7 ? "₹" + (n / 1e7).toFixed(2) + " crore" : n >= 1e5 ? "₹" + (n / 1e5).toFixed(2) + " lakh" : "₹" + Math.round(n).toLocaleString("en-IN");
+const TRY = {
+  sip: { h: "Try it: grow a SIP", s: "Drag the sliders. See what a small monthly amount can become.", inputs: [{ id: "amt", l: "Every month", min: 500, max: 50000, st: 500, v: 5000, f: v => "₹" + v.toLocaleString("en-IN") }, { id: "yrs", l: "For how long", min: 1, max: 30, st: 1, v: 10, f: v => v + " years" }, { id: "rate", l: "Assumed yearly return", min: 4, max: 18, st: 1, v: 12, f: v => v + "%" }],
+    calc: v => { const n = v.yrs * 12, r = v.rate / 1200, fv = v.amt * ((Math.pow(1 + r, n) - 1) / r) * (1 + r), inv = v.amt * n; return { big: inr(fv), lead: "You could have", a: inv, b: fv - inv, la: "You put in " + inr(inv), lb: "Growth " + inr(fv - inv), note: "An assumed rate, not a promise. Real returns go up and down." }; } },
+  lump: { h: "Try it: one amount, left to grow", s: "Change the amount, the years and the rate.", inputs: [{ id: "amt", l: "Amount invested once", min: 10000, max: 1000000, st: 10000, v: 100000, f: v => inr(v) }, { id: "yrs", l: "For how long", min: 1, max: 30, st: 1, v: 10, f: v => v + " years" }, { id: "rate", l: "Assumed yearly return", min: 2, max: 18, st: 1, v: 10, f: v => v + "%" }],
+    calc: v => { const fv = v.amt * Math.pow(1 + v.rate / 100, v.yrs); return { big: inr(fv), lead: "It could become", a: v.amt, b: fv - v.amt, la: "You put in " + inr(v.amt), lb: "Growth " + inr(fv - v.amt), note: "Time does most of the work. Watch what the last ten years add." }; } },
+  inflation: { h: "Try it: what prices do over time", s: "Pick a bill today and see its price later.", inputs: [{ id: "amt", l: "A bill today", min: 1000, max: 100000, st: 1000, v: 10000, f: v => "₹" + v.toLocaleString("en-IN") }, { id: "yrs", l: "After", min: 1, max: 30, st: 1, v: 10, f: v => v + " years" }, { id: "rate", l: "Prices rise by", min: 2, max: 10, st: 1, v: 6, f: v => v + "% a year" }],
+    calc: v => { const fv = v.amt * Math.pow(1 + v.rate / 100, v.yrs); return { big: inr(fv), lead: "The same bill could cost", a: v.amt, b: fv - v.amt, la: "Today " + inr(v.amt), lb: "Extra " + inr(fv - v.amt), note: "Money that sits still buys less every year." }; } },
+  emi: { h: "Try it: what a loan really costs", s: "Move the sliders and watch the interest part.", inputs: [{ id: "amt", l: "Loan amount", min: 100000, max: 5000000, st: 50000, v: 500000, f: v => inr(v) }, { id: "rate", l: "Interest per year", min: 6, max: 24, st: 1, v: 10, f: v => v + "%" }, { id: "yrs", l: "Repay over", min: 1, max: 20, st: 1, v: 5, f: v => v + " years" }],
+    calc: v => { const n = v.yrs * 12, r = v.rate / 1200, e = v.amt * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1), tot = e * n; return { big: "₹" + Math.round(e).toLocaleString("en-IN") + " a month", lead: "Your EMI", a: v.amt, b: tot - v.amt, la: "Loan " + inr(v.amt), lb: "Interest " + inr(tot - v.amt), note: "A longer loan lowers the EMI but raises the interest you pay." }; } }
+};
+const tryResult = (m, v) => { const o = m.calc(v), t = o.a + o.b, pa = Math.max(4, Math.round(o.a / t * 100));
+  return `<div class="tr-lead">${esc(o.lead)}</div><div class="tr-big">${esc(o.big)}</div><div class="tr-bar"><i style="width:${pa}%"></i><b style="width:${100 - pa}%"></b></div><div class="tr-leg"><span>${esc(o.la)}</span><span>${esc(o.lb)}</span></div><div class="small">${esc(o.note)}</div>`; };
 const PASSIVE = ["hook", "meet", "picture", "remember", "dialog", "tiles", "compare", "fact", "eg", "anim"];
 const spokenOf = c => [c.k === "anim" && speakOf(c, tx), c.lines && c.lines.map(([w, t]) => tx(t)).join(" "), c.items && c.items.map(x => tx(x[0]) + ". " + tx(x[1])).join(" "), c.q && c.k === "pick" && "", c.h && tx(c.h), c.big && tx(c.big), c.rows && c.rows.map(r => r.filter(x => x !== "=").map(tx).join(", ")).join(". "), c.s && c.k !== "sip" && tx(c.s), c.q && tx(c.q), c.pts && c.pts.map(tx).join(". ")].filter(Boolean).join(". ");
 const ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B2118" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
@@ -401,11 +426,11 @@ function player() {
   const L = LESSONS[S.li], c = L.cards[S.ci], tot = L.cards.length;
   const bars = L.cards.map((_, i) => `<i class="${i <= S.ci ? "on" : ""}"></i>`).join("");
   return `<div class="player" style="background:${L.color}"><div class="bars">${bars}</div>
-  <div class="bar2"><span>${esc(tx(L.title))} · ${esc(fill(tx(U.cardOf), S.ci + 1, tot))}</span><button class="x" data-home aria-label="Close">✕</button></div>
-  <div class="body pop" id="body">${cardHtml(c, L)}</div>
+  <div class="bar2"><span>${esc(tx(L.title))} · ${esc(fill(tx(U.cardOf), S.ci + 1, tot))}</span><span class="hud"><b class="xp">⚡ ${S.xp}</b>${S.combo > 1 ? `<b class="cb">🔥 x${S.combo}</b>` : ""}</span><button class="x" data-home aria-label="Close">✕</button></div>
+  ${S.fx ? `<div class="fx ${S.fx.t}" aria-live="polite">${esc(S.fx.txt)}</div>` : ""}<div class="body pop" id="body">${cardHtml(c, L)}</div>
   ${noVoice ? `<div class="small">${esc(tx(U.novoice))}</div>` : ""}
-  <div class="guide">${sikka(52, mood(c))}<div class="tipb">${esc(tx(c.tip || U.sikkaSays))}</div></div>
-  <div class="foot"><button class="btn" data-listen>${ICO}<path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>${esc(tx(U.listen))}</button><button class="btn ${S.auto ? "go" : ""}" data-auto>${ICO}${S.auto ? '<path d="M8 5v14M16 5v14"/>' : '<path d="M7 4l13 8-13 8z"/>'}</svg>${esc(tx(S.auto ? U.pause : U.play))}</button></div>
+  <div class="guide">${sikka(68, mood(c))}<div class="tipb">${esc(tx(c.tip || U.sikkaSays))}</div></div>
+  <div class="foot"><button class="btn" data-listen>${ICO}<path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>${esc(custom ? "Read aloud" : tx(U.listen))}</button><button class="btn ${S.auto ? "go" : ""}" data-auto>${ICO}${S.auto ? '<path d="M8 5v14M16 5v14"/>' : '<path d="M7 4l13 8-13 8z"/>'}</svg>${esc(custom ? (S.auto ? "Pause" : "Auto-play") : tx(S.auto ? U.pause : U.play))}</button></div>
   <div class="row"><button class="btn" data-prev ${S.ci === 0 ? "disabled" : ""} style="flex:1;justify-content:center">${esc(tx(U.back))}</button><button class="btn go" data-next style="flex:1;justify-content:center">${esc(tx(U.next))}</button></div></div>`;
 }
 function finish() {
@@ -413,17 +438,17 @@ function finish() {
   const cf = Array.from({ length: 30 }, (_, i) => `<i style="--x:${(i * 37) % 100}%;--d:${(i % 10) * 0.12}s;--c:${["#FFC531", "#3CC47A", "#8EC5FF", "#FF9C6B", "#D8B4FE"][i % 5]}"></i>`).join("");
   return `<div class="player" style="background:#D9F2E3"><div class="cf" aria-hidden="true">${cf}</div><div class="body" style="align-items:center;justify-content:center;text-align:center;gap:14px">
   <svg viewBox="0 0 120 120" width="150" height="150" role="img" aria-label="Badge"><circle cx="60" cy="54" r="40" fill="#FFC531" ${O}/><circle cx="60" cy="54" r="30" fill="none" stroke="#C99A12" stroke-width="3"/><path d="M42 54l12 12 24-24" fill="none" stroke="#1E8E56" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 90l-8 24 28-12 28 12-8-24" fill="#E8573D" ${O} stroke-linejoin="round"/></svg>
-  <h2 class="h">${esc(tx(U.complete))}</h2><p class="s">${esc(tx(L.title))}</p><div class="guide" style="justify-content:center">${mascot({ view: "full", pose: "cheer", mood: "joy", px: 150 })}</div>
+  <h2 class="h">${esc(tx(U.complete))}</h2><p class="s">${esc(tx(L.title))}</p><div class="stats"><span><b>⚡ ${S.xp}</b>XP</span><span><b>${S.asked ? S.right + "/" + S.asked : "–"}</b>right</span><span><b>🔥 ${S.best}</b>best streak</span></div><div class="guide" style="justify-content:center">${mascot({ view: "full", pose: "cheer", mood: "joy", px: 150 })}</div>
   ${custom ? "" : `<button class="btn" data-copy>${esc(tx(U.copy))}</button><div class="small" id="cp"></div>`}</div>
   <div class="foot">${custom ? (custom.next || []).map(a => `<a class="btn ${a.go ? "go" : ""}" style="justify-content:center;text-decoration:none" href="${esc(a.href)}">${esc(a.label)}</a>`).join("") : `<button class="btn" data-home>${esc(tx(U.all))}</button>`}${!custom && nx ? `<button class="btn go" data-open="${S.li + 1}">${esc(tx(U.nextStory))}</button>` : ""}</div></div>`;
 }
 function render() {
   stopAnim();
   app.innerHTML = S.view === "home" ? home() : S.view === "done" ? finish() : player();
-  bind();
+  bind(); S.fx = null;
   const an = S.view === "play" && LESSONS[S.li].cards[S.ci].k === "anim" ? app.querySelector("[data-anim]") : null; if (an && !S.noAnim) startAnim(app, LESSONS[S.li].cards[S.ci], tx); S.noAnim = false;
 }
-/* Moves between cards. In Play mode Arjun reads each card and moves on by herself; cards that need a tap wait for you. */
+/* Moves between cards. In Play mode Sarthi reads each card and moves on by herself; cards that need a tap wait for you. */
 function enter() {
   clearTimeout(timer); if (!S.auto || S.view !== "play") return;
   const c = LESSONS[S.li].cards[S.ci], text = spokenOf(c), idx = S.ci, li = S.li;
@@ -439,12 +464,13 @@ function go(d) {
 function bind() {
   app.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { stopAll(); I18n.setLanguage(b.dataset.lang); });
   app.querySelectorAll("[data-exit]").forEach(b => b.onclick = () => { stopAll(); location.hash = "#/"; });
-  app.querySelectorAll("[data-open]").forEach(b => b.onclick = () => { stopAll(); S.view = "play"; S.li = +b.dataset.open; S.ci = 0; S.flags = [false, false, false, false]; S.myth = null; S.stop = 0; S.ord = []; S.bad = 0; S.line = 1; S.tiles = []; S.pick = []; render(); enter(); });
+  app.querySelectorAll("[data-open]").forEach(b => b.onclick = () => { stopAll(); S.view = "play"; S.li = +b.dataset.open; S.ci = 0; S.xp = 0; S.combo = 0; S.best = 0; S.right = 0; S.asked = 0; S.fx = null; S.flags = [false, false, false, false]; S.myth = null; S.stop = 0; S.ord = []; S.bad = 0; S.line = 1; S.tiles = []; S.pick = []; render(); enter(); });
   app.querySelectorAll("[data-home]").forEach(b => b.onclick = () => { stopAll(); if (custom) { location.hash = custom.exit; return; } S.auto = false; S.view = "home"; render(); });
   const nx = app.querySelector("[data-next]"), pv = app.querySelector("[data-prev]"), L = LESSONS[S.li];
   if (nx) nx.onclick = () => go(1); if (pv) pv.onclick = () => go(-1);
   const body = $("#body"); if (body) body.onclick = e => { if (e.target.closest("button,input,.card,.msg,.stepper,.trk")) return; const r = body.getBoundingClientRect(); go(e.clientX > r.left + r.width * 0.35 ? 1 : -1); };
   const ls = app.querySelector("[data-listen]"); if (ls) ls.onclick = () => { if (!speak(spokenOf(L.cards[S.ci]))) render(); };
+  app.querySelectorAll("[data-try]").forEach(inp => inp.oninput = () => { const cc = L.cards[S.ci], m = TRY[cc.model] || TRY.sip; S.tv[inp.dataset.try] = +inp.value; const lab = $("#tv-" + inp.dataset.try), spec = m.inputs.find(i => i.id === inp.dataset.try); if (lab) lab.textContent = spec.f(+inp.value); const o = $("#tr-out"); if (o) o.innerHTML = tryResult(m, S.tv); });
   const rp = app.querySelector("[data-replay]"); if (rp) rp.onclick = () => startAnim(app, L.cards[S.ci], tx);
   const au = app.querySelector("[data-auto]"); if (au) au.onclick = () => { S.auto = !S.auto; if (S.auto) { render(); enter(); } else { stopAll(); render(); } };
   const sip = $("#sip"); if (sip) sip.oninput = () => { S.sip = +sip.value; const c = sip.closest(".card"); c.querySelector("div:nth-child(2)").textContent = "₹" + S.sip.toLocaleString("en-IN"); $("#sipout").textContent = "≈ " + money(S.sip * 999.15); };
@@ -456,7 +482,7 @@ function bind() {
   app.querySelectorAll("[data-ins]").forEach(b => b.onclick = () => { S.ins = b.dataset.ins === "1"; render(); });
   app.querySelectorAll("[data-line]").forEach(b => b.onclick = () => { S.line++; render(); });
   app.querySelectorAll("[data-tile]").forEach(b => b.onclick = () => { const i = +b.dataset.tile; if (!S.tiles.includes(i)) S.tiles.push(i); render(); const it = L.cards[S.ci].items[i]; if (S.auto) speak(tx(it[0]) + ". " + tx(it[1])); });
-  app.querySelectorAll("[data-pick]").forEach(b => b.onclick = () => { const i = +b.dataset.pick; const cc = L.cards[S.ci]; if (custom && custom.answer && cc.id && !S.pick.length) custom.answer(cc.id, i === cc.ans); if (!S.pick.includes(i)) S.pick.push(i); render(); });
+  app.querySelectorAll("[data-pick]").forEach(b => b.onclick = () => { const i = +b.dataset.pick; const cc = L.cards[S.ci]; if (custom && custom.answer && cc.id && !S.pick.length) custom.answer(cc.id, i === cc.ans); if (!S.pick.length) { const ok = i === cc.ans; S.asked++; if (ok) { S.right++; S.combo++; S.best = Math.max(S.best, S.combo); const g = 10 + Math.min(S.combo - 1, 4) * 5; S.xp += g; S.fx = { t: "ok", txt: "+" + g + " XP" + (S.combo > 1 ? " · " + S.combo + " in a row!" : "") }; try { navigator.vibrate && navigator.vibrate(30); } catch (e) {} } else { S.combo = 0; S.fx = { t: "no", txt: "Not yet. Read why." }; } } if (!S.pick.includes(i)) S.pick.push(i); render(); });
   for (const [id, key] of [["pot", "pot"], ["net", "net"], ["units", "units"], ["amt", "amt"]]) { const el = $("#" + id); if (el) el.oninput = () => { S.nv[key] = +el.value; render(); const e2 = $("#" + id); if (e2) e2.focus(); }; }
   app.querySelectorAll("[data-stop]").forEach(b => b.onclick = () => { S.stop++; render(); const st = L.cards[S.ci].st[S.stop]; if (S.auto && st) speak(tx(st[0]) + ". " + tx(st[1])); });
   app.querySelectorAll("[data-ord]").forEach(b => b.onclick = () => { const p = +b.dataset.ord; if (p === 2 + S.ord.length) { S.ord.push(p); S.bad = 0; } else S.bad = 1; render(); });
@@ -464,7 +490,7 @@ function bind() {
 }
 if (custom) LESSONS.push(custom.lesson);
 const first = custom ? LESSONS.length - 1 : startId && LESSONS.findIndex(l => l.id === startId);
-if (first >= 0) { S.view = "play"; S.li = first; S.ci = 0; }
+if (first >= 0) { S.view = "play"; S.li = first; S.ci = 0; S.xp = 0; S.combo = 0; S.best = 0; S.right = 0; S.asked = 0; }
 try { window.speechSynthesis && window.speechSynthesis.getVoices(); } catch (e) {}
 addEventListener("hashchange", stopAll, { once: true });
 render();

@@ -33,7 +33,7 @@ export function board() {
     host.replaceChildren(...[
       standing({ id: me, name: s.name || "You" }, pos, list.length, list, k, unit, s.show === 0, Store.xp()),
       h("div", { class: "lb-filters" }, tabs(scopes, scope, v => { scope = v; }, "lb-seg scope"), tabs(Object.entries(METRICS).map(([id, [t]]) => [id, t]), by, v => { by = v; }, "lb-seg metric")),
-      scope === "door" && !mine ? h("p", { class: "mute" }, "Tell us who you are in Progress to see people like you.") :
+      scope === "door" && !mine ? h("p", { class: "mute" }, "Tell us who you are in Me to see people like you.") :
       ranked.length ? [
         ranked.length >= 2 ? podium(ranked.slice(0, 3), k, unit, me) : null,
         rest.length ? h("ol", { class: "lb-list" }, rest.map((r, i) => row(r, i + 3, k, unit, top, me, scope !== "team"))) : null,

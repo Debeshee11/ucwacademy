@@ -8,12 +8,11 @@ import { signOut, signIn } from "./auth.js";
 import { isPro, doorOf } from "./audience.js";
 
 export const NAV = [
-  ["#/", "Home", "home", "home", "Your next step"],
-  ["#/courses", "Learn", "book", "courses", "All courses, in order"],
-  ["#/practice", "Practice", "trophy", "practice", "Daily quiz, revision, client lab"],
-  ["#/assess", "Exams", "award", "assess", "Course exams and NISM prep"],
-  ["#/news", "News & Markets", "trend", "desk", "Headlines, funds, indices"],
-  ["#/me", "Progress", "star", "me", "Streak, certificates, leaderboard"]
+  ["#/", "Learn", "book", "home", "Your path, stage by stage"],
+  ["#/practice", "Practice", "trophy", "practice", "Daily five, revision, calculators"],
+  ["#/assess", "Exams", "award", "assess", "Stage exams and NISM prep"],
+  ["#/news", "News", "trend", "desk", "Headlines, funds, indices"],
+  ["#/me", "Me", "star", "me", "Progress, certificates, leaderboard"]
 ];
 export const isAdmin = () => Store.userEmail() === ADMIN_EMAIL;
 
@@ -66,7 +65,7 @@ export function frame(onLang) {
   function paintNav() {
     clear(nav); clear(tabs);
     for (const [href, label, ic, id, sub0] of NAV) {
-      const sub = !isPro() && id === "practice" ? "Daily quiz, revision, calculators" : !isPro() && id === "desk" ? "Headlines, funds, indices" : sub0;
+      const sub = !isPro() && id === "practice" ? "Daily five, revision, calculators" : sub0;
       const cur = id === active ? { "aria-current": "page" } : {};
       nav.append(h("a", { href, title: sub, ...cur }, icon(ic), h("span", { class: "nav-t" }, h("b", {}, label), h("small", {}, sub))));
       tabs.append(h("a", { href, "aria-label": label, ...cur }, icon(ic), h("span", {}, label === "News & Markets" ? "News" : label)));

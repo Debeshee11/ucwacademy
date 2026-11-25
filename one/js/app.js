@@ -45,8 +45,8 @@ document.body.prepend(skip);
 const ROUTES = [
   [/^$/, () => Ac.today(), "home", "Home"],
   [/^assess(?:\/([\w-]+))?$/, id => Ac.assess(id), "assess", "Exams"],
-  [/^courses$/, () => Ac.courses(), "courses", "Courses"],
-  [/^course\/([\w-]+)$/, id => Home.coursePage(id), "courses", "Course"],
+  [/^courses$/, () => Ac.courses(), "home", "Courses"],
+  [/^course\/([\w-]+)$/, id => Home.coursePage(id), "home", "Course"],
   [/^funddata$/, () => (isAdmin() ? fundData() : notFound("Only the administrator can open this.")), "", "Fund data"],
   [/^board$/, () => board(), "me", "Leaderboard", false, "The leaderboard shows learners by name, so it needs an account."],
   [/^review$/, () => review(), "me", "Review and rate", false, "Sign in to rate the Academy."],
