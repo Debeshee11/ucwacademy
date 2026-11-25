@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two shares both trade at a P/E of 40. One grows earnings 40% a year, the other 8%. Same price tag, very different value. The P/E alone does not tell you which is dear.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Valuation, read with context",
+  "lines": [
+   [
+    "meena",
+    "Is a high P/E always bad?"
+   ],
+   [
+    "sikka",
+    "No. A high P/E can be fair when growth is high and lasts. It is dangerous when growth slows. Compare with PEG, which is P/E divided by growth. Compare earnings yield, 1 ÷ P/E, with the 10-year G-sec yield. And market cap to GDP gives a rough read on the overall market."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Quick valuation reads",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "P/E = price ÷ EPS",
+    "₹400 ÷ ₹10 = 40"
+   ],
+   [
+    "PEG = P/E ÷ growth",
+    "40 ÷ 40 = 1.0, or 40 ÷ 8 = 5.0"
+   ],
+   [
+    "Earnings yield = 1 ÷ P/E",
+    "1 ÷ 40 = 2.5%"
+   ],
+   [
+    "Compare with G-sec",
+    "relative appeal of equity"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s25q1",
+  "h": "Check yourself",
+  "q": "A share has a P/E of 40 and earnings growth of 40%. What is its PEG?",
+  "opts": [
+   "0.1",
+   "10",
+   "80",
+   "1.0"
+  ],
+  "ans": 3,
+  "why": [
+   "0.1 divides the wrong way round.",
+   "10 is not 40 divided by 40.",
+   "80 adds the two instead of dividing.",
+   "40 ÷ 40 equals exactly 1.0."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s25q2",
+  "h": "Check yourself",
+  "q": "What does the earnings yield of a stock at P/E 40 equal?",
+  "opts": [
+   "2.5%",
+   "40.0%",
+   "4.0%",
+   "25.0%"
+  ],
+  "ans": 0,
+  "why": [
+   "1 ÷ 40 equals exactly 2.5%.",
+   "40% mixes up P/E with a yield.",
+   "4% is not one over forty, no.",
+   "25% is one over four, not forty."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s25q3",
+  "h": "Check yourself",
+  "q": "When is a high P/E more acceptable?",
+  "opts": [
+   "When growth is slowing down",
+   "When growth is high and durable",
+   "When the company posts a loss",
+   "When the market is closed"
+  ],
+  "ans": 1,
+  "why": [
+   "Slowing growth makes it dangerous.",
+   "High, lasting growth can support it.",
+   "Losses make P/E meaningless.",
+   "Market hours do not matter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s25q4",
+  "h": "Check yourself",
+  "q": "What does market cap to GDP give?",
+  "opts": [
+   "A guaranteed signal of a fall",
+   "The exact price of one single share",
+   "A rough read on market valuation",
+   "The dividend paid by each company"
+  ],
+  "ans": 2,
+  "why": [
+   "It cannot guarantee a fall.",
+   "It is not a single-stock price.",
+   "It is a broad, rough gauge.",
+   "It is not a dividend measure."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "P/E = price ÷ EPS. PEG = P/E ÷ growth.",
+   "Earnings yield = 1 ÷ P/E, compared with the G-sec yield.",
+   "High P/E is fine with durable growth, risky if growth slows."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two clients sell gold on the same day. One sold a gold ETF held 14 months, the other physical gold held 14 months. Their tax is not the same. The holding period depends on the form.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Form decides the clock",
+  "lines": [
+   [
+    "meena",
+    "Is it 12 months for all gold?"
+   ],
+   [
+    "sikka",
+    "No. Gold ETFs are long term after 12 months. Gold mutual funds and FoFs, and physical gold, are long term after 24 months. Long-term gains are taxed at 12.5% without indexation. Short-term gains on all are taxed at slab rate. Rates are as in the lesson, so confirm current rules."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Holding periods",
+  "intro": "Rates as in the lesson; confirm current rules.",
+  "rows": [
+   [
+    "Gold ETF",
+    "long term after 12 months, 12.5%"
+   ],
+   [
+    "Gold MF or FoF",
+    "long term after 24 months, 12.5%"
+   ],
+   [
+    "Physical gold",
+    "long term after 24 months, 12.5%"
+   ],
+   [
+    "Short term, all forms",
+    "taxed at slab rate"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s53q1",
+  "h": "Check yourself",
+  "q": "A gold ETF is held for 14 months. How are gains taxed?",
+  "opts": [
+   "Short term, taxed at the slab rate",
+   "Long term, 12.5% without indexation",
+   "Not taxed at all in any form",
+   "Taxed at 20% in every single case"
+  ],
+  "ans": 1,
+  "why": [
+   "Short term applies under 12 months. The details here point elsewhere.",
+   "Over 12 months is long term for ETFs. That matches the case described.",
+   "Gains are taxed. That does not match this case.",
+   "20% is not the stated rate. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s53q2",
+  "h": "Check yourself",
+  "q": "A gold fund of funds is held for 14 months. Is it long term?",
+  "opts": [
+   "Yes, after only 3 months",
+   "Yes, after only 12 months",
+   "Yes, after 5 years",
+   "No, it needs over 24 months"
+  ],
+  "ans": 3,
+  "why": [
+   "3 months is too short.",
+   "12 months applies to ETFs only.",
+   "5 years is not needed.",
+   "FoFs need over 24 months."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s53q3",
+  "h": "Check yourself",
+  "q": "How are short-term gains on gold taxed?",
+  "opts": [
+   "At slab rate",
+   "At 12.5% flat",
+   "At zero",
+   "At 40% flat"
+  ],
+  "ans": 0,
+  "why": [
+   "Short-term gains follow slab rate. That matches the case described.",
+   "12.5% is the long-term rate. It does not answer what was asked.",
+   "They are taxed. It does not answer what was asked.",
+   "40% is not the stated rate. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s53q4",
+  "h": "Check yourself",
+  "q": "Why check current rules before advising?",
+  "opts": [
+   "Rules never change",
+   "Only SEBI decides tax",
+   "Tax rules can change",
+   "Gold is outside tax"
+  ],
+  "ans": 2,
+  "why": [
+   "Rules do change. It does not fit the facts given.",
+   "SEBI does not set tax. It does not answer what was asked.",
+   "Rates and periods can change. This fits the facts given.",
+   "Gold gains are taxable. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Gold ETF: long term after 12 months. FoF and physical: after 24.",
+   "Long-term gains 12.5% without indexation. Short term at slab.",
+   "Confirm current rules before advising."
+  ]
+ }
+]

@@ -1,0 +1,217 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "The MoD signed ₹2.10 lakh crore of contracts in FY26 till December 2025. But approvals called AoN crossed ₹3.5 lakh crore. An approval is not an order. Between the two lies months, sometimes years.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Approval is not an order",
+  "lines": [
+   [
+    "meena",
+    "₹3.5 lakh crore approved. Does that mean orders are placed?"
+   ],
+   [
+    "sikka",
+    "No. AoN, Acceptance of Necessity, is the first formal step. Contracts and orders follow over months or years. A big AoN pipeline gives suppliers revenue visibility, not instant revenue."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "From approval to revenue",
+  "bw": 170,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "AoN approval",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 125,
+    "label": "Tender and trials"
+   },
+   {
+    "x": 170,
+    "y": 200,
+    "label": "Contract signed"
+   },
+   {
+    "x": 170,
+    "y": 275,
+    "label": "Delivery, revenue",
+    "col": "#3CC47A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    "months"
+   ],
+   [
+    1,
+    2,
+    "months"
+   ],
+   [
+    2,
+    3,
+    "years"
+   ]
+  ],
+  "alt": "Four steps from approval to revenue",
+  "caps": [
+   [
+    0.3,
+    "AoN is the first formal approval."
+   ],
+   [
+    2.2,
+    "Then come tenders and trials."
+   ],
+   [
+    4.0,
+    "A contract is signed, often months later."
+   ],
+   [
+    5.6,
+    "Revenue arrives as deliveries happen."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "The order pipeline",
+  "stops": [
+   [
+    "AoN is the first formal step",
+    true
+   ],
+   [
+    "AoN approval equals a signed contract",
+    false
+   ],
+   [
+    "A large AoN pipeline gives multi-year visibility",
+    true
+   ],
+   [
+    "Revenue arrives the day AoN is granted",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is the first approval."
+   ],
+   [
+    2.2,
+    "Contracts follow later."
+   ],
+   [
+    4.0,
+    "Orders convert over years."
+   ],
+   [
+    5.6,
+    "Deliveries bring revenue."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s35q1",
+  "h": "Check yourself",
+  "q": "What is the first formal step in a defence purchase?",
+  "opts": [
+   "Delivery of the equipment",
+   "Acceptance of Necessity",
+   "Payment of the final bill",
+   "Signing of an export deal"
+  ],
+  "ans": 1,
+  "why": [
+   "Delivery comes near the end.",
+   "AoN is the first formal approval.",
+   "Final payment comes after delivery.",
+   "Export deals are a different matter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s35q2",
+  "h": "Check yourself",
+  "q": "FY26 contracts signed were ₹2.10 lakh crore while AoN exceeded ₹3.5 lakh crore. What does the gap show?",
+  "opts": [
+   "Approvals run ahead of contracts",
+   "Contracts exceed approvals given",
+   "No approvals were given at all",
+   "All the approvals were cancelled"
+  ],
+  "ans": 0,
+  "why": [
+   "Approvals come first and contracts follow later.",
+   "Contracts are below approvals here.",
+   "More than ₹3.5 lakh crore was approved.",
+   "The lesson does not say any were cancelled."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s35q3",
+  "h": "Check yourself",
+  "q": "How does a large AoN pipeline help suppliers?",
+  "opts": [
+   "It pays them at once in full",
+   "It sets their profit margins",
+   "It gives multi-year visibility",
+   "It removes all the competition"
+  ],
+  "ans": 2,
+  "why": [
+   "Approval does not pay suppliers at once. It does not fit the facts given.",
+   "Approvals do not set margins. It does not fit the facts given.",
+   "It points to orders that may follow over years. That matches the case described.",
+   "Competition remains in tenders. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s35q4",
+  "h": "Check yourself",
+  "q": "How long can the step from AoN to orders take?",
+  "opts": [
+   "A single day",
+   "Exactly one week",
+   "It never takes time",
+   "Months or years"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not instant. It does not fit the facts given.",
+   "No fixed one-week rule is stated. It does not answer what was asked.",
+   "It does take time. The details here point elsewhere.",
+   "The lesson says contracts follow over months or years."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "AoN is the first formal approval. It is not a contract.",
+   "FY26 till Dec: ₹2.10 lakh crore contracts, AoN above ₹3.5 lakh crore.",
+   "A large pipeline gives visibility, not instant revenue."
+  ]
+ }
+]

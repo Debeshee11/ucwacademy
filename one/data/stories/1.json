@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A headline says the industry's assets hit a record. Does that mean investors earned more? Not at all. Assets can rise because markets rose or because new money came in. Neither tells you what one investor earned.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Big number, small meaning",
+  "lines": [
+   [
+    "meena",
+    "Assets are at a record. Surely investors are doing well?"
+   ],
+   [
+    "sikka",
+    "AUM is the market value of all holdings on one date. It moves with new money and with prices. It says nothing about what you earned, which depends on what you held and when."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "AUM falls with no one leaving",
+  "intro": "Mark-to-market in plain numbers.",
+  "rows": [
+   [
+    "Equity assets",
+    "₹40 lakh crore"
+   ],
+   [
+    "Market falls by",
+    "6%"
+   ],
+   [
+    "=",
+    "AUM falls by about",
+    "₹2.4 lakh crore"
+   ],
+   [
+    "Investors who redeemed",
+    "none needed"
+   ]
+  ],
+  "note": "Prices alone moved the number. Figures are made up for the lesson."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Reading AUM",
+  "stops": [
+   [
+    "AUM is the market value on a given date",
+    true
+   ],
+   [
+    "Rising AUM means every investor gained",
+    false
+   ],
+   [
+    "Net flows and market moves both change AUM",
+    true
+   ],
+   [
+    "A market fall cannot cut AUM without redemptions",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is a stock, like a snapshot."
+   ],
+   [
+    2.2,
+    "Gains depend on what and when each investor bought."
+   ],
+   [
+    4.0,
+    "New money and price changes both count."
+   ],
+   [
+    5.6,
+    "A price fall alone shrinks AUM."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s1q1",
+  "h": "Check yourself",
+  "q": "Equity assets of ₹40 lakh crore fall 6% with no redemptions. What happens to AUM?",
+  "opts": [
+   "It stays put at ₹40 lakh crore",
+   "It rises by about ₹2.4 lakh crore",
+   "It falls by about ₹2.4 lakh crore",
+   "It falls by about ₹6 lakh crore"
+  ],
+  "ans": 2,
+  "why": [
+   "Prices fell, so the value of holdings cannot stay put.",
+   "A price fall cannot lift the value of what is held.",
+   "6% of ₹40 lakh crore is ₹2.4 lakh crore, from prices alone.",
+   "₹6 lakh crore is not 6% of ₹40 lakh crore."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s1q2",
+  "h": "Check yourself",
+  "q": "AUM touches a record high. What can an RM safely say?",
+  "opts": [
+   "Assets are high, but returns vary",
+   "Every client has made money this year",
+   "The market will keep rising from here",
+   "Clients should add more money now"
+  ],
+  "ans": 0,
+  "why": [
+   "AUM shows size, while returns depend on holdings and timing.",
+   "AUM says nothing about each client's own gain.",
+   "AUM cannot forecast where the market goes next.",
+   "Record AUM is not a reason to advise buying."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s1q3",
+  "h": "Check yourself",
+  "q": "What are the two things that change AUM?",
+  "opts": [
+   "The fund manager's age and fees",
+   "The number of ads and launches",
+   "Only the new SIP count each month",
+   "Net flows and mark-to-market changes"
+  ],
+  "ans": 3,
+  "why": [
+   "Age and fees are not the drivers of AUM changes.",
+   "Ads and launches do not move the figure directly.",
+   "SIPs are one flow among several, not the only driver.",
+   "New money less redemptions, plus price moves, change AUM."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s1q4",
+  "h": "Check yourself",
+  "q": "Record SIP inflows arrive in a falling market. What does an RM read from it?",
+  "opts": [
+   "The market has already bottomed",
+   "Investors are showing discipline",
+   "Returns are guaranteed ahead",
+   "Everyone is in profit now"
+  ],
+  "ans": 1,
+  "why": [
+   "Flows cannot tell you where the market bottoms. It does not answer what was asked.",
+   "Steady SIPs in a fall show behaviour, which is the useful reading.",
+   "Flows do not guarantee any return. The details here point elsewhere.",
+   "Many recent investors may still be at a loss. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "AUM is a stock: market value on one date.",
+   "It moves with net flows and with prices.",
+   "It does not tell you what any one investor earned."
+  ]
+ }
+]

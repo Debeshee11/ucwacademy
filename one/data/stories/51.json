@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client holds a sovereign gold bond bought years ago. It pays 2.5% a year on the issue price, and its value follows the gold price. Should she sell today or wait? The tax rule shapes the answer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Holding SGBs",
+  "lines": [
+   [
+    "meena",
+    "What should an existing holder know?"
+   ],
+   [
+    "sikka",
+    "Tenure is 8 years. Premature redemption is allowed after year 5, on interest dates. Capital gains on redemption at maturity are exempt from tax for individuals. So holders with big gains should usually hold to maturity."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "SGB basics",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Interest",
+    "2.5% a year on the issue price"
+   ],
+   [
+    "Returns also follow",
+    "the gold price change"
+   ],
+   [
+    "Tenure",
+    "8 years; exit allowed after year 5 on interest dates"
+   ],
+   [
+    "Gains at maturity",
+    "exempt from tax for individuals"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s51q1",
+  "h": "Check yourself",
+  "q": "How long is the SGB tenure?",
+  "opts": [
+   "3 years",
+   "8 years",
+   "20 years",
+   "1 year"
+  ],
+  "ans": 1,
+  "why": [
+   "3 years is far too short.",
+   "The tenure is 8 years.",
+   "20 years is far too long.",
+   "1 year is far too short."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s51q2",
+  "h": "Check yourself",
+  "q": "When is premature redemption allowed?",
+  "opts": [
+   "After year 5, on interest dates",
+   "On any single day in year 1",
+   "Only on a public holiday date",
+   "Never, not under any case"
+  ],
+  "ans": 0,
+  "why": [
+   "After five years, on interest dates. This fits the facts given.",
+   "Not in the first year. That does not match this case.",
+   "Holidays do not decide this. It does not fit the facts given.",
+   "It is allowed after year 5. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s51q3",
+  "h": "Check yourself",
+  "q": "What interest does an SGB pay?",
+  "opts": [
+   "12% a year on the gold price",
+   "0% in every single year",
+   "2.5% a year on the issue price",
+   "7% a year on the market price"
+  ],
+  "ans": 2,
+  "why": [
+   "12% is not the coupon. That does not match this case.",
+   "SGBs do pay interest. It does not fit the facts given.",
+   "The coupon is 2.5% on the issue price.",
+   "7% is not the coupon. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s51q4",
+  "h": "Check yourself",
+  "q": "Why hold a bond with big gains to maturity?",
+  "opts": [
+   "Gold always rises after year eight",
+   "Interest doubles during year seven",
+   "Early exit is banned for all holders",
+   "Gains at maturity are exempt from tax"
+  ],
+  "ans": 3,
+  "why": [
+   "Gold can fall at any time.",
+   "Interest does not double.",
+   "Early exit is allowed after year 5.",
+   "The tax exemption is the benefit."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SGB pays 2.5% a year plus the gold price change.",
+   "Tenure 8 years; exit after year 5 on interest dates.",
+   "Gains at maturity are exempt for individuals."
+  ]
+ }
+]

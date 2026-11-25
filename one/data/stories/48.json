@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The RBI held a record 880.2 tonnes of gold by end-2025. Yet it bought only about 4 tonnes that year, down from 72.6 tonnes in 2024. So why did the gold share of reserves still grow? The price did the work.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Buying and value",
+  "lines": [
+   [
+    "meena",
+    "The RBI bought less. So why are reserves in gold bigger?"
+   ],
+   [
+    "sikka",
+    "Value is tonnes times price. Higher prices lifted the worth of gold already held, even with little new buying. That is why gold is a growing share of India's forex reserves."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "2024",
+  "b": "2025",
+  "rows": [
+   [
+    "RBI gold bought (tonnes)",
+    72.6,
+    4
+   ]
+  ],
+  "h": "RBI buying, as per the lesson",
+  "alt": "Bars showing RBI gold purchases falling from 72.6 to about 4 tonnes",
+  "caps": [
+   [
+    0.3,
+    "In 2024 the RBI bought 72.6 tonnes."
+   ],
+   [
+    2.2,
+    "In 2025 it bought only about 4 tonnes."
+   ],
+   [
+    4.0,
+    "That was an eight-year low."
+   ],
+   [
+    5.6,
+    "Yet higher prices raised the value of its holdings."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "RBI and gold",
+  "stops": [
+   [
+    "RBI gold holdings hit a record 880.2 tonnes",
+    true
+   ],
+   [
+    "The RBI bought more in 2025 than in 2024",
+    false
+   ],
+   [
+    "Higher prices raise reserve value without buying",
+    true
+   ],
+   [
+    "Gold is a shrinking share of forex reserves",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "By end-2025."
+   ],
+   [
+    2.2,
+    "It bought about 4 tonnes, down from 72.6."
+   ],
+   [
+    4.0,
+    "Value is tonnes times price."
+   ],
+   [
+    5.6,
+    "It is a growing share."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s48q1",
+  "h": "Check yourself",
+  "q": "RBI bought about 4 tonnes in 2025 against 72.6 tonnes in 2024. What does that show?",
+  "opts": [
+   "A sharp slowdown in buying",
+   "A big rise in its buying",
+   "No change in its buying",
+   "A sale of all of its gold"
+  ],
+  "ans": 0,
+  "why": [
+   "Buying fell to an eight-year low.",
+   "The figure fell, not rose.",
+   "4 against 72.6 is a large change.",
+   "The holdings still hit a record."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s48q2",
+  "h": "Check yourself",
+  "q": "How can gold's value in reserves rise when the RBI buys little?",
+  "opts": [
+   "The RBI prints more gold",
+   "SEBI revalues the reserves",
+   "The gold price rises",
+   "Gold is added by banks"
+  ],
+  "ans": 2,
+  "why": [
+   "No one prints gold. The details here point elsewhere.",
+   "SEBI does not revalue RBI reserves. That does not match this case.",
+   "Value is tonnes times price, so price rises lift it.",
+   "Banks do not add to RBI reserves this way. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s48q3",
+  "h": "Check yourself",
+  "q": "What were RBI's gold holdings by end-2025, as per the lesson?",
+  "opts": [
+   "A record 72.6 tonnes",
+   "A record 880.2 tonnes",
+   "A low of 4 tonnes",
+   "A record 289 tonnes"
+  ],
+  "ans": 1,
+  "why": [
+   "72.6 tonnes is the 2024 purchase.",
+   "The lesson gives 880.2 tonnes.",
+   "4 tonnes is the 2025 purchase.",
+   "289 tonnes is the global Q2 2026 buying."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s48q4",
+  "h": "Check yourself",
+  "q": "Gold is described as what in India's forex reserves?",
+  "opts": [
+   "A falling share",
+   "A fixed share of 50%",
+   "A share set by SEBI",
+   "A growing share"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not described as falling. It does not answer what was asked.",
+   "No fixed share is stated. It does not answer what was asked.",
+   "SEBI does not set reserve shares. The details here point elsewhere.",
+   "Gold forms a growing share of reserves. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "RBI held a record 880.2 tonnes by end-2025.",
+   "It bought only ~4 tonnes in 2025, against 72.6 in 2024.",
+   "Higher prices lift value even without buying."
+  ]
+ }
+]

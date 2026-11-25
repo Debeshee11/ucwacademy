@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Five numbers tell the story. Budget FY27: ₹7.85 lakh crore. Capex: ₹2.19 lakh crore, up 22%. Production in FY26: ₹1.78 lakh crore. Exports in FY26: ₹38,424 crore, up 63%. Know them cold.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The cheat sheet",
+  "lines": [
+   [
+    "meena",
+    "What else should I remember?"
+   ],
+   [
+    "sikka",
+    "Production in FY26 is about four times FY14. A domestic reservation of 75% of the modernisation budget. And the 2029 targets: ₹3 lakh crore in production and ₹50,000 crore in exports."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "FY26 and the 2029 targets, ₹ lakh crore",
+  "vals": [
+   1.78,
+   3
+  ],
+  "labels": [
+   "FY26",
+   "2029"
+  ],
+  "big": "₹1.78 to ₹3 lakh crore",
+  "small": "production, actual and target",
+  "alt": "Bars of production in FY26 and the 2029 target",
+  "caps": [
+   [
+    0.3,
+    "FY26 production: ₹1.78 lakh crore."
+   ],
+   [
+    2.2,
+    "About four times FY14."
+   ],
+   [
+    4.0,
+    "2029 target: ₹3 lakh crore."
+   ],
+   [
+    5.6,
+    "Exports target: ₹50,000 crore."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s44q1",
+  "h": "Check yourself",
+  "q": "What is the FY27 defence budget in the lesson?",
+  "opts": [
+   "₹7.85 lakh crore",
+   "₹7.85 crore",
+   "₹78.5 lakh crore",
+   "₹785 lakh crore"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives ₹7.85 lakh crore.",
+   "₹7.85 crore is far too small.",
+   "₹78.5 lakh crore is too large.",
+   "₹785 lakh crore is too large."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s44q2",
+  "h": "Check yourself",
+  "q": "How much did defence exports rise in FY26?",
+  "opts": [
+   "About 6%",
+   "About 3%",
+   "About 63%",
+   "They fell"
+  ],
+  "ans": 2,
+  "why": [
+   "6% is too small. That does not match this case.",
+   "3% is too small. It does not fit the facts given.",
+   "The lesson cites +63%. This fits the facts given.",
+   "They rose. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s44q3",
+  "h": "Check yourself",
+  "q": "What share of the modernisation budget is reserved for domestic firms?",
+  "opts": [
+   "7.5%",
+   "75%",
+   "2.5%",
+   "0%"
+  ],
+  "ans": 1,
+  "why": [
+   "7.5% is too low.",
+   "The lesson cites 75%.",
+   "2.5% is too low.",
+   "A reservation exists."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s44q4",
+  "h": "Check yourself",
+  "q": "What is the 2029 production target?",
+  "opts": [
+   "₹30 crore",
+   "₹3,000 lakh crore",
+   "₹0",
+   "₹3 lakh crore"
+  ],
+  "ans": 3,
+  "why": [
+   "₹30 crore is too small. It does not answer what was asked.",
+   "₹3,000 lakh crore is too large. The details here point elsewhere.",
+   "A target exists. The details here point elsewhere.",
+   "The lesson cites ₹3 lakh crore. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Budget ₹7.85 lakh crore; capex ₹2.19 lakh crore (+22%).",
+   "Production ₹1.78 lakh crore; exports ₹38,424 crore (+63%).",
+   "75% domestic reservation; 2029 targets ₹3 lakh crore and ₹50,000 crore."
+  ]
+ }
+]

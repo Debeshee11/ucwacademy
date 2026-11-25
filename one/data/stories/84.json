@@ -1,0 +1,270 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Four objections turn up in almost every client meeting this year: rates, gold, fixed deposits and market highs. Each has a short honest answer, and each answer has a number behind it.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Four worries in one breath",
+  "lines": [
+   [
+    "rohan",
+    "The RBI raised rates in October. Gold beat my equity. My FD pays 7%. And the market is at a high. Should I just stop my SIPs?"
+   ],
+   [
+    "sikka",
+    "Four worries, four calculations. Let us answer each with arithmetic, not with comfort."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What a rate rise does to debt funds",
+  "alt": "Bars comparing the price fall and the months of interest needed to recover it for a short-duration and a long-duration fund",
+  "caps": [
+   [
+    0.3,
+    "On 7 October 2026 the RBI raised the repo rate by 0.25 point to 5.50%. Bond prices fall when yields rise."
+   ],
+   [
+    2.5,
+    "Assume yields rise 0.25 point. A duration-2 fund loses about 0.5%. A duration-6 fund loses about 1.5%."
+   ],
+   [
+    4.4,
+    "At an assumed 7% yield, that is under a month of interest for the short fund, and 2.6 months for the long one."
+   ],
+   [
+    6.4,
+    "A rate rise hits debt funds by duration. It is no reason to stop a ten-year equity SIP."
+   ]
+  ],
+  "a": "Duration 2 fund",
+  "b": "Duration 6 fund",
+  "rows": [
+   [
+    "Price fall if yields +0.25 (%)",
+    0.5,
+    1.5
+   ],
+   [
+    "Months of interest to recoup",
+    0.9,
+    2.6
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "₹1 lakh in a 7% FD for 10 years",
+  "alt": "Four bars showing the FD value before tax, after tax, and after inflation in thousands of rupees",
+  "caps": [
+   [
+    0.3,
+    "₹1 lakh in a 7% FD grows to about ₹1.97 lakh in ten years, before tax. Bars are in ₹ thousand."
+   ],
+   [
+    1.9,
+    "For a client in the 30% slab (31.2% with cess), interest is taxed every year. About ₹1.60 lakh is left."
+   ],
+   [
+    3.0,
+    "If inflation averages an assumed 5%, that ₹1.60 lakh buys what ₹98,000 buys today."
+   ],
+   [
+    4.4,
+    "The FD has stood still in real terms. That is the number to compare, not 7%."
+   ]
+  ],
+  "vals": [
+   100,
+   196.7,
+   160.1,
+   98.3
+  ],
+  "labels": [
+   "Today",
+   "FD, 10y",
+   "Post-tax",
+   "Real"
+  ],
+  "big": "Real return: about zero",
+  "small": "7% FD, 30% slab, 5% inflation"
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Gold ran. Now what?",
+  "alt": "Three bars showing a portfolio plan, the mix after gold rises, and the mix after rebalancing",
+  "caps": [
+   [
+    0.3,
+    "A ₹10 lakh plan: 50% equity, 35% debt, 15% gold. In a year gold gains 40%, equity 2%, debt 7% (made up)."
+   ],
+   [
+    2.0,
+    "Gold is now 19% of ₹10.95 lakh. The plan said 15%."
+   ],
+   [
+    3.7,
+    "Rebalance: sell about ₹46,000 of gold and add it to equity and debt. Back to the plan."
+   ],
+   [
+    5.2,
+    "You sell what ran and buy what lagged. That is discipline, not chasing."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "The plan",
+    "segs": [
+     [
+      "Equity 50",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 35",
+      35,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15",
+      15,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "A year later, gold up 40%",
+    "segs": [
+     [
+      "Equity 47",
+      47,
+      "#3CC47A"
+     ],
+     [
+      "Debt 34",
+      34,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 19",
+      19,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "After rebalancing",
+    "segs": [
+     [
+      "Equity 50",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 35",
+      35,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15",
+      15,
+      "#FFC531"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s84q1",
+  "h": "Check yourself",
+  "q": "The RBI raised the repo rate last month. A client with a ₹25,000 equity SIP and a debt fund of duration 6 says: stop the SIP and get out of debt. What do you advise?",
+  "opts": [
+   "Stop the SIP, since equity falls whenever rates rise",
+   "Move all his money into a long-duration gilt fund now",
+   "Stop the SIP and the debt fund and wait in savings",
+   "Keep the SIP; check the debt fund's duration fit"
+  ],
+  "ans": 3,
+  "why": [
+   "Rates can move markets for a while, but a ten-year SIP buys through such phases. Stopping reacts to one event with a long plan.",
+   "Long duration is the most exposed to a further rise. Switching into it after a hike adds the very risk he is worried about.",
+   "Waiting in savings makes two timing calls at once and earns little. A 0.25-point rise costs a duration-6 fund about 1.5% once.",
+   "The equity SIP has a long goal, and the debt fund's hit is small and recoverable. Check whether its duration fits his horizon."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s84q2",
+  "h": "Check yourself",
+  "q": "In a ₹10 lakh plan of 50% equity, 35% debt and 15% gold, gold gains 40%, equity 2% and debt 7% in a year. The client wants to sell equity and buy more gold. What do you say?",
+  "opts": [
+   "Sell about ₹46,000 of gold, add it to equity and debt",
+   "Sell equity and buy more gold, since gold is the leader",
+   "Sell all the gold, since it has clearly run too far",
+   "Do nothing, since weights need not be reset every year"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold is ₹2.10 lakh of ₹10.945 lakh, 19.2%. Back to 15% means about ₹1.64 lakh, so sell about ₹46,000 and restock the rest.",
+   "That chases last year's winner at a higher price, and sells equity that lagged. It breaks the plan the client agreed to follow.",
+   "Selling all the gold overshoots. The plan wants 15% in gold, so only the excess above that weight needs trimming.",
+   "Left alone, the weights drift to whatever ran most, so risk drifts too. A periodic reset keeps the plan's risk as agreed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s84q3",
+  "h": "Check yourself",
+  "q": "A client in the 30% tax slab asks why he should take equity risk when his FD pays 7%. What is the most honest reply?",
+  "opts": [
+   "Equity always beats 7%, so the FD is simply a mistake",
+   "FD interest escapes tax, so the 7% reaches him in full",
+   "FD for near goals; its real return is about zero",
+   "Equity cannot lose money over seven years, so skip the FD"
+  ],
+  "ans": 2,
+  "why": [
+   "Equity has no guarantee. It may beat the FD over long periods or may not, and a promise would be misselling.",
+   "FD interest is added to income and taxed at his slab. That is why 7% shrinks to about 4.8% for him.",
+   "At 31.2% tax the 7% becomes about 4.8%, near an assumed 5% inflation. The FD is safe and fits near goals, but does not grow wealth.",
+   "Equity can fall hard over seven years. Saying otherwise implies an assured outcome, which breaks the compliance rules."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s84q4",
+  "h": "Check yourself",
+  "q": "A client has ₹30 lakh from a property sale and will not invest because the Nifty is at an all-time high. He wants to wait for a 10% fall. What is the better approach?",
+  "opts": [
+   "Wait; every high is followed by a fall of at least 10%",
+   "Hold it safely and STP it in over 6 to 12 months",
+   "Invest it all today, since waiting has never paid",
+   "Put it all in gold until the market becomes cheaper"
+  ],
+  "ans": 1,
+  "why": [
+   "Markets at highs can keep rising for years. A rule that a 10% fall must follow is a guess, and waiting has its own cost.",
+   "Staged entry spreads the timing risk, so he is not betting on one day, and he can stay with the plan whichever way it goes.",
+   "Never paid is also false: a lump sum placed just before a fall hurts. His fear of regret is a real input into the plan.",
+   "Gold is its own risky asset and can fall too. Swapping one timing bet for another is not a plan."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A rate rise hits debt funds by duration, about 0.25% for each year of duration per 0.25-point rise. It is no reason to stop an equity SIP.",
+   "Rebalance to targets: sell what ran, buy what lagged. Do not chase last year's winner.",
+   "An FD at 7% in the 30% slab earns about 4.8% after tax, near inflation. For market highs, use SIP or STP."
+  ]
+ }
+]

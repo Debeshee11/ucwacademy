@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A deposit pays 6.5%. Inflation runs at 5%. It feels like a 6.5% gain. In real terms it is about 1.5%, and less after tax. The number on the receipt is not the number in your pocket.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Real versus nominal",
+  "lines": [
+   [
+    "meena",
+    "My FD gives 6.5%. That is a good return, right?"
+   ],
+   [
+    "sikka",
+    "Subtract inflation. Real return is nominal return less inflation, so 6.5% less 5% is about 1.5%. Tax takes more. Always read the real number."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Real return",
+  "intro": "A made-up year.",
+  "rows": [
+   [
+    "FD interest",
+    "6.5%"
+   ],
+   [
+    "Inflation",
+    "5.0%"
+   ],
+   [
+    "=",
+    "Real return before tax",
+    "about 1.5%"
+   ],
+   [
+    "RBI target",
+    "CPI 4%, band 2% to 6%"
+   ]
+  ],
+  "note": "Figures as per the lesson text. Check current releases. FY27 inflation is projected near 5%."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Inflation and returns",
+  "stops": [
+   [
+    "Real return = nominal return less inflation",
+    true
+   ],
+   [
+    "A 6.5% FD in a 5% year earns 6.5% real",
+    false
+   ],
+   [
+    "RBI's CPI target is 4%, with a 2% to 6% band",
+    true
+   ],
+   [
+    "Tax never affects an FD's real return",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Subtract the price rise."
+   ],
+   [
+    2.2,
+    "Real is about 1.5% here."
+   ],
+   [
+    4.0,
+    "The band is 2% to 6%."
+   ],
+   [
+    5.6,
+    "Tax lowers it further."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s19q1",
+  "h": "Check yourself",
+  "q": "An FD pays 7% and inflation is 5%. What is the approximate real return before tax?",
+  "opts": [
+   "About 2%",
+   "About 12%",
+   "About 7%",
+   "About 35%"
+  ],
+  "ans": 0,
+  "why": [
+   "Real return is 7% less 5%, so about 2%.",
+   "12% adds the two numbers, which is wrong.",
+   "7% ignores inflation entirely.",
+   "35% multiplies them, which is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s19q2",
+  "h": "Check yourself",
+  "q": "What is the RBI's inflation target?",
+  "opts": [
+   "CPI of 10% flat, always",
+   "CPI of 0% exactly, always",
+   "CPI of 4%, in a 2%–6% band",
+   "A band of 8%–12% for CPI"
+  ],
+  "ans": 2,
+  "why": [
+   "10% is far above the target. The details here point elsewhere.",
+   "The target is not zero. That does not match this case.",
+   "The target is 4% with a tolerance band of 2% to 6%.",
+   "The band is not 8% to 12%. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s19q3",
+  "h": "Check yourself",
+  "q": "Why can a high FD rate still leave a saver behind?",
+  "opts": [
+   "FDs lose their principal each year",
+   "Inflation and tax cut the real return",
+   "Banks pay no interest at all now",
+   "The RBI sets FD tax at 100% flat"
+  ],
+  "ans": 1,
+  "why": [
+   "FD principal does not fall in value that way.",
+   "Inflation and tax both eat into the nominal rate.",
+   "Banks do pay interest. It does not answer what was asked.",
+   "Tax is not set at 100%. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s19q4",
+  "h": "Check yourself",
+  "q": "Which statement about long periods is closer to the lesson?",
+  "opts": [
+   "FDs always beat inflation after tax",
+   "Equity always beats inflation each year",
+   "Nothing has ever beaten inflation",
+   "Equity and gold often beat inflation"
+  ],
+  "ans": 3,
+  "why": [
+   "FDs often do not beat it after tax. It does not fit the facts given.",
+   "No asset wins every single year. It does not answer what was asked.",
+   "Some assets have beaten it over long periods. The details here point elsewhere.",
+   "Historically, they have beaten inflation over long periods."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Real return = nominal return − inflation.",
+   "RBI target: CPI 4%, band 2% to 6%.",
+   "Tax lowers the real return further."
+  ]
+ }
+]

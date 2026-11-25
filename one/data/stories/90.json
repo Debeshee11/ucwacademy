@@ -1,0 +1,286 @@
+[
+ {
+  "k": "fact",
+  "art": "globe",
+  "h": "Before you start",
+  "big": "Industry at ₹87 lakh crore, over 10 crore SIP accounts, growth at 7.7%, a rate rise on 7 October, record defence output. One test ties it all together: a fact is useful only with the right size, source and date, for the right client.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Too many numbers",
+  "lines": [
+   [
+    "rohan",
+    "That is a lot of numbers. How do I use them without sounding like a newsreader?"
+   ],
+   [
+    "sikka",
+    "Pick the one fact that fits the client, give its source and month, and size the idea to her plan. Let us revise with that test."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Defence, in ₹ thousand crore",
+  "alt": "Three bars of defence budget, production and exports in thousand crore rupees",
+  "caps": [
+   [
+    0.3,
+    "The Union Budget 2026-27 set defence at ₹7.85 lakh crore, up 15%. Bars are in ₹ thousand crore."
+   ],
+   [
+    1.8,
+    "FY26 output hit a record ₹1.78 lakh crore, and exports a record ₹38,424 crore."
+   ],
+   [
+    3.1,
+    "Exports are about 22% of output: growing fast, still a minority of sales."
+   ],
+   [
+    4.3,
+    "Good news is not a price. A defence fund is a satellite, never the core."
+   ]
+  ],
+  "vals": [
+   785,
+   178,
+   38.4
+  ],
+  "labels": [
+   "Budget",
+   "Output",
+   "Exports"
+  ],
+  "big": "Exports: 22% of output",
+  "small": "₹38,424 crore of ₹1.78 lakh crore"
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Fact check",
+  "alt": "A shield with true and false claims from the course",
+  "caps": [
+   [
+    0.3,
+    "Four claims from this course. Two are true, and two are not."
+   ],
+   [
+    3.0,
+    "The RBI raised the repo rate by 0.25 point to 5.50% on 7 October 2026. FY26 growth was 7.7%."
+   ],
+   [
+    5.5,
+    "SIPs run near ₹32,000 crore a month, and defence exports rose about 63%. Both false claims miss the facts."
+   ]
+  ],
+  "title": "Which claims hold?",
+  "stops": [
+   [
+    "Repo rate raised to 5.50% on 7 Oct 2026",
+    true
+   ],
+   [
+    "FY26 GDP growth was 7.7%",
+    true
+   ],
+   [
+    "SIP flows fell below ₹10,000 crore",
+    false
+   ],
+   [
+    "Defence exports fell in FY26",
+    false
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Putting it together",
+  "alt": "Two bars showing a nervous first-time investor's mix and a confident saver's mix with the theme slice highlighted",
+  "caps": [
+   [
+    0.3,
+    "Two made-up plans, not advice. The purple slice is a theme, such as defence."
+   ],
+   [
+    1.6,
+    "The nervous first-timer: 75% in a multi-asset core, 15% gold, 10% theme."
+   ],
+   [
+    3.1,
+    "The confident saver: 60% equity core, 20% debt, 10% gold and silver, 10% themes."
+   ],
+   [
+    4.4,
+    "Themes stay in the satellite. The core does the heavy lifting in both plans."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Nervous first-time investor",
+    "segs": [
+     [
+      "Multi-asset core: 75",
+      75,
+      "#8EC5FF"
+     ],
+     [
+      "Gold",
+      15,
+      "#FFC531"
+     ],
+     [
+      "Theme",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Confident saver, 15 years",
+    "segs": [
+     [
+      "Equity core: 60",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Debt: 20",
+      20,
+      "#8EC5FF"
+     ],
+     [
+      "Gold",
+      10,
+      "#FFC531"
+     ],
+     [
+      "Theme",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The numbers to carry",
+  "intro": "Anchors from this course, with their dates.",
+  "rows": [
+   [
+    "Industry AUM, Aug 2026",
+    "₹87.08 lakh crore"
+   ],
+   [
+    "Contributing SIP accounts",
+    "10.02 crore"
+   ],
+   [
+    "SIP money in August",
+    "₹32,297 crore"
+   ],
+   [
+    "Equity inflow streak",
+    "66 months, to Aug 2026"
+   ],
+   [
+    "FY26 GDP growth",
+    "7.7%"
+   ],
+   [
+    "Repo rate from 7 Oct 2026",
+    "5.50%, up 0.25 point"
+   ]
+  ],
+  "note": "Quote each with its source and month, and refresh them after AMFI's data each month."
+ },
+ {
+  "k": "pick",
+  "id": "s90q1",
+  "h": "Check yourself",
+  "q": "A nervous first-time investor with ₹5 lakh points at defence funds and silver and asks for the best fund this year. Which plan fits this course?",
+  "opts": [
+   "Put most into a defence fund, since exports hit a record",
+   "Begin with a multi-asset core, and keep any theme small",
+   "Buy only a silver ETF, since ETF inflows are strong",
+   "Wait for the repo rate to fall before investing at all"
+  ],
+  "ans": 1,
+  "why": [
+   "A record export year is already in the price, and one theme swings widely. It is a poor start for a nervous first-timer.",
+   "A multi-asset core gives a smoother ride across assets, and a small theme slice lets him act on his interest without staking the plan.",
+   "Silver is one asset with sharp swings. Strong inflows show demand, not safety, so it should not be the whole plan.",
+   "Waiting to time rates is a guess with its own cost. A diversified start and a SIP deal with the worry more reliably."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s90q2",
+  "h": "Check yourself",
+  "q": "Which of these statements could you safely make to a client in November 2026?",
+  "opts": [
+   "SIP flows were under ₹10,000 crore a month in August 2026",
+   "India's FY26 growth was 6.1%, slower than the year before",
+   "The RBI raised the repo rate 0.25 point on 7 October 2026",
+   "Defence exports fell in FY26 after a record in FY25"
+  ],
+  "ans": 2,
+  "why": [
+   "SIP flows were a record ₹32,297 crore in August 2026. Quoting ₹10,000 crore would be off by about a factor of three.",
+   "FY26 growth was 7.7%, up from 7.1% the year before, so it neither fell to 6.1% nor slowed.",
+   "On 7 October 2026 the RBI raised the repo rate by 0.25 point to 5.50%, shifting its stance to calibrated tightening.",
+   "Defence exports rose about 63% in FY26 to a record ₹38,424 crore, so a fall is the opposite of the facts."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s90q3",
+  "h": "Check yourself",
+  "q": "A client says defence exports of ₹38,424 crore must be about half of the ₹1.78 lakh crore output. What is the right correction?",
+  "opts": [
+   "Yes, exports are about half of output",
+   "No, they are about 5% of output",
+   "No, they are about 40% of output",
+   "No, they are about 22% of output"
+  ],
+  "ans": 3,
+  "why": [
+   "Half of ₹1.78 lakh crore would be ₹89,000 crore, far above the ₹38,424 crore actually exported.",
+   "Five percent would be about ₹8,900 crore. Actual exports are more than four times that.",
+   "Forty percent would be ₹71,200 crore, nearly double the actual figure, so it overstates the share.",
+   "₹38,424 divided by ₹1,78,000 is about 21.6%, or 22%. A record figure is still a minority of output."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s90q4",
+  "h": "Check yourself",
+  "q": "A client wants 40% of his ₹20 lakh portfolio in a defence thematic fund after reading the budget news. What is the best answer?",
+  "opts": [
+   "Keep the core diversified; defence is a small satellite",
+   "Agree; a 15% budget rise makes defence the safest theme",
+   "Agree, but only if he invests through a monthly SIP",
+   "Refuse any thematic fund, since themes are never suitable"
+  ],
+  "ans": 0,
+  "why": [
+   "A theme can swing hard and news is already priced in. A small satellite keeps the plan safe if the theme disappoints.",
+   "A bigger budget is good news, not safety. A theme is concentrated, so a larger weight raises risk rather than lowering it.",
+   "An SIP spreads the entry, but 40% in one theme is still concentrated. The size problem remains whatever the method.",
+   "Themes can have a place as small satellites. A blanket ban ignores a client who has a view and can afford the swings."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Know the anchors: AUM ₹87.08 lakh crore and 10.02 crore contributing SIP accounts (August 2026), FY26 growth 7.7%, repo 5.50% from 7 October 2026.",
+   "Defence: ₹7.85 lakh crore budget, ₹1.78 lakh crore output, ₹38,424 crore exports. A theme is a satellite, and the core stays diversified.",
+   "Quote with source and month, promise no returns, and teach one fact to a colleague to lock it in."
+  ]
+ }
+]

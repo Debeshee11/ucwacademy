@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A REIT yields 7% and the client says, 'That is better than my deposit.' But REIT units trade on an exchange and can fall sharply. A yield is not a promise, and it is not a deposit rate.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What can go wrong",
+  "lines": [
+   [
+    "meena",
+    "What are the main risks?"
+   ],
+   [
+    "sikka",
+    "Price risk: units can fall in weak markets or when rates rise. Interest rate risk: higher rates raise borrowing costs and make deposits more attractive. Asset risk: lower occupancy, tenant exits or falling traffic cut income. Leverage risk: borrowing is capped at 49% of asset value. And some units trade thinly."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The risk map",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Price",
+    "units fall in weak markets or when rates rise"
+   ],
+   [
+    "Interest rate",
+    "higher rates raise costs, deposits look better"
+   ],
+   [
+    "Asset",
+    "lower occupancy, falling traffic, contract trouble"
+   ],
+   [
+    "Leverage and liquidity",
+    "borrowing capped at 49%; some units trade thinly"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s98q1",
+  "h": "Check yourself",
+  "q": "How can higher interest rates hurt units?",
+  "opts": [
+   "Always lift every unit price up",
+   "Raise costs, favour deposits",
+   "Remove all the risk from units",
+   "Fix the payout for many years"
+  ],
+  "ans": 1,
+  "why": [
+   "They do not always lift prices. The details here point elsewhere.",
+   "Costs rise and alternatives look better. That matches the case described.",
+   "Risk is not removed. That does not match this case.",
+   "Payouts are not fixed. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s98q2",
+  "h": "Check yourself",
+  "q": "What is the leverage cap in the lesson?",
+  "opts": [
+   "4.9% of asset value",
+   "90% of asset value",
+   "0% of asset value",
+   "49% of asset value"
+  ],
+  "ans": 3,
+  "why": [
+   "4.9% is far too low.",
+   "90% is far too high.",
+   "Borrowing is allowed.",
+   "The lesson gives 49%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s98q3",
+  "h": "Check yourself",
+  "q": "Which is an asset risk?",
+  "opts": [
+   "Falling occupancy, traffic",
+   "A change in the unit's logo",
+   "A new design for the brochure",
+   "A longer lunch at the office"
+  ],
+  "ans": 0,
+  "why": [
+   "Both cut the income that units pay out.",
+   "A logo does not change the income paid.",
+   "A brochure does not change the income.",
+   "Lunch breaks do not change the income."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s98q4",
+  "h": "Check yourself",
+  "q": "Why compare a yield with a deposit rate carefully?",
+  "opts": [
+   "Both are exactly the same product",
+   "Both are insured by the law",
+   "Units can fall; payouts can change",
+   "Both never change in value"
+  ],
+  "ans": 2,
+  "why": [
+   "They are different products.",
+   "Units carry no such insurance.",
+   "Units are market-linked.",
+   "Unit prices do change."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Price, interest rate, asset, leverage and liquidity risks.",
+   "Leverage is capped at 49% of asset value.",
+   "A yield is not a promise or a deposit rate."
+  ]
+ }
+]

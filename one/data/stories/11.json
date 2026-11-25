@@ -1,0 +1,146 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client with ₹3 lakh asks about a PMS. Another wants an AIF. What can an RM actually sell? It depends on certifications and the firm's approved processes. Knowing what you cannot sell matters as much as what you can.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Four products, four tickets",
+  "lines": [
+   [
+    "meena",
+    "How do the four products differ?"
+   ],
+   [
+    "sikka",
+    "Minimums: mutual funds from a few hundred rupees, SIFs ₹10 lakh, PMS ₹50 lakh, AIFs ₹1 crore. In funds, trades inside are not taxed in your hands until redemption. In PMS, securities sit in your demat, so each trade can create a tax event. Higher minimums mean more flexibility, not automatically better outcomes."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Usual minimums, ₹ lakh",
+  "vals": [
+   0.01,
+   10,
+   50,
+   100
+  ],
+  "labels": [
+   "MF",
+   "SIF",
+   "PMS",
+   "AIF"
+  ],
+  "big": "₹500 to ₹1 crore",
+  "small": "MF, SIF ₹10L, PMS ₹50L, AIF ₹1 crore",
+  "alt": "Bars of the minimum investments across four products",
+  "caps": [
+   [
+    0.3,
+    "Mutual funds start from a few hundred rupees."
+   ],
+   [
+    2.2,
+    "SIFs need ₹10 lakh."
+   ],
+   [
+    4.0,
+    "PMS needs ₹50 lakh."
+   ],
+   [
+    5.6,
+    "AIFs usually need ₹1 crore."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s11q1",
+  "h": "Check yourself",
+  "q": "Which product needs ₹50 lakh and holds shares in the client's demat?",
+  "opts": [
+   "SIF",
+   "PMS",
+   "AIF",
+   "Mutual fund"
+  ],
+  "ans": 1,
+  "why": [
+   "A SIF needs ₹10 lakh. It does not answer what was asked.",
+   "PMS has a ₹50 lakh minimum and own-name holdings.",
+   "An AIF usually needs ₹1 crore. That does not match this case.",
+   "A mutual fund starts from a few hundred rupees."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s11q2",
+  "h": "Check yourself",
+  "q": "In which product can each trade create a tax event for the client?",
+  "opts": [
+   "Mutual fund",
+   "SIF",
+   "ETF fund of funds",
+   "PMS"
+  ],
+  "ans": 3,
+  "why": [
+   "Trades inside a mutual fund are not taxed until redemption.",
+   "The same is true for SIFs. That does not match this case.",
+   "The same is true for a fund of funds. It does not fit the facts given.",
+   "Securities sit in the client's own account. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s11q3",
+  "h": "Check yourself",
+  "q": "Do higher minimums guarantee better outcomes?",
+  "opts": [
+   "No, only more flexibility, not results",
+   "Yes, always better in every single case",
+   "Yes, but only after one full year",
+   "Yes, once SEBI approval is formally given"
+  ],
+  "ans": 0,
+  "why": [
+   "Flexibility brings concentrated or complex risk.",
+   "No guarantee exists. It does not fit the facts given.",
+   "Time does not ensure it. It does not answer what was asked.",
+   "SEBI approval does not ensure it. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s11q4",
+  "h": "Check yourself",
+  "q": "What defines what an RM may sell?",
+  "opts": [
+   "The client's request made on its own",
+   "The RM's mood on that particular day",
+   "Certifications and firm-approved processes",
+   "The advert that was printed for the product"
+  ],
+  "ans": 2,
+  "why": [
+   "A request does not create permission. It does not fit the facts given.",
+   "Mood does not decide. It does not answer what was asked.",
+   "Role boundaries come from certifications and firm processes.",
+   "An advert does not decide. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Minimums: MF from hundreds, SIF ₹10 lakh, PMS ₹50 lakh, AIF ₹1 crore.",
+   "PMS trades can create tax events; MF and SIF trades inside are not taxed until redemption.",
+   "Know what you are allowed to sell."
+  ]
+ }
+]

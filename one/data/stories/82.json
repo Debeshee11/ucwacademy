@@ -1,0 +1,214 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "A new fund opens at ₹10 a unit and the brochure says \"get in at the start\". Your client sees an older fund at ₹500 and thinks ₹10 must be the bargain. It is one of the oldest myths in the market.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The ₹10 bargain",
+  "lines": [
+   [
+    "rohan",
+    "The old fund's NAV is ₹500 and the NFO is only ₹10. Surely ₹10 is the cheaper one?"
+   ],
+   [
+    "sikka",
+    "Put ₹50,000 into each, give them the same portfolio, and watch what the same market does to both."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "₹10 or ₹500?",
+  "alt": "Bars comparing units bought, value after a 12 percent rise, and percentage gain for a fund at 10 rupees and a fund at 500 rupees",
+  "caps": [
+   [
+    0.3,
+    "Same ₹50,000, same stocks inside. NAV ₹10 buys 5,000 units. NAV ₹500 buys 100."
+   ],
+   [
+    2.6,
+    "The shared portfolio rises 12%. Both unit prices rise 12%: to ₹11.20 and to ₹560."
+   ],
+   [
+    4.3,
+    "Both holdings are now worth ₹56,000. The gain is ₹6,000 either way."
+   ],
+   [
+    6.4,
+    "Returns are percentages. The NAV level is only where the counting started."
+   ]
+  ],
+  "a": "NFO at ₹10",
+  "b": "Old fund at ₹500",
+  "rows": [
+   [
+    "Units bought with ₹50,000",
+    5000,
+    100
+   ],
+   [
+    "Worth after 12% rise (₹ thousand)",
+    56,
+    56
+   ],
+   [
+    "Gain (% of money put in)",
+    12,
+    12
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "When an NFO earns a place",
+  "alt": "A shield with good and weak reasons to recommend a new fund offer",
+  "caps": [
+   [
+    0.3,
+    "An NFO has no record to judge. It must earn its place on strategy, team and fit."
+   ],
+   [
+    3.0,
+    "A real gap in the plan, plus a clear strategy and cost: good reasons."
+   ],
+   [
+    5.5,
+    "The ₹10 price and the launch buzz say nothing about future returns."
+   ]
+  ],
+  "title": "Reasons to recommend an NFO",
+  "stops": [
+   [
+    "Fills a real gap in the client's plan",
+    true
+   ],
+   [
+    "Strategy, team and cost are clear",
+    true
+   ],
+   [
+    "₹10 NAV leaves more room to grow",
+    false
+   ],
+   [
+    "Launch buzz signals a coming rally",
+    false
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Before you recommend an NFO",
+  "intro": "Four questions, asked in this order.",
+  "rows": [
+   [
+    "1. Does an existing fund do this?",
+    "If so, compare record and cost"
+   ],
+   [
+    "2. What gap does it fill?",
+    "Name it in the client's plan"
+   ],
+   [
+    "3. Who runs it, and how?",
+    "Manager's record on similar mandates"
+   ],
+   [
+    "4. What does it cost?",
+    "Compare with the older twin"
+   ]
+  ],
+  "note": "A new fund also starts in cash and needs time to build its portfolio, so its first months say little about the strategy."
+ },
+ {
+  "k": "pick",
+  "id": "s82q1",
+  "h": "Check yourself",
+  "q": "A client has ₹1,00,000 for an NFO at ₹10 or an existing fund at ₹250. Both hold the same portfolio at the same cost, and it rises 8%. Which ends higher?",
+  "opts": [
+   "The NFO, since 10,000 units beat 400 units",
+   "The existing fund, since its high NAV shows quality",
+   "Both end at ₹1,08,000; only the unit count differs",
+   "The NFO, but only once a full year has passed"
+  ],
+  "ans": 2,
+  "why": [
+   "More units do not mean more money. 10,000 units at ₹10.80 and 400 units at ₹270 are both ₹1,08,000.",
+   "A high NAV is only the history of past gains, not a sign of quality. The portfolio is the same, so the result is the same.",
+   "Both rise 8% on ₹1,00,000. The NAV level changes how many units you hold, never the percentage return you earn.",
+   "Time changes nothing here. The same portfolio gives the same percentage return, so a year adds no edge for the NFO."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s82q2",
+  "h": "Check yourself",
+  "q": "A client prefers the NFO because the older fund's NAV has already run up while the NFO starts from scratch. What is the sound reply?",
+  "opts": [
+   "Higher NAV is just past growth; judge on strategy and cost",
+   "He is right: a low starting NAV leaves more room to rise",
+   "He is right, but only for funds launched in a rising market",
+   "He is wrong, because older funds always beat new ones"
+  ],
+  "ans": 0,
+  "why": [
+   "NAV records past percentage gains. Room to rise depends on the portfolio and the market, so strategy and cost decide.",
+   "Room to rise belongs to the portfolio, not to the unit price. A ₹10 unit has no head start over a ₹500 one.",
+   "The market phase at launch does not change what NAV means. It still is just a starting number.",
+   "No rule says older funds win. Many records fade, and some newer funds fill gaps, so each case needs checking."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s82q3",
+  "h": "Check yourself",
+  "q": "Which of these NFOs could you consider recommending, after the usual checks of cost and process?",
+  "opts": [
+   "A flexi-cap fund much like three existing ones, launched at ₹10",
+   "A thematic fund pitched on how hot the theme is right now",
+   "A fund copying an older fund's strategy at a higher expense ratio",
+   "A new index fund covering a gap in her plan that no fund fills"
+  ],
+  "ans": 3,
+  "why": [
+   "It duplicates what exists with a long record. The ₹10 price adds nothing, and she would hold the same stocks twice.",
+   "A hot theme is a reason for caution. A late buyer is most tempted then, and a new fund has no record to test.",
+   "The same strategy at a higher cost is worse than the older twin, which at least has a track record to examine.",
+   "A real gap, named in her plan and checked on cost and process, is the case where an NFO can earn its place."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s82q4",
+  "h": "Check yourself",
+  "q": "An AMC pitches a new mid-cap NFO by quoting the 5-year record of its older mid-cap fund, which has a different manager. What does that record tell you about the NFO?",
+  "opts": [
+   "It proves the NFO will repeat that record, as both are mid-cap",
+   "Some context on the house's process; judge the NFO's own team",
+   "Nothing at all, since fund houses never share a process",
+   "It matters only if the NFO's NAV is below that fund's NAV"
+  ],
+  "ans": 1,
+  "why": [
+   "A record belongs to its manager and mandate. Same category does not mean same people, size or portfolio, so no proof follows.",
+   "The house process may carry over, but the NFO's manager, size and mandate are its own, and they are what you buy.",
+   "Houses do share research and risk rules. The record is not worthless, but it is not the NFO's own either.",
+   "NAV levels have no bearing on how much a record applies. The link depends on the team and mandate, not the unit price."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A ₹10 NAV is not cheap and a ₹500 NAV is not dear. Returns are percentages, not price levels.",
+   "An NFO has no record, so judge its strategy, team, cost and fit to the client's plan.",
+   "Recommend an NFO only when it fills a real gap that existing funds do not."
+  ]
+ }
+]

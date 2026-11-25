@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "The FY27 Budget was framed after Operation Sindoor in May 2025. Priorities moved to air defence, drones, counter-drone systems, missiles and next-generation platforms. Policy tells you where orders may go.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Priorities after Sindoor",
+  "lines": [
+   [
+    "meena",
+    "Why do these niches matter for investors?"
+   ],
+   [
+    "sikka",
+    "Combat-proven indigenous systems strengthen export credibility. The market rewards companies in these niches. But it also prices them richly, so the good news may already be in the price."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The new priorities",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Air defence",
+    "a priority"
+   ],
+   [
+    "Drones and counter-drone",
+    "a priority"
+   ],
+   [
+    "Missiles and next-gen platforms",
+    "a priority"
+   ],
+   [
+    "Market view",
+    "rewards the niches but prices them richly"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s36q1",
+  "h": "Check yourself",
+  "q": "What shaped the FY27 defence priorities?",
+  "opts": [
+   "A ban on all defence imports",
+   "A fall in the rupee alone",
+   "Lessons after Operation Sindoor",
+   "A change in the school syllabus"
+  ],
+  "ans": 2,
+  "why": [
+   "No such ban is stated. It does not answer what was asked.",
+   "The rupee is not the stated driver. The details here point elsewhere.",
+   "The Budget was framed after the operation. That matches the case described.",
+   "The syllabus has no link to it. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s36q2",
+  "h": "Check yourself",
+  "q": "Which area is a stated priority?",
+  "opts": [
+   "Air defence and drones",
+   "Passenger car sales volumes",
+   "Film production budgets",
+   "Tea exports to Europe"
+  ],
+  "ans": 0,
+  "why": [
+   "These are named in the lesson. This fits the facts given.",
+   "Cars are not named as a priority. It does not fit the facts given.",
+   "Films are not named. It does not fit the facts given.",
+   "Tea is not named. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s36q3",
+  "h": "Check yourself",
+  "q": "How does the market treat these niches?",
+  "opts": [
+   "Ignores them entirely, always",
+   "Prices them very cheaply, always",
+   "Bans them from any trading",
+   "Rewards them, prices them richly"
+  ],
+  "ans": 3,
+  "why": [
+   "They are not ignored. That does not match this case.",
+   "They are not priced cheaply. It does not fit the facts given.",
+   "Trading is allowed. It does not answer what was asked.",
+   "Rich prices leave less room for error. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s36q4",
+  "h": "Check yourself",
+  "q": "What strengthens export credibility?",
+  "opts": [
+   "Imported spare parts from abroad",
+   "Combat-proven indigenous systems",
+   "Lower school fees for children",
+   "Longer office hours for staff"
+  ],
+  "ans": 1,
+  "why": [
+   "Imported parts do not do this. It does not answer what was asked.",
+   "Proven systems build buyer trust. This fits the facts given.",
+   "Fees are not relevant. The details here point elsewhere.",
+   "Hours are not relevant. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FY27 priorities: air defence, drones, missiles, next-gen platforms.",
+   "Combat-proven systems help exports.",
+   "The market rewards these niches but prices them richly."
+  ]
+ }
+]

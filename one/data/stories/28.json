@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A decision in Washington can move a client's SIP in Mumbai. Higher US yields and a strong dollar pull foreign money out of emerging markets, including India.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "India and the world",
+  "lines": [
+   [
+    "meena",
+    "Is India exposed to tariffs and the Fed?"
+   ],
+   [
+    "sikka",
+    "RBI has flagged global trade and tariff uncertainty as a key growth risk. A strong dollar can pull FPI money out of emerging markets. It also contributed to gold ETF outflows globally in Q2 2026. But India's domestic demand makes it less exposed than export-heavy economies."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Global links",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Higher US yields",
+    "pull FPI money from emerging markets"
+   ],
+   [
+    "Strong dollar",
+    "pressure on EM currencies and gold ETFs"
+   ],
+   [
+    "Tariffs",
+    "a growth risk flagged by RBI"
+   ],
+   [
+    "India's domestic demand",
+    "less exposed than export-heavy economies"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s28q1",
+  "h": "Check yourself",
+  "q": "What can higher US yields and a strong dollar do to emerging markets?",
+  "opts": [
+   "Push FPI money into them always",
+   "Pull FPI money out of them",
+   "Remove all risk from them",
+   "Stop their currencies moving"
+  ],
+  "ans": 1,
+  "why": [
+   "That is the opposite effect. The details here point elsewhere.",
+   "Capital tends to flow toward US yields. That matches the case described.",
+   "Risk is not removed. That does not match this case.",
+   "Currencies still move. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s28q2",
+  "h": "Check yourself",
+  "q": "Why is India less exposed than export-heavy economies?",
+  "opts": [
+   "It exports nothing at all",
+   "It has no link to dollars",
+   "It has no trade with others",
+   "Its domestic demand is large"
+  ],
+  "ans": 3,
+  "why": [
+   "India does export. The details here point elsewhere.",
+   "Dollars still matter to India. That does not match this case.",
+   "India does trade with others. It does not fit the facts given.",
+   "Domestic demand cushions global shocks. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s28q3",
+  "h": "Check yourself",
+  "q": "What has RBI flagged as a key growth risk?",
+  "opts": [
+   "Too many bank branches open",
+   "Too many new mutual funds",
+   "Trade and tariff uncertainty",
+   "Too much summer rainfall"
+  ],
+  "ans": 2,
+  "why": [
+   "Branches are not cited. That does not match this case.",
+   "New funds are not cited. It does not fit the facts given.",
+   "The lesson cites trade and tariff uncertainty.",
+   "Rainfall is not cited. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s28q4",
+  "h": "Check yourself",
+  "q": "What did a strong dollar do to gold ETFs in Q2 2026, per the lesson?",
+  "opts": [
+   "Contributed to global outflows",
+   "Caused record global inflows",
+   "Fixed the gold price in place",
+   "Banned them from trading"
+  ],
+  "ans": 0,
+  "why": [
+   "A strong dollar weighed on gold ETFs. This fits the facts given.",
+   "Inflows are the opposite. It does not answer what was asked.",
+   "The price was not fixed. The details here point elsewhere.",
+   "No ban is implied. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Higher US yields and a strong dollar pull money from emerging markets.",
+   "RBI flags trade and tariff uncertainty as a growth risk.",
+   "India's domestic demand lowers its exposure."
+  ]
+ }
+]

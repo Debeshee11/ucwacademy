@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Every time a vehicle crosses a toll plaza, money flows to someone. An InvIT lets investors own a share of such assets: toll roads, power lines and pipelines, held through a listed trust.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What an InvIT owns",
+  "lines": [
+   [
+    "meena",
+    "How is it different from a REIT?"
+   ],
+   [
+    "sikka",
+    "It works like a REIT, but owns infrastructure, not buildings. Income comes from tolls, annuities from authorities or tariffs, so it depends on contracts, traffic and regulation. At least 90% of net distributable cash flows must be paid out, at least every six months. Assets have long lives but can lose value as concessions run down."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "InvIT basics",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Owns",
+    "toll roads, transmission lines, pipelines"
+   ],
+   [
+    "Income from",
+    "tolls, annuities, tariffs"
+   ],
+   [
+    "Payout",
+    "at least 90% of NDCF, at least every six months"
+   ],
+   [
+    "Watch",
+    "years left on the concession"
+   ]
+  ],
+  "note": "Education only, not a list of units to buy."
+ },
+ {
+  "k": "pick",
+  "id": "s96q1",
+  "h": "Check yourself",
+  "q": "What does an InvIT own?",
+  "opts": [
+   "Infrastructure like toll roads",
+   "Only rented shopping malls here",
+   "Only gold bars kept in vaults",
+   "Only shares issued by the banks"
+  ],
+  "ans": 0,
+  "why": [
+   "It owns infrastructure assets.",
+   "Malls belong to REITs.",
+   "Gold is not its asset.",
+   "Bank shares are not its assets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s96q2",
+  "h": "Check yourself",
+  "q": "How much of NDCF must be distributed?",
+  "opts": [
+   "At most 9%",
+   "Exactly 0%",
+   "At least 90%",
+   "At most 40%"
+  ],
+  "ans": 2,
+  "why": [
+   "9% is far too low.",
+   "A payout is required.",
+   "The rule is at least 90%.",
+   "40% is below the minimum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s96q3",
+  "h": "Check yourself",
+  "q": "What does InvIT income depend on?",
+  "opts": [
+   "The weather on Sundays only",
+   "The colour of the unit itself",
+   "The age of the trustee in office",
+   "Contracts, traffic, regulation"
+  ],
+  "ans": 3,
+  "why": [
+   "Weather is not a driver.",
+   "Colour is not a driver.",
+   "Age is not a driver.",
+   "Those are the real drivers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s96q4",
+  "h": "Check yourself",
+  "q": "What should be checked about an infrastructure asset?",
+  "opts": [
+   "The slogan of the trust",
+   "Years of concession left",
+   "The logo of the sponsor",
+   "The date of the listing party"
+  ],
+  "ans": 1,
+  "why": [
+   "A slogan is not data. It does not fit the facts given.",
+   "Value can run down as a concession ends.",
+   "A logo is not data. The details here point elsewhere.",
+   "A party date is not data. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An InvIT owns infrastructure; a REIT owns buildings.",
+   "At least 90% of NDCF is paid out.",
+   "Check how many concession years remain."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client has 25% in gold and silver after a big rally. Is that too much? A common precious-metals share is 5 to 15%, mostly gold. After a rally of about 37% a year, rebalancing may mean trimming, not adding.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Sizing metals",
+  "lines": [
+   [
+    "meena",
+    "What job does gold do?"
+   ],
+   [
+    "sikka",
+    "It cushions equity falls. In 2008, for example, the Nifty fell about 52%. Gold's job is to steady the ride, not to lead returns. Multi-asset funds automate the allocation and the rebalancing."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Allocation guide",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Common range",
+    "5 to 15% of a portfolio, mostly gold"
+   ],
+   [
+    "After a rally of about 37% y/y",
+    "rebalancing may mean trimming"
+   ],
+   [
+    "Gold's job",
+    "cushion equity falls, as in 2008"
+   ],
+   [
+    "Easy route",
+    "multi-asset funds rebalance for you"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s57q1",
+  "h": "Check yourself",
+  "q": "What is a common precious-metals allocation?",
+  "opts": [
+   "80 to 90%, mostly silver",
+   "0%, in all cases without a doubt",
+   "100%, in gold alone for all clients",
+   "5 to 15%, mostly gold"
+  ],
+  "ans": 3,
+  "why": [
+   "80 to 90% is far too high.",
+   "Zero is not the common view.",
+   "All-gold is not diversified.",
+   "That is the common range."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s57q2",
+  "h": "Check yourself",
+  "q": "After a big rally, what may rebalancing mean?",
+  "opts": [
+   "Adding as much as possible",
+   "Trimming, not adding",
+   "Selling all equity",
+   "Ignoring the plan"
+  ],
+  "ans": 1,
+  "why": [
+   "Adding enlarges the overweight.",
+   "Selling part restores the target weight.",
+   "Selling all equity is extreme.",
+   "The plan guides rebalancing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s57q3",
+  "h": "Check yourself",
+  "q": "What is gold's main job in a portfolio?",
+  "opts": [
+   "Cushioning equity falls",
+   "Leading long-term returns",
+   "Paying monthly income",
+   "Replacing the emergency fund"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold steadies falls, as in 2008. That matches the case described.",
+   "Equity leads long-term returns. It does not answer what was asked.",
+   "Gold pays no income. It does not answer what was asked.",
+   "It is volatile for emergencies. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s57q4",
+  "h": "Check yourself",
+  "q": "How can multi-asset funds help?",
+  "opts": [
+   "They guarantee a gold profit",
+   "They remove all equity risk",
+   "They automate rebalancing",
+   "They never charge any cost"
+  ],
+  "ans": 2,
+  "why": [
+   "No profit is guaranteed. It does not answer what was asked.",
+   "Equity risk remains. It does not answer what was asked.",
+   "They rebalance for the investor. This fits the facts given.",
+   "They carry costs. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A common precious-metals share is 5 to 15%, mostly gold.",
+   "After a rally, rebalancing may mean trimming.",
+   "Gold cushions equity falls."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client buys 'digital gold' in a payments app because it is easy. But those apps sit outside SEBI and RBI regulation, and SEBI has warned investors about them. If something goes wrong, there may be no regulator to turn to.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which gold product",
+  "lines": [
+   [
+    "meena",
+    "Digital gold is simple. What is wrong with it?"
+   ],
+   [
+    "sikka",
+    "It is outside SEBI and RBI oversight, and SEBI has warned about it. Gold ETFs and gold fund of funds are regulated. Know the product before you buy it."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Gold products compared",
+  "intro": "As per the lesson.",
+  "rows": [
+   [
+    "Gold ETF",
+    "99.5% pure backing, exchange-traded, demat needed"
+   ],
+   [
+    "Gold FoF",
+    "Invests in gold ETFs, no demat, SIP-friendly"
+   ],
+   [
+    "Digital gold apps",
+    "Outside SEBI and RBI, SEBI has warned"
+   ],
+   [
+    "SGBs",
+    "No new tranches since Feb 2024"
+   ]
+  ],
+  "note": "Figures as per the lesson text. Check current WGC and RBI releases."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Choosing gold products",
+  "stops": [
+   [
+    "Gold ETFs need a demat account",
+    true
+   ],
+   [
+    "Digital gold apps are regulated by SEBI",
+    false
+   ],
+   [
+    "Gold FoFs invest in gold ETFs",
+    true
+   ],
+   [
+    "New SGB tranches are issued every year",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "They are exchange-traded."
+   ],
+   [
+    2.2,
+    "They sit outside SEBI and RBI oversight."
+   ],
+   [
+    4.0,
+    "No demat is needed, and SIPs work."
+   ],
+   [
+    5.6,
+    "None since February 2024."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s50q1",
+  "h": "Check yourself",
+  "q": "A client has no demat account and wants a monthly gold SIP. Which product fits?",
+  "opts": [
+   "A gold ETF alone",
+   "A gold FoF",
+   "Digital gold on a shopping app",
+   "A new SGB tranche"
+  ],
+  "ans": 1,
+  "why": [
+   "A gold ETF needs a demat account. It does not answer what was asked.",
+   "A gold FoF needs no demat and is SIP-friendly.",
+   "Digital gold apps are outside SEBI and RBI oversight.",
+   "No new SGB tranche has been issued since Feb 2024."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s50q2",
+  "h": "Check yourself",
+  "q": "What is the key risk of digital gold apps?",
+  "opts": [
+   "They sit outside SEBI and RBI rules",
+   "They always fall in price each year",
+   "They need a demat account to buy",
+   "They are backed by 99.5% pure gold"
+  ],
+  "ans": 0,
+  "why": [
+   "SEBI has warned investors about such products. This fits the facts given.",
+   "Their price follows gold, not a fixed fall. It does not fit the facts given.",
+   "They typically need no demat. It does not fit the facts given.",
+   "That purity describes gold ETF backing. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s50q3",
+  "h": "Check yourself",
+  "q": "What backs a gold ETF, as per the lesson?",
+  "opts": [
+   "Digital promises only",
+   "A bank guarantee only",
+   "Silver certificates",
+   "99.5% pure gold"
+  ],
+  "ans": 3,
+  "why": [
+   "That describes unregulated products, not ETFs.",
+   "A bank guarantee is not how ETFs are backed at all.",
+   "Silver is a different metal from gold, so no.",
+   "Gold ETFs are backed by 99.5% pure gold, as per the lesson."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s50q4",
+  "h": "Check yourself",
+  "q": "What is the status of Sovereign Gold Bonds?",
+  "opts": [
+   "New tranches are issued every month",
+   "They are banned from all trading",
+   "No new tranches since Feb 2024",
+   "They are issued directly by SEBI"
+  ],
+  "ans": 2,
+  "why": [
+   "New tranches are not being issued.",
+   "Existing SGBs trade on exchanges.",
+   "The lesson says no new tranches since Feb 2024.",
+   "SGBs are issued by the government via the RBI."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Gold ETFs: 99.5% gold, exchange-traded, demat needed.",
+   "Gold FoFs: no demat, SIP-friendly.",
+   "Digital gold apps sit outside SEBI and RBI oversight."
+  ]
+ }
+]

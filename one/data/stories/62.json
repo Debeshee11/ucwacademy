@@ -1,0 +1,334 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Two funds can both be called multi-asset and be taxed differently. One rule sets what a multi-asset fund must hold. A second rule, about equity, sets the tax. Learn both before you say a word about tax.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A client's question",
+  "lines": [
+   [
+    "rohan",
+    "My bank manager says multi-asset funds are taxed like equity funds. Is that true for every one?"
+   ],
+   [
+    "sikka",
+    "Not every one. The tax class depends on how much equity the fund holds, and arbitrage counts as equity here. Let us see how the rules sit."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "The SEBI floor",
+  "rows": [
+   {
+    "name": "The floor: 10% in each of three",
+    "segs": [
+     [
+      "Equity",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "Debt",
+      10,
+      "#8EC5FF"
+     ],
+     [
+      "Gold",
+      10,
+      "#FFC531"
+     ],
+     [
+      "Open choice",
+      70,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "A common mix",
+    "segs": [
+     [
+      "Equity 45%",
+      45,
+      "#3CC47A"
+     ],
+     [
+      "Debt 30%",
+      30,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15%",
+      15,
+      "#FFC531"
+     ],
+     [
+      "REIT",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Fails: only two classes",
+    "segs": [
+     [
+      "Equity 60%",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Debt 40%",
+      40,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars: the minimum mix, a common mix, and a mix that fails the rule",
+  "caps": [
+   [
+    0.2,
+    "SEBI's rule: a multi-asset allocation fund holds at least 10% in each of at least three asset classes."
+   ],
+   [
+    1.5,
+    "That is only the floor. The striped part is the manager's choice."
+   ],
+   [
+    2.8,
+    "A common mix is equity, debt and gold or silver, sometimes with REITs and InvITs."
+   ],
+   [
+    4.4,
+    "Equity and debt alone fail the rule. Without a third class at 10% or more, it is a different category."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Which tax class?",
+  "rows": [
+   {
+    "name": "Fund A: 70% equity incl. arbitrage",
+    "segs": [
+     [
+      "Equity 35%",
+      35,
+      "#3CC47A"
+     ],
+     [
+      "Arbitrage 35%",
+      35,
+      "#B8E8CC"
+     ],
+     [
+      "Debt 15%",
+      15,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15%",
+      15,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Fund B: 50% equity",
+    "segs": [
+     [
+      "Equity 50%",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 25%",
+      25,
+      "#8EC5FF"
+     ],
+     [
+      "Gold/silver",
+      25,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Fund C: 65% equity incl. arbitrage",
+    "segs": [
+     [
+      "Equity 40%",
+      40,
+      "#3CC47A"
+     ],
+     [
+      "Arbitrage 25%",
+      25,
+      "#B8E8CC"
+     ],
+     [
+      "Debt 20%",
+      20,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15%",
+      15,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three funds with equity plus arbitrage weights of 70, 50 and 65 percent",
+  "caps": [
+   [
+    0.2,
+    "Tax follows equity, and arbitrage counts as equity. Fund A: 35% equity plus 35% arbitrage is 70%."
+   ],
+   [
+    1.7,
+    "At 65% or more it is taxed like an equity fund. Long-term gains count after 12 months."
+   ],
+   [
+    3.0,
+    "Fund B has 50% equity. Between 35% and 65%, gains turn long-term only after 24 months."
+   ],
+   [
+    4.4,
+    "Fund C: 40% plus 25% is exactly 65%, so equity tax. Add up each fund's structure, not its name."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The same gain, two tax classes",
+  "a": "Equity-taxed (65%+)",
+  "b": "Mixed (35% to 65%)",
+  "rows": [
+   [
+    "Months to long-term",
+    12,
+    24
+   ],
+   [
+    "Tax on ₹2 lakh gain at 18 months, ₹ thousand",
+    25.0,
+    60.0
+   ]
+  ],
+  "alt": "Two bars comparing tax on a gain sold at 18 months",
+  "caps": [
+   [
+    0.3,
+    "Same gain of ₹2,00,000, sold after 18 months by a client in the 30% slab."
+   ],
+   [
+    2.0,
+    "Equity-taxed fund: it is long-term, so 12.5%. About ₹25,000."
+   ],
+   [
+    3.6,
+    "Fund with 50% equity: 18 months is under 24, so it is short-term and taxed at slab. About ₹60,000."
+   ],
+   [
+    5.6,
+    "Before cess and the yearly ₹1.25 lakh equity exemption. Waiting six more months would change class B."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s62q1",
+  "h": "Check yourself",
+  "q": "A fund house proposes a multi-asset fund with 55% equity and 45% debt, and no gold or other third asset. Can it carry the multi-asset allocation label?",
+  "opts": [
+   "Yes, because the mix adds up to 100% and equity and debt are the two main asset classes",
+   "No. The rule needs at least 10% in each of three classes, and this mix has only two",
+   "Yes, if the debt part is split between government bonds and corporate bonds",
+   "No, because every multi-asset fund must hold at least 40% in gold or silver"
+  ],
+  "ans": 1,
+  "why": [
+   "Adding to 100% is not the test. The rule asks for three classes each at 10% or more, which this mix lacks.",
+   "With only equity and debt there is no third class at 10% or more, so it does not meet the multi-asset allocation rule.",
+   "Government and corporate bonds are both debt. Splitting one class in two does not make a new asset class.",
+   "The rule sets 10% as the floor for each of three classes. It does not ask for 40% in gold or silver."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s62q2",
+  "h": "Check yourself",
+  "q": "A multi-asset fund holds 30% equity, 35% arbitrage, 20% debt and 15% gold. A client says it cannot be equity-taxed, as only 30% is real equity. What is correct?",
+  "opts": [
+   "It is not equity-taxed, because only the 30% in directional equity counts here",
+   "It is taxed like debt, because debt and gold together make up 35% of the fund",
+   "It is taxed at slab rate in every case, because it also holds gold in the portfolio",
+   "It is equity-taxed: equity plus arbitrage makes 65%, which reaches the line"
+  ],
+  "ans": 3,
+  "why": [
+   "For the tax test, arbitrage positions count as equity, so the 30% figure alone is the wrong number to use.",
+   "Debt and gold at 35% do not make it a debt fund. The test looks at equity, including arbitrage, at 65%.",
+   "Holding gold does not decide the class. Equity share, including arbitrage, decides it.",
+   "For the tax test, arbitrage counts with equity. 30% plus 35% is 65%, so the fund is taxed like an equity fund."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s62q3",
+  "h": "Check yourself",
+  "q": "A client in the 30% slab sells after 18 months with a ₹2 lakh gain. One fund is equity-taxed, the other has 50% equity. How much more tax does the second one cost, before cess and exemption?",
+  "opts": [
+   "About ₹35,000 more: 12.5% on one gain, the 30% slab on the other",
+   "About ₹17,500 more, because only a gap of five percentage points counts here",
+   "About ₹60,000 more, because the second fund's whole tax bill is the extra cost",
+   "About ₹25,000 more, because the equity fund's own tax bill is the extra cost"
+  ],
+  "ans": 0,
+  "why": [
+   "12.5% of ₹2 lakh is ₹25,000. 30% of ₹2 lakh is ₹60,000. The difference is ₹35,000 (17.5 percentage points).",
+   "The gap between 12.5% and 30% is 17.5 points, not five. On ₹2 lakh that is ₹35,000.",
+   "₹60,000 is the full tax on the second fund. The first fund also pays ₹25,000, so the extra is less.",
+   "₹25,000 is what the equity-taxed fund pays. It is one of the two bills, not the gap between them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s62q4",
+  "h": "Check yourself",
+  "q": "The 50%-equity fund holds a ₹2 lakh gain at 18 months. The client has no urgent need and asks about waiting. What should the adviser say?",
+  "opts": [
+   "Sell now, because the gain is taxed at the same rate at 18 months or at 24 months",
+   "Switch to another fund first, since a switch is not a sale and so no tax applies to it",
+   "Six more months moves the gain to 12.5%; weigh that against the need for money",
+   "Always wait, because a tax saving is more certain than anything the market can do"
+  ],
+  "ans": 2,
+  "why": [
+   "The rate differs. Under 24 months this class is taxed at slab, and after that at 12.5%.",
+   "A switch is a redemption and a fresh purchase, so it triggers tax and restarts the holding period.",
+   "At 24 months the gain turns long-term at 12.5%. It is a trade-off with market risk and the client's needs, not a rule.",
+   "Waiting leaves the client exposed to market moves meanwhile. The tax saving is one factor among several."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A multi-asset fund holds at least 10% in each of at least three asset classes, usually equity, debt and gold or silver.",
+   "Equity plus arbitrage at 65% or more means equity tax, long-term after 12 months. At 35% to 65%, long-term starts after 24 months.",
+   "Add up each fund's actual mix before you speak about tax. Names do not decide the class."
+  ]
+ }
+]

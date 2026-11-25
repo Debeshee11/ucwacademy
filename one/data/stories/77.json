@@ -1,0 +1,263 @@
+[
+ {
+  "k": "fact",
+  "art": "pie",
+  "h": "Before you start",
+  "big": "Meena owns five funds from five fund houses and feels well diversified. Underneath the five names, most of her money sits in the same dozen or so companies. This lesson shows how to see that in minutes.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Five funds, five logos",
+  "lines": [
+   [
+    "meena",
+    "I have five funds from five different fund houses. That is diversified, right?"
+   ],
+   [
+    "sikka",
+    "Let us count the stocks underneath before we count the funds. Overlap tells you how much of one fund the other already holds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "How much do two funds share?",
+  "alt": "Four bars each split into shared holdings and different holdings for pairs of Meena's funds",
+  "caps": [
+   [
+    0.3,
+    "Meena's five funds, as made-up portfolios. Blue is money in stocks that both funds hold."
+   ],
+   [
+    2.0,
+    "Two large-cap funds share 62%. Even a large-cap and a flexi-cap fund share 56%."
+   ],
+   [
+    4.5,
+    "Across all ten pairs of her five funds, overlap runs between 51% and 62%."
+   ],
+   [
+    6.4,
+    "Five names on the statement. Underneath, close to one portfolio."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Large-cap A and large-cap B",
+    "segs": [
+     [
+      "Same: 62%",
+      62,
+      "#8EC5FF"
+     ],
+     [
+      "Different: 38%",
+      38,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Large-cap A and flexi-cap C",
+    "segs": [
+     [
+      "Same: 56%",
+      56,
+      "#8EC5FF"
+     ],
+     [
+      "Different: 44%",
+      44,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Flexi-cap C and flexi-cap D",
+    "segs": [
+     [
+      "Same: 56%",
+      56,
+      "#8EC5FF"
+     ],
+     [
+      "Different: 44%",
+      44,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Large-cap B and flexi-cap D",
+    "segs": [
+     [
+      "Same: 52%",
+      52,
+      "#8EC5FF"
+     ],
+     [
+      "Different: 48%",
+      48,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Five funds, how many stocks?",
+  "alt": "Bars showing the number of different stocks owned as one to five funds are added",
+  "caps": [
+   [
+    0.3,
+    "Add the funds one by one and count the different stocks Meena owns. Equal money in each."
+   ],
+   [
+    2.0,
+    "One fund holds 35 stocks. The second adds only 10 new ones."
+   ],
+   [
+    3.8,
+    "Five funds hold 183 positions, but only 68 different stocks."
+   ],
+   [
+    5.6,
+    "64% of her money sits in just 15 of them, and 12 of those 15 are in all five funds."
+   ]
+  ],
+  "vals": [
+   35,
+   45,
+   55,
+   63,
+   68
+  ],
+  "labels": [
+   "1 fund",
+   "2 funds",
+   "3 funds",
+   "4 funds",
+   "5 funds"
+  ],
+  "big": "Five funds, 68 stocks",
+  "small": "64% of the money is in 15 of them"
+ },
+ {
+  "k": "eg",
+  "h": "Overlap, worked by hand",
+  "intro": "Add the smaller weight of every stock that both funds hold.",
+  "rows": [
+   [
+    "Bank A: 9% and 12%",
+    "counts 9%"
+   ],
+   [
+    "Reliance: 8% and 8%",
+    "counts 8%"
+   ],
+   [
+    "IT leader: 7% and 3%",
+    "counts 3%"
+   ],
+   [
+    "=",
+    "Overlap of the two funds",
+    "20%"
+   ]
+  ],
+  "note": "Active share, the next lesson, is one minus the overlap with the benchmark. Fund overlap tools do this sum for you across every holding."
+ },
+ {
+  "k": "pick",
+  "id": "s77q1",
+  "h": "Check yourself",
+  "q": "Fund X holds Bank A 10%, Bank B 6%, Reliance 7%, IT leader 5%. Fund Y holds Bank A 7%, Bank B 9%, Reliance 7%, IT leader 2%. What is the overlap on these four stocks?",
+  "opts": [
+   "25%",
+   "22%",
+   "31%",
+   "28%"
+  ],
+  "ans": 1,
+  "why": [
+   "Adding Fund Y's weights in the shared stocks gives 25%. Overlap counts the smaller weight of each stock, not one fund's.",
+   "Take the lower weight of each stock: 7, 6, 7 and 2. The total is 22%, the share of money both funds hold alike.",
+   "Adding the larger weight of each stock gives 31%. That counts money in one fund that the other does not hold.",
+   "Adding Fund X's weights in the shared stocks gives 28%. Overlap uses the smaller weight, which cuts that down."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s77q2",
+  "h": "Check yourself",
+  "q": "Rahul, 38, runs ₹5,000 SIPs in five funds: two large-cap, two flexi-cap and one index fund. Pairwise overlaps run from 55% to 75%. What would you propose?",
+  "opts": [
+   "Add a sixth fund from another fund house to spread the risk",
+   "Keep all five, since five funds already means diversification",
+   "Stop all five and move the ₹25,000 to one small-cap fund",
+   "Keep one or two, redirect the rest to different assets"
+  ],
+  "ans": 3,
+  "why": [
+   "A new fund house does not mean new stocks. A sixth large-cap fund would hold the same names again and add more overlap.",
+   "Fund count is not diversification. With 55 to 75% overlap, five funds act like one portfolio held five times over.",
+   "One small-cap fund swaps duplicate risk for a concentrated, far bumpier one that Rahul never chose.",
+   "It cuts duplicated bets and frees SIP money for exposure he lacks, such as debt or mid-caps, matched to his goals."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s77q3",
+  "h": "Check yourself",
+  "q": "A client holds a Nifty 50 index fund and an active large-cap fund. The overlap tool says 80%, and she asks if the active fund is worth keeping. What is the best answer?",
+  "opts": [
+   "Keep both, since two funds always diversify better than one",
+   "Sell the index fund, because active funds always beat indices",
+   "Keep it only if the other 20% earns more than its extra cost",
+   "Sell the active fund, as overlap above 50% is never acceptable"
+  ],
+  "ans": 2,
+  "why": [
+   "At 80% overlap she owns mostly the same stocks twice. The second fund adds little diversification for its cost.",
+   "No rule says active beats index. Many large-cap funds trail their index after costs, which is why the test matters.",
+   "The extra cost buys only the differing 20%, so test whether that slice has added value after fees, over rolling periods.",
+   "Overlap is a prompt for questions, not an automatic sell signal. The answer depends on what the differing slice earned."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s77q4",
+  "h": "Check yourself",
+  "q": "Rahul wants to go from five funds to two. Three funds hold large long-term gains and one shows a small loss. Which plan is most sensible?",
+  "opts": [
+   "Stop SIPs into duplicates, then exit in stages, loss first",
+   "Redeem all five funds on one day so the switch is clean and fast",
+   "Keep the duplicates for good, since any exit triggers tax",
+   "Switch the gains into the new funds, which avoids tax"
+  ],
+  "ans": 0,
+  "why": [
+   "New money goes to the keepers at once. Staged exits spread gains over tax years, and the loss can offset some gains.",
+   "One-day redemption crowds all the gains into one year and may trigger exit loads on recent units. Staging costs less.",
+   "Tax is a cost to weigh, not a reason to hold duplicates for good. The running cost of overlap can outweigh it.",
+   "A switch is a redemption followed by a fresh purchase, so the gain is taxed at that point, not avoided."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Overlap adds the smaller weight of each stock that two funds both hold.",
+   "Above about 50%, a second fund mostly repeats the first. Fund count is not diversification.",
+   "Consolidate in steps: stop duplicate SIPs first, then exit with tax and exit loads in mind."
+  ]
+ }
+]

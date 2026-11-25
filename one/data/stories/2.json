@@ -1,0 +1,185 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client started an SIP two years ago, mostly when prices were high. The market is now 13% lower and her statement shows a loss. She asks, 'Isn't an SIP supposed to protect me?' It helps with habit and cost, not with losses.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What an SIP can do",
+  "lines": [
+   [
+    "meena",
+    "I thought an SIP means no loss. Why is mine red?"
+   ],
+   [
+    "sikka",
+    "An SIP is a method, not a product. It spreads your entry and builds a habit. It cannot stop a fall or promise a profit over any fixed period."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "h": "Same instalment, more units in a fall",
+  "navs": [
+   100,
+   92,
+   85,
+   90,
+   97,
+   105
+  ],
+  "amt": 10000,
+  "scale": 0.8,
+  "alt": "Monthly instalments buying more units at lower prices",
+  "caps": [
+   [
+    0.3,
+    "The same amount goes in every month."
+   ],
+   [
+    2.2,
+    "When the price falls, it buys more units."
+   ],
+   [
+    4.0,
+    "When the price rises, it buys fewer units."
+   ],
+   [
+    5.6,
+    "Cost is spread, but a loss is still possible."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "SIP facts",
+  "stops": [
+   [
+    "An SIP is a way of investing, not a product",
+    true
+   ],
+   [
+    "An SIP guarantees profit over two years",
+    false
+   ],
+   [
+    "SIP returns are measured with XIRR",
+    true
+   ],
+   [
+    "An SIP prevents losses in a falling market",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Returns come from the fund it invests in."
+   ],
+   [
+    2.2,
+    "No method can promise a profit."
+   ],
+   [
+    4.0,
+    "Each instalment goes in on a different date."
+   ],
+   [
+    5.6,
+    "It cannot stop a fall in prices."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s2q1",
+  "h": "Check yourself",
+  "q": "A client's two-year SIP shows a loss after a 13% market fall. What should the RM explain?",
+  "opts": [
+   "The SIP is broken and must stop",
+   "An SIP does not prevent losses",
+   "The fund house made an error",
+   "SIPs always recover in a year"
+  ],
+  "ans": 1,
+  "why": [
+   "A loss in a fall does not mean the SIP is faulty.",
+   "An SIP is a method and cannot stop a fall.",
+   "Prices fell, so there is no sign of any error.",
+   "No method can promise recovery in a set time."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s2q2",
+  "h": "Check yourself",
+  "q": "What does rupee cost averaging do?",
+  "opts": [
+   "Buys the same units every month",
+   "Avoids all paper losses",
+   "Picks the lowest price each year",
+   "Buys more units when prices are low"
+  ],
+  "ans": 3,
+  "why": [
+   "Units vary because the price varies.",
+   "It cannot remove losses in a fall.",
+   "It does not pick any single price.",
+   "The same sum buys more units at lower prices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s2q3",
+  "h": "Check yourself",
+  "q": "Which measure suits an SIP, since each instalment goes in on a different date?",
+  "opts": [
+   "XIRR",
+   "A one-year point-to-point return",
+   "The fund's launch return",
+   "The latest NAV alone"
+  ],
+  "ans": 0,
+  "why": [
+   "XIRR accounts for the date of each cash flow.",
+   "A point-to-point return assumes one lump sum.",
+   "Launch return ignores when the client invested.",
+   "The NAV alone ignores what the client paid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s2q4",
+  "h": "Check yourself",
+  "q": "A client says, 'My SIP will surely beat a fixed deposit in three years.' What is the right reply?",
+  "opts": [
+   "Yes, SIPs always beat deposits",
+   "Yes, if she adds more each month",
+   "No one can promise that",
+   "No, SIPs never beat deposits"
+  ],
+  "ans": 2,
+  "why": [
+   "No such rule exists for SIPs over three years.",
+   "Adding more money does not assure a better result.",
+   "Market returns are not assured over any short period.",
+   "SIPs can beat deposits over some periods."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An SIP is a method. Returns come from the fund.",
+   "It builds habit and spreads cost but cannot prevent losses.",
+   "Measure SIP returns with XIRR."
+  ]
+ }
+]

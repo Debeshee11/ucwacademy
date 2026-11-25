@@ -1,0 +1,237 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Two large-cap funds charge almost the same fee. One mostly copies its benchmark. The other really differs from it. One number, active share, tells you which is which, and whether you are paying for decisions or for a label.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Same fee, same label",
+  "lines": [
+   [
+    "rohan",
+    "Both are large-cap funds charging around 1.6% a year. Does it matter which one I pick?"
+   ],
+   [
+    "sikka",
+    "Yes. Ask how much of each fund differs from its index. The fee pays for the part that differs."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "How much is really different?",
+  "alt": "Three bars showing the share of each fund that matches its benchmark and the share that is an active bet",
+  "caps": [
+   [
+    0.3,
+    "Active share is the part of a fund's money that differs from its benchmark. An index fund is near zero."
+   ],
+   [
+    1.6,
+    "Fund X matches the benchmark on 62% of its money. Its active share is 38%."
+   ],
+   [
+    2.9,
+    "Fund Y matches on only 19%. Its active share is 81%."
+   ],
+   [
+    4.6,
+    "Under about 60% with active-fund fees is the closet-indexing zone: ask what the fee buys."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Index fund, cost 0.2%",
+    "segs": [
+     [
+      "Matches the benchmark: 100%",
+      100,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Fund X, cost 1.6%",
+    "segs": [
+     [
+      "Matches: 62%",
+      62,
+      "#8EC5FF"
+     ],
+     [
+      "Active bets: 38%",
+      38,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "Fund Y, cost 1.7%",
+    "segs": [
+     [
+      "Matches: 19%",
+      19,
+      "#8EC5FF"
+     ],
+     [
+      "Active bets: 81%",
+      81,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What the manager believes",
+  "alt": "Bars comparing the benchmark and a fund on banks, IT and cash",
+  "caps": [
+   [
+    0.3,
+    "Fund Z against its benchmark, sector by sector. The gaps are the manager's views."
+   ],
+   [
+    1.5,
+    "Banks: 24% against 36%. Underweight by 12 points, a bet that banks will lag."
+   ],
+   [
+    3.0,
+    "IT: 21% against 12%. Overweight by 9 points, a bet the other way."
+   ],
+   [
+    4.5,
+    "Cash: 9% against none. Caution, or a rally missed. Check how past cash calls paid off."
+   ],
+   [
+    6.6,
+    "Sector gaps show what the manager believes. Active share shows how much."
+   ]
+  ],
+  "a": "Benchmark",
+  "b": "Fund Z",
+  "rows": [
+   [
+    "Banks and finance (% of money)",
+    36,
+    24
+   ],
+   [
+    "IT (% of money)",
+    12,
+    21
+   ],
+   [
+    "Cash (% of money)",
+    0,
+    9
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What does the active slice cost?",
+  "intro": "Treat a fund as an index fund (0.2% a year, assumed) plus an active slice. What is the slice charged?",
+  "rows": [
+   [
+    "Fund X: cost 1.6%, active share 38%",
+    "about 3.9% on the active slice"
+   ],
+   [
+    "Fund Y: cost 1.7%, active share 81%",
+    "about 2.1% on the active slice"
+   ]
+  ],
+  "note": "Active slice cost = (total cost minus 0.2% on the matching part) divided by the active share. A rough lens for a client chat, not an official figure."
+ },
+ {
+  "k": "pick",
+  "id": "s80q1",
+  "h": "Check yourself",
+  "q": "A fund holds A 40%, B 30%, C 20% and X 10%. Its benchmark holds A, B, C and D at 25% each. X is not in the benchmark. What is the fund's active share?",
+  "opts": [
+   "60%",
+   "15%",
+   "30%",
+   "25%"
+  ],
+  "ans": 2,
+  "why": [
+   "Adding every gap gives 60 points, but each rupee shifted is counted once as over and once as under, so the total must be halved.",
+   "15 is the largest single overweight, in A. Active share totals all the differences and then halves them, not just the biggest.",
+   "The gaps are 15, 5, 5, 25 and 10, which add to 60. Half is 30, the same as 100 minus the 70% that matches.",
+   "25% is only the weight of D, the benchmark stock that the fund skips. Active share also counts the overweights and X."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s80q2",
+  "h": "Check yourself",
+  "q": "A large-cap fund charges 1.7% a year and has an active share of 42%. An index fund costs 0.2%. How would you describe its cost to a client?",
+  "opts": [
+   "Just 1.7%, the same for any fund however it is built",
+   "About 0.7%, which is 1.7% times the 42% actively run",
+   "About 3.8% on the active slice, the rest being index-like",
+   "About 0.2%, the same as an index fund, since it tracks one"
+  ],
+  "ans": 2,
+  "why": [
+   "True as a total, but it hides what is bought. Most of the fund matches the index, which costs about 0.2% elsewhere.",
+   "Multiplying the fee by the active share understates it. The 1.7% is charged on all of the money, active or not.",
+   "Take 0.2% on the 58% that matches off the 1.7%, then divide by 42%: about 3.8% for the actively run part.",
+   "It still charges 1.7% on all assets. It is not priced like an index fund, even if much of it looks like the index."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s80q3",
+  "h": "Check yourself",
+  "q": "Fund Z holds 9% cash and its benchmark holds none. The market rallied 20% and Z returned 18.5%. The client asks if the cash was a mistake. What is the best answer?",
+  "opts": [
+   "Yes, holding any cash in an equity fund is a plain mistake",
+   "No, cash always protects, so a larger cash share is better",
+   "Check if cash is its habit and how it paid across cycles",
+   "Ignore it, since cash is not counted in the fund's return"
+  ],
+  "ans": 2,
+  "why": [
+   "Cash may be a deliberate, permitted choice. Whether it was a mistake depends on how it paid across many market phases.",
+   "Cash cost the fund in this rally. It protects only when markets fall, so more cash is not better by itself.",
+   "One rally cannot judge a cash call. Look at the manager's habit of holding cash and whether it has earned its place.",
+   "Cash is part of the NAV. In a rally it dilutes returns, which is why it matters when you compare with the index."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s80q4",
+  "h": "Check yourself",
+  "q": "A fund has an active share of 88% but has trailed its benchmark for three years. A colleague says high active share guarantees outperformance. How do you reply?",
+  "opts": [
+   "He is right; high active share must pay off eventually",
+   "No: it shows difference, not whether the bets are right",
+   "No: an active share that high signals closet indexing",
+   "He is right, as long as the benchmark does not change"
+  ],
+  "ans": 1,
+  "why": [
+   "Different does not mean better. A manager with 88% active share can be wrong for years, and the fees apply throughout.",
+   "Active share measures the distance from the index, not whether the bets pay. Results still have to be tested over long periods.",
+   "Closet indexing is the reverse case: low active share with active fees. 88% is a high-conviction portfolio, not an index copy.",
+   "Keeping the benchmark fixed does not make the bets right. Active share only says how far the fund departs from it."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Active share is the part of a portfolio that differs from the benchmark. Below about 60% with active fees is closet-indexing territory.",
+   "Overweights and underweights show the manager's views. A high cash level is caution, or a missed rally.",
+   "You pay active fees for active decisions, so check that the fund really makes them."
+  ]
+ }
+]

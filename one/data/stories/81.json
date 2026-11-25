@@ -1,0 +1,254 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "Small-cap funds have gathered very large sums. Since 2024, fund houses publish how many days it would take to sell a quarter and half of the portfolio. That number shows how crowded the exit door is.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A common mix-up",
+  "lines": [
+   [
+    "meena",
+    "My small-cap fund says 32 days to sell half its portfolio. Does that mean my redemption will take 32 days?"
+   ],
+   [
+    "sikka",
+    "No, and that is the mix-up to clear first. Let us see what the number really measures."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "One slow stock sets the clock",
+  "alt": "Bars of days needed to sell half of each of six holdings in a fund",
+  "caps": [
+   [
+    0.3,
+    "Fund B holds six stocks. Each bar: days to sell half of that stock, at 10% of its daily trading (assumed)."
+   ],
+   [
+    2.3,
+    "Busy stocks clear within a week. Thin ones take weeks."
+   ],
+   [
+    4.2,
+    "A pro-rata exit sells all six together, so the slowest stock sets the pace for the whole fund."
+   ],
+   [
+    6.4,
+    "That makes 32 days for 50% and 16 days for 25%. This is the figure the stress test reports."
+   ]
+  ],
+  "vals": [
+   6,
+   8,
+   12,
+   18,
+   24,
+   32
+  ],
+  "labels": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "E",
+   "F"
+  ],
+  "big": "Fund B: 32 days for 50%",
+  "small": "and 16 days for 25%"
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Same holdings, more money",
+  "alt": "Bars comparing days to sell 25% and 50% for a small fund and a fund four times larger",
+  "caps": [
+   [
+    0.3,
+    "Same six holdings, same market. Fund A has ₹2,000 crore. Fund B has four times as much."
+   ],
+   [
+    2.5,
+    "Four times the money means four times the days: 16 to sell 25%, against 4."
+   ],
+   [
+    4.2,
+    "And 32 days to sell 50%, against 8. As a fund grows, the exit gets slower."
+   ],
+   [
+    6.2,
+    "More days means a harder exit in a sell-off. It is a risk signal, not a payout delay."
+   ]
+  ],
+  "a": "Small fund A",
+  "b": "Big fund B",
+  "rows": [
+   [
+    "Days to sell 25%",
+    4,
+    16
+   ],
+   [
+    "Days to sell 50%",
+    8,
+    32
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Who is left holding what",
+  "alt": "Two bars showing a fund's mix of easy, medium and thin stocks before and after heavy redemptions",
+  "caps": [
+   [
+    0.3,
+    "A made-up fund: 60% easy-to-sell stocks, 25% medium, 15% thin."
+   ],
+   [
+    1.7,
+    "Heavy redemptions arrive: 40% of the fund. The manager sells the easy stocks first."
+   ],
+   [
+    3.1,
+    "Those who stay now hold 33% easy, 42% medium and 25% thin. The next exit is harder."
+   ],
+   [
+    4.4,
+    "Early leavers got better prices. This is the risk a stress test warns about."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Before the redemptions",
+    "segs": [
+     [
+      "Easy: 60%",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Medium: 25%",
+      25,
+      "#FFC531"
+     ],
+     [
+      "Thin: 15%",
+      15,
+      "#FFB3A5"
+     ]
+    ]
+   },
+   {
+    "name": "After 40% leave, easy stocks sold first",
+    "segs": [
+     [
+      "Easy: 33%",
+      33,
+      "#3CC47A"
+     ],
+     [
+      "Medium: 42%",
+      42,
+      "#FFC531"
+     ],
+     [
+      "Thin: 25%",
+      25,
+      "#FFB3A5"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s81q1",
+  "h": "Check yourself",
+  "q": "A small-cap fund shows 24 days to liquidate 50% of its portfolio, selling in proportion at a steady pace. How many days does the same test show for 25%?",
+  "opts": [
+   "24 days",
+   "6 days",
+   "12 days",
+   "48 days"
+  ],
+  "ans": 2,
+  "why": [
+   "Same days for half the amount would mean the selling pace doubled, which the test does not assume.",
+   "Halving the amount does not square the time. At a fixed pace, time scales in direct proportion to what is sold.",
+   "At a steady pace the time is proportional: half the portion needs half the days, so 12 here.",
+   "Doubling is what you would see when selling more, not less. A smaller portion needs fewer days, not more."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s81q2",
+  "h": "Check yourself",
+  "q": "A client's small-cap fund shows 32 days to sell half its portfolio. She fears her own redemption will take 32 days. What is accurate?",
+  "opts": [
+   "Yes, every redemption waits until the fund has sold its holdings",
+   "No, it is a stress scenario for a mass exit, not a payout delay",
+   "No, the figure applies only to institutions, not to retail investors",
+   "Yes, but only for redemptions above ₹10 lakh in that fund"
+  ],
+  "ans": 1,
+  "why": [
+   "Redemptions are normally paid in the usual time from cash and liquid holdings. The 32 days is a test, not a queue.",
+   "The test asks how long selling half pro rata would take if many investors left together. It does not delay normal payouts.",
+   "The figure describes the portfolio, which every investor shares. It is not split by type of investor.",
+   "The stress test sets no such threshold. It measures how liquid the portfolio is, not the size of one redemption."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s81q3",
+  "h": "Check yourself",
+  "q": "A client with ₹50 lakh wants 40% in two small-cap funds, both showing about 40 days to liquidate half. What is the most useful advice?",
+  "opts": [
+   "Accept it, since 40 days for half is standard for small caps",
+   "Spread the 40% over four small-cap funds to shorten the days",
+   "Keep 40%, but choose the fund that shows the fewest days",
+   "Size the slice to what he can hold through a deep fall"
+  ],
+  "ans": 3,
+  "why": [
+   "No fixed standard exists. Long days flag exit risk on top of small-cap swings, so the size still needs a deliberate choice.",
+   "Four funds in the same bucket hold overlapping stocks and the same swings, so the total risk and total exit time stay much alike.",
+   "Fewer days is a better tie-breaker, but a 40% slice stays too big if a sharp fall would make him sell in a panic.",
+   "Liquidity and volatility both argue for size. The slice should match what he can sit through, then days break ties."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s81q4",
+  "h": "Check yourself",
+  "q": "A small-cap fund meets heavy redemptions by selling its most liquid stocks first. What happens to the investors who stay?",
+  "opts": [
+   "Their mix turns thinner, so a second exit is harder",
+   "They gain, since the manager keeps only the best stocks",
+   "Nothing changes, because every investor shares pro rata",
+   "They are repaid first, because they stayed with the fund"
+  ],
+  "ans": 0,
+  "why": [
+   "The easy stocks go first, leaving a more illiquid mix. Early leavers get out at better prices than those who stay.",
+   "Best here means easiest to sell, not highest quality. What remains can be weaker on liquidity and harder to exit.",
+   "Investors do share pro rata, but the portfolio itself changes: it is left with the harder-to-sell stocks.",
+   "Redemptions are paid to those who ask, not to those who stay. Staying earns no priority in payment."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The stress test reports days to sell 25% and 50% of a fund's holdings. More days means a harder exit in a sell-off.",
+   "It is not a payout delay. The cost of a crowded exit falls on the investors who stay.",
+   "Size small-cap slices to what a client can hold through a deep fall, and use the days to compare funds."
+  ]
+ }
+]

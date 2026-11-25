@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "India made ₹1.78 lakh crore of defence goods in FY26, a record. That is 2.1 times FY21 and about four times FY14. And one more thing changed: the private sector's share rose to a record 24%.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Made in India",
+  "lines": [
+   [
+    "meena",
+    "Who makes all this equipment?"
+   ],
+   [
+    "sikka",
+    "Public sector units make about 76%. Private firms rose to a record 24%, about ₹42,000 crore. The target is ₹3 lakh crore of production by 2029."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Defence production, ₹ crore",
+  "vals": [
+   43746,
+   84643,
+   154000,
+   178000
+  ],
+  "labels": [
+   "FY14",
+   "FY21",
+   "FY25",
+   "FY26"
+  ],
+  "big": "₹1.78 lakh crore",
+  "small": "up 15.6% in FY26; target ₹3 lakh crore by 2029",
+  "alt": "Bars of defence production across years",
+  "caps": [
+   [
+    0.3,
+    "FY14: about ₹43,746 crore."
+   ],
+   [
+    2.2,
+    "FY21: ₹84,643 crore."
+   ],
+   [
+    4.0,
+    "FY25: about ₹1.54 lakh crore."
+   ],
+   [
+    5.6,
+    "FY26: a record ₹1.78 lakh crore."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Record production",
+  "stops": [
+   [
+    "FY26 production was a record ₹1.78 lakh crore",
+    true
+   ],
+   [
+    "Private firms made most of it",
+    false
+   ],
+   [
+    "The private share reached a record 24%",
+    true
+   ],
+   [
+    "The 2029 target is ₹1 lakh crore",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Up 15.6% from ₹1.54 lakh crore."
+   ],
+   [
+    2.2,
+    "Public sector made about 76%."
+   ],
+   [
+    4.0,
+    "About ₹42,000 crore."
+   ],
+   [
+    5.6,
+    "The target is ₹3 lakh crore."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s33q1",
+  "h": "Check yourself",
+  "q": "Production rose from ₹1.54 lakh crore to ₹1.78 lakh crore. By about how much?",
+  "opts": [
+   "About 2.1%",
+   "About 24%",
+   "About 76%",
+   "About 15.6%"
+  ],
+  "ans": 3,
+  "why": [
+   "2.1 is the multiple over FY21, not the rise.",
+   "24% is the private share of output.",
+   "76% is the public sector share.",
+   "The lesson gives a rise of 15.6%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s33q2",
+  "h": "Check yourself",
+  "q": "What share did the public sector make in FY26?",
+  "opts": [
+   "About 24%",
+   "About 76%",
+   "About 15.6%",
+   "About 100%"
+  ],
+  "ans": 1,
+  "why": [
+   "24% is the private share.",
+   "Public sector made about 76%.",
+   "15.6% is the growth rate.",
+   "Private firms made a share too."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s33q3",
+  "h": "Check yourself",
+  "q": "What is the production target for 2029?",
+  "opts": [
+   "₹3 lakh crore",
+   "₹1.78 lakh crore",
+   "₹50,000 crore",
+   "₹84,643 crore"
+  ],
+  "ans": 0,
+  "why": [
+   "The target is ₹3 lakh crore by 2029.",
+   "₹1.78 lakh crore is the FY26 output.",
+   "₹50,000 crore is the export target.",
+   "₹84,643 crore is the FY21 output."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s33q4",
+  "h": "Check yourself",
+  "q": "FY26 output of ₹1.78 lakh crore is about how many times FY21's ₹84,643 crore?",
+  "opts": [
+   "About 4 times",
+   "About 1.1 times",
+   "About 2.1 times",
+   "About 10 times"
+  ],
+  "ans": 2,
+  "why": [
+   "About 4 times is the comparison with FY14.",
+   "1.1 times is far too small. It does not answer what was asked.",
+   "1.78 lakh ÷ 84,643 is about 2.1. This fits the facts given.",
+   "10 times is far too large. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FY26 defence production: a record ₹1.78 lakh crore, up 15.6%.",
+   "Public sector ~76%, private a record 24%.",
+   "Target: ₹3 lakh crore by 2029."
+  ]
+ }
+]

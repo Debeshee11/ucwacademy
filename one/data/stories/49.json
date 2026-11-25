@@ -1,0 +1,185 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "In India, gold used to mean jewellery. Now more people want gold they can hold without making charges and purity worries. Indian gold ETFs saw record inflows of about ₹43,000 crore in 2025. A habit is shifting.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "From jewellery to ETFs",
+  "lines": [
+   [
+    "meena",
+    "Why are people buying gold ETFs instead of jewellery?"
+   ],
+   [
+    "sikka",
+    "Jewellery has making charges and purity worries. An ETF tracks the gold price and is bought and sold on the exchange. Global jewellery demand fell to a post-pandemic low of 278 tonnes in Q2 2026."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "India's share of global gold ETF AUM, %",
+  "vals": [
+   1.9,
+   2.5
+  ],
+  "labels": [
+   "2024",
+   "2025"
+  ],
+  "big": "1.9% to 2.5%",
+  "small": "as per the lesson",
+  "alt": "Bars of India's share of global gold ETF assets",
+  "caps": [
+   [
+    0.3,
+    "In 2024, India held 1.9% of global gold ETF assets."
+   ],
+   [
+    2.2,
+    "In 2025, it held 2.5%."
+   ],
+   [
+    4.0,
+    "Indian gold ETFs saw record inflows of about ₹43,000 crore."
+   ],
+   [
+    5.6,
+    "AUM ended 2025 near ₹1.28 lakh crore."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Jewellery to investment",
+  "stops": [
+   [
+    "Global jewellery demand fell to 278t in Q2 2026",
+    true
+   ],
+   [
+    "Indian gold ETFs saw outflows in 2025",
+    false
+   ],
+   [
+    "India's share of gold ETF AUM rose in 2025",
+    true
+   ],
+   [
+    "Investors prefer making charges on gold",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The lowest since the pandemic."
+   ],
+   [
+    2.2,
+    "They saw record inflows."
+   ],
+   [
+    4.0,
+    "From 1.9% to 2.5%."
+   ],
+   [
+    5.6,
+    "They want gold without making charges."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s49q1",
+  "h": "Check yourself",
+  "q": "Why are investors moving to gold ETFs?",
+  "opts": [
+   "Gold ETFs pay a fixed interest rate",
+   "ETFs are issued directly by SEBI",
+   "ETFs cannot change in price at all",
+   "Gold exposure without making charges"
+  ],
+  "ans": 3,
+  "why": [
+   "Gold ETFs pay no fixed interest. It does not answer what was asked.",
+   "SEBI regulates, but does not issue ETFs. The details here point elsewhere.",
+   "ETF prices follow gold and do change. That does not match this case.",
+   "ETFs avoid making charges and purity concerns. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s49q2",
+  "h": "Check yourself",
+  "q": "What happened to India's share of global gold ETF AUM from 2024 to 2025?",
+  "opts": [
+   "It fell from 2.5% to 1.9%",
+   "It rose from 1.9% to 2.5%",
+   "It stayed at 1.9%",
+   "It rose from 25% to 50%"
+  ],
+  "ans": 1,
+  "why": [
+   "That reverses the direction. The details here point elsewhere.",
+   "The lesson gives a rise from 1.9% to 2.5%. This fits the facts given.",
+   "It did not stay put. It does not fit the facts given.",
+   "Those figures are far larger than stated. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s49q3",
+  "h": "Check yourself",
+  "q": "About how much did Indian gold ETFs attract in 2025, as per the lesson?",
+  "opts": [
+   "About ₹1.28 lakh crore",
+   "About ₹278 crore",
+   "About ₹43,000 crore",
+   "About ₹4,873 crore"
+  ],
+  "ans": 2,
+  "why": [
+   "₹1.28 lakh crore is the AUM at year-end.",
+   "278 is the tonnes of global jewellery demand.",
+   "Record inflows were about ₹43,000 crore.",
+   "4,873 is the dollar price in Q1 2026."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s49q4",
+  "h": "Check yourself",
+  "q": "A fall in global jewellery demand to 278 tonnes shows what?",
+  "opts": [
+   "Its lowest volume since Covid",
+   "Gold has no demand left at all today",
+   "All central banks sold their gold",
+   "ETFs were banned from trading"
+  ],
+  "ans": 0,
+  "why": [
+   "It was the lowest quarterly volume since the pandemic.",
+   "Gold still has strong investment demand. The details here point elsewhere.",
+   "Central banks were net buyers. The details here point elsewhere.",
+   "ETFs were not banned. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Global jewellery demand fell to 278t in Q2 2026.",
+   "Indian gold ETF inflows hit about ₹43,000 crore in 2025.",
+   "India's share of gold ETF AUM rose from 1.9% to 2.5%."
+  ]
+ }
+]

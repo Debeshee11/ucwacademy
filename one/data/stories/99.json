@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "On 1 January 2026, SEBI changed how mutual funds and SIFs treat REITs: as equity-related instruments. InvITs stay hybrid. A client may now see REIT units sitting inside an equity fund's holdings.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The 2026 reclassification",
+  "lines": [
+   [
+    "meena",
+    "What happens to existing holdings?"
+   ],
+   [
+    "sikka",
+    "Debt schemes that held REIT units on 31 December 2025 may keep them, and AMCs are encouraged, not forced, to reduce them over time. REITs can enter equity indices after a six-month buffer, from July 2026. Read the holdings table and the scheme addendum, because factsheets may now show REIT or InvIT units in equity or hybrid holdings."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What changed",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "From 1 Jan 2026",
+    "REITs are equity-related for MFs and SIFs"
+   ],
+   [
+    "InvITs",
+    "remain hybrid"
+   ],
+   [
+    "Existing debt-scheme holdings",
+    "may be kept; reduction encouraged, not forced"
+   ],
+   [
+    "Index entry",
+    "after a six-month buffer, from July 2026"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s99q1",
+  "h": "Check yourself",
+  "q": "How are REITs treated for mutual funds from 1 January 2026?",
+  "opts": [
+   "Pure debt instruments only",
+   "Gold-linked instruments only",
+   "Equity-related instruments",
+   "Cash-like instruments only"
+  ],
+  "ans": 2,
+  "why": [
+   "They are not debt.",
+   "They are not gold.",
+   "That is the 2026 rule.",
+   "They are not cash."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s99q2",
+  "h": "Check yourself",
+  "q": "What may debt schemes do with REIT units held on 31 December 2025?",
+  "opts": [
+   "Keep them",
+   "Must sell them in a day",
+   "Must double them",
+   "Must hide them"
+  ],
+  "ans": 0,
+  "why": [
+   "They may keep them.",
+   "No one-day sale is required.",
+   "No doubling is required.",
+   "Holdings are disclosed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s99q3",
+  "h": "Check yourself",
+  "q": "When can REITs enter equity indices, per the lesson?",
+  "opts": [
+   "Never, under any rule at all",
+   "After six months, July 2026",
+   "Within one day of the listing",
+   "Only after a full ten years"
+  ],
+  "ans": 1,
+  "why": [
+   "Entry is allowed. That does not match this case.",
+   "That is the stated timing. That matches the case described.",
+   "A buffer applies. It does not answer what was asked.",
+   "Ten years is not stated. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s99q4",
+  "h": "Check yourself",
+  "q": "What should an RM read in a factsheet?",
+  "opts": [
+   "Only the front-page slogan",
+   "Only the colour of the cover",
+   "Nothing at all in the document",
+   "Holdings table and addendum"
+  ],
+  "ans": 3,
+  "why": [
+   "A slogan is not data. It does not fit the facts given.",
+   "Colour is not data. It does not answer what was asked.",
+   "Reading is needed. The details here point elsewhere.",
+   "REIT units may now appear in holdings."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "REITs are equity-related for MFs and SIFs from 1 Jan 2026.",
+   "InvITs stay hybrid.",
+   "Read the holdings table and scheme addendum."
+  ]
+ }
+]

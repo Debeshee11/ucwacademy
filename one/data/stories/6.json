@@ -1,0 +1,164 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client holds a thematic fund and a diversified fund, thinking she has spread her money. But both hold many of the same large companies. She is doubling up, not diversifying. A category is a promise about what a fund will hold.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Does the name match?",
+  "lines": [
+   [
+    "meena",
+    "Why did SEBI change the category rules?"
+   ],
+   [
+    "sikka",
+    "Because some thematic funds held many of the same large companies as diversified funds. The 2026 rules cap overlap at 50%, so sector and theme funds are genuinely different. That makes them better satellites, and more volatile, because they are more concentrated."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Overlap, made up",
+  "rows": [
+   {
+    "name": "Thematic fund vs diversified fund",
+    "segs": [
+     [
+      "Same stocks 70%",
+      70,
+      "#FF9F7A"
+     ],
+     [
+      "Different 30%",
+      30,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "After the 50% cap (at most)",
+    "segs": [
+     [
+      "Same stocks up to 50%",
+      50,
+      "#FFC531"
+     ],
+     [
+      "Different 50%+",
+      50,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "Two bars showing overlap before and after a 50% cap",
+  "caps": [
+   [
+    0.3,
+    "Before: heavy overlap with diversified funds."
+   ],
+   [
+    2.2,
+    "Clients thought they were diversifying."
+   ],
+   [
+    4.0,
+    "The cap forces real differences."
+   ],
+   [
+    5.6,
+    "More distinct, but more concentrated and volatile."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s6q1",
+  "h": "Check yourself",
+  "q": "What did SEBI's 50% overlap cap aim at?",
+  "opts": [
+   "Raising the fees that funds charge",
+   "Making theme funds truly different",
+   "Banning thematic funds in full",
+   "Guaranteeing fund returns to all"
+  ],
+  "ans": 1,
+  "why": [
+   "The cap is not about fees. It does not answer what was asked.",
+   "It forces thematic funds to differ from diversified ones.",
+   "Thematic funds remain allowed. That does not match this case.",
+   "Returns can never be guaranteed. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s6q2",
+  "h": "Check yourself",
+  "q": "A client holds a thematic and a diversified fund with large overlap. What is the problem?",
+  "opts": [
+   "Fully diversified across funds",
+   "Holding no equity exposure",
+   "Paying no cost on either fund",
+   "Doubling up, not diversifying"
+  ],
+  "ans": 3,
+  "why": [
+   "Overlap defeats diversification. That does not match this case.",
+   "Both funds hold equity. That does not match this case.",
+   "Both funds carry costs. It does not fit the facts given.",
+   "The same stocks sit in both funds. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s6q3",
+  "h": "Check yourself",
+  "q": "Why can tighter theme funds be more volatile?",
+  "opts": [
+   "They are more concentrated",
+   "They hold only cash",
+   "They are exempt from markets",
+   "They have no benchmark"
+  ],
+  "ans": 0,
+  "why": [
+   "Fewer, more focused holdings swing more. That matches the case described.",
+   "They hold securities, not cash. It does not answer what was asked.",
+   "They are affected by markets. The details here point elsewhere.",
+   "They have benchmarks. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s6q4",
+  "h": "Check yourself",
+  "q": "What should an RM do with a new category such as Life Cycle Funds?",
+  "opts": [
+   "Recommend it to every client now",
+   "Ignore every new category for good",
+   "Read the scheme documents first",
+   "Promise a return on it to clients"
+  ],
+  "ans": 2,
+  "why": [
+   "Recommending unread is unsafe. It does not fit the facts given.",
+   "Ignoring may miss a fit. It does not answer what was asked.",
+   "New categories need careful reading before recommending.",
+   "Returns cannot be promised. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A category is a promise about what a fund holds.",
+   "The 50% overlap cap makes sector and theme funds distinct.",
+   "Distinct also means more concentrated and volatile."
+  ]
+ }
+]

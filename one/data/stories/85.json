@@ -1,0 +1,274 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "In March 2026 the Nifty 50 fell 11.3% and industry assets under management slid 10.1% in one month. Yet investors put ₹40,450 crore into equity funds that month, per AMFI. Your job is to make sure your clients are among those who stayed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The silent client",
+  "lines": [
+   [
+    "meena",
+    "The papers say markets are crashing, but Meena has not called. Should I leave her alone?"
+   ],
+   [
+    "sikka",
+    "No. Silence in a fall is rarely calm. Call before she calls you, and bring her own plan, not a market forecast."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "h": "What a SIP does in a fall",
+  "alt": "Six monthly instalments of 10,000 rupees buying units while the price slides 11.3 percent and then recovers",
+  "caps": [
+   [
+    0.2,
+    "A ₹10,000 monthly SIP meets a fall. The price slides 11.3% in three months (a made-up path)."
+   ],
+   [
+    5.4,
+    "At ₹88.7 the same ₹10,000 bought 112.7 units, against 100 units at ₹100."
+   ],
+   [
+    7.2,
+    "Same money, about 13% more units, because the price was 11.3% lower."
+   ],
+   [
+    9.4,
+    "The price recovers, and the cheaper units come along for the ride."
+   ],
+   [
+    11.8,
+    "₹60,000 bought 634 units, at an average cost of ₹94.6."
+   ]
+  ],
+  "navs": [
+   100,
+   96,
+   92,
+   88.7,
+   93,
+   99
+  ],
+  "amt": 10000,
+  "scale": 0.8
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "The cost of leaving",
+  "alt": "Two lines for an investor who stays and one who sells at the low and returns later, with the deepest fall marked",
+  "caps": [
+   [
+    0.3,
+    "Two investors put ₹100 in the same fund. The path is made up."
+   ],
+   [
+    3.6,
+    "Year 6 brings a long fall. By year 7 the fund is about 35% below its peak."
+   ],
+   [
+    5.8,
+    "One investor sells at the low and waits in a 6% deposit until it feels safe."
+   ],
+   [
+    7.3,
+    "The fund rebounds fast. He buys back in year 9, after most of the rise."
+   ],
+   [
+    8.8,
+    "Same fund, same fall. Staying: ₹154. Selling at the low: ₹122."
+   ]
+  ],
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Sold at the low",
+    "color": "#E8573D",
+    "vals": [
+     100,
+     108,
+     119,
+     131,
+     144,
+     159,
+     118,
+     104,
+     110.2,
+     116.9,
+     121.6
+    ]
+   },
+   {
+    "name": "Stayed invested",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     108,
+     119,
+     131,
+     144,
+     159,
+     118,
+     104,
+     128,
+     148,
+     154
+    ]
+   }
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "The call before they call",
+  "alt": "A shield with what a good call does and what it must not do",
+  "caps": [
+   [
+    0.3,
+    "Call before they call you, with context and their own plan in hand."
+   ],
+   [
+    3.0,
+    "A good call restates the plan and shows what the SIP bought at lower prices."
+   ],
+   [
+    5.5,
+    "Never call the bottom, and never promise a date for the recovery."
+   ]
+  ],
+  "title": "On the phone, after a fall",
+  "stops": [
+   [
+    "Remind them what the plan assumed",
+    true
+   ],
+   [
+    "Show what the SIP bought at low prices",
+    true
+   ],
+   [
+    "Say this is the bottom, so buy more",
+    false
+   ],
+   [
+    "Promise a recovery by a fixed date",
+    false
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "March 2026, AMFI data",
+  "intro": "What investors did in the month the Nifty 50 fell 11.3% to 22,331.",
+  "rows": [
+   [
+    "Industry AUM",
+    "₹82.03 to ₹73.73 lakh crore"
+   ],
+   [
+    "Net equity inflows",
+    "₹40,450 crore, from ₹25,978 crore"
+   ],
+   [
+    "SIP contributions",
+    "₹32,087 crore, from ₹29,845 crore"
+   ],
+   [
+    "Equity inflow streak",
+    "61st month in a row"
+   ]
+  ],
+  "note": "Part of the AUM fall was net outflows from debt funds, so the index move is the fairer market figure to quote."
+ },
+ {
+  "k": "pick",
+  "id": "s85q1",
+  "h": "Check yourself",
+  "q": "A fund's price falls 20%, from ₹100 to ₹80. How many more units does a client's fixed SIP instalment buy at ₹80 than at ₹100?",
+  "opts": [
+   "About 20% more units",
+   "Exactly the same number",
+   "About 25% more units",
+   "About 12% more units"
+  ],
+  "ans": 2,
+  "why": [
+   "The price fell 20%, but units move as the reciprocal: 1 divided by 0.8 is 1.25, so the gain in units is larger than 20%.",
+   "A fixed sum divided by a lower price always gives more units. The same number would need the price to stay unchanged.",
+   "₹10,000 buys 100 units at ₹100 and 125 units at ₹80. That is 25% more for the same money.",
+   "Units do not rise by half the fall. The link is reciprocal, so a 20% fall lifts units by 25%, not about 12%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s85q2",
+  "h": "Check yourself",
+  "q": "A colleague tells clients markets fell 10.1% in March 2026, quoting the fall in industry AUM from AMFI. What is the weakness in that statement?",
+  "opts": [
+   "AUM mixes market moves with flows; the Nifty 50's 11.3% is fairer",
+   "AUM never falls within a month, so the figure must be an error",
+   "Nothing, since industry AUM is the official measure of market return",
+   "AMFI reports AUM only for equity funds, so it cannot be used"
+  ],
+  "ans": 0,
+  "why": [
+   "AUM moves with market prices and with money in or out. Debt funds saw large net outflows that month, so the index is cleaner.",
+   "AUM can fall in a month, and it did. The 10.1% is a real AMFI figure, so the issue is its meaning, not an error.",
+   "AUM is not a return measure. It changes with flows as well as prices, so it should not be passed off as a market return.",
+   "AMFI reports AUM for all fund types, debt included. That is partly why the 10.1% is not a pure equity-market figure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s85q3",
+  "h": "Check yourself",
+  "q": "The Nifty is down 11% this month. A client in her third year of SIP has not called you. What do you do?",
+  "opts": [
+   "Wait for her to call, since contact may unsettle her",
+   "Call, restate her plan, and show what the SIP bought",
+   "Email a market outlook that predicts a recovery date",
+   "Offer to pause her SIP until the market settles"
+  ],
+  "ans": 1,
+  "why": [
+   "Waiting leaves her alone with the headlines. Clients who hear from you first tend to ask before they act.",
+   "It gives context and a plan, not a forecast. Showing the cheaper units her SIP bought turns the fall into something useful.",
+   "No one can predict a date, and a wrong forecast costs trust. Context and her own plan are worth more than an outlook.",
+   "A pause skips the instalments that buy at low prices. Offering it first teaches her that the plan is to be dropped in a fall."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s85q4",
+  "h": "Check yourself",
+  "q": "A client who needs ₹15 lakh for a flat in 18 months wants to sell his equity fund after a 25% fall. What is the most honest approach?",
+  "opts": [
+   "Tell him to hold everything, since every fall recovers in time",
+   "Agree to sell everything, because any fall means the plan failed",
+   "Wait 18 months, then sell whatever the fund is worth by then",
+   "Split by goal, since the flat money needs a safer home"
+  ],
+  "ans": 3,
+  "why": [
+   "No one can promise a recovery before his date. Money due in 18 months cannot wait for one, which is the real problem.",
+   "A fall is not proof the plan failed. Selling long-term money at the low makes a paper loss real, so only what is due soon should move.",
+   "That makes the flat depend on the market's mood in 18 months. It repeats the original mistake of holding near-term money in equity.",
+   "Hand-holding does not mean never selling. Near-term money belongs in safer funds, while long-term money can stay with the plan."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Falls of 10% or more happen in most years, so a plan should assume them. A SIP buys more units when prices are lower.",
+   "Call before they call you: restate the plan, and never predict the bottom or promise a recovery date.",
+   "Selling at the low and waiting to feel safe usually means buying back higher. Money needed soon never belonged in equity."
+  ]
+ }
+]

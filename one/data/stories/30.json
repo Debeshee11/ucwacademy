@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Clients do not want ten charts. They want one clear story. 'India grows fast, rates are normalising, and SIP money steadies the market, so let us stay with your plan.' That is a macro story.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "One story, linked to goals",
+  "lines": [
+   [
+    "meena",
+    "What goes into the macro story?"
+   ],
+   [
+    "sikka",
+    "Growth: about 7.7% in FY26, among the fastest large economies. Rates: easing in 2025 and a first hike in October 2026, which is normalisation, not crisis. Flows: domestic SIP money anchors the market. Then tie it to her goal."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A three-line macro story",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Growth",
+    "about 7.7% in FY26"
+   ],
+   [
+    "Rates",
+    "eased in 2025; first hike Oct 2026, normalisation not crisis"
+   ],
+   [
+    "Flows",
+    "domestic SIP money anchors the market"
+   ],
+   [
+    "Then",
+    "link it to the client's goal"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s30q1",
+  "h": "Check yourself",
+  "q": "How should an RM present the macro picture?",
+  "opts": [
+   "Ten charts with no conclusion",
+   "A forecast of next week's index",
+   "A list of tips on stocks",
+   "One clear story tied to goals"
+  ],
+  "ans": 3,
+  "why": [
+   "Many charts overwhelm. It does not answer what was asked.",
+   "Forecasts cannot be promised. The details here point elsewhere.",
+   "Tips are not education. That does not match this case.",
+   "One clear story helps the client decide. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s30q2",
+  "h": "Check yourself",
+  "q": "How does the lesson describe the rate hike of October 2026?",
+  "opts": [
+   "Normalisation, not crisis",
+   "The start of a major crash",
+   "A permanent ban on loans",
+   "A return of the old rates"
+  ],
+  "ans": 0,
+  "why": [
+   "Rates were eased in 2025 and then normalised.",
+   "It is not described as a crash. That does not match this case.",
+   "No loan ban is stated. It does not fit the facts given.",
+   "It is not described that way. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s30q3",
+  "h": "Check yourself",
+  "q": "What anchors the market, per the lesson?",
+  "opts": [
+   "Only the foreign loans",
+   "Domestic SIP money",
+   "Only the oil exports",
+   "Only the gold imports"
+  ],
+  "ans": 1,
+  "why": [
+   "Foreign loans are not the anchor.",
+   "SIP flows anchor the market.",
+   "Oil exports are not the anchor.",
+   "Gold imports are not the anchor."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s30q4",
+  "h": "Check yourself",
+  "q": "What should the macro story always connect to?",
+  "opts": [
+   "The RM's sales target",
+   "The latest social media post",
+   "The client's own goals",
+   "The fund house's brochure"
+  ],
+  "ans": 2,
+  "why": [
+   "A target is not the client's need.",
+   "Social media is not a basis.",
+   "Goals make it relevant.",
+   "A brochure is not a basis."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Growth, rates and flows: one clear story.",
+   "The October 2026 hike is normalisation, not crisis.",
+   "Link the story to the client's goals."
+  ]
+ }
+]

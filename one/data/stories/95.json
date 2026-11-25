@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A REIT pays ₹10 a unit. A client calls it all income and plans tax on it. But the ₹10 is a mix: interest, dividend, rent, and maybe return of capital. Each part is treated differently.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A payout is a mix",
+  "lines": [
+   [
+    "meena",
+    "The website says 7% yield. Is that what I keep?"
+   ],
+   [
+    "sikka",
+    "No. That yield is before tax and before splitting the payout into parts. Interest, dividend and rent are generally taxed at slab rates. Return of capital is not income, but it lowers your cost."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A payout, made up",
+  "intro": "₹10 per unit.",
+  "rows": [
+   [
+    "Interest",
+    "₹3"
+   ],
+   [
+    "Dividend",
+    "₹2"
+   ],
+   [
+    "Rent",
+    "₹4"
+   ],
+   [
+    "Return of capital",
+    "₹1, lowers cost of the unit"
+   ]
+  ],
+  "note": "Check the REIT's component-wise statement. Rules change. Confirm with a tax adviser."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "REIT payouts and tax",
+  "stops": [
+   [
+    "A payout can include return of capital",
+    true
+   ],
+   [
+    "Every part of a payout is taxed the same way",
+    false
+   ],
+   [
+    "Return of capital affects your cost of units",
+    true
+   ],
+   [
+    "The website yield is after tax",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It can also include interest, dividend and rent."
+   ],
+   [
+    2.2,
+    "Each part can be taxed differently."
+   ],
+   [
+    4.0,
+    "So it affects your gain on sale."
+   ],
+   [
+    5.6,
+    "It is a pre-tax number."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s95q1",
+  "h": "Check yourself",
+  "q": "A REIT's payout is made of what?",
+  "opts": [
+   "Only dividend, all of the time",
+   "Only rent from a single building",
+   "Interest, dividend, rent, capital",
+   "Only a bank guarantee being given"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not only dividend. It does not answer what was asked.",
+   "Rent comes from many properties, not one. The details here point elsewhere.",
+   "Payouts can mix several components. That matches the case described.",
+   "A guarantee is not what makes up a payout. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s95q2",
+  "h": "Check yourself",
+  "q": "What does the return of capital part do?",
+  "opts": [
+   "Lowers the cost of your units",
+   "Raises your slab rate",
+   "Adds to your salary",
+   "Is always taxed as interest"
+  ],
+  "ans": 0,
+  "why": [
+   "It reduces your cost, which affects gain or loss on sale.",
+   "It does not change the slab rate. That does not match this case.",
+   "It is not salary. It does not fit the facts given.",
+   "It is not taxed as interest. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s95q3",
+  "h": "Check yourself",
+  "q": "Where should an investor look to see how a payout was split?",
+  "opts": [
+   "The unit price on a chart",
+   "The component-wise statement",
+   "A news headline in the paper",
+   "A social media post online"
+  ],
+  "ans": 1,
+  "why": [
+   "A price chart shows no payout split. It does not fit the facts given.",
+   "The statement shows each component. That matches the case described.",
+   "Headlines do not show components. The details here point elsewhere.",
+   "A post is not a source. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s95q4",
+  "h": "Check yourself",
+  "q": "Under the lesson's current rules, how are listed units sold within 12 months taxed?",
+  "opts": [
+   "As long-term gains at 12.5%",
+   "As exempt",
+   "At 100%",
+   "As short-term gains at 20%"
+  ],
+  "ans": 3,
+  "why": [
+   "12.5% is for long term, beyond 12 months.",
+   "They are not exempt. It does not answer what was asked.",
+   "100% is not a tax rate here. The details here point elsewhere.",
+   "Gains up to 12 months are short term, taxed at 20%."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A payout mixes interest, dividend, rent and return of capital.",
+   "Return of capital lowers your cost of units.",
+   "The website yield is pre-tax. Check rules with a tax adviser."
+  ]
+ }
+]

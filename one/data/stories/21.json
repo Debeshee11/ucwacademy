@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "The Union Budget is not just a speech. It is a spending plan of about ₹53.5 lakh crore. Where that money goes decides which sectors get orders, and which stocks follow.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Reading the Budget",
+  "lines": [
+   [
+    "meena",
+    "Why do capital goods stocks react to the Budget?"
+   ],
+   [
+    "sikka",
+    "Government capex on roads, railways and defence becomes orders for companies. Defence alone takes about 14.7% of central spending. That spending can also crowd in private investment."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Defence in the Budget",
+  "vals": [
+   53.5,
+   7.85
+  ],
+  "labels": [
+   "Total",
+   "Defence"
+  ],
+  "big": "about 14.7%",
+  "small": "₹ lakh crore, as in the lesson",
+  "alt": "Bars of total spending and defence spending",
+  "caps": [
+   [
+    0.3,
+    "Total spending is about ₹53.5 lakh crore."
+   ],
+   [
+    2.2,
+    "Defence takes about ₹7.85 lakh crore."
+   ],
+   [
+    4.0,
+    "That is roughly 14.7% of the total."
+   ],
+   [
+    5.6,
+    "Capex becomes orders for companies."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s21q1",
+  "h": "Check yourself",
+  "q": "Government capex on roads and rail mainly helps whom?",
+  "opts": [
+   "Only the banks lending to retail",
+   "Only the foreign tourists in cities",
+   "Only the firms that pay no tax",
+   "Capital goods and infrastructure firms"
+  ],
+  "ans": 3,
+  "why": [
+   "Banks gain indirectly, not mainly. It does not answer what was asked.",
+   "Tourism is not the main channel. The details here point elsewhere.",
+   "Tax status has no link to orders. That does not match this case.",
+   "Capex turns into orders for builders and suppliers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s21q2",
+  "h": "Check yourself",
+  "q": "What does 'crowding in' mean for capex?",
+  "opts": [
+   "Public spending blocks all private firms",
+   "Public spending can draw private investment",
+   "Government stops all new projects",
+   "Private firms leave the market fully"
+  ],
+  "ans": 1,
+  "why": [
+   "That describes crowding out, the opposite. That does not match this case.",
+   "Public projects can encourage private investment too.",
+   "Capex means projects are going ahead. It does not fit the facts given.",
+   "It does not push private firms out. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s21q3",
+  "h": "Check yourself",
+  "q": "Defence takes about what share of central spending, per the lesson?",
+  "opts": [
+   "About 14.7%",
+   "About 1.5%",
+   "About 47%",
+   "About 90%"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives about 14.7%.",
+   "1.5% is far too low for the figure.",
+   "47% is far too high for the figure.",
+   "90% would leave little for anything else."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s21q4",
+  "h": "Check yourself",
+  "q": "A client asks whether to buy defence stocks 'because of the Budget'. What is sound?",
+  "opts": [
+   "Say the Budget guarantees a rise",
+   "Tell her to buy before the news",
+   "Explain the link, check suitability",
+   "Avoid explaining and just sell it"
+  ],
+  "ans": 2,
+  "why": [
+   "A Budget cannot guarantee a price. It does not answer what was asked.",
+   "Buying on a hint is a tip. It does not answer what was asked.",
+   "Link and suitability keep advice honest. This fits the facts given.",
+   "Selling without explaining helps nobody. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Budget spending turns into orders for capex-linked sectors.",
+   "Defence is about 14.7% of central spending, per the lesson.",
+   "Explain the link. Never promise a result."
+  ]
+ }
+]

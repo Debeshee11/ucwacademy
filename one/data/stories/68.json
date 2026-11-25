@@ -1,0 +1,278 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Lose 50% and you need 100% to get back. The maths of losses is lopsided, and it is the reason a smoother fund can end richer than a more exciting one with the same average return.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan's small cap fund",
+  "lines": [
+   [
+    "rohan",
+    "My small cap fund went up 50% one year and fell 50% the next. Plus 50 and minus 50 average to zero, so I should be at ₹100 still, right?"
+   ],
+   [
+    "sikka",
+    "Good guess, and a very common one. Put ₹100 in and watch it move, one year at a time."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Plus 50, then minus 50",
+  "vals": [
+   100,
+   150,
+   75
+  ],
+  "labels": [
+   "Start",
+   "+50%",
+   "-50%"
+  ],
+  "fmt": "inr",
+  "big": "₹100 became ₹75",
+  "small": "Average return 0%, real result -25%",
+  "alt": "Three bars: 100 rupees, then 150 after a 50 percent rise, then 75 after a 50 percent fall",
+  "caps": [
+   [
+    0.2,
+    "Start with ₹100."
+   ],
+   [
+    1.1,
+    "A 50% gain makes it ₹150."
+   ],
+   [
+    2.0,
+    "Now a 50% fall. Half of ₹150 is ₹75, not ₹50."
+   ],
+   [
+    3.9,
+    "The average of +50% and -50% is zero. The money ended 25% lower."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The climb back is steeper",
+  "a": "Gain needed",
+  "b": "The fall",
+  "rows": [
+   [
+    "10% fall",
+    11.1,
+    10
+   ],
+   [
+    "20% fall",
+    25,
+    20
+   ],
+   [
+    "One-third fall",
+    50,
+    33.3
+   ],
+   [
+    "50% fall",
+    100,
+    50
+   ]
+  ],
+  "alt": "Four pairs of bars comparing a fall with the gain needed to recover it",
+  "caps": [
+   [
+    0.3,
+    "A 10% fall needs an 11.1% gain to get back to where you were."
+   ],
+   [
+    2.4,
+    "A 20% fall needs 25%. A one-third fall needs 50%."
+   ],
+   [
+    4.6,
+    "A 50% fall needs a 100% gain. Money has to double just to break even."
+   ],
+   [
+    7.2,
+    "The deeper the fall, the more the recovery costs. Small falls are cheap to repair."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Same average, different ending",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Steady +10%",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     110.0,
+     121.0,
+     133.1,
+     146.4,
+     161.1,
+     177.2,
+     194.9,
+     214.4,
+     235.8,
+     259.4
+    ]
+   },
+   {
+    "name": "Jumpy +40%, -20%",
+    "color": "#E8573D",
+    "vals": [
+     100.0,
+     140.0,
+     112.0,
+     156.8,
+     125.4,
+     175.6,
+     140.5,
+     196.7,
+     157.4,
+     220.4,
+     176.3
+    ]
+   }
+  ],
+  "alt": "Two lines: a steady 10 percent a year and a path that alternates plus 40 and minus 20 percent",
+  "caps": [
+   [
+    0.3,
+    "Both paths have an average return of 10% a year. One is steady. One alternates +40% and -20%."
+   ],
+   [
+    3.4,
+    "The jumpy one looks faster in the good years. It is ahead after year 1."
+   ],
+   [
+    6.0,
+    "But every fall takes a bigger bite out of a bigger pile."
+   ],
+   [
+    8.6,
+    "After 10 years: ₹100 became ₹259 on the steady path and ₹176 on the jumpy one."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Same average, different growth",
+  "intro": "What the arithmetic average hides.",
+  "rows": [
+   [
+    "Steady path, average",
+    "10% a year"
+   ],
+   [
+    "Jumpy path, average",
+    "10% a year (+40, -20)"
+   ],
+   [
+    "Steady path, real growth",
+    "10% a year"
+   ],
+   [
+    "Jumpy path, real growth",
+    "about 5.8% a year"
+   ]
+  ],
+  "note": "Growth per year is the square root of 1.4 times 0.8, minus one. The gap is called volatility drag. The bigger the swings, the larger it gets."
+ },
+ {
+  "k": "pick",
+  "id": "s68q1",
+  "h": "Check yourself",
+  "q": "A client's ₹1 lakh portfolio falls 40%, to ₹60,000. What gain does it need to get back to ₹1 lakh?",
+  "opts": [
+   "40%, because the climb back has to match the fall exactly",
+   "60%, because it now holds sixty percent of its old value",
+   "80%, because falls count double on the way back up again",
+   "About 66.7%: ₹40,000 must be added to ₹60,000"
+  ],
+  "ans": 3,
+  "why": [
+   "A 40% gain on ₹60,000 is only ₹24,000. It leaves the portfolio at ₹84,000, still short of ₹1 lakh.",
+   "A 60% gain adds ₹36,000 and lands at ₹96,000. That is still ₹4,000 short of ₹1 lakh.",
+   "An 80% gain overshoots, giving ₹1,08,000. The exact answer is ₹40,000 over ₹60,000.",
+   "The gain is measured on the smaller base. ₹40,000 divided by ₹60,000 is 66.7%, more than the 40% fall."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s68q2",
+  "h": "Check yourself",
+  "q": "Fund A earned 12% in each of four years. Fund B earned +40%, -16%, +40%, -16%, which also averages 12%. After four years of ₹1 lakh in each, which statement is true?",
+  "opts": [
+   "The two end equal, because their average yearly return is the same",
+   "A ends higher, near ₹1,57,000 against about ₹1,38,000 for B",
+   "B ends higher, because its good years were bigger than any year of A",
+   "B ends higher, but only because two of its years were falls instead of three"
+  ],
+  "ans": 1,
+  "why": [
+   "Equal averages do not give equal endings. Growth compounds, so the order and size of swings changes the result.",
+   "A: 1.12 four times is about 1.57. B: 1.4 times 0.84, twice, is about 1.38. Swings reduce the ending value.",
+   "B's falls did more harm than its +40% years did good. Compounded, B ends lower than A.",
+   "B had two falls and two gains, but each fall hit a larger pile. The count of years is not the point."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s68q3",
+  "h": "Check yourself",
+  "q": "A client says she would rather catch every rally than avoid big falls. A market goes +40% then -30%. A fund captures 70% of each rise and 50% of each fall. Where does ₹100 end in the fund?",
+  "opts": [
+   "About ₹109, since it rises 28% to ₹128 and then falls 15%",
+   "About ₹113, since 28 less 15 is 13, so ₹100 gains ₹13 in total",
+   "About ₹98, since the fund follows the market and ends where it does",
+   "Exactly ₹100, because the rises and the falls are of similar size"
+  ],
+  "ans": 0,
+  "why": [
+   "₹100 times 1.28 is ₹128. A 15% fall takes it to ₹108.8. The market itself ended near ₹98.",
+   "Returns multiply, they do not add. The 15% fall acts on ₹128, a bigger base than ₹100.",
+   "The fund took only part of each move. It did not copy the market, so it did not end at ₹98.",
+   "The rise and fall are not equal. The fund gains 28% and loses 15%, so it ends above ₹100."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s68q4",
+  "h": "Check yourself",
+  "q": "An adviser argues that avoiding big falls matters more than catching every rally. What is the reason?",
+  "opts": [
+   "Rallies in the market are always smaller than the falls that follow them in time",
+   "Avoiding falls removes the tax on the gains that a portfolio would otherwise earn",
+   "A deep fall needs a bigger gain to repair, so small falls leave more to compound",
+   "A fall of 50% needs only a 50% gain to bring the money back up to the start"
+  ],
+  "ans": 2,
+  "why": [
+   "Rallies are not always smaller. The point is the arithmetic of recovery, whatever the sizes are.",
+   "Tax is on gains when you redeem. A smaller fall does not cancel tax on the gains that you make.",
+   "Falls compound against you: 50% down needs 100% up. Cutting the fall leaves more rupees to grow later.",
+   "That has the maths backwards. After a 50% fall the money must double, a 100% gain, to break even."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A 20% fall needs a 25% gain. A 50% fall needs 100%. Recovery is steeper than the fall.",
+   "Plus 50% then minus 50% leaves ₹75, not ₹100. Two paths with the same average return can end far apart.",
+   "The less volatile path ends richer. That arithmetic is the core of the multi-asset case."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Falls of 10% or more happen in most years. Yet the most damaging decisions come during a fall: stopping SIPs, redeeming at lows, or switching to whatever just held up best. How an RM talks about a fall can change what the client does.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Talking about a fall",
+  "lines": [
+   [
+    "meena",
+    "What should I say to a scared client?"
+   ],
+   [
+    "sikka",
+    "Three things: context, this is normal; connection, her goal has not changed; honesty, nobody can promise when it ends. And call before she panics. A proactive call changes the conversation."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A fall-call checklist",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Context",
+    "falls of 10% or more happen in most years"
+   ],
+   [
+    "Connection",
+    "her goal and plan have not changed"
+   ],
+   [
+    "Honesty",
+    "no promise on when it ends"
+   ],
+   [
+    "Timing",
+    "call before she panics, not after"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s10q1",
+  "h": "Check yourself",
+  "q": "How common are falls of 10% or more?",
+  "opts": [
+   "They never happen",
+   "They happen in most years",
+   "They happen once a century",
+   "They happen only after elections"
+  ],
+  "ans": 1,
+  "why": [
+   "They do happen. It does not answer what was asked.",
+   "They are a normal cost of equity returns.",
+   "They are far more frequent than that.",
+   "They have no such link. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s10q2",
+  "h": "Check yourself",
+  "q": "Which decision is typically most damaging during a fall?",
+  "opts": [
+   "Stopping SIPs or selling at lows",
+   "Reading the factsheet of the fund",
+   "Checking the goal of the client",
+   "Calling the adviser for a chat"
+  ],
+  "ans": 0,
+  "why": [
+   "Selling at lows locks in losses. This fits the facts given.",
+   "Reading is fine. That does not match this case.",
+   "Checking the goal is helpful. It does not fit the facts given.",
+   "Calling the adviser is helpful. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s10q3",
+  "h": "Check yourself",
+  "q": "What three things do clients need during a fall?",
+  "opts": [
+   "Promises, tips and a long silence",
+   "A new fund, a rally and a refund",
+   "Context, plan link, and honesty",
+   "Jargon, charts and some hype talk"
+  ],
+  "ans": 2,
+  "why": [
+   "Promises and hype are not honest.",
+   "A new fund each fall is churn.",
+   "These keep the client anchored.",
+   "Jargon confuses clients."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s10q4",
+  "h": "Check yourself",
+  "q": "Why call proactively before a client panics?",
+  "opts": [
+   "It guarantees no loss",
+   "It avoids all regulation",
+   "It stops the market falling",
+   "It changes the conversation"
+  ],
+  "ans": 3,
+  "why": [
+   "No call guarantees against loss. It does not fit the facts given.",
+   "Regulation still applies. It does not answer what was asked.",
+   "A call cannot stop a fall. The details here point elsewhere.",
+   "Calling early frames the fall before panic sets in."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Falls of 10% or more are normal.",
+   "Give context, connect to the plan, be honest.",
+   "Call before the client panics."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client asks, 'Should I buy defence because of the news?' A good RM does not lead with war headlines. Lead with structure: budgets, indigenisation and exports.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Pitching responsibly",
+  "lines": [
+   [
+    "meena",
+    "How do I pitch defence?"
+   ],
+   [
+    "sikka",
+    "Lead with structure. Always state the risks: valuation, execution and the government as the dominant customer. Defence suits high-risk, long-horizon investors as a 5 to 10% satellite. Prefer staggered entry and an annual review."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A responsible pitch",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Lead with",
+    "budgets, indigenisation, exports"
+   ],
+   [
+    "Always state",
+    "valuation, execution, government as main customer"
+   ],
+   [
+    "Fits",
+    "high-risk, long-horizon investors, 5 to 10% satellite"
+   ],
+   [
+    "How",
+    "staggered entry and annual review"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s45q1",
+  "h": "Check yourself",
+  "q": "What should a defence pitch lead with?",
+  "opts": [
+   "War headlines from the news",
+   "Structure: budgets and exports",
+   "A forecast of the price move",
+   "A promised return for the year"
+  ],
+  "ans": 1,
+  "why": [
+   "Headlines are not a basis.",
+   "Structure keeps the pitch sound.",
+   "Forecasts are not allowed.",
+   "Returns cannot be promised."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s45q2",
+  "h": "Check yourself",
+  "q": "Which risks must always be stated?",
+  "opts": [
+   "Valuation, execution, one buyer",
+   "Only the weather in the region",
+   "Only the logo design of the firm",
+   "No risks at all in any case"
+  ],
+  "ans": 0,
+  "why": [
+   "These are the lesson's core risks. This fits the facts given.",
+   "Weather is not the main risk. It does not fit the facts given.",
+   "Logos are not a risk. It does not fit the facts given.",
+   "Risks always exist. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s45q3",
+  "h": "Check yourself",
+  "q": "Who suits defence as a satellite holding?",
+  "opts": [
+   "Every single client in a book",
+   "Short-term savers needing money",
+   "Emergency-fund holders only",
+   "High-risk, long-horizon investors"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not suit everyone. That does not match this case.",
+   "Short-term savers need steady assets. It does not fit the facts given.",
+   "Emergency money must stay safe. It does not answer what was asked.",
+   "A 5 to 10% satellite fits those clients. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s45q4",
+  "h": "Check yourself",
+  "q": "What entry style is preferred?",
+  "opts": [
+   "One large bet made at once",
+   "Borrowed money from a lender",
+   "Staggered entry, annual review",
+   "Entry made on a street rumour"
+  ],
+  "ans": 2,
+  "why": [
+   "One large bet adds timing risk. It does not answer what was asked.",
+   "Borrowing adds risk. It does not answer what was asked.",
+   "Staggering reduces timing risk. This fits the facts given.",
+   "Rumours are not a basis. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Lead with structure, not war headlines.",
+   "State valuation, execution and customer risk.",
+   "A 5 to 10% satellite, staggered entry, annual review."
+  ]
+ }
+]

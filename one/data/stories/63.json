@@ -1,0 +1,263 @@
+[
+ {
+  "k": "fact",
+  "art": "globe",
+  "h": "Before you start",
+  "big": "In 2008 the Nifty fell about 52%. Gold, priced in rupees, went up. That one year explains why a fund holds assets that do not move together, even when it makes the fund look dull in a rally.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena is doubtful",
+  "lines": [
+   [
+    "meena",
+    "If I hold three things, only one of them can be the winner. Am I not just diluting my returns?"
+   ],
+   [
+    "sikka",
+    "You give up some of the best year to avoid the worst one. Let us watch a made-up decade that borrows the shape of 2008."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "One bad year, three assets",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "All equity",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     125.0,
+     175.0,
+     84.0,
+     155.4,
+     189.6,
+     183.9,
+     213.3,
+     273.1,
+     256.7,
+     302.9
+    ]
+   },
+   {
+    "name": "All gold",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     110.0,
+     126.5,
+     160.7,
+     189.6,
+     227.5,
+     241.1,
+     212.2,
+     195.2,
+     203.0,
+     219.3
+    ]
+   },
+   {
+    "name": "The mix",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     114.8,
+     139.8,
+     122.2,
+     171.6,
+     198.3,
+     203.9,
+     217.8,
+     244.8,
+     247.7,
+     276.4
+    ]
+   }
+  ],
+  "alt": "Three lines over ten made-up years: equity, gold and a 40, 40, 20 mix of equity, debt and gold",
+  "caps": [
+   [
+    0.3,
+    "Made-up yearly returns, shaped like 2008. Not real data. The mix is 40% equity, 40% debt, 20% gold."
+   ],
+   [
+    3.4,
+    "Year 3: equity falls 52% while gold gains 27%, as in 2008. Debt adds 7%."
+   ],
+   [
+    5.8,
+    "The mix dips a little and keeps going. Equity needs years to get back."
+   ],
+   [
+    8.6,
+    "Equity ends highest but fell 52%. Gold dipped about 19% later. The mix never fell more than about 13%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Inside the crash year",
+  "a": "40, 40, 20 mix",
+  "b": "All equity",
+  "rows": [
+   [
+    "₹100 after the year",
+    87.4,
+    48
+   ],
+   [
+    "Fall in the year, %",
+    12.6,
+    52
+   ]
+  ],
+  "alt": "Two bars comparing what is left of 100 rupees and the fall in the crash year",
+  "caps": [
+   [
+    0.3,
+    "Take ₹100 into year 3, the crash year."
+   ],
+   [
+    2.0,
+    "All in equity, it ends at ₹48. The mix ends near ₹87.4, helped by gold's rise and debt's interest."
+   ],
+   [
+    3.8,
+    "The mix fell about 12.6%. Equity alone fell 52%."
+   ],
+   [
+    5.6,
+    "A smaller fall is easier to sit through, and easier to recover from."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Correlation, read honestly",
+  "title": "What correlation can and cannot do",
+  "stops": [
+   [
+    "Low correlation smooths the ride",
+    true
+   ],
+   [
+    "Debt adds steady accrual when others wobble",
+    true
+   ],
+   [
+    "Gold always rises when equity falls",
+    false
+   ],
+   [
+    "Correlations stay fixed for decades",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about correlation",
+  "caps": [
+   [
+    0.3,
+    "Correlation says how much two assets move together. Low or negative helps smooth the ride."
+   ],
+   [
+    3.0,
+    "In 2008, and again in the 2024 to 2026 gold rally, gold offset equity's swings for multi-asset investors."
+   ],
+   [
+    5.5,
+    "But it changes with time. Gold does not rise every time equity falls."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s63q1",
+  "h": "Check yourself",
+  "q": "In a crash year equity falls 52%, gold rises 27% and debt gains 7%. A fund holds 40% equity, 40% debt and 20% gold. What does the fund return, before costs?",
+  "opts": [
+   "About -52%, because the biggest fall always sets the fund's result for the year",
+   "About -6%, the plain average of the three returns in that crash year",
+   "About -12.6%, found by weighing each asset's return by its share of the fund",
+   "About -20.8%, because only the equity part reacts and the rest stands still"
+  ],
+  "ans": 2,
+  "why": [
+   "The fund holds only 40% in equity, so the 52% fall hits 40% of it. The other parts also earned or lost.",
+   "A plain average ignores weights. Equity is 40% of the fund, not a third, so the result is lower than -6%.",
+   "0.4 times -52 is -20.8, plus 0.4 times 7 is 2.8, plus 0.2 times 27 is 5.4. The total is -12.6%.",
+   "-20.8% is the equity slice alone. Debt added 2.8 and gold added 5.4, so the total is higher than that."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s63q2",
+  "h": "Check yourself",
+  "q": "A month arrives in which both equity and gold fall together. Which part of a multi-asset fund is still likely to add something?",
+  "opts": [
+   "Debt, because its interest keeps accruing whatever happens to prices",
+   "Gold, because it moves against equity in each and every month, always",
+   "Equity, because it always recovers faster than the other two parts do",
+   "None of them, since all parts of a fund must fall when the market falls"
+  ],
+  "ans": 0,
+  "why": [
+   "Debt earns interest as time passes, so it adds steady accrual even when the other two are down. Rate moves can dent it.",
+   "No asset moves against another in every month. In this month gold fell too, which is the point of the question.",
+   "Equity is the most volatile part. It may recover, but it gives no steady addition in the month itself.",
+   "Parts of a fund move on their own drivers. Debt accrual can stay positive while equity and gold slip."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s63q3",
+  "h": "Check yourself",
+  "q": "A client says: gold rose when equity halved in 2008, so gold will always cushion every future fall. How should you answer?",
+  "opts": [
+   "Agree, since gold has behaved this way every single time the market has fallen in the past",
+   "Disagree, because gold actually fell in 2008 along with the Nifty, not rose",
+   "Say 2008 was a one-off, so nothing in it should affect how a fund is built today",
+   "It held in 2008 and in 2024 to 2026, but correlation shifts, so keep several cushions"
+  ],
+  "ans": 3,
+  "why": [
+   "No asset has cushioned every fall. In some periods gold has dipped as well, so 'always' is the weak word.",
+   "In 2008 gold rose in rupee terms. Stating the opposite would be wrong on the fact the lesson rests on.",
+   "The lesson of 2008 is the reason to hold assets that move differently. Calling it a one-off throws that away.",
+   "It credits the real pattern, then warns that correlation drifts. That is why a fund holds debt and rebalances too."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s63q4",
+  "h": "Check yourself",
+  "q": "Portfolio A holds two equity funds. Portfolio B holds equity, debt and gold. Both earned the same average return. Which gives the smoother ride, and why?",
+  "opts": [
+   "A, because two equity funds rising together makes the gains arrive faster",
+   "B, because its parts move at different times, so one part's dip is offset",
+   "Both are equal, because the same average return always means the same path",
+   "B, but only if gold ends up earning more than equity in the whole period"
+  ],
+  "ans": 1,
+  "why": [
+   "Equity funds tend to fall together as well. Moving together makes the falls bigger, not just the gains.",
+   "The ride depends on how the parts move relative to each other. Low correlation means dips partly offset.",
+   "The same average can come from a smooth path or a jagged one. The path, and the worst fall, will differ.",
+   "Gold need not beat equity for the mix to be smoother. Offsetting moves matter, not who earns the most."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Low or negative correlation smooths the ride: in 2008 equity fell about 52% while gold rose in rupees.",
+   "Debt adds steady accrual when equity and gold both wobble. A fund's result is the weighted sum of its parts.",
+   "Correlation is not fixed. Gold helped in 2008 and 2024 to 2026, but it is a tendency, not a promise."
+  ]
+ }
+]

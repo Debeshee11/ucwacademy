@@ -1,0 +1,240 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "A conservative client asks one thing: \"If the market falls, how much will I lose?\" Capture ratios answer it from a fund's own history, month by month, so you do not have to rely on a promise.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The nervous client",
+  "lines": [
+   [
+    "meena",
+    "I cannot stomach big falls. Why should I pick this fund over the index?"
+   ],
+   [
+    "sikka",
+    "Let us split the months into up months and down months, and measure what the fund did in each."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Three made-up funds",
+  "alt": "Three lines for a benchmark, a cushion fund and an aggressive fund over ten years with the deepest fall of each marked",
+  "caps": [
+   [
+    0.3,
+    "Three made-up funds over ten years: the benchmark, a cushion fund and an aggressive fund."
+   ],
+   [
+    3.2,
+    "All three rise, then a long fall hits. The cushion fund (green) falls less, the aggressive fund (yellow) more."
+   ],
+   [
+    8.4,
+    "Deepest falls at year-ends: benchmark 32%, cushion fund 25%, aggressive fund 39%."
+   ]
+  ],
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Benchmark",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     112.5,
+     117.5,
+     136.7,
+     198.4,
+     214.5,
+     292.9,
+     367.0,
+     318.5,
+     249.5,
+     296.0
+    ]
+   },
+   {
+    "name": "Cushion fund",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     121.0,
+     128.3,
+     145.2,
+     211.8,
+     225.9,
+     306.4,
+     380.9,
+     346.0,
+     284.2,
+     351.9
+    ]
+   },
+   {
+    "name": "Aggressive fund",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     113.8,
+     118.1,
+     133.0,
+     193.4,
+     216.9,
+     299.6,
+     396.9,
+     335.9,
+     242.9,
+     293.8
+    ]
+   }
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Up months, down months",
+  "alt": "Bars comparing the average gain in up months and the average fall in down months for the benchmark and the cushion fund",
+  "caps": [
+   [
+    0.3,
+    "Split the 120 months. In the 69 months the market rose, the benchmark averaged 3.7% and the fund 3.4%."
+   ],
+   [
+    2.7,
+    "In the 51 months it fell, the benchmark averaged 2.7% down and the fund only 2.0% down."
+   ],
+   [
+    4.7,
+    "Upside capture: 3.4 over 3.7, about 92. Downside capture: 2.0 over 2.7, about 74."
+   ],
+   [
+    6.5,
+    "It gives up a little on the way up and takes far less of the way down."
+   ]
+  ],
+  "a": "Benchmark",
+  "b": "Cushion fund",
+  "rows": [
+   [
+    "Average gain in up months (%)",
+    3.7,
+    3.4
+   ],
+   [
+    "Average fall in down months (%)",
+    2.7,
+    2.0
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reading the pair",
+  "intro": "Capture ratios from the same made-up months. 100 means the same as the benchmark.",
+  "rows": [
+   [
+    "Cushion fund",
+    "Up 92, Down 74"
+   ],
+   [
+    "Aggressive fund",
+    "Up 114, Down 123"
+   ],
+   [
+    "Up divided by down",
+    "1.24 and 0.93"
+   ]
+  ],
+  "note": "A ratio above 1 means the fund gives more on the way up than it takes on the way down. The aggressive fund is above 100 on both sides and ended no higher than the benchmark."
+ },
+ {
+  "k": "pick",
+  "id": "s79q1",
+  "h": "Check yourself",
+  "q": "In months the benchmark rose it averaged 3.0% and the fund 3.3%. In months the benchmark fell it averaged 4.0% down and the fund 3.0% down. What are the capture ratios?",
+  "opts": [
+   "Upside 91, downside 75",
+   "Upside 110, downside 133",
+   "Upside 110, downside 75",
+   "Upside 91, downside 133"
+  ],
+  "ans": 2,
+  "why": [
+   "The upside is inverted here. Fund over benchmark is 3.3 over 3.0, which is 110, not 91.",
+   "The upside is right but the downside is inverted. Fund over benchmark is 3.0 over 4.0, which is 75, not 133.",
+   "Each ratio is the fund's average over the benchmark's: 3.3 over 3.0 is 110 up, 3.0 over 4.0 is 75 down.",
+   "Both ratios are inverted. Capture always divides the fund's figure by the benchmark's, in up and in down months."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s79q2",
+  "h": "Check yourself",
+  "q": "A conservative client with an eight-year horizon is choosing between fund X (upside 95, downside 90) and fund Y (upside 88, downside 65). Which fits her better?",
+  "opts": [
+   "X, because 95 on the way up is the stronger number",
+   "Y, as it cushions falls far more than it trims gains",
+   "X, since it stays closest to the benchmark in both",
+   "Neither, because capture ratios cannot guide a choice"
+  ],
+  "ans": 1,
+  "why": [
+   "X takes 95% of the gains but also 90% of the falls, almost no cushion. Upside alone does not suit a client who dreads drops.",
+   "Y keeps 88% of the gains and takes only 65% of the falls: a ratio of about 1.35 against 1.06 for X.",
+   "Hugging the benchmark means taking nearly all of its falls. She would pay a fund's cost for a cushion X barely offers.",
+   "Capture ratios are an input for exactly this talk, read together with the benchmark and the period behind them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s79q3",
+  "h": "Check yourself",
+  "q": "Fund K shows upside capture 62 and downside capture 60. A colleague calls the downside number brilliant. What is the better reading?",
+  "opts": [
+   "Brilliant, because any downside capture under 100 shows skill",
+   "It reads like a part-cash fund: low on both sides",
+   "Misleading, since capture ratios suit only index funds",
+   "Poor, because a good fund needs a downside near zero"
+  ],
+  "ans": 1,
+  "why": [
+   "Below 100 alone is not skill. K also gives up 38% of the gains, so the ratio of about 1.03 shows little real edge.",
+   "Low on both sides with a ratio near 1 is what a part-cash fund looks like. Check its equity share before praising it.",
+   "Capture ratios apply to any fund with a benchmark. The trouble here is what the pair of numbers says, not the method.",
+   "A downside near zero would mean almost no equity. That is not a fair test, and 60 is not poor on its own merits."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s79q4",
+  "h": "Check yourself",
+  "q": "A fund house quotes a downside capture of 68 over three years ending soon after a sharp fall. Which question should you ask first?",
+  "opts": [
+   "Nothing, since a capture ratio is a fixed property of the fund",
+   "Which benchmark and period, since both move the figure",
+   "Whether returns were taken after tax, since only those count",
+   "Whether it is below 100, which is all that matters"
+  ],
+  "ans": 1,
+  "why": [
+   "The ratio changes with the window and the index used. A fund can show 68 in one stretch and 85 in another.",
+   "A window that includes a sharp fall can flatter or hurt the number. Ask what benchmark was used and test several periods.",
+   "Capture ratios are normally computed on pre-tax NAV returns. Tax differs by client, so it does not shape the ratio.",
+   "Below 100 is a start. A cash-heavy fund or a lucky window can pass that test while showing no real cushion skill."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Upside capture is the fund's gain over the benchmark's gain in up months. Downside capture is the same ratio in down months.",
+   "You want upside above downside. Both above 100 only means more risk, not more skill.",
+   "Capture changes with the benchmark and the period. Quote both, and say what the cushion costs in gains."
+  ]
+ }
+]

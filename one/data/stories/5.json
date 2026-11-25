@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two clients hold the same fund. One is in the direct plan, one in the regular plan. Same portfolio, same manager. Yet their returns differ every year by roughly the difference in cost. Where did the gap come from?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Direct or regular",
+  "lines": [
+   [
+    "meena",
+    "Same fund, same manager. Why do I earn less?"
+   ],
+   [
+    "sikka",
+    "Your plan pays the distributor's trail commission, and that cost comes out of the NAV daily. In return you may get advice and service. Whether it is worth it depends on what you need."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Lower-cost plan",
+  "b": "Higher-cost plan",
+  "rows": [
+   [
+    "Value after 20 years, ₹ lakh",
+    31.9,
+    27.6
+   ],
+   [
+    "Cost paid over time, ₹ lakh (made-up)",
+    2,
+    6
+   ]
+  ],
+  "h": "A small yearly gap, compounded",
+  "alt": "Bars comparing two plans of the same fund after twenty years",
+  "caps": [
+   [
+    0.3,
+    "Both plans hold the same portfolio."
+   ],
+   [
+    2.2,
+    "One carries a higher yearly cost."
+   ],
+   [
+    4.0,
+    "The gap compounds every year."
+   ],
+   [
+    5.6,
+    "Advice may justify it. Switching has its own cost."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Costs and plans",
+  "stops": [
+   [
+    "Fund costs are deducted from the NAV daily",
+    true
+   ],
+   [
+    "Direct and regular plans hold different portfolios",
+    false
+   ],
+   [
+    "Switching regular to direct can trigger tax and load",
+    true
+   ],
+   [
+    "A small saving always justifies a switch",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The investor never writes a cheque."
+   ],
+   [
+    2.2,
+    "The portfolio is the same, only the cost differs."
+   ],
+   [
+    4.0,
+    "It is a redemption in law."
+   ],
+   [
+    5.6,
+    "Tax and load can exceed the annual saving."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s5q1",
+  "h": "Check yourself",
+  "q": "What is the main difference between a direct plan and a regular plan of the same fund?",
+  "opts": [
+   "The direct plan holds different shares",
+   "The regular plan has a different manager",
+   "The regular plan includes distribution cost",
+   "The direct plan has a lock-in"
+  ],
+  "ans": 2,
+  "why": [
+   "The portfolio is the same in both plans. The details here point elsewhere.",
+   "The manager is the same in both plans. The details here point elsewhere.",
+   "Regular plans include the distributor's trail commission.",
+   "Neither plan has a lock-in by default. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s5q2",
+  "h": "Check yourself",
+  "q": "A client with a tiny annual cost saving wants to move to direct at once. What should the RM point out?",
+  "opts": [
+   "A switch has no consequences",
+   "The portfolio will change after switching",
+   "Regular plans cannot be sold",
+   "The switch can trigger tax and exit load"
+  ],
+  "ans": 3,
+  "why": [
+   "Switching can carry real costs. The details here point elsewhere.",
+   "The portfolio stays the same after the switch. It does not fit the facts given.",
+   "Regular plans can be sold like any other. It does not fit the facts given.",
+   "A switch is a redemption, so tax and load can arise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s5q3",
+  "h": "Check yourself",
+  "q": "What is the honest case for a regular plan?",
+  "opts": [
+   "Advice and service she values",
+   "It always gives higher returns, per year",
+   "It has no costs at all to bear",
+   "It is safer than a direct plan, always"
+  ],
+  "ans": 0,
+  "why": [
+   "Advice and service can justify the added cost.",
+   "It cannot beat direct on cost, as the portfolio is the same.",
+   "It carries a higher cost, not none. It does not answer what was asked.",
+   "Safety is the same in both plans. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s5q4",
+  "h": "Check yourself",
+  "q": "How does a client see fund costs?",
+  "opts": [
+   "As a monthly bill by post",
+   "As a lower NAV, never as a bill",
+   "As a fee at each redemption only",
+   "As a yearly cheque she signs"
+  ],
+  "ans": 1,
+  "why": [
+   "There is no monthly bill for fund costs. It does not fit the facts given.",
+   "Costs are deducted daily from NAV, so they are easy to miss.",
+   "Costs are not charged only at redemption. The details here point elsewhere.",
+   "She does not sign any cheque for them. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Costs come out of the NAV daily, unseen.",
+   "Regular plans include trail commission. Portfolios are the same.",
+   "Switching to direct is a sale: check tax and load first."
+  ]
+ }
+]

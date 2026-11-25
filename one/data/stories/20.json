@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "When rates rise, old bonds paying lower rates look less attractive, so their prices fall. A fund holding long bonds feels this more than a fund holding short ones. This lesson explains how funds behave in a hiking cycle. It is not a call on what to buy.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Duration and rates",
+  "lines": [
+   [
+    "meena",
+    "Why would a debt fund lose money when rates go up?"
+   ],
+   [
+    "sikka",
+    "Its bonds are marked to market. If new bonds pay more, old ones are worth less. The longer the bond, the bigger the fall. Short funds hold up better."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Before the hike",
+  "b": "After the hike",
+  "rows": [
+   [
+    "Yield on new bonds, %",
+    6,
+    7
+   ],
+   [
+    "Price of an old bond, ₹ (made-up)",
+    100,
+    96
+   ]
+  ],
+  "h": "Rates up, old bond prices down",
+  "alt": "Bars showing new bond yields rising and an old bond price falling",
+  "caps": [
+   [
+    0.3,
+    "New bonds start paying a higher rate."
+   ],
+   [
+    2.2,
+    "Old bonds with lower rates look less attractive."
+   ],
+   [
+    4.0,
+    "Their prices fall: a mark-to-market loss."
+   ],
+   [
+    5.6,
+    "Longer bonds fall more than shorter ones."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Hiking cycle effects",
+  "stops": [
+   [
+    "Long-duration bond funds can lose in a hiking cycle",
+    true
+   ],
+   [
+    "Short-duration funds are hurt the most",
+    false
+   ],
+   [
+    "Banks may gain as loans reprice",
+    true
+   ],
+   [
+    "Gold never reacts to real rates",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Marked-to-market, they fall."
+   ],
+   [
+    2.2,
+    "They usually hold up better."
+   ],
+   [
+    4.0,
+    "Rate-sensitive sectors may feel pressure."
+   ],
+   [
+    5.6,
+    "Rising real rates can weigh on gold."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s20q1",
+  "h": "Check yourself",
+  "q": "RBI hikes the repo rate. Which fund type tends to see the larger mark-to-market loss?",
+  "opts": [
+   "Money-market funds of short paper",
+   "Short-duration funds, of short paper",
+   "Floating-rate funds that reset",
+   "Long-duration bond funds"
+  ],
+  "ans": 3,
+  "why": [
+   "Money-market funds hold very short paper.",
+   "Short-duration funds hold up better.",
+   "Floating-rate funds reset with rates.",
+   "Longer bonds are more sensitive to rate rises."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s20q2",
+  "h": "Check yourself",
+  "q": "Why do bond prices fall when rates rise?",
+  "opts": [
+   "Old bonds pay less than new ones",
+   "Bonds are printed in bulk each year",
+   "The RBI buys all the bonds at once",
+   "Coupons stop being paid on bonds"
+  ],
+  "ans": 0,
+  "why": [
+   "New bonds pay more, so old ones are worth less.",
+   "Bulk printing is not the cause. That does not match this case.",
+   "The RBI does not buy all bonds. It does not fit the facts given.",
+   "Coupons continue to be paid. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s20q3",
+  "h": "Check yourself",
+  "q": "Which of these may feel pressure in a hiking cycle?",
+  "opts": [
+   "Companies with no loans at all, ever",
+   "Rate-sensitive realty and autos",
+   "Every sector, in the same way",
+   "Only the gold market this year"
+  ],
+  "ans": 1,
+  "why": [
+   "A firm with no loans is less exposed. That does not match this case.",
+   "Higher rates raise borrowing costs for these sectors.",
+   "Sectors differ in sensitivity. It does not answer what was asked.",
+   "Pressure is not limited to gold. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s20q4",
+  "h": "Check yourself",
+  "q": "What can rising real rates do to gold?",
+  "opts": [
+   "Fix it at a constant level",
+   "Cancel its import duty",
+   "Weigh on its price",
+   "Force the RBI to sell it"
+  ],
+  "ans": 2,
+  "why": [
+   "Gold prices move; they are not fixed. It does not fit the facts given.",
+   "Rates do not change import duty. It does not answer what was asked.",
+   "Gold pays no interest, so higher real rates can weigh on it.",
+   "Rate moves do not force the RBI to sell. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "In a hiking cycle, long bond funds face mark-to-market losses.",
+   "Short, money-market and floating funds hold up better.",
+   "Banks, realty, autos and gold react differently."
+  ]
+ }
+]

@@ -1,0 +1,275 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Every adviser hears the same objections: small caps did 30%, I will do it myself, it sounds boring. A good reply is not an argument. It is a small piece of arithmetic the client can check.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three objections in one meeting",
+  "lines": [
+   [
+    "rohan",
+    "Small caps gave 30% a year. Why would I take 12% from a multi-asset fund?"
+   ],
+   [
+    "sikka",
+    "Which three years was the 30%, and what did the next three do? Let us line up the whole ten years, not the best slice of it."
+   ],
+   [
+    "rohan",
+    "Fine. But then I will buy gold and debt funds myself and skip the fund."
+   ],
+   [
+    "sikka",
+    "You can. First let us price what each rebalance costs you."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "The 30% and the whole story",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Small cap",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     140.0,
+     207.2,
+     281.8,
+     180.4,
+     147.9,
+     198.2,
+     253.7,
+     223.3,
+     312.6,
+     393.9
+    ]
+   },
+   {
+    "name": "Multi-asset",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     114.0,
+     132.2,
+     152.0,
+     149.0,
+     168.4,
+     197.0,
+     224.6,
+     222.4,
+     258.0,
+     296.7
+    ]
+   }
+  ],
+  "alt": "Two made-up ten-year lines: a small cap fund and a multi-asset fund with their deepest falls",
+  "caps": [
+   [
+    0.3,
+    "Made-up decade, not real data. Small caps: +40%, +48%, +36% in the first three years."
+   ],
+   [
+    3.0,
+    "That is about 41% a year, the kind of number people quote. Then come falls of 36% and 18%."
+   ],
+   [
+    6.0,
+    "The multi-asset fund never has a spectacular year, and never a terrible one either."
+   ],
+   [
+    8.6,
+    "Ten years: small caps ₹394, about 14.7% a year, fall 48%. Multi-asset ₹297, about 11.5%, fall 2%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Doing it yourself, in rupees",
+  "a": "Rebalance by hand",
+  "b": "Inside the fund",
+  "rows": [
+   [
+    "Tax on one rebalance, ₹ thousand",
+    24.375,
+    0
+   ],
+   [
+    "Five such years, ₹ thousand",
+    121.875,
+    0
+   ]
+  ],
+  "alt": "Two bars comparing the yearly tax cost of rebalancing three funds by hand and doing it inside a multi-asset fund",
+  "caps": [
+   [
+    0.3,
+    "A ₹1 crore portfolio of three funds drifts. To fix it, you sell ₹8 lakh of equity."
+   ],
+   [
+    2.0,
+    "Assume 40% of that sale is gain: ₹3.2 lakh. Long-term gains are taxed at 12.5% above ₹1.25 lakh a year."
+   ],
+   [
+    3.8,
+    "Tax: about ₹24,375 for this one rebalance, plus any exit load. Inside the fund, the investor pays none."
+   ],
+   [
+    5.4,
+    "Five such years: about ₹1.2 lakh. The harder cost is nerve: rebalancing means buying equity in a crash."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Handling an objection well",
+  "title": "A good reply",
+  "stops": [
+   [
+    "Compare drawdowns, not only returns",
+    true
+   ],
+   [
+    "Ask for the client's own worst month",
+    true
+   ],
+   [
+    "Promise it will beat small caps",
+    false
+   ],
+   [
+    "Tell her small caps are a bad idea",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false ways to answer a client's objection",
+  "caps": [
+   [
+    0.3,
+    "Answer with a number the client can check, not with a lecture."
+   ],
+   [
+    2.8,
+    "Compare falls as well as returns. Ask for the client's own worst month and anchor on it."
+   ],
+   [
+    5.2,
+    "Never promise that the fund will beat small caps, and never tell the client small caps are bad."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Anchor on the worst month",
+  "intro": "Assumed figures for a ₹20 lakh portfolio. Use the client's own memory of March 2026 instead.",
+  "rows": [
+   [
+    "Small cap heavy: a bad month",
+    "-12%, or ₹2,40,000"
+   ],
+   [
+    "Multi-asset: a bad month",
+    "-4%, or ₹80,000"
+   ],
+   [
+    "=",
+    "Difference in that month",
+    "₹1,60,000"
+   ]
+  ],
+  "note": "The figures are assumed to show scale. In the meeting, ask what the client felt in the worst month, then size the fund to that."
+ },
+ {
+  "k": "pick",
+  "id": "s74q1",
+  "h": "Check yourself",
+  "q": "A client says small caps gave 30% a year, so why accept 12% from a multi-asset fund? What is the best first step?",
+  "opts": [
+   "Tell him small caps are too dangerous for any client and refuse to discuss them",
+   "Agree, and move his core money to small caps since the past figure is the best guide",
+   "Ask which years the 30% covers, then compare the end value and the worst fall",
+   "Promise that the multi-asset fund will beat small caps over his next five years"
+  ],
+  "ans": 2,
+  "why": [
+   "A flat refusal ignores his goal. Small caps have a role, in a limited satellite, so a lecture does not help.",
+   "A past return from a best window is a weak guide. The deep falls that came with it are part of the story.",
+   "A quoted return is often a best window. Comparing the whole period, and the fall, gives him something to check.",
+   "No one can promise a future ranking. A promise that later fails costs the client's trust."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s74q2",
+  "h": "Check yourself",
+  "q": "A client's ₹20 lakh portfolio fell 12% in her worst month when mostly in small caps. A multi-asset fund would have fallen about 4% in that month. How much less would she have lost?",
+  "opts": [
+   "About ₹1.6 lakh, since 12% of ₹20 lakh is ₹2.4 lakh and 4% is ₹80,000",
+   "About ₹2.4 lakh, since that is the whole loss in the small cap month",
+   "About ₹80,000, since that is the loss the multi-asset fund would have had",
+   "About ₹8 lakh, since the gap of 8 points applies to the whole ₹1 crore portfolio"
+  ],
+  "ans": 0,
+  "why": [
+   "₹2,40,000 less ₹80,000 is ₹1,60,000. The gap is 8 points of ₹20 lakh, which is ₹1.6 lakh.",
+   "₹2.4 lakh is the small cap loss, not the difference. The multi-asset fund would still have lost something.",
+   "₹80,000 is the multi-asset loss. The saving is the small cap loss minus that figure.",
+   "The portfolio is ₹20 lakh, not ₹1 crore. Eight points of ₹20 lakh is ₹1.6 lakh."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s74q3",
+  "h": "Check yourself",
+  "q": "A client says he will hold gold and debt funds himself instead of a multi-asset fund. What is a fair response?",
+  "opts": [
+   "He cannot, because SEBI does not allow a person to hold gold and debt funds together",
+   "He can, but each rebalance may bring tax and exit load, and a crash tests nerve",
+   "He should, because rebalancing by hand is simple and never leads to any tax at all",
+   "He should never rebalance, since leaving the funds alone is always better in the end"
+  ],
+  "ans": 1,
+  "why": [
+   "Nothing stops an individual from holding several funds. It is a matter of cost and discipline, not permission.",
+   "It is possible, but a rebalance is a sale, and the real test is buying equity after a fall. The cost depends on size.",
+   "Selling units to rebalance is a taxable event, so the claim of no tax at all is wrong for most sales.",
+   "Without rebalancing the mix drifts. After a big rally, equity may dominate and the risk will have risen."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s74q4",
+  "h": "Check yourself",
+  "q": "A client says a multi-asset fund is boring. What is the most useful reply?",
+  "opts": [
+   "Agree, and drop the multi-asset fund because he should not hold what bores him",
+   "Say boring funds always beat exciting ones, so he should not worry about it",
+   "Say nothing, since a client's feelings about a fund have no place in planning",
+   "Core money should compound steadily; keep excitement for a small satellite"
+  ],
+  "ans": 3,
+  "why": [
+   "Boredom is not a reason to drop a core holding. A satellite can answer the wish for excitement.",
+   "Boring does not always beat exciting. A sweeping promise like that cannot be kept in every period.",
+   "Feelings drive behaviour, and behaviour drives results. A plan should account for what the client can hold.",
+   "Core money is meant to compound quietly. A small satellite gives room for conviction bets, within a cap."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Compare drawdowns and the whole period, not just a best window: a 40% a year start can hide a fall of nearly 50%.",
+   "Doing it yourself means tax and exit load on each rebalance, and nerve in a crash. The cost grows with the portfolio.",
+   "Boring is the point for core money. Anchor the talk on the client's own worst month."
+  ]
+ }
+]

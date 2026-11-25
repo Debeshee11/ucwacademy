@@ -1,0 +1,281 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rebalancing means selling what rose and buying what fell, to get back to your target weights. It is simple on paper. Done by hand, every sale can leave a tax bill behind.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A DIY client",
+  "lines": [
+   [
+    "rohan",
+    "I will just hold equity, debt and gold funds myself and rebalance once a year. Why pay for a multi-asset fund to do that?"
+   ],
+   [
+    "sikka",
+    "You can. But watch what one year of rebalancing costs you, in rupees, before you decide."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A rally pushes the mix off target",
+  "rows": [
+   {
+    "name": "Start: ₹1 crore",
+    "segs": [
+     [
+      "Equity 40%",
+      40,
+      "#3CC47A"
+     ],
+     [
+      "Debt 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 20%",
+      20,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "After equity rises 50%: ₹1.2 crore",
+    "segs": [
+     [
+      "Equity 50%",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 33%",
+      33.3,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 17%",
+      16.7,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Sell ₹12 lakh of equity: ₹1.2 crore",
+    "segs": [
+     [
+      "Equity 40%",
+      40,
+      "#3CC47A"
+     ],
+     [
+      "Debt 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 20%",
+      20,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Or add ₹30 lakh new money: ₹1.5 crore",
+    "segs": [
+     [
+      "Equity 40%",
+      40,
+      "#3CC47A"
+     ],
+     [
+      "Debt 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 20%",
+      20,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Four bars showing the portfolio at start, after an equity rally, after selling, and after adding fresh money",
+  "caps": [
+   [
+    0.2,
+    "Start: ₹1 crore as 40% equity, 40% debt, 20% gold."
+   ],
+   [
+    1.4,
+    "Equity rises 50%. The portfolio is now ₹1.2 crore, and equity is half of it."
+   ],
+   [
+    2.8,
+    "To get back to 40%, sell ₹12 lakh of equity and put ₹8 lakh in debt and ₹4 lakh in gold."
+   ],
+   [
+    4.4,
+    "Or add ₹30 lakh of new money to debt and gold. Same weights, no sale."
+   ],
+   [
+    6.2,
+    "If you hold the three funds yourself, every sale is a tax event. Hold that thought."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What the sale costs",
+  "a": "Rebalance it yourself",
+  "b": "Inside the fund",
+  "rows": [
+   [
+    "Cost of one rebalance, ₹ thousand",
+    92,
+    0
+   ],
+   [
+    "As a share of the ₹1.2 crore, %",
+    0.8,
+    0
+   ]
+  ],
+  "alt": "Two bars comparing tax and exit load of rebalancing by hand with rebalancing inside a fund",
+  "caps": [
+   [
+    0.3,
+    "The ₹12 lakh sold had cost ₹8 lakh. A gain of ₹4 lakh sits inside it."
+   ],
+   [
+    2.0,
+    "Units held under a year: 20% short-term tax on ₹4 lakh is ₹80,000."
+   ],
+   [
+    3.6,
+    "Add an exit load of 1%, assumed here: ₹12,000. That is ₹92,000, about 0.8% of the portfolio."
+   ],
+   [
+    5.2,
+    "Inside a multi-asset fund the manager trades with no tax bill reaching you. You are taxed on redeeming."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Held for over a year instead?",
+  "intro": "The same ₹12 lakh sale, but the units are more than 12 months old.",
+  "rows": [
+   [
+    "Gain inside the sale",
+    "₹4,00,000"
+   ],
+   [
+    "Long-term rate",
+    "12.5%"
+   ],
+   [
+    "Yearly exempt gains",
+    "₹1,25,000"
+   ],
+   [
+    "=",
+    "Tax before cess",
+    "₹34,375"
+   ]
+  ],
+  "note": "Assumes no other equity gains that year and ignores cess. Lower than ₹80,000, but still a bill every time you rebalance."
+ },
+ {
+  "k": "pick",
+  "id": "s66q1",
+  "h": "Check yourself",
+  "q": "A ₹1 crore portfolio at 40% equity, 40% debt and 20% gold sees equity rise 50%, so it is worth ₹1.2 crore. How much equity must be sold to return to 40%?",
+  "opts": [
+   "₹20 lakh, which is the whole gain that equity has made since the start date",
+   "₹10 lakh, since equity moved ten points above its 40% target weight today",
+   "₹12 lakh: 40% of ₹1.2 crore is ₹48 lakh, and equity now stands at ₹60 lakh",
+   "₹24 lakh, since half of the equity holding must be sold to go back to target"
+  ],
+  "ans": 2,
+  "why": [
+   "Selling the whole gain would take equity below 40%, to ₹40 lakh, which is a third of the portfolio.",
+   "The ten points apply to a portfolio of ₹1.2 crore now, not ₹1 crore, and the target changes with size too.",
+   "Target equity is 0.4 times ₹1.2 crore, which is ₹48 lakh. Equity is at ₹60 lakh, so ₹12 lakh is sold.",
+   "Selling half would leave ₹30 lakh, a quarter of the portfolio. That overshoots the target by a lot."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s66q2",
+  "h": "Check yourself",
+  "q": "The ₹12 lakh of equity sold had cost ₹8 lakh and was held under a year. Short-term equity gains are taxed at 20%. What is the tax, before cess?",
+  "opts": [
+   "₹80,000, since the gain is ₹4 lakh and 20% of that is ₹80,000",
+   "₹2,40,000, since 20% applies to the whole ₹12 lakh that was sold",
+   "₹50,000, since 12.5% applies to the gain of ₹4 lakh at the long-term rate",
+   "₹4,00,000, since the whole gain on the sale is paid out as tax in full"
+  ],
+  "ans": 0,
+  "why": [
+   "Tax applies to the gain only. The gain is ₹12 lakh minus ₹8 lakh, and 20% of ₹4 lakh is ₹80,000.",
+   "Tax is on the gain, not on the sale amount. Taxing ₹12 lakh would charge her on money she put in herself.",
+   "12.5% is the long-term rate. Units held under a year are short-term, so 20% applies.",
+   "The gain is the amount taxed, not the tax itself. The tax is a fraction of it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s66q3",
+  "h": "Check yourself",
+  "q": "A retired client holds three separate funds and the equity fund has drifted high. She asks how to restore her mix with the least tax. What should the adviser suggest first?",
+  "opts": [
+   "Sell the extra equity at once, since drift is dangerous and the tax can be sorted out later",
+   "Direct fresh money and SIPs to the lagging assets, selling only if that falls short",
+   "Ignore the drift for ten years, because rebalancing never helps anyone in the end, ever",
+   "Switch the whole equity fund into the debt fund so that the mix is exactly right"
+  ],
+  "ans": 1,
+  "why": [
+   "Selling at once may trigger a short-term gain and an exit load. Cheaper routes exist before a sale.",
+   "New money moves the weights without a sale, so no gain is realised. It is the cheapest lever when money is flowing in.",
+   "Drift raises risk beyond what she signed up for. Leaving it for years is not a plan.",
+   "A switch is a sale plus a purchase, so it triggers the same tax. Moving everything also overshoots."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s66q4",
+  "h": "Check yourself",
+  "q": "After gold's 2025 to 2026 rally, many multi-asset funds trimmed gold. Does a holder of such a fund owe tax on that trimming?",
+  "opts": [
+   "Yes, on the share of the gold gain that falls to her units each time the fund trims",
+   "Yes, but only if she bought her units in the same financial year as the trimming",
+   "No, and she pays none even on redeeming, since gains inside a fund are never taxed",
+   "No. The fund trades within itself; the holder is taxed when units are redeemed"
+  ],
+  "ans": 3,
+  "why": [
+   "The trim is the fund's transaction. Nothing is passed to each holder as a taxable sale at that point.",
+   "When she bought is not the trigger. Her own redemption of units is the taxable event.",
+   "Redemption is taxed according to the fund's class. Nothing about internal trading removes that.",
+   "The fund's internal trades are not the investor's sale. Her tax arises on redemption, by the fund's tax class."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Rebalancing sells what rose and buys what fell. By hand, a sale of ₹12 lakh with a ₹4 lakh gain can cost ₹80,000 short-term, plus any exit load.",
+   "Cheaper first: aim fresh money and SIPs at the lagging asset. Sell only when that cannot fix the drift.",
+   "Inside a multi-asset fund the manager rebalances without a tax event for you. You are taxed when you redeem."
+  ]
+ }
+]

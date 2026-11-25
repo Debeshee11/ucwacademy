@@ -1,0 +1,217 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Owning an office building means a big cheque, one tenant risk and a long wait to sell. A REIT lets you own a slice of the rent from many buildings, through a listed unit you can buy from a small amount.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rent through a unit",
+  "lines": [
+   [
+    "meena",
+    "So I own a part of an office park?"
+   ],
+   [
+    "sikka",
+    "Not exactly. A REIT is a trust that owns rent-earning property. Your unit is a share in the trust's cash flows, not a claim on any one building. Most of the rent is passed on to unitholders."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "How rent reaches a unitholder",
+  "bw": 170,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "Tenants pay rent",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 125,
+    "label": "The REIT trust collects"
+   },
+   {
+    "x": 170,
+    "y": 200,
+    "label": "Most is passed on"
+   },
+   {
+    "x": 170,
+    "y": 275,
+    "label": "Unitholders receive",
+    "col": "#3CC47A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    "rent"
+   ],
+   [
+    1,
+    2,
+    "cash flow"
+   ],
+   [
+    2,
+    3,
+    "distribution"
+   ]
+  ],
+  "alt": "Four steps from tenant rent to unitholder payout",
+  "caps": [
+   [
+    0.3,
+    "Tenants pay rent for office parks and malls."
+   ],
+   [
+    2.2,
+    "The trust collects it."
+   ],
+   [
+    4.0,
+    "Most is passed on, as per the rules."
+   ],
+   [
+    5.6,
+    "Unitholders receive regular distributions."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a REIT is",
+  "stops": [
+   [
+    "A REIT is a trust owning rent-earning property",
+    true
+   ],
+   [
+    "REIT units give a claim on one building",
+    false
+   ],
+   [
+    "REIT units are listed on stock exchanges",
+    true
+   ],
+   [
+    "SEBI does not regulate REITs",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Such as office parks and malls."
+   ],
+   [
+    2.2,
+    "A unit is a share in cash flows."
+   ],
+   [
+    4.0,
+    "You buy and sell like shares."
+   ],
+   [
+    5.6,
+    "SEBI's REIT Regulations, 2014 apply."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s91q1",
+  "h": "Check yourself",
+  "q": "What does one REIT unit give an investor?",
+  "opts": [
+   "A claim on one named building",
+   "A title deed to one office",
+   "A share in its cash flows",
+   "A fixed monthly salary paid"
+  ],
+  "ans": 2,
+  "why": [
+   "It gives no claim on any one building.",
+   "No title deed passes to a unitholder.",
+   "A unit is a share in cash flows from many buildings.",
+   "Distributions vary, so no fixed salary is promised."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s91q2",
+  "h": "Check yourself",
+  "q": "Where can a retail investor buy REIT units?",
+  "opts": [
+   "On an exchange, in small amounts",
+   "Only through a builder directly",
+   "Only at a land registry office",
+   "Only by buying a whole property"
+  ],
+  "ans": 0,
+  "why": [
+   "Units are listed and trade like shares. This fits the facts given.",
+   "A builder is not the route for units. That does not match this case.",
+   "A land registry does not sell units. It does not fit the facts given.",
+   "The point of a REIT is to avoid buying a whole property."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s91q3",
+  "h": "Check yourself",
+  "q": "Who regulates REITs in India?",
+  "opts": [
+   "The RBI under the banking law",
+   "The Income Tax Department alone",
+   "No one, as they are private",
+   "SEBI, under the 2014 Regulations"
+  ],
+  "ans": 3,
+  "why": [
+   "The RBI regulates banks, not REITs.",
+   "Tax authorities do not regulate REIT structure.",
+   "REITs are regulated, not unregulated.",
+   "SEBI regulates REITs under the 2014 Regulations."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s91q4",
+  "h": "Check yourself",
+  "q": "What happens to the rent a REIT collects?",
+  "opts": [
+   "All of it is kept by the sponsor",
+   "Most goes to unitholders as payouts",
+   "All of it is burnt up as costs",
+   "It is paid out to the tenants"
+  ],
+  "ans": 1,
+  "why": [
+   "The sponsor does not keep it all. It does not fit the facts given.",
+   "Most rent is distributed to unitholders regularly.",
+   "Costs do not absorb all the rent. The details here point elsewhere.",
+   "Tenants pay the rent, not receive it. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A REIT is a trust that owns rent-earning property.",
+   "Units are listed. A unit is a share in cash flows, not one building.",
+   "SEBI regulates REITs under the 2014 Regulations."
+  ]
+ }
+]

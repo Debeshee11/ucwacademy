@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "When the government builds roads, rail and defence assets, factories receive orders and workers get paid. That is the capex cycle. The next leg analysts watch is private companies investing again.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What drives capex",
+  "lines": [
+   [
+    "meena",
+    "What are PLI and Gati Shakti?"
+   ],
+   [
+    "sikka",
+    "PLI schemes reward extra manufacturing in electronics, autos, pharma and more. PM Gati Shakti plans infrastructure across ministries together. Government capex has led the cycle, and a private capex revival is the next step to watch."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Pieces of the capex story",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Government capex",
+    "roads, rail, power, defence orders"
+   ],
+   [
+    "PLI schemes",
+    "reward incremental manufacturing"
+   ],
+   [
+    "PM Gati Shakti",
+    "joins infra planning across ministries"
+   ],
+   [
+    "Next leg",
+    "private capex revival, watched by analysts"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s27q1",
+  "h": "Check yourself",
+  "q": "What does a PLI scheme reward?",
+  "opts": [
+   "Only the import of goods",
+   "Only the closing of plants",
+   "Incremental manufacturing",
+   "Only the sale of old stock"
+  ],
+  "ans": 2,
+  "why": [
+   "Imports are not what it rewards.",
+   "Closures are not rewarded.",
+   "PLI rewards extra production.",
+   "Old stock sales are not rewarded."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s27q2",
+  "h": "Check yourself",
+  "q": "What does PM Gati Shakti do?",
+  "opts": [
+   "Joins up infra planning",
+   "Fixes the price of every share",
+   "Sets the interest on all deposits",
+   "Replaces the Union Budget fully"
+  ],
+  "ans": 0,
+  "why": [
+   "It joins up infra planning.",
+   "It does not fix share prices.",
+   "It does not set deposit rates.",
+   "It does not replace the Budget."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s27q3",
+  "h": "Check yourself",
+  "q": "Which investment has led the cycle so far?",
+  "opts": [
+   "Private capex alone",
+   "Household gold buying",
+   "Foreign tourist spending",
+   "Government capex"
+  ],
+  "ans": 3,
+  "why": [
+   "Private capex is the next leg.",
+   "Gold buying is not the driver.",
+   "Tourist spending is not the driver.",
+   "Government capex has driven orders."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s27q4",
+  "h": "Check yourself",
+  "q": "What is the next leg analysts watch?",
+  "opts": [
+   "A fall in all government spending",
+   "A private capex revival",
+   "A ban on factories",
+   "A stop to all new roads"
+  ],
+  "ans": 1,
+  "why": [
+   "Falling spending is not the next leg.",
+   "Private firms investing again is next.",
+   "No ban is implied. The details here point elsewhere.",
+   "No stop is implied. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Government capex has driven orders in roads, rail, power and defence.",
+   "PLI rewards incremental manufacturing. Gati Shakti joins infra planning.",
+   "Private capex revival is the next leg to watch."
+  ]
+ }
+]

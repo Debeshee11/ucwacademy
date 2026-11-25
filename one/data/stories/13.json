@@ -1,0 +1,146 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "An index fund aims to match an index, minus costs. It does not try to beat it. In large caps many active funds have struggled to beat the index after costs. In mid and small caps, active has more room, though nothing is guaranteed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "An honest view",
+  "lines": [
+   [
+    "meena",
+    "Is passive always better?"
+   ],
+   [
+    "sikka",
+    "No. Passive has low cost, transparency and no manager risk. But it falls fully with the market and cannot avoid overvalued stocks. Use passive where markets are efficient and cost matters. Use active where a manager's process can add value. Always judge by the client's needs."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Passive",
+  "b": "Active",
+  "rows": [
+   [
+    "Cost (lower is better)",
+    1,
+    4
+   ],
+   [
+    "Manager risk (lower is better)",
+    0,
+    3
+   ]
+  ],
+  "h": "Two approaches, a rough picture",
+  "alt": "Bars comparing cost and manager risk of passive and active funds",
+  "caps": [
+   [
+    0.3,
+    "Passive: low cost, transparent."
+   ],
+   [
+    2.2,
+    "No manager risk."
+   ],
+   [
+    4.0,
+    "But it falls fully with the market."
+   ],
+   [
+    5.6,
+    "Active may add value, not guaranteed."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s13q1",
+  "h": "Check yourself",
+  "q": "What does an index fund aim to do?",
+  "opts": [
+   "Beat the index in every year",
+   "Avoid every fall of the market",
+   "Guarantee a fixed return yearly",
+   "Match the index, minus costs"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not try to beat it. It does not answer what was asked.",
+   "It falls with the market. The details here point elsewhere.",
+   "No fund guarantees a return. That does not match this case.",
+   "It tracks the index and does not try to beat it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s13q2",
+  "h": "Check yourself",
+  "q": "Which is a strength of index funds?",
+  "opts": [
+   "Avoiding overvalued stocks",
+   "Low cost and transparency",
+   "Protection in a fall",
+   "Guaranteed outperformance"
+  ],
+  "ans": 1,
+  "why": [
+   "They cannot avoid overvalued stocks. That does not match this case.",
+   "Low cost, transparency and no manager risk. This fits the facts given.",
+   "They fall fully with the market. It does not answer what was asked.",
+   "No outperformance is promised. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s13q3",
+  "h": "Check yourself",
+  "q": "Where has active management more room to add value, as per the lesson?",
+  "opts": [
+   "Mid and small caps",
+   "Large caps only",
+   "Overnight funds only",
+   "Gold only"
+  ],
+  "ans": 0,
+  "why": [
+   "Mid and small caps have more room, though not guaranteed.",
+   "In large caps many active funds struggle. It does not answer what was asked.",
+   "Overnight funds are not the example. It does not answer what was asked.",
+   "Gold is a different asset. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s13q4",
+  "h": "Check yourself",
+  "q": "What is the balanced view?",
+  "opts": [
+   "Always choose passive in each and every case",
+   "Always choose active in each and every case",
+   "Passive where efficient, active where it adds",
+   "Choose by the fund name that is shown on top"
+  ],
+  "ans": 2,
+  "why": [
+   "Always passive ignores cases. It does not fit the facts given.",
+   "Always active ignores cost. It does not answer what was asked.",
+   "Judge by the client's needs and market efficiency.",
+   "A name does not decide. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Index funds match the index minus costs.",
+   "Strengths: cost, transparency. Weakness: fall fully, cannot avoid overvalued stocks.",
+   "Choose passive or active by the client's needs."
+  ]
+ }
+]

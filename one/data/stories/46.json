@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Gold averaged about $3,280 an ounce in Q2 2025. By Q1 2026 it averaged about $4,873, a record. Then it slipped about 8% in Q2 2026. A big run, followed by a pause. What should that teach an investor?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "After the run",
+  "lines": [
+   [
+    "meena",
+    "Gold is at records. Will it just keep climbing?"
+   ],
+   [
+    "sikka",
+    "Nobody can say. After big rallies, prices often consolidate, and the ride is bumpy. Keep the story in mind: what happened is history, not a promise."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "LBMA gold, average per quarter, $/oz",
+  "vals": [
+   3280,
+   4135,
+   4873,
+   4506
+  ],
+  "labels": [
+   "Q2 25",
+   "Q4 25",
+   "Q1 26",
+   "Q2 26"
+  ],
+  "big": "$4,506 in Q2 2026",
+  "small": "8% below the Q1 record",
+  "alt": "Bars of quarterly average gold prices",
+  "caps": [
+   [
+    0.3,
+    "Q2 2025: about $3,280 an ounce."
+   ],
+   [
+    2.2,
+    "Q4 2025: about $4,135."
+   ],
+   [
+    4.0,
+    "Q1 2026: a record, about $4,873."
+   ],
+   [
+    5.6,
+    "Q2 2026: 8% lower, still 37% above a year ago."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Reading the gold run",
+  "stops": [
+   [
+    "Q1 2026 set a record quarterly average",
+    true
+   ],
+   [
+    "Q2 2026 was above Q1 2026",
+    false
+   ],
+   [
+    "Big rallies are often followed by consolidation",
+    true
+   ],
+   [
+    "A record price guarantees a further rise",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "About $4,873 an ounce, as per the lesson."
+   ],
+   [
+    2.2,
+    "It was about 8% lower."
+   ],
+   [
+    4.0,
+    "Expect volatility."
+   ],
+   [
+    5.6,
+    "Past records do not promise the future."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s46q1",
+  "h": "Check yourself",
+  "q": "Q1 2026 averaged about $4,873 an ounce. Q2 2026 averaged about $4,506. What happened?",
+  "opts": [
+   "A rise of about 8%",
+   "No change at all",
+   "A fall of about 8%",
+   "A fall of about 37%"
+  ],
+  "ans": 2,
+  "why": [
+   "The Q2 average was below Q1, not above.",
+   "The two averages differ clearly.",
+   "4,506 against 4,873 is roughly 8% lower.",
+   "37% is the year-on-year rise, not the fall."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s46q2",
+  "h": "Check yourself",
+  "q": "What does the Q2 2026 average say against Q2 2025?",
+  "opts": [
+   "It is about 37% higher",
+   "It is about 8% higher",
+   "It is lower",
+   "It is the same"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives a rise of about 37% on a year earlier.",
+   "8% is the fall from the Q1 2026 record. It does not fit the facts given.",
+   "Gold was higher than a year before. It does not fit the facts given.",
+   "A rise of 37% is not 'the same'. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s46q3",
+  "h": "Check yourself",
+  "q": "After a big rally, what does the lesson say to expect?",
+  "opts": [
+   "A steady straight line upward",
+   "A guaranteed fall in price",
+   "No price movement at all",
+   "Consolidation and volatility"
+  ],
+  "ans": 3,
+  "why": [
+   "Prices rarely rise in a straight line. It does not fit the facts given.",
+   "No fall is guaranteed either. It does not fit the facts given.",
+   "Prices do move. It does not answer what was asked.",
+   "Big rallies are often followed by pauses and swings."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s46q4",
+  "h": "Check yourself",
+  "q": "A client says, 'Gold hit a record, so it must rise more.' What is a sound reply?",
+  "opts": [
+   "Yes, records always continue on",
+   "Records promise no future gains",
+   "Yes, once the RBI says so",
+   "No, records always reverse"
+  ],
+  "ans": 1,
+  "why": [
+   "Records do not always continue. It does not fit the facts given.",
+   "Past highs say nothing certain about the future.",
+   "The RBI does not forecast gold. The details here point elsewhere.",
+   "Records do not always reverse either. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Quarterly gold averages: $3,280, $4,135, $4,873 (record), $4,506.",
+   "After big rallies, expect consolidation and volatility.",
+   "A record is history, not a promise."
+  ]
+ }
+]

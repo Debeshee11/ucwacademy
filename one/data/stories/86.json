@@ -1,0 +1,298 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Compliance feels like paperwork until the day a client says \"you told me it was safe\". Four habits protect your ARN and a client list built over twenty years: disclose, profile, make no promises, and show the riskometer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The neighbour's adviser",
+  "lines": [
+   [
+    "meena",
+    "Will this fund definitely give me 12%? My neighbour's adviser said his fund would."
+   ],
+   [
+    "sikka",
+    "That sentence ends careers. Let us see what an answer looks like that is both compliant and genuinely helpful."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Can I say this to a client?",
+  "alt": "A shield with statements that are safe to say and statements that are not",
+  "caps": [
+   [
+    0.3,
+    "What you say is part of the product. Compliance is a habit of words."
+   ],
+   [
+    3.0,
+    "Say that returns are not assured, and say what you earn from the fund."
+   ],
+   [
+    5.5,
+    "Never promise a return, and never imply the past will repeat."
+   ]
+  ],
+  "title": "Can I say this to a client?",
+  "stops": [
+   [
+    "Returns are not assured on this fund",
+    true
+   ],
+   [
+    "My trail commission on it is X% a year",
+    true
+   ],
+   [
+    "It is safe, you will get 12%",
+    false
+   ],
+   [
+    "It gave 18%, so expect that again",
+    false
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Risk profile against riskometer",
+  "alt": "Three bars on a six-step risk scale showing a client's comfort level and the risk level of two funds",
+  "caps": [
+   [
+    0.3,
+    "SEBI's riskometer has six levels, from Low to Very High. Meena's profile says Moderate."
+   ],
+   [
+    1.6,
+    "Fund G is rated Moderate. It sits inside her comfort."
+   ],
+   [
+    3.1,
+    "Fund F is rated Very High, three steps beyond what she said she can bear."
+   ],
+   [
+    4.8,
+    "Show scheme and benchmark riskometers. A gap needs a different fund, not a different profile."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Meena's risk profile: Moderate",
+    "segs": [
+     [
+      "Low",
+      1,
+      "#3CC47A"
+     ],
+     [
+      "Low-Mod",
+      1,
+      "#9AD96B"
+     ],
+     [
+      "Moderate",
+      1,
+      "#FFE08A"
+     ],
+     [
+      "",
+      3,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Fund G, riskometer: Moderate",
+    "segs": [
+     [
+      "Low",
+      1,
+      "#3CC47A"
+     ],
+     [
+      "Low-Mod",
+      1,
+      "#9AD96B"
+     ],
+     [
+      "Moderate",
+      1,
+      "#FFE08A"
+     ],
+     [
+      "",
+      3,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Fund F, riskometer: Very High",
+    "segs": [
+     [
+      "Low",
+      1,
+      "#3CC47A"
+     ],
+     [
+      "Low-Mod",
+      1,
+      "#9AD96B"
+     ],
+     [
+      "Moderate",
+      1,
+      "#FFE08A"
+     ],
+     [
+      "Mod-High",
+      1,
+      "#FFC531"
+     ],
+     [
+      "High",
+      1,
+      "#F08A4B"
+     ],
+     [
+      "Very High",
+      1,
+      "#E8573D"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What the client asks next",
+  "alt": "Bars comparing the first-year cost and the value after fifteen years for a direct plan and a regular plan",
+  "caps": [
+   [
+    0.3,
+    "Same portfolio, ₹10 lakh for 15 years at 12% before costs. The costs are assumed for illustration."
+   ],
+   [
+    2.4,
+    "A regular plan at 1.6% a year includes the distributor's commission. A direct plan at 0.8% does not."
+   ],
+   [
+    4.4,
+    "After 15 years the gap is about ₹5 lakh. Clients will ask about this, so be ready to answer."
+   ],
+   [
+    6.4,
+    "Say what you earn and what you do for it. Hiding it costs more than the commission ever did."
+   ]
+  ],
+  "a": "Direct plan",
+  "b": "Regular plan",
+  "rows": [
+   [
+    "First-year cost on ₹10 lakh (₹ thousand)",
+    8,
+    16
+   ],
+   [
+    "Value after 15 years (₹ lakh)",
+    49.2,
+    44.1
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s86q1",
+  "h": "Check yourself",
+  "q": "A client asks: \"Do you earn anything if I buy this fund?\" You receive a trail commission from the fund house. What is the right response?",
+  "opts": [
+   "Tell him the trail commission, and what service it covers",
+   "Say the fund house pays, so it is not his concern",
+   "Reply that commissions are confidential between you and the AMC",
+   "Move to the direct plan topic without saying what you earn"
+  ],
+  "ans": 0,
+  "why": [
+   "Disclosure answers the question and lets him weigh your advice. Linking it to the service shows what he gets for it.",
+   "The fund house pays out of the fund's expense, which the client bears through the unit price, so it is his concern.",
+   "Distributors are expected to disclose commissions to clients. Calling them confidential hides what he has a right to know.",
+   "Talking about direct plans without answering is evasion. It looks like hiding the figure he asked for, and it erodes trust."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s86q2",
+  "h": "Check yourself",
+  "q": "A retired client says: \"Just tell me it will give 10% so I can sleep.\" Which reply is compliant and still useful?",
+  "opts": [
+   "It has given about 10% before, so you can expect it again",
+   "It is a Moderate-risk fund, so 10% is a fair figure to rely on",
+   "A fund this old has a record, so the 10% is as good as fixed",
+   "I cannot promise 10%; let us check risk against your needs"
+  ],
+  "ans": 3,
+  "why": [
+   "Quoting past returns as an expectation implies the past will repeat. That is a form of assured return, which is not allowed.",
+   "A riskometer rating describes risk, not a return. Giving 10% as a figure to rely on still implies an assured return.",
+   "A long record is not a guarantee. Calling a return as good as fixed breaks the rule against implying assured returns.",
+   "It declines to promise, and turns his need for comfort into a check of what risk he can truly carry. Honest and helpful."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s86q3",
+  "h": "Check yourself",
+  "q": "Meena's profile says Moderate. A fund you like carries a Very High riskometer. What do you do?",
+  "opts": [
+   "Recommend it, since a small share makes the riskometer moot",
+   "Choose a fund within her profile and show both riskometers",
+   "Raise her risk profile to Very High so that the fund fits",
+   "Mention the riskometer only if she asks about it first"
+  ],
+  "ans": 1,
+  "why": [
+   "A small share still carries Very High risk. Suitability asks whether the product fits her, whatever the portion.",
+   "It starts from her profile, and showing scheme and benchmark riskometers lets her see the risk before she decides.",
+   "Changing a profile to fit a product is misselling. The profile must reflect what she can really bear, not what suits the sale.",
+   "The riskometer is part of every recommendation, not an optional extra. Waiting to be asked leaves out a required disclosure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s86q4",
+  "h": "Check yourself",
+  "q": "A client reading the new documents asks why costs now show a base expense ratio plus brokerage and taxes. What helps him most?",
+  "opts": [
+   "Tell him the split is technical and he need not worry",
+   "Quote only the base ratio, as it is the lower figure",
+   "Show the base ratio and the added charges, then the total",
+   "Compare the new base ratio with old total ratios to show savings"
+  ],
+  "ans": 2,
+  "why": [
+   "Brushing it off leaves him uninformed. Under the 2026 rules cost transparency is higher, and clients will ask for a clear answer.",
+   "The base ratio alone understates what he pays, because brokerage and taxes sit outside it. Quoting only that misleads him.",
+   "Showing each part and the total gives him the full cost, and lets him compare funds like for like.",
+   "Old total ratios and the new base ratio measure different things, so comparing them can suggest savings that may not exist."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Disclose what you earn, and recommend only after a risk profile. Change the fund, never the profile.",
+   "Never promise or imply an assured return on a market-linked product. Past returns are history, not a forecast.",
+   "Show scheme and benchmark riskometers. Costs now appear in parts, so be ready to explain each one clearly."
+  ]
+ }
+]

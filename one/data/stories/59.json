@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client wants gold but not the paperwork of buying and rebalancing it. A multi-asset fund holds gold and silver for her, and rebalances inside the fund. No tax event for her on that.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Metals inside a fund",
+  "lines": [
+   [
+    "meena",
+    "How do these funds hold gold?"
+   ],
+   [
+    "sikka",
+    "Through ETFs and exchange-traded commodity derivatives. The commodity share varies widely by fund, so check the factsheet. The fund rebalances internally, with no tax event for the investor at that point. For most clients, it is the easiest way to own gold correctly."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Metals in multi-asset funds",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "How held",
+    "ETFs and exchange-traded commodity derivatives"
+   ],
+   [
+    "Commodity share",
+    "varies widely, so check the factsheet"
+   ],
+   [
+    "Rebalancing",
+    "inside the fund, with no tax event for you"
+   ],
+   [
+    "Fit",
+    "the easiest way for most clients to own gold"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s59q1",
+  "h": "Check yourself",
+  "q": "How do multi-asset funds hold gold or silver?",
+  "opts": [
+   "ETFs and commodity derivatives",
+   "Storing bars at home for clients",
+   "Lending the metal out to jewellers",
+   "Printing gold notes for the units"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson names ETFs and derivatives.",
+   "Funds do not store at home. That does not match this case.",
+   "Lending is not stated. That does not match this case.",
+   "Gold notes do not exist. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s59q2",
+  "h": "Check yourself",
+  "q": "What should be checked before choosing a fund?",
+  "opts": [
+   "The colour of the logo on the page",
+   "The mascot used by the fund house",
+   "Commodity share in the factsheet",
+   "The date of the office lease deal"
+  ],
+  "ans": 2,
+  "why": [
+   "A logo is not data.",
+   "A mascot is not data.",
+   "Allocation varies by fund.",
+   "A lease is not data."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s59q3",
+  "h": "Check yourself",
+  "q": "What happens when the fund rebalances?",
+  "opts": [
+   "A tax bill arrives each time",
+   "The units are cancelled",
+   "The NAV is reset to ₹10",
+   "No tax event for the investor"
+  ],
+  "ans": 3,
+  "why": [
+   "No such bill arrives then. That does not match this case.",
+   "Units remain. It does not fit the facts given.",
+   "The NAV is not reset. It does not answer what was asked.",
+   "Internal rebalancing is not the investor's sale."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s59q4",
+  "h": "Check yourself",
+  "q": "Why suit most clients?",
+  "opts": [
+   "It guarantees a profit in gold",
+   "It is the easiest way to own gold",
+   "It avoids all the costs of funds",
+   "It forbids any equity holding at all"
+  ],
+  "ans": 1,
+  "why": [
+   "No profit is guaranteed. It does not answer what was asked.",
+   "Rebalancing is handled for them. This fits the facts given.",
+   "Funds carry costs. The details here point elsewhere.",
+   "Multi-asset funds hold equity too. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Multi-asset funds hold metals via ETFs and commodity derivatives.",
+   "The commodity share varies, so read the factsheet.",
+   "Internal rebalancing causes no tax event for the investor."
+  ]
+ }
+]

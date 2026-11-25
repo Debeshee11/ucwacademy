@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Gold was broadly flat to weak in rupees from 2013 to 2018. A client who bought in 2013 waited years with little to show. Then it rallied from 2019 and strongly in 2024 to 2026.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Gold needs patience",
+  "lines": [
+   [
+    "meena",
+    "Is gold a safe bet?"
+   ],
+   [
+    "sikka",
+    "It is a hedge, not the core. Long flat periods test patience. Gold cushions falls, but equity remains the long-term wealth creator. So we hold gold in measured amounts and do not chase it after a rally."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two phases of gold",
+  "intro": "In rupees, as in the lesson.",
+  "rows": [
+   [
+    "2013 to 2018",
+    "broadly flat to weak"
+   ],
+   [
+    "From 2019",
+    "rallied strongly"
+   ],
+   [
+    "2024 to 2026",
+    "an especially strong run"
+   ],
+   [
+    "Lesson",
+    "a hedge, not the core"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s58q1",
+  "h": "Check yourself",
+  "q": "How did gold do from 2013 to 2018 in rupees?",
+  "opts": [
+   "Strongly up every year",
+   "Broadly flat to weak",
+   "Up 100% a year",
+   "Fell to zero"
+  ],
+  "ans": 1,
+  "why": [
+   "It did not rise every year. The details here point elsewhere.",
+   "That is the lesson's description. That matches the case described.",
+   "100% a year did not happen. It does not fit the facts given.",
+   "It never fell to zero. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s58q2",
+  "h": "Check yourself",
+  "q": "What does a long flat period test?",
+  "opts": [
+   "The tax rules",
+   "The fund's logo",
+   "The regulator",
+   "Patience"
+  ],
+  "ans": 3,
+  "why": [
+   "Tax rules are separate.",
+   "A logo is not tested.",
+   "The regulator is not tested.",
+   "Flat spells test patience."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s58q3",
+  "h": "Check yourself",
+  "q": "What is gold's role, as per the lesson?",
+  "opts": [
+   "A hedge, not the core",
+   "The main wealth creator",
+   "A guaranteed income",
+   "A short-term trade"
+  ],
+  "ans": 0,
+  "why": [
+   "It supports the portfolio.",
+   "Equity is the main creator.",
+   "Gold pays no income.",
+   "It is not a trading tool."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s58q4",
+  "h": "Check yourself",
+  "q": "What remains the long-term wealth creator?",
+  "opts": [
+   "Gold alone",
+   "Silver alone",
+   "Equity",
+   "Cash under a mattress"
+  ],
+  "ans": 2,
+  "why": [
+   "Gold is a hedge. It does not fit the facts given.",
+   "Silver is a smaller diversifier. It does not answer what was asked.",
+   "The lesson names equity. This fits the facts given.",
+   "Cash loses to inflation. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Gold was flat to weak from 2013 to 2018, strong from 2019.",
+   "Long flat periods test patience.",
+   "Gold is a hedge. Equity creates long-term wealth."
+  ]
+ }
+]

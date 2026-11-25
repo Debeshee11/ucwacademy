@@ -1,0 +1,236 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "A retiree draws money every month and has no salary to refill the pot. That makes the order of the market's good and bad years matter far more than the average. This is sequence risk.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Dadi plans her income",
+  "lines": [
+   [
+    "dadi",
+    "I will have ₹1 crore at retirement. I want ₹50,000 every month from it. Put it all in an equity fund, no?"
+   ],
+   [
+    "sikka",
+    "Dadi, the average return is not the whole story. When the bad years come first, a pure equity fund and a multi-asset fund give very different endings."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Why a fall hurts a withdrawal plan",
+  "a": "After a fall: price ₹70",
+  "b": "Normal: price ₹100",
+  "rows": [
+   [
+    "Units sold for ₹50,000",
+    714.2857142857143,
+    500.0
+   ],
+   [
+    "Units sold in a year, thousand",
+    8.571428571428571,
+    6.0
+   ]
+  ],
+  "alt": "Two bars: units sold for the same withdrawals at a price of 70 versus 100",
+  "caps": [
+   [
+    0.3,
+    "Dadi withdraws ₹50,000 a month, ₹6 lakh a year. Each withdrawal sells units of the fund."
+   ],
+   [
+    2.0,
+    "At a price of ₹100, ₹50,000 sells 500 units. At ₹70 after a fall, the same ₹50,000 sells about 714 units."
+   ],
+   [
+    3.8,
+    "Over a year of withdrawals: 6,000 units at ₹100, about 8,571 units at ₹70."
+   ],
+   [
+    5.4,
+    "Those extra units are gone, so they cannot share in the recovery."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "drain",
+  "h": "Same 6% withdrawal, two funds",
+  "corpus": 10000000,
+  "withdraw": 50000,
+  "years": 25,
+  "paths": [
+   {
+    "name": "Multi-asset, falls less",
+    "rates": [
+     -0.1,
+     0.0,
+     0.085
+    ]
+   },
+   {
+    "name": "Pure equity, falls early",
+    "rates": [
+     -0.3,
+     -0.1,
+     0.1
+    ]
+   }
+  ],
+  "alt": "Two lines of the balance of a one crore fund with 50,000 rupees withdrawn each month",
+  "caps": [
+   [
+    0.3,
+    "₹1 crore, ₹50,000 a month: 6% a year. Both funds fall in years 1 and 2. Made-up paths."
+   ],
+   [
+    2.6,
+    "Pure equity falls 30%, then 10%, then returns 10% a year. Multi-asset falls 10%, then 0%, then 8.5%."
+   ],
+   [
+    5.4,
+    "Equity has the higher long-run return, yet early fall plus withdrawals empties it in year 23."
+   ],
+   [
+    9.0,
+    "Multi-asset still has about ₹1.2 crore in year 25. The balance, not the average return, pays the bills."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "drain",
+  "h": "The same funds at 8.4%",
+  "corpus": 10000000,
+  "withdraw": 70000,
+  "years": 25,
+  "paths": [
+   {
+    "name": "Multi-asset, falls less",
+    "rates": [
+     -0.1,
+     0.0,
+     0.085
+    ]
+   },
+   {
+    "name": "Pure equity, falls early",
+    "rates": [
+     -0.3,
+     -0.1,
+     0.1
+    ]
+   }
+  ],
+  "alt": "Two lines of the balance of a one crore fund with 70,000 rupees withdrawn each month",
+  "caps": [
+   [
+    0.3,
+    "Now Dadi asks for ₹70,000 a month: 8.4% a year, above the usual 5 to 6%. Same two made-up paths."
+   ],
+   [
+    3.0,
+    "The pure equity fund runs out in year 11."
+   ],
+   [
+    6.0,
+    "Multi-asset lasts longer, to year 19, but it also runs out."
+   ],
+   [
+    9.0,
+    "A smoother fund buys time. It cannot rescue a withdrawal rate that is too high."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s67q1",
+  "h": "Check yourself",
+  "q": "A fund's price drops from ₹100 to ₹70. A retiree needs ₹50,000 this month. How many more units must she sell than at ₹100?",
+  "opts": [
+   "About 150 more, because the price fell 30% and 30% of 500 units is 150",
+   "About 300 more, because a fall of 30% means selling 60% extra units",
+   "About 70 more, because the new price is ₹70 and that is the extra units",
+   "About 214 more: ₹50,000 buys 714 units at ₹70 against 500 at ₹100"
+  ],
+  "ans": 3,
+  "why": [
+   "Units sold rise by more than the fall: dividing by a smaller price gives about 43% more, not 30%.",
+   "Selling 60% extra overshoots. The rise is from 500 to 714 units, which is about 43% more.",
+   "The price is not a count of units. The extra units are found by dividing ₹50,000 by each price.",
+   "₹50,000 divided by 70 is about 714 units. At ₹100 it was 500. The 214 extra units are gone for good."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s67q2",
+  "h": "Check yourself",
+  "q": "At ₹70,000 a month (8.4% a year), the made-up pure equity path runs out in year 11 and the multi-asset path in year 19. What should the adviser conclude?",
+  "opts": [
+   "Multi-asset funds make any withdrawal rate safe, as long as a fall is shallow",
+   "A smoother fund buys time but cannot rescue a withdrawal rate that is too high",
+   "The pure equity path is better, because its long-run return was higher in the end",
+   "Both paths prove that SWPs from mutual funds always fail within fifteen years"
+  ],
+  "ans": 1,
+  "why": [
+   "The multi-asset path also ran out, in year 19. A shallower fall helped, but it did not make 8.4% safe.",
+   "Both paths ended empty. The multi-asset one lasted eight years longer, but the rate itself was the main problem.",
+   "Pure equity returned more per year on average and still ran out first, because of when the falls came.",
+   "It depends on the rate. At 6% a year, the multi-asset path still had about ₹1.2 crore in year 25."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s67q3",
+  "h": "Check yourself",
+  "q": "A client asks for ₹80,000 a month from ₹1 crore, which is 9.6% a year, and says equity will return 12% so it will last. What is the honest reply?",
+  "opts": [
+   "The rate is high; an early fall could drain it, so 5 to 6% a year is sounder",
+   "It will last, because 12% is more than 9.6%, so the balance can only keep rising",
+   "It will last if she picks small caps, because they average more than 12% a year",
+   "Withdraw no more than ₹10,000 a month, whatever the corpus and the goal are"
+  ],
+  "ans": 0,
+  "why": [
+   "An average return does not protect the plan when falls come early. Sustainable draws are usually 5 to 6% a year.",
+   "An average of 12% is not a yearly promise. A fall in the first years, while drawing, can empty the pot.",
+   "Small caps swing harder than equity funds in general. A deeper early fall makes the damage worse.",
+   "A flat ₹10,000 ignores the size of the corpus and her needs. The right figure depends on both."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s67q4",
+  "h": "Check yourself",
+  "q": "Each year ₹6 lakh is taken at year end from ₹1 crore. In year 1 the pure equity fund falls 30% and the multi-asset fund 10%. What is left in each?",
+  "opts": [
+   "₹70 lakh and ₹90 lakh, since withdrawals do not change what stays invested",
+   "₹94 lakh and ₹94 lakh, since only the withdrawal reduces both balances",
+   "₹64 lakh and ₹84 lakh: the fall applies first, then ₹6 lakh is withdrawn",
+   "₹58 lakh and ₹78 lakh, since ₹6 lakh is withdrawn twice over the year"
+  ],
+  "ans": 2,
+  "why": [
+   "Those figures leave out the withdrawal. The ₹6 lakh paid out lowers each balance by that much too.",
+   "The two funds did not fall equally. Their market falls differ, so the balances cannot match.",
+   "₹1 crore times 0.70 is ₹70 lakh, less ₹6 lakh is ₹64 lakh. The multi-asset fund: ₹90 lakh less ₹6 lakh is ₹84 lakh.",
+   "The ₹6 lakh is taken once in the year. Taking it twice would double the income that Dadi asked for."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sequence risk: bad years just after withdrawals begin do the most harm, because the same rupees sell more units at lower prices.",
+   "Multi-asset funds fall less, so an SWP from them sells fewer units in a crash and lasts longer.",
+   "A practical SWP rate is often 5% to 6% a year of the corpus, not 10%. A smoother fund buys time, not a bigger safe rate."
+  ]
+ }
+]

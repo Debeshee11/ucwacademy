@@ -1,0 +1,133 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A defence firm has an order book three to five times its yearly revenue. Sounds safe. But revenue arrives as milestones are met, and delays can push it out. A big order book is not the same as big profit this year.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Orders and execution",
+  "lines": [
+   [
+    "meena",
+    "What is book-to-bill?"
+   ],
+   [
+    "sikka",
+    "Order book divided by annual revenue. Three to five times is common for defence companies. Revenue is milestone-based and working capital can be heavy. Execution delays shift revenue and hit earnings even when orders are strong. Nomination-based orders to DPSUs reduce competition risk but cap margins."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reading an order book",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Order book",
+    "₹6,000 crore"
+   ],
+   [
+    "Annual revenue",
+    "₹2,000 crore"
+   ],
+   [
+    "=",
+    "Book-to-bill",
+    "3x"
+   ],
+   [
+    "Risk",
+    "delays move revenue to later years"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s40q1",
+  "h": "Check yourself",
+  "q": "What is book-to-bill?",
+  "opts": [
+   "Profit divided by the share price",
+   "Order book divided by annual revenue",
+   "Debt divided by the net worth",
+   "Dividend divided by the order"
+  ],
+  "ans": 1,
+  "why": [
+   "That is not book-to-bill.",
+   "That is the lesson's definition.",
+   "That is a leverage ratio.",
+   "That is not book-to-bill either."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s40q2",
+  "h": "Check yourself",
+  "q": "An order book of ₹6,000 crore and revenue of ₹2,000 crore gives what?",
+  "opts": [
+   "3x",
+   "0.3x",
+   "12x",
+   "30x"
+  ],
+  "ans": 0,
+  "why": [
+   "6,000 ÷ 2,000 equals 3x.",
+   "0.3x divides the wrong way.",
+   "12x is not the quotient.",
+   "30x is not the quotient."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s40q3",
+  "h": "Check yourself",
+  "q": "Why can strong orders still hurt earnings?",
+  "opts": [
+   "Orders cancel on their own over time",
+   "Revenue is always paid upfront in full",
+   "Tax is charged on the orders booked",
+   "Execution delays shift revenue later"
+  ],
+  "ans": 3,
+  "why": [
+   "Orders do not cancel themselves.",
+   "Revenue is not paid upfront.",
+   "Tax is not charged on orders.",
+   "Revenue is milestone-based."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s40q4",
+  "h": "Check yourself",
+  "q": "What do nomination-based orders to DPSUs do?",
+  "opts": [
+   "Raise margins without any limits",
+   "Bar DPSUs from bidding at all",
+   "Less rivalry, capped margins",
+   "Remove all execution risk fully"
+  ],
+  "ans": 2,
+  "why": [
+   "Margins are capped, not unlimited. It does not fit the facts given.",
+   "DPSUs receive them. It does not answer what was asked.",
+   "There is less competition but less pricing power.",
+   "Execution risk remains. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Book-to-bill = order book ÷ annual revenue; 3 to 5x is common.",
+   "Revenue is milestone-based; working capital can be heavy.",
+   "Delays shift revenue and hit earnings."
+  ]
+ }
+]

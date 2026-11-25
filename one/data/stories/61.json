@@ -1,0 +1,269 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "A multi-asset fund bundles equity, debt and gold in one scheme. In 2026 it became the fund many first-time investors were handed. Here are the numbers behind that, and what they do not prove.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena asks",
+  "lines": [
+   [
+    "meena",
+    "Everyone at work is buying a multi-asset fund. My neighbour says it just keeps getting bigger. Is that enough reason for me?"
+   ],
+   [
+    "sikka",
+    "Size tells you people like it. It does not tell you whether it fits you. Let us look at what the numbers say, and what they leave out."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "The streak",
+  "vals": [
+   4,
+   16,
+   28,
+   40,
+   52,
+   58
+  ],
+  "labels": [
+   "Dec 21",
+   "Dec 22",
+   "Dec 23",
+   "Dec 24",
+   "Dec 25",
+   "Jun 26"
+  ],
+  "big": "58 months in a row",
+  "small": "Sep 2021 to Jun 2026",
+  "alt": "Bars counting months in a row of net inflows from late 2021 to June 2026",
+  "caps": [
+   [
+    0.2,
+    "Industry data says net inflows ran for 58 months in a row up to June 2026."
+   ],
+   [
+    1.8,
+    "Counting back, that run began around September 2021."
+   ],
+   [
+    3.6,
+    "Through falls, rallies and rate changes, more money came in each month than went out."
+   ],
+   [
+    5.7,
+    "About 4 years 10 months of it. That is demand, and demand is not a promise."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Share of inflows, and share of size",
+  "rows": [
+   {
+    "name": "Hybrid inflows, Feb 2026 (about ₹12,100 crore)",
+    "segs": [
+     [
+      "Multi-asset 70%",
+      70,
+      "#8EC5FF"
+     ],
+     [
+      "Others 30%",
+      30,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Category size, Jun 2026 (₹1.96 lakh crore)",
+    "segs": [
+     [
+      "Already there 84%",
+      84.0,
+      "#3CC47A"
+     ],
+     [
+      "Added 16%",
+      16.0,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Two bars: multi-asset share of hybrid inflows in February 2026, and old versus added size in June 2026",
+  "caps": [
+   [
+    0.2,
+    "In February 2026 multi-asset funds took in ₹8,476 crore, about 70% of all hybrid inflows."
+   ],
+   [
+    1.5,
+    "The other hybrid categories took only about ₹3,624 crore between them."
+   ],
+   [
+    2.7,
+    "Now size: about ₹1.96 lakh crore in Jun 2026, up about 19% in six months."
+   ],
+   [
+    4.0,
+    "So roughly 84% was already there. The 16% added is new money plus rising prices."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What the numbers say, and do not",
+  "title": "Reading the popularity",
+  "stops": [
+   [
+    "58 months of net inflows to Jun 2026",
+    true
+   ],
+   [
+    "Cautious investors like the smoother ride",
+    true
+   ],
+   [
+    "Inflows prove the fund cannot fall",
+    false
+   ],
+   [
+    "Popular means right for every client",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false conclusions drawn from inflow data",
+  "caps": [
+   [
+    0.3,
+    "Fifty-eight straight months of net inflows is a real record of demand."
+   ],
+   [
+    3.0,
+    "It shows people chose it. It does not show the fund will not fall, or that it suits every client."
+   ],
+   [
+    5.5,
+    "Check the mix, the tax class and the person before you pick a popular fund."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four numbers to keep straight",
+  "intro": "The category facts, with what each one means.",
+  "rows": [
+   [
+    "AUM, Jun 2026",
+    "about ₹1.96 lakh crore"
+   ],
+   [
+    "Growth in 6 months",
+    "about 19%"
+   ],
+   [
+    "Streak of net inflows",
+    "58 months, about 4 years 10 months"
+   ],
+   [
+    "Feb 2026 inflow",
+    "₹8,476 crore, about 70% of hybrid inflows"
+   ]
+  ],
+  "note": "Numbers as quoted in industry data for this lesson. AUM growth includes market gains, not only new money."
+ },
+ {
+  "k": "pick",
+  "id": "s61q1",
+  "h": "Check yourself",
+  "q": "A colleague says: the category grew 19% in six months, so investors added 19% in fresh money. What is missing from that claim?",
+  "opts": [
+   "Nothing is missing, because a fund can only grow when investors pay in fresh money to it",
+   "The 19% is the return that each investor in the category was paid over the six months",
+   "Fund size also moves with the prices of its holdings, so growth is not all new money",
+   "Fund size only rises through the fees that the fund houses collect from investors"
+  ],
+  "ans": 2,
+  "why": [
+   "A fund's size also changes with prices. A rally lifts AUM even if nobody invests, so size is not the same as new money.",
+   "AUM growth is not a return. Investors who joined at different dates earned different amounts over those months.",
+   "Assets under management are holdings at market value, so both inflows and price gains lift them. Flows alone need separate data.",
+   "Fees are a small yearly slice taken from the fund. They do not drive the category's growth in size."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s61q2",
+  "h": "Check yourself",
+  "q": "Multi-asset funds took ₹8,476 crore in February 2026, about 70% of all hybrid inflows that month. Roughly how much did hybrid funds take in total?",
+  "opts": [
+   "About ₹12,100 crore, because ₹8,476 crore divided by 0.70 gives the whole",
+   "About ₹5,900 crore, because ₹8,476 crore times 0.70 gives the total",
+   "About ₹28,300 crore, because ₹8,476 crore divided by 0.30 gives the total",
+   "About ₹8,500 crore, because the multi-asset figure already includes everything"
+  ],
+  "ans": 0,
+  "why": [
+   "If 8,476 is 70% of the whole, the whole is 8,476 divided by 0.70, which is about 12,109. The rest is about 3,633.",
+   "Multiplying by 0.70 finds 70% of a number. Here the 70% is already known, so the total must be larger than 8,476.",
+   "Dividing by 0.30 would be right only if 8,476 were the other 30%. It is the 70% share, so this overshoots.",
+   "The 8,476 is only multi-asset's part. Other hybrid categories took money too, so the total is higher."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s61q3",
+  "h": "Check yourself",
+  "q": "A client says: 58 months of inflows means this fund has never let investors down and cannot fall. What is the sound reply?",
+  "opts": [
+   "She is right, because money would stop coming in the first time any fund fell",
+   "She is wrong, because inflows only follow advertising and say nothing about a fund",
+   "She is right, but only for the coming year, after which the inflows will reverse",
+   "Inflows show demand. It can still fall, though its mix is built to cushion that"
+  ],
+  "ans": 3,
+  "why": [
+   "Flows can continue through a fall. Demand is a fact about investors, not a guarantee about the NAV.",
+   "Flows are not only advertising. Cautious investors have chosen the smoother ride, which is worth saying fairly.",
+   "No one can say when flows will turn. A made-up deadline is as unsound as the claim it answers.",
+   "It credits the record without turning it into a promise, and it ties the real benefit to the mix of assets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s61q4",
+  "h": "Check yourself",
+  "q": "Meena is 28, new to investing, and would panic at a 20% fall. She wants the most popular hybrid fund. What should the adviser do first?",
+  "opts": [
+   "Recommend it at once, since the category's inflow record already shows it suits cautious people",
+   "Check her horizon, her fall limit, and the fund's actual mix and tax class first",
+   "Move her to a small cap fund, because a long horizon at 28 means she can take the highest risk",
+   "Ask her to hold cash until the category's inflows slow, so that she buys at a lower price"
+  ],
+  "ans": 1,
+  "why": [
+   "Inflows describe the crowd. They do not tell the adviser whether this fund matches her tolerance or goal.",
+   "Popularity starts the conversation. The fit comes from her goal, how much fall she can sit through, and what the fund holds.",
+   "Her stated fear of a 20% fall points away from small caps, whatever her age says about horizon.",
+   "Waiting for inflows to slow is a timing guess. It delays a plan without any reason tied to her goal."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Multi-asset funds hold equity, debt and gold together, and the category has seen 58 straight months of net inflows to June 2026.",
+   "Fund size grows from new money and from rising prices. Do not read the whole growth as fresh inflows.",
+   "Popularity is not suitability. Check the client's fear, horizon, and the fund's real mix first."
+  ]
+ }
+]

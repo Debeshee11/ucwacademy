@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A fund's factsheet says 14% over three years. A client invested in it and her own return is 9%. Did the fund lie? No. Published returns assume one lump sum held for the full period, in one plan, before tax. Hers did not.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Your return is yours",
+  "lines": [
+   [
+    "meena",
+    "Why does my return differ from the fund's?"
+   ],
+   [
+    "sikka",
+    "Your return depends on when each rupee went in and came out. Two people in the same fund over the same three years can differ a lot. Add plan type, exit loads, taxes and switches. XIRR is the tool for personal returns."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Published vs personal",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Published return",
+    "one lump sum, full period, before tax"
+   ],
+   [
+    "Your cash flows",
+    "SIPs and a withdrawal on different dates"
+   ],
+   [
+    "Other drags",
+    "regular plan, exit load, tax, switches"
+   ],
+   [
+    "Right measure",
+    "XIRR: counts timing and size of each cash flow"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s8q1",
+  "h": "Check yourself",
+  "q": "Published fund returns usually assume what?",
+  "opts": [
+   "Monthly SIPs for every investor",
+   "Returns shown after all taxes paid",
+   "Returns shown after exit loads paid",
+   "One lump sum held the full period"
+  ],
+  "ans": 3,
+  "why": [
+   "SIPs would need XIRR. It does not answer what was asked.",
+   "Published returns are before tax. The details here point elsewhere.",
+   "Exit loads are not counted. That does not match this case.",
+   "That is the standard assumption. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s8q2",
+  "h": "Check yourself",
+  "q": "Two people hold the same fund for three years with different entry dates. What follows?",
+  "opts": [
+   "Their returns must be exactly equal",
+   "Personal returns can differ widely",
+   "Both investors must lose money",
+   "Both investors must make money"
+  ],
+  "ans": 1,
+  "why": [
+   "Equal returns need equal timing. That does not match this case.",
+   "Timing of each rupee changes the result. This fits the facts given.",
+   "Neither must lose. It does not fit the facts given.",
+   "Neither must gain. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s8q3",
+  "h": "Check yourself",
+  "q": "Which tool captures the timing and size of each cash flow?",
+  "opts": [
+   "XIRR",
+   "Point-to-point return",
+   "Absolute return",
+   "Dividend yield"
+  ],
+  "ans": 0,
+  "why": [
+   "XIRR accounts for every dated cash flow.",
+   "Point-to-point assumes a single lump sum.",
+   "Absolute return ignores time.",
+   "Dividend yield is a payout ratio."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s8q4",
+  "h": "Check yourself",
+  "q": "Which of these can widen the gap between a published and a personal return?",
+  "opts": [
+   "The font used on the factsheet page",
+   "The brand colour of the fund house",
+   "Plan type, exit loads, taxes, switches",
+   "The weather on the day of investing"
+  ],
+  "ans": 2,
+  "why": [
+   "A font does not matter. It does not fit the facts given.",
+   "A colour does not matter. It does not answer what was asked.",
+   "These all change what the investor actually keeps.",
+   "Weather does not matter. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Published returns assume one lump sum, one plan, before tax.",
+   "Personal returns depend on timing, plan, loads, tax and switches.",
+   "XIRR is the right tool for personal returns."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client calls on the 12th: 'Why is the market down today?' An RM who knows the calendar can say, 'CPI inflation was just released. Let me explain.' The calendar turns news into a plan.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Dates to remember",
+  "lines": [
+   [
+    "meena",
+    "Which dates should I know?"
+   ],
+   [
+    "sikka",
+    "AMFI monthly data around the 10th. CPI inflation around the 12th. RBI's MPC meets six times a year, the next in early December. GDP comes quarterly, about two months after quarter-end, with the FY provisional estimate on 31 May."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The data calendar",
+  "intro": "Dates as in the lesson; confirm the current schedule.",
+  "rows": [
+   [
+    "About the 10th",
+    "AMFI monthly MF data"
+   ],
+   [
+    "About the 12th",
+    "CPI inflation"
+   ],
+   [
+    "Six times a year",
+    "RBI MPC meeting, next in early December"
+   ],
+   [
+    "Quarterly, ~2 months after quarter-end",
+    "GDP; FY provisional estimate on 31 May"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s29q1",
+  "h": "Check yourself",
+  "q": "When does AMFI usually release monthly MF data?",
+  "opts": [
+   "Around the 10th of each month",
+   "Around the 28th of each month",
+   "Only on 31 May each year",
+   "Only once in five years"
+  ],
+  "ans": 0,
+  "why": [
+   "That is the lesson's timing.",
+   "28th is not the stated date.",
+   "31 May is for the GDP estimate.",
+   "It is a monthly release."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s29q2",
+  "h": "Check yourself",
+  "q": "How often does RBI's MPC meet?",
+  "opts": [
+   "Once every ten years",
+   "Every single day",
+   "Six times a year",
+   "Only at the Budget"
+  ],
+  "ans": 2,
+  "why": [
+   "Far more often than that. That does not match this case.",
+   "Not daily. That does not match this case.",
+   "Six meetings a year. This fits the facts given.",
+   "Not tied to the Budget. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s29q3",
+  "h": "Check yourself",
+  "q": "When is CPI inflation released?",
+  "opts": [
+   "Around the 31st of each March",
+   "Around the 12th of each month",
+   "Only once a year in May",
+   "Only on the Budget day"
+  ],
+  "ans": 1,
+  "why": [
+   "That is not the stated date.",
+   "Around the 12th each month.",
+   "It is released monthly.",
+   "It is not tied to the Budget."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s29q4",
+  "h": "Check yourself",
+  "q": "When does the FY provisional GDP estimate arrive?",
+  "opts": [
+   "On 1 January",
+   "On the Budget day",
+   "On every 10th",
+   "On 31 May"
+  ],
+  "ans": 3,
+  "why": [
+   "1 January is not stated.",
+   "Budget day is not stated.",
+   "The 10th is for AMFI data.",
+   "The lesson gives 31 May."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "AMFI data about the 10th. CPI about the 12th.",
+   "MPC meets six times a year. GDP is quarterly.",
+   "Knowing the calendar turns news into a plan."
+  ]
+ }
+]

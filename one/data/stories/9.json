@@ -1,0 +1,137 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The market is down 13%. A client asks, 'Should I put in my ₹10 lakh now?' Nobody can reliably call the bottom. It can fall further or recover, and both have happened many times.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three ways in",
+  "lines": [
+   [
+    "meena",
+    "Lump sum, SIP or STP?"
+   ],
+   [
+    "sikka",
+    "A lump sum gets money working sooner, and in rising markets tends to win. A SIP or STP spreads entry and reduces regret if markets fall more. An STP parks the money in a liquid or low-duration fund and moves fixed amounts to equity. The right choice depends on horizon, risk tolerance and how she would feel if markets fell another 10%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "pipes",
+  "months": 6,
+  "total": 1000000,
+  "from": "Liquid fund",
+  "to": "Equity fund",
+  "rate": 0,
+  "h": "An STP over six months",
+  "alt": "Money moving from a liquid fund to an equity fund each month",
+  "caps": [
+   [
+    0.3,
+    "The lump sum waits in a liquid fund."
+   ],
+   [
+    2.2,
+    "Fixed amounts move to equity each month."
+   ],
+   [
+    4.0,
+    "Entry is spread across the months."
+   ],
+   [
+    5.6,
+    "A practical middle path, not a guarantee."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s9q1",
+  "h": "Check yourself",
+  "q": "What does a systematic transfer plan (STP) do?",
+  "opts": [
+   "Moves fixed sums into equity monthly",
+   "Guarantees a profit on the money",
+   "Removes all risk from the equity",
+   "Converts equity into a safe deposit"
+  ],
+  "ans": 0,
+  "why": [
+   "It parks a lump sum and transfers in parts.",
+   "No plan guarantees a profit. The details here point elsewhere.",
+   "Equity risk remains. That does not match this case.",
+   "It does not create a deposit. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s9q2",
+  "h": "Check yourself",
+  "q": "Can anyone reliably call the market bottom?",
+  "opts": [
+   "Yes, with a good chart pattern",
+   "Yes, with a recent news report",
+   "No, it can fall more or recover",
+   "Yes, with a lucky number pick"
+  ],
+  "ans": 2,
+  "why": [
+   "A chart cannot call it reliably. That does not match this case.",
+   "News cannot call it reliably. It does not fit the facts given.",
+   "Both outcomes have happened many times. This fits the facts given.",
+   "Luck is not a method. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s9q3",
+  "h": "Check yourself",
+  "q": "Why might a client prefer a SIP or STP after a fall?",
+  "opts": [
+   "It always beats a lump sum entry",
+   "It reduces regret if falls continue",
+   "It guarantees the lowest price paid",
+   "It removes all tax on the gains"
+  ],
+  "ans": 1,
+  "why": [
+   "In rising markets a lump sum tends to win.",
+   "Spreading entry lowers the regret of a bad entry.",
+   "No method guarantees the lowest price.",
+   "Tax still applies. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s9q4",
+  "h": "Check yourself",
+  "q": "What should drive the choice between lump sum, SIP and STP?",
+  "opts": [
+   "The client's lucky day in the month ahead",
+   "The fund house logo and its glossy brochure",
+   "Whichever fund has just rallied the most",
+   "Horizon, risk tolerance, feelings on a fall"
+  ],
+  "ans": 3,
+  "why": [
+   "A lucky day is not a factor. It does not answer what was asked.",
+   "A logo is not a factor. It does not answer what was asked.",
+   "Chasing rallies is performance chasing. The details here point elsewhere.",
+   "These are the real suitability factors. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Nobody can reliably call the bottom.",
+   "Lump sum works sooner. SIP and STP reduce regret.",
+   "Choose by horizon, risk tolerance and feelings about another fall."
+  ]
+ }
+]

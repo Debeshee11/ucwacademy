@@ -1,0 +1,149 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client owns three large-cap funds and thinks she is well spread. Look inside: each holds the same big private banks. Financial services is roughly a third of the Nifty 50.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The sector map",
+  "lines": [
+   [
+    "meena",
+    "Which sectors matter most in the Nifty 50?"
+   ],
+   [
+    "sikka",
+    "Financial services is the largest, roughly a third. IT, oil and gas, consumption and autos follow. Defence, capital goods and power have grown their weight lately. Because most large-cap funds own big private banks, check overlap before adding another."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Nifty 50 sector mix, rough",
+  "rows": [
+   {
+    "name": "Rough sector split",
+    "segs": [
+     [
+      "Financial about 33%",
+      33,
+      "#FFC531"
+     ],
+     [
+      "Rest of the sectors",
+      67,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar showing financial services as about a third of the index",
+  "caps": [
+   [
+    0.3,
+    "Financial services is the largest sector."
+   ],
+   [
+    2.2,
+    "Roughly a third of the Nifty 50."
+   ],
+   [
+    4.0,
+    "Large-cap funds often own the same banks."
+   ],
+   [
+    5.6,
+    "Check overlap before adding another."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s26q1",
+  "h": "Check yourself",
+  "q": "Which sector is the largest in the Nifty 50?",
+  "opts": [
+   "Defence and arms",
+   "Power and utilities",
+   "Autos and parts",
+   "Financial services"
+  ],
+  "ans": 3,
+  "why": [
+   "Defence has grown but is smaller.",
+   "Power has grown but is smaller.",
+   "Autos come after the top few.",
+   "It is roughly a third of the index."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s26q2",
+  "h": "Check yourself",
+  "q": "Why can several large-cap funds overlap heavily?",
+  "opts": [
+   "They all hold only gold bonds",
+   "Most own the same big private banks",
+   "They are one fund under many names",
+   "They never hold any shares"
+  ],
+  "ans": 1,
+  "why": [
+   "They hold equity, not only bonds. That does not match this case.",
+   "Big banks are major index weights. This fits the facts given.",
+   "They are separate funds. It does not answer what was asked.",
+   "They hold shares. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s26q3",
+  "h": "Check yourself",
+  "q": "What should an RM check before adding another large-cap fund?",
+  "opts": [
+   "The overlap with funds held",
+   "The colour of the factsheet page",
+   "The fund house's office floor number",
+   "The latest rally in the price"
+  ],
+  "ans": 0,
+  "why": [
+   "Overlap shows whether it adds anything. That matches the case described.",
+   "Colour is not data. It does not fit the facts given.",
+   "A floor number is not relevant. It does not answer what was asked.",
+   "A rally is not a reason. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s26q4",
+  "h": "Check yourself",
+  "q": "Which sectors have grown their market weight recently?",
+  "opts": [
+   "Only the paper and pulp firms",
+   "Only the film and music firms",
+   "Defence, capital goods, power",
+   "Only the cement and tiles firms"
+  ],
+  "ans": 2,
+  "why": [
+   "That group is not named.",
+   "That group is not named either.",
+   "The lesson names these three.",
+   "That group is not named at all."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Financial services is roughly a third of the Nifty 50.",
+   "IT, oil and gas, consumption and autos follow.",
+   "Check fund overlap before adding another."
+  ]
+ }
+]

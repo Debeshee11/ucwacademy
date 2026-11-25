@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Europe is rearming. Asia is modernising. Global defence spending is rising. India is moving from one of the world's largest arms importers toward a credible exporter. But contracts take years.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The global context",
+  "lines": [
+   [
+    "meena",
+    "Does global demand help Indian firms?"
+   ],
+   [
+    "sikka",
+    "Indian costs are competitive for artillery, ammunition, ships and electronics. Geopolitics creates demand, but contracts take years to be signed and delivered. So the story is long-term, not a quick trade."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Global links",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Europe",
+    "rearming"
+   ],
+   [
+    "Asia",
+    "modernising"
+   ],
+   [
+    "India",
+    "from importer toward exporter"
+   ],
+   [
+    "Cost edge",
+    "artillery, ammunition, ships, electronics"
+   ]
+  ],
+  "note": "Geopolitics creates demand, but contracts take years."
+ },
+ {
+  "k": "pick",
+  "id": "s43q1",
+  "h": "Check yourself",
+  "q": "What is happening to global defence spending?",
+  "opts": [
+   "It is falling to zero",
+   "It is frozen forever",
+   "It has been banned",
+   "It is rising"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not falling to zero. The details here point elsewhere.",
+   "It is not frozen. The details here point elsewhere.",
+   "It has not been banned. That does not match this case.",
+   "Europe and Asia are spending more. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s43q2",
+  "h": "Check yourself",
+  "q": "How is India's role shifting?",
+  "opts": [
+   "From exporter to a pure importer",
+   "From importer toward exporter",
+   "From a buyer to a non-buyer",
+   "From a maker to a non-maker"
+  ],
+  "ans": 1,
+  "why": [
+   "That is the opposite. The details here point elsewhere.",
+   "India is moving toward exporting. This fits the facts given.",
+   "India still buys. It does not fit the facts given.",
+   "India still makes equipment. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s43q3",
+  "h": "Check yourself",
+  "q": "Where are Indian costs competitive?",
+  "opts": [
+   "Only luxury watches and jewellery",
+   "Only tea packaging and exports",
+   "Artillery, shells, ships, chips",
+   "Only film equipment and cameras"
+  ],
+  "ans": 2,
+  "why": [
+   "Watches are not named.",
+   "Tea packaging is not named.",
+   "The lesson names these areas.",
+   "Film gear is not named."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s43q4",
+  "h": "Check yourself",
+  "q": "Why is it not a quick trade?",
+  "opts": [
+   "Contracts take years",
+   "Demand arrives within days",
+   "Orders are cancelled daily",
+   "Prices are fixed by law"
+  ],
+  "ans": 0,
+  "why": [
+   "Signing and delivery take years.",
+   "Demand does not arrive in days.",
+   "Orders are not cancelled daily.",
+   "Prices are not fixed by law."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Global defence spending is rising.",
+   "India is moving from importer toward exporter.",
+   "Contracts take years: a long-term story."
+  ]
+ }
+]

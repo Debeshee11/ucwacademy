@@ -1,0 +1,183 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Out of every ₹100 in the defence budget, only about ₹28 buys new equipment. Another ₹26 pays serving staff and ₹22 pays pensions. Reading the split tells you who really gets the money.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where the money goes",
+  "lines": [
+   [
+    "meena",
+    "Is the budget mostly for new weapons?"
+   ],
+   [
+    "sikka",
+    "About 28% is capital. Pay is about 26%, pensions about 22%, and upkeep about 20%. In FY20, pay and pensions took over 56%, so the capital share has improved since."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "How the MoD budget splits (approximate)",
+  "rows": [
+   {
+    "name": "Share of the MoD budget",
+    "segs": [
+     [
+      "Capital 28%",
+      28,
+      "#3CC47A"
+     ],
+     [
+      "Pay 26%",
+      26,
+      "#8EC5FF"
+     ],
+     [
+      "Pension 22%",
+      22,
+      "#FFC531"
+     ],
+     [
+      "Upkeep 20%",
+      20,
+      "#FF9F7A"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar split into capital, pay, pensions and upkeep",
+  "caps": [
+   [
+    0.3,
+    "Capital: about 28%."
+   ],
+   [
+    2.2,
+    "Pay and allowances: about 26%."
+   ],
+   [
+    4.0,
+    "Pensions: about 22%."
+   ],
+   [
+    5.6,
+    "Operational upkeep: about 20%."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Where specific money goes",
+  "intro": "FY27, as per the lesson.",
+  "rows": [
+   [
+    "DRDO",
+    "about ₹29,100 crore"
+   ],
+   [
+    "Aircraft and aero engines",
+    "₹63,733 crore"
+   ],
+   [
+    "Naval fleet",
+    "₹25,023 crore"
+   ],
+   [
+    "Pay and pensions in FY20",
+    "over 56% of the budget"
+   ]
+  ],
+  "note": "Figures as per the lesson text. Check the latest Budget and MoD releases."
+ },
+ {
+  "k": "pick",
+  "id": "s32q1",
+  "h": "Check yourself",
+  "q": "About what share of the MoD budget is capital?",
+  "opts": [
+   "About 56%",
+   "About 8%",
+   "About 28%",
+   "About 78%"
+  ],
+  "ans": 2,
+  "why": [
+   "56% is pay and pensions in FY20.",
+   "8% is far below the stated share.",
+   "The lesson gives about 28% for capital.",
+   "78% is far above the stated share."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s32q2",
+  "h": "Check yourself",
+  "q": "Which item received ₹63,733 crore in FY27?",
+  "opts": [
+   "Aircraft and aero engines",
+   "The naval fleet and ships",
+   "DRDO and its labs",
+   "Pensions of veterans"
+  ],
+  "ans": 0,
+  "why": [
+   "That sum went to aircraft and aero engines. This fits the facts given.",
+   "The naval fleet got ₹25,023 crore. It does not fit the facts given.",
+   "DRDO got about ₹29,100 crore. It does not fit the facts given.",
+   "Pensions are a separate, larger head. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s32q3",
+  "h": "Check yourself",
+  "q": "What happened to the capital share compared with FY20?",
+  "opts": [
+   "It fell to zero since then",
+   "It is entirely unchanged",
+   "It was never counted at all",
+   "It has improved since FY20"
+  ],
+  "ans": 3,
+  "why": [
+   "It did not fall to zero. That does not match this case.",
+   "The lesson says it improved. It does not fit the facts given.",
+   "It is counted as a major head. It does not answer what was asked.",
+   "Capex share has improved since FY20. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s32q4",
+  "h": "Check yourself",
+  "q": "Why do investors look at the split, not just the total?",
+  "opts": [
+   "Pay creates orders for every firm now",
+   "Capital buys gear, so drives orders",
+   "Pensions create orders for all the firms",
+   "The total alone shows all the orders"
+  ],
+  "ans": 1,
+  "why": [
+   "Pay does not create supplier orders.",
+   "Equipment orders come from the capital part.",
+   "Pensions do not create supplier orders.",
+   "The total includes pay and pensions."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "MoD split: ~28% capital, ~26% pay, ~22% pensions, ~20% upkeep.",
+   "Pay and pensions took over 56% in FY20.",
+   "Capital buys equipment, so it drives orders."
+  ]
+ }
+]

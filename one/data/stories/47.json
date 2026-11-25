@@ -1,0 +1,194 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Central banks bought a net 289 tonnes of gold in Q2 2026, a record for a second quarter. Poland and China led the buying. Russia was the largest seller. Why do governments buy gold at all?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The big buyers",
+  "lines": [
+   [
+    "meena",
+    "Why would a central bank hold gold?"
+   ],
+   [
+    "sikka",
+    "Gold is a reserve asset that is no one else's promise to pay. Central banks have been steady buyers. The World Gold Council expects that to continue, a little slower than the last four years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Buyers",
+  "b": "Sellers",
+  "rows": [
+   [
+    "Poland, Q2 2026 (tonnes)",
+    51,
+    0
+   ],
+   [
+    "China, Q2 2026 (tonnes)",
+    33,
+    0
+   ],
+   [
+    "Russia, Q2 2026 (tonnes)",
+    0,
+    22
+   ]
+  ],
+  "h": "Net central bank moves, Q2 2026",
+  "alt": "Bars of net tonnes bought by Poland and China and sold by Russia",
+  "caps": [
+   [
+    0.3,
+    "Central banks added a net 289 tonnes."
+   ],
+   [
+    2.2,
+    "Poland bought about 51 tonnes."
+   ],
+   [
+    4.0,
+    "China bought about 33 tonnes."
+   ],
+   [
+    5.6,
+    "Russia was the largest seller, about 22 tonnes."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Central bank buying",
+  "stops": [
+   [
+    "Q2 2026 net buying was 289 tonnes",
+    true
+   ],
+   [
+    "Russia was the largest buyer in Q2 2026",
+    false
+   ],
+   [
+    "H1 2026 buying was 345 tonnes",
+    true
+   ],
+   [
+    "The WGC expects buying to stop completely",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A record for a second quarter."
+   ],
+   [
+    2.2,
+    "Russia was the largest seller."
+   ],
+   [
+    4.0,
+    "As per the lesson."
+   ],
+   [
+    5.6,
+    "It expects them to stay significant buyers."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s47q1",
+  "h": "Check yourself",
+  "q": "Which country led central bank gold buying in Q2 2026, as per the lesson?",
+  "opts": [
+   "Russia, at about 22 tonnes",
+   "Poland, at about 51 tonnes",
+   "China, at about 51 tonnes",
+   "India, at about 289 tonnes"
+  ],
+  "ans": 1,
+  "why": [
+   "Russia was a seller of about 22 tonnes.",
+   "Poland added about 51 tonnes, the top figure listed.",
+   "China bought about 33 tonnes, not 51.",
+   "289 tonnes is the total, not India's figure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s47q2",
+  "h": "Check yourself",
+  "q": "What did Russia do in Q2 2026?",
+  "opts": [
+   "Was the largest net buyer",
+   "Neither bought nor sold",
+   "Doubled its holdings",
+   "Was the largest net seller"
+  ],
+  "ans": 3,
+  "why": [
+   "The largest buyer was Poland.",
+   "Russia did sell, as per the lesson.",
+   "Net selling does not double holdings.",
+   "Russia sold about 22 tonnes net."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s47q3",
+  "h": "Check yourself",
+  "q": "Why might central banks hold gold?",
+  "opts": [
+   "A reserve asset with no issuer",
+   "It pays a high interest every year",
+   "It is required by SEBI rules",
+   "It never changes in price at all"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold is no one else's liability, so it is a reserve asset.",
+   "Gold pays no interest. It does not fit the facts given.",
+   "SEBI does not set reserve policy. It does not answer what was asked.",
+   "Gold prices do change. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s47q4",
+  "h": "Check yourself",
+  "q": "What does the WGC expect next?",
+  "opts": [
+   "Central banks to sell everything now",
+   "Central banks to stop buying at once",
+   "Steady buying, a bit slower",
+   "Buying to double every single year"
+  ],
+  "ans": 2,
+  "why": [
+   "No such selling is expected. It does not fit the facts given.",
+   "No sudden stop is expected. It does not answer what was asked.",
+   "It expects continued buying, slightly slower than recent years.",
+   "No doubling is expected. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Central banks bought a net 289 tonnes in Q2 2026.",
+   "Poland +51t, China +33t, Russia −22t.",
+   "WGC expects continued but slower buying."
+  ]
+ }
+]

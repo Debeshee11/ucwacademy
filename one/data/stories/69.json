@@ -1,0 +1,295 @@
+[
+ {
+  "k": "fact",
+  "art": "pie",
+  "h": "Before you start",
+  "big": "Think of a portfolio like a house with a solid foundation and a few rooms you keep redecorating. The foundation is the core. The rooms are satellites. The art is in keeping the rooms small.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena's hot tip",
+  "lines": [
+   [
+    "meena",
+    "My cousin made 60% on a defence fund last year. I want to put half my savings in it."
+   ],
+   [
+    "sikka",
+    "I understand the pull. Let us split your money in two jobs: a core that compounds quietly, and a small satellite for bets like that one."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Core and satellite drift",
+  "rows": [
+   {
+    "name": "Start: ₹10 lakh",
+    "segs": [
+     [
+      "Core 75%",
+      75,
+      "#3CC47A"
+     ],
+     [
+      "Satellite 25%",
+      25,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Satellite doubles: ₹12.5 lakh",
+    "segs": [
+     [
+      "Core 60%",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Satellite 40%",
+      40,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Trimmed to the cap: ₹12.5 lakh",
+    "segs": [
+     [
+      "Core 70%",
+      70,
+      "#3CC47A"
+     ],
+     [
+      "Satellite 30%",
+      30,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars: the start, after the satellite doubles, and after trimming back to 30 percent",
+  "caps": [
+   [
+    0.2,
+    "Start with ₹10 lakh: core 75% (flexi cap, index, multi-asset) and satellite 25% (defence, small cap, silver)."
+   ],
+   [
+    1.6,
+    "The satellite doubles to ₹5 lakh while the core stands still. Now the portfolio is ₹12.5 lakh."
+   ],
+   [
+    2.9,
+    "Satellite is now 40%. It was meant to be a small bet and has become the main one."
+   ],
+   [
+    4.2,
+    "Trim ₹1.25 lakh back to the core. Satellite returns to 30%, the cap."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Why the cap matters",
+  "a": "Left to run",
+  "b": "Trimmed to 30%",
+  "rows": [
+   [
+    "Satellite share of portfolio, %",
+    40,
+    30
+   ],
+   [
+    "Loss if satellite halves, %",
+    20,
+    15
+   ]
+  ],
+  "alt": "Two bars comparing the satellite share and the loss when the satellite halves, with and without trimming",
+  "caps": [
+   [
+    0.3,
+    "Now the satellite turns. Compare a portfolio left to run with one trimmed to 30%."
+   ],
+   [
+    2.2,
+    "Left to run, the satellite is 40%, or ₹5 lakh. Trimmed, it is 30%, or ₹3.75 lakh."
+   ],
+   [
+    4.0,
+    "Satellite halves. Left to run, the portfolio loses ₹2.5 lakh, 20%. Trimmed, it loses about ₹1.9 lakh, 15%."
+   ],
+   [
+    5.7,
+    "Same bet, same fall. A smaller satellite hurts less."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Core, satellite, and the blend",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Core alone",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     110.0,
+     118.8,
+     133.1,
+     141.1,
+     134.0,
+     152.8,
+     166.6,
+     184.9,
+     197.8,
+     217.6
+    ]
+   },
+   {
+    "name": "Satellite alone",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     140.0,
+     224.0,
+     156.8,
+     227.4,
+     125.1,
+     212.7,
+     244.6,
+     183.4,
+     275.1,
+     330.1
+    ]
+   },
+   {
+    "name": "Blend, capped",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     117.5,
+     145.1,
+     144.2,
+     164.8,
+     138.9,
+     171.9,
+     189.9,
+     193.6,
+     222.5,
+     250.1
+    ]
+   }
+  ],
+  "alt": "Three lines: core alone, satellite alone, and a blend trimmed to a 30 percent satellite over ten made-up years",
+  "caps": [
+   [
+    0.3,
+    "Made-up decade, not real data. The core grows steadily and never falls more than about 5%."
+   ],
+   [
+    3.4,
+    "The satellite alone swings wildly: it ends highest, but it drops about 45% along the way."
+   ],
+   [
+    6.2,
+    "The blend: 75% core, 25% satellite, trimmed whenever the satellite passes 30%."
+   ],
+   [
+    8.6,
+    "It ends ahead of the core (₹250 against ₹218) with a fall of about 16%, far less than the satellite's."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s69q1",
+  "h": "Check yourself",
+  "q": "A ₹10 lakh portfolio is 75% core and 25% satellite. The satellite doubles and the core is unchanged. With a 30% cap on satellites, what should the investor do?",
+  "opts": [
+   "Do nothing, because a doubled satellite is a sign that it should be given more room",
+   "Move about ₹1.25 lakh from the satellite to the core, since it is 40% of ₹12.5 lakh",
+   "Move ₹2.5 lakh from the satellite to the core, so it returns to its original 25% weight",
+   "Sell the whole satellite, because a bet that doubles may fall back at any time"
+  ],
+  "ans": 1,
+  "why": [
+   "Letting satellites grow past the cap is how a small bet turns into the main risk of the portfolio.",
+   "Satellite is ₹5 lakh of ₹12.5 lakh, 40%. The cap of 30% is ₹3.75 lakh, so ₹1.25 lakh goes back to the core.",
+   "The cap is 30%, not the old 25%. Moving ₹2.5 lakh would be a bigger trade than the rule needs.",
+   "Selling all of it discards the very purpose of a satellite, a limited shot at extra growth."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s69q2",
+  "h": "Check yourself",
+  "q": "A client wants to put a defence fund into her core because it returned 60% last year. Where does the adviser place it, and why?",
+  "opts": [
+   "In the satellite: a theme is a conviction bet, and the core holds broad funds",
+   "In the core, because a 60% return shows it has earned a place among the stable funds",
+   "In neither, because a thematic fund is not allowed inside any sort of portfolio",
+   "In the core, as long as it is bought in a single lump sum rather than as a SIP"
+  ],
+  "ans": 0,
+  "why": [
+   "Core means flexi cap, index and multi-asset funds that compound steadily. Defence is a narrow theme, so it sits in the satellite.",
+   "One good year is a weak reason. A narrow theme can swing hard, which is what a core is meant to avoid.",
+   "Thematic funds are allowed. They are best held in a limited satellite, not banned from the portfolio.",
+   "The way of buying does not change the fund's character. A defence theme stays a satellite either way."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s69q3",
+  "h": "Check yourself",
+  "q": "After a rally, a client's satellite funds make up 45% of his portfolio. Which plan fits the core-and-satellite approach?",
+  "opts": [
+   "Let the winners run, since a satellite that grows has clearly proved its worth",
+   "Sell the core to buy more satellites, because that is where the returns have come from",
+   "Switch every satellite into a single fund so that the weight looks smaller on paper",
+   "Trim satellites to the 20% to 30% band, add to the core, and check tax first"
+  ],
+  "ans": 3,
+  "why": [
+   "A rally does not prove the future. Past gains swell the weight, and a fall then hurts a large satellite more.",
+   "Shrinking the core to chase the winner reverses the design. The core is the foundation to be kept.",
+   "Merging satellites into one fund does not change how much money is exposed to risky bets.",
+   "The core stays; the satellites flex. Trimming to the band keeps conviction bets small. Sales can carry tax."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s69q4",
+  "h": "Check yourself",
+  "q": "A portfolio is 60% core. The satellite is defence 15%, small cap 15% and silver 10%. The cap is 30% for the satellite sleeve. What follows?",
+  "opts": [
+   "Nothing, because each satellite fund is under 30% and the cap applies per fund",
+   "Trim the core instead, since it has the largest weight in the whole portfolio",
+   "Satellites total 40%, over the cap, so trim satellites rather than the core",
+   "Nothing, because splitting the satellite across three funds spreads the risk away"
+  ],
+  "ans": 2,
+  "why": [
+   "The cap is for the whole sleeve. Three funds that each look small can still add up to a large bet.",
+   "The core is meant to be the stable base. Trimming it enlarges the risky part instead of cutting it.",
+   "The cap applies to the satellite sleeve as a whole: 15 plus 15 plus 10 is 40%. Trimming brings it back to 30%.",
+   "Spreading across themes helps a little, but all three are conviction bets and still total 40%."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Core (70% to 80%): flexi cap, index, multi-asset, for steady compounding. Satellite (20% to 30%): defence, small cap, silver, for conviction bets.",
+   "Satellites flex or switch; the core stays. After a rally, trim satellites back to the cap and add to the core.",
+   "The cap applies to the sleeve as a whole. A satellite at 40% turns a small bet into the main risk."
+  ]
+ }
+]

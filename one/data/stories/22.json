@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "India imports most of its crude oil. When oil rises, India pays more dollars. That widens the current account deficit and can weigh on the rupee.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Three forces on the rupee",
+  "lines": [
+   [
+    "meena",
+    "Who gains from a weaker rupee?"
+   ],
+   [
+    "sikka",
+    "IT and pharma exporters earn dollars, so they gain. Domestic gold prices rise too. But FPI selling adds pressure on the rupee, while DII buying cushions equity markets."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Weaker rupee: who gains, who pays",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Exporters (IT, pharma)",
+    "earn dollars, so they gain"
+   ],
+   [
+    "Importers of crude",
+    "pay more rupees per barrel"
+   ],
+   [
+    "Domestic gold price",
+    "rises in rupee terms"
+   ],
+   [
+    "FPI selling",
+    "adds to rupee pressure"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s22q1",
+  "h": "Check yourself",
+  "q": "A weaker rupee tends to help which sectors?",
+  "opts": [
+   "Oil-importing airlines mainly",
+   "Every company equally in full",
+   "IT and pharma exporters",
+   "No company, in any case"
+  ],
+  "ans": 2,
+  "why": [
+   "Airlines pay more for fuel.",
+   "Effects differ by sector.",
+   "They earn in dollars.",
+   "Some sectors do gain."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s22q2",
+  "h": "Check yourself",
+  "q": "Why do high crude prices matter for India?",
+  "opts": [
+   "They widen the current account deficit",
+   "They shrink all the imports of oil",
+   "They lower the prices of everything",
+   "They remove the need for dollars"
+  ],
+  "ans": 0,
+  "why": [
+   "India imports most of its crude.",
+   "Imports do not shrink on price rises.",
+   "Oil price rises tend to lift costs.",
+   "More dollars are needed, not fewer."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s22q3",
+  "h": "Check yourself",
+  "q": "What does DII buying do when FPIs sell?",
+  "opts": [
+   "It stops FPIs from selling",
+   "It raises the oil price",
+   "It fixes the rupee rate",
+   "It cushions equity markets"
+  ],
+  "ans": 3,
+  "why": [
+   "DIIs cannot stop FPIs. That does not match this case.",
+   "DII flows are not about oil. It does not fit the facts given.",
+   "The rupee is not fixed by DIIs. It does not answer what was asked.",
+   "Domestic money absorbs some selling. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s22q4",
+  "h": "Check yourself",
+  "q": "How does a weaker rupee affect domestic gold prices?",
+  "opts": [
+   "They fall in rupee terms",
+   "They rise in rupee terms",
+   "They stay exactly the same",
+   "They are set by SEBI"
+  ],
+  "ans": 1,
+  "why": [
+   "A weaker rupee lifts the rupee price.",
+   "Gold is priced in dollars globally.",
+   "The price does react to currency.",
+   "SEBI does not set gold prices."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "High crude widens the current account deficit.",
+   "A weaker rupee helps exporters and lifts domestic gold prices.",
+   "FPI selling pressures; DII buying cushions."
+  ]
+ }
+]

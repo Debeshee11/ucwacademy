@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "In a client meeting, facts beat forecasts. Central banks bought 289 tonnes in Q2 2026. RBI holds 880 tonnes. Indian gold ETFs saw record inflows of about ₹43,000 crore in 2025.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A pitch kit that stays honest",
+  "lines": [
+   [
+    "meena",
+    "How do I talk about gold and silver?"
+   ],
+   [
+    "sikka",
+    "Use facts: central bank buying, record Indian ETF inflows, and silver's sixth straight deficit year and best year since 1979 in 2025. Then close with allocation and an SIP. Never close with a price forecast."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The pitch kit",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Central banks",
+    "289t bought in Q2 2026; RBI holds 880 tonnes"
+   ],
+   [
+    "Indian gold ETFs",
+    "record ₹43,000 crore inflows in 2025"
+   ],
+   [
+    "Silver",
+    "sixth straight deficit year; best year since 1979 in 2025"
+   ],
+   [
+    "Close with",
+    "allocation and SIP, never a price forecast"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s60q1",
+  "h": "Check yourself",
+  "q": "How should the gold and silver pitch close?",
+  "opts": [
+   "With a price forecast",
+   "With a guaranteed return",
+   "With allocation and SIP",
+   "With a tip to buy today"
+  ],
+  "ans": 2,
+  "why": [
+   "Forecasts are not allowed. The details here point elsewhere.",
+   "Returns cannot be guaranteed. That does not match this case.",
+   "Allocation and SIP keep it honest. That matches the case described.",
+   "Tips are not education. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s60q2",
+  "h": "Check yourself",
+  "q": "How much gold does RBI hold, per the lesson?",
+  "opts": [
+   "880 tonnes",
+   "8 tonnes",
+   "88,000 tonnes",
+   "None"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson cites 880 tonnes. This fits the facts given.",
+   "8 tonnes is far too low. It does not fit the facts given.",
+   "88,000 is far too high. It does not answer what was asked.",
+   "RBI holds gold. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s60q3",
+  "h": "Check yourself",
+  "q": "What did Indian gold ETFs see in 2025?",
+  "opts": [
+   "Record outflows of ₹43,000 crore",
+   "No change in holdings at all, none",
+   "A full ban on all the units held",
+   "Record inflows, about ₹43,000 crore"
+  ],
+  "ans": 3,
+  "why": [
+   "That is the opposite. That does not match this case.",
+   "Holdings did change. It does not fit the facts given.",
+   "No ban is stated. It does not answer what was asked.",
+   "The lesson cites record inflows. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s60q4",
+  "h": "Check yourself",
+  "q": "Why use facts rather than forecasts?",
+  "opts": [
+   "Facts are always rising in price",
+   "Forecasts cannot be promised",
+   "Clients dislike all numbers shown",
+   "Forecasts are legally required now"
+  ],
+  "ans": 1,
+  "why": [
+   "Facts do not always rise. It does not fit the facts given.",
+   "Facts are checkable; forecasts are not. This fits the facts given.",
+   "Clients value clear numbers. The details here point elsewhere.",
+   "Forecasts are not required. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Central banks bought 289t in Q2 2026. RBI holds 880 tonnes.",
+   "Indian gold ETFs saw about ₹43,000 crore of inflows in 2025.",
+   "Close with allocation and SIP, never a forecast."
+  ]
+ }
+]

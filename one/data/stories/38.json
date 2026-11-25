@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Defence is not only for state-owned firms. Private companies build warships, artillery, ammunition and electronics too. Each has a different niche.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Private champions",
+  "lines": [
+   [
+    "meena",
+    "Which private firms matter?"
+   ],
+   [
+    "sikka",
+    "L&T: warships, artillery and systems integration. Bharat Forge: artillery such as ATAGS and armoured vehicles. Solar Industries: explosives, ammunition and loitering munitions. Data Patterns and Astra Microwave: defence electronics and RF and microwave subsystems. Zen Technologies: simulators and anti-drone. Paras Defence: optics and drones."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Private niches",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "L&T, Bharat Forge",
+    "warships, artillery, armoured vehicles"
+   ],
+   [
+    "Solar Industries",
+    "explosives, ammunition, loitering munitions"
+   ],
+   [
+    "Data Patterns, Astra Microwave",
+    "electronics and RF subsystems"
+   ],
+   [
+    "Zen, Paras",
+    "simulators, anti-drone; optics, drones"
+   ]
+  ],
+  "note": "Education only. Not a list of stocks to buy."
+ },
+ {
+  "k": "pick",
+  "id": "s38q1",
+  "h": "Check yourself",
+  "q": "Which company is known for ATAGS artillery and armoured vehicles?",
+  "opts": [
+   "Zen Technologies",
+   "Paras Defence",
+   "Data Patterns",
+   "Bharat Forge"
+  ],
+  "ans": 3,
+  "why": [
+   "Zen makes simulators. It does not answer what was asked.",
+   "Paras makes optics. The details here point elsewhere.",
+   "Data Patterns makes electronics. That does not match this case.",
+   "Bharat Forge makes ATAGS. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s38q2",
+  "h": "Check yourself",
+  "q": "Which is known for explosives and loitering munitions?",
+  "opts": [
+   "L&T",
+   "Solar Industries",
+   "Astra Microwave",
+   "Zen Technologies"
+  ],
+  "ans": 1,
+  "why": [
+   "L&T builds warships.",
+   "Solar Industries fits this.",
+   "Astra makes RF parts.",
+   "Zen makes simulators."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s38q3",
+  "h": "Check yourself",
+  "q": "Which pair makes defence electronics and RF subsystems?",
+  "opts": [
+   "Bharat Forge and L&T together",
+   "Zen and Paras Defence together",
+   "Data Patterns, Astra Microwave",
+   "HAL and BDL as state firms"
+  ],
+  "ans": 2,
+  "why": [
+   "Those two make heavy equipment.",
+   "Those two make simulators and optics.",
+   "These two cover electronics and RF.",
+   "Those two are state-owned."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s38q4",
+  "h": "Check yourself",
+  "q": "How should these private names be presented to clients?",
+  "opts": [
+   "As education, not stocks to buy",
+   "As sure winners for clients to buy",
+   "As stocks with fixed yearly returns",
+   "As tips for this week's trading"
+  ],
+  "ans": 0,
+  "why": [
+   "Education keeps the advice honest. This fits the facts given.",
+   "No stock is a sure winner. The details here point elsewhere.",
+   "Returns cannot be fixed. That does not match this case.",
+   "Tips are not education. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "L&T, Bharat Forge: warships, artillery, vehicles.",
+   "Solar Industries makes explosives and munitions.",
+   "Present names as education, never as tips."
+  ]
+ }
+]

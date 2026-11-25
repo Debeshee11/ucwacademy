@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "For years, foreign investors (FPIs) set the market's mood. In 2025, domestic institutions' ownership of NSE-listed companies overtook FPIs' for the first time in over two decades. The balance has changed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who holds the market",
+  "lines": [
+   [
+    "meena",
+    "What does that change for clients?"
+   ],
+   [
+    "sikka",
+    "SIP flows give DIIs about ₹32,000 crore a month to deploy. That cushions the market when FPIs sell, so falls tend to be shallower and recoveries faster. But FPIs still drive short-term swings in large caps."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Who holds what, 2025",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "DIIs",
+    "ownership overtook FPIs, first time in over two decades"
+   ],
+   [
+    "SIP flows",
+    "about ₹32,000 crore a month for DIIs"
+   ],
+   [
+    "Effect",
+    "falls shallower, recoveries faster"
+   ],
+   [
+    "FPIs",
+    "still drive short-term large-cap swings"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s24q1",
+  "h": "Check yourself",
+  "q": "What happened to DII and FPI ownership in 2025?",
+  "opts": [
+   "DIIs overtook FPIs for once",
+   "FPIs doubled their share fast",
+   "Both left the market in full",
+   "The two switched names again"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson states that DIIs overtook FPIs.",
+   "No doubling is stated. The details here point elsewhere.",
+   "Neither left the market. That does not match this case.",
+   "Names did not change. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s24q2",
+  "h": "Check yourself",
+  "q": "What feeds DII buying power each month?",
+  "opts": [
+   "Only the foreign loan inflows",
+   "Only the government grants",
+   "SIP flows, about ₹32,000 crore",
+   "Only the bank lending rates"
+  ],
+  "ans": 2,
+  "why": [
+   "Foreign loans are not DII money.",
+   "Grants are not the source.",
+   "SIPs give steady domestic cash.",
+   "Lending rates are not the source."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s24q3",
+  "h": "Check yourself",
+  "q": "How do DIIs change market falls?",
+  "opts": [
+   "Falls become deeper and last longer",
+   "Falls shallower, recoveries faster",
+   "Markets can no longer fall at all",
+   "Markets stop all trading on falls"
+  ],
+  "ans": 1,
+  "why": [
+   "That is the opposite of the effect. It does not fit the facts given.",
+   "Domestic money absorbs FPI selling. That matches the case described.",
+   "Markets still fall. It does not answer what was asked.",
+   "Trading continues. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s24q4",
+  "h": "Check yourself",
+  "q": "Who still drives short-term swings in large caps?",
+  "opts": [
+   "Only the retail traders",
+   "Only the local banks",
+   "Only the rating agencies",
+   "FPIs"
+  ],
+  "ans": 3,
+  "why": [
+   "Retail traders are not the main driver.",
+   "Banks are not the main driver.",
+   "Rating agencies do not drive swings.",
+   "FPIs still drive short-term swings."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "DII ownership overtook FPIs in 2025.",
+   "SIP flows are about ₹32,000 crore a month.",
+   "FPIs still drive short-term large-cap swings."
+  ]
+ }
+]

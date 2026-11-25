@@ -1,0 +1,247 @@
+[
+ {
+  "k": "fact",
+  "art": "calendar",
+  "h": "Before you start",
+  "big": "AMFI publishes industry data around the 10th of each month. A client who hears one fresh fact tied to her own SIP remembers the meeting. A client who sits through twenty slides remembers the clock.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why should I care?",
+  "lines": [
+   [
+    "meena",
+    "I do not follow the news. Why should I care that SIPs hit a record in August?"
+   ],
+   [
+    "sikka",
+    "Because of what it says about people like you. The skill is to link the fact to her situation within thirty seconds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "A fresh fact, from AMFI",
+  "alt": "Five bars of monthly SIP inflows in thousand crore rupees from August 2025 to August 2026",
+  "caps": [
+   [
+    0.3,
+    "Monthly SIP money in ₹ thousand crore, from AMFI. The months are picked, not consecutive."
+   ],
+   [
+    2.0,
+    "February 2026: ₹29,845 crore. March, in the fall: ₹32,087 crore, a record then."
+   ],
+   [
+    3.8,
+    "July: ₹31,961 crore. August 2026: ₹32,297 crore, a new record."
+   ],
+   [
+    5.6,
+    "A fresh fact, 14% above a year earlier. Now link it to the client."
+   ]
+  ],
+  "vals": [
+   28.265,
+   29.845,
+   32.087,
+   31.961,
+   32.297
+  ],
+  "labels": [
+   "Aug 25",
+   "Feb 26",
+   "Mar 26",
+   "Jul 26",
+   "Aug 26"
+  ],
+  "big": "Record: ₹32,297 crore",
+  "small": "August 2026, up 14% on a year earlier"
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Two ways to use the same data",
+  "alt": "Two bars splitting a thirty minute meeting into time on slides, client talk and decisions",
+  "caps": [
+   [
+    0.3,
+    "Two versions of one 30-minute meeting. In the first, a 20-slide deck takes 20 minutes."
+   ],
+   [
+    1.7,
+    "The client speaks for 3 minutes and leaves with few decisions."
+   ],
+   [
+    3.0,
+    "In the second, one fresh fact and its link take about 2 minutes. Then she talks."
+   ],
+   [
+    4.4,
+    "Data earns its place by starting the talk about her money, not by filling the time."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "The 20-slide deck",
+    "segs": [
+     [
+      "Slides: 20 min",
+      20,
+      "#FFB3A5"
+     ],
+     [
+      "",
+      3,
+      "#8EC5FF"
+     ],
+     [
+      "Decide: 7 min",
+      7,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "One fact, then the client",
+    "segs": [
+     [
+      "",
+      2,
+      "#FFC531"
+     ],
+     [
+      "Her goals: 11 min",
+      11,
+      "#8EC5FF"
+     ],
+     [
+      "Holdings: 10 min",
+      10,
+      "#9AD96B"
+     ],
+     [
+      "Decide: 7 min",
+      7,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Decoding the 81% stoppage ratio",
+  "intro": "AMFI figures for August 2026. The ratio compares one month's closures with that month's new SIPs.",
+  "rows": [
+   [
+    "New SIPs registered",
+    "66.39 lakh"
+   ],
+   [
+    "SIPs closed or matured",
+    "53.82 lakh"
+   ],
+   [
+    "Closed divided by new",
+    "81.1%"
+   ],
+   [
+    "Contributing SIP accounts",
+    "10.02 crore"
+   ],
+   [
+    "Closed, as share of those",
+    "about 5.4%"
+   ]
+  ],
+  "note": "Closures include SIPs that simply reached their end date. The ratio does not mean that 81% of investors quit."
+ },
+ {
+  "k": "pick",
+  "id": "s88q1",
+  "h": "Check yourself",
+  "q": "It is the 12th and AMFI's August data is out. Which opener suits a client whose ₹15,000 SIP is three years old?",
+  "opts": [
+   "AUM is ₹87.08 lakh crore, and SIP assets are ₹18.62 lakh crore",
+   "A record ₹32,297 crore came via SIPs in August. Same goal?",
+   "Let me start with a 20-slide deck on the industry this month",
+   "The market looks stretched, so you may want to pause this month"
+  ],
+  "ans": 1,
+  "why": [
+   "Two big numbers with no link to her give her nothing to answer. A statistic needs a bridge to her own SIP.",
+   "One fresh fact, linked to her SIP, ends in a question about her goal. That turns the data into a conversation about her.",
+   "A long deck uses the meeting for slides, not for her. The client speaks last, if at all, and decisions get squeezed.",
+   "Pausing is advice with no reason behind it. A data point should open a talk, not hand her a call to stop a three-year SIP."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s88q2",
+  "h": "Check yourself",
+  "q": "A client reads that 81% of SIPs stop and wants to stop his. In August 2026, 53.82 lakh SIPs closed or matured against 66.39 lakh new ones. What is the best reply?",
+  "opts": [
+   "He is right; four in five SIPs fail, so stopping is normal",
+   "The figure is invented, since AMFI publishes no SIP data",
+   "It counts only equity SIPs, so it does not apply to his fund",
+   "It sets one month's closures against new SIPs, not all SIPs"
+  ],
+  "ans": 3,
+  "why": [
+   "The ratio does not say four in five SIPs fail. About 5% of the 10.02 crore contributing accounts closed that month.",
+   "AMFI does publish SIP data monthly, including registrations and closures. The 81.1% comes from those figures.",
+   "The figure covers SIPs overall, not only equity ones, so that is not why it fails to apply to him.",
+   "53.82 divided by 66.39 is 81.1%. It sets closures, including SIPs that ended on schedule, against one month's new SIPs."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s88q3",
+  "h": "Check yourself",
+  "q": "Your one-page sheet shows July's figures. It is mid-September and AMFI's August data is out. A client asks for the latest SIP flows. What do you do?",
+  "opts": [
+   "Refresh from AMFI's August data and quote it with its month",
+   "Quote July's figure as the latest, since it is only a month old",
+   "Quote a news site's figure, whichever you saw last",
+   "Say you will update the sheet when the quarter ends"
+  ],
+  "ans": 0,
+  "why": [
+   "AMFI releases monthly data around the 10th. Refreshing then, and naming the month, keeps you accurate and credible.",
+   "July's figure is not the latest once August's is out. Quoting it as current is a stale fact that a client may check.",
+   "Pick a source and stick to it. The last site you saw may be late or may carry a slip, and the client cannot trace it.",
+   "A quarterly update is too slow for monthly data. By then the sheet would be a full three months out of date."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s88q4",
+  "h": "Check yourself",
+  "q": "Two reports show March 2026 net equity inflows as ₹40,366 crore and ₹40,450 crore. A client asks which is right. What is the best practice?",
+  "opts": [
+   "Quote the average of the two, to stay on the safe side",
+   "Quote the larger one, as it sounds more convincing",
+   "Quote AMFI's own release with its source and month",
+   "Avoid quoting numbers altogether, to prevent any slip"
+  ],
+  "ans": 2,
+  "why": [
+   "An average of two reports is a figure nobody published. It adds an error of its own, and you cannot source it.",
+   "Choosing the figure that sounds better is persuasion, not accuracy, and a client who checks will doubt your other numbers.",
+   "The primary source settles it, and the month lets the client check. Secondary reports can slip, so go back to AMFI.",
+   "Numbers are what make your point credible. Avoiding them leaves you with opinions, and the client with nothing to weigh."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Open with one fresh fact, such as a record ₹32,297 crore of SIPs in August 2026, and link it to the client's situation within 30 seconds.",
+   "Carry a one-page sheet: AUM, SIPs, defence, gold, rates. Refresh it every month after AMFI's data, around the 10th.",
+   "Name the source and the month, and read a ratio like the 81% stoppage ratio before you quote it."
+  ]
+ }
+]

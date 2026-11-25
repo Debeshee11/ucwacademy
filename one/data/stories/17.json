@@ -1,0 +1,192 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Out of every ₹100 the Indian economy produces, about ₹58 comes from households spending. That is why a cut in the price of daily goods matters to the whole economy, not just to your kitchen.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why spending drives India",
+  "lines": [
+   [
+    "meena",
+    "Why does the news talk so much about GST cuts?"
+   ],
+   [
+    "sikka",
+    "Private consumption is about 58% of GDP. The GST slabs were simplified in September 2025 into mainly 5% and 18%. Lower prices on daily goods lift spending, and spending lifts growth."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What makes up GDP (approximate)",
+  "rows": [
+   {
+    "name": "Share of GDP",
+    "segs": [
+     [
+      "Private consumption 58%",
+      58,
+      "#8EC5FF"
+     ],
+     [
+      "Investment and others 42%",
+      42,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar with private consumption as the largest part",
+  "caps": [
+   [
+    0.3,
+    "Households spend the most."
+   ],
+   [
+    2.2,
+    "About 58% of GDP is private consumption."
+   ],
+   [
+    4.0,
+    "Investment is the next big part."
+   ],
+   [
+    5.6,
+    "Spending-led growth is steadier than export-led."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Consumption and GDP",
+  "stops": [
+   [
+    "Private consumption is about 58% of GDP",
+    true
+   ],
+   [
+    "Exports are India's biggest growth driver",
+    false
+   ],
+   [
+    "GST was simplified into mainly two slabs",
+    true
+   ],
+   [
+    "Consumption-led growth is less stable than export-led",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is the biggest driver."
+   ],
+   [
+    2.2,
+    "Consumption is bigger."
+   ],
+   [
+    4.0,
+    "The slabs are 5% and 18%."
+   ],
+   [
+    5.6,
+    "Domestic demand is steadier than foreign demand."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s17q1",
+  "h": "Check yourself",
+  "q": "Roughly what share of GDP is private consumption?",
+  "opts": [
+   "About 18%",
+   "About 5%",
+   "About 58%",
+   "About 90%"
+  ],
+  "ans": 2,
+  "why": [
+   "18% is a GST slab, not a GDP share. The details here point elsewhere.",
+   "5% is a GST slab, not a GDP share. The details here point elsewhere.",
+   "The lesson gives about 58% as the largest driver.",
+   "90% would leave no room for investment. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s17q2",
+  "h": "Check yourself",
+  "q": "Which GST slabs now cover most goods after the September 2025 change?",
+  "opts": [
+   "5% and 18%",
+   "12% and 28%",
+   "0% and 40%",
+   "3% and 9%"
+  ],
+  "ans": 0,
+  "why": [
+   "The rates were rationalised mainly into 5% and 18%.",
+   "12% and 28% were part of the older structure. It does not fit the facts given.",
+   "These are not the main slabs. It does not fit the facts given.",
+   "These are not the main slabs either. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s17q3",
+  "h": "Check yourself",
+  "q": "Why is consumption-led growth seen as steadier than export-led growth?",
+  "opts": [
+   "It never changes at all",
+   "It is set by the RBI each year",
+   "It ignores prices",
+   "It depends less on foreign demand"
+  ],
+  "ans": 3,
+  "why": [
+   "Spending does change from year to year. It does not fit the facts given.",
+   "The RBI does not set consumption. It does not fit the facts given.",
+   "Prices still affect spending. It does not answer what was asked.",
+   "Domestic spending is less exposed to overseas shocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s17q4",
+  "h": "Check yourself",
+  "q": "How can a GST cut on daily goods help growth?",
+  "opts": [
+   "It lowers the repo rate by law",
+   "Lower prices can lift spending",
+   "It closes the import gap fully",
+   "It raises the dollar rate daily"
+  ],
+  "ans": 1,
+  "why": [
+   "GST does not set the repo rate. It does not fit the facts given.",
+   "Cheaper goods leave more to spend, and spending drives GDP.",
+   "GST does not close the import gap. The details here point elsewhere.",
+   "GST does not set the dollar rate. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Private consumption is about 58% of GDP.",
+   "GST was simplified into mainly 5% and 18% in Sep 2025.",
+   "Domestic demand is steadier than export demand."
+  ]
+ }
+]

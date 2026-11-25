@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Defence stocks have re-rated sharply, and many trade at high multiples. Even in strong years, corrections of 20 to 40% have happened. Great story, risky price.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Valuation and volatility",
+  "lines": [
+   [
+    "meena",
+    "Are defence stocks expensive?"
+   ],
+   [
+    "sikka",
+    "Many trade at high multiples, and the price already includes much of the good news. Stocks react to data: the Nifty India Defence index rose about 3% on the day FY26 production data came out. And sharp corrections of 20 to 40% have happened even in strong years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Corrections seen, % range",
+  "vals": [
+   20,
+   40
+  ],
+  "labels": [
+   "Low",
+   "High"
+  ],
+  "big": "20 to 40%",
+  "small": "sharp falls, even in strong years",
+  "alt": "Bars showing a range of 20 to 40 percent corrections",
+  "caps": [
+   [
+    0.3,
+    "Defence stocks have re-rated sharply."
+   ],
+   [
+    2.2,
+    "Many trade at high multiples."
+   ],
+   [
+    4.0,
+    "Corrections of 20 to 40% have happened."
+   ],
+   [
+    5.6,
+    "Price already includes much good news."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s41q1",
+  "h": "Check yourself",
+  "q": "What does a high multiple imply?",
+  "opts": [
+   "The stock cannot fall from here",
+   "The company has no debt at all",
+   "Much good news is in the price",
+   "Orders are guaranteed for years"
+  ],
+  "ans": 2,
+  "why": [
+   "High multiples can still fall. The details here point elsewhere.",
+   "Multiples do not show debt. The details here point elsewhere.",
+   "Little room remains for disappointment. That matches the case described.",
+   "Orders are not guaranteed. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s41q2",
+  "h": "Check yourself",
+  "q": "How large have corrections been, even in strong years?",
+  "opts": [
+   "20 to 40%",
+   "0 to 1%",
+   "5 to 6%",
+   "90 to 99%"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson cites 20 to 40%.",
+   "0 to 1% is far too small.",
+   "5 to 6% is too small.",
+   "90 to 99% is too large."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s41q3",
+  "h": "Check yourself",
+  "q": "How did the Nifty India Defence index react to FY26 production data?",
+  "opts": [
+   "It fell 50% that day alone",
+   "It was shut on that day",
+   "It did not exist at that time",
+   "It rose about 3% that day"
+  ],
+  "ans": 3,
+  "why": [
+   "No 50% fall is cited. It does not fit the facts given.",
+   "Markets were open. It does not fit the facts given.",
+   "The index exists. It does not answer what was asked.",
+   "The lesson cites a 3% rise. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s41q4",
+  "h": "Check yourself",
+  "q": "What should a client expect from defence stocks?",
+  "opts": [
+   "A smooth rise every month",
+   "Sharp swings along the way",
+   "A fixed return each year",
+   "No falls in strong years"
+  ],
+  "ans": 1,
+  "why": [
+   "Rises are not smooth. It does not fit the facts given.",
+   "Volatility is part of the picture. This fits the facts given.",
+   "Returns are not fixed. The details here point elsewhere.",
+   "Falls have happened in strong years. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Defence stocks have re-rated sharply and trade at high multiples.",
+   "Corrections of 20 to 40% have happened in strong years.",
+   "Price already includes much of the good news."
+  ]
+ }
+]

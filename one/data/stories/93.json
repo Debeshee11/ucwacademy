@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two REITs both show a 7% distribution yield. One has offices 95% let on long leases. The other has 70% let on leases ending soon. The same yield, a very different risk. How do you tell? Four numbers.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Four numbers",
+  "lines": [
+   [
+    "meena",
+    "Is a higher yield always better?"
+   ],
+   [
+    "sikka",
+    "No. Yield is the payout divided by today's price. It is not a guarantee. Look at occupancy, WALE, NAV and debt too. They show how safe that payout may be."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reading a REIT",
+  "intro": "Made-up REIT.",
+  "rows": [
+   [
+    "Occupancy",
+    "92%: space that is let out"
+   ],
+   [
+    "WALE",
+    "6 years: tenants committed on average"
+   ],
+   [
+    "Distribution yield",
+    "₹7 payout on a ₹100 unit = 7%"
+   ],
+   [
+    "NAV per unit",
+    "₹110, unit trades at ₹100"
+   ]
+  ],
+  "note": "Also check how much debt there is and when loans must be refinanced. Figures are made up."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Reading a REIT",
+  "stops": [
+   [
+    "Falling occupancy means falling rent",
+    true
+   ],
+   [
+    "A longer WALE makes income less predictable",
+    false
+   ],
+   [
+    "Yield is a rate on today's unit price",
+    true
+   ],
+   [
+    "Units always trade at exactly NAV",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Less space is let out."
+   ],
+   [
+    2.2,
+    "It makes income more predictable."
+   ],
+   [
+    4.0,
+    "It is not a guarantee."
+   ],
+   [
+    5.6,
+    "Units can trade above or below NAV."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s93q1",
+  "h": "Check yourself",
+  "q": "A REIT pays ₹8 a year on a unit priced at ₹100. What is the distribution yield?",
+  "opts": [
+   "80%",
+   "8%",
+   "0.8%",
+   "100%"
+  ],
+  "ans": 1,
+  "why": [
+   "80% would need a payout of ₹80 a unit.",
+   "8 ÷ 100 is 8%, the payout over the price.",
+   "0.8% would be a payout of only ₹0.80.",
+   "100% would need a payout of ₹100 a unit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s93q2",
+  "h": "Check yourself",
+  "q": "What does a longer WALE suggest?",
+  "opts": [
+   "Rent will rise sharply next year",
+   "The REIT has no debt at all",
+   "The unit price must rise soon",
+   "Steadier income from tenants"
+  ],
+  "ans": 3,
+  "why": [
+   "WALE does not forecast rent rises. The details here point elsewhere.",
+   "WALE says nothing about debt. That does not match this case.",
+   "WALE does not set the unit price. It does not fit the facts given.",
+   "WALE shows how long tenants are committed to stay."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s93q3",
+  "h": "Check yourself",
+  "q": "A unit trades at ₹100 and the NAV is ₹110. What does that mean?",
+  "opts": [
+   "The unit trades below NAV",
+   "The unit trades above NAV",
+   "The REIT has no assets",
+   "The yield is zero"
+  ],
+  "ans": 0,
+  "why": [
+   "₹100 is below the ₹110 NAV.",
+   "The price is below, not above, NAV.",
+   "NAV of ₹110 shows assets exist.",
+   "Yield is a separate figure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s93q4",
+  "h": "Check yourself",
+  "q": "Besides the yield, what else should be checked?",
+  "opts": [
+   "The colour of the REIT's logo",
+   "The name of the sponsor's chef",
+   "Debt and refinancing dates",
+   "The slogan on the brochure"
+  ],
+  "ans": 2,
+  "why": [
+   "A logo says nothing about payouts. It does not answer what was asked.",
+   "A chef's name is not relevant. It does not answer what was asked.",
+   "Debt and refinancing dates affect payout safety.",
+   "A slogan is not data. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Occupancy shows how much space is let out.",
+   "WALE shows how long tenants are committed.",
+   "Yield is payout ÷ price. It is not a guarantee. Check NAV and debt."
+  ]
+ }
+]

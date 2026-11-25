@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "India's real GDP grew 7.7% in FY26, up from 7.1% a year before. The economy is about ₹346 lakh crore, close to a $4 trillion size. Growth and size are two different numbers. This lesson keeps them apart.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Size and speed",
+  "lines": [
+   [
+    "meena",
+    "Is 7.7% the size of the economy?"
+   ],
+   [
+    "sikka",
+    "No. 7.7% is speed: how fast real output grew. The ₹346 lakh crore is size: nominal GDP. Real strips out price rises. Nominal does not."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Size versus speed",
+  "intro": "FY26, as per the lesson.",
+  "rows": [
+   [
+    "Real GDP growth",
+    "7.7% (FY25: 7.1%)"
+   ],
+   [
+    "Nominal GDP",
+    "about ₹346 lakh crore"
+   ],
+   [
+    "Rank, nominal",
+    "4th to 5th"
+   ],
+   [
+    "Rank, PPP",
+    "3rd"
+   ]
+  ],
+  "note": "Figures as per the lesson text. Check current releases. Rupee moves decide the race with Japan."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "GDP basics",
+  "stops": [
+   [
+    "Real GDP growth removes the effect of price rises",
+    true
+   ],
+   [
+    "Nominal GDP shows speed, not size",
+    false
+   ],
+   [
+    "India ranks 3rd by PPP",
+    true
+   ],
+   [
+    "A high growth rate fixes the size ranking",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Real means adjusted for prices."
+   ],
+   [
+    2.2,
+    "Nominal is the size in current rupees."
+   ],
+   [
+    4.0,
+    "PPP adjusts for local prices."
+   ],
+   [
+    5.6,
+    "Size and speed are different things."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s16q1",
+  "h": "Check yourself",
+  "q": "Real GDP grew 7.7% in FY26. What does 'real' mean here?",
+  "opts": [
+   "Counted only in cash terms",
+   "Counted only for farm output",
+   "Counted only for exports sold",
+   "Adjusted to remove price rises"
+  ],
+  "ans": 3,
+  "why": [
+   "Real GDP is not about cash alone. It does not answer what was asked.",
+   "GDP covers all sectors, not only farms. The details here point elsewhere.",
+   "GDP covers more than exports. That does not match this case.",
+   "Real figures strip out inflation to show output growth."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s16q2",
+  "h": "Check yourself",
+  "q": "Which number tells you the size of the economy?",
+  "opts": [
+   "The real growth rate",
+   "Nominal GDP in rupees",
+   "The repo rate",
+   "The CPI figure"
+  ],
+  "ans": 1,
+  "why": [
+   "A growth rate shows speed, not size. That does not match this case.",
+   "Nominal GDP is the total value at current prices.",
+   "The repo rate is a policy rate. It does not fit the facts given.",
+   "CPI measures price changes. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s16q3",
+  "h": "Check yourself",
+  "q": "India is 3rd by PPP and 4th–5th by nominal GDP. Why do they differ?",
+  "opts": [
+   "PPP adjusts for local prices",
+   "One of them is a mistake",
+   "PPP counts only the rich few",
+   "Nominal ignores the rupee"
+  ],
+  "ans": 0,
+  "why": [
+   "PPP corrects for what money buys locally.",
+   "Both are valid measures of different things.",
+   "PPP does not count only a group of people.",
+   "Nominal GDP is measured in currency, rupee included."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s16q4",
+  "h": "Check yourself",
+  "q": "A client says, 'Growth of 7.7% means we are the biggest economy.' What is the reply?",
+  "opts": [
+   "Yes, speed decides the size",
+   "Yes, as GDP is all that counts",
+   "Growth is speed, size is separate",
+   "No, growth is never measured"
+  ],
+  "ans": 2,
+  "why": [
+   "Fast growth does not equal the largest size.",
+   "GDP has both a size and a growth reading.",
+   "Speed and size are different numbers.",
+   "Growth is measured and reported."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Real GDP removes price rises. Nominal GDP shows size.",
+   "FY26 real growth: 7.7%. Size: about ₹346 lakh crore.",
+   "Rank depends on the measure: nominal or PPP."
+  ]
+ }
+]

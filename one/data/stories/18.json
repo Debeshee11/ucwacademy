@@ -1,0 +1,169 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "In 2025 the RBI cut the repo rate from 6.50% to 5.25%. Then came a pause. Then on 7 October 2026, a 25 bps hike to 5.50%, the first in over three years. Why does one policy rate move so many other rates?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The anchor rate",
+  "lines": [
+   [
+    "meena",
+    "Why should I care about the repo rate?"
+   ],
+   [
+    "sikka",
+    "It anchors what banks pay on deposits, what they charge on loans, and the yield on bonds. When it moves, EMIs, FD rates and bond prices follow."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The cycle in numbers",
+  "intro": "As per the lesson text.",
+  "rows": [
+   [
+    "Repo before the 2025 cuts",
+    "6.50%"
+   ],
+   [
+    "After 125 bps of cuts",
+    "5.25%"
+   ],
+   [
+    "7 Oct 2026: hike of 25 bps",
+    "5.50%"
+   ],
+   [
+    "=",
+    "Why it was news",
+    "First hike since Feb 2023"
+   ]
+  ],
+  "note": "Figures as per the lesson text. Check current releases. 100 bps = 1 percentage point."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "The repo rate, as per the lesson",
+  "vals": [
+   6.5,
+   5.25,
+   5.5
+  ],
+  "labels": [
+   "Early 2025",
+   "After cuts",
+   "Oct 2026"
+  ],
+  "big": "5.50% now",
+  "small": "6.50% to 5.25%, then a 25 bps hike",
+  "alt": "Bars of the repo rate falling then rising",
+  "caps": [
+   [
+    0.3,
+    "Repo stood at 6.50% before 2025."
+   ],
+   [
+    2.2,
+    "The RBI cut by 125 bps to 5.25%."
+   ],
+   [
+    4.0,
+    "Inflation then rose above the 4% target."
+   ],
+   [
+    5.6,
+    "The 2026 hike took repo to 5.50%."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s18q1",
+  "h": "Check yourself",
+  "q": "The repo rate falls from 6.50% to 5.25%. How many basis points is that?",
+  "opts": [
+   "25 bps",
+   "125 bps",
+   "525 bps",
+   "65 bps"
+  ],
+  "ans": 1,
+  "why": [
+   "25 bps is the size of the 2026 hike. The details here point elsewhere.",
+   "6.50 less 5.25 is 1.25 points, or 125 bps. That matches the case described.",
+   "525 bps is the level, not the fall. It does not fit the facts given.",
+   "65 bps confuses the figures. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s18q2",
+  "h": "Check yourself",
+  "q": "Why did the RBI hike in October 2026, as per the lesson?",
+  "opts": [
+   "Growth was far too slow to bear",
+   "The rupee turned into a coin today",
+   "GST was cut once again, as well",
+   "Inflation rose above target"
+  ],
+  "ans": 3,
+  "why": [
+   "Slow growth would argue for cuts, not hikes.",
+   "That is not a policy reason. That does not match this case.",
+   "A GST cut is not the cause of a rate hike.",
+   "CPI had risen to 4.4% after 16 months under 4%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s18q3",
+  "h": "Check yourself",
+  "q": "Which of these does the repo rate anchor?",
+  "opts": [
+   "Only gold prices",
+   "Only share prices of one firm",
+   "FD rates, EMIs and bond yields",
+   "Only the monsoon"
+  ],
+  "ans": 2,
+  "why": [
+   "Gold is influenced by many factors. That does not match this case.",
+   "One firm's price follows many factors. It does not fit the facts given.",
+   "Repo is a key anchor for deposit, loan and bond rates.",
+   "Monsoon is weather, not policy. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s18q4",
+  "h": "Check yourself",
+  "q": "What made the 7 October 2026 hike notable?",
+  "opts": [
+   "First hike since February 2023",
+   "It was the largest ever made",
+   "It ended the RBI's target",
+   "It cut the EMI of all loans"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson calls it the first hike since Feb 2023.",
+   "At 25 bps it was a modest step. It does not answer what was asked.",
+   "The target remains in place. The details here point elsewhere.",
+   "A hike raises, not cuts, loan costs. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Repo cut 125 bps in 2025 to 5.25%, then hiked to 5.50% on 7 Oct 2026.",
+   "Repo anchors FD rates, EMIs and bond yields.",
+   "100 bps equals 1 percentage point."
+  ]
+ }
+]

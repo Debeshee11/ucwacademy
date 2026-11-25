@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client switches ₹5 lakh of equity fund units to a better fund. It feels like a simple move. It is a sale and a purchase. The sale can trigger tax and an exit load. Clients rarely see the tax until it is too late.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The cost of a switch",
+  "lines": [
+   [
+    "meena",
+    "How is a switch taxed?"
+   ],
+   [
+    "sikka",
+    "As a redemption. Equity fund units held over 12 months are long term, with gains above ₹1.25 lakh a year taxed at 12.5%. Under 12 months, 20%. The yearly ₹1.25 lakh exemption can be used to rebalance gradually or to harvest gains. Compare the expected benefit with the certain cost."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rates in the lesson",
+  "intro": "Check current rules before advising.",
+  "rows": [
+   [
+    "Switch",
+    "redemption plus purchase"
+   ],
+   [
+    "Held over 12 months",
+    "long term: 12.5% above ₹1.25 lakh a year"
+   ],
+   [
+    "Held under 12 months",
+    "short term: 20%"
+   ],
+   [
+    "Exit load",
+    "may also apply"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s12q1",
+  "h": "Check yourself",
+  "q": "A switch between funds is treated as what?",
+  "opts": [
+   "A tax-neutral transfer of units",
+   "A simple change of the fund name",
+   "A redemption plus a purchase",
+   "A bonus issue of extra units"
+  ],
+  "ans": 2,
+  "why": [
+   "It is not tax-neutral. It does not answer what was asked.",
+   "Units are really sold and bought. The details here point elsewhere.",
+   "It can trigger tax and exit load. That matches the case described.",
+   "A bonus gives extra units. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s12q2",
+  "h": "Check yourself",
+  "q": "Equity units sold after 8 months are taxed at what rate, as per the lesson?",
+  "opts": [
+   "20%",
+   "12.5%",
+   "0%",
+   "30%"
+  ],
+  "ans": 0,
+  "why": [
+   "Under 12 months is 20%. This fits the facts given.",
+   "12.5% applies after 12 months, above the exemption.",
+   "Not exempt. It does not fit the facts given.",
+   "30% is not the stated rate. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s12q3",
+  "h": "Check yourself",
+  "q": "How can the yearly ₹1.25 lakh exemption be used?",
+  "opts": [
+   "Carry it forward to next year",
+   "Use it to pay the exit loads",
+   "Use it to avoid all tax forever",
+   "Rebalance or harvest gains yearly"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not carry forward. That does not match this case.",
+   "It does not pay loads. It does not fit the facts given.",
+   "It does not remove tax forever. It does not answer what was asked.",
+   "It can be used within a year for gradual rebalancing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s12q4",
+  "h": "Check yourself",
+  "q": "What should be compared before any switch?",
+  "opts": [
+   "The fund logo against the brochure",
+   "Expected benefit against certain cost",
+   "The fund names side by side",
+   "The digits shown in the NAV"
+  ],
+  "ans": 1,
+  "why": [
+   "Logos do not matter. It does not fit the facts given.",
+   "Costs are certain, benefits are not. This fits the facts given.",
+   "Names do not decide. The details here point elsewhere.",
+   "NAV digits do not decide. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A switch is a redemption plus a purchase.",
+   "Equity: over 12 months 12.5% above ₹1.25 lakh a year; under 12 months 20%.",
+   "Compare the expected benefit with the certain cost."
+  ]
+ }
+]

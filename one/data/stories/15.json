@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client says, 'Just guarantee me 12%.' An RM cannot. Market-linked products have no guaranteed returns, and any hint of a guarantee is misleading and against the distributor code of conduct.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The line",
+  "lines": [
+   [
+    "meena",
+    "Can I say, 'Over ten years you will not lose'?"
+   ],
+   [
+    "sikka",
+    "No. You can share history honestly: longer periods have historically reduced the chance of loss. You cannot turn history into a promise. Suitability comes first: risk profile, horizon, liquidity needs and goals. And a client who asks for a guarantee is often anxious. Address the anxiety, not the literal request."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Honest and not honest",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Allowed",
+    "historically, longer periods have reduced the chance of loss"
+   ],
+   [
+    "Not allowed",
+    "you will not lose over ten years"
+   ],
+   [
+    "Before any product",
+    "risk profile, horizon, liquidity, goals"
+   ],
+   [
+    "When a client asks for a guarantee",
+    "address the anxiety with structure and honesty"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s15q1",
+  "h": "Check yourself",
+  "q": "Can a market-linked product carry guaranteed returns?",
+  "opts": [
+   "Yes, if the RM is senior",
+   "No, any such claim misleads",
+   "Yes, if the client insists",
+   "Yes, for equity funds alone"
+  ],
+  "ans": 1,
+  "why": [
+   "Seniority does not change this. The details here point elsewhere.",
+   "Market-linked returns cannot be guaranteed.",
+   "Insistence does not change this. It does not fit the facts given.",
+   "Equity funds carry risk. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s15q2",
+  "h": "Check yourself",
+  "q": "Which statement is honest?",
+  "opts": [
+   "History shows longer periods cut loss odds",
+   "You will not lose money over a full ten years",
+   "This fund will surely double in value for you",
+   "It will beat a bank deposit for sure, always"
+  ],
+  "ans": 0,
+  "why": [
+   "It describes history without promising.",
+   "It is a promise. That does not match this case.",
+   "It is a promise of gains. It does not fit the facts given.",
+   "It promises a result. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s15q3",
+  "h": "Check yourself",
+  "q": "What comes before the product?",
+  "opts": [
+   "The commission earned by the RM on the sale",
+   "The brochure that the fund house has given",
+   "Suitability: risk, horizon, liquidity, goals",
+   "The sales target that was set for the month"
+  ],
+  "ans": 2,
+  "why": [
+   "Commission is not the basis.",
+   "A brochure is not the basis.",
+   "Suitability comes first.",
+   "A sales target is not the basis."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s15q4",
+  "h": "Check yourself",
+  "q": "A client asks for a guarantee because she is anxious. What is the best response?",
+  "opts": [
+   "Give the guarantee she asked for",
+   "End the meeting right away",
+   "Change the subject to the market",
+   "Address the anxiety with honesty"
+  ],
+  "ans": 3,
+  "why": [
+   "A guarantee is misleading. It does not fit the facts given.",
+   "Ending helps no one. It does not answer what was asked.",
+   "Changing the subject avoids the issue. The details here point elsewhere.",
+   "Anxiety is the real issue. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Market-linked products cannot have guaranteed returns.",
+   "Share history honestly, never as a promise.",
+   "Suitability first. Address the anxiety behind the request."
+  ]
+ }
+]

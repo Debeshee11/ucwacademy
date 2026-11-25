@@ -1,0 +1,279 @@
+[
+ {
+  "k": "fact",
+  "art": "globe",
+  "h": "Before you start",
+  "big": "Most Indian portfolios hold only Indian assets. An international fund adds a second thing that can move your money: the rupee. This lesson shows how both work, and where the door is sometimes closed.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan wants a slice abroad",
+  "lines": [
+   [
+    "rohan",
+    "A friend put 20% of his money in a US fund and says the rupee fall made him extra profit. Should I copy him?"
+   ],
+   [
+    "sikka",
+    "The rupee can help, or it can hurt. Let us put ₹1 lakh through three different rupee years and see."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "One fund, three rupee years",
+  "vals": [
+   100,
+   105.0,
+   112.875,
+   99.75
+  ],
+  "labels": [
+   "Start",
+   "₹80",
+   "₹86",
+   "₹76"
+  ],
+  "big": "Same 5% gain in dollars",
+  "small": "Value of ₹1 lakh, in ₹ thousand",
+  "alt": "Four bars: 1 lakh rupees invested, and its value after the fund gains 5 percent in dollars under three rupee scenarios",
+  "caps": [
+   [
+    0.2,
+    "₹1 lakh buys $1,250 when a dollar costs ₹80. The foreign fund gains 5% in dollars: $1,312.50."
+   ],
+   [
+    1.8,
+    "Rupee steady at ₹80: that is ₹1,05,000, up 5%."
+   ],
+   [
+    2.7,
+    "Rupee weakens to ₹86: the same dollars are worth ₹1,12,875, up about 12.9%."
+   ],
+   [
+    3.6,
+    "Rupee strengthens to ₹76: the dollars are worth ₹99,750, a loss of 0.25% despite a 5% gain."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "A slice abroad, ten made-up years",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "India alone",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     112.0,
+     103.0,
+     123.6,
+     105.1,
+     115.6,
+     136.4,
+     129.6,
+     147.7,
+     156.6,
+     172.3
+    ]
+   },
+   {
+    "name": "Global, in ₹",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     107.1,
+     124.8,
+     109.5,
+     128.8,
+     143.3,
+     135.8,
+     155.4,
+     164.8,
+     183.3,
+     192.6
+    ]
+   },
+   {
+    "name": "80/20 blend",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     111.0,
+     107.6,
+     122.2,
+     111.8,
+     123.3,
+     139.8,
+     138.2,
+     155.4,
+     166.4,
+     181.4
+    ]
+   }
+  ],
+  "alt": "Three lines: India alone, a global fund in rupees, and an 80 20 blend",
+  "caps": [
+   [
+    0.3,
+    "Made-up decade, not real data. Assume the rupee weakens about 3% a year. It can also strengthen."
+   ],
+   [
+    3.2,
+    "India falls in years 2 and 4. The global fund, in rupee terms, rises in both."
+   ],
+   [
+    5.8,
+    "Another year, the global fund falls and India holds up. They do not move in step."
+   ],
+   [
+    8.4,
+    "The 80% India, 20% global blend had a deepest fall of about 9%, against 15% for India alone."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What to check before a global slice",
+  "title": "Global slice: fair claims",
+  "stops": [
+   [
+    "Adds geographic and currency diversification",
+    true
+   ],
+   [
+    "Fresh purchases may be limited by SEBI caps",
+    true
+   ],
+   [
+    "The rupee always weakens over time",
+    false
+   ],
+   [
+    "A weak rupee guarantees a profit abroad",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about international funds",
+  "caps": [
+   [
+    0.3,
+    "An international fund adds a country and a currency. That is its case."
+   ],
+   [
+    2.8,
+    "SEBI's industry-wide overseas limits can pause or cap fresh inflows, so check availability first."
+   ],
+   [
+    5.2,
+    "A weaker rupee helps INR returns, but it is not a promise, and it can reverse."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A data point to quote with care",
+  "intro": "Industry data cited for this lesson.",
+  "rows": [
+   [
+    "Overseas fund-of-funds inflows, Feb 2026",
+    "about ₹904 crore"
+   ],
+   [
+    "Limits on fresh money",
+    "can apply from time to time"
+   ]
+  ],
+  "note": "Check each scheme's page for whether it is accepting lumpsums and SIPs before you plan around it."
+ },
+ {
+  "k": "pick",
+  "id": "s73q1",
+  "h": "Check yourself",
+  "q": "A client invests ₹1 lakh in a foreign fund when ₹80 buys a dollar. The fund gains 5% in dollars and the rupee falls to ₹86 a dollar. What is the investment worth in rupees?",
+  "opts": [
+   "About ₹1,05,000, since the 5% gain in dollars is the only gain that counts",
+   "About ₹1,12,500, since the 5% and the 7.5% fall in the rupee add up directly",
+   "About ₹1,07,500, since only the rupee's fall counts when the fund holds dollars",
+   "About ₹1,12,875: dollars rose 5% and each dollar now fetches more rupees"
+  ],
+  "ans": 3,
+  "why": [
+   "That figure holds the rupee at ₹80. In this case it moved to ₹86, which adds to the rupee value.",
+   "The two effects multiply: 1.05 times 86 over 80. Adding them gives ₹1,12,500, slightly too low.",
+   "The fund also gained 5% in dollars. Counting only the currency move ignores half of the story.",
+   "₹1 lakh buys $1,250, which grows to $1,312.50. At ₹86 that is ₹1,12,875, about 12.9% more."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s73q2",
+  "h": "Check yourself",
+  "q": "The same fund gains 5% in dollars, but the rupee strengthens from ₹80 to ₹76 a dollar. What does the investor see in rupees?",
+  "opts": [
+   "About a 0.25% loss, since the stronger rupee cancels the gain in dollars",
+   "A 5% gain, since the foreign asset's return is not affected by the rupee",
+   "A 10% gain, since a stronger rupee adds to the 5% earned in dollars",
+   "A 5% loss, since a stronger rupee wipes out the dollar gain and more besides"
+  ],
+  "ans": 0,
+  "why": [
+   "1.05 times 76 divided by 80 is 0.9975, about a 0.25% fall. Currency can erase a foreign gain.",
+   "The rupee value of a foreign holding does depend on the exchange rate. A 5% dollar gain is not 5% in rupees.",
+   "A stronger rupee means each dollar buys fewer rupees. It reduces the rupee value, not adds to it.",
+   "The dollar fell about 5% against the rupee, which offsets the 5% gain. The net loss is only about 0.25%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s73q3",
+  "h": "Check yourself",
+  "q": "A client wants 20% in a US fund because the rupee always weakens. How should the adviser respond?",
+  "opts": [
+   "Agree, since the rupee has weakened in every year and will do so in every future year",
+   "Agree, as a weak rupee makes any foreign fund a sure win for an Indian investor",
+   "A weaker rupee can add to returns, but it may reverse; the real case is spreading risk",
+   "Disagree, because a global fund holds no foreign currency at all, so the rupee does not matter"
+  ],
+  "ans": 2,
+  "why": [
+   "The rupee does not weaken every year. A strong year can cut the rupee value of foreign holdings.",
+   "A weak rupee helps, but a falling foreign market can still produce a loss. Nothing is a sure win.",
+   "The currency effect is real but runs both ways. The sounder reasons are geographic and currency diversification.",
+   "The rupee value of a foreign fund depends on the exchange rate, so the currency does matter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s73q4",
+  "h": "Check yourself",
+  "q": "An adviser plans to invest a ₹5 lakh lump sum into an international fund of funds next week. What should he do first?",
+  "opts": [
+   "Check nothing, since overseas limits apply only to redemptions and never to purchases",
+   "Check whether the scheme is taking fresh money, as overseas limits can pause buying",
+   "Wait for the rupee to weaken before buying, since that is the right moment to buy",
+   "Switch the plan to an Indian equity fund, since overseas funds can never be bought"
+  ],
+  "ans": 1,
+  "why": [
+   "The limits restrict fresh subscriptions. Redemptions of units already held are a separate matter.",
+   "SEBI's industry-wide overseas limits can restrict fresh inflows, so availability and the cap on lump sums come first.",
+   "Timing the rupee is a guess. It is not a condition for buying, and the rupee can move either way.",
+   "Overseas funds can be bought. They just need a check on whether the scheme is open for fresh money."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An international fund adds geographic and currency diversification. A weaker rupee raises rupee returns; a stronger one lowers them.",
+   "₹1 lakh at ₹80 per dollar, up 5% in dollars: ₹1,12,875 at ₹86, ₹99,750 at ₹76. The currency decides the rest.",
+   "SEBI's overseas limits can pause fresh inflows. Check availability before you plan a purchase."
+  ]
+ }
+]

@@ -1,0 +1,221 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "A client sends a screenshot: \"Fund A gave 24% a year. Buy it.\" You have five minutes before the call. The factsheet already holds the answer, if you read the right lines in the right order.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The screenshot",
+  "lines": [
+   [
+    "meena",
+    "Fund A gave 24% a year for three years. Fund B only 20%. Why are you suggesting B?"
+   ],
+   [
+    "sikka",
+    "Because return is one line on a factsheet. Put the two side by side and see what the extra 4% cost in swings."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Two factsheets, one category",
+  "alt": "Two bars per row comparing return, standard deviation and Sharpe ratio of two funds in the same category",
+  "caps": [
+   [
+    0.3,
+    "Same category, same three years. Fund A returned more, but look at its swings."
+   ],
+   [
+    2.4,
+    "A's standard deviation is 15%, B's only 10%. A rougher ride for that extra return."
+   ],
+   [
+    4.3,
+    "Sharpe is return above the 6% safe rate, over deviation. A: 18 over 15 = 1.2. B: 14 over 10 = 1.4."
+   ],
+   [
+    6.6,
+    "B paid more return for each unit of risk. Compare Sharpe only inside one category."
+   ]
+  ],
+  "a": "Fund A",
+  "b": "Fund B",
+  "rows": [
+   [
+    "3-year return (% a year)",
+    24,
+    20
+   ],
+   [
+    "Standard deviation (%)",
+    15,
+    10
+   ],
+   [
+    "Sharpe ratio (safe rate 6%)",
+    1.2,
+    1.4
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Whose return is it?",
+  "alt": "Bars of a fund's value growing from 100 to 181 across five years, labelled by which manager ran it",
+  "caps": [
+   [
+    0.3,
+    "Fund C's factsheet shows 12.6% a year over five years."
+   ],
+   [
+    2.6,
+    "Manager A ran it for three years and grew ₹100 to ₹172, nearly 20% a year."
+   ],
+   [
+    4.4,
+    "Manager B took over after year 3. Since then ₹172 became ₹181, about 2.6% a year."
+   ],
+   [
+    6.6,
+    "Most of the five-year number was earned by someone who has left. Read the tenure line."
+   ]
+  ],
+  "vals": [
+   100,
+   118,
+   142,
+   172,
+   176,
+   181
+  ],
+  "labels": [
+   "Start",
+   "A, Y1",
+   "A, Y2",
+   "A, Y3",
+   "B, Y4",
+   "B, Y5"
+  ],
+  "big": "Five years: 12.6% a year",
+  "small": "A earned 19.8%, B has earned 2.6%"
+ },
+ {
+  "k": "eg",
+  "h": "Five minutes, in this order",
+  "intro": "A fixed reading order keeps you from stopping at the return line.",
+  "rows": [
+   [
+    "1. Manager and tenure",
+    "Who earned the record?"
+   ],
+   [
+    "2. Cost",
+    "BER, brokerage and taxes shown apart"
+   ],
+   [
+    "3. Top 10 and sectors",
+    "Do they match the pitch?"
+   ],
+   [
+    "4. Portfolio turnover",
+    "Above 100%: whole book traded in a year"
+   ],
+   [
+    "5. Risk numbers",
+    "Sharpe, deviation, beta: peers only"
+   ]
+  ],
+  "note": "Turnover of 150% means about 1.5 times the portfolio was traded in a year. Benchmark, AUM and riskometer sit on the same page."
+ },
+ {
+  "k": "pick",
+  "id": "s76q1",
+  "h": "Check yourself",
+  "q": "Two flexi-cap funds, safe-asset rate 6%. Fund P: 3-year return 18% a year, standard deviation 12%. Fund Q: 25% a year, standard deviation 20%. Which gave more return for each unit of risk?",
+  "opts": [
+   "Fund Q, because 25% beats 18% by a wide margin",
+   "Fund P, with a Sharpe of 1.00 against Q's 0.95",
+   "Both equal, as each beat the safe-asset rate well",
+   "Neither, until the benchmark return is known"
+  ],
+  "ans": 1,
+  "why": [
+   "Higher return alone ignores the swings. Q took a standard deviation of 20% to get it, which drags its Sharpe down.",
+   "P earned 12 points over the safe rate for 12 points of volatility. Q earned 19 for 20, so P edges ahead per unit of risk.",
+   "Beating the safe-asset rate is where the Sharpe sum starts, not where it ends. The two ratios, 1.00 and 0.95, still differ.",
+   "Sharpe needs only the return, the safe-asset rate and the deviation. The benchmark matters for alpha and tracking error."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s76q2",
+  "h": "Check yourself",
+  "q": "A client sees a liquid fund with a Sharpe of 2.4 next to a flexi-cap fund at 0.9 and asks to move his equity into the liquid fund. What is the sound reply?",
+  "opts": [
+   "Agree, as a higher Sharpe means a better fund in any category",
+   "Agree, provided the liquid fund also has the lower expense ratio",
+   "Decline, since Sharpe ratios are meaningful only for equity funds",
+   "Decline: Sharpe only compares funds within one category"
+  ],
+  "ans": 3,
+  "why": [
+   "A liquid fund's tiny volatility inflates its ratio. The two funds do different jobs, so the numbers cannot rank them.",
+   "Cost matters, but it does not repair the comparison. The ratio itself is not comparable across a liquid and an equity fund.",
+   "Sharpe is used for debt and hybrid funds too. The rule is to compare like with like, not to limit it to equity.",
+   "Peers share a risk level and a benchmark. Across categories, a small volatility makes the ratio swing and misleads."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s76q3",
+  "h": "Check yourself",
+  "q": "A mid-cap fund is pitched as a patient, buy-and-hold compounder. Its factsheet shows portfolio turnover of 165%. What does that number tell you?",
+  "opts": [
+   "About 1.65 times the book was traded, so check the pitch",
+   "The fund returned 165% over the year, so patience paid off",
+   "It holds 165 stocks, which is wide diversification in mid-caps",
+   "Assets grew 165% in the year, which shows heavy investor demand"
+  ],
+  "ans": 0,
+  "why": [
+   "Turnover above 100% means heavy trading, at odds with buy-and-hold. Ask about the process, and about trading costs.",
+   "Turnover measures trading volume against fund size. It says nothing about the return the fund delivered.",
+   "Turnover is not a stock count. A fund can trade its whole book often while holding 30 names or 80.",
+   "Asset growth sits on another line of the factsheet. Turnover is about how much the manager buys and sells."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s76q4",
+  "h": "Check yourself",
+  "q": "A fund tops its category on 5-year return (21% a year). The factsheet shows its manager joined 11 months ago. What is the best step before you recommend it?",
+  "opts": [
+   "Recommend it, because a fund's record belongs to the fund itself",
+   "Reject it, because any fund with a new manager is unsuitable",
+   "Find who earned the record, then judge today's portfolio",
+   "Wait a year, then rely on the one-year return of the new team"
+  ],
+  "ans": 2,
+  "why": [
+   "Most of the 5-year number may belong to the previous manager. The record does not transfer with the fund's name.",
+   "A new manager is not automatically a bad one. It is a reason to look closer, not a reason to reject at once.",
+   "The five years show what the old manager did. The holdings now, and the new manager's record, show what you would buy.",
+   "One year is too short to judge anyone, and waiting skips the real check: who earned the record and what has changed."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Read in order: manager and tenure, cost, holdings, turnover, risk numbers.",
+   "Sharpe = (return minus the safe-asset rate) divided by standard deviation. Use it only within one category.",
+   "A record belongs to the person who earned it, so check how long the manager has run the fund."
+  ]
+ }
+]

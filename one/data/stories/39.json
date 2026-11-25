@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "India's defence policy gives top priority to equipment that is indigenously designed, developed and manufactured. That is the Buy (Indian-IDDM) category, and it is what moves orders to Indian firms.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The policy stack",
+  "lines": [
+   [
+    "meena",
+    "What policies matter most?"
+   ],
+   [
+    "sikka",
+    "DAP 2020 gives top priority to Buy (Indian-IDDM). Positive indigenisation lists bar imports of hundreds of items after set timelines. FDI in defence is allowed up to 74% by the automatic route and up to 100% with government approval. Defence corridors in UP and Tamil Nadu cluster manufacturing."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Policy pieces",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "DAP 2020",
+    "top priority to Buy (Indian-IDDM)"
+   ],
+   [
+    "Indigenisation lists",
+    "bar imports of hundreds of items after timelines"
+   ],
+   [
+    "FDI",
+    "up to 74% automatic, up to 100% with approval"
+   ],
+   [
+    "Corridors",
+    "UP and Tamil Nadu cluster manufacturing"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s39q1",
+  "h": "Check yourself",
+  "q": "What does Buy (Indian-IDDM) mean?",
+  "opts": [
+   "Indigenously designed and made",
+   "Imported, delivered and maintained",
+   "Insured, delayed and modified",
+   "Inspected, declared and mailed"
+  ],
+  "ans": 0,
+  "why": [
+   "It is the top-priority procurement route.",
+   "That would be imported equipment.",
+   "That is not what IDDM stands for.",
+   "That is not what IDDM stands for either."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s39q2",
+  "h": "Check yourself",
+  "q": "What do positive indigenisation lists do?",
+  "opts": [
+   "Allow unlimited imports at all times",
+   "Fix the share price of the firms",
+   "Bar listed imports after timelines",
+   "Cancel all the existing orders"
+  ],
+  "ans": 2,
+  "why": [
+   "They restrict imports. The details here point elsewhere.",
+   "They do not fix share prices. That does not match this case.",
+   "They shift demand to Indian suppliers. This fits the facts given.",
+   "They do not cancel orders. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s39q3",
+  "h": "Check yourself",
+  "q": "What is the FDI limit on the automatic route in defence?",
+  "opts": [
+   "Up to 4%",
+   "Up to 74%",
+   "Up to 24%",
+   "Exactly 0%"
+  ],
+  "ans": 1,
+  "why": [
+   "4% is far too low. That does not match this case.",
+   "The lesson gives 74% on the automatic route.",
+   "24% is not the stated limit. It does not answer what was asked.",
+   "FDI is allowed. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s39q4",
+  "h": "Check yourself",
+  "q": "Where are defence corridors located?",
+  "opts": [
+   "Only in the state of Goa",
+   "Only in the state of Sikkim",
+   "Only in the state of Kerala",
+   "Uttar Pradesh and Tamil Nadu"
+  ],
+  "ans": 3,
+  "why": [
+   "Goa is not named. It does not fit the facts given.",
+   "Sikkim is not named. It does not answer what was asked.",
+   "Kerala is not named. The details here point elsewhere.",
+   "The lesson names UP and Tamil Nadu. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "DAP 2020 gives top priority to Buy (Indian-IDDM).",
+   "FDI: 74% automatic, 100% with approval.",
+   "Corridors in UP and Tamil Nadu cluster manufacturing."
+  ]
+ }
+]

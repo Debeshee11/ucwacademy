@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A REIT and an InvIT look alike on a screen: both are listed units that pay out income. But one earns from rent and the other from tolls and tariffs. Different engines, different risks.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Same wrapper, different engine",
+  "lines": [
+   [
+    "meena",
+    "What is the same and what differs?"
+   ],
+   [
+    "sikka",
+    "Same: a SEBI-regulated trust, listed units, at least 90% of NDCF paid out. Different: REITs hold rent-earning real estate, InvITs hold infrastructure. REIT income depends on occupancy and lease renewals, while InvIT income depends on traffic, tariffs and contract terms. From 1 January 2026, REITs count as equity-related for mutual funds. InvITs stay hybrid."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "REIT versus InvIT",
+  "intro": "Rules as in the lesson; confirm current SEBI rules before advising.",
+  "rows": [
+   [
+    "Same",
+    "SEBI trust, listed units, 90% of NDCF paid out"
+   ],
+   [
+    "REIT assets",
+    "rent-earning real estate; income from occupancy and leases"
+   ],
+   [
+    "InvIT assets",
+    "infrastructure; income from traffic and tariffs"
+   ],
+   [
+    "Since 1 Jan 2026",
+    "REITs equity-related for MFs; InvITs stay hybrid"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s97q1",
+  "h": "Check yourself",
+  "q": "What do REITs hold?",
+  "opts": [
+   "Toll roads and pipelines",
+   "Government bonds only",
+   "Only farm land",
+   "Rent-earning real estate"
+  ],
+  "ans": 3,
+  "why": [
+   "That describes InvITs. It does not answer what was asked.",
+   "They are not bond funds. The details here point elsewhere.",
+   "Farm land is not their focus. That does not match this case.",
+   "REITs hold rent-earning property. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s97q2",
+  "h": "Check yourself",
+  "q": "What drives REIT income?",
+  "opts": [
+   "Traffic and tariffs on roads",
+   "Occupancy and lease renewals",
+   "Only the traded share price",
+   "The sponsor's mood that month"
+  ],
+  "ans": 1,
+  "why": [
+   "That describes InvITs. That does not match this case.",
+   "Rent depends on occupancy. This fits the facts given.",
+   "Price is not the income source. It does not answer what was asked.",
+   "Mood is not a driver. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s97q3",
+  "h": "Check yourself",
+  "q": "How are InvITs classified for mutual funds from 1 January 2026?",
+  "opts": [
+   "As equity-related",
+   "As cash",
+   "As hybrid",
+   "As banned"
+  ],
+  "ans": 2,
+  "why": [
+   "REITs became equity-related. It does not fit the facts given.",
+   "They are not cash. It does not fit the facts given.",
+   "InvITs stay hybrid. That matches the case described.",
+   "They are not banned. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s97q4",
+  "h": "Check yourself",
+  "q": "What do REITs and InvITs share?",
+  "opts": [
+   "Listed units, 90% NDCF payout",
+   "The same assets and same risks",
+   "No regulation of any kind",
+   "Fixed, assured payouts for years"
+  ],
+  "ans": 0,
+  "why": [
+   "The wrapper is the same.",
+   "Assets and risks differ.",
+   "SEBI regulates both.",
+   "Payouts are not assured."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Same wrapper: SEBI trust, listed units, 90% of NDCF out.",
+   "REITs hold real estate; InvITs hold infrastructure.",
+   "From 1 Jan 2026 REITs are equity-related for MFs; InvITs stay hybrid."
+  ]
+ }
+]

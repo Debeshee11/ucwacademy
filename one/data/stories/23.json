@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "India has about 28 crore mutual fund folios, yet only about 10 crore SIP accounts. Many households still keep most savings in FDs, gold and property. Financialisation is that shift, slowly.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A shift in how India saves",
+  "lines": [
+   [
+    "meena",
+    "Why is this a big story for RMs?"
+   ],
+   [
+    "sikka",
+    "Mutual fund assets have grown faster than bank deposits over the last decade. Rising incomes and digital KYC make first-time investing easy. The room to grow is large, so your job is to guide new investors well."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Folios and SIP accounts, crore",
+  "vals": [
+   28,
+   10
+  ],
+  "labels": [
+   "Folios",
+   "SIPs"
+  ],
+  "big": "28 vs 10",
+  "small": "crore, as in the lesson",
+  "alt": "Bars of fund folios and SIP accounts",
+  "caps": [
+   [
+    0.3,
+    "About 28 crore folios."
+   ],
+   [
+    2.2,
+    "About 10 crore SIP accounts."
+   ],
+   [
+    4.0,
+    "Room to deepen participation."
+   ],
+   [
+    5.6,
+    "New investors need honest guidance."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s23q1",
+  "h": "Check yourself",
+  "q": "What does 'financialisation' of savings mean?",
+  "opts": [
+   "A shift from stocks into only gold",
+   "A shift from FDs and gold to funds",
+   "A ban on bank deposits entirely",
+   "A rise in loans from all banks"
+  ],
+  "ans": 1,
+  "why": [
+   "The trend is not toward only gold. The details here point elsewhere.",
+   "Households are moving to financial assets. That matches the case described.",
+   "Deposits are not banned. That does not match this case.",
+   "It is not about loans. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s23q2",
+  "h": "Check yourself",
+  "q": "What does the gap between 28 crore folios and 10 crore SIPs suggest?",
+  "opts": [
+   "Everyone already invests by SIP",
+   "SIPs are being banned soon",
+   "Folios are all inactive",
+   "Room to deepen participation"
+  ],
+  "ans": 3,
+  "why": [
+   "Only some hold SIPs. The details here point elsewhere.",
+   "No such ban is implied. That does not match this case.",
+   "Folios are not all inactive. It does not fit the facts given.",
+   "Many folios do not yet run a SIP. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s23q3",
+  "h": "Check yourself",
+  "q": "What helps first-time investors begin today?",
+  "opts": [
+   "Only paper forms at a branch",
+   "A ban on equity funds",
+   "Rising incomes and digital KYC",
+   "A tax on every purchase"
+  ],
+  "ans": 2,
+  "why": [
+   "Paper-only is the older way.",
+   "Equity funds are allowed.",
+   "Digital KYC makes onboarding easy.",
+   "No such tax on purchase is implied."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s23q4",
+  "h": "Check yourself",
+  "q": "What is the RM's role as new investors arrive?",
+  "opts": [
+   "Guide them honestly, match needs",
+   "Sell them the newest fund at once",
+   "Promise them a quick profit soon",
+   "Leave them to learn all alone"
+  ],
+  "ans": 0,
+  "why": [
+   "Honest guidance builds long-term trust. This fits the facts given.",
+   "Selling the newest fund is not suitability.",
+   "Returns cannot be promised. The details here point elsewhere.",
+   "Leaving them alone risks mistakes. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Savings are shifting from FDs, gold and property to financial assets.",
+   "About 28 crore folios, about 10 crore SIP accounts, per the lesson.",
+   "More new investors mean more need for honest guidance."
+  ]
+ }
+]

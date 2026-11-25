@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Who makes sure a REIT does what it promises? Three parties: a sponsor who sets it up, a manager who runs it and a trustee who protects unitholders. And two numbers act like guard rails: 80 and 90.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The 80 and 90 rules",
+  "lines": [
+   [
+    "meena",
+    "What stops a REIT from taking wild risks?"
+   ],
+   [
+    "sikka",
+    "SEBI rules. At least 80% must be in completed, rent-earning property. At least 90% of net distributable cash flow must be paid out, at least every six months. Borrowing is capped at 49% of asset value."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The guard rails",
+  "intro": "As per the lesson text. Check current SEBI rules and REIT disclosures.",
+  "rows": [
+   [
+    "Completed, rent-earning assets",
+    "at least 80%"
+   ],
+   [
+    "Net distributable cash flow paid out",
+    "at least 90%, every six months"
+   ],
+   [
+    "Borrowing cap",
+    "49% of asset value"
+   ],
+   [
+    "Credit rating needed above",
+    "25% of asset value"
+   ]
+  ],
+  "note": "Many Indian REITs pay quarterly."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "REIT structure and rules",
+  "stops": [
+   [
+    "The trustee protects unitholders",
+    true
+   ],
+   [
+    "The sponsor manages the daily portfolio",
+    false
+   ],
+   [
+    "At least 90% of NDCF must be distributed",
+    true
+   ],
+   [
+    "Borrowing has no cap",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It also checks compliance."
+   ],
+   [
+    2.2,
+    "The manager runs the portfolio."
+   ],
+   [
+    4.0,
+    "At least once every six months."
+   ],
+   [
+    5.6,
+    "It is capped at 49% of asset value."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s92q1",
+  "h": "Check yourself",
+  "q": "Who runs a REIT's portfolio day to day?",
+  "opts": [
+   "The sponsor",
+   "The trustee",
+   "The tenant",
+   "The manager"
+  ],
+  "ans": 3,
+  "why": [
+   "The sponsor sets up the REIT and contributes assets.",
+   "The trustee protects unitholders and checks compliance.",
+   "A tenant pays rent but does not run the REIT.",
+   "The manager runs the portfolio. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s92q2",
+  "h": "Check yourself",
+  "q": "What is the minimum share of a REIT's portfolio in completed, rent-earning property?",
+  "opts": [
+   "49%",
+   "80%",
+   "25%",
+   "10%"
+  ],
+  "ans": 1,
+  "why": [
+   "49% is the borrowing cap. The details here point elsewhere.",
+   "At least 80% must be in such properties. This fits the facts given.",
+   "25% is where a credit rating is needed. It does not fit the facts given.",
+   "10% is far below the rule. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s92q3",
+  "h": "Check yourself",
+  "q": "How much of NDCF must a REIT distribute, and how often?",
+  "opts": [
+   "At least 90%, every six months",
+   "At least 10%, once every year",
+   "At least 50%, but never paid",
+   "All of it, paid every single day"
+  ],
+  "ans": 0,
+  "why": [
+   "The rule is at least 90%, at least half-yearly.",
+   "10% would be far below the rule. It does not fit the facts given.",
+   "'Never' is not allowed. It does not answer what was asked.",
+   "No rule requires daily distribution. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s92q4",
+  "h": "Check yourself",
+  "q": "At what level of borrowing is a credit rating required?",
+  "opts": [
+   "Above 49% of asset value",
+   "Only below 10% of value",
+   "Above 25% of asset value",
+   "At no level of borrowing"
+  ],
+  "ans": 2,
+  "why": [
+   "49% is the borrowing cap, a different limit.",
+   "A rating is not tied to low borrowing.",
+   "A rating is required above 25%.",
+   "Borrowing above 25% does need a rating."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Sponsor sets up, manager runs, trustee protects.",
+   "At least 80% in completed rent-earning assets; 90% of NDCF distributed.",
+   "Borrowing is capped at 49%; rating needed above 25%."
+  ]
+ }
+]

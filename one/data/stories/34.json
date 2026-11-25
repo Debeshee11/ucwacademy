@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "India's defence exports hit a record ₹38,424 crore in FY26, up 62.7% from ₹23,622 crore. India now sells to more than 100 countries. A buyer of jets and ships became a seller too.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "India as a seller",
+  "lines": [
+   [
+    "meena",
+    "Does India really export weapons?"
+   ],
+   [
+    "sikka",
+    "Yes. Exports jumped 62.7% in a year. DPSUs gave about 55% and private firms about 45%. Buyers include the US, France and Armenia. The target is ₹50,000 crore by 2029."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "FY25",
+  "b": "FY26",
+  "rows": [
+   [
+    "Defence exports, ₹ thousand crore",
+    23.6,
+    38.4
+   ]
+  ],
+  "h": "Defence exports, as per the lesson",
+  "alt": "Bars of defence exports in FY25 and FY26",
+  "caps": [
+   [
+    0.3,
+    "FY25: ₹23,622 crore."
+   ],
+   [
+    2.2,
+    "FY26: a record ₹38,424 crore."
+   ],
+   [
+    4.0,
+    "A rise of 62.7%."
+   ],
+   [
+    5.6,
+    "The target is ₹50,000 crore by 2029."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Defence exports",
+  "stops": [
+   [
+    "FY26 exports were a record ₹38,424 crore",
+    true
+   ],
+   [
+    "Private firms made 55% of exports",
+    false
+   ],
+   [
+    "India exports to 100+ countries",
+    true
+   ],
+   [
+    "The export target is already met",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Up 62.7%."
+   ],
+   [
+    2.2,
+    "DPSUs made about 55%."
+   ],
+   [
+    4.0,
+    "The US, France and Armenia are among them."
+   ],
+   [
+    5.6,
+    "The target is ₹50,000 crore by 2029."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s34q1",
+  "h": "Check yourself",
+  "q": "Exports rose from ₹23,622 crore to ₹38,424 crore. By about how much?",
+  "opts": [
+   "About 62.7%",
+   "About 6.27%",
+   "About 45%",
+   "About 100%"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives a rise of 62.7%.",
+   "6.27% is far below the actual rise.",
+   "45% is the private share of exports.",
+   "A doubling would give ₹47,244 crore."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s34q2",
+  "h": "Check yourself",
+  "q": "Who contributed about 55% of exports in FY26?",
+  "opts": [
+   "Private firms",
+   "Foreign firms",
+   "DPSUs",
+   "State banks"
+  ],
+  "ans": 2,
+  "why": [
+   "Private firms gave about 45% of exports.",
+   "Foreign firms are not cited in the lesson.",
+   "DPSUs gave about 55% of exports.",
+   "Banks do not export defence goods at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s34q3",
+  "h": "Check yourself",
+  "q": "What is the export target for 2029?",
+  "opts": [
+   "₹38,424 crore",
+   "₹50,000 crore",
+   "₹3 lakh crore",
+   "₹23,622 crore"
+  ],
+  "ans": 1,
+  "why": [
+   "₹38,424 crore is the FY26 figure.",
+   "The target is ₹50,000 crore by 2029.",
+   "₹3 lakh crore is the production target.",
+   "₹23,622 crore is the FY25 figure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s34q4",
+  "h": "Check yourself",
+  "q": "Which countries are named as buyers in the lesson?",
+  "opts": [
+   "Only Pakistan and nobody else",
+   "Only the UK and nobody else",
+   "No one outside India at all",
+   "The US, France and Armenia"
+  ],
+  "ans": 3,
+  "why": [
+   "Pakistan is not named. It does not fit the facts given.",
+   "More than one country is named. It does not answer what was asked.",
+   "Exports go to many countries. The details here point elsewhere.",
+   "India exports to 100+ countries including these."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FY26 defence exports: a record ₹38,424 crore, up 62.7%.",
+   "DPSUs ~55%, private ~45%; 100+ countries.",
+   "Target: ₹50,000 crore by 2029."
+  ]
+ }
+]

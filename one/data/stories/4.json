@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A headline says mutual funds saw a ₹1.83 lakh crore outflow in a month. It sounds like panic. But the same month, retail equity investors added money. The outflow came from companies parking and pulling cash around tax dates.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who is leaving?",
+  "lines": [
+   [
+    "meena",
+    "A huge outflow! Are people fleeing funds?"
+   ],
+   [
+    "sikka",
+    "Ask which category, which investor, and what month. Liquid funds are used by companies as a cash account. Big redemptions near advance tax dates are routine."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Taking a headline apart",
+  "intro": "Three questions.",
+  "rows": [
+   [
+    "Which category?",
+    "Liquid and money-market funds"
+   ],
+   [
+    "Which investors?",
+    "Companies and treasuries"
+   ],
+   [
+    "Is it seasonal?",
+    "Yes: tax dates in Jun, Sep, Dec, Mar"
+   ],
+   [
+    "=",
+    "Reading",
+    "Cash cycle, not retail panic"
+   ]
+  ],
+  "note": "Advance tax falls on 15 June, 15 September, 15 December and 15 March."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Flow headlines",
+  "stops": [
+   [
+    "Liquid funds follow corporate cash cycles",
+    true
+   ],
+   [
+    "Quarter-end outflows always mean retail panic",
+    false
+   ],
+   [
+    "A headline can mix very different investors",
+    true
+   ],
+   [
+    "Seasonal flows need no checking",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Firms use them like a current account."
+   ],
+   [
+    2.2,
+    "Tax dates cause routine redemptions."
+   ],
+   [
+    4.0,
+    "Retail equity may be rising at the same time."
+   ],
+   [
+    5.6,
+    "Always ask which category and investor."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s4q1",
+  "h": "Check yourself",
+  "q": "A headline reports a huge outflow in a quarter-end month. What is the first question?",
+  "opts": [
+   "Which category and which investors?",
+   "Which fund house is to blame here?",
+   "Who wrote the headline, and when?",
+   "Is the market about to crash soon?"
+  ],
+  "ans": 0,
+  "why": [
+   "Splitting by category and investor reveals the real cause.",
+   "Blame is not the point of the analysis. The details here point elsewhere.",
+   "The writer does not explain the flow. That does not match this case.",
+   "A flow headline does not predict a crash. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s4q2",
+  "h": "Check yourself",
+  "q": "Why do liquid funds see heavy redemptions near 15 June, September, December and March?",
+  "opts": [
+   "Retail investors lose interest",
+   "SEBI closes the funds each quarter",
+   "Companies pay advance tax then",
+   "The funds stop paying returns"
+  ],
+  "ans": 2,
+  "why": [
+   "Retail interest is not the reason.",
+   "SEBI does not close funds each quarter.",
+   "Advance tax instalments fall on those dates.",
+   "Funds do not stop paying returns at those dates."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s4q3",
+  "h": "Check yourself",
+  "q": "Who mainly uses liquid and money-market funds in large amounts?",
+  "opts": [
+   "Only first-time retail investors",
+   "Companies and treasuries",
+   "Only retired individuals",
+   "Only pension fund trustees"
+  ],
+  "ans": 1,
+  "why": [
+   "Large flows are not mainly from first-timers. It does not fit the facts given.",
+   "Firms use them as an alternative to current accounts.",
+   "Retired individuals are not the main users. The details here point elsewhere.",
+   "Trustees are one small group at most. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s4q4",
+  "h": "Check yourself",
+  "q": "Debt outflow is large, but retail equity inflow is strong that month. What is the sound reading?",
+  "opts": [
+   "Retail investors are all confused today",
+   "The market must be about to fall",
+   "The two figures must be wrong",
+   "Different groups had different aims"
+  ],
+  "ans": 3,
+  "why": [
+   "Retail inflow shows steady behaviour, not confusion.",
+   "Flow data cannot call a fall. It does not answer what was asked.",
+   "Both can be right, as they cover different groups.",
+   "Corporate cash and retail equity follow different drivers."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Liquid fund flows follow corporate cash cycles.",
+   "Advance tax dates: 15 Jun, Sep, Dec, Mar.",
+   "Break a headline into category, investor and season."
+  ]
+ }
+]

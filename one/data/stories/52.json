@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "In Q2 2026, gold ETFs saw about 45 tonnes of global outflows. Prices eased, the dollar strengthened and rate expectations rose. Gold has drivers, and they pull in different directions.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What moves gold",
+  "lines": [
+   [
+    "meena",
+    "Why did gold ETFs see outflows?"
+   ],
+   [
+    "sikka",
+    "A strong dollar and higher rate expectations hurt gold. Rising real interest rates raise the cost of holding it. On the other side, geopolitical stress and central bank buying support prices. And in rupees, a weaker rupee adds to domestic returns."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Gold's push and pull",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Pushes down",
+    "strong dollar, higher real interest rates"
+   ],
+   [
+    "Pulls up",
+    "geopolitical stress, central bank buying"
+   ],
+   [
+    "In rupees",
+    "a weaker rupee adds to the return"
+   ],
+   [
+    "Q2 2026",
+    "about 45t of global gold ETF outflows"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s52q1",
+  "h": "Check yourself",
+  "q": "What raises the cost of holding gold?",
+  "opts": [
+   "A falling dollar, always and for all",
+   "Central bank buying of the metal",
+   "Geopolitical stress across the world",
+   "Rising real interest rates"
+  ],
+  "ans": 3,
+  "why": [
+   "A strong dollar, not a falling one, hurts. The details here point elsewhere.",
+   "Central buying supports prices. The details here point elsewhere.",
+   "Stress supports prices. That does not match this case.",
+   "Gold pays no interest, so higher real rates hurt. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s52q2",
+  "h": "Check yourself",
+  "q": "What supports gold prices?",
+  "opts": [
+   "A stronger dollar, higher real rates",
+   "Geopolitical stress, central buying",
+   "Large ETF outflows seen alone",
+   "Falling demand from the banks"
+  ],
+  "ans": 1,
+  "why": [
+   "Those weigh on gold. The details here point elsewhere.",
+   "Both support demand for gold. This fits the facts given.",
+   "Outflows weigh on gold. It does not fit the facts given.",
+   "Falling demand weighs on gold. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s52q3",
+  "h": "Check yourself",
+  "q": "How does a weaker rupee affect domestic gold returns?",
+  "opts": [
+   "It adds to them",
+   "It cuts them to zero",
+   "It has no effect at all",
+   "It bans gold imports"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold is priced in dollars globally.",
+   "It lifts returns, not cuts them.",
+   "Currency does matter here too.",
+   "No import ban follows from it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s52q4",
+  "h": "Check yourself",
+  "q": "What happened to gold ETFs in Q2 2026, per the lesson?",
+  "opts": [
+   "Record global inflows of gold",
+   "A full global ban on the units",
+   "About 45t of global outflows",
+   "No change in the holdings at all"
+  ],
+  "ans": 2,
+  "why": [
+   "That is the opposite. It does not fit the facts given.",
+   "No ban is stated. It does not answer what was asked.",
+   "The lesson cites 45t of outflows. This fits the facts given.",
+   "Holdings did change. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A strong dollar and higher real rates weigh on gold.",
+   "Stress and central bank buying support it.",
+   "A weaker rupee adds to rupee returns."
+  ]
+ }
+]

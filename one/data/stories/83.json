@@ -1,0 +1,279 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "The Rao family has ₹8 crore spread over 17 funds and four goals that nobody has written down. Their problem is rarely returns. It is the missing structure, and that is where a good adviser starts.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where do we start?",
+  "lines": [
+   [
+    "meena",
+    "My husband has funds, I have funds, and my father-in-law's old ones are still there. Where do we even start?"
+   ],
+   [
+    "sikka",
+    "With goals and dates, not funds. Then we ask to see everything together, because only then can we tell what each fund is for."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "glide",
+  "h": "One goal, one date",
+  "alt": "A cost counter rising with inflation while equity share steps down into safer funds over eight years",
+  "caps": [
+   [
+    0.3,
+    "A masters abroad costs ₹1.2 crore today. Assume costs rise 8% a year."
+   ],
+   [
+    1.7,
+    "The price climbs each year. With eight years to go, the money starts mostly in equity."
+   ],
+   [
+    3.7,
+    "As the date nears, equity steps down into safer funds, so a fall cannot wreck the plan."
+   ],
+   [
+    5.8,
+    "By year 8 the bill is about ₹2.22 crore, and most of the money has moved to safe funds."
+   ]
+  ],
+  "goal": "Masters abroad",
+  "target": 120,
+  "infl": 0.08,
+  "eq": [
+   80,
+   75,
+   70,
+   60,
+   50,
+   35,
+   20,
+   10
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Date decides the mix",
+  "alt": "Four bars showing the debt, equity and gold mix for a three-year, eight-year, twenty-year and thirty-year goal",
+  "caps": [
+   [
+    0.3,
+    "Same family, four goals. Each has its own date, so each gets its own mix. Assumed, for illustration."
+   ],
+   [
+    1.1,
+    "A home deposit due in 3 years sits mostly in debt. A fall must not reach it."
+   ],
+   [
+    2.2,
+    "Education at 8 years takes a middle mix. Retirement at 20 years carries more equity."
+   ],
+   [
+    4.5,
+    "Legacy money may stay untouched for decades, so it can hold the most equity."
+   ],
+   [
+    6.3,
+    "The date sets the mix first. Fund choice comes after."
+   ]
+  ],
+  "rows": [
+   {
+    "name": "Home deposit, 3 years",
+    "segs": [
+     [
+      "Debt 85",
+      85,
+      "#8EC5FF"
+     ],
+     [
+      "Equity 15",
+      15,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "Education, 8 years",
+    "segs": [
+     [
+      "Equity 50",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 35",
+      35,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15",
+      15,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Retirement, 20 years",
+    "segs": [
+     [
+      "Equity 60",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Debt 25",
+      25,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15",
+      15,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Legacy, 30 years or more",
+    "segs": [
+     [
+      "Equity 70",
+      70,
+      "#3CC47A"
+     ],
+     [
+      "Debt 15",
+      15,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15",
+      15,
+      "#FFC531"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Seventeen funds, four jobs",
+  "intro": "What a whole-family review of the Raos' funds finds (made up).",
+  "rows": [
+   [
+    "Large and flexi-cap look-alikes",
+    "9 funds"
+   ],
+   [
+    "Mid and small-cap",
+    "3 funds"
+   ],
+   [
+    "Sector and thematic",
+    "3 funds"
+   ],
+   [
+    "Debt and liquid",
+    "2 funds"
+   ],
+   [
+    "=",
+    "Funds held",
+    "17"
+   ]
+  ],
+  "note": "Mapped to goals, perhaps six funds would do, each with a named job. The client gains a simple plan, fewer repeat bets and one view of tax."
+ },
+ {
+  "k": "pick",
+  "id": "s83q1",
+  "h": "Check yourself",
+  "q": "A client with about ₹8 crore across 17 funds and some fixed deposits asks you to \"suggest something good\". What is your best opening move?",
+  "opts": [
+   "Show him the fund with the best 3-year return on your list",
+   "Ask for his goals, then review all holdings together",
+   "Offer a new NFO, since HNIs like being early in new ideas",
+   "Tell him to sell the weakest five funds and buy a flexi-cap"
+  ],
+  "ans": 1,
+  "why": [
+   "Pitching a product before any goal repeats the habit that gave him 17 funds. Past return says nothing about his plan.",
+   "Goals and dates tell you what each rupee is for, and a full view shows what he already holds. Recommendations come after.",
+   "Being early is no virtue without a goal it serves. An NFO has no record, and he already holds many funds.",
+   "Selling the weakest five funds judges by return alone, and may trigger tax. You cannot judge a fund before you know its job."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s83q2",
+  "h": "Check yourself",
+  "q": "A client has ₹5 crore in one flexi-cap pot. She needs ₹2 crore for a home in 30 months and plans to retire in 18 years. What is the sound first step?",
+  "opts": [
+   "Split the money by goal, and move the home money to low-risk funds",
+   "Keep it all in flexi-cap, since equity beats debt over the long term",
+   "Put everything into debt, since part of it is needed soon",
+   "Switch to gold, since neither goal has a fixed amount"
+  ],
+  "ans": 0,
+  "why": [
+   "Each goal has its own date. Money due in 30 months cannot depend on equity, while the 18-year money can stay invested.",
+   "Equity may win over decades, but the home money is needed in 30 months, when a fall could leave a gap that cannot be refilled.",
+   "Part of the money has a long horizon. Putting all of it in debt would starve the retirement goal of growth.",
+   "Gold can be part of a mix, but it carries its own swings. Neither goal is solved by one asset, whatever its amount."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s83q3",
+  "h": "Check yourself",
+  "q": "A masters abroad costs ₹1.2 crore today. Costs rise 8% a year, and the daughter leaves in 8 years. What target should the plan use?",
+  "opts": [
+   "₹1.20 crore",
+   "₹1.97 crore",
+   "₹2.22 crore",
+   "₹1.63 crore"
+  ],
+  "ans": 2,
+  "why": [
+   "This ignores eight years of rising costs. Plan for today's price and the plan will fall short by the time she leaves.",
+   "This adds 8% of the base eight times, as if simple interest. Costs compound, because each year's rise applies to a higher price.",
+   "₹1.2 crore grown at 8% a year for 8 years gives 1.2 times 1.08 to the power 8, about ₹2.22 crore.",
+   "That is the cost after only 4 years of rises, half the time. The daughter leaves in 8 years, not 4."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s83q4",
+  "h": "Check yourself",
+  "q": "An HNI client's 12 funds hold large gains, and consolidating at once would create a big tax bill. What do you propose?",
+  "opts": [
+   "Hold all 12 for good, since a tax bill is never worth paying",
+   "Stop new money into duplicates and phase exits over tax years",
+   "Redeem everything in March and rebuy at once for a clean start",
+   "Ignore the tax, because a simpler portfolio matters more than cost"
+  ],
+  "ans": 1,
+  "why": [
+   "Tax is a cost to weigh, not a reason to keep duplicates for good. The running cost of 12 overlapping funds also adds up.",
+   "New money goes to the keepers at once, and staged exits spread gains over years. Agree the plan with his CA first.",
+   "One-day exits push all gains into one tax year and may trigger exit loads. A clean start is not worth that bill.",
+   "Tax is real money, and for an HNI it is large. A simpler portfolio is the aim, but cost and tax shape how you get there."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Start from goals and dates, then map each goal to a horizon, a mix and only then a fund.",
+   "HNIs care about tax, liquidity, succession and one clear view of everything they own.",
+   "Ask to review all holdings together. A simpler plan is the gain for the client, and it earns the trust."
+  ]
+ }
+]

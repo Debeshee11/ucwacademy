@@ -1,0 +1,295 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "You have the facts: what a multi-asset fund is, how it is taxed, how it behaves in a fall and in a rate hike. Now put it in one clear pitch that is honest enough to say out loud.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The one-minute pitch",
+  "lines": [
+   [
+    "meena",
+    "I have two minutes before my bus. Why should I start with a multi-asset fund?"
+   ],
+   [
+    "sikka",
+    "Three engines in one fund, and the fund rebalances itself. I will show you with one made-up bad year, and you can tell me if it sounds fair."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "One bad year, ₹10 lakh",
+  "a": "All equity",
+  "b": "Three engines",
+  "rows": [
+   [
+    "Loss in the year, %",
+    20,
+    4.4
+   ],
+   [
+    "Loss on ₹10 lakh, ₹ thousand",
+    200,
+    44.0
+   ]
+  ],
+  "alt": "Two bars: loss in a bad year for an all equity portfolio and for a 45, 30, 25 equity, debt, gold mix",
+  "caps": [
+   [
+    0.3,
+    "Made-up bad year: equity falls 20%, debt earns 7%, gold rises 10%."
+   ],
+   [
+    2.0,
+    "All in equity, ₹10 lakh loses ₹2 lakh."
+   ],
+   [
+    3.8,
+    "The three-engine mix, 45% equity, 30% debt, 25% gold, loses 4.4%: about ₹44,000."
+   ],
+   [
+    5.6,
+    "Equity still fell. Debt and gold carried part of the weight. That is the pitch."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Then the fund rebalances",
+  "rows": [
+   {
+    "name": "Start: ₹10 lakh",
+    "segs": [
+     [
+      "Equity 45%",
+      45,
+      "#3CC47A"
+     ],
+     [
+      "Debt 30%",
+      30,
+      "#8EC5FF"
+     ],
+     [
+      "Gold/silver",
+      25,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "After the year: ₹9.56 lakh",
+    "segs": [
+     [
+      "Equity 37.7%",
+      37.7,
+      "#3CC47A"
+     ],
+     [
+      "Debt 33.6%",
+      33.6,
+      "#8EC5FF"
+     ],
+     [
+      "Gold/silver 29%",
+      28.8,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Fund rebalances: ₹9.56 lakh",
+    "segs": [
+     [
+      "Equity 45%",
+      45,
+      "#3CC47A"
+     ],
+     [
+      "Debt 30%",
+      30,
+      "#8EC5FF"
+     ],
+     [
+      "Gold/silver",
+      25,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars of a 10 lakh rupee holding: start, after the bad year, and after the fund rebalances",
+  "caps": [
+   [
+    0.2,
+    "Start: ₹10 lakh, split 45% equity, 30% debt, 25% gold and silver."
+   ],
+   [
+    1.5,
+    "After the bad year: ₹9.56 lakh. Equity has shrunk to 37.7% of the fund."
+   ],
+   [
+    3.0,
+    "The fund buys about ₹0.70 lakh of cheaper equity, paid for by trimming debt and gold."
+   ],
+   [
+    4.5,
+    "Back to 45, 30, 25, with no switch for you to make and no tax event for you."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Say this, not that",
+  "title": "The pitch, line by line",
+  "stops": [
+   [
+    "Three engines, one fund, automatic rebalancing",
+    true
+   ],
+   [
+    "Suits first-timers, retirees, past panickers",
+    true
+   ],
+   [
+    "It will never fall when the market falls",
+    false
+   ],
+   [
+    "Every multi-asset fund is taxed like equity",
+    false
+   ]
+  ],
+  "alt": "A shield with lines that are fair to say in the pitch and lines that are not",
+  "caps": [
+   [
+    0.3,
+    "A good pitch names the three engines and the automatic rebalancing."
+   ],
+   [
+    2.8,
+    "It says who the fund suits: first-timers, retirees, and anyone who panicked in past falls."
+   ],
+   [
+    5.2,
+    "It never promises smooth returns, never says it cannot fall, and never claims one tax rule fits every fund."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Facts to quote, with their dates",
+  "intro": "Industry data cited for this lesson. Quote the date with the number.",
+  "rows": [
+   [
+    "Category size",
+    "about ₹1.96 lakh crore, Jun 2026"
+   ],
+   [
+    "Net inflows",
+    "58 months in a row to Jun 2026"
+   ],
+   [
+    "Engines",
+    "equity, debt, gold and silver"
+   ],
+   [
+    "Rebalancing",
+    "inside the fund, no tax bill to you"
+   ]
+  ],
+  "note": "Inflows show demand, not a promise. Check each fund's tax class and mix before you speak about either."
+ },
+ {
+  "k": "pick",
+  "id": "s75q1",
+  "h": "Check yourself",
+  "q": "In a made-up bad year equity falls 20%, debt earns 7% and gold rises 10%. What does a 45% equity, 30% debt, 25% gold fund return?",
+  "opts": [
+   "About -20%, since the biggest loss in the portfolio sets the loss for the fund",
+   "About -1%, since the plain average of -20, 7 and 10 comes to about -1 overall",
+   "About -4.4%, since -9 plus 2.1 plus 2.5 gives -4.4 on the whole fund",
+   "About -9%, since only the equity part moves and debt and gold stay still"
+  ],
+  "ans": 2,
+  "why": [
+   "Only 45% of the fund is in equity. Debt and gold also earned money, so the whole fund fell far less.",
+   "A plain average treats the three parts as equal. Equity is 45%, so the weighted figure is not -1%.",
+   "Each return is weighted by its share: 0.45 times -20, 0.30 times 7 and 0.25 times 10 sum to -4.4%.",
+   "-9% is the equity part alone. Debt added 2.1 and gold added 2.5, so the fund total is higher than that."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s75q2",
+  "h": "Check yourself",
+  "q": "Which of these clients is the weakest fit for a multi-asset fund as a core holding?",
+  "opts": [
+   "A 26-year-old, 25 years ahead, who wants maximum equity growth and accepts 50% falls",
+   "A 64-year-old about to start monthly withdrawals who worries about a fall in year one",
+   "A first-time investor who sold her last fund in a panic and wants a smoother ride",
+   "A client who wants one simple fund to start with and does not want to rebalance"
+  ],
+  "ans": 0,
+  "why": [
+   "He wants maximum growth and can stay through deep falls, so a fund built to cushion falls gives up the growth he wants.",
+   "A retiree facing sequence risk gains from a fund built to fall less, so a multi-asset fund fits her case well.",
+   "A panicker's problem is the behaviour gap. A smoother fund gives fewer reasons to sell at a low.",
+   "Automatic rebalancing is the very thing this client wants, so the fund suits the request."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s75q3",
+  "h": "Check yourself",
+  "q": "The pitch says rebalancing inside the fund is tax-neutral for you. Which wording is accurate?",
+  "opts": [
+   "You pay no tax at all on this fund, since the fund absorbs the cost of every sale",
+   "The fund's own switches create no bill for you; tax comes when you redeem units",
+   "You are taxed each time the fund rebalances, on your share of the gain it makes",
+   "Every multi-asset fund is taxed like an equity fund, so the rate is always 12.5%"
+  ],
+  "ans": 1,
+  "why": [
+   "You are still taxed on redemption. Saying no tax at all would mislead the client about a real liability.",
+   "The fund's trades are not your sale. Your tax comes on redemption, under the fund's class, so check its mix.",
+   "Internal trades do not reach your tax return. A bill arises only when you redeem your own units.",
+   "Tax class depends on equity share, including arbitrage. Some funds are taxed differently, so always check."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s75q4",
+  "h": "Check yourself",
+  "q": "A client asks for your one-line pitch. Which line is accurate and fair?",
+  "opts": [
+   "One fund that cannot lose money, because three assets are always better than one",
+   "One fund that beats equity every year, because gold and debt are added on top",
+   "One fund that earns 12% a year, because that is what the last few years gave",
+   "One fund, three engines: growth, stability and protection, rebalanced for you"
+  ],
+  "ans": 3,
+  "why": [
+   "No fund is certain not to lose. Three assets can fall together in a bad month, so that promise is false.",
+   "Adding gold and debt usually lowers a rally's gain. Beating equity each year is not a fair claim.",
+   "A past return is not a rate to quote as a promise. The next years may give more or less.",
+   "It says what the fund is and does, and promises no return. The claim is on structure, not on results."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "One fund, three engines: equity for growth, debt for stability, gold and silver for protection, with rebalancing done inside the fund.",
+   "In a made-up year with equity -20%, a 45/30/25 mix lost 4.4%. It still fell, only less.",
+   "Quote facts with their dates (₹1.96 lakh crore, 58 months to Jun 2026). Never promise returns, and check each fund's tax class."
+  ]
+ }
+]

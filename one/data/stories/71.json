@@ -1,0 +1,255 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "When the RBI raises the repo rate, bond prices dip first and pay more afterwards. A client who sees a small fall in a multi-asset NAV deserves an explanation before they ask for one.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The week after a rate hike",
+  "lines": [
+   [
+    "meena",
+    "The RBI raised the repo rate in October 2026 and my multi-asset fund's NAV is down a little. Did I make a mistake?"
+   ],
+   [
+    "sikka",
+    "A small dip in the debt part is normal after a hike. Let me show you what it is, and what comes after it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "How big is the dip?",
+  "a": "3-year duration",
+  "b": "1-year duration",
+  "rows": [
+   [
+    "Sleeve dip, paise per ₹100",
+    75,
+    25
+   ],
+   [
+    "Fund NAV dip, paise per ₹100",
+    22.5,
+    7.5
+   ],
+   [
+    "Years to earn it back",
+    3,
+    1
+   ]
+  ],
+  "alt": "Three pairs of bars comparing a longer and a shorter debt sleeve after yields rise by a quarter point",
+  "caps": [
+   [
+    0.3,
+    "Assume yields on the sleeve's bonds rise 0.25 point. Price dip is about duration times that."
+   ],
+   [
+    2.4,
+    "A sleeve with 3 years of duration dips about 75 paise per ₹100. A 1-year sleeve dips 25 paise."
+   ],
+   [
+    4.4,
+    "The debt sleeve is 30% of the fund, so the fund's NAV dips about 22.5 paise per ₹100."
+   ],
+   [
+    6.6,
+    "New bonds also pay more. The 3-year sleeve earns back its dip in about 3 years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Earning the dip back",
+  "vals": [
+   25,
+   50,
+   75
+  ],
+  "labels": [
+   "Year 1",
+   "Year 2",
+   "Year 3"
+  ],
+  "big": "Dip of 75 paise earned back",
+  "small": "Extra yield, paise per ₹100",
+  "alt": "Three bars of extra yield earned over three years against a dip of 75 paise",
+  "caps": [
+   [
+    0.2,
+    "After the hike the sleeve yields 0.25 point more, on every ₹100 held."
+   ],
+   [
+    1.0,
+    "Year 1: about 25 paise of extra yield. Year 2: 50 paise in total."
+   ],
+   [
+    1.9,
+    "Year 3: 75 paise, the same as the dip. This is simplified, with no compounding."
+   ],
+   [
+    3.5,
+    "A longer duration means a bigger dip and a longer wait. A shorter one dips less and recovers sooner."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What a rate hike does by sleeve",
+  "title": "After the hike",
+  "stops": [
+   [
+    "Debt: small dip, then higher accrual",
+    true
+   ],
+   [
+    "Gold and equity respond to other drivers",
+    true
+   ],
+   [
+    "Every sleeve must fall together",
+    false
+   ],
+   [
+    "The dip is a permanent loss of capital",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about a rate hike and a multi-asset fund",
+  "caps": [
+   [
+    0.3,
+    "Each sleeve of a multi-asset fund answers to its own drivers."
+   ],
+   [
+    2.6,
+    "Debt: a small dip now, better accrual going forward. Gold and equity react to their own news."
+   ],
+   [
+    5.0,
+    "The dip is a mark to market change, not a permanent loss unless the bonds default or are sold low."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "What it looks like in rupees",
+  "intro": "A ₹10 lakh holding in a fund with 30% in debt of 3 years' duration.",
+  "rows": [
+   [
+    "Yields on the sleeve rise",
+    "0.25 point"
+   ],
+   [
+    "Dip in the debt sleeve",
+    "0.75%"
+   ],
+   [
+    "Dip in the fund NAV",
+    "0.225%"
+   ],
+   [
+    "=",
+    "Paper dip on ₹10 lakh",
+    "about ₹2,250"
+   ],
+   [
+    "Extra yield a year after",
+    "about ₹750"
+   ]
+  ],
+  "note": "Assumed numbers to show scale. A longer-duration debt sleeve dips more; check the modified duration in the factsheet."
+ },
+ {
+  "k": "pick",
+  "id": "s71q1",
+  "h": "Check yourself",
+  "q": "After a repo rate hike, a client's multi-asset fund shows a NAV dip of about 0.2% in a week. Which explanation is accurate?",
+  "opts": [
+   "The manager made a mistake in the equity part, which is the only part that moves",
+   "The fund has lost part of its capital for good, and it cannot be recovered later",
+   "Debt sleeve bonds repriced at higher yields, and now earn more from here",
+   "Gold always falls after a rate hike, so gold alone explains the whole of the dip"
+  ],
+  "ans": 2,
+  "why": [
+   "Equity is not the only part that moves. A rate hike works on the bond prices in the debt sleeve first.",
+   "A mark-to-market dip is not a permanent loss. Held, the bonds earn the higher yield from here.",
+   "Higher yields lower existing bond prices, which shows as a small dip. The bonds then accrue more than before.",
+   "Gold has no fixed reaction to a hike. The direct effect of higher yields is on bond prices in the debt sleeve."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s71q2",
+  "h": "Check yourself",
+  "q": "A fund has 30% in debt with modified duration of 3 years. Yields on those bonds rise 0.25 point. What is the approximate dip in the fund's NAV, from the debt sleeve alone?",
+  "opts": [
+   "About 0.2%, since the sleeve dips 0.75% and it is 30% of the fund",
+   "About 0.75%, since the sleeve dips by duration times the rise in yields",
+   "About 0.25%, since the NAV moves by the same amount as the yield did",
+   "About 2.25%, since the duration is multiplied by the rise and by three again"
+  ],
+  "ans": 0,
+  "why": [
+   "Sleeve dip: 3 times 0.25 is 0.75%. Fund dip: 0.75% times 30% is about 0.225%.",
+   "That is the dip of the debt sleeve itself. Only 30% of the fund sits in it, so the NAV falls less.",
+   "The yield rise and the price dip are different numbers. The dip is duration times the yield rise.",
+   "Multiplying by the duration twice overstates the dip. One multiplication gives the sleeve's move."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s71q3",
+  "h": "Check yourself",
+  "q": "The 3-year-duration sleeve dipped 0.75% when yields rose 0.25 point. Roughly how long does the higher yield take to make up that dip?",
+  "opts": [
+   "About 3 months, since new bonds pay interest every month of the year",
+   "About 12 months, since yields are quoted as a rate per year",
+   "It never makes it up, because a dip in bond prices is permanent",
+   "About 3 years, which is close to the sleeve's duration"
+  ],
+  "ans": 3,
+  "why": [
+   "Three months of extra yield is about 6 paise. It does not cover a dip of 75 paise.",
+   "One year of extra yield is 25 paise, a third of the dip. The full amount takes longer.",
+   "The dip is a mark to market change. Held, the bonds earn more, so the loss is made up over time.",
+   "Extra yield of 0.25 point a year earns back 0.75 in about 3 years. Duration works as a rough break-even time."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s71q4",
+  "h": "Check yourself",
+  "q": "A client who saw the debt sleeve dip wants to leave the multi-asset fund altogether. What is the strongest point for the adviser to make?",
+  "opts": [
+   "The manager has hedged all interest rate risk, so no further dip can happen",
+   "The debt sleeve is one part; the other sleeves answer to different drivers",
+   "Rate hikes always lift gold and equity, so the fund will gain in the next week",
+   "The dip proves the fund is unsuited to her, so the adviser must accept the exit"
+  ],
+  "ans": 1,
+  "why": [
+   "No fund can hedge away all rate risk. A longer-duration sleeve still dips when yields rise.",
+   "Sleeves respond to different drivers, and the debt dip is a fraction of a 30% sleeve. Exiting turns a paper dip real.",
+   "Rate hikes do not always lift gold or equity. The sleeves have their own drivers, not a fixed response.",
+   "A small dip does not show unsuitability. Suitability rests on her goals and horizon, not a single week."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A rate hike dips bond prices first (about duration times the rise in yields) and then raises accrual. The dip is mark to market, not a permanent loss.",
+   "In a multi-asset fund only the debt sleeve feels it directly. Gold and equity answer to their own drivers.",
+   "Explain the small NAV wobble before the client sees it, and quote the duration from the factsheet."
+  ]
+ }
+]

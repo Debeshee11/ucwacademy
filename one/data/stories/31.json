@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The FY27 defence allocation is ₹7.85 lakh crore, up about 15% on ₹6.81 lakh crore. But the number that matters to suppliers is not the total. It is the part that buys jets, ships and missiles: the capital outlay.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Total versus capital",
+  "lines": [
+   [
+    "meena",
+    "₹7.85 lakh crore. Is all of that for new weapons?"
+   ],
+   [
+    "sikka",
+    "No. Much goes to pay and pensions. The capital outlay is ₹2.19 lakh crore, up about 21.8%. Within it, ₹1.85 lakh crore is for modernisation, and 75% of that is kept for domestic industry."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "FY27 defence budget, ₹ thousand crore",
+  "vals": [
+   785,
+   219,
+   185,
+   139
+  ],
+  "labels": [
+   "Total",
+   "Capex",
+   "Modern",
+   "Local"
+  ],
+  "big": "₹7.85 lakh crore",
+  "small": "up ~15% from ₹6.81 lakh crore",
+  "alt": "Bars narrowing from the total budget to the domestic reservation",
+  "caps": [
+   [
+    0.3,
+    "The total allocation is ₹7.85 lakh crore."
+   ],
+   [
+    2.2,
+    "Capital outlay is ₹2.19 lakh crore."
+   ],
+   [
+    4.0,
+    "Modernisation takes ₹1.85 lakh crore."
+   ],
+   [
+    5.6,
+    "₹1.39 lakh crore is reserved for domestic industry."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "FY27 defence budget",
+  "stops": [
+   [
+    "The FY27 allocation is ₹7.85 lakh crore",
+    true
+   ],
+   [
+    "Capital outlay is the whole budget",
+    false
+   ],
+   [
+    "75% of modernisation is reserved for domestic industry",
+    true
+   ],
+   [
+    "The total budget fell from FY26",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Up about 15%."
+   ],
+   [
+    2.2,
+    "It is ₹2.19 lakh crore."
+   ],
+   [
+    4.0,
+    "That is ₹1.39 lakh crore."
+   ],
+   [
+    5.6,
+    "It rose from ₹6.81 lakh crore."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s31q1",
+  "h": "Check yourself",
+  "q": "Which part of the budget buys jets, ships and missiles?",
+  "opts": [
+   "Pay and allowances of all staff",
+   "Capital outlay, ₹2.19 lakh crore",
+   "Pensions of retired staff and kin",
+   "Operational upkeep of the bases"
+  ],
+  "ans": 1,
+  "why": [
+   "Pay and allowances go to serving personnel. The details here point elsewhere.",
+   "Capital outlay is the money that buys equipment. That matches the case described.",
+   "Pensions go to retired personnel. That does not match this case.",
+   "Upkeep keeps current assets running. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s31q2",
+  "h": "Check yourself",
+  "q": "₹1.39 lakh crore is what share of the ₹1.85 lakh crore modernisation budget?",
+  "opts": [
+   "About 25%",
+   "About 50%",
+   "About 100%",
+   "About 75%"
+  ],
+  "ans": 3,
+  "why": [
+   "25% would be about ₹0.46 lakh crore.",
+   "50% would be about ₹0.93 lakh crore.",
+   "100% would be the whole ₹1.85 lakh crore.",
+   "1.39 ÷ 1.85 is about 0.75, so 75%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s31q3",
+  "h": "Check yourself",
+  "q": "What is the approximate rise in the FY27 allocation over ₹6.81 lakh crore?",
+  "opts": [
+   "About 15%",
+   "About 5%",
+   "About 50%",
+   "About 1.5%"
+  ],
+  "ans": 0,
+  "why": [
+   "7.85 against 6.81 is roughly 15%.",
+   "5% would give only about ₹7.15 lakh crore.",
+   "50% would give over ₹10 lakh crore.",
+   "1.5% would give only about ₹6.91 lakh crore."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s31q4",
+  "h": "Check yourself",
+  "q": "Why does a domestic reservation matter to Indian suppliers?",
+  "opts": [
+   "It makes all imports illegal now",
+   "It sets their share prices daily",
+   "It directs more orders to them",
+   "It guarantees their profits each year"
+  ],
+  "ans": 2,
+  "why": [
+   "Imports remain possible outside the reserved part.",
+   "Budgets do not set share prices. It does not answer what was asked.",
+   "It reserves ₹1.39 lakh crore for domestic industry.",
+   "Orders do not guarantee profits. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "FY27 defence allocation: ₹7.85 lakh crore, up ~15%.",
+   "Capital outlay ₹2.19 lakh crore; modernisation ₹1.85 lakh crore.",
+   "75% of modernisation, ₹1.39 lakh crore, is for domestic industry."
+  ]
+ }
+]

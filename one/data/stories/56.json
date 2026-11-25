@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client asks for silver. Silver is typically 1.5 to 2 times as volatile as gold. That one fact decides how much of it she should hold. Size it smaller.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Silver, sized right",
+  "lines": [
+   [
+    "meena",
+    "How can clients buy silver?"
+   ],
+   [
+    "sikka",
+    "SEBI allowed silver ETFs in 2021. They launched in 2022, backed by 99.9% pure silver. Silver FoFs give access without a demat account. The gold-silver ratio shows how many ounces of silver buy one ounce of gold."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Silver, in short",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Silver ETFs",
+    "allowed 2021, launched 2022, 99.9% pure"
+   ],
+   [
+    "Silver FoFs",
+    "access without a demat account"
+   ],
+   [
+    "Volatility",
+    "typically 1.5 to 2 times gold, so size smaller"
+   ],
+   [
+    "Gold-silver ratio",
+    "ounces of silver for one ounce of gold"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s56q1",
+  "h": "Check yourself",
+  "q": "How volatile is silver compared with gold?",
+  "opts": [
+   "Typically half as volatile again",
+   "Typically 1.5 to 2 times more",
+   "Exactly as volatile as gold is",
+   "It never moves in price at all"
+  ],
+  "ans": 1,
+  "why": [
+   "Half is the opposite. It does not answer what was asked.",
+   "The lesson says 1.5 to 2 times. That matches the case described.",
+   "It is more volatile. That does not match this case.",
+   "Silver does move. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s56q2",
+  "h": "Check yourself",
+  "q": "What purity backs silver ETFs?",
+  "opts": [
+   "99.9% pure silver",
+   "50% pure silver",
+   "Only coated silver",
+   "Any metal at all"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson cites 99.9%.",
+   "50% is not the stated purity.",
+   "Coated silver is not stated.",
+   "ETFs are backed by silver."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s56q3",
+  "h": "Check yourself",
+  "q": "What do silver FoFs offer?",
+  "opts": [
+   "A guaranteed rise in the price",
+   "A ban on any rupee exposure",
+   "Access without a demat account",
+   "Only silver coins sent by post"
+  ],
+  "ans": 2,
+  "why": [
+   "No price is guaranteed. That does not match this case.",
+   "No such ban exists. It does not fit the facts given.",
+   "FoFs need no demat. That matches the case described.",
+   "They are funds, not postal coins. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s56q4",
+  "h": "Check yourself",
+  "q": "What does the gold-silver ratio show?",
+  "opts": [
+   "The tax charged on silver gains",
+   "The weight of one single ETF unit",
+   "The yearly interest paid on gold",
+   "Ounces of silver for one of gold"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not a tax rate.",
+   "It is not a unit weight.",
+   "Gold pays no such interest.",
+   "It compares the two prices."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver is typically 1.5 to 2 times as volatile as gold.",
+   "ETFs are backed by 99.9% silver; FoFs need no demat.",
+   "Size silver smaller."
+  ]
+ }
+]

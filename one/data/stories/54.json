@@ -1,0 +1,149 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Silver had its strongest annual performance since 1979 in 2025 and hit new highs in early 2026. The market is in deficit for a sixth straight year. Why does supply not simply rise when the price rises?",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Silver's supply puzzle",
+  "lines": [
+   [
+    "meena",
+    "Why does supply not respond?"
+   ],
+   [
+    "sikka",
+    "Only about 28% of silver comes from primary silver mines. Most is a by-product of copper, lead, zinc and gold. So miners of those metals decide the supply, and supply barely responds to a higher silver price. The deficit is about 46 Moz in 2026 per the World Silver Survey."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Where silver comes from",
+  "rows": [
+   {
+    "name": "Source of supply",
+    "segs": [
+     [
+      "Primary mines 28%",
+      28,
+      "#FFC531"
+     ],
+     [
+      "By-product 72%",
+      72,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar showing 28 percent primary silver and the rest by-product",
+  "caps": [
+   [
+    0.3,
+    "About 28% comes from silver mines."
+   ],
+   [
+    2.2,
+    "The rest is a by-product of other metals."
+   ],
+   [
+    4.0,
+    "So higher silver prices barely add supply."
+   ],
+   [
+    5.6,
+    "The market is in deficit for a sixth year."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s54q1",
+  "h": "Check yourself",
+  "q": "What share of silver comes from primary silver mines?",
+  "opts": [
+   "About 28%",
+   "About 90%",
+   "About 5%",
+   "About 100%"
+  ],
+  "ans": 0,
+  "why": [
+   "The lesson gives about 28%. That matches the case described.",
+   "90% is far too high. That does not match this case.",
+   "5% is too low. That does not match this case.",
+   "100% is not right. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s54q2",
+  "h": "Check yourself",
+  "q": "Why does supply barely respond to price?",
+  "opts": [
+   "Miners stop all digging at high prices",
+   "Silver is made in large factories",
+   "Most silver is a by-product",
+   "The regulator caps the total supply"
+  ],
+  "ans": 2,
+  "why": [
+   "Miners do not stop. The details here point elsewhere.",
+   "Silver is mined. That does not match this case.",
+   "By-product supply follows other metals.",
+   "No such cap exists. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s54q3",
+  "h": "Check yourself",
+  "q": "How many straight years of deficit does the lesson cite for 2026?",
+  "opts": [
+   "Two",
+   "Eleven",
+   "None",
+   "Six"
+  ],
+  "ans": 3,
+  "why": [
+   "Two is too few. That does not match this case.",
+   "Eleven is too many. It does not fit the facts given.",
+   "A deficit is cited. It does not answer what was asked.",
+   "It is the sixth straight year. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s54q4",
+  "h": "Check yourself",
+  "q": "What does a record year say about the next one?",
+  "opts": [
+   "That it must rise again next year",
+   "Nothing certain, prices can fall",
+   "That a fall is quite impossible",
+   "That supply must double next year"
+  ],
+  "ans": 1,
+  "why": [
+   "No such promise exists. It does not fit the facts given.",
+   "Past rallies do not promise more. This fits the facts given.",
+   "Falls remain possible. The details here point elsewhere.",
+   "Supply does not double. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "About 28% of silver is primary; most is a by-product.",
+   "So supply barely responds to price.",
+   "2025 was the best year since 1979; the market is in deficit."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client wants defence exposure. She may already have it. HAL and BEL are common holdings in large-cap and flexi-cap funds. Check what she owns before adding more.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Ways in",
+  "lines": [
+   [
+    "meena",
+    "How can clients get defence exposure?"
+   ],
+   [
+    "sikka",
+    "Defence index funds or ETFs, such as one tracking the Nifty India Defence index, thematic defence or manufacturing funds, or diversified funds. Check overlap before adding a defence fund to a large-cap portfolio. Thematic funds need a 3 to 5 year view, entered by SIP or STP."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Options for defence exposure",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "Index funds and ETFs",
+    "Nifty India Defence"
+   ],
+   [
+    "Thematic funds",
+    "defence or manufacturing; 3 to 5 year view"
+   ],
+   [
+    "Diversified funds",
+    "HAL and BEL are common holdings"
+   ],
+   [
+    "Before adding",
+    "check overlap; prefer SIP or STP entry"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s42q1",
+  "h": "Check yourself",
+  "q": "Which are common holdings in large-cap and flexi-cap funds?",
+  "opts": [
+   "Only unlisted startups",
+   "HAL and BEL",
+   "Only foreign shipyards",
+   "Only private jet makers"
+  ],
+  "ans": 1,
+  "why": [
+   "Unlisted firms are not held.",
+   "HAL and BEL are common holdings.",
+   "Foreign yards are not named.",
+   "Jet makers are not named."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s42q2",
+  "h": "Check yourself",
+  "q": "What should be checked before adding a defence fund?",
+  "opts": [
+   "The weather forecast for the week",
+   "The fund's office phone number",
+   "The brochure's cover colour",
+   "The overlap with existing funds"
+  ],
+  "ans": 3,
+  "why": [
+   "Weather is not relevant. The details here point elsewhere.",
+   "A phone number is not relevant. That does not match this case.",
+   "Colour is not relevant. It does not fit the facts given.",
+   "Overlap shows if it adds anything new. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s42q3",
+  "h": "Check yourself",
+  "q": "What view do thematic funds need?",
+  "opts": [
+   "3 to 5 years",
+   "3 to 5 days",
+   "3 to 5 hours",
+   "3 to 5 minutes"
+  ],
+  "ans": 0,
+  "why": [
+   "Themes need years to play out. That matches the case described.",
+   "Days are too short. It does not fit the facts given.",
+   "Hours are too short. It does not answer what was asked.",
+   "Minutes are too short. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s42q4",
+  "h": "Check yourself",
+  "q": "How is entry into a thematic fund best done?",
+  "opts": [
+   "Through one bet at a peak",
+   "Through borrowed money",
+   "Through SIP or STP",
+   "Through a stranger's tip"
+  ],
+  "ans": 2,
+  "why": [
+   "A single peak bet adds timing risk. It does not answer what was asked.",
+   "Borrowing adds risk. It does not answer what was asked.",
+   "Staggered entry reduces timing risk. This fits the facts given.",
+   "Tips are not a basis. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "HAL and BEL are already in many large-cap funds.",
+   "Check overlap before adding a defence fund.",
+   "Thematic funds need 3 to 5 years and SIP or STP entry."
+  ]
+ }
+]

@@ -1,0 +1,144 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client buys silver after a record year. Months later, she is down about 50%. To recover from a 50% fall, she needs a 100% gain. Silver is also a smaller market than gold, so it swings far more.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Silver's swing",
+  "lines": [
+   [
+    "meena",
+    "Why not buy what just rallied?"
+   ],
+   [
+    "sikka",
+    "Because buying near the top can lead to deep losses, and a 50% fall needs a 100% gain to recover. Precious metals belong as diversifiers in measured amounts, not as the main return engine, and not because they just rallied. Check the client understands the downside first."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "The maths of a fall, made up",
+  "vals": [
+   100,
+   50,
+   100
+  ],
+  "labels": [
+   "Peak",
+   "Fall",
+   "Recover"
+  ],
+  "big": "-50% needs +100%",
+  "small": "to get back to the peak",
+  "alt": "Bars of a price falling 50% and needing a 100% gain to recover",
+  "caps": [
+   [
+    0.3,
+    "Silver at ₹100 after a record year."
+   ],
+   [
+    2.2,
+    "It falls 50% to ₹50."
+   ],
+   [
+    4.0,
+    "To return to ₹100 it must double."
+   ],
+   [
+    5.6,
+    "Downside first, upside second."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s14q1",
+  "h": "Check yourself",
+  "q": "A price falls 50%. What gain is needed to recover?",
+  "opts": [
+   "100%",
+   "50%",
+   "25%",
+   "150%"
+  ],
+  "ans": 0,
+  "why": [
+   "From 50 back to 100 is a 100% gain. That matches the case described.",
+   "A 50% gain would reach only 75. That does not match this case.",
+   "A 25% gain would reach only 62.5. It does not fit the facts given.",
+   "A 150% gain overshoots. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s14q2",
+  "h": "Check yourself",
+  "q": "Why is silver more volatile than gold, as per the lesson?",
+  "opts": [
+   "It pays a regular interest income",
+   "It is regulated by SEBI directly",
+   "Industrial use and a smaller market",
+   "It never changes in price at all"
+  ],
+  "ans": 2,
+  "why": [
+   "Silver pays no interest. The details here point elsewhere.",
+   "Regulation does not explain volatility. That does not match this case.",
+   "Industrial use and a smaller market add swings.",
+   "Its price does change. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s14q3",
+  "h": "Check yourself",
+  "q": "What role do precious metals suit in a portfolio?",
+  "opts": [
+   "The main return engine in full",
+   "Diversifiers in measured amounts",
+   "The emergency fund of the client",
+   "A guaranteed income for the client"
+  ],
+  "ans": 1,
+  "why": [
+   "They are not the main engine. That does not match this case.",
+   "They suit a small, measured role. That matches the case described.",
+   "They are too volatile for emergency money.",
+   "No income is guaranteed. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s14q4",
+  "h": "Check yourself",
+  "q": "What should a good RM check before discussing upside?",
+  "opts": [
+   "The colour of the metal on show",
+   "The most recent rally in the price",
+   "The brochure from the local dealer",
+   "That she understands the downside"
+  ],
+  "ans": 3,
+  "why": [
+   "Colour is irrelevant. It does not fit the facts given.",
+   "A rally is not a reason. It does not answer what was asked.",
+   "A brochure is selective. The details here point elsewhere.",
+   "Downside understanding comes first. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver is precious and industrial, with a smaller market than gold, so it swings more.",
+   "A 50% fall needs a 100% gain to recover.",
+   "Hold metals as diversifiers, not return engines."
+  ]
+ }
+]

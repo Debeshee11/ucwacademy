@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two flexi-cap funds sit in the same category. One returned 18% last year, the other 11%. Is one manager clearly better? Not necessarily. The category sets the boundaries. The manager decides what happens inside them.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Same label, different portfolios",
+  "lines": [
+   [
+    "meena",
+    "Same category. Why different returns?"
+   ],
+   [
+    "sikka",
+    "Market-cap mix, sector weights, growth or value style, concentration, cash holdings and expense ratio. Style matters over cycles: a value fund may lag in a momentum market and lead when it reverses. Compare with the fund's own benchmark and peers over rolling periods."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Why two flexi-cap funds differ",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Market-cap mix",
+    "more mid caps in one"
+   ],
+   [
+    "Sector weights",
+    "more banks in the other"
+   ],
+   [
+    "Style",
+    "growth against value"
+   ],
+   [
+    "Costs and cash",
+    "expense ratio and cash holdings differ"
+   ]
+  ],
+  "note": "Short-term gaps do not prove one manager is better."
+ },
+ {
+  "k": "pick",
+  "id": "s7q1",
+  "h": "Check yourself",
+  "q": "Two flexi-cap funds have very different one-year returns. What is the fair first step?",
+  "opts": [
+   "Pick the higher return at once",
+   "Pick the lower return at once",
+   "Check portfolios, style and costs",
+   "Ignore the category label fully"
+  ],
+  "ans": 2,
+  "why": [
+   "One year of return is not proof.",
+   "Lower return is not a signal either.",
+   "Differences arise from mix, style and costs.",
+   "The category sets the boundaries."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s7q2",
+  "h": "Check yourself",
+  "q": "A value-oriented fund lags in a momentum-led market. What does this show?",
+  "opts": [
+   "Style matters over cycles",
+   "The manager is incompetent",
+   "The fund is illegal",
+   "The category is wrong"
+  ],
+  "ans": 0,
+  "why": [
+   "Value can lag and then lead when markets reverse.",
+   "A short lag does not prove poor skill.",
+   "There is nothing illegal. It does not fit the facts given.",
+   "The category is fine. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s7q3",
+  "h": "Check yourself",
+  "q": "What is the fair way to compare funds?",
+  "opts": [
+   "One fund's best year versus another's worst",
+   "By the fund name on the factsheet",
+   "By the colour of the factsheet cover",
+   "Benchmark and peers, rolling periods"
+  ],
+  "ans": 3,
+  "why": [
+   "Best against worst is unfair. It does not fit the facts given.",
+   "A name does not show results. It does not answer what was asked.",
+   "Colour shows nothing. It does not answer what was asked.",
+   "Rolling periods smooth out luck. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s7q4",
+  "h": "Check yourself",
+  "q": "Which of these can explain a return gap between two funds?",
+  "opts": [
+   "The logo of the fund house on it",
+   "Cash holdings and sector weights",
+   "The age of the fund house CEO",
+   "The office address of the fund house"
+  ],
+  "ans": 1,
+  "why": [
+   "A logo has no effect on returns.",
+   "Portfolio choices change returns.",
+   "CEO age is not a driver.",
+   "An address is not a driver."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The category sets boundaries. The manager decides inside them.",
+   "Mix, sector, style, concentration, cash and cost all differ.",
+   "Compare with the benchmark and peers over rolling periods."
+  ]
+ }
+]

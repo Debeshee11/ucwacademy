@@ -1,0 +1,275 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "A fund can return 6% a year while its investors earn far less. The fund did nothing wrong. The money came in late and went out early. That difference is the behaviour gap.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A client's regret",
+  "lines": [
+   [
+    "meena",
+    "My fund shows a 10-year gain of 78%, but my own statement shows a loss. How can that be?"
+   ],
+   [
+    "sikka",
+    "The fund's return and your return can differ, because your money went in and out at different times. Let me replay your ten years."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Two investors, one fund",
+  "ylab": "Money for every ₹100 put in",
+  "series": [
+   {
+    "name": "Held through",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     112,
+     128,
+     146,
+     118,
+     96,
+     104,
+     122,
+     141,
+     160,
+     178
+    ]
+   },
+   {
+    "name": "Added late, sold low",
+    "color": "#E8573D",
+    "vals": [
+     100.0,
+     112.0,
+     128.0,
+     123.0,
+     99.4,
+     80.9,
+     80.9,
+     80.9,
+     80.9,
+     80.9,
+     80.9
+    ]
+   }
+  ],
+  "alt": "Two lines: an investor who held through, and an investor who added after a rally and sold after a fall",
+  "caps": [
+   [
+    0.3,
+    "Made-up fund: ₹100 grows to ₹178 over ten years, with a fall in the middle. Gain: 78%, about 5.9% a year."
+   ],
+   [
+    2.6,
+    "Investor 1 puts in ₹1 lakh and holds. Investor 2 starts the same."
+   ],
+   [
+    4.2,
+    "After the rally, in year 3, Investor 2 adds another ₹1 lakh at NAV 146."
+   ],
+   [
+    6.4,
+    "After the fall, in year 5, Investor 2 sells at NAV 96 and stays out of the recovery."
+   ],
+   [
+    8.8,
+    "Per ₹100 put in: ₹178 for one, ₹81 for the other. Same fund."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The gap in rupees",
+  "a": "Held through",
+  "b": "Added late, sold low",
+  "rows": [
+   [
+    "₹100 put in became",
+    178,
+    81
+   ],
+   [
+    "Rupees put in, ₹ lakh",
+    1,
+    2
+   ],
+   [
+    "Rupees ended with, ₹ lakh",
+    1.78,
+    1.62
+   ]
+  ],
+  "alt": "Two bars: rupees put in and rupees ended with for an investor who held and one who chased",
+  "caps": [
+   [
+    0.3,
+    "Same fund, same ten years. The holder put in ₹1 lakh. The other investor put in ₹2 lakh."
+   ],
+   [
+    2.2,
+    "The second investor's ₹2 lakh bought units at ₹100 and ₹146, and was sold at ₹96."
+   ],
+   [
+    4.0,
+    "He ended with about ₹1.62 lakh. The holder ended with ₹1.78 lakh, from half the money."
+   ],
+   [
+    5.8,
+    "The fund earned 78%. His money lost about 19%. Timing, not the fund, made the gap."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What narrows the gap",
+  "title": "Closing the gap",
+  "stops": [
+   [
+    "A smoother fund gives fewer reasons to panic",
+    true
+   ],
+   [
+    "A SIP kept through a fall narrows the gap",
+    true
+   ],
+   [
+    "Waiting for an all-clear before restarting",
+    false
+   ],
+   [
+    "A fund's return is what every holder earns",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about behaviour and fund returns",
+  "caps": [
+   [
+    0.3,
+    "Volatile funds give more reasons to buy late and sell low, so they widen the gap. Smoother funds narrow it."
+   ],
+   [
+    3.0,
+    "A steady SIP through the fall, and an adviser who picks up the phone, close it further."
+   ],
+   [
+    5.5,
+    "Picking the perfect day or waiting for an all-clear usually widens it."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "March 2026",
+  "intro": "One data point the lesson cites, from industry data.",
+  "rows": [
+   [
+    "Fall in industry AUM in the month",
+    "about 10%"
+   ],
+   [
+    "Equity fund inflows that month",
+    "about ₹40,000 crore"
+   ],
+   [
+    "Reading",
+    "investors kept investing through the fall"
+   ]
+  ],
+  "note": "One month does not prove a habit has changed, but it points the right way. A client's own steadiness still needs hand-holding."
+ },
+ {
+  "k": "pick",
+  "id": "s72q1",
+  "h": "Check yourself",
+  "q": "A fund gained 78% over ten years. A client put ₹1 lakh in at the start, added ₹1 lakh after a rally and sold everything after a fall. She ended with less than she put in. What explains it?",
+  "opts": [
+   "The fund itself lost money, so the 78% gain shown on its factsheet must be wrong",
+   "Funds always pay lower returns to investors who add money after the first year",
+   "More of her money went in at high prices, and all of it was sold at a low",
+   "The 78% is a gross figure, and costs cut it below zero for any investor who adds money"
+  ],
+  "ans": 2,
+  "why": [
+   "The fund's own return was positive. It is her timing, not the fund's record, that made the loss.",
+   "Funds do not pay different returns to different buyers. They have one NAV, and her entry and exit points differ.",
+   "Her second ₹1 lakh bought at the peak and the sale came at the low, so her money lost while the fund gained.",
+   "Costs are modest next to a 78% gain. They cannot turn the result into a loss; her timing did."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s72q2",
+  "h": "Check yourself",
+  "q": "An investor bought 1,000 units at NAV 100 and 684.9 units at NAV 146. She sells all of them at NAV 96. About how much does she receive?",
+  "opts": [
+   "About ₹1.92 lakh, since the 96 NAV is 96% of the ₹2 lakh she put in",
+   "About ₹1.62 lakh, since 1,684.9 units are sold at a NAV of 96 each",
+   "About ₹2.00 lakh, since what she paid in is what she gets back",
+   "About ₹1.35 lakh, since the fall from 146 to 96 costs her a third"
+  ],
+  "ans": 1,
+  "why": [
+   "She bought part at 146, not 100, so the 96 NAV is not 96% of what she paid. Units, not rupees, are sold.",
+   "1,000 plus 684.9 is 1,684.9 units. Times ₹96 gives about ₹1,61,750, which is less than the ₹2 lakh she put in.",
+   "Selling at 96 returns less than she paid for units at 100 and 146. She gets units times the NAV.",
+   "The fall from 146 to 96 is about a third, but only on the second purchase. Her first units cost 100."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s72q3",
+  "h": "Check yourself",
+  "q": "A client with a multi-asset SIP wants to stop it after the fund falls 12% and restart when things feel safe. What is the adviser's best reply?",
+  "opts": [
+   "Agree, because a restart date can be chosen when the news turns calmer again",
+   "Agree, but advise a bigger SIP at restart to make up the lost months",
+   "Switch the fund to one with higher volatility, so that the gains come back faster",
+   "Show that stopping skips cheap units and restarts come late; keep the SIP"
+  ],
+  "ans": 3,
+  "why": [
+   "Calm news usually arrives after prices have already recovered, so restarts tend to come late.",
+   "A bigger SIP later buys at higher prices. It does not recover the cheap units that were skipped.",
+   "A more volatile fund gives a client more reasons to panic. It would widen the gap, not close it.",
+   "The gap comes from skipped buying and late returns. Keeping the SIP through the fall is the habit that closes it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s72q4",
+  "h": "Check yourself",
+  "q": "In March 2026, industry AUM fell about 10% yet equity fund inflows stayed near ₹40,000 crore. What does it suggest?",
+  "opts": [
+   "Investors kept investing through a fall, a good sign, though one month is no proof",
+   "It proves no investor sold any units that month and that the behaviour gap is gone",
+   "It means the market did not fall, since inflows could not stay high if prices were falling",
+   "It means funds that fall get more inflows, so a client should wait for a fall to invest"
+  ],
+  "ans": 0,
+  "why": [
+   "Steady inflows during a 10% AUM fall point to calmer behaviour. One month cannot show a lasting change.",
+   "Inflows staying high does not show that nobody sold. Some investors will always redeem in a fall.",
+   "The 10% AUM fall shows prices did drop. Inflows stayed because many investors kept going.",
+   "One month does not make a rule. Waiting for a fall to invest is timing again, which feeds the gap."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The fund's return and your return can differ. Buying after rallies and selling after falls creates the behaviour gap.",
+   "Volatile funds widen the gap; smoother funds narrow it. A SIP kept through falls narrows it further.",
+   "In March 2026 inflows held near ₹40,000 crore through a 10% AUM drop. Your hand-holding is what closes the gap."
+  ]
+ }
+]

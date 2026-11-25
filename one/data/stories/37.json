@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "When India buys a fighter jet, one company stands out: HAL. It makes fighters such as the Tejas, helicopters and aero-engines. The state-owned makers hold the largest share of production.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The DPSU heavyweights",
+  "lines": [
+   [
+    "meena",
+    "Who makes what?"
+   ],
+   [
+    "sikka",
+    "HAL: fighters, helicopters and aero-engines. BEL: radars, electronic warfare, air defence and communication. BDL: missiles such as Akash and Astra. Mazagon Dock: submarines and destroyers. Cochin Shipyard built INS Vikrant. Together DPSUs and other PSUs made about 76% of FY26 production."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Who makes what",
+  "intro": "Figures as given in the lesson; confirm the latest before quoting.",
+  "rows": [
+   [
+    "HAL",
+    "fighters (Tejas), helicopters, aero-engines"
+   ],
+   [
+    "BEL",
+    "radars, electronic warfare, air defence"
+   ],
+   [
+    "BDL and Mazagon Dock",
+    "missiles; submarines and destroyers"
+   ],
+   [
+    "Cochin Shipyard",
+    "built INS Vikrant"
+   ]
+  ],
+  "note": "DPSUs and other PSUs made about 76% of FY26 production."
+ },
+ {
+  "k": "pick",
+  "id": "s37q1",
+  "h": "Check yourself",
+  "q": "Which company is the biggest beneficiary of aircraft capex?",
+  "opts": [
+   "BDL",
+   "HAL",
+   "Mazagon Dock",
+   "Cochin Shipyard"
+  ],
+  "ans": 1,
+  "why": [
+   "BDL makes missiles. It does not answer what was asked.",
+   "HAL makes fighters, helicopters and engines.",
+   "Mazagon Dock builds submarines. That does not match this case.",
+   "Cochin built INS Vikrant. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s37q2",
+  "h": "Check yourself",
+  "q": "Who makes radars and electronic warfare systems?",
+  "opts": [
+   "BDL",
+   "HAL",
+   "Mazagon Dock",
+   "BEL"
+  ],
+  "ans": 3,
+  "why": [
+   "BDL focuses on missiles. The details here point elsewhere.",
+   "HAL focuses on aircraft. That does not match this case.",
+   "Mazagon builds ships. It does not fit the facts given.",
+   "BEL covers radars and electronic warfare."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s37q3",
+  "h": "Check yourself",
+  "q": "Which makes missiles such as Akash and Astra?",
+  "opts": [
+   "BDL",
+   "BEL",
+   "Cochin Shipyard",
+   "HAL"
+  ],
+  "ans": 0,
+  "why": [
+   "BDL makes these missiles.",
+   "BEL makes electronics.",
+   "Cochin builds ships.",
+   "HAL makes aircraft."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s37q4",
+  "h": "Check yourself",
+  "q": "What share of FY26 production came from DPSUs and other PSUs?",
+  "opts": [
+   "About 6%",
+   "About 36%",
+   "About 76%",
+   "Exactly 100%"
+  ],
+  "ans": 2,
+  "why": [
+   "6% is far too low. It does not fit the facts given.",
+   "36% is too low. It does not answer what was asked.",
+   "The lesson gives about 76%. This fits the facts given.",
+   "It is not all of it. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "HAL aircraft, BEL electronics, BDL missiles, Mazagon and Cochin ships.",
+   "DPSUs and other PSUs made about 76% of FY26 production.",
+   "Know who makes what."
+  ]
+ }
+]

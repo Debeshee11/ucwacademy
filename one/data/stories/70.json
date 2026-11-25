@@ -1,0 +1,262 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Two multi-asset funds can wear the same label and carry very different risks. The difference is written in the factsheet, in a few lines. Learn which lines to read before you pitch.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Before the pitch",
+  "lines": [
+   [
+    "rohan",
+    "Both funds say 65% equity in their one-page summary. Aren't they the same, then?"
+   ],
+   [
+    "sikka",
+    "Not yet. One line is gross equity. Another shows what is hedged. Let us open both factsheets side by side."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Same gross equity, different net",
+  "rows": [
+   {
+    "name": "Fund P: gross 65%, net 65%",
+    "segs": [
+     [
+      "Net equity 65%",
+      65,
+      "#3CC47A"
+     ],
+     [
+      "Debt 20%",
+      20,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15%",
+      15,
+      "#FFC531"
+     ]
+    ]
+   },
+   {
+    "name": "Fund Q: gross 65%, net 35%",
+    "segs": [
+     [
+      "Net equity 35%",
+      35,
+      "#3CC47A"
+     ],
+     [
+      "Arbitrage 30%",
+      30,
+      "#B8E8CC"
+     ],
+     [
+      "Debt 20%",
+      20,
+      "#8EC5FF"
+     ],
+     [
+      "Gold 15%",
+      15,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Two bars with the same 65 percent gross equity: one fully exposed, one with 30 percent hedged arbitrage",
+  "caps": [
+   [
+    0.2,
+    "Fund P and Fund Q both show gross equity of 65%. Gross counts arbitrage positions too."
+   ],
+   [
+    1.2,
+    "In Fund P, all 65% is real market exposure. Net equity: 65%."
+   ],
+   [
+    2.3,
+    "In Fund Q, 30% is hedged arbitrage: a stock bought, the same stock sold in futures. Net equity: 35%."
+   ],
+   [
+    3.7,
+    "Net equity is what moves with the market. Same gross, nearly half the exposure."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The debt sleeve: two numbers",
+  "a": "Longer debt sleeve",
+  "b": "Shorter debt sleeve",
+  "rows": [
+   [
+    "YTM, % a year",
+    7.6,
+    7.0
+   ],
+   [
+    "Modified duration, years",
+    4.0,
+    1.0
+   ],
+   [
+    "Price dip if yields +0.5 point, %",
+    2.0,
+    0.5
+   ]
+  ],
+  "alt": "Two bars comparing yield to maturity, duration, and price dip if yields rise by half a point",
+  "caps": [
+   [
+    0.3,
+    "For the debt sleeve read two numbers. YTM: the yield the bonds offer if held to maturity."
+   ],
+   [
+    2.2,
+    "Modified duration: how sensitive the price is to interest rates, in years."
+   ],
+   [
+    4.4,
+    "If yields rise 0.5 point, the price dips about duration times 0.5: about 2% at four years, 0.5% at one."
+   ],
+   [
+    6.0,
+    "The longer sleeve offers 0.6 point more yield, and takes four times the dip."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A factsheet, line by line",
+  "intro": "A made-up factsheet for a multi-asset fund. What each line tells you.",
+  "rows": [
+   [
+    "Equity (gross)",
+    "65%"
+   ],
+   [
+    "of which arbitrage (hedged)",
+    "30%"
+   ],
+   [
+    "Net equity",
+    "35%"
+   ],
+   [
+    "Debt",
+    "20%"
+   ],
+   [
+    "Gold",
+    "12%"
+   ],
+   [
+    "Silver",
+    "3%"
+   ],
+   [
+    "REIT / InvIT",
+    "0%"
+   ],
+   [
+    "YTM / modified duration",
+    "7.4% / 2.1 years"
+   ]
+  ],
+  "note": "Gross 65% plus debt 20% plus gold and silver 15% make 100%. Net equity is gross minus the hedged part. Funds differ widely in their commodity weights, so compare them."
+ },
+ {
+  "k": "pick",
+  "id": "s70q1",
+  "h": "Check yourself",
+  "q": "Fund P and Fund Q both show gross equity of 65%. Q has 30% in hedged arbitrage. Equity markets fall 20%. Roughly how much does the equity part cost each fund's NAV?",
+  "opts": [
+   "About 13 points for both, since both funds show the same gross equity figure",
+   "About 13 points for P and 7 points for Q, because net equity is 65% and 35%",
+   "About 7 points for both, since the hedge protects every fund's equity part",
+   "About 7 points for P and 13 points for Q, since arbitrage makes a fund riskier"
+  ],
+  "ans": 1,
+  "why": [
+   "Gross includes hedged positions, so it overstates Q's exposure to a market fall. Net equity decides.",
+   "Hedged arbitrage does not move with the market. P's 65% times 20% is 13; Q's 35% times 20% is 7.",
+   "Only Q holds the hedge. P has no arbitrage to offset anything, so it takes the full 13 points.",
+   "Arbitrage is hedged. It adds little market risk, which is why Q's exposure is lower, not higher."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s70q2",
+  "h": "Check yourself",
+  "q": "A client wants about a third of her fund exposed to the equity market. Which factsheet line shows that?",
+  "opts": [
+   "Gross equity, because it adds up everything the fund holds in equity shares",
+   "YTM, because it measures how much of the fund is invested in the market",
+   "Fund size, because a large fund holds more equity than a smaller one does",
+   "Net equity, since it removes hedged arbitrage and shows real exposure"
+  ],
+  "ans": 3,
+  "why": [
+   "Gross includes hedged positions. A fund with a 65% gross may carry far less market exposure.",
+   "YTM describes the yield of the debt sleeve. It says nothing about the share held in equity.",
+   "Size says how much money the fund holds, not how it splits between equity and other assets.",
+   "Net equity is gross minus the hedged arbitrage, so it is what actually moves with the market."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s70q3",
+  "h": "Check yourself",
+  "q": "Sleeve B has YTM 7.6% and modified duration 4.0 years. Sleeve A has 7.0% and 1.0 years. Yields rise 0.5 point. About how much does B's price fall?",
+  "opts": [
+   "About 2.0%, since duration of 4.0 times a 0.5 point rise gives 2.0",
+   "About 0.5%, since that is the size of the rise in yields themselves",
+   "About 0.125%, since 0.5 is divided by the duration of 4.0 years",
+   "About 8%, since 4.0 years divided by 0.5 gives the percentage fall"
+  ],
+  "ans": 0,
+  "why": [
+   "Price change is roughly duration times the yield change: 4.0 times 0.5 is 2.0%. A's fall is about 0.5%.",
+   "0.5% is the dip for A, with one year of duration. B's longer duration multiplies the move four times.",
+   "Dividing by duration reverses the logic. Longer duration makes the price move more, not less.",
+   "Dividing 4.0 by 0.5 gives 8, but duration multiplies the yield change. The right figure is 2.0%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s70q4",
+  "h": "Check yourself",
+  "q": "Fund X holds gold 12% and silver 3%. Fund Y holds gold 25% and silver 10%. A client says all multi-asset funds hold about the same commodities. What is the fair reply?",
+  "opts": [
+   "Yes, since SEBI fixes the same commodity weights for every multi-asset fund",
+   "Yes, because only gold counts and every fund holds roughly the same amount",
+   "No. Weights differ widely, 15% in X and 35% in Y, so their rides will differ",
+   "No, because Y holds silver and silver always rises when gold falls in the market"
+  ],
+  "ans": 2,
+  "why": [
+   "SEBI sets a 10% minimum per asset class, not a fixed commodity weight. Funds choose their own.",
+   "Silver and gold are both commodity engines. Their weights differ widely, so it matters how much of each.",
+   "X has 15% in gold and silver, Y has 35%. Y leans far more on commodities, so it responds to them far more.",
+   "Silver has no rule of rising when gold falls. Calling it a fixed pattern would repeat the same error."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Read gross and net equity: net removes hedged arbitrage and shows the real market exposure.",
+   "For the debt sleeve read YTM (the yield) and modified duration (the rate sensitivity). A price dip is about duration times the rise in yields.",
+   "Commodity weights range widely between funds. Open the factsheet before you pitch."
+  ]
+ }
+]

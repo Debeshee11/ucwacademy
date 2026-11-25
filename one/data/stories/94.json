@@ -1,0 +1,179 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "India has five listed REITs. Together they paid out more than ₹8,900 crore to over 4.25 lakh unitholders in FY2026. Their buildings cover more than 187 million sq ft. Yet they are not alike.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Five names",
+  "lines": [
+   [
+    "meena",
+    "Which one should I pick?"
+   ],
+   [
+    "sikka",
+    "That is not what this lesson is for. Learn what each holds. Most hold office and business parks. One holds retail malls. Each differs in tenants, cities, leases and debt. Read the latest investor presentation, not just the yield."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The five listed REITs",
+  "intro": "As per the lesson text. Check current SEBI rules and REIT disclosures.",
+  "rows": [
+   [
+    "Embassy Office Parks REIT",
+    "office parks"
+   ],
+   [
+    "Mindspace Business Parks REIT",
+    "business parks"
+   ],
+   [
+    "Brookfield India Real Estate Trust",
+    "office assets"
+   ],
+   [
+    "Nexus Select Trust",
+    "retail malls"
+   ],
+   [
+    "Knowledge Realty Trust",
+    "office and business parks"
+   ]
+  ],
+  "note": "Combined: ₹8,900 crore+ distributed in FY2026 (Indian REITs Association data, as reported in May 2026). Gross asset value over ₹2.72 lakh crore in March 2026."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "India's listed REITs",
+  "stops": [
+   [
+    "There are five listed REITs in India",
+    true
+   ],
+   [
+    "All five hold only retail malls",
+    false
+   ],
+   [
+    "Nexus Select Trust holds retail malls",
+    true
+   ],
+   [
+    "The yield alone tells you everything",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "As per the lesson."
+   ],
+   [
+    2.2,
+    "Most hold office and business parks."
+   ],
+   [
+    4.0,
+    "The others mostly hold offices."
+   ],
+   [
+    5.6,
+    "Tenants, cities and debt all differ."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s94q1",
+  "h": "Check yourself",
+  "q": "Which listed REIT holds retail malls, as per the lesson?",
+  "opts": [
+   "Nexus Select Trust",
+   "Embassy Office Parks REIT",
+   "Mindspace Business Parks REIT",
+   "Brookfield India Real Estate Trust"
+  ],
+  "ans": 0,
+  "why": [
+   "Nexus Select Trust holds retail malls.",
+   "Embassy holds office parks.",
+   "Mindspace holds business parks.",
+   "Brookfield holds office assets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s94q2",
+  "h": "Check yourself",
+  "q": "How many REITs are listed in India, as per the lesson?",
+  "opts": [
+   "Fifty",
+   "One",
+   "Five",
+   "Five hundred"
+  ],
+  "ans": 2,
+  "why": [
+   "Fifty is far too many. The details here point elsewhere.",
+   "More than one is listed. That does not match this case.",
+   "The lesson lists five listed REITs. This fits the facts given.",
+   "Five hundred is far too many. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s94q3",
+  "h": "Check yourself",
+  "q": "About how much did the five REITs distribute in FY2026?",
+  "opts": [
+   "About ₹89 crore",
+   "About ₹2.72 lakh crore",
+   "About ₹4.25 lakh crore",
+   "More than ₹8,900 crore"
+  ],
+  "ans": 3,
+  "why": [
+   "₹89 crore is far too small. That does not match this case.",
+   "₹2.72 lakh crore is the gross asset value. It does not answer what was asked.",
+   "4.25 lakh is the number of unitholders. It does not answer what was asked.",
+   "The lesson gives more than ₹8,900 crore. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s94q4",
+  "h": "Check yourself",
+  "q": "What should an investor read besides the yield?",
+  "opts": [
+   "Only the unit price chart",
+   "The latest investor deck",
+   "Only a friend's opinion",
+   "Only a news headline"
+  ],
+  "ans": 1,
+  "why": [
+   "A chart alone hides the portfolio.",
+   "It shows tenants, leases and debt.",
+   "An opinion is not a disclosure.",
+   "A headline is not a disclosure."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Five listed REITs: Embassy, Mindspace, Brookfield, Nexus Select, Knowledge Realty.",
+   "Most hold offices. Nexus Select holds malls.",
+   "Read the investor presentation, not just the yield."
+  ]
+ }
+]

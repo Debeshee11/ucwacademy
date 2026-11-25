@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A category does well for a year and money pours in. Next year it falls and money flows out. Investors in it earn less than the fund itself did. That gap is real and has a name: the behaviour gap.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Late in, early out",
+  "lines": [
+   [
+    "meena",
+    "The fund returned 18%. Why did investors earn less?"
+   ],
+   [
+    "sikka",
+    "Most of the money came in after the good run and left after the bad one. The fund's return is one thing. What its average investor earned is another."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Fund return",
+  "b": "Investor return",
+  "rows": [
+   [
+    "Return in the year (%)",
+    18,
+    11
+   ]
+  ],
+  "h": "Made-up example",
+  "alt": "Two bars showing the fund's return above the average investor's return",
+  "caps": [
+   [
+    0.3,
+    "The fund returned 18% over the period."
+   ],
+   [
+    2.2,
+    "Money arrived late, after most of the gain."
+   ],
+   [
+    4.0,
+    "Some investors left during the fall."
+   ],
+   [
+    5.6,
+    "The average investor earned less: the behaviour gap."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Performance chasing",
+  "stops": [
+   [
+    "Chasing buys after much of the gain has happened",
+    true
+   ],
+   [
+    "The behaviour gap is usually positive",
+    false
+   ],
+   [
+    "Heavy category flows show what investors want",
+    true
+   ],
+   [
+    "Flows show what suits every client",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Recent returns look vivid, so people buy late."
+   ],
+   [
+    2.2,
+    "It is usually negative for investors."
+   ],
+   [
+    4.0,
+    "Flows are a sentiment indicator."
+   ],
+   [
+    5.6,
+    "Suitability depends on each client's risk and horizon."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s3q1",
+  "h": "Check yourself",
+  "q": "What is the behaviour gap?",
+  "opts": [
+   "The gap between two funds' fees",
+   "The gap between SIP and lump sum",
+   "The gap between buy and sell prices",
+   "Fund return less investors' return"
+  ],
+  "ans": 3,
+  "why": [
+   "Fees are a different matter from behaviour. It does not answer what was asked.",
+   "SIP versus lump sum is a method question. The details here point elsewhere.",
+   "Buy and sell prices relate to dealing, not behaviour. That does not match this case.",
+   "It is the difference between the fund and its average investor."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s3q2",
+  "h": "Check yourself",
+  "q": "A category tops the one-year chart. A client wants to move all her money into it. What does the RM do?",
+  "opts": [
+   "Move everything today, as she asks",
+   "Check it against her risk and horizon",
+   "Refuse to discuss any category now",
+   "Predict that the category will fall"
+  ],
+  "ans": 1,
+  "why": [
+   "Acting only on recent returns is performance chasing.",
+   "Allocation should fit her risk tolerance and horizon.",
+   "Refusing to discuss it helps no one. It does not fit the facts given.",
+   "No one can predict that with confidence. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s3q3",
+  "h": "Check yourself",
+  "q": "Heavy flows into a category tell the RM what?",
+  "opts": [
+   "That the category will keep rising",
+   "That it suits every client",
+   "What investors currently want",
+   "That it is safe from losses"
+  ],
+  "ans": 2,
+  "why": [
+   "Flows do not forecast future returns.",
+   "Suitability is client by client.",
+   "Flows are a sentiment indicator.",
+   "No category is safe from losses."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s3q4",
+  "h": "Check yourself",
+  "q": "What is the RM's best role in a hot category?",
+  "opts": [
+   "Help clients stay invested in falls",
+   "Forecast which category wins next",
+   "Push clients into whatever is rising",
+   "Tell clients to exit after any fall"
+  ],
+  "ans": 0,
+  "why": [
+   "The aim is a fit allocation that clients can stay with.",
+   "Forecasting winners is not a reliable skill.",
+   "Pushing into what is rising is chasing.",
+   "Exiting after each fall locks in the gap."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Chasing means buying what just did well, often late.",
+   "The behaviour gap is fund return less investor return.",
+   "Fit allocation to risk and horizon, so clients can stay put."
+  ]
+ }
+]

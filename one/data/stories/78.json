@@ -1,0 +1,217 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "Fund P grew 29% a year over the last three years. Fund Q managed 13%. An adviser who stops at that line recommends P. An adviser who rolls the window sees why that can be a mistake.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The screenshot",
+  "lines": [
+   [
+    "rohan",
+    "Fund P gave 29% a year for the last three years. Why would I not just buy that one?"
+   ],
+   [
+    "sikka",
+    "A three-year return depends on which three years you pick. Let us slide the window along the whole record and watch."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Slide the window",
+  "alt": "Bars showing what 100 rupees became in fund P over eight different three-year windows",
+  "caps": [
+   [
+    0.3,
+    "Made-up star fund P. Each bar is what ₹100 became over three years, for a window ending that year."
+   ],
+   [
+    2.6,
+    "Windows ending in years 3 to 5 gave ₹113, ₹113 and a loss, ₹94."
+   ],
+   [
+    6.0,
+    "Only the last window shows ₹216. A pitch picks the best end date and calls it the record."
+   ],
+   [
+    8.2,
+    "Rolling windows show the whole range, not the flattering corner."
+   ]
+  ],
+  "vals": [
+   113,
+   113,
+   94,
+   132,
+   110,
+   135,
+   154,
+   216
+  ],
+  "labels": [
+   "Y3",
+   "Y4",
+   "Y5",
+   "Y6",
+   "Y7",
+   "Y8",
+   "Y9",
+   "Y10"
+  ],
+  "big": "₹94 to ₹216, same fund",
+  "small": "Only the end date changed"
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The whole record, rolled",
+  "alt": "Bars comparing star fund P and steady fund Q on the latest window, the median window and the share of windows beating the benchmark",
+  "caps": [
+   [
+    0.3,
+    "Now roll a three-year window one month at a time across ten years: 85 windows."
+   ],
+   [
+    2.4,
+    "On the latest window P wins easily. The typical window says otherwise: P 5.8%, Q 10.1%."
+   ],
+   [
+    4.6,
+    "Windows beating the benchmark: P 28%, which is 24 of 85. Q 79%, which is 67 of 85."
+   ],
+   [
+    6.9,
+    "Repeatable beats spectacular. One hot streak is not yet a process."
+   ]
+  ],
+  "a": "Star fund P",
+  "b": "Steady fund Q",
+  "rows": [
+   [
+    "Latest 3 years (% a year)",
+    29.3,
+    13.0
+   ],
+   [
+    "Median window (% a year)",
+    5.8,
+    10.1
+   ],
+   [
+    "Share beating benchmark (%)",
+    28,
+    79
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A ₹10,000 SIP over the same ten years",
+  "intro": "Lump-sum return a year, and SIP XIRR a year, on made-up paths.",
+  "rows": [
+   [
+    "Benchmark",
+    "10.6%  and  10.2%"
+   ],
+   [
+    "Fund P",
+    "11.4%  and  14.4%"
+   ],
+   [
+    "Fund Q",
+    "11.0%  and  10.6%"
+   ]
+  ],
+  "note": "P's late surge hit a SIP corpus that had already grown, so its XIRR looks far better than its lump sum. XIRR also depends on the end date."
+ },
+ {
+  "k": "pick",
+  "id": "s78q1",
+  "h": "Check yourself",
+  "q": "A pitch says Fund P returned 29% a year over three years against 12.6% for its benchmark. Rolling returns over ten years show P beat the benchmark in only 24 of 85 three-year windows. What is the fair reading?",
+  "opts": [
+   "P's record is excellent, since the latest window matters most",
+   "P has failed, because it lost to the benchmark in most windows",
+   "P's edge rests on a late burst, so one window flatters it",
+   "The 85 windows prove that P's average return is below 5%"
+  ],
+  "ans": 2,
+  "why": [
+   "Recency is one window. The same ten years show P behind its benchmark in about seven windows out of every ten.",
+   "P still ended ahead over ten years, so failed overreaches. Its edge is concentrated in one stretch, not absent.",
+   "The headline sits on its best window. Rolling shows the gains came in one stretch, so repeatability is unproven.",
+   "Window counts show how often P won, not its average. P's median window was 5.8%, a different figure altogether."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s78q2",
+  "h": "Check yourself",
+  "q": "A rival says Fund Z beat its benchmark in 80% of 85 rolling 3-year windows from ten years of monthly data, so that is 68 independent wins. What is wrong with that claim?",
+  "opts": [
+   "Windows overlap; ten years hold about three separate spans",
+   "Rolling windows can only be built from yearly data, never monthly",
+   "Eighty percent is too low a share to count as consistent",
+   "Three-year windows are meaningless; only one-year windows count"
+  ],
+  "ans": 0,
+  "why": [
+   "Each window shares 35 of its 36 months with its neighbour, so the 68 wins are near-copies and the evidence is thin.",
+   "Monthly steps are normal practice. The weakness of the count is overlap, not the size of the step between windows.",
+   "A high share is useful, but the number of independent spans matters more than the percentage the windows produce.",
+   "Three-year windows suit many investors' holding periods. The issue is how many separate spans exist, not their length."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s78q3",
+  "h": "Check yourself",
+  "q": "Over the same ten years, Fund P shows a lump-sum return of 11.4% a year but an SIP XIRR of 14.4%. The benchmark shows 10.6% and 10.2%. Why is P's SIP figure so much higher?",
+  "opts": [
+   "SIPs always earn more than lump sums in every fund and market",
+   "P charges lower costs to SIP investors than to lump-sum ones",
+   "XIRR counts each instalment at its own date, so it is overstated",
+   "P surged late, when a big SIP corpus was already invested"
+  ],
+  "ans": 3,
+  "why": [
+   "SIP and lump sum differ with the path. A fund that falls late would show the reverse, so no such rule exists.",
+   "Costs are charged on the fund, not on how the money arrived. SIP and lump-sum holders pay the same expense ratio.",
+   "XIRR dates each instalment, which is the correct way to measure a SIP. The gap comes from when the gains arrived.",
+   "A late surge hits every unit bought so far, so SIP XIRR rises more. It still depends on the end date, so check rolling."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s78q4",
+  "h": "Check yourself",
+  "q": "A client will invest for at least seven years. Fund R beat its benchmark in 88% of rolling 1-year windows but only 52% of rolling 5-year windows. Which figure should guide the choice?",
+  "opts": [
+   "The 1-year figure, as it has far more windows to learn from",
+   "The 5-year figure, since it matches her holding period",
+   "The better of the two, which shows what the fund can do",
+   "The average of the two, which gives a balanced overall view"
+  ],
+  "ans": 1,
+  "why": [
+   "One-year windows are noisier and reflect luck as much as skill. A client holding for seven years lives through longer windows.",
+   "Match the window to the holding period. For a seven-year investor, the 5-year result is closest to what she will experience.",
+   "Choosing the better number is the cherry-picking that rolling returns are meant to stop, now done across window lengths.",
+   "Averaging mixes two horizons and fits neither. Choose the window first, from the client's holding period, then read it."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A point-to-point return depends on its dates. Roll the window to see every start and end.",
+   "Read the share of rolling windows beating the benchmark, using a window as long as the client's holding period.",
+   "Overlapping windows are not independent wins, and SIP XIRR depends on the end date too."
+  ]
+ }
+]

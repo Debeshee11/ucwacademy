@@ -1,0 +1,289 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Three kinds of hybrid fund get mixed up: balanced advantage, multi-asset and aggressive hybrid. They all hold equity and debt. What differs is who moves the equity, and whether gold is there.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan compares",
+  "lines": [
+   [
+    "rohan",
+    "My bank pushes a balanced advantage fund. A friend swears by multi-asset. A third person says aggressive hybrid. Aren't they the same thing?"
+   ],
+   [
+    "sikka",
+    "They sit in the same family but they behave differently. Start with what each one is allowed to hold."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What each one holds",
+  "rows": [
+   {
+    "name": "Aggressive hybrid",
+    "segs": [
+     [
+      "Equity, 65% or more",
+      65,
+      "#3CC47A"
+     ],
+     [
+      "Open",
+      15,
+      "#fff",
+      true
+     ],
+     [
+      "Debt 20%",
+      20,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Balanced advantage (BAF)",
+    "segs": [
+     [
+      "Equity moves with valuations, rest is debt",
+      100,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Multi-asset",
+    "segs": [
+     [
+      "Equity",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "Debt",
+      10,
+      "#8EC5FF"
+     ],
+     [
+      "Gold",
+      10,
+      "#FFC531"
+     ],
+     [
+      "Open choice",
+      70,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars: aggressive hybrid, balanced advantage and multi-asset",
+  "caps": [
+   [
+    0.2,
+    "Aggressive hybrid: equity stays between 65% and 80%. The rest is mostly debt. The mix barely moves."
+   ],
+   [
+    2.0,
+    "Balanced advantage (BAF): a model moves between equity and debt as valuations change."
+   ],
+   [
+    3.6,
+    "Multi-asset: at least 10% in each of three classes, so gold or silver is a third engine."
+   ],
+   [
+    5.2,
+    "Same family. Three different answers to: what should I be protected from?"
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "One made-up decade, three styles",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Aggressive hybrid",
+    "color": "#E8573D",
+    "vals": [
+     100.0,
+     115.3,
+     138.0,
+     167.3,
+     192.9,
+     155.7,
+     149.1,
+     176.3,
+     203.2,
+     229.6,
+     254.3
+    ]
+   },
+   {
+    "name": "BAF",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     113.1,
+     131.5,
+     150.7,
+     167.9,
+     147.4,
+     141.1,
+     162.6,
+     181.1,
+     201.8,
+     221.5
+    ]
+   },
+   {
+    "name": "Multi-asset",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     110.5,
+     125.4,
+     144.1,
+     158.4,
+     153.5,
+     160.1,
+     178.9,
+     192.4,
+     210.8,
+     230.4
+    ]
+   }
+  ],
+  "alt": "Three lines for an aggressive hybrid, a balanced advantage fund and a multi-asset fund across ten made-up years",
+  "caps": [
+   [
+    0.3,
+    "Made-up decade, not real data. Equity rises four years, falls hard in year 5, then recovers."
+   ],
+   [
+    3.0,
+    "Aggressive hybrid keeps about 75% in equity all along. It rises most and falls most."
+   ],
+   [
+    5.4,
+    "The BAF follows a simple rule: less equity after a big rally, more after a fall. It lags early, falls less."
+   ],
+   [
+    8.0,
+    "Multi-asset owns gold, which rose in years 5 and 6. Its deepest fall: about 3%, against 23% for the hybrid."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Size is not a score",
+  "intro": "Assets under management, April 2026, as quoted in industry data for this lesson.",
+  "rows": [
+   [
+    "Balanced advantage / dynamic",
+    "about ₹3.19 lakh crore"
+   ],
+   [
+    "Multi-asset",
+    "about ₹1.87 lakh crore"
+   ],
+   [
+    "Ratio",
+    "BAF about 1.71 times larger"
+   ]
+  ],
+  "note": "Size shows how many investors chose a style. It does not show which style suits a client. Next, what to ask."
+ },
+ {
+  "k": "pick",
+  "id": "s65q1",
+  "h": "Check yourself",
+  "q": "A client worries that equity valuations look stretched. She wants the fund itself to cut equity when prices look rich, and she does not want gold. Which category fits her request?",
+  "opts": [
+   "Aggressive hybrid, because it keeps its equity between 65% and 80% when markets look rich",
+   "Balanced advantage, because its model moves between equity and debt as valuations change",
+   "Multi-asset, because it holds gold and so protects her no matter how valuations look",
+   "An index fund, because it follows an index that adjusts its weights by valuation each year"
+  ],
+  "ans": 1,
+  "why": [
+   "An aggressive hybrid cannot go below 65% equity. It will not cut equity when prices look rich.",
+   "A BAF is built to raise or cut equity using valuation models, usually without gold. That matches what she asked for.",
+   "Multi-asset adds gold, which she ruled out, and its equity share is set by its process, not valuation alone.",
+   "A plain index fund tracks its index at full weight. It does not move out of equity when prices look rich."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s65q2",
+  "h": "Check yourself",
+  "q": "Equity falls 30% in a year. A client holds an aggressive hybrid fund and expects the manager to move most of it into debt. What is true?",
+  "opts": [
+   "It can, since an aggressive hybrid manager may move the whole fund to debt in a fall",
+   "It will not fall, because the debt part rises by the same amount that equity loses",
+   "It will fall less than a multi-asset fund, because it holds no gold at all in it",
+   "It cannot: the category holds 65% to 80% in equity, so much of the fall reaches it"
+  ],
+  "ans": 3,
+  "why": [
+   "The category must keep at least 65% in equity. A manager cannot move the whole fund to debt.",
+   "Debt gains are small and steady. They do not rise to cancel an equity fall of 30%.",
+   "Having no gold does not make it safer. A larger equity share makes the fall bigger, not smaller.",
+   "The 65% floor on equity keeps most of the fund in the market, so a large equity fall feeds through to the NAV."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s65q3",
+  "h": "Check yourself",
+  "q": "A distributor says BAF funds hold ₹3.19 lakh crore against multi-asset's ₹1.87 lakh crore, so BAF must be the better fund for everyone. How should you reply?",
+  "opts": [
+   "Size shows how many chose it; the better fund depends on what the client wants",
+   "Agree, since a larger category has proved itself with more investors than a smaller one",
+   "Disagree, because a smaller category always has the better managers in it",
+   "Agree, but only if the BAF has no gold, which is what makes funds safer"
+  ],
+  "ans": 0,
+  "why": [
+   "Assets under management count investors' choices. Suitability comes from the client's needs, not from which pile is larger.",
+   "Size is not proof of quality or fit. Many investors can choose a style that still does not suit this client.",
+   "Smaller categories are not better by default. Size says nothing either way about managers.",
+   "Lacking gold is a design choice, not a safety mark, and size still does not decide fit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s65q4",
+  "h": "Check yourself",
+  "q": "In the made-up decade, multi-asset's deepest fall was about 3% and the aggressive hybrid's about 23%. What best explains the gap?",
+  "opts": [
+   "The multi-asset manager sold equity just before year 5 because he saw the fall coming",
+   "The multi-asset fund holds no equity, so it cannot lose anything when equity falls",
+   "Gold rose while equity fell, and it held about 40% equity against 75%",
+   "Multi-asset funds are barred by SEBI from falling more than 5% in a year at any time"
+  ],
+  "ans": 2,
+  "why": [
+   "The fund held a fixed mix and rebalanced. Nothing in the story needs a forecast of year 5.",
+   "It still held about 40% equity, so it did fall a little. Holding less equity is not holding none.",
+   "A smaller equity share and an asset that rose in the fall both cut the loss. No forecast was needed.",
+   "No rule limits yearly falls. Even a well-mixed fund can lose money, only in smaller amounts."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Aggressive hybrid keeps 65% to 80% in equity. BAF moves equity and debt with a valuation model. Multi-asset adds gold or silver as a third engine.",
+   "Pick by what you want protection from: stretched valuations (BAF), a fall in equity and debt together (gold), or just a steady equity tilt (aggressive).",
+   "Size is not a score: BAF is larger than multi-asset, but that does not make it right for every client."
+  ]
+ }
+]

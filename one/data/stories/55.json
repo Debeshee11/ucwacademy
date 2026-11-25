@@ -1,0 +1,144 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Silver is more than a metal for jewellery. Industrial uses are nearly 60% of demand: electronics, solar, EVs and AI hardware. Industry is the big buyer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who buys silver",
+  "lines": [
+   [
+    "meena",
+    "Is solar demand rising?"
+   ],
+   [
+    "sikka",
+    "Installations grow, but solar silver demand is expected to fall about 19% in 2026 due to thrifting, which means using less silver per panel. Physical investment in bars and coins is expected to rise about 20%. Indian investment demand is a highlighted growth driver."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Silver demand, 2026 as in the lesson",
+  "vals": [
+   60,
+   19,
+   20
+  ],
+  "labels": [
+   "Industry",
+   "Solar",
+   "Coins"
+  ],
+  "big": "nearly 60% industrial",
+  "small": "share and expected changes, %",
+  "alt": "Bars of the industrial share and expected changes in demand",
+  "caps": [
+   [
+    0.3,
+    "Industry is nearly 60% of demand."
+   ],
+   [
+    2.2,
+    "Solar silver is expected to fall about 19%."
+   ],
+   [
+    4.0,
+    "Bars and coins are expected to rise about 20%."
+   ],
+   [
+    5.6,
+    "Indian investment demand is a growth driver."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s55q1",
+  "h": "Check yourself",
+  "q": "What share of silver demand is industrial?",
+  "opts": [
+   "About 5%",
+   "About 90%",
+   "Nearly 60%",
+   "Exactly 0%"
+  ],
+  "ans": 2,
+  "why": [
+   "5% is too low. It does not answer what was asked.",
+   "90% is too high. The details here point elsewhere.",
+   "The lesson says nearly 60%. That matches the case described.",
+   "It is not zero. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s55q2",
+  "h": "Check yourself",
+  "q": "Why can solar silver demand fall while installations grow?",
+  "opts": [
+   "Thrifting uses less silver per panel",
+   "Panels stop using any electricity",
+   "Solar was banned across India",
+   "Silver turned unsafe for panels"
+  ],
+  "ans": 0,
+  "why": [
+   "Using less silver per panel cuts demand.",
+   "Panels still work. That does not match this case.",
+   "No ban is stated. It does not fit the facts given.",
+   "Safety is not the reason. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s55q3",
+  "h": "Check yourself",
+  "q": "What is expected for physical bars and coins in 2026?",
+  "opts": [
+   "A fall of about 19%",
+   "No change at all",
+   "A full ban",
+   "A rise of about 20%"
+  ],
+  "ans": 3,
+  "why": [
+   "19% is the solar fall. That does not match this case.",
+   "A change is expected. It does not fit the facts given.",
+   "No ban is stated. It does not answer what was asked.",
+   "The lesson expects a rise of about 20%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s55q4",
+  "h": "Check yourself",
+  "q": "Which demand is a highlighted growth driver?",
+  "opts": [
+   "Demand from film cameras",
+   "Indian investment demand",
+   "Demand from coin shops abroad",
+   "Demand from old cutlery"
+  ],
+  "ans": 1,
+  "why": [
+   "Cameras are not highlighted. It does not fit the facts given.",
+   "The lesson highlights Indian investment demand.",
+   "Foreign shops are not highlighted. The details here point elsewhere.",
+   "Cutlery is not highlighted. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Industrial uses are nearly 60% of silver demand.",
+   "Solar silver is expected down about 19% on thrifting.",
+   "Bars and coins up about 20%."
+  ]
+ }
+]

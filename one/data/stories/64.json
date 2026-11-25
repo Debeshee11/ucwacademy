@@ -1,0 +1,263 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "One famous study says the mix of equity, debt and gold explains most of a portfolio's ups and downs. It is often quoted wrongly. Here is what it says, and what it does not.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A client's shortcut",
+  "lines": [
+   [
+    "rohan",
+    "I spend weekends hunting for the best fund. My friend says that is wasted effort. Who is right?"
+   ],
+   [
+    "sikka",
+    "Neither fully. A 1986 study by Brinson, Hood and Beebower looked at exactly this. Let us watch what changes the ride, and what changes it little."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Picks versus mix",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "80/20, sharper",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     114.6,
+     102.0,
+     128.3,
+     140.9,
+     120.9,
+     155.0,
+     175.1,
+     171.3,
+     210.0,
+     233.9
+    ]
+   },
+   {
+    "name": "80/20, weaker",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     113.8,
+     100.4,
+     125.5,
+     136.8,
+     116.2,
+     148.1,
+     166.2,
+     161.2,
+     196.3,
+     217.1
+    ]
+   },
+   {
+    "name": "40/60, sharper",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     110.8,
+     108.6,
+     126.4,
+     137.0,
+     132.1,
+     155.3,
+     170.9,
+     175.0,
+     200.8,
+     219.3
+    ]
+   }
+  ],
+  "alt": "Three lines: an 80 percent equity portfolio with sharper and weaker picks, and a 40 percent equity portfolio",
+  "caps": [
+   [
+    0.3,
+    "Made-up decade. Equity swings from +33% to -20%. Debt gives 7% every year."
+   ],
+   [
+    3.4,
+    "Two 80% equity portfolios: one has slightly sharper picks, one slightly weaker. Look how closely they move."
+   ],
+   [
+    6.0,
+    "The third keeps the same sharper picks but holds only 40% equity. Its shape is very different."
+   ],
+   [
+    8.6,
+    "Picks shifted the end value. The mix set the ride: deepest fall about 14% against 4%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What the mix does to the worst year",
+  "a": "80% equity",
+  "b": "40% equity",
+  "rows": [
+   [
+    "Worst year, % loss",
+    14.200000000000001,
+    3.6000000000000005
+   ],
+   [
+    "Lost on ₹10 lakh, ₹ thousand",
+    142.0,
+    36.00000000000001
+   ]
+  ],
+  "alt": "Two bars: worst year loss for an 80 percent equity portfolio and a 40 percent one",
+  "caps": [
+   [
+    0.3,
+    "Same decade, same picks. Only the equity share differs: 80% against 40%."
+   ],
+   [
+    2.0,
+    "In the worst year the 80% portfolio loses about 14%. The 40% portfolio loses about 4%."
+   ],
+   [
+    3.8,
+    "On ₹10 lakh that is about ₹1,42,000 lost against about ₹36,000."
+   ],
+   [
+    5.4,
+    "Changing picks by a point moved the worst year by under 1 point. Changing the mix moved it by about 11."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What the 90% means",
+  "title": "Reading the finding fairly",
+  "stops": [
+   [
+    "The mix shapes the ups and downs over time",
+    true
+   ],
+   [
+    "Set the mix before choosing funds",
+    true
+   ],
+   [
+    "90% of your rupee profit comes from the mix",
+    false
+   ],
+   [
+    "Fund choice never matters at all",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false readings of the 1986 finding",
+  "caps": [
+   [
+    0.3,
+    "Brinson, Hood and Beebower (1986): asset allocation explained about 90% of the variation in returns over time."
+   ],
+   [
+    3.4,
+    "That is about the shape of the ups and downs, not about 90% of your profit."
+   ],
+   [
+    5.6,
+    "It means: set the mix first, then compare funds inside it."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s64q1",
+  "h": "Check yourself",
+  "q": "A client says: the study proves 90% of my profit comes from the equity-debt-gold mix, so fund choice hardly counts. What is the accurate correction?",
+  "opts": [
+   "Nothing needs correcting, because the study splits profit into asset mix and fund choice",
+   "The study is wrong, because stock selection explains most of the return in practice",
+   "The figure is true only for retirees, who hold a fixed mix and make no changes at all",
+   "The 90% says how much of the ups and downs the mix explains, not a share of profit"
+  ],
+  "ans": 3,
+  "why": [
+   "The study measured how return variation is explained. It never split a client's profit into two shares like this.",
+   "The finding says the opposite: the mix, not stock selection, explained most of the variation over time.",
+   "The study looked at portfolios generally. It was not limited to retirees or to fixed, unchanging mixes.",
+   "The finding is about variation of returns over time. It does not say that 90% of the rupees earned come from the mix."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s64q2",
+  "h": "Check yourself",
+  "q": "Two portfolios hold the same funds with the same picks. One is 80% equity, the other 40%. In a year equity falls 22%, which statement fits?",
+  "opts": [
+   "Both lose about the same, because the same funds give the same result in a falling year",
+   "The 40% portfolio loses more, because it holds less equity and so recovers less",
+   "The 80% portfolio loses far more, since the mix sets how much of the fall it takes",
+   "The 80% portfolio loses less, as its higher equity share shows stronger fund picking"
+  ],
+  "ans": 2,
+  "why": [
+   "The same funds in different weights fall by different amounts. The mix sets how much of the fall is taken.",
+   "Holding less equity means taking less of an equity fall. The 40% portfolio loses less, not more.",
+   "A bigger equity share takes more of the fall. With debt at 7%, 80% equity loses about 16% and 40% about 5%.",
+   "An equity share shows risk taken, not skill. A larger share simply takes a larger part of the fall."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s64q3",
+  "h": "Check yourself",
+  "q": "A client with ₹30 lakh spends weeks choosing between two good flexi cap funds, but has not decided how much goes to equity at all. What is the right order?",
+  "opts": [
+   "The mix first, since it shapes the ride, and fund choice inside it afterwards",
+   "Choose the best flexi cap fund first, then work out whatever mix that leaves him with",
+   "Pick the fund with the highest past return, as that settles the mix automatically too",
+   "Split the ₹30 lakh in equal parts across every fund that he has heard about so far"
+  ],
+  "ans": 0,
+  "why": [
+   "The mix controls how much risk the money takes. Picking between two good funds is the smaller decision.",
+   "Starting with the fund leaves the mix to chance. The bigger decision, how much equity at all, would go unmade.",
+   "A high past return does not set the mix. It says little about how much risk the whole portfolio carries.",
+   "Equal splitting across many funds is not a mix decision. It can leave the portfolio overweight in one asset."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s64q4",
+  "h": "Check yourself",
+  "q": "Why can a multi-asset fund be described as outsourcing the biggest decision?",
+  "opts": [
+   "It picks stocks for the client, which is where most of a portfolio's return comes from",
+   "A manager sets and keeps the equity, debt and gold weights that shape the ride",
+   "It guarantees a 90% share of the best asset in each year, whichever one that is",
+   "It removes the need to hold any equity, so the client no longer takes market risk at all"
+  ],
+  "ans": 1,
+  "why": [
+   "Stock picking is the smaller part by the research. The allocation is the decision that is being handed over.",
+   "The fund's process sets and rebalances the mix. That is the choice the research says drives the ups and downs.",
+   "No fund can promise a share of the best asset each year. That would need perfect foresight.",
+   "A multi-asset fund still holds equity and takes market risk. It only blends it with other assets."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "The mix of equity, debt and gold explains about 90% of the variation in a portfolio's returns over time (Brinson, Hood and Beebower, 1986).",
+   "That is about the ups and downs, not 90% of your profit. Picks matter at the margin; the mix sets the ride.",
+   "Decide the mix first, then pick funds inside it. A multi-asset fund hands the mix decision to a process."
+  ]
+ }
+]
