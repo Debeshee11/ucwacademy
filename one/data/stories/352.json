@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Last year, one fund topped the charts with a 45% return. Money poured in from every side. This year, it fell behind. The people who bought last, bought at the top.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Chasing the winner",
+  "lines": [
+   [
+    "meena",
+    "The best fund of last year looks like the safe pick. Why not buy it?"
+   ],
+   [
+    "sikka",
+    "Because last year's result is not a promise. When everyone rushes in, prices are often already high. Ask what changed in the business, not in the price."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two traps",
+  "intro": "Plain words.",
+  "rows": [
+   [
+    "Recency bias",
+    "Believing what happened lately will continue"
+   ],
+   [
+    "Herding",
+    "Following the crowd because it feels safe"
+   ],
+   [
+    "Flows",
+    "Money often arrives after returns have peaked"
+   ],
+   [
+    "Better question",
+    "What changed in the business, and not in the price?"
+   ]
+  ],
+  "note": "Past returns are not a guide to the future. Look at cost, risk, and fit with your goal."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Chasing winners",
+  "stops": [
+   [
+    "Recency bias is expecting the recent past to repeat",
+    true
+   ],
+   [
+    "The top fund of last year stays on top",
+    false
+   ],
+   [
+    "Herding is following the crowd",
+    true
+   ],
+   [
+    "A crowded theme is always the safest",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Last year's winner looks safe, but that is a trap."
+   ],
+   [
+    2.2,
+    "Leaders change often, so last year's top is no promise."
+   ],
+   [
+    4.0,
+    "A crowd buying a theme can feel reassuring."
+   ],
+   [
+    5.6,
+    "Crowded themes can also be priced high."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s352q1",
+  "h": "Check yourself",
+  "q": "Rohan wants to buy last year's best fund only because of its return. What is he showing?",
+  "opts": [
+   "Diversification",
+   "A rebalancing plan",
+   "Careful research",
+   "Recency bias"
+  ],
+  "ans": 3,
+  "why": [
+   "Diversification spreads money, which is not what he is doing.",
+   "Rebalancing means returning to a target mix.",
+   "Careful research looks at more than a single past return.",
+   "He is assuming that the recent past will continue."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s352q2",
+  "h": "Check yourself",
+  "q": "Everyone in Meena's office is buying one theme fund. She feels she must join. What is this?",
+  "opts": [
+   "Diversification",
+   "Herding",
+   "Asset allocation",
+   "A stop-loss"
+  ],
+  "ans": 1,
+  "why": [
+   "Diversification spreads money across assets.",
+   "Following the crowd because it feels safe is herding.",
+   "Allocation is a planned split among assets.",
+   "A stop-loss is an order to sell at a set price."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s352q3",
+  "h": "Check yourself",
+  "q": "Why can heavy money flowing into a fund be a warning?",
+  "opts": [
+   "It always means the fund will rise",
+   "SEBI sets the fund price",
+   "Flows often peak after returns",
+   "It lowers every cost of the fund"
+  ],
+  "ans": 2,
+  "why": [
+   "Heavy flows do not guarantee future gains.",
+   "SEBI does not set the price of a fund at any time.",
+   "Money often arrives after good returns, near the peak.",
+   "Flows do not lower the costs of a fund at all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s352q4",
+  "h": "Check yourself",
+  "q": "Which question is better than 'what did it return last year?'",
+  "opts": [
+   "What changed in the firm?",
+   "What colour is the logo?",
+   "Who else has bought it?",
+   "How loud is the advert?"
+  ],
+  "ans": 0,
+  "why": [
+   "It focuses on the business, not on the past price move.",
+   "A logo says nothing about the business.",
+   "Others buying is only the crowd again.",
+   "Advert volume is not a reason to invest."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Last year's winner is not a promise for next year.",
+   "Herding feels safe, but crowded themes can be priced high.",
+   "Ask what changed in the business, not in the price."
+  ]
+ }
+]

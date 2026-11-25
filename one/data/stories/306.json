@@ -1,0 +1,207 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Meena asked for her money back a week ago and nothing has arrived. She is worried and angry. There is a clear route for this, and each step has a reason. Skipping to the top is the usual mistake.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where do I complain?",
+  "lines": [
+   [
+    "meena",
+    "My redemption has not arrived in a week. Who do I complain to?"
+   ],
+   [
+    "sikka",
+    "There is an order to it. Let us climb it one step at a time."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "bw": 150,
+  "h": "The ladder of complaints",
+  "alt": "Three boxes: fund house, SCORES, ODR, joined by arrows",
+  "nodes": [
+   {
+    "label": "1. Fund house",
+    "sub": "investor service team",
+    "x": 170,
+    "y": 50,
+    "col": "#E3F6EB"
+   },
+   {
+    "label": "2. SCORES",
+    "sub": "SEBI's complaints platform",
+    "x": 170,
+    "y": 150,
+    "col": "#FFE9A8"
+   },
+   {
+    "label": "3. ODR",
+    "sub": "online dispute resolution",
+    "x": 170,
+    "y": 250,
+    "col": "#DDEBFF"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    "late or unsatisfactory"
+   ],
+   [
+    1,
+    2,
+    "still unresolved"
+   ]
+  ],
+  "caps": [
+   [
+    0.3,
+    "Step 1: write to the fund house's investor service team. Note the reference number."
+   ],
+   [
+    2.2,
+    "Step 2: if the reply is late or not satisfactory, complain on SEBI's platform, SCORES."
+   ],
+   [
+    3.6,
+    "Step 3: if it is still unresolved, SEBI's online dispute resolution, ODR, is the next step."
+   ],
+   [
+    5.0,
+    "Most issues end at step 1. Keep every reference number as you climb."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Keep a paper trail",
+  "stops": [
+   [
+    "Application copies and statements",
+    true
+   ],
+   [
+    "Reference number of each complaint",
+    true
+   ],
+   [
+    "A phone call needs no written trace",
+    false
+   ],
+   [
+    "Only the fund house should keep records",
+    false
+   ]
+  ],
+  "h": "Keep a paper trail",
+  "alt": "A shield with what records help a complaint and what does not",
+  "caps": [
+   [
+    0.3,
+    "Good records protect everyone: you, the client and the adviser."
+   ],
+   [
+    3.0,
+    "Keep application copies, statements, reference numbers and notes of what was discussed."
+   ],
+   [
+    5.5,
+    "A phone call with no written trace is hard to prove, and unclaimed money needs current KYC and bank details."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s306q1",
+  "h": "Check yourself",
+  "q": "Meena's redemption has not arrived after a week. She wants to go straight to SEBI. What does the adviser suggest first?",
+  "opts": [
+   "Go straight to court, since even a delay of a week is already wrong",
+   "Write to the fund house's investor service team and note the reference",
+   "Wait another month or so, as such delays usually sort themselves out",
+   "Complain only to the distributor, as the fund house cannot help her"
+  ],
+  "ans": 1,
+  "why": [
+   "A court case is slow and costly, and it skips the simple steps that often solve the matter quickly.",
+   "Most issues end at the fund house, and its reference number is needed if she has to escalate later.",
+   "Waiting without writing leaves no record. She should raise it now, in writing, and note the reference.",
+   "The fund house holds her redemption record, so it is the right first stop. A distributor cannot fix a payout."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s306q2",
+  "h": "Check yourself",
+  "q": "Meena wrote to the fund house and was promised a reply within a week. Two weeks later there is nothing. What next?",
+  "opts": [
+   "Ask another fund house's investor service team to step in",
+   "Write the same letter again and wait for another month or so",
+   "Close the folio and write off the amount as not worth it",
+   "File on SEBI's SCORES platform, where complaints are tracked"
+  ],
+  "ans": 3,
+  "why": [
+   "Another fund house holds none of her records and has no power over her fund. SCORES is the escalation route.",
+   "Repeating the letter gives the fund house more time but no escalation. It adds no new record or pressure.",
+   "Closing the folio does not cure the problem. The money is still owed to her, and she should claim it.",
+   "After a late or unsatisfactory reply, SCORES is the next step, and complaints there are tracked against timelines."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s306q3",
+  "h": "Check yourself",
+  "q": "A dividend cheque came back because Dadi's old bank account was closed. Where does the money sit now?",
+  "opts": [
+   "It is lost for good, since a returned cheque cannot be reissued",
+   "With SEBI, which pays it out on its own after a year",
+   "With the fund house as unclaimed money, claimable with proof",
+   "With her old bank, which must be asked to reopen the account"
+  ],
+  "ans": 2,
+  "why": [
+   "The money is not lost. It stays claimable with proof of identity and current bank details.",
+   "SEBI does not hold investors' money, and it pays nothing out on its own. The fund house keeps it for her.",
+   "Unclaimed amounts sit with the fund house and can be claimed with proof. Her KYC and bank details must be current.",
+   "A closed account cannot receive it, and the bank never held it. She should update her details with the fund house."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s306q4",
+  "h": "Check yourself",
+  "q": "A year later a client says: you told me this fund was guaranteed. What protects both client and adviser?",
+  "opts": [
+   "A verbal promise from the client never to raise it again",
+   "Nothing can help, since it is one person's word against another's",
+   "Only the fund house's own records, since advisers need none",
+   "Copies of the application and statements, plus notes of the meeting"
+  ],
+  "ans": 3,
+  "why": [
+   "A spoken promise adds no proof and cannot stop a complaint. A written record is what helps.",
+   "Without records it is one word against another. Writing things down is exactly what removes that problem.",
+   "The fund house cannot know what was said in the meeting. Advisers need their own notes and copies of papers.",
+   "Notes of the discussion show what was said, and application copies show what was signed. Both protect everyone."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Fund house first, and keep the reference number.",
+   "Then SEBI's SCORES platform, and ODR if that does not work.",
+   "Keep every record: applications, statements, reference numbers and notes."
+  ]
+ }
+]

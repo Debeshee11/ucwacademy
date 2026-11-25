@@ -1,0 +1,207 @@
+[
+ {
+  "k": "fact",
+  "art": "factory",
+  "h": "Before you start",
+  "big": "When one story is hot, every fund house launches a fund for it. A sector fund puts most of your money on one bet. It can pay a great deal, or hurt for years."
+ },
+ {
+  "k": "dialog",
+  "h": "Defence stocks are flying",
+  "lines": [
+   [
+    "rohan",
+    "Defence stocks are flying. Put half my money there."
+   ],
+   [
+    "sikka",
+    "The story is real. Let us see what happens to a single-theme bet after a big run."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "One theme against many",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Diversified fund",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     106,
+     113,
+     118,
+     126,
+     131,
+     138,
+     150,
+     158,
+     166,
+     176
+    ]
+   },
+   {
+    "name": "Sector fund",
+    "color": "#E8573D",
+    "vals": [
+     100,
+     125,
+     160,
+     205,
+     250,
+     230,
+     170,
+     140,
+     135,
+     150,
+     160
+    ]
+   }
+  ],
+  "alt": "A diversified fund rising steadily against a sector fund that surges then falls",
+  "caps": [
+   [
+    0.3,
+    "A made-up sector fund surges for four years. Everyone wants in."
+   ],
+   [
+    4.0,
+    "Then the theme goes out of favour."
+   ],
+   [
+    7.5,
+    "It falls from ₹250 to ₹135, about 46%. The diversified fund rose steadily the whole time."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "The sensible size",
+  "rows": [
+   {
+    "name": "Half the money in one theme",
+    "segs": [
+     [
+      "The theme",
+      100,
+      "#E8573D"
+     ]
+    ]
+   },
+   {
+    "name": "A core with a small satellite",
+    "segs": [
+     [
+      "Core funds, about 85%",
+      85,
+      "#3CC47A"
+     ],
+     [
+      "Theme",
+      15,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "Two bars: all in a theme against a core with a small theme slice",
+  "caps": [
+   [
+    0.3,
+    "A theme can be the spice. It should not be the meal."
+   ],
+   [
+    2.2,
+    "A small slice lets the theme help when it works, and does little harm when it does not."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s314q1",
+  "h": "Check yourself",
+  "q": "What must a sectoral fund hold at the minimum in its own sector?",
+  "opts": [
+   "At least 80%",
+   "At least 65%",
+   "At least 50%",
+   "At least 95%"
+  ],
+  "ans": 0,
+  "why": [
+   "A sectoral fund puts at least 80% in one sector such as banking or pharma, which is why it is so concentrated.",
+   "65% is the floor for several style funds. A sectoral fund has to be more narrowly focused than that.",
+   "Half is too low for a fund that carries a sector label. Half would leave room to hold many other sectors.",
+   "95% is not the rule. The floor is lower, with a small part left for cash and other needs."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s314q2",
+  "h": "Check yourself",
+  "q": "Defence stocks are up sharply, and a client wants half his money in a defence fund. What do you suggest?",
+  "opts": [
+   "Agree, since the trend is strong and may well continue for years",
+   "A small slice, with a date to review it, kept outside his core",
+   "Put the whole amount into the new NFO, which gives a fresh start",
+   "Avoid equity altogether until the defence theme has cooled down"
+  ],
+  "ans": 1,
+  "why": [
+   "Buying half after a big run puts a lot of money at a high price. A bad theme year could set him back for years.",
+   "A small slice captures some of the story, and the review date agrees in advance when to hold or exit.",
+   "An NFO has no history, and themes often launch after a strong run. A new fund is not safer for being new.",
+   "Avoiding equity would swap one extreme for another. His core can stay invested in a diversified fund."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s314q3",
+  "h": "Check yourself",
+  "q": "In the made-up paths, the sector fund climbed to ₹250 and fell to ₹135. What fall is that from the peak?",
+  "opts": [
+   "About 13.5%",
+   "About 35%",
+   "About 46%",
+   "About 54%"
+  ],
+  "ans": 2,
+  "why": [
+   "13.5% would be a fall to ₹216. The path fell much further than that from its peak of ₹250.",
+   "35% would leave the fund near ₹162. The actual low of ₹135 is a deeper fall.",
+   "From ₹250 to ₹135 is a drop of ₹115, which is 46% of the peak. Falls are measured from the top.",
+   "54% is how much of the peak was left, not how much was lost. The loss is the other part."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s314q4",
+  "h": "Check yourself",
+  "q": "Why be careful with a thematic NFO launched after a big run?",
+  "opts": [
+   "NFOs are banned after strong markets",
+   "Themes often launch near their top, so buyers can pay a high price",
+   "The fund house charges no fee on NFOs, so there is little to gain",
+   "Thematic funds cannot hold large companies"
+  ],
+  "ans": 1,
+  "why": [
+   "No such ban exists. The caution is about timing and price, not a rule.",
+   "Fund houses launch what is popular, and popularity peaks after a run. New buyers can arrive just before a fall.",
+   "Fees are charged on NFOs like any fund. A new fund has no track record to judge.",
+   "Thematic funds can hold large companies. The concern is concentration in a single idea."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A sectoral fund holds at least 80% in one sector. A thematic fund follows a wider idea.",
+   "They are satellites, not the core. Size them small.",
+   "Agree in advance when you will review or exit, and be careful of buying after a big run."
+  ]
+ }
+]

@@ -1,0 +1,274 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "Two funds follow the same Nifty 50 index. On the same day they still show slightly different returns. This is not a mistake. Two small numbers explain it, and they tell you which fund to choose.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena is puzzled",
+  "lines": [
+   [
+    "meena",
+    "Both funds track the Nifty 50. Why do their returns differ?"
+   ],
+   [
+    "sikka",
+    "Because following an index is never perfect. Two measures capture the imperfection, and they are not the same thing."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Same index, a small gap that grows",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Index",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     114.0,
+     125.4,
+     102.8,
+     125.4,
+     140.4,
+     153.0,
+     143.8,
+     179.8,
+     206.8,
+     223.3
+    ]
+   },
+   {
+    "name": "Fund A, 0.2%",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     113.8,
+     125.0,
+     102.3,
+     124.6,
+     139.3,
+     151.6,
+     142.2,
+     177.5,
+     203.8,
+     219.7
+    ]
+   },
+   {
+    "name": "Fund B, 0.7%",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     113.3,
+     123.8,
+     100.6,
+     122.0,
+     135.8,
+     147.1,
+     137.2,
+     170.5,
+     194.9,
+     209.1
+    ]
+   }
+  ],
+  "alt": "Three lines for an index and two index funds following it, with the funds slightly below the index at the end",
+  "caps": [
+   [
+    0.3,
+    "A made-up index and two funds that follow it. The paths look almost the same."
+   ],
+   [
+    3.5,
+    "Fund A costs 0.2% a year, and Fund B costs 0.7%. Each lags the index by about its cost."
+   ],
+   [
+    8.3,
+    "Look at the end boxes. After ten years the gap is visible, even though the lines were hard to tell apart."
+   ],
+   [
+    10.0,
+    "That gap in return over a period is tracking difference. It is mostly the expense ratio."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Same gap, different wiggle",
+  "a": "Fund A",
+  "b": "Fund C",
+  "rows": [
+   [
+    "Average gap to index (basis points a year)",
+    20,
+    20
+   ],
+   [
+    "Day to day wiggle of the gap (basis points)",
+    3,
+    25
+   ]
+  ],
+  "alt": "Bars comparing two funds with the same average gap to the index but a different day to day wiggle",
+  "caps": [
+   [
+    0.3,
+    "Now two funds with the same cost. Both trail the index by about 20 basis points a year."
+   ],
+   [
+    2.2,
+    "Fund A's daily gap stays steady, within about 3 basis points. Its tracking error is low."
+   ],
+   [
+    4.2,
+    "Fund C's gap swings about 25 basis points a day, from cash drag and late rebalancing. Assumed figures."
+   ],
+   [
+    6.0,
+    "Tracking difference is how far behind. Tracking error is how jumpy the gap is. Lower is better for both."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "What a small gap does over time",
+  "vals": [
+   0.1,
+   0.3,
+   0.5,
+   0.9,
+   1.3,
+   2.0,
+   2.9,
+   4.1,
+   5.8,
+   8.0
+  ],
+  "labels": [
+   "Y2",
+   "Y4",
+   "Y6",
+   "Y8",
+   "Y10",
+   "Y12",
+   "Y14",
+   "Y16",
+   "Y18",
+   "Y20"
+  ],
+  "big": "₹8.0 lakh more",
+  "small": "Fund A over Fund B, after 20 years",
+  "alt": "Bars showing how much more a cheaper index fund leaves on a ten lakh rupee investment",
+  "caps": [
+   [
+    0.3,
+    "Take ₹10 lakh and an index returning 12%. Fund A keeps 11.8% a year. Fund B keeps 11.3%."
+   ],
+   [
+    2.5,
+    "The gap in rupees starts small. After 2 years it is about ₹0.1 lakh."
+   ],
+   [
+    6.0,
+    "It grows every year, because the gap earns returns as well."
+   ],
+   [
+    9.8,
+    "After 20 years the cheaper fund leaves about ₹8.0 lakh more. Small gaps compound."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s343q1",
+  "h": "Check yourself",
+  "q": "Over three years the Nifty 50 index gave 40.0%. Meena's two index funds gave 39.4% and 38.1%. Which statement is correct?",
+  "opts": [
+   "The second fund has the lower tracking error, as it earned less",
+   "Both lag by the same amount, since the index is the same",
+   "The first fund lags by about 0.6 points, the second 1.9",
+   "The first fund beat the index, since 39.4% is close to 40%"
+  ],
+  "ans": 2,
+  "why": [
+   "A lower return does not mean a lower tracking error. Tracking error is about how jumpy the daily gap is.",
+   "Their returns differ, so their gaps differ. The same index does not mean the same tracking difference.",
+   "Tracking difference is the gap to the index: 40.0 minus 39.4 is 0.6, and 40.0 minus 38.1 is 1.9.",
+   "Neither fund beat the index. Both gave less than 40%, and an index fund is expected to lag a little."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s343q2",
+  "h": "Check yourself",
+  "q": "Fund X has the lowest expense ratio of all Nifty 50 funds. Yet its daily returns often differ from the index by a visible margin. What does this show?",
+  "opts": [
+   "Low cost does not ensure tight tracking, so check error too",
+   "A cheap fund must have a low tracking error by definition",
+   "The index must be wrong, since the fund is cheap and follows it",
+   "Tracking error matters only for ETFs, not for index funds"
+  ],
+  "ans": 0,
+  "why": [
+   "A fund can charge little and still run loosely, with cash drag or late rebalancing. Both numbers are worth a look.",
+   "Cost and tracking are separate. A cheap fund managed carelessly can still show a jumpy gap to its index.",
+   "The index is a fixed list with fixed weights. The gap comes from how the fund copies it, not from the index.",
+   "Tracking error applies to every fund that copies an index, whether sold as an index fund or an ETF."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s343q3",
+  "h": "Check yourself",
+  "q": "Meena's index fund charges 0.20% a year but trailed its index by 0.45% last year. Where might the other 0.25% come from?",
+  "opts": [
+   "A hidden charge the fund house adds on top of the expense ratio",
+   "Cash drag, rebalancing delays and the timing of dividends",
+   "The manager's wrong calls about which shares to hold in it",
+   "SEBI deducts the difference from every index fund each year"
+  ],
+  "ans": 1,
+  "why": [
+   "The expense ratio is disclosed and capped by rules. The extra gap comes from how the fund copies the index.",
+   "Small frictions add to the gap: cash waiting to be invested, delays after index changes, and dividend timing.",
+   "An index fund does not choose shares, so no calls were made. It follows the index list.",
+   "No regulator deducts from index funds. Normal frictions in copying explain the gap."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s343q4",
+  "h": "Check yourself",
+  "q": "Two funds follow the same index. Fund P has expense 0.30% and tracking difference 0.35%. Fund Q has expense 0.15% and tracking difference 0.40%. Which would an informed adviser prefer?",
+  "opts": [
+   "Fund Q, since its expense ratio is lower and that is what counts",
+   "Either, since 0.05% a year is too small to bother with",
+   "Neither, since an index fund always lags by its expense ratio",
+   "Fund P, whose tracking difference is lower, so it leaves more"
+  ],
+  "ans": 3,
+  "why": [
+   "Expense ratio is one part of the gap. Q's actual gap is larger, so its lower fee was not enough.",
+   "0.05% a year compounds over decades. It is small each year and still real, so it is a fair tiebreaker.",
+   "The gap is mostly the expense ratio, plus friction. Funds differ, so comparing them is useful.",
+   "The investor earns index minus tracking difference. P trails by 0.35% and Q by 0.40%, so P leaves more."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Tracking difference is the gap in return from the index. It is mostly the expense ratio.",
+   "Tracking error is how jumpy that gap is. Lower is better for both.",
+   "Compare funds on the same index by tracking difference over one to three years."
+  ]
+ }
+]

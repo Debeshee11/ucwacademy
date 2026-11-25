@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A PMS charges 2% a year on ₹1 crore. That is ₹2 lakh, whether or not the portfolio gains. Add a profit share, brokerage and taxes. Fees quietly reduce returns, so read them first.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The fee ladder",
+  "lines": [
+   [
+    "meena",
+    "What is a performance fee?"
+   ],
+   [
+    "sikka",
+    "A share of profits above an agreed return, called the hurdle. A high-water mark means no fee until the portfolio passes its earlier peak. The management fee is separate: a fixed percentage every year."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Fees, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Portfolio",
+    "₹1 crore"
+   ],
+   [
+    "Management fee, 2%",
+    "₹2 lakh a year"
+   ],
+   [
+    "Hurdle",
+    "10% a year"
+   ],
+   [
+    "Performance fee",
+    "20% of gains above the hurdle"
+   ]
+  ],
+  "note": "After a fall, no profit share is charged until the portfolio is above its earlier peak."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "PMS fees",
+  "stops": [
+   [
+    "A management fee is charged regardless of performance",
+    true
+   ],
+   [
+    "A performance fee is charged on all returns from the first rupee",
+    false
+   ],
+   [
+    "A hurdle rate must be beaten first",
+    true
+   ],
+   [
+    "A high-water mark charges fees on recovered losses",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A fixed percentage each year."
+   ],
+   [
+    2.2,
+    "Only above the hurdle."
+   ],
+   [
+    4.0,
+    "Before a performance fee applies."
+   ],
+   [
+    5.6,
+    "Losses must be recovered first."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s433q1",
+  "h": "Check yourself",
+  "q": "A PMS charges 2% of the portfolio value every year. What fee is this?",
+  "opts": [
+   "A performance fee",
+   "A management fee",
+   "A hurdle rate",
+   "A custody fee"
+  ],
+  "ans": 1,
+  "why": [
+   "A performance fee depends on profits. The details here point elsewhere.",
+   "It is a fixed percentage regardless of performance.",
+   "A hurdle rate is a return threshold. It does not fit the facts given.",
+   "A custody fee is for safekeeping. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s433q2",
+  "h": "Check yourself",
+  "q": "A manager earns a profit share only on returns above 10% a year. What is the 10%?",
+  "opts": [
+   "The management fee",
+   "The exit load",
+   "The benchmark",
+   "The hurdle rate"
+  ],
+  "ans": 3,
+  "why": [
+   "The management fee is a percentage of assets.",
+   "An exit load is charged on early exit.",
+   "A benchmark is an index for comparison.",
+   "It is the minimum return before a performance fee."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s433q3",
+  "h": "Check yourself",
+  "q": "After a fall, no profit share is charged until the portfolio passes its earlier peak. What is this?",
+  "opts": [
+   "A hurdle rate fee",
+   "A margin call fee",
+   "A high-water mark",
+   "A lot size rule"
+  ],
+  "ans": 2,
+  "why": [
+   "A hurdle is a minimum return.",
+   "A margin call is for futures.",
+   "It charges only above the previous peak.",
+   "Lot size is a contract quantity."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s433q4",
+  "h": "Check yourself",
+  "q": "A manager takes 20% of gains beyond a set hurdle. What is this called?",
+  "opts": [
+   "A performance fee",
+   "A management fee",
+   "A custody fee",
+   "A tax"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a share of profits above a hurdle.",
+   "A management fee is a fixed percentage.",
+   "A custody fee is for safekeeping.",
+   "A tax is paid to the government."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Management fee: fixed %, regardless of performance.",
+   "Performance fee: share of gains above the hurdle rate.",
+   "High-water mark: no fee until the earlier peak is passed."
+  ]
+ }
+]

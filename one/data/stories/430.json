@@ -1,0 +1,187 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Silver has fallen 30% from its high before recovering. A client who put the emergency money in it would have been forced to sell at the bottom. Silver's swings call for small positions, never for money you cannot afford to lock up.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A small satellite",
+  "lines": [
+   [
+    "meena",
+    "How much silver should I hold?"
+   ],
+   [
+    "sikka",
+    "This lesson does not give amounts. It gives a role: a small satellite around a diversified core. Invest in parts over time. Expect deep drawdowns. And never use emergency money, which must stay safe and liquid."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "A silver drawdown, made up",
+  "vals": [
+   100,
+   70,
+   100
+  ],
+  "labels": [
+   "Peak",
+   "Low",
+   "Recovery"
+  ],
+  "big": "−30%, then recovery",
+  "small": "patience and small size",
+  "alt": "Bars of a silver price falling 30% and then recovering",
+  "caps": [
+   [
+    0.3,
+    "Silver reaches a high."
+   ],
+   [
+    2.2,
+    "It falls 30%: a drawdown."
+   ],
+   [
+    4.0,
+    "It later recovers."
+   ],
+   [
+    5.6,
+    "A small size and patience help."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Silver in a portfolio",
+  "stops": [
+   [
+    "Silver suits a small satellite role",
+    true
+   ],
+   [
+    "Emergency money should go into silver",
+    false
+   ],
+   [
+    "Staggered buying reduces the risk of buying at a peak",
+    true
+   ],
+   [
+    "Silver has never had a deep drawdown",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Its risk is higher."
+   ],
+   [
+    2.2,
+    "It must stay safe and liquid."
+   ],
+   [
+    4.0,
+    "Invest in parts over time."
+   ],
+   [
+    5.6,
+    "It has had deep drawdowns."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s430q1",
+  "h": "Check yourself",
+  "q": "What is a satellite holding?",
+  "opts": [
+   "A holding in space companies",
+   "A small position beside a core",
+   "The whole of the portfolio held",
+   "A deposit at a local bank"
+  ],
+  "ans": 1,
+  "why": [
+   "It is a role in a portfolio, not a sector.",
+   "Silver suits this role because of its higher risk.",
+   "It is only a small part, not the whole.",
+   "A deposit is a different product from this."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s430q2",
+  "h": "Check yourself",
+  "q": "A client invests her silver allocation in six monthly instalments. What is this?",
+  "opts": [
+   "A margin call from a broker",
+   "A rollover of a contract",
+   "A hedge with a short position",
+   "Staggered buying over time"
+  ],
+  "ans": 3,
+  "why": [
+   "A margin call is a futures demand for more funds.",
+   "Rollover moves a futures position to the next expiry.",
+   "A hedge is an opposite position to cut a risk.",
+   "Investing in parts over time reduces peak-buying risk."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s430q3",
+  "h": "Check yourself",
+  "q": "Silver falls 30% from its high before recovering. What is this called?",
+  "opts": [
+   "A premium",
+   "A hallmark",
+   "A drawdown",
+   "A strike"
+  ],
+  "ans": 2,
+  "why": [
+   "A premium is an extra charge. That does not match this case.",
+   "A hallmark is a purity mark. It does not fit the facts given.",
+   "A drawdown is the fall from a peak to a later low.",
+   "A strike is an options price. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s430q4",
+  "h": "Check yourself",
+  "q": "Where should a client's six months of expenses be kept?",
+  "opts": [
+   "In a safe, liquid account",
+   "In silver, for the swings",
+   "In one stock of a firm",
+   "In a long lock-in product"
+  ],
+  "ans": 0,
+  "why": [
+   "An emergency fund must be safe and accessible.",
+   "Silver is too volatile. It does not answer what was asked.",
+   "One stock is too risky. The details here point elsewhere.",
+   "A lock-in is not accessible. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver suits a small satellite role.",
+   "Stagger purchases. Expect deep drawdowns.",
+   "Emergency money stays safe and liquid, never in silver."
+  ]
+ }
+]

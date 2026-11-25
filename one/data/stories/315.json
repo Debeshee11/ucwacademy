@@ -1,0 +1,207 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Some funds do not chase the winners. They look for companies that seem cheap, or ones the crowd has dropped. Their results arrive in long waves, and most people give up in the dry spell."
+ },
+ {
+  "k": "dialog",
+  "h": "Three years of lagging",
+  "lines": [
+   [
+    "rohan",
+    "My value fund has trailed the market for three years. Should I sell?"
+   ],
+   [
+    "sikka",
+    "Let us look at how a value style can behave across a decade, in a made-up path."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "A long dry spell",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Market",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     112,
+     122,
+     134,
+     150,
+     160,
+     168,
+     172,
+     176,
+     186,
+     196
+    ]
+   },
+   {
+    "name": "Value fund",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     104,
+     106,
+     109,
+     111,
+     116,
+     128,
+     146,
+     168,
+     190,
+     214
+    ]
+   }
+  ],
+  "alt": "A value fund line lagging for five years then catching up and passing the market",
+  "caps": [
+   [
+    0.3,
+    "For the first five years the value fund trails the market."
+   ],
+   [
+    3.8,
+    "This is when many investors sell."
+   ],
+   [
+    6.2,
+    "Then the cheap stocks get noticed, and the fund catches up and passes."
+   ],
+   [
+    9.0,
+    "The path is made up. The point is the shape: patience is the price of the style."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "A dividend yield fund",
+  "stops": [
+   [
+    "Holds stocks that pay high dividends",
+    true
+   ],
+   [
+    "Still carries equity risk",
+    true
+   ],
+   [
+    "Is safer than other equity funds",
+    false
+   ],
+   [
+    "Pays a guaranteed income",
+    false
+   ]
+  ],
+  "h": "What dividends do and do not do",
+  "alt": "A shield with four statements about a dividend yield fund",
+  "caps": [
+   [
+    0.3,
+    "A dividend yield fund holds stocks with high dividends."
+   ],
+   [
+    3.0,
+    "The dividend is a payout from company profit. It is not a promise to you."
+   ],
+   [
+    5.5,
+    "It does not make the fund safer, and the NAV can still fall."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s315q1",
+  "h": "Check yourself",
+  "q": "A value fund has trailed the market for three years. Which step is most sensible?",
+  "opts": [
+   "Sell now, since three years of lag proves the style is broken",
+   "Check if it still does what it promised, not if it is winning",
+   "Switch to last year's top fund so that the lag ends right away",
+   "Add more money each time the lag grows, with no review at all"
+  ],
+  "ans": 1,
+  "why": [
+   "Value styles go through long dry spells. Three years of lag alone does not prove that the fund has stopped doing its job.",
+   "The test is behaviour against promise: does it still buy cheap stocks and hold them with discipline? Yearly rank is a poor guide.",
+   "Last year's top fund is often a growth fund at its peak. Chasing it replaces patience with a timing bet.",
+   "Adding without a review treats the lag as a signal to buy. Skipping the check can hide a real problem."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s315q2",
+  "h": "Check yourself",
+  "q": "How many of the labels 'value' and 'contra' can one fund use?",
+  "opts": [
+   "Both, since value and contra are really the same style",
+   "Only one of the two, and each needs at least 65% in equity",
+   "Neither, since SEBI has banned both labels for all funds",
+   "As many labels as the fund house likes to put on it"
+  ],
+  "ans": 1,
+  "why": [
+   "They are different styles. Value looks for cheap stocks, contra bets against the crowd on stocks out of favour.",
+   "A fund can follow value or contra, but not both labels, and each must hold at least 65% in equity.",
+   "The labels are allowed. SEBI uses them as separate categories with their own rules.",
+   "The labels are limited by SEBI's category rules, so a fund house cannot mix and match them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s315q3",
+  "h": "Check yourself",
+  "q": "A client believes a dividend yield fund must be safer because it pays dividends. What is the honest answer?",
+  "opts": [
+   "It is safer, because dividends keep coming in when prices fall",
+   "The dividend does not make it less risky, and the NAV can still fall",
+   "It is guaranteed to pay a fixed income to investors every year",
+   "It is exactly as safe as a bank fixed deposit of the same size"
+  ],
+  "ans": 1,
+  "why": [
+   "Dividends depend on company profits. In a bad year they can be cut, and prices can drop at the same time.",
+   "The fund holds equity, so the market can hurt the NAV. A payout from stocks is not a shield against that.",
+   "No guarantee exists for a mutual fund's income. Dividends vary from year to year.",
+   "A fixed deposit has a promised rate from a bank. A dividend yield fund has neither a promised rate nor that safety."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s315q4",
+  "h": "Check yourself",
+  "q": "Which client is likely to be unhappy with a value style?",
+  "opts": [
+   "One who needs steady results every single year",
+   "One with fifteen years to invest and no need for the money",
+   "One who can sit through a dry spell of several years",
+   "One who looks at the fund only once a year"
+  ],
+  "ans": 0,
+  "why": [
+   "The style goes in and out of favour, so a year-to-year steady result is exactly what it cannot offer.",
+   "Fifteen years is long enough to ride through several dry spells, which suits the style well.",
+   "Patience is what the style asks for. A client who can wait is a good match.",
+   "Looking once a year fits a style that takes years to pay off, and it limits the urge to react."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Value buys what looks cheap. Contra bets against the crowd. A fund uses one label, with at least 65% in equity.",
+   "Value can lag for years and then catch up. Patience is the price.",
+   "A dividend yield fund still carries equity risk. The dividend is not a shield."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Dadi wants gold but does not want a locker, a theft risk or making charges. A fund that holds gold on her behalf could solve this. But not every paper gold product is the same, and one is not regulated by SEBI at all.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Gold without the locker",
+  "lines": [
+   [
+    "dadi",
+    "Can I own gold without holding it in my hand?"
+   ],
+   [
+    "sikka",
+    "Yes, in a few forms. A gold ETF trades like a share. A gold fund of funds needs no demat account. Digital gold is sold by apps, but is not regulated by SEBI, so the seller matters."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four paper forms",
+  "intro": "What each one is.",
+  "rows": [
+   [
+    "Gold ETF",
+    "A fund that holds gold, traded on the exchange like a share"
+   ],
+   [
+    "Gold fund of funds",
+    "Invests in gold ETFs, with no demat account needed, but extra cost"
+   ],
+   [
+    "Sovereign Gold Bond",
+    "A government bond priced in grams of gold, with fixed interest, eight-year term"
+   ],
+   [
+    "Digital gold",
+    "Gold held by an online platform, not regulated by SEBI"
+   ]
+  ],
+  "note": "New Sovereign Gold Bond issues have stopped, but existing bonds continue until they mature."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Paper and digital gold",
+  "stops": [
+   [
+    "A gold ETF trades on the stock exchange",
+    true
+   ],
+   [
+    "Digital gold is regulated by SEBI",
+    false
+   ],
+   [
+    "A gold fund of funds needs no demat account",
+    true
+   ],
+   [
+    "Paper gold has no cost at all",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Its price tracks the market price of gold."
+   ],
+   [
+    2.2,
+    "Digital gold is not regulated by SEBI, so check the seller."
+   ],
+   [
+    4.0,
+    "It invests in gold ETFs, with an extra layer of cost."
+   ],
+   [
+    5.6,
+    "Funds charge expenses, so there is always some cost."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s424q1",
+  "h": "Check yourself",
+  "q": "Rohan has a demat account and wants gold that trades like a share. What fits?",
+  "opts": [
+   "A fixed deposit",
+   "A gold ETF",
+   "A treasury bill",
+   "A term plan"
+  ],
+  "ans": 1,
+  "why": [
+   "A fixed deposit is a bank product with no link to gold.",
+   "A gold ETF holds gold and trades on the exchange.",
+   "A treasury bill is a short-term government security.",
+   "A term plan is insurance and has no link to gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s424q2",
+  "h": "Check yourself",
+  "q": "Meena has no demat account but wants gold through a mutual fund. What fits?",
+  "opts": [
+   "A gold ETF only",
+   "A gold loan",
+   "A coin from a stranger",
+   "A gold fund of funds"
+  ],
+  "ans": 3,
+  "why": [
+   "A gold ETF needs a demat account to hold units.",
+   "A gold loan is borrowing against gold and not an investment in it.",
+   "A coin from a stranger is a risk, with no check on purity.",
+   "A gold fund of funds can be bought without a demat account."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s424q3",
+  "h": "Check yourself",
+  "q": "An app sells Rohan 'digital gold'. What should he remember?",
+  "opts": [
+   "It is not regulated by SEBI",
+   "It is guaranteed by SEBI itself",
+   "It carries no risk at all, ever",
+   "It is the same as a Gold Bond"
+  ],
+  "ans": 0,
+  "why": [
+   "Digital gold is not regulated by SEBI, so check the seller.",
+   "SEBI does not guarantee digital gold at all.",
+   "It still carries price risk and seller risk, too.",
+   "A Sovereign Gold Bond is a government security, unlike this."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s424q4",
+  "h": "Check yourself",
+  "q": "What did a Sovereign Gold Bond offer on top of gold's price movement?",
+  "opts": [
+   "A vote in a company",
+   "A bonus coin",
+   "Fixed interest",
+   "A tax refund each month"
+  ],
+  "ans": 2,
+  "why": [
+   "A vote comes with shares and not with a bond.",
+   "No coin was given with the bond.",
+   "It paid fixed interest, with a term of eight years.",
+   "No monthly tax refund came with it."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A gold ETF trades like a share and needs a demat account.",
+   "A gold fund of funds needs no demat but has an extra cost.",
+   "Digital gold is not regulated by SEBI, so check the seller."
+  ]
+ }
+]

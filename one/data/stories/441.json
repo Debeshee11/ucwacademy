@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A mutual fund is simple. A PMS needs ₹50 lakh. Between them sits a newer product: the SIF. It comes from a fund house, under mutual fund rules, with a ₹10 lakh minimum, and it can take short positions.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Between two worlds",
+  "lines": [
+   [
+    "meena",
+    "Where does a SIF fit?"
+   ],
+   [
+    "sikka",
+    "More flexible than a mutual fund, more regulated and accessible than a PMS or AIF. It has a factsheet, a riskometer and a trustee. The minimum is ₹10 lakh per investor across all SIF strategies of that fund house."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "SIF basics",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Who offers it",
+    "mutual fund houses, under SEBI rules"
+   ],
+   [
+    "Minimum",
+    "₹10 lakh per investor, across strategies of that fund house"
+   ],
+   [
+    "Investor gets",
+    "factsheet and riskometer"
+   ],
+   [
+    "Position",
+    "between a mutual fund and a PMS or AIF"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a SIF is",
+  "stops": [
+   [
+    "A SIF is run by a mutual fund house",
+    true
+   ],
+   [
+    "A SIF has no riskometer",
+    false
+   ],
+   [
+    "The minimum is ₹10 lakh per investor",
+    true
+   ],
+   [
+    "A SIF is a private fund with no SEBI rules",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Under SEBI's rules."
+   ],
+   [
+    2.2,
+    "It does have one."
+   ],
+   [
+    4.0,
+    "Counted across that fund house's strategies."
+   ],
+   [
+    5.6,
+    "It is regulated like a mutual fund."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s441q1",
+  "h": "Check yourself",
+  "q": "A client has ₹4 lakh. Can she start a SIF with a fund house?",
+  "opts": [
+   "Yes, from any amount she has",
+   "No, the minimum is ₹10 lakh",
+   "Yes, from ₹500 a month",
+   "No, the minimum is ₹1 crore"
+  ],
+  "ans": 1,
+  "why": [
+   "A minimum applies to every investor.",
+   "The minimum is ₹10 lakh per investor.",
+   "₹500 is a regular mutual fund ticket.",
+   "₹1 crore is the usual AIF minimum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s441q2",
+  "h": "Check yourself",
+  "q": "Who runs a SIF?",
+  "opts": [
+   "A private individual alone",
+   "A local shopkeeper alone",
+   "A foreign bank alone",
+   "A mutual fund house"
+  ],
+  "ans": 3,
+  "why": [
+   "A private individual is not the sponsor.",
+   "A shopkeeper is not a fund house.",
+   "A foreign bank alone is not the sponsor.",
+   "SIFs are offered by mutual fund houses."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s441q3",
+  "h": "Check yourself",
+  "q": "What does a SIF investor receive that a private AIF investor may not?",
+  "opts": [
+   "A factsheet and a riskometer",
+   "A guarantee of all returns",
+   "A tax holiday of years",
+   "A demat account upgrade"
+  ],
+  "ans": 0,
+  "why": [
+   "The mutual fund framework brings disclosures and a riskometer.",
+   "No product guarantees returns. It does not fit the facts given.",
+   "No tax holiday applies. It does not answer what was asked.",
+   "A demat account is not part of this. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s441q4",
+  "h": "Check yourself",
+  "q": "How is a SIF positioned?",
+  "opts": [
+   "Below a savings account in risk",
+   "Above a government bond in safety",
+   "Between a fund and a PMS or AIF",
+   "Identical to a plain equity fund"
+  ],
+  "ans": 2,
+  "why": [
+   "It is a market product, not a deposit. It does not fit the facts given.",
+   "It is not a bond. It does not answer what was asked.",
+   "It is more flexible than a mutual fund and more regulated than a PMS or AIF.",
+   "It has features beyond a regular fund. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SIF: a SEBI-regulated product from mutual fund houses.",
+   "Minimum ₹10 lakh per investor, across that fund house's SIF strategies.",
+   "Sits between a mutual fund and a PMS or AIF."
+  ]
+ }
+]

@@ -1,0 +1,180 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan puts 10% of his ₹10 lakh portfolio in gold. A year later gold has jumped and now makes up about 15% of the portfolio. He did nothing wrong. But the mix has drifted from what he planned.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "How much, and when",
+  "lines": [
+   [
+    "rohan",
+    "So how much gold should I own?"
+   ],
+   [
+    "sikka",
+    "There is no single number. A small share, planned in advance, is common. What matters is that you pick the share, and bring it back when it drifts. Education only, not advice."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rebalancing, made-up numbers",
+  "intro": "Bringing the mix back.",
+  "rows": [
+   [
+    "Portfolio",
+    "₹10 lakh, gold target 10%"
+   ],
+   [
+    "Gold rises from ₹1 lakh to",
+    "₹1.6 lakh"
+   ],
+   [
+    "New portfolio and gold share",
+    "₹10.6 lakh, about 15%"
+   ],
+   [
+    "Gold at 10% would be",
+    "₹1.06 lakh"
+   ],
+   [
+    "=",
+    "Sell about",
+    "₹54,000 of gold"
+   ]
+  ],
+  "note": "Rebalancing means selling a bit of what grew and buying what lagged. Check taxes and costs first."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Gold in a portfolio",
+  "stops": [
+   [
+    "Asset allocation splits money among asset classes",
+    true
+   ],
+   [
+    "Rebalancing means adding more of the winner",
+    false
+   ],
+   [
+    "A gold loan lets you borrow against gold",
+    true
+   ],
+   [
+    "A gold loan keeps the gold with you",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A split among shares, bonds and gold, based on goals."
+   ],
+   [
+    2.2,
+    "Rebalancing brings the mix back to target."
+   ],
+   [
+    4.0,
+    "The lender holds the gold until you repay."
+   ],
+   [
+    5.6,
+    "If you default, the lender can sell the gold."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s425q1",
+  "h": "Check yourself",
+  "q": "Meena's gold has grown to 20% of her portfolio, against a 10% plan. What does rebalancing suggest?",
+  "opts": [
+   "Buy still more gold now",
+   "Do nothing for ever more",
+   "Sell every other asset",
+   "Sell some gold"
+  ],
+  "ans": 3,
+  "why": [
+   "Buying more gold would push the mix further from plan.",
+   "Doing nothing lets the mix keep drifting.",
+   "Selling everything else would break the plan altogether.",
+   "Rebalancing means selling part of what grew."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s425q2",
+  "h": "Check yourself",
+  "q": "What is asset allocation?",
+  "opts": [
+   "The fee that a broker charges",
+   "A split among asset classes",
+   "The price of one single share",
+   "A bank's lending rate on loans"
+  ],
+  "ans": 1,
+  "why": [
+   "A broker's fee is brokerage, not allocation.",
+   "It is how a portfolio is divided among asset classes.",
+   "The price of one share is not an allocation.",
+   "A lending rate is what a bank charges on loans."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s425q3",
+  "h": "Check yourself",
+  "q": "Dadi pledges her ornaments to a lender and gets a loan. Who holds the gold until she repays?",
+  "opts": [
+   "Dadi herself",
+   "SEBI, the regulator",
+   "The lender",
+   "The jeweller nearby"
+  ],
+  "ans": 2,
+  "why": [
+   "She pledged it, so it is with the lender, not her.",
+   "SEBI does not hold pledged gold for anyone.",
+   "The lender holds the pledged gold until repayment.",
+   "A jeweller nearby has no role in her loan."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s425q4",
+  "h": "Check yourself",
+  "q": "A household has idle gold in a locker. What is gold monetisation?",
+  "opts": [
+   "Depositing it to earn interest",
+   "Melting it down at home for sale",
+   "Selling it quietly in the dark",
+   "Burying it deep in the garden"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold monetisation lets idle gold earn interest.",
+   "Melting at home is unsafe and changes its form.",
+   "A sale in the dark is risky and unregulated.",
+   "Burying it earns nothing and risks loss."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Choose a small, planned share of gold and stick to it.",
+   "Rebalance when the mix drifts: sell some of what grew.",
+   "A gold loan keeps your gold with the lender until you repay."
+  ]
+ }
+]

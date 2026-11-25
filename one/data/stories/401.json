@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "When Meena buys one share of a company, she becomes a very small owner of that business. If it earns well, she can gain. If it struggles, she can lose. Nobody promises her anything.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Owner, not lender",
+  "lines": [
+   [
+    "meena",
+    "So buying a share is like lending money to the company?"
+   ],
+   [
+    "sikka",
+    "No. A lender is promised interest. An owner shares in profit and in loss. That is why a share can rise, fall, or even go to zero."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Who does what",
+  "intro": "Four players in every trade.",
+  "rows": [
+   [
+    "Share",
+    "A unit of ownership in a company"
+   ],
+   [
+    "Stock exchange",
+    "The regulated marketplace, such as NSE or BSE"
+   ],
+   [
+    "Broker",
+    "A registered middleman who places your order"
+   ],
+   [
+    "SEBI",
+    "The regulator that sets the rules and protects investors"
+   ]
+  ],
+  "note": "You do not trade with the company. You trade with other investors, through a broker, on an exchange."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Shares and markets",
+  "stops": [
+   [
+    "A share makes you a part-owner of a company",
+    true
+   ],
+   [
+    "A share promises a fixed return",
+    false
+   ],
+   [
+    "SEBI is the regulator of the securities market",
+    true
+   ],
+   [
+    "Any person can act as a broker without registration",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A shareholder owns a small part of the business."
+   ],
+   [
+    2.2,
+    "Returns depend on how the business and the market do. Nothing is promised."
+   ],
+   [
+    4.0,
+    "SEBI registers intermediaries and writes the rules for exchanges and brokers."
+   ],
+   [
+    5.6,
+    "A broker must be registered. Check before you open an account."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s401q1",
+  "h": "Check yourself",
+  "q": "Rohan buys 10 shares of a listed company. What does he now own?",
+  "opts": [
+   "A loan he has given to the company",
+   "A small part of the company",
+   "A fixed deposit with a set rate",
+   "A promise of fixed yearly income"
+  ],
+  "ans": 1,
+  "why": [
+   "A loan earns promised interest. A share does not, as it is ownership.",
+   "A share is a unit of ownership, so he is now a small part-owner.",
+   "A fixed deposit has a set rate and a bank behind it. A share has neither.",
+   "No share carries a promise of fixed income, since profits can change."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s401q2",
+  "h": "Check yourself",
+  "q": "Where are listed shares bought and sold in India?",
+  "opts": [
+   "Directly at the company's head office",
+   "At a bank branch counter only",
+   "Through a local jeweller",
+   "On stock exchanges such as NSE and BSE"
+  ],
+  "ans": 3,
+  "why": [
+   "A company does not sell its listed shares across its own counter.",
+   "A bank counter does not match buyers and sellers of listed shares.",
+   "A jeweller has no role in trading listed shares.",
+   "Exchanges are regulated marketplaces where buyers and sellers meet openly."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s401q3",
+  "h": "Check yourself",
+  "q": "A broker is found misusing client money. Which body can act on the broker?",
+  "opts": [
+   "SEBI, the market regulator",
+   "The local post office",
+   "The company whose shares were traded",
+   "The newspaper that reported it"
+  ],
+  "ans": 0,
+  "why": [
+   "SEBI registers brokers and has the power to act when rules are broken.",
+   "A post office has no authority over a broker or the market.",
+   "The company is not responsible for a broker's conduct with clients.",
+   "A newspaper can report a case, but it cannot punish the broker."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s401q4",
+  "h": "Check yourself",
+  "q": "Meena wants to open an account with a broker she found online. What should she check first?",
+  "opts": [
+   "That the broker has a flashy website",
+   "That the broker promises quick profits",
+   "That the broker is registered with SEBI",
+   "That the broker offers a gift for signing up"
+  ],
+  "ans": 2,
+  "why": [
+   "A website can look good and still belong to an unregistered firm.",
+   "Promises of quick profits are a warning sign and not a mark of safety.",
+   "A broker must be registered, and the regulator's list shows whether it is.",
+   "A gift for signing up says nothing about whether the broker is genuine."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A share is part-ownership of a company, with no promised return.",
+   "You trade on an exchange, through a registered broker.",
+   "SEBI is the regulator. Always check that a broker is registered."
+  ]
+ }
+]

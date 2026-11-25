@@ -1,0 +1,246 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Two hybrid funds each earn Rohan the same ₹1,00,000 gain, and he sells both after 13 months. One tax bill is ₹13,000. The other is ₹31,200. The name did not decide it. The equity share did.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena asks about tax",
+  "lines": [
+   [
+    "meena",
+    "Will I pay tax like an FD on this hybrid fund?"
+   ],
+   [
+    "sikka",
+    "It depends on one number: how much of the fund sits in equity. Let us see where the lines fall, then watch the tax."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Three funds, three tax buckets",
+  "rows": [
+   {
+    "name": "Fund A: 65% or more in equity",
+    "segs": [
+     [
+      "Equity 70%",
+      70,
+      "#3CC47A"
+     ],
+     [
+      "Debt 30%",
+      30,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Fund B: 35% to 65% in equity",
+    "segs": [
+     [
+      "Equity 50%",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt 50%",
+      50,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Fund C: under 35% in equity",
+    "segs": [
+     [
+      "Eq 20%",
+      20,
+      "#3CC47A"
+     ],
+     [
+      "Debt and others, 80%",
+      80,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars of funds with 70, 50 and 20 percent equity, each falling in a different tax bucket",
+  "caps": [
+   [
+    0.3,
+    "Fund A holds 70% in equity. That is above the 65% line, so it is taxed as an equity fund."
+   ],
+   [
+    2.4,
+    "Fund B holds 50%. It sits between 35% and 65%, which has its own rules."
+   ],
+   [
+    4.5,
+    "Fund C holds 20%, below 35%. It is generally taxed at slab rate, whatever the holding time."
+   ],
+   [
+    6.2,
+    "The test is the actual mix in the fund. The label on the cover does not matter."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The same ₹1 lakh gain, taxed",
+  "a": "Sold after 13 months",
+  "b": "Sold after 25 months",
+  "rows": [
+   [
+    "Fund A, 70% equity (tax, ₹ thousand)",
+    13,
+    13
+   ],
+   [
+    "Fund B, 50% equity (tax, ₹ thousand)",
+    31,
+    13
+   ],
+   [
+    "Fund C, 20% equity (tax, ₹ thousand)",
+    31,
+    31
+   ]
+  ],
+  "alt": "Bars of tax paid on a one lakh rupee gain for three funds, sold after 13 months and after 25 months",
+  "caps": [
+   [
+    0.3,
+    "Rohan is in the 30% slab. The slab rate with 4% cess is 31.2%. Equity long-term is 12.5% plus cess, 13%."
+   ],
+   [
+    2.2,
+    "Fund A: ₹13,000 either way. Over 12 months already counts as long-term."
+   ],
+   [
+    4.0,
+    "Fund B: ₹31,200 at 13 months, but only ₹13,000 after 24 months, when it turns long-term."
+   ],
+   [
+    5.8,
+    "Fund C: ₹31,200 at slab rate whenever he sells. Rates and exemption are assumed. Check with a CA."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The tax map, as a table",
+  "intro": "Rules in short, from the lesson. Confirm current rates with a CA.",
+  "rows": [
+   [
+    "65% or more in equity",
+    "Long-term after 12 months, at 12.5% over the exemption"
+   ],
+   [
+    "Equity-style fund, 12 months or less",
+    "Short-term at 20%"
+   ],
+   [
+    "Between 35% and 65%",
+    "Long-term after 24 months at 12.5%, else slab rate"
+   ],
+   [
+    "Under 35% in equity",
+    "Generally slab rate, whatever the time"
+   ]
+  ],
+  "note": "The 31,200 and 13,000 figures assume the 30% slab, 4% cess and no exemption used. Your own situation may differ."
+ },
+ {
+  "k": "pick",
+  "id": "s325q1",
+  "h": "Check yourself",
+  "q": "Rohan's fund holds 70% in equity and 30% in debt. He sells after 14 months with a gain of ₹2,00,000. He is in the 30% slab. Ignoring the annual exemption and counting 4% cess on the tax, what is the tax?",
+  "opts": [
+   "₹41,600, a short-term equity gain at 20% plus cess",
+   "₹26,000, a long-term equity gain at 12.5% plus cess",
+   "₹62,400, a gain taxed at his 30% slab rate plus cess",
+   "₹13,000, since only half the gain is taxed after a year"
+  ],
+  "ans": 1,
+  "why": [
+   "The 20% rate applies only up to a year. He held it for 14 months, so the gain is long-term.",
+   "70% is above the 65% line and 14 months is over a year, so 12.5% plus cess on ₹2 lakh is ₹26,000.",
+   "Slab rate applies to funds with less than 65% equity. This one is above the line, so it does not apply.",
+   "No rule taxes half the gain. The whole gain is taxed, over the exemption, at the long-term rate."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s325q2",
+  "h": "Check yourself",
+  "q": "Meena holds a fund with 50% in equity and sells after 18 months, with a gain of ₹1,00,000 at the 30% slab. What is the useful point for her?",
+  "opts": [
+   "It is already long-term, since it was held over 12 months",
+   "It is taxed at 20% as a short-term gain, whatever the time",
+   "It is exempt from tax, since only funds above 65% equity pay",
+   "It is at slab rate now, but turns long-term at 24 months"
+  ],
+  "ans": 3,
+  "why": [
+   "Twelve months applies to funds with 65% or more in equity. This fund is below that line, so 24 months is needed.",
+   "The 20% short-term rate belongs to funds at 65% or more. This fund's short-term gain goes at slab rate.",
+   "Gains here are taxable. The 65% line decides which rates apply, not whether tax is due.",
+   "Between 35% and 65% the long-term line is 24 months. Waiting six more months could cut the tax from ₹31,200 to ₹13,000."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s325q3",
+  "h": "Check yourself",
+  "q": "A fund called \"Balanced Income\" holds 20% in equity. A client assumes it gets equity tax treatment after one year. What is the right correction?",
+  "opts": [
+   "The name says balanced, so the middle 24-month rule applies",
+   "After one year, any hybrid gets equity rates, whatever it holds",
+   "Under 35% in equity, slab rate generally applies at any time",
+   "It would be taxed as equity once the client's slab is above 20%"
+  ],
+  "ans": 2,
+  "why": [
+   "A name is no test. The middle rule applies to funds with 35% to 65% in equity, and this one holds only 20%.",
+   "The one-year rule needs 65% or more in equity. A hybrid with 20% in equity does not qualify.",
+   "Below 35% in equity the fund is generally taxed like a debt fund, and a longer hold does not change that.",
+   "Slab does not change the fund's category. The category comes from the fund's holdings."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s325q4",
+  "h": "Check yourself",
+  "q": "A fund holds 64% in equity and 36% in debt. It is one point under the 65% line. Rohan sells after 13 months. How is the gain taxed?",
+  "opts": [
+   "At the long-term equity rate, as it is nearly 65% and over a year",
+   "At slab rate: it is in the 35% to 65% band, under 24 months",
+   "At the short-term rate of 20%, since 13 months is short for equity",
+   "Not at all, since funds under 65% equity are exempt from tax"
+  ],
+  "ans": 1,
+  "why": [
+   "A fund close to the line gets no equity rate. It must reach 65%, so a one-point gap changes the tax a lot.",
+   "The 65% line is a hard cut. At 64% the 24-month rule applies, so at 13 months the gain is at slab rate.",
+   "The 20% short-term rate also needs 65% or more in equity. A fund at 64% does not qualify.",
+   "No exemption exists for a fund's equity share. The share only decides which tax rules apply."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "65% or more in equity: taxed as an equity fund. Long-term after 12 months.",
+   "35% to 65%: long-term after 24 months. Below 35%: generally slab rate.",
+   "Check the fund's real mix, not its name. Confirm rates with a CA."
+  ]
+ }
+]

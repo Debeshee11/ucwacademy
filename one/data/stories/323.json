@@ -1,0 +1,287 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Imagine a fund that sells some of its equity when prices look rich and buys more when they look cheap, without anyone deciding it on the day. That is a balanced advantage fund.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena is worried",
+  "lines": [
+   [
+    "meena",
+    "Does this fund protect me when markets fall?"
+   ],
+   [
+    "sikka",
+    "It tries to, in a particular way. Watch what its equity dial does, then what that cost and gained in a made-up decade."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "The dial turns with valuations",
+  "rows": [
+   {
+    "name": "Markets look cheap",
+    "segs": [
+     [
+      "Net equity 70%",
+      70,
+      "#3CC47A"
+     ],
+     [
+      "Debt 30%",
+      30,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Markets look fairly priced",
+    "segs": [
+     [
+      "Net equity 50%",
+      50,
+      "#3CC47A"
+     ],
+     [
+      "Debt, 50%",
+      50,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Markets look expensive",
+    "segs": [
+     [
+      "Eq 30%",
+      30,
+      "#3CC47A"
+     ],
+     [
+      "Debt and hedged equity, 70%",
+      70,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars showing a balanced advantage fund holding less equity as markets get expensive",
+  "caps": [
+   [
+    0.3,
+    "A model reads how expensive the market is, often by its price to earnings ratio."
+   ],
+   [
+    2.0,
+    "When markets look cheap, net equity goes up. Here it is 70%."
+   ],
+   [
+    3.4,
+    "When they look fair, the dial sits in the middle. Here it is 50%."
+   ],
+   [
+    4.8,
+    "When markets look expensive, the fund cuts net equity. Here it is 30%. The numbers are an illustration."
+   ],
+   [
+    6.5,
+    "It cuts equity by hedging with futures, so the fund keeps its equity-style tax status."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Smoother, not safe: a made-up decade",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Equity fund",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     116.0,
+     141.5,
+     104.7,
+     119.4,
+     133.7,
+     147.1,
+     188.3,
+     254.2,
+     249.1,
+     279.0
+    ]
+   },
+   {
+    "name": "Balanced advantage",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     112.4,
+     129.5,
+     119.3,
+     133.5,
+     147.2,
+     159.9,
+     187.9,
+     222.1,
+     230.7,
+     252.0
+    ]
+   }
+  ],
+  "alt": "Two lines showing a balanced advantage fund falling less than an equity fund in a bad year but lagging in a strong rally",
+  "caps": [
+   [
+    0.3,
+    "Made-up paths. The equity fund and the dial fund start together at ₹100."
+   ],
+   [
+    3.0,
+    "Year 3: equity falls hard. The dial fund had cut equity, so it dips only about 8%."
+   ],
+   [
+    6.0,
+    "Years 7 and 8: a strong rally. The dial fund holds back at high prices and gains less."
+   ],
+   [
+    8.3,
+    "Deepest falls: equity -26%, dial fund -8%. The equity fund still ends higher."
+   ],
+   [
+    10.0,
+    "A smoother ride bought with a lower finish. Neither path is a promise."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What the dial can and cannot do",
+  "title": "Fair claims, and unfair ones",
+  "stops": [
+   [
+    "Cuts equity when valuations are high",
+    true
+   ],
+   [
+    "Falls are often smaller than in equity funds",
+    true
+   ],
+   [
+    "Never shows a loss",
+    false
+   ],
+   [
+    "Keeps pace in every rally",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false claims about balanced advantage funds",
+  "caps": [
+   [
+    0.3,
+    "It trims equity when valuations are high, so falls are often smaller than in a pure equity fund."
+   ],
+   [
+    3.0,
+    "It does not remove losses, and in a strong rally it can trail an equity fund."
+   ],
+   [
+    5.5,
+    "So compare funds by their model, how often it changes and how they behaved in 2020."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s323q1",
+  "h": "Check yourself",
+  "q": "The market's price to earnings ratio rises from 20 to 28, and a balanced advantage fund's model cuts net equity from 50% to 30%. What is the likely effect on a client over the next two years?",
+  "opts": [
+   "Larger falls if prices drop, since cutting equity locks in a return",
+   "No change either way, since the tax status keeps its return fixed",
+   "Smaller falls if prices drop, but a lag if the rally continues",
+   "Higher returns in a rally, since selling equity high adds gains"
+  ],
+  "ans": 2,
+  "why": [
+   "Cutting equity lowers exposure to a fall. Nothing about the move locks in a fixed return for the fund.",
+   "Tax status does not fix returns. The equity share changed, so the fund's ups and downs change with it.",
+   "With less equity, a fall hurts less. If prices keep rising, the lower equity share earns less than a full equity fund.",
+   "Selling early can miss further gains. In a rally that keeps going, the fund with less equity trails."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s323q2",
+  "h": "Check yourself",
+  "q": "In the made-up decade, the dial fund fell about 8% in year 3 but gained only about 18% in each of the two big rally years, while equity gained 28% and 35%. A client says the fund is the weaker one. What is the best reply?",
+  "opts": [
+   "Agree, since lagging in a rally shows the model has totally failed",
+   "It lagged only because the fund charges more when markets rise",
+   "Ignore the rally years, since only the worst year counts",
+   "Its job is a smoother ride, so judge it across the whole cycle"
+  ],
+  "ans": 3,
+  "why": [
+   "Lagging in a rally is expected for this type, so one rally year is not proof of a broken model.",
+   "A fund's expense ratio is a fixed yearly percentage. It does not rise with the market.",
+   "Both the fall and the rally years matter. Choosing only one year would give a false picture.",
+   "Holding back at high prices is the design. The cost shows in the rally and the benefit shows in the fall."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s323q3",
+  "h": "Check yourself",
+  "q": "Rohan is choosing between two balanced advantage funds. Which comparison is most useful?",
+  "opts": [
+   "Each fund's last one-year return, since it shows the better model",
+   "Each model, how often it shifts equity, and its 2020 record",
+   "The fund house's brand, since big houses build better models",
+   "The number of units in each fund, since more units show more skill"
+  ],
+  "ans": 1,
+  "why": [
+   "A one-year return reflects one market's mood. It says little about whether the model works through a cycle.",
+   "The model and its record in a hard year show how the fund tries to protect. That is what the category promises.",
+   "A big name does not show how a model reads valuations. Two funds in one house can differ.",
+   "The number of units reflects a fund's unit price and size, not the skill of its model."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s323q4",
+  "h": "Check yourself",
+  "q": "A balanced advantage fund cuts its net equity to 30% by selling futures against the shares it holds. A client asks if it will now be taxed like a debt fund. What is correct?",
+  "opts": [
+   "Yes, the net equity of 30% is below 35%, so slab-rate tax applies",
+   "It depends on the client's slab, which fixes the fund's tax status",
+   "Hedging keeps gross equity high, so it stays equity-like for tax",
+   "It becomes tax-exempt, since hedged equity does not count as equity"
+  ],
+  "ans": 2,
+  "why": [
+   "The equity share used for tax counts the shares held, not the net level after futures hedges.",
+   "A fund's tax category depends on what it holds. The client's slab changes the rate, not the category.",
+   "Futures hedges cut the net level while shares stay held, so the fund can keep its equity-style tax status.",
+   "Hedged equity is still equity-related and does not give the fund a tax exemption."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Net equity moves with valuations: down when markets are dear, up when cheap.",
+   "Smoother, not safe. Falls are often smaller and rallies can be lagged.",
+   "Compare funds on their model, how it behaved in 2020, and its record."
+  ]
+ }
+]

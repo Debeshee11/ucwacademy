@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two shares both cost ₹300. One earns ₹15 per share, the other ₹5. Same price, but investors pay 20 times earnings for the first and 60 times for the second. Ratios turn price into a comparable number.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Price against something",
+  "lines": [
+   [
+    "meena",
+    "Is a share with a P/E of 40 expensive?"
+   ],
+   [
+    "sikka",
+    "A P/E alone does not say. It shows what you pay for each rupee of earnings. Compare it with growth, with peers and with its own history. The PEG ratio divides P/E by growth to check whether growth justifies it."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "P/E and dividend yield",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Share price",
+    "₹300"
+   ],
+   [
+    "EPS",
+    "₹15"
+   ],
+   [
+    "=",
+    "P/E",
+    "20 times"
+   ],
+   [
+    "Another share: price ₹200, dividend ₹6",
+    "yield 3%"
+   ]
+  ],
+  "note": "P/B compares price with book value per share, often used for banks."
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Share A",
+  "b": "Share B",
+  "rows": [
+   [
+    "Price, ₹",
+    300,
+    300
+   ],
+   [
+    "EPS, ₹",
+    15,
+    5
+   ],
+   [
+    "P/E (times)",
+    20,
+    60
+   ]
+  ],
+  "h": "Same price, different P/E",
+  "alt": "Bars comparing price, EPS and P/E of two shares",
+  "caps": [
+   [
+    0.3,
+    "Both shares cost ₹300."
+   ],
+   [
+    2.2,
+    "Share A earns ₹15, Share B earns ₹5."
+   ],
+   [
+    4.0,
+    "P/E: 20 times against 60 times."
+   ],
+   [
+    5.6,
+    "Same price, very different valuation."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s407q1",
+  "h": "Check yourself",
+  "q": "A share costs ₹300 and earns ₹15 per share. What is the P/E?",
+  "opts": [
+   "15",
+   "20",
+   "300",
+   "4,500"
+  ],
+  "ans": 1,
+  "why": [
+   "15 is the EPS, not the P/E. It does not answer what was asked.",
+   "300 ÷ 15 is 20 times earnings. That matches the case described.",
+   "300 is the price, not the P/E. That does not match this case.",
+   "4,500 multiplies the two, which is wrong. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s407q2",
+  "h": "Check yourself",
+  "q": "A share priced at ₹200 pays ₹6 a year. What is the dividend yield?",
+  "opts": [
+   "6%",
+   "33%",
+   "0.3%",
+   "3%"
+  ],
+  "ans": 3,
+  "why": [
+   "6% would need a ₹12 dividend.",
+   "33% would need a ₹66 dividend.",
+   "0.3% would need a ₹0.60 dividend.",
+   "6 ÷ 200 is 3%. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s407q3",
+  "h": "Check yourself",
+  "q": "Two companies have the same P/E, but one is expected to grow earnings twice as fast. What helps compare them?",
+  "opts": [
+   "The PEG ratio",
+   "The lot size",
+   "The expiry date",
+   "The margin call"
+  ],
+  "ans": 0,
+  "why": [
+   "PEG divides P/E by expected growth.",
+   "Lot size belongs to futures.",
+   "Expiry belongs to futures.",
+   "A margin call belongs to futures."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s407q4",
+  "h": "Check yourself",
+  "q": "Which ratio compares price with net worth per share and is often used for banks?",
+  "opts": [
+   "Price-to-earnings",
+   "PEG",
+   "Price-to-book",
+   "Dividend yield"
+  ],
+  "ans": 2,
+  "why": [
+   "P/E compares price with earnings. It does not answer what was asked.",
+   "PEG adds growth to P/E. It does not answer what was asked.",
+   "P/B compares price with book value per share. This fits the facts given.",
+   "Dividend yield is the cash return on price. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "P/E = price ÷ EPS. P/B = price ÷ book value per share.",
+   "PEG = P/E ÷ expected growth. Dividend yield = dividend ÷ price.",
+   "A ratio alone does not say cheap or dear: compare."
+  ]
+ }
+]

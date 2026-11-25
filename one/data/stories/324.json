@@ -1,0 +1,246 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Rohan's father is 70. The FD pays less than he would like, but he lived through a market crash once and swore never again. Two kinds of fund try to sit in that gap.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Father's worry",
+  "lines": [
+   [
+    "rohan",
+    "My father is 70. He wants better than an FD but cannot take big falls. What can he hold?"
+   ],
+   [
+    "sikka",
+    "Two funds fit. Their tax and their risk are different, so let us open both and look inside."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What sits inside each",
+  "rows": [
+   {
+    "name": "Conservative hybrid (equity only 15%)",
+    "segs": [
+     [
+      "Eq 15%",
+      15,
+      "#3CC47A"
+     ],
+     [
+      "Debt, 85%, taxed at slab rate",
+      85,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Equity savings (equity + arbitrage = 67%)",
+    "segs": [
+     [
+      "Eq 25%",
+      25,
+      "#3CC47A"
+     ],
+     [
+      "Arbitrage 42%",
+      42,
+      "#D8B4FE"
+     ],
+     [
+      "Debt 33%",
+      33,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "Two bars: a conservative hybrid with a small equity slice and an equity savings fund with equity, arbitrage and debt",
+  "caps": [
+   [
+    0.3,
+    "A conservative hybrid is mostly debt, with a small slice of equity as the kicker. Here equity is 15%."
+   ],
+   [
+    2.6,
+    "An equity savings fund holds three things: equity, arbitrage and debt. This split is an example."
+   ],
+   [
+    4.6,
+    "Equity plus arbitrage here is 67%, above the 65% line, so it is taxed as an equity fund."
+   ],
+   [
+    6.4,
+    "The conservative hybrid's gains are generally taxed at slab rate, like a debt fund."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "A good year and a bad year",
+  "a": "Equity fund",
+  "b": "Conservative hybrid",
+  "rows": [
+   [
+    "Bad year: fall (%)",
+    30,
+    5.4
+   ],
+   [
+    "Good year: gain (%)",
+    25,
+    9.7
+   ]
+  ],
+  "alt": "Bars comparing an equity fund and a conservative hybrid in a made-up bad year and good year",
+  "caps": [
+   [
+    0.3,
+    "Made-up years. In the bad year, equity falls 30% and the debt part slips 1%."
+   ],
+   [
+    2.2,
+    "The equity fund loses 30%. The conservative hybrid loses about 5.4%, so ₹10 lakh shows ₹9.5 lakh."
+   ],
+   [
+    4.2,
+    "In the good year equity gains 25% and debt 7%. The hybrid gains about 9.7%."
+   ],
+   [
+    6.0,
+    "Small falls, not zero falls. And a smaller gain is the price of that calm."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What to check before buying",
+  "title": "Fair claims, and unfair ones",
+  "stops": [
+   [
+    "Equity savings: 65% equity plus arbitrage gets equity tax",
+    true
+   ],
+   [
+    "Conservative hybrid gains are generally at slab rate",
+    true
+   ],
+   [
+    "The debt part carries no credit risk",
+    false
+   ],
+   [
+    "Returns will be spectacular",
+    false
+   ]
+  ],
+  "alt": "A shield with fair and unfair claims about equity savings and conservative hybrids",
+  "caps": [
+   [
+    0.3,
+    "Equity savings gets equity tax at 65% equity plus arbitrage. A conservative hybrid is generally at slab rate."
+   ],
+   [
+    3.5,
+    "The debt part can still fall, through interest rate moves or a bond that defaults."
+   ],
+   [
+    5.5,
+    "Expect steady, modest returns. Not spectacular, and not zero risk."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s324q1",
+  "h": "Check yourself",
+  "q": "Rohan's father says he would be upset if ₹10 lakh ever showed below ₹9 lakh. In the film's bad year, which holding stays above that line?",
+  "opts": [
+   "An aggressive hybrid with 70% equity, at about ₹7.9 lakh",
+   "A conservative hybrid with 15% equity, at about ₹9.5 lakh",
+   "An equity fund with every rupee in shares, at about ₹7 lakh",
+   "Every hybrid does, since all hold some debt to cushion falls"
+  ],
+  "ans": 1,
+  "why": [
+   "With 70% in equity, a 30% fall costs about 21%, leaving nearly ₹7.9 lakh, well below the line.",
+   "A 15% equity share loses about 5.4% in that year, so ₹10 lakh falls to about ₹9.5 lakh.",
+   "A full equity fund loses 30%, leaving ₹7 lakh. Calm funds exist because this fall is hard for some people.",
+   "Hybrids differ in equity share. A 70% equity hybrid still falls hard, so having some debt is not enough."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s324q2",
+  "h": "Check yourself",
+  "q": "An equity savings fund holds 25% in equity, 42% in arbitrage and 33% in debt. The client assumes it is taxed like a debt fund because equity is only 25%. What is right?",
+  "opts": [
+   "He is right, since the debt and equity shares fix the tax rate",
+   "Tax depends only on unhedged equity, which is 25% here",
+   "The investor chooses the tax status when buying the units",
+   "Equity plus arbitrage is 67%, so it gets equity-fund taxation"
+  ],
+  "ans": 3,
+  "why": [
+   "It looks right at first, but arbitrage is hedged equity and counts toward the 65% line, so the claim fails.",
+   "The test is equity and arbitrage together, not unhedged equity alone, so the 25% figure is the wrong base.",
+   "Tax status follows what the fund holds. The investor cannot choose it, whatever the plan or option.",
+   "The 65% line counts equity and arbitrage together, and 25% plus 42% is 67%, so equity taxation applies."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s324q3",
+  "h": "Check yourself",
+  "q": "A conservative hybrid holds only 15% in equity, yet it fell more than expected after a bond in its debt portfolio was marked down. What did the buyer miss?",
+  "opts": [
+   "The equity part was too small, so the fund could not recover",
+   "Conservative hybrids hold only government bonds, which cannot fall",
+   "The debt part has credit and rate risk, so check its quality",
+   "Funds with little equity cannot be hurt by anything but equity"
+  ],
+  "ans": 2,
+  "why": [
+   "A bigger equity share would have added risk. The fall came from the debt portfolio, not from too little equity.",
+   "Conservative hybrids may hold corporate bonds, and even government bonds change in price with rates.",
+   "A debt part can fall on a rate rise or a poor-quality bond. Checking its credit quality is part of choosing.",
+   "The debt part can lose value too. Calling the fund equity-only for risk purposes is a mistake."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s324q4",
+  "h": "Check yourself",
+  "q": "The father's conservative hybrid gained 14% in a strong year. He now expects 14% every year. What should Rohan tell him?",
+  "opts": [
+   "That was a strong equity year, so expect steady, modest gains",
+   "Expect 14% a year, since most of the fund sits in stable debt",
+   "Expect more than 14%, since a good year lifts the next year too",
+   "Expect exactly the same as an FD, since the fund is mostly debt"
+  ],
+  "ans": 0,
+  "why": [
+   "The equity kicker helped that year. In a typical year the debt base sets a steadier, more modest return.",
+   "Debt does not guarantee 14%. This year's return came from a strong equity run, which will not repeat on demand.",
+   "A good year does not lift the next one. Returns do not carry forward from year to year.",
+   "A conservative hybrid still holds some equity and may fall or rise differently from an FD, so it is not the same."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Conservative hybrid: mostly debt, a small equity kicker, gains generally at slab rate.",
+   "Equity savings: equity, arbitrage and debt. Equity tax applies if the first two reach 65%.",
+   "Check the debt quality. Expect steady and modest, not zero risk."
+  ]
+ }
+]

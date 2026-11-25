@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An option buyer can lose at most the premium. An option writer collects the premium but can lose far more. Same contract, two very different risks. Knowing which side you are on is the first rule.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Buyer and writer",
+  "lines": [
+   [
+    "meena",
+    "Why would anyone sell options?"
+   ],
+   [
+    "sikka",
+    "To collect the premium. But the writer takes on an obligation if the buyer exercises. Gains are limited to the premium, and losses can be very large. This lesson is about understanding that risk, not about advising either side."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Break-even, made up",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Call strike",
+    "₹500"
+   ],
+   [
+    "Premium paid",
+    "₹20"
+   ],
+   [
+    "=",
+    "Break-even price",
+    "₹520"
+   ],
+   [
+    "Buyer's maximum loss",
+    "₹20 per unit"
+   ]
+  ],
+  "note": "A European-style option can be exercised only at expiry. Index and stock options in India are of this kind."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Buyers and writers",
+  "stops": [
+   [
+    "The buyer's maximum loss is the premium",
+    true
+   ],
+   [
+    "The writer's loss is capped at the premium",
+    false
+   ],
+   [
+    "Break-even for a call is strike plus premium",
+    true
+   ],
+   [
+    "Indian index options can be exercised any day",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Gain can be large."
+   ],
+   [
+    2.2,
+    "Losses can be very large."
+   ],
+   [
+    4.0,
+    "The share must pass it for a profit."
+   ],
+   [
+    5.6,
+    "They are exercised only at expiry."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s419q1",
+  "h": "Check yourself",
+  "q": "A call is struck at ₹500 with a ₹20 premium. What is the break-even price?",
+  "opts": [
+   "₹480",
+   "₹500",
+   "₹20",
+   "₹520"
+  ],
+  "ans": 3,
+  "why": [
+   "₹480 would suit a put's break-even, not this call.",
+   "₹500 ignores the premium. The details here point elsewhere.",
+   "₹20 is just the premium. That does not match this case.",
+   "Strike plus premium: 500 + 20. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s419q2",
+  "h": "Check yourself",
+  "q": "What is an option writer's maximum gain?",
+  "opts": [
+   "Unlimited",
+   "The premium collected",
+   "The strike price",
+   "Ten times the premium"
+  ],
+  "ans": 1,
+  "why": [
+   "Unlimited gain belongs to a buyer's upside.",
+   "Gains are limited to the premium. This fits the facts given.",
+   "The strike is not the gain. It does not fit the facts given.",
+   "No such multiple exists. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s419q3",
+  "h": "Check yourself",
+  "q": "A trader receives ₹20 for taking on the obligation to deliver if the price shoots up. What risk is taken?",
+  "opts": [
+   "No risk at all for the writer",
+   "Loss capped at the ₹20 received",
+   "Very large losses if price jumps",
+   "Only a loss of the strike price"
+  ],
+  "ans": 2,
+  "why": [
+   "There is real risk. That does not match this case.",
+   "The loss is not capped at the premium.",
+   "The writer's loss can be very large.",
+   "The loss is not limited to the strike."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s419q4",
+  "h": "Check yourself",
+  "q": "When can a European-style option be exercised?",
+  "opts": [
+   "Only at expiry",
+   "Any day",
+   "Only before expiry",
+   "Never"
+  ],
+  "ans": 0,
+  "why": [
+   "It can be exercised only on its final day. This fits the facts given.",
+   "That describes American-style options. The details here point elsewhere.",
+   "It is not before expiry. The details here point elsewhere.",
+   "It can be exercised at expiry. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Buyer: pays premium, loss limited to it. Writer: gets premium, losses can be very large.",
+   "Call break-even = strike + premium.",
+   "Indian index and stock options are European-style."
+  ]
+ }
+]

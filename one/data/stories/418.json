@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "An option's price rises ₹0.60 when the share rises ₹1. It loses ₹2 every day even when nothing moves. It jumps when markets get nervous. Each of these has a Greek name.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Greeks in plain words",
+  "lines": [
+   [
+    "meena",
+    "Why are they called Greeks?"
+   ],
+   [
+    "sikka",
+    "They are letters used to name sensitivities. Delta is price change per ₹1 move. Theta is daily time decay. Vega is the effect of volatility. Implied volatility is what the market expects, read from option prices."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The Greeks, made up",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Delta 0.60",
+    "price +₹0.60 per ₹1 rise in the share"
+   ],
+   [
+    "Theta −₹2",
+    "loses about ₹2 a day with no move"
+   ],
+   [
+    "Vega",
+    "price shifts when volatility shifts 1 point"
+   ],
+   [
+    "High implied volatility",
+    "options cost more"
+   ]
+  ],
+  "note": "Theta works against the buyer and for the seller."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "The Greeks",
+  "stops": [
+   [
+    "Delta shows price change for a ₹1 move in the underlying",
+    true
+   ],
+   [
+    "Theta helps the option buyer",
+    false
+   ],
+   [
+    "Higher implied volatility makes options costlier",
+    true
+   ],
+   [
+    "Vega measures time decay",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It also hints at finishing in the money."
+   ],
+   [
+    2.2,
+    "It works against the buyer."
+   ],
+   [
+    4.0,
+    "Before big events, prices rise."
+   ],
+   [
+    5.6,
+    "That is theta. Vega is volatility."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s418q1",
+  "h": "Check yourself",
+  "q": "An option's price rises about ₹0.60 when the share rises ₹1. Which Greek is this?",
+  "opts": [
+   "Delta",
+   "Theta",
+   "Vega",
+   "Strike"
+  ],
+  "ans": 0,
+  "why": [
+   "Delta is price change per ₹1 move. That matches the case described.",
+   "Theta is time decay. The details here point elsewhere.",
+   "Vega is sensitivity to volatility. That does not match this case.",
+   "Strike is a fixed price, not a Greek. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s418q2",
+  "h": "Check yourself",
+  "q": "An option loses about ₹2 a day even when the price does not move. Which Greek is this?",
+  "opts": [
+   "Delta",
+   "Vega",
+   "Theta",
+   "Premium"
+  ],
+  "ans": 2,
+  "why": [
+   "Delta is about the underlying's move. That does not match this case.",
+   "Vega is about volatility. That does not match this case.",
+   "Theta is daily time decay. This fits the facts given.",
+   "Premium is the price, not a Greek. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s418q3",
+  "h": "Check yourself",
+  "q": "Before a major announcement, option prices rise though the share has not moved. Why?",
+  "opts": [
+   "Theta turns positive for buyers",
+   "The strike moves",
+   "The lot size changes",
+   "Implied volatility rises"
+  ],
+  "ans": 3,
+  "why": [
+   "Theta still works against the buyer. It does not fit the facts given.",
+   "The strike is fixed. It does not fit the facts given.",
+   "Lot size is fixed by the exchange. It does not answer what was asked.",
+   "Higher expected movement raises option prices."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s418q4",
+  "h": "Check yourself",
+  "q": "Who gains from theta, all else equal?",
+  "opts": [
+   "The option buyer",
+   "The option seller",
+   "The exchange only",
+   "Nobody"
+  ],
+  "ans": 1,
+  "why": [
+   "It works against the buyer. It does not answer what was asked.",
+   "Time decay works for the seller. This fits the facts given.",
+   "The exchange does not gain from theta. That does not match this case.",
+   "Someone gains: the seller. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Delta: price change per ₹1 move. Theta: daily time decay.",
+   "Vega: sensitivity to volatility.",
+   "Higher implied volatility makes options dearer."
+  ]
+ }
+]

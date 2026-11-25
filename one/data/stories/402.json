@@ -1,0 +1,213 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Rohan wants to buy a share, but he has a bank account and nothing else. Between his bank and the exchange, he needs two more accounts, and he needs to know which order to place.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two accounts, one trade",
+  "lines": [
+   [
+    "rohan",
+    "Why do I need a demat account and a trading account? Is one not enough?"
+   ],
+   [
+    "sikka",
+    "The demat account holds your shares, like a bank holds your money. The trading account is the doorway for placing the order. They work together with your bank."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "How a buy flows",
+  "intro": "From click to shares.",
+  "rows": [
+   [
+    "1",
+    "He places an order in the trading account"
+   ],
+   [
+    "2",
+    "Money leaves his linked bank account"
+   ],
+   [
+    "3",
+    "The shares are credited to his demat account"
+   ],
+   [
+    "Records",
+    "Kept by depositories NSDL and CDSL"
+   ]
+  ],
+  "note": "A demat account holds shares in electronic form, so there is no paper certificate to lose."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Accounts and orders",
+  "stops": [
+   [
+    "A demat account holds shares digitally",
+    true
+   ],
+   [
+    "A limit order always gets filled",
+    false
+   ],
+   [
+    "A trading account is where you place orders",
+    true
+   ],
+   [
+    "A stop-loss order guarantees the exit price",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Shares are kept in electronic form, with records held by NSDL and CDSL."
+   ],
+   [
+    2.2,
+    "A limit order fills only at your price or better, so it may not fill."
+   ],
+   [
+    4.0,
+    "The trading account connects your bank and demat account."
+   ],
+   [
+    5.6,
+    "In a fast fall, a stop-loss may fill below the level you set."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Market order",
+  "b": "Limit order",
+  "rows": [
+   [
+    "Chance it executes (%)",
+    95,
+    40
+   ],
+   [
+    "Control over price (%)",
+    20,
+    100
+   ]
+  ],
+  "h": "Made-up illustration",
+  "alt": "Bars comparing how likely a market order and a limit order are to execute and how much price control each gives",
+  "caps": [
+   [
+    0.3,
+    "A market order buys at the best price available right now."
+   ],
+   [
+    2.2,
+    "It almost always executes, but you do not control the price."
+   ],
+   [
+    4.0,
+    "A limit order buys only at your chosen price or better."
+   ],
+   [
+    5.6,
+    "You control the price, but it may never fill. These numbers only illustrate the idea."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s402q1",
+  "h": "Check yourself",
+  "q": "Meena wants to buy a share only if it falls to ₹500 or lower. Which order should she use?",
+  "opts": [
+   "A market order",
+   "A stop-loss order at ₹500",
+   "A limit order at ₹500",
+   "No order, and wait to be called"
+  ],
+  "ans": 2,
+  "why": [
+   "A market order buys at once at the current price, which may be higher.",
+   "A stop-loss is meant to sell a holding when the price falls, not to buy.",
+   "A limit order buys only at her price or better, so it waits for ₹500.",
+   "Nobody calls her. She needs to place an order for any trade to happen."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s402q2",
+  "h": "Check yourself",
+  "q": "Rohan bought at ₹200 and set a stop-loss at ₹180. The price gaps down to ₹170 overnight. What may happen?",
+  "opts": [
+   "The sale may fill below ₹180",
+   "The sale is certain at exactly ₹180",
+   "The shares are returned to the company",
+   "The order cancels itself and he gains"
+  ],
+  "ans": 0,
+  "why": [
+   "In a fast fall, a stop-loss can fill below the level that was set.",
+   "A stop-loss does not guarantee the price, so exactly ₹180 is not certain.",
+   "Shares are not returned to a company when a stop-loss is triggered.",
+   "A cancelled order would not create a gain, as the price fell."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s402q3",
+  "h": "Check yourself",
+  "q": "What does a demat account do?",
+  "opts": [
+   "Places the buy and sell orders",
+   "Holds shares in electronic form",
+   "Pays the interest on a loan",
+   "Issues new shares to the public"
+  ],
+  "ans": 1,
+  "why": [
+   "Orders are placed through the trading account, not the demat account.",
+   "A demat account works like a bank for shares, kept electronically.",
+   "A demat account has no connection with paying interest on a loan.",
+   "New shares are issued by the company, and not by a demat account."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s402q4",
+  "h": "Check yourself",
+  "q": "Who keeps the records of shares held in demat form?",
+  "opts": [
+   "The local police station",
+   "The shop where Meena bought her phone",
+   "The newspaper office",
+   "The depositories, NSDL and CDSL"
+  ],
+  "ans": 3,
+  "why": [
+   "A police station does not keep share records for investors.",
+   "A phone shop has no link to holdings of shares.",
+   "A newspaper office does not hold investor records.",
+   "NSDL and CDSL are the two depositories that hold these records."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A demat account holds shares. A trading account places orders.",
+   "A limit order fills only at your price or better, so it may not fill.",
+   "A stop-loss may fill below your level in a fast fall."
+  ]
+ }
+]

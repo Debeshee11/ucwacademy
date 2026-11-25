@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An investor holds shares and fears a sharp fall. A protective put works like insurance: it limits losses below the strike, for the price of the premium. Strategies can protect. Speculation is a different matter.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Simple strategies",
+  "lines": [
+   [
+    "meena",
+    "Which strategy is safest?"
+   ],
+   [
+    "sikka",
+    "None is without risk. A protective put limits a fall but costs a premium. A covered call earns premium but caps your gain. A straddle bets on a big move in either direction. A bull call spread cuts cost and caps both profit and loss. This is education, not a call to trade."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four strategies in a line",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Protective put",
+    "own shares + buy a put: limits a fall"
+   ],
+   [
+    "Covered call",
+    "own shares + sell a call: earns premium, caps gain"
+   ],
+   [
+    "Straddle",
+    "buy a call and a put, same strike: profits on a big move"
+   ],
+   [
+    "Bull call spread",
+    "buy a ₹500 call, sell a ₹550 call: capped gain and loss"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Simple strategies",
+  "stops": [
+   [
+    "A protective put limits losses below the strike",
+    true
+   ],
+   [
+    "A covered call has no cap on the gain",
+    false
+   ],
+   [
+    "A straddle profits from a big move either way",
+    true
+   ],
+   [
+    "A bull call spread has unlimited profit",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It costs the premium."
+   ],
+   [
+    2.2,
+    "It caps the gain."
+   ],
+   [
+    4.0,
+    "Direction does not matter."
+   ],
+   [
+    5.6,
+    "It caps both profit and loss."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s420q1",
+  "h": "Check yourself",
+  "q": "An investor holds shares and buys a put to guard against a sharp fall. What is this?",
+  "opts": [
+   "A covered call",
+   "A protective put",
+   "A straddle",
+   "A bull call spread"
+  ],
+  "ans": 1,
+  "why": [
+   "A covered call sells a call.",
+   "A put on shares you own limits losses.",
+   "A straddle buys a call and a put.",
+   "A bull call spread uses two calls."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s420q2",
+  "h": "Check yourself",
+  "q": "What is the trade-off of a covered call?",
+  "opts": [
+   "It earns premium but caps the gain",
+   "It removes all risk",
+   "It doubles the gain",
+   "It has no premium, no risk, no cap"
+  ],
+  "ans": 0,
+  "why": [
+   "The seller collects premium but agrees to sell at the strike.",
+   "Risk of a fall in the shares remains. That does not match this case.",
+   "It does not double gains. It does not fit the facts given.",
+   "It does carry risk. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s420q3",
+  "h": "Check yourself",
+  "q": "A trader expects a big move after results but is unsure of the direction. Which strategy matches?",
+  "opts": [
+   "A covered call",
+   "A protective put",
+   "A straddle",
+   "A bull call spread"
+  ],
+  "ans": 2,
+  "why": [
+   "A covered call suits a quiet market.",
+   "A protective put protects held shares.",
+   "A straddle profits from a big move either way.",
+   "A bull call spread bets on a rise."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s420q4",
+  "h": "Check yourself",
+  "q": "A trader buys a ₹500 call and sells a ₹550 call. What is the effect?",
+  "opts": [
+   "Unlimited profit on a rise in price",
+   "Unlimited loss on a fall in price",
+   "No premium at all, paid or received",
+   "Cheaper, with profit and loss capped"
+  ],
+  "ans": 3,
+  "why": [
+   "The profit is capped. It does not fit the facts given.",
+   "The loss is capped at the net premium. The details here point elsewhere.",
+   "Premiums are still paid and received. The details here point elsewhere.",
+   "Selling the higher call cuts cost but caps profit."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Protective put: insurance for shares, costs a premium.",
+   "Covered call: earns premium, caps gain. Straddle: bets on a big move.",
+   "Bull call spread: cheaper, with capped profit and loss."
+  ]
+ }
+]

@@ -1,0 +1,219 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "The Nifty 50 can reach you in two parcels: an index fund bought from the fund house, or an ETF bought on the stock exchange like a share. The index inside is the same. The way you buy is not.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Demat or not",
+  "lines": [
+   [
+    "rohan",
+    "I have a demat account. Should I buy the Nifty ETF or the Nifty index fund?"
+   ],
+   [
+    "sikka",
+    "Depends how you invest. Let us watch a monthly SIP first, then the hidden cost of trading an ETF."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "sipbuy",
+  "h": "An index fund SIP, month by month",
+  "navs": [
+   250,
+   242,
+   236,
+   248,
+   255,
+   262
+  ],
+  "amt": 5000,
+  "scale": 4,
+  "alt": "Six monthly instalments buying units of an index fund at changing prices",
+  "caps": [
+   [
+    0.3,
+    "The index fund is bought from the fund house at the day's NAV. No demat order is needed."
+   ],
+   [
+    2.0,
+    "Each month the ₹5,000 instalment goes in automatically, at that day's NAV."
+   ],
+   [
+    5.4,
+    "The NAV moves, and the units you get move the other way. The SIP just runs."
+   ],
+   [
+    11.0,
+    "With an ETF you would place a buy order on the exchange every month. That is why the fund suits SIPs."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "The hidden cost of trading an ETF",
+  "a": "Thin ETF",
+  "b": "Busy ETF",
+  "rows": [
+   [
+    "Spread (basis points, 100 = 1%)",
+    40,
+    2
+   ],
+   [
+    "Extra paid on a ₹10 lakh buy (₹)",
+    4000,
+    200
+   ]
+  ],
+  "alt": "Bars comparing the extra price paid when buying a thinly traded ETF and a busy ETF",
+  "caps": [
+   [
+    0.3,
+    "An ETF trades at a market price. You buy at the price sellers ask, and sell at the price buyers bid."
+   ],
+   [
+    2.0,
+    "The gap between the two is the spread. In a busy ETF it is tiny: about 2 basis points, or 0.02%."
+   ],
+   [
+    3.8,
+    "In a thin ETF it can be wider. Here 40 basis points, or 0.4%. Both figures are examples."
+   ],
+   [
+    5.5,
+    "On a ₹10 lakh buy that is ₹4,000 extra in the thin ETF against ₹200 in the busy one."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Wrapper facts",
+  "title": "Fair claims, and unfair ones",
+  "stops": [
+   [
+    "Index fund: bought at the day's NAV",
+    true
+   ],
+   [
+    "ETF: needs a demat account and trades all day",
+    true
+   ],
+   [
+    "An ETF always trades exactly at NAV",
+    false
+   ],
+   [
+    "The wrapper decides the index return",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about index funds and ETFs",
+  "caps": [
+   [
+    0.3,
+    "An index fund is priced at day's NAV by the AMC. An ETF trades all day on the exchange, with a demat."
+   ],
+   [
+    3.0,
+    "The ETF price can differ slightly from NAV. The index inside is the same."
+   ],
+   [
+    5.5,
+    "So the wrapper matters less than cost, tracking and, for an ETF, the spread."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s342q1",
+  "h": "Check yourself",
+  "q": "Rohan wants a ₹5,000 SIP in a Nifty fund, running for ten years with no monthly effort. He has a demat account. Which is the simpler route?",
+  "opts": [
+   "The ETF, since a demat account sets up the monthly buy itself",
+   "The index fund, since its SIP debits and buys on its own",
+   "The ETF, since it is always cheaper than an index fund",
+   "Either one, since both need a manual order each month"
+  ],
+  "ans": 1,
+  "why": [
+   "An ETF is bought on the exchange, so he has to place an order each month unless his broker offers a plan.",
+   "The fund house runs the SIP and buys units at NAV, so he does nothing after the mandate is set.",
+   "An ETF may have a lower expense ratio, but the spread and effort can cancel that. It is not always cheaper.",
+   "Only the ETF needs a manual order. The index fund is built for a standing monthly instruction."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s342q2",
+  "h": "Check yourself",
+  "q": "Meena buys ₹5,00,000 of an ETF at its ask of ₹250 a unit. The NAV at that moment is ₹249. About how much more did she pay than the NAV value of what she bought?",
+  "opts": [
+   "About ₹500, as the gap is about 0.1% of the buy",
+   "About ₹5,000, as an ETF buy always costs 1% extra",
+   "About ₹2,000: ₹1 more on each of 2,000 units",
+   "Nothing extra, since an ETF trades at NAV by rule"
+  ],
+  "ans": 2,
+  "why": [
+   "The gap is about 0.4%, not 0.1%. ₹1 on a ₹249 unit is 0.4%, and 0.4% of ₹5 lakh is ₹2,000.",
+   "No fixed 1% charge exists. The extra paid is whatever gap there is between price and NAV.",
+   "₹5,00,000 buys 2,000 units at ₹250. A ₹1 gap above NAV on each unit is ₹2,000, about 0.4%.",
+   "An ETF can trade a little above or below NAV. Here it traded above, and she paid for the gap."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s342q3",
+  "h": "Check yourself",
+  "q": "Rohan will invest a ₹10 lakh lump sum for ten years. The ETF's expense ratio is 0.05% and its spread about 0.05% each time he trades. The index fund's expense ratio is 0.20% with no spread. Ignoring brokerage, which statement is right?",
+  "opts": [
+   "The index fund costs less, since it has no spread to pay",
+   "They cost the same, since both follow the very same index",
+   "The ETF always costs more, since it trades on an exchange",
+   "The ETF likely costs less in total, if it stays liquid"
+  ],
+  "ans": 3,
+  "why": [
+   "No spread saves only about 0.1%, while the ETF's lower yearly cost saves about 1.5% over ten years.",
+   "Same index does not mean same cost. Expense ratio and spread differ, and they add up over years.",
+   "Trading adds a spread, but on a liquid ETF it is tiny. The lower yearly cost outweighs it.",
+   "Over ten years the ETF costs about 0.6% (expenses plus spreads) against 2% for the fund, by simple sums."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s342q4",
+  "h": "Check yourself",
+  "q": "An ETF on the Nifty trades at ₹249.90 while its NAV is ₹250.00 near the close. A client asks if the ETF is broken. What is the sound reply?",
+  "opts": [
+   "A small gap is normal in a busy ETF, if it stays small",
+   "Yes, since an ETF must trade at exactly its NAV all day",
+   "Yes, since the fund house is hiding losses until day end",
+   "No, since any gap, even one of 5%, would be normal"
+  ],
+  "ans": 0,
+  "why": [
+   "A gap of about 0.04% is within a normal spread. Thin ETFs can show wider gaps, so size and volume are worth a check.",
+   "No rule forces trading at NAV. Buyers and sellers set the price, and arbitrage keeps it close to the NAV.",
+   "NAV is computed from the value of the holdings, so the fund house cannot hide losses in this way.",
+   "A 5% gap would be a warning sign for liquidity. A gap of a few paise is the normal kind."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Index fund: bought at NAV from the AMC, SIP-friendly. ETF: exchange, demat, market price.",
+   "The spread is the hidden cost of an ETF. Thin ETFs have wider spreads.",
+   "Same index. Judge by expense ratio, tracking difference and spread, not by the wrapper."
+  ]
+ }
+]

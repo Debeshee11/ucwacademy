@@ -1,0 +1,275 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "Every listed company can be lined up from biggest to smallest. Where a company stands in that line decides what kind of fund can hold it, and how bumpy the ride is likely to be."
+ },
+ {
+  "k": "dialog",
+  "h": "Rohan has heard a rumour",
+  "lines": [
+   [
+    "rohan",
+    "My friend says small caps gave the highest return. I want to put everything there."
+   ],
+   [
+    "sikka",
+    "Fair question. First see how the market sorts companies, then what that does to the ride."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "ladder",
+  "h": "The ladder",
+  "alt": "Bars of company size from biggest to smallest, cut into large, mid and small caps",
+  "caps": [
+   [
+    0.3,
+    "AMFI lines up every listed company by market value, biggest first."
+   ],
+   [
+    4.2,
+    "The first 100 are large caps. Ranks 101 to 250 are mid caps. Everyone after is a small cap."
+   ],
+   [
+    6.8,
+    "Prices move, so companies move. A large cap whose price falls can slip into the mid bucket."
+   ],
+   [
+    10.0,
+    "Nobody sold anything. The label changed, and so did what the fund holds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Three made-up journeys",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Large caps",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     108.2,
+     107.3,
+     117.3,
+     131.7,
+     121.3,
+     139.4,
+     144.4,
+     166.7,
+     172.8,
+     190.7
+    ]
+   },
+   {
+    "name": "Mid caps",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     119.2,
+     142.8,
+     122.5,
+     123.9,
+     130.8,
+     152.9,
+     184.5,
+     281.1,
+     312.1,
+     229.5
+    ]
+   },
+   {
+    "name": "Small caps",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     135.0,
+     207.5,
+     194.8,
+     284.2,
+     346.5,
+     209.8,
+     241.5,
+     179.7,
+     231.0,
+     277.1
+    ]
+   }
+  ],
+  "alt": "Three lines for large, mid and small caps over ten years with the deepest fall of each marked",
+  "caps": [
+   [
+    0.3,
+    "These paths are made up to show a pattern, not real data."
+   ],
+   [
+    3.5,
+    "Smaller companies swing harder, up and down."
+   ],
+   [
+    8.3,
+    "Small caps ended highest here, and had the deepest fall: about 48%. Large caps fell about 8%."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What each fund must hold",
+  "rows": [
+   {
+    "name": "Large cap fund",
+    "segs": [
+     [
+      "Large caps, at least 80%",
+      80,
+      "#8EC5FF"
+     ],
+     [
+      "Manager's choice",
+      20,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Mid cap fund",
+    "segs": [
+     [
+      "Mid, at least 65%",
+      65,
+      "#3CC47A"
+     ],
+     [
+      "Open",
+      35,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Small cap fund",
+    "segs": [
+     [
+      "Small, at least 65%",
+      65,
+      "#FFC531"
+     ],
+     [
+      "Open",
+      35,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars showing the minimum a large, mid and small cap fund must hold",
+  "caps": [
+   [
+    0.3,
+    "A large cap fund must keep at least 80% in large caps."
+   ],
+   [
+    2.5,
+    "Mid and small cap funds must keep at least 65% in their own bucket."
+   ],
+   [
+    4.5,
+    "The striped part is the manager's choice."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s311q1",
+  "h": "Check yourself",
+  "q": "A company ranked 99th by market value falls in price and slips to rank 108 in the next AMFI list. A large cap fund holds it. What happens?",
+  "opts": [
+   "The fund must sell the shares the same day it slips below rank 100",
+   "The company is now a mid cap, and the fund's mix shifts without a trade",
+   "The fund house has to refund investors for that change of bucket",
+   "Nothing changes in the mix, because the label stays fixed for ten years"
+  ],
+  "ans": 1,
+  "why": [
+   "No same-day sale is required. The rules are about the fund's overall mix, which is checked against the published lists.",
+   "Buckets follow rank, so the stock moves down a bucket. The fund's large cap share falls even though the manager did nothing.",
+   "There is no payment to investors. A change of bucket is part of normal market movement and the fund is not at fault.",
+   "Lists are reset every six months, not ten years. A company's bucket can change at each update."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s311q2",
+  "h": "Check yourself",
+  "q": "A client says small caps gave the highest return, so everything should go there. What is the fair reply?",
+  "opts": [
+   "Small caps have the highest ceiling and the deepest falls, so size them to survive a bad year",
+   "Agree, because the highest return so far is the best guide to the next ten years",
+   "Move everything to large caps, since small caps are not allowed for a client like him",
+   "Split it equally across twenty small cap funds, which takes away the risk of a fall"
+  ],
+  "ans": 0,
+  "why": [
+   "It states the trade honestly: more upside, deeper falls, and a size small enough that he will not sell in a panic.",
+   "Past returns say little about the next decade. The same path that gave a high return also had the deepest fall.",
+   "There is no rule against small caps for him. The question is how much of his money, not whether to own them.",
+   "Twenty funds in the same bucket still fall together, because they hold many of the same kind of company."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s311q3",
+  "h": "Check yourself",
+  "q": "What is the minimum a large cap fund must hold in large cap stocks?",
+  "opts": [
+   "50%",
+   "65%",
+   "80%",
+   "100%"
+  ],
+  "ans": 2,
+  "why": [
+   "Half is too low to call a fund large cap. Half could sit in mid and small companies instead.",
+   "65% is the minimum for mid cap and small cap funds in their own bucket. Large cap funds have a higher bar.",
+   "SEBI sets the floor for large cap funds at 80%, and the manager chooses where the other 20% goes.",
+   "The rule is a minimum, not a full requirement. A large cap fund may hold up to 20% outside the large cap bucket."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s311q4",
+  "h": "Check yourself",
+  "q": "In the made-up paths, small caps ended with the most money. What else did the small cap path show?",
+  "opts": [
+   "It also had the deepest fall, about 48% from a peak",
+   "It never fell below its starting value of ₹100 along the way",
+   "It fell by less than the large caps in every single year",
+   "It grew by exactly the same amount in every single year"
+  ],
+  "ans": 0,
+  "why": [
+   "The path that rose the most also dropped the most. That is why the bucket must match the client's time and nerves.",
+   "The line dips well below earlier peaks, and a fall like that can leave an investor under water for years.",
+   "Large caps fell about 8% at worst here. Small caps swung much more, in both directions.",
+   "Growth was uneven, with big jumps and big drops. Smooth growth is not what smaller companies deliver."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Large is rank 1 to 100, mid 101 to 250, small 251 on. Companies move between them.",
+   "Large cap funds hold at least 80% large caps. Mid and small cap funds hold at least 65% in their own bucket.",
+   "Smaller means a higher ceiling and deeper falls. Size it to the client's horizon and nerves."
+  ]
+ }
+]

@@ -1,0 +1,171 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Dadi's neighbour bought a plan that promised 'insurance plus savings plus guaranteed returns'. After four years she needed to stop paying. She got back far less than she had put in.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Too good to be true?",
+  "lines": [
+   [
+    "dadi",
+    "The agent said I get cover and my money back with profit. Why would anyone buy a plain term plan then?"
+   ],
+   [
+    "sikka",
+    "Because the extras always come at a cost. Let us look at what is inside these plans, and what stopping early costs."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Savings-linked plans",
+  "stops": [
+   [
+    "Stopping early can return much less than you paid",
+    true
+   ],
+   [
+    "An insurance policy promises investment returns",
+    false
+   ],
+   [
+    "A ULIP deducts charges from premium and fund",
+    true
+   ],
+   [
+    "Every policy is a good fit for every buyer",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "If you stop early, the surrender value is often far below the premiums paid."
+   ],
+   [
+    2.2,
+    "Insurance is protection. Promising investment returns from it is mis-selling."
+   ],
+   [
+    4.0,
+    "A ULIP mixes cover and investment, and charges are deducted along the way."
+   ],
+   [
+    5.6,
+    "Match the product to the purpose. Do not buy savings through cover."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three products",
+  "intro": "Know what each one is.",
+  "rows": [
+   [
+    "Endowment plan",
+    "Life cover plus savings, pays a maturity amount if you survive"
+   ],
+   [
+    "ULIP",
+    "Cover plus market-linked investment, with charges"
+   ],
+   [
+    "Surrender value",
+    "What you get if you stop before the term ends"
+   ]
+  ],
+  "note": "A common approach is a plain term plan for cover and a separate investment for growth, so each does one job well."
+ },
+ {
+  "k": "pick",
+  "id": "s449q1",
+  "h": "Check yourself",
+  "q": "Dadi stops an endowment plan after four years. What is the likely result?",
+  "opts": [
+   "She often gets much less than she paid, called the surrender value",
+   "She gets back all premiums with interest",
+   "She gets the full maturity amount, since she paid for four years",
+   "She gets a bonus for starting the plan early"
+  ],
+  "ans": 0,
+  "why": [
+   "Surrender value is often far lower than premiums paid, especially in early years.",
+   "Stopping early usually does not return all premiums, and interest is not assured.",
+   "The maturity amount is paid only if the term is completed.",
+   "Stopping early does not earn a bonus. It often costs the saver."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s449q2",
+  "h": "Check yourself",
+  "q": "An agent tells Rohan an insurance policy will give 'guaranteed 12% returns'. What should Rohan do?",
+  "opts": [
+   "Accept it, since insurers are all regulated bodies in India",
+   "Buy two such policies at once, to stay on the safe side",
+   "Be careful, since promised returns may be mis-selling",
+   "Pay in cash, so that nobody is able to check the deal"
+  ],
+  "ans": 2,
+  "why": [
+   "Regulation does not make every claim by an agent true, so he should read the policy.",
+   "Buying more of a doubtful product multiplies the problem instead of solving it.",
+   "Exaggerated claims and hidden costs are mis-selling, so he should read the terms and question it.",
+   "Paying in cash removes the paper trail and does not help him in any way."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s449q3",
+  "h": "Check yourself",
+  "q": "What do the charges inside a ULIP do?",
+  "opts": [
+   "Nothing, since the insurer pays them from its own pocket",
+   "Reduce the money invested, so returns lag the fund's growth",
+   "Raise the sum assured at the end of the whole term",
+   "Pay only for the agent's yearly holiday and nothing else"
+  ],
+  "ans": 1,
+  "why": [
+   "Charges are taken from the policyholder's premium and fund, not paid by the insurer.",
+   "Costs are deducted along the way, so what grows is smaller than the fund's headline gain.",
+   "Charges do not raise the sum assured. They reduce what is invested.",
+   "Charges cover costs and commissions in general, not one single item."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s449q4",
+  "h": "Check yourself",
+  "q": "Meena wants cover and growth. Which approach keeps each job separate?",
+  "opts": [
+   "One endowment plan that does both jobs at once",
+   "A ULIP, since it covers both jobs in one place",
+   "Skip the cover and invest the whole amount instead",
+   "A plain term plan plus a separate investment"
+  ],
+  "ans": 3,
+  "why": [
+   "A combined plan mixes two goals, and it can do both less well than separate tools.",
+   "A ULIP also mixes the two, with charges deducted from the premium and fund.",
+   "Skipping cover leaves the family exposed if the earner is gone, so it is a poor choice.",
+   "A term plan covers the risk at low cost, and a separate investment can suit her goal."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Stopping a savings plan early often returns much less than you paid.",
+   "Insurance is protection. Promising investment returns from it is a warning sign.",
+   "Keep cover and investing separate: term plan plus a separate investment."
+  ]
+ }
+]

@@ -1,0 +1,268 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "\"Which index fund is best?\" has no single answer, because an index fund is only as good a fit as the index inside it. Pick the list first, then the fund that copies it most cheaply and tightly.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "One pick, please",
+  "lines": [
+   [
+    "rohan",
+    "Which index fund is best? Just give me one."
+   ],
+   [
+    "sikka",
+    "One question first: best for what? Nifty 50, Nifty Next 50 and Nifty 500 behave very differently. Watch."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Three indices, three rides",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Nifty 50",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     112.0,
+     123.2,
+     106.0,
+     127.2,
+     142.5,
+     155.3,
+     147.5,
+     179.9,
+     201.5,
+     221.7
+    ]
+   },
+   {
+    "name": "Nifty 500",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     114.0,
+     127.7,
+     106.0,
+     131.4,
+     149.8,
+     164.8,
+     153.3,
+     193.2,
+     218.3,
+     240.1
+    ]
+   },
+   {
+    "name": "Next 50",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     118.0,
+     135.7,
+     103.1,
+     134.0,
+     154.1,
+     166.4,
+     146.4,
+     193.2,
+     220.2,
+     237.8
+    ]
+   }
+  ],
+  "alt": "Three lines for the Nifty 50, Nifty Next 50 and Nifty 500 over ten made-up years with the deepest fall of each",
+  "caps": [
+   [
+    0.3,
+    "Made-up paths. The Nifty 50 holds the 50 biggest companies. Next 50 holds the next 50 in size."
+   ],
+   [
+    3.0,
+    "The Nifty 500 spreads across 500 companies, so it also holds mid and small ones."
+   ],
+   [
+    7.0,
+    "Bigger swings in the Next 50. The Nifty 50 is the calmest of the three here."
+   ],
+   [
+    8.8,
+    "Deepest falls here: Nifty 50 -14%, Nifty 500 -17%, Next 50 -24%. Pick the index to suit the goal."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Two funds, same index",
+  "a": "Fund P",
+  "b": "Fund Q",
+  "rows": [
+   [
+    "Expense ratio (basis points a year)",
+    30,
+    15
+   ],
+   [
+    "Tracking difference (basis points a year)",
+    35,
+    40
+   ],
+   [
+    "Fund size (₹ crore)",
+    8000,
+    300
+   ]
+  ],
+  "alt": "Bars comparing two funds on the same index by cost, tracking difference and size",
+  "caps": [
+   [
+    0.3,
+    "Now fix the index. Fund P and Fund Q both copy the Nifty 50. These numbers are examples."
+   ],
+   [
+    2.0,
+    "Fund Q has the lower cost: 15 basis points against 30 for Fund P."
+   ],
+   [
+    3.8,
+    "But Fund P trails the index by 35 basis points a year, and Q by 40. P tracks closer."
+   ],
+   [
+    5.6,
+    "P is also much bigger. What you earn is the index minus the gap, so P leaves a little more."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "The checklist",
+  "title": "Checks, and false shortcuts",
+  "stops": [
+   [
+    "Choose the index to fit the goal first",
+    true
+   ],
+   [
+    "Compare tracking difference on the same index",
+    true
+   ],
+   [
+    "The lowest fee alone decides",
+    false
+   ],
+   [
+    "Nifty 50 and Nifty 500 behave alike",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false rules for picking an index fund",
+  "caps": [
+   [
+    0.3,
+    "First the index, to fit the goal. Then compare expense ratio and tracking difference on that index."
+   ],
+   [
+    3.0,
+    "For ETFs, check size and trading volume. Look at how long the fund has existed."
+   ],
+   [
+    5.5,
+    "The lowest fee on its own is not the test, and the three indices are not interchangeable."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s346q1",
+  "h": "Check yourself",
+  "q": "Rohan sees that the Nifty Next 50 gave more than the Nifty 50 last year and wants a fund on it. In the made-up decade the Next 50's deepest fall was about 24% against 14% for the Nifty 50. What should be settled first?",
+  "opts": [
+   "Which fund house is biggest, as it fixes how the index swings",
+   "Whether the larger falls fit his goal and his own nerves",
+   "Whether last year's return will repeat, to show the better index",
+   "Whether the fund has the lowest expense ratio, whatever the index"
+  ],
+  "ans": 1,
+  "why": [
+   "The house does not change the index's swings. Whatever fund he picks will behave like the Next 50.",
+   "The index sets the ride. A fall of about 24% is a different experience from 14%, so fit comes before fee.",
+   "One good year is no promise. Chasing it is how people end up with an index that does not suit them.",
+   "Cost matters but comes second. The index is chosen first, because indices differ more than funds do."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s346q2",
+  "h": "Check yourself",
+  "q": "Two Nifty 50 funds: P has expense 0.30%, tracking difference 0.35% and ₹8,000 crore of assets. Q has expense 0.15%, tracking difference 0.40% and ₹300 crore. Which should Meena prefer?",
+  "opts": [
+   "Fund Q, since the lower expense ratio always wins here",
+   "Either one, since the same index means the same return",
+   "Neither, since any fund below ₹10,000 crore is unsafe",
+   "Fund P, since it trails the index less and is bigger"
+  ],
+  "ans": 3,
+  "why": [
+   "The expense ratio is part of the gap, not all. Q trails by more in practice, so its lower fee did not help.",
+   "The same index does not give the same return. The gaps differ, and over years that adds up.",
+   "No size cut-off like that exists. Size is one check among several, not a pass mark.",
+   "She earns index minus the gap. P trails by 0.35% against 0.40%, and its size suggests it is well held."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s346q3",
+  "h": "Check yourself",
+  "q": "An ETF on a Nifty index holds ₹20 crore and trades about ₹3 lakh a day. What risk should Rohan weigh before buying ₹5 lakh of it?",
+  "opts": [
+   "Higher index returns, since small ETFs earn more",
+   "No risk at all, since an ETF always trades at NAV",
+   "A wide spread and a poor price when selling",
+   "Extra tax on each trade, since it is a small ETF"
+  ],
+  "ans": 2,
+  "why": [
+   "Size has no link with the return of the index. A small ETF earns the index return less costs, like any other.",
+   "An ETF trades at market price, which can differ from NAV. In a thin ETF the gap can be large.",
+   "Small size and thin volume can mean a wide spread. A ₹5 lakh order is large against ₹3 lakh a day.",
+   "Tax does not depend on the size of the ETF. The risk here is the trading price, not the tax."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s346q4",
+  "h": "Check yourself",
+  "q": "A fund launched three months ago on the Nifty 50 has the lowest expense ratio of any. What is the sound view?",
+  "opts": [
+   "Its record is too short to judge, so prefer an older fund",
+   "Buy it now, since the lowest fee always means the best result",
+   "Avoid it for ever, since any new fund is bad by definition",
+   "Judge it on three months of returns, since they show tracking"
+  ],
+  "ans": 0,
+  "why": [
+   "Tracking difference needs a year or more of data. A fee alone says little about how well it copies the index.",
+   "A low fee is one point. A new fund can have poor tracking or low assets, so the fee does not settle it.",
+   "New funds can turn out well. The point is to wait for evidence, not to rule them out for ever.",
+   "Three months is too short. Short periods are noisy and say little about tracking."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Choose the index first. Nifty 50, Next 50 and Nifty 500 behave very differently.",
+   "Then compare expense ratio and tracking difference among funds on the same index.",
+   "Check size, trading volume (for ETFs) and how long the fund has existed."
+  ]
+ }
+]

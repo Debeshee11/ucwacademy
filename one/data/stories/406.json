@@ -1,0 +1,193 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A company says it made a profit. But did cash actually come in? Three statements answer three different questions: what was earned, what is owned and owed, and where the cash went.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Three statements",
+  "lines": [
+   [
+    "meena",
+    "Profit is profit. Why read three reports?"
+   ],
+   [
+    "sikka",
+    "Because each shows something else. The profit and loss shows earnings over a period. The balance sheet is a snapshot of what is owned and owed. The cash flow statement shows real cash. A firm can show profit and still collect little cash."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Earnings per share",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Net profit",
+    "₹100 crore"
+   ],
+   [
+    "Shares outstanding",
+    "10 crore"
+   ],
+   [
+    "=",
+    "EPS",
+    "₹10 per share"
+   ],
+   [
+    "Cash collected from customers",
+    "check the cash flow statement"
+   ]
+  ],
+  "note": "EPS is net profit divided by the number of shares."
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "Three statements, three questions",
+  "bw": 190,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "Profit and loss",
+    "sub": "earned over a period",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 135,
+    "label": "Balance sheet",
+    "sub": "owns and owes on one date",
+    "col": "#8EC5FF"
+   },
+   {
+    "x": 170,
+    "y": 220,
+    "label": "Cash flow",
+    "sub": "cash in and out",
+    "col": "#3CC47A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    ""
+   ],
+   [
+    1,
+    2,
+    ""
+   ]
+  ],
+  "alt": "Three boxes for the three statements",
+  "caps": [
+   [
+    0.3,
+    "The P&L shows revenue, costs and profit."
+   ],
+   [
+    2.2,
+    "The balance sheet is a snapshot on one date."
+   ],
+   [
+    4.0,
+    "The cash flow statement shows real cash movement."
+   ],
+   [
+    5.6,
+    "Read all three together."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s406q1",
+  "h": "Check yourself",
+  "q": "Which statement is a snapshot of assets, liabilities and equity on one date?",
+  "opts": [
+   "The profit and loss",
+   "The cash flow statement",
+   "The balance sheet",
+   "The earnings call"
+  ],
+  "ans": 2,
+  "why": [
+   "The P&L covers a period, not one date. It does not answer what was asked.",
+   "The cash flow shows cash movement over a period. The details here point elsewhere.",
+   "The balance sheet shows what is owned and owed on a date.",
+   "An earnings call is a discussion, not a statement. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s406q2",
+  "h": "Check yourself",
+  "q": "A company shows a profit but collected little cash from customers. Which statement reveals this?",
+  "opts": [
+   "The cash flow statement",
+   "The balance sheet's date",
+   "The EPS figure",
+   "The company's logo"
+  ],
+  "ans": 0,
+  "why": [
+   "It shows actual cash moving in and out. This fits the facts given.",
+   "The balance sheet date does not show cash collected.",
+   "EPS is derived from profit, not cash. It does not answer what was asked.",
+   "A logo shows nothing about cash. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s406q3",
+  "h": "Check yourself",
+  "q": "A company earns ₹100 crore profit with 10 crore shares. What is the EPS?",
+  "opts": [
+   "₹100 per share",
+   "₹1 per share",
+   "₹1,000 per share",
+   "₹10 per share"
+  ],
+  "ans": 3,
+  "why": [
+   "₹100 ignores the share count.",
+   "₹1 would need 100 crore shares.",
+   "₹1,000 multiplies instead of divides.",
+   "100 ÷ 10 gives ₹10 per share."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s406q4",
+  "h": "Check yourself",
+  "q": "What does the profit and loss statement show?",
+  "opts": [
+   "Assets and liabilities on one date",
+   "Revenue, costs and profit",
+   "Only the cash in the bank today",
+   "Only the share price of the firm"
+  ],
+  "ans": 1,
+  "why": [
+   "That describes the balance sheet. It does not answer what was asked.",
+   "It covers a quarter or a year. This fits the facts given.",
+   "Cash movement is on the cash flow statement. That does not match this case.",
+   "Share price is not in it. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "P&L: revenue, costs, profit over a period.",
+   "Balance sheet: owns, owes and equity on one date.",
+   "Cash flow: real cash. EPS = net profit ÷ shares."
+  ]
+ }
+]

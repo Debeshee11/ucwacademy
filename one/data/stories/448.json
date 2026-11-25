@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "family",
+  "h": "Before you start",
+  "big": "Rohan earns ₹12 lakh a year and has a ₹40 lakh home loan. His agent says ₹50 lakh of cover is plenty. Is it? Let us work it out instead of guessing.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "How much is enough?",
+  "lines": [
+   [
+    "rohan",
+    "How do I know what cover I need? Everyone says a different number."
+   ],
+   [
+    "sikka",
+    "Start with a rule of thumb, then adjust for loans and savings. And remember that a fixed sum loses value over time."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rohan's cover, step by step",
+  "intro": "A made-up but realistic case.",
+  "rows": [
+   [
+    "Yearly income",
+    "₹12 lakh"
+   ],
+   [
+    "×12 years of income replaced",
+    "₹1.44 crore"
+   ],
+   [
+    "Add: home loan to clear",
+    "₹40 lakh"
+   ],
+   [
+    "Less: existing savings and cover",
+    "₹14 lakh"
+   ],
+   [
+    "=",
+    "Cover to consider",
+    "₹1.7 crore"
+   ]
+  ],
+  "note": "A common rule of thumb is 10 to 15 times yearly income. Then adjust for loans, savings and your family's needs."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   100,
+   55.8,
+   31.2,
+   17.4
+  ],
+  "labels": [
+   "Today",
+   "10 yrs",
+   "20 yrs",
+   "30 yrs"
+  ],
+  "big": "About ₹31 lakh",
+  "small": "what ₹1 crore buys in 20 years at 6% inflation",
+  "h": "A fixed sum loses buying power",
+  "alt": "Bars showing the buying power of ₹1 crore shrinking over thirty years in lakh of rupees",
+  "caps": [
+   [
+    0.3,
+    "₹1 crore of cover feels like a lot today."
+   ],
+   [
+    2.0,
+    "At 6% a year, in 10 years it buys what ₹56 lakh buys today."
+   ],
+   [
+    3.8,
+    "In 20 years, about ₹31 lakh in today's terms."
+   ],
+   [
+    5.2,
+    "An assumed rate, not a forecast. Cover must be big enough to last."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s448q1",
+  "h": "Check yourself",
+  "q": "Rohan earns ₹15 lakh a year. Using the 10 to 15 times rule, what is a sensible cover range to begin with?",
+  "opts": [
+   "₹15 lakh to ₹30 lakh",
+   "₹50 lakh flat for everyone",
+   "₹5 crore, since more is always better",
+   "₹1.5 crore to ₹2.25 crore"
+  ],
+  "ans": 3,
+  "why": [
+   "That is only one to two times his income, which would run out quickly for a family.",
+   "A flat number ignores his income, loans and family needs.",
+   "Far more cover than needed raises the premium without matching a real need.",
+   "Ten to fifteen times ₹15 lakh is ₹1.5 crore to ₹2.25 crore, a starting range to adjust."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s448q2",
+  "h": "Check yourself",
+  "q": "Meena has a ₹30 lakh home loan. Why should her term cover consider it?",
+  "opts": [
+   "It lowers her income, so smaller cover can do",
+   "So her family is not left holding the debt if she is gone",
+   "Banks always clear a home loan on the borrower's death",
+   "It makes the premium lower for the same cover amount"
+  ],
+  "ans": 1,
+  "why": [
+   "A loan does not lower her income. It is a liability that would remain.",
+   "Adding the loan to the cover lets the family clear it and keep the home.",
+   "A bank does not clear a loan on death unless a separate cover exists.",
+   "A loan does not lower the premium. It raises the cover she needs."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s448q3",
+  "h": "Check yourself",
+  "q": "Rohan buys ₹50 lakh of cover for 30 years. Why might that become too little over time?",
+  "opts": [
+   "Insurers reduce the sum assured every year",
+   "Term plans stop paying after ten years",
+   "Inflation shrinks what a fixed sum can buy",
+   "Premiums are added to the sum assured"
+  ],
+  "ans": 2,
+  "why": [
+   "The sum assured stays the same in rupees. It does not shrink by the insurer's choice.",
+   "A term plan pays for the whole term, not just ten years.",
+   "A fixed amount buys less as prices rise, so cover chosen today must allow for that.",
+   "Premiums are not added to the sum assured in a plain term plan."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s448q4",
+  "h": "Check yourself",
+  "q": "Meena's savings and existing cover come to ₹20 lakh. How does this change the cover she needs?",
+  "opts": [
+   "It lowers the extra cover needed, since part is already met",
+   "It adds to the need, since savings count as a liability",
+   "It has no effect, since cover is based on income alone",
+   "It doubles the cover needed, to protect those savings"
+  ],
+  "ans": 0,
+  "why": [
+   "Existing savings and cover already meet some of the family's need, so new cover can be lower.",
+   "Savings are an asset. They reduce the extra cover needed rather than raise it.",
+   "Income is a starting point, but savings and loans adjust the final figure.",
+   "Savings do not double the need. They reduce it, since they are already there."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A rule of thumb is 10 to 15 times yearly income, then adjust.",
+   "Add loans, subtract savings and existing cover.",
+   "A fixed sum loses buying power, so do not under-buy."
+  ]
+ }
+]

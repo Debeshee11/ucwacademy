@@ -1,0 +1,186 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Opening a mutual fund folio takes ten minutes of paperwork. Most people rush it. Then years later a family member is left sorting out a missing nominee or a wrong phone number. Good paperwork is cheap now and costly later.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "I will do it later",
+  "lines": [
+   [
+    "meena",
+    "Do I really need to fill the nominee? I will do it later."
+   ],
+   [
+    "sikka",
+    "Please do it now, it takes a minute. Let us watch what each piece of paperwork protects."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "checklist",
+  "title": "Settle these before a client invests",
+  "h": "Three things on the form",
+  "alt": "A form with three items ticked one by one",
+  "items": [
+   [
+    "KYC done once, valid across fund houses",
+    true
+   ],
+   [
+    "A nominee named on the form",
+    true
+   ],
+   [
+    "Joint holding mode chosen on purpose",
+    true
+   ]
+  ],
+  "caps": [
+   [
+    0.3,
+    "Three things to settle before a client invests."
+   ],
+   [
+    1.6,
+    "KYC means know your customer. Done once, it is valid across fund houses."
+   ],
+   [
+    3.0,
+    "A nominee receives the units if the holder dies. The nominee does not own them while you live."
+   ],
+   [
+    4.4,
+    "For joint holders, choose the mode on purpose. 'Either or survivor' lets one holder operate the folio."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Check every form",
+  "stops": [
+   [
+    "ARN and EUIN of the distributor are shown",
+    true
+   ],
+   [
+    "Your own mobile and email are used",
+    true
+   ],
+   [
+    "A friend's phone number is fine for alerts",
+    false
+   ],
+   [
+    "The holding mode can be left to chance",
+    false
+   ]
+  ],
+  "h": "Check these on every form",
+  "alt": "A shield with what to check on a mutual fund application",
+  "caps": [
+   [
+    0.3,
+    "A distributor must hold a valid ARN, and the form must show the ARN and the EUIN."
+   ],
+   [
+    2.8,
+    "Keep the folio's mobile number and email current. Statements, alerts and changes are checked through them."
+   ],
+   [
+    5.4,
+    "For joint holders, choose the mode on purpose. 'Either or survivor' lets one holder operate the folio."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s304q1",
+  "h": "Check yourself",
+  "q": "Meena skips the nominee on her form, planning to add it later. She then passes away suddenly. What is the likely result for her family?",
+  "opts": [
+   "The family may face a slow, painful claim through a long legal process",
+   "The units go to the nearest fund house, which shares them out equally",
+   "The units are cancelled and the money goes back to the AMC",
+   "Nothing changes, since the nominee is only needed for bank accounts"
+  ],
+  "ans": 0,
+  "why": [
+   "Without a nominee, heirs usually must prove their claim through a longer legal route, which delays the units reaching them.",
+   "Units do not pass to a fund house. They remain her property and pass through her legal heirs.",
+   "The AMC does not take units back when a holder dies. The units belong to her heirs.",
+   "Nomination matters for mutual fund folios as much as bank accounts. Leaving it out can slow a claim."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s304q2",
+  "h": "Check yourself",
+  "q": "Rohan did KYC last year to buy a fund from one fund house. Now he wants to invest in another fund house. What should he expect?",
+  "opts": [
+   "He must repeat the whole KYC, since each fund house keeps its own",
+   "He needs a new KYC every year to keep investing",
+   "KYC is valid across fund houses, so he can go ahead with that same KYC",
+   "He can invest only if the first fund house sends a letter of approval"
+  ],
+  "ans": 2,
+  "why": [
+   "KYC is a one-time process. A fresh round for each fund house is not needed.",
+   "KYC is done once and does not expire each year. Keep details like mobile and email current instead.",
+   "Once done, KYC is valid across fund houses. He may still be asked for small details such as bank information.",
+   "The first fund house has no say. KYC is recognised across fund houses without any letter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s304q3",
+  "h": "Check yourself",
+  "q": "Meena and her husband hold a folio jointly with 'either or survivor'. Meena is travelling and her husband wants to redeem. Can he?",
+  "opts": [
+   "No, both holders must sign every transaction",
+   "Yes, but only after Meena has sent a letter allowing it",
+   "No, only the first holder named on the form can operate it",
+   "Yes, because either holder can operate the folio"
+  ],
+  "ans": 3,
+  "why": [
+   "That would be the case for 'joint' mode. The mode chosen here is 'either or survivor'.",
+   "No letter is needed. The choice of mode on the form already gives each holder that power.",
+   "In this mode no holder is above another. Either can operate the folio on their own.",
+   "Either or survivor means any one holder can operate the folio, and the survivor continues if one holder dies."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s304q4",
+  "h": "Check yourself",
+  "q": "The form a distributor hands to Dadi has the ARN box empty. What should Dadi do?",
+  "opts": [
+   "Sign anyway, since the fund house can fill in the ARN box later",
+   "Fill the ARN herself with any number, since it is a formality",
+   "Ask for the valid ARN and EUIN to be filled in before signing",
+   "Cross out the box, since only direct investors have to use it"
+  ],
+  "ans": 2,
+  "why": [
+   "An empty box on a signed form can be filled in later by anyone. She should check it before she signs.",
+   "A made-up number defeats the purpose. The ARN must be the distributor's own real and valid number.",
+   "A distributor must hold a valid ARN, and the form should show the ARN and EUIN. She checks them first.",
+   "An ARN is needed whenever a distributor is involved. Only direct applications go without one."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "KYC is done once and is valid across fund houses.",
+   "Nominate now. It takes a minute and spares your family a long process.",
+   "Check the distributor's ARN and EUIN, and keep your mobile and email current."
+  ]
+ }
+]

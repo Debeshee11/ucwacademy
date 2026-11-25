@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena's jeweller shows her a price board: ₹X for a gram. The same gram in London, converted to rupees, is a bit less. The gap is not a trick. It is duty, tax and the rupee, all at work.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Whose price is it?",
+  "lines": [
+   [
+    "meena",
+    "Why did gold rise this month, when nothing special happened in India?"
+   ],
+   [
+    "sikka",
+    "Gold is priced in dollars across the world. Your rupee price moves with the global price, with the rupee-dollar rate, and with duties and taxes at home."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Rupee at 80",
+  "b": "Rupee at 88",
+  "rows": [
+   [
+    "Dollar gold price (index)",
+    100,
+    100
+   ],
+   [
+    "Rupee gold price (index)",
+    100,
+    110
+   ]
+  ],
+  "h": "Same dollar price, weaker rupee",
+  "alt": "Bars showing the rupee price of gold rising ten percent when the rupee weakens and the dollar price is unchanged",
+  "caps": [
+   [
+    0.3,
+    "The global dollar price of gold does not change."
+   ],
+   [
+    2.2,
+    "The rupee weakens from 80 to 88 against the dollar."
+   ],
+   [
+    4.0,
+    "The rupee price of gold rises by 10%."
+   ],
+   [
+    5.6,
+    "Made-up numbers to show the idea. A weaker rupee lifts the gold price at home."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four forces",
+  "intro": "What moves the price.",
+  "rows": [
+   [
+    "Real interest rate",
+    "Interest less inflation. Higher real rates make gold less attractive"
+   ],
+   [
+    "Central bank buying",
+    "Heavy purchases add steady demand"
+   ],
+   [
+    "Rupee-dollar rate",
+    "A weaker rupee raises the rupee price"
+   ],
+   [
+    "Import duty and GST",
+    "Make the local price higher than the converted global price"
+   ]
+  ],
+  "note": "Gold pays no interest, so when real interest rates rise, holding it costs more in missed income."
+ },
+ {
+  "k": "pick",
+  "id": "s422q1",
+  "h": "Check yourself",
+  "q": "The global price of gold is unchanged, but the rupee weakens against the dollar. What happens to the rupee price of gold?",
+  "opts": [
+   "It falls",
+   "It stays the same",
+   "It becomes zero",
+   "It rises"
+  ],
+  "ans": 3,
+  "why": [
+   "A weaker rupee does not lower the rupee price.",
+   "The rupee price changes with the exchange rate.",
+   "A price does not fall to zero because of the exchange rate.",
+   "Gold is priced in dollars, so a weaker rupee lifts its price in rupees."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s422q2",
+  "h": "Check yourself",
+  "q": "Real interest rates rise well above inflation. What is the likely effect on gold?",
+  "opts": [
+   "It becomes more attractive for sure",
+   "It becomes less attractive",
+   "Nothing at all happens",
+   "It starts to pay interest"
+  ],
+  "ans": 1,
+  "why": [
+   "Higher real rates tend to reduce gold's appeal for sure.",
+   "When bonds pay more in real terms, gold's lack of income hurts.",
+   "Rates are one of the main forces that act on gold.",
+   "Gold never starts paying interest to its holders."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s422q3",
+  "h": "Check yourself",
+  "q": "Why is the local jeweller's price usually higher than the global price converted to rupees?",
+  "opts": [
+   "The jeweller guesses it",
+   "SEBI adds a charge",
+   "Import duty and GST are added",
+   "The price is set by the weather"
+  ],
+  "ans": 2,
+  "why": [
+   "A jeweller follows a market rate and does not guess it.",
+   "SEBI does not add a charge to the price of gold.",
+   "India adds import duty and GST, so the local price is higher.",
+   "Weather does not set the price of gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s422q4",
+  "h": "Check yourself",
+  "q": "Several central banks add tonnes of gold to their reserves. What does this usually do?",
+  "opts": [
+   "It adds steady demand",
+   "It crashes the price at once",
+   "It stops all gold trading",
+   "It changes the purity of gold"
+  ],
+  "ans": 0,
+  "why": [
+   "Heavy purchases by central banks add steady demand.",
+   "More demand tends to support the price and not crash it.",
+   "Trading goes on as usual when central banks buy.",
+   "Buying has nothing to do with purity."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Gold is priced in dollars, so a weaker rupee lifts its rupee price.",
+   "Higher real interest rates make gold less attractive.",
+   "Duty and GST make local prices higher."
+  ]
+ }
+]

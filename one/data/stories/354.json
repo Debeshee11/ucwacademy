@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client sold before a fall, felt brilliant, and then stayed out through the recovery. Calling the top once feels like skill. Doing it again and again is far harder.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The urge to time",
+  "lines": [
+   [
+    "meena",
+    "Why not just exit before the falls?"
+   ],
+   [
+    "sikka",
+    "Most investors cannot pick tops and bottoms repeatedly. The best days often come close to the worst ones, so missing a handful can cut long-term returns by a large amount. Frequent switching also adds tax, exit loads and mistakes."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A plan against impulse",
+  "intro": "A guide for RMs.",
+  "rows": [
+   [
+    "Overconfidence",
+    "trading too much, trusting a hunch"
+   ],
+   [
+    "The cost",
+    "tax, exit loads and mistakes"
+   ],
+   [
+    "The guard",
+    "a written plan with a review date"
+   ],
+   [
+    "The win",
+    "sticking to the plan, not beating the market in a month"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s354q1",
+  "h": "Check yourself",
+  "q": "Why is exiting before a fall risky?",
+  "opts": [
+   "Markets only rise after any exit",
+   "Best days often sit near the worst",
+   "Exits are banned by the regulator",
+   "Falls never come back to recover"
+  ],
+  "ans": 1,
+  "why": [
+   "Markets do not always rise after an exit.",
+   "Missing a few best days can hurt returns a lot.",
+   "No such ban exists for investors.",
+   "Falls have recovered in the past."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s354q2",
+  "h": "Check yourself",
+  "q": "What does frequent switching add?",
+  "opts": [
+   "Certain gains in every single year",
+   "A lower cost for the investor",
+   "Protection from all market falls",
+   "Tax, exit loads and more mistakes"
+  ],
+  "ans": 3,
+  "why": [
+   "Gains are never certain. The details here point elsewhere.",
+   "It raises cost, not lowers it. That does not match this case.",
+   "No switching protects from all falls. It does not fit the facts given.",
+   "These are real costs of switching. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s354q3",
+  "h": "Check yourself",
+  "q": "What stops impulse trades?",
+  "opts": [
+   "A written plan with a review date",
+   "A tip from a friend at lunch",
+   "A bigger screen for the charts",
+   "A daily look at the news feed"
+  ],
+  "ans": 0,
+  "why": [
+   "A plan sets rules before emotions arrive. That matches the case described.",
+   "A tip is an impulse in itself. It does not answer what was asked.",
+   "Screens do not stop impulses. The details here point elsewhere.",
+   "News can feed impulses. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s354q4",
+  "h": "Check yourself",
+  "q": "What should be celebrated?",
+  "opts": [
+   "Beating the market in a month",
+   "Guessing the exact market top",
+   "Sticking to the plan",
+   "Switching funds most often"
+  ],
+  "ans": 2,
+  "why": [
+   "One month proves nothing lasting.",
+   "Exact tops cannot be repeated.",
+   "Discipline is the real win.",
+   "Frequent switching adds cost."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Most cannot call tops and bottoms repeatedly.",
+   "Missing a few best days can cut long-term returns.",
+   "A written plan stops impulse trades."
+  ]
+ }
+]

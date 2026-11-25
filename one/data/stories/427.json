@@ -1,0 +1,223 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A copper miner cannot simply dig more silver because silver's price jumps. Most silver is a by-product. That is one reason silver's supply responds slowly when demand surges.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What moves silver",
+  "lines": [
+   [
+    "meena",
+    "Why does silver react so much to the economy?"
+   ],
+   [
+    "sikka",
+    "Factories use it, so busy factories raise demand and slowdowns soften it. Most supply is a by-product of copper, lead, zinc or gold, so it cannot be turned up quickly. Green-energy demand is growing. Recycling adds supply when prices are high."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "What moves silver",
+  "bw": 200,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "Busy factories",
+    "sub": "more demand",
+    "col": "#3CC47A"
+   },
+   {
+    "x": 170,
+    "y": 125,
+    "label": "Green energy",
+    "sub": "solar and EV demand",
+    "col": "#8EC5FF"
+   },
+   {
+    "x": 170,
+    "y": 200,
+    "label": "By-product supply",
+    "sub": "slow to respond",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 275,
+    "label": "Recycling",
+    "sub": "adds supply at high prices",
+    "col": "#FF9F7A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    ""
+   ],
+   [
+    1,
+    2,
+    ""
+   ],
+   [
+    2,
+    3,
+    ""
+   ]
+  ],
+  "alt": "Four boxes for forces that move silver",
+  "caps": [
+   [
+    0.3,
+    "Demand follows the factory cycle."
+   ],
+   [
+    2.2,
+    "Green energy adds growing demand."
+   ],
+   [
+    4.0,
+    "Supply as a by-product is slow to respond."
+   ],
+   [
+    5.6,
+    "Recycling adds supply when prices are high."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What moves silver",
+  "stops": [
+   [
+    "Silver demand rises when factories are busy",
+    true
+   ],
+   [
+    "Miners raise silver output at once when price jumps",
+    false
+   ],
+   [
+    "Green-energy use is a growing source of demand",
+    true
+   ],
+   [
+    "High prices reduce recycled supply",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is used in making things."
+   ],
+   [
+    2.2,
+    "Most silver is a by-product."
+   ],
+   [
+    4.0,
+    "Solar cells and electric vehicles."
+   ],
+   [
+    5.6,
+    "High prices bring more scrap."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s427q1",
+  "h": "Check yourself",
+  "q": "Why can't a copper miner quickly raise silver output when prices jump?",
+  "opts": [
+   "Silver mining is banned by law",
+   "Silver has no market price",
+   "Copper has no value to miners",
+   "Silver is mined as a by-product"
+  ],
+  "ans": 3,
+  "why": [
+   "Silver is not banned. It does not answer what was asked.",
+   "Silver has a market price. The details here point elsewhere.",
+   "Copper has value. That does not match this case.",
+   "Most silver comes alongside copper, lead, zinc or gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s427q2",
+  "h": "Check yourself",
+  "q": "What tends to happen to silver when factories cut output in a slowdown?",
+  "opts": [
+   "Prices always double",
+   "Prices tend to soften",
+   "Prices become fixed",
+   "Silver becomes illegal"
+  ],
+  "ans": 1,
+  "why": [
+   "Prices do not always double. That does not match this case.",
+   "Weaker industrial demand softens prices. This fits the facts given.",
+   "Silver is not fixed in price. It does not answer what was asked.",
+   "Silver stays legal. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s427q3",
+  "h": "Check yourself",
+  "q": "A government plans large solar capacity. What does that do to expected silver demand?",
+  "opts": [
+   "Raises it",
+   "Cuts it to zero",
+   "Has no link",
+   "Makes silver a by-product"
+  ],
+  "ans": 0,
+  "why": [
+   "Solar cells use silver, so demand is expected to rise.",
+   "It does not cut demand. It does not fit the facts given.",
+   "There is a link through solar cells. It does not answer what was asked.",
+   "Silver is already a by-product. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s427q4",
+  "h": "Check yourself",
+  "q": "What is recycling supply?",
+  "opts": [
+   "Silver mined from brand new mines",
+   "Silver imported from abroad only",
+   "Silver recovered from old items",
+   "Silver printed by the RBI itself"
+  ],
+  "ans": 2,
+  "why": [
+   "New mining is different. It does not fit the facts given.",
+   "Imports are different. It does not answer what was asked.",
+   "It adds to supply, especially when prices are high.",
+   "Silver is not printed. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver demand follows the economic cycle and green energy.",
+   "Most supply is a by-product, slow to respond.",
+   "Recycling adds supply when prices are high."
+  ]
+ }
+]

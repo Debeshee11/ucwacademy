@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A SIF reports a NAV per unit, like a mutual fund. A PMS shows shares in your own demat account. An AIF needs ₹1 crore and a long lock-in. Three products, three different shapes.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Side by side",
+  "lines": [
+   [
+    "meena",
+    "How is a SIF different from a PMS?"
+   ],
+   [
+    "sikka",
+    "A PMS needs ₹50 lakh and holds shares in your name. A SIF pools money into units under mutual fund rules. An AIF is a private placement at ₹1 crore with a long lock-in. A SIF sets its redemption terms in the offer document."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three products",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "SIF",
+    "₹10 lakh, units at NAV, mutual fund rules"
+   ],
+   [
+    "PMS",
+    "₹50 lakh, shares in the client's own demat"
+   ],
+   [
+    "AIF",
+    "₹1 crore, private placement, long lock-in"
+   ],
+   [
+    "SIF redemption",
+    "set in the offer document: days, notice, exit load"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "How SIFs differ",
+  "stops": [
+   [
+    "A SIF reports a NAV per unit",
+    true
+   ],
+   [
+    "A SIF needs ₹50 lakh like a PMS",
+    false
+   ],
+   [
+    "A SIF's redemption terms are in the offer document",
+    true
+   ],
+   [
+    "An AIF is a public offer with daily redemption",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Investors buy and sell at that value."
+   ],
+   [
+    2.2,
+    "A SIF needs ₹10 lakh."
+   ],
+   [
+    4.0,
+    "Including days and any exit load."
+   ],
+   [
+    5.6,
+    "It is a private placement with a long lock-in."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s443q1",
+  "h": "Check yourself",
+  "q": "Which product shows shares in the client's own demat account?",
+  "opts": [
+   "A PMS",
+   "A SIF",
+   "An AIF",
+   "A mutual fund"
+  ],
+  "ans": 0,
+  "why": [
+   "A PMS holds securities in the client's own name.",
+   "A SIF pools money into units. The details here point elsewhere.",
+   "An AIF pools money privately. That does not match this case.",
+   "A mutual fund pools money into units. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s443q2",
+  "h": "Check yourself",
+  "q": "Which product usually needs ₹1 crore and has a long lock-in?",
+  "opts": [
+   "A SIF",
+   "A PMS",
+   "An AIF",
+   "A savings account"
+  ],
+  "ans": 2,
+  "why": [
+   "A SIF needs ₹10 lakh. The details here point elsewhere.",
+   "A PMS needs ₹50 lakh. That does not match this case.",
+   "An AIF is a private placement with a long lock-in.",
+   "A savings account has no such rule. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s443q3",
+  "h": "Check yourself",
+  "q": "An investor sees a unit price published for the fund each day it is open. What is this?",
+  "opts": [
+   "A capital call notice",
+   "NAV-based pricing",
+   "A hurdle rate figure",
+   "A margin deposit call"
+  ],
+  "ans": 1,
+  "why": [
+   "A capital call is an AIF demand.",
+   "Units trade at NAV, as in a mutual fund.",
+   "A hurdle rate is a return threshold.",
+   "A margin belongs to futures."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s443q4",
+  "h": "Check yourself",
+  "q": "Where should an investor check how often a SIF can be redeemed?",
+  "opts": [
+   "A sign on a shop",
+   "A chat with a friend",
+   "A weather report today",
+   "The offer document"
+  ],
+  "ans": 3,
+  "why": [
+   "A shop sign has no such data. It does not fit the facts given.",
+   "A friend's chat is not a source. It does not answer what was asked.",
+   "Weather has no link. The details here point elsewhere.",
+   "The scheme documents set out redemption terms."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "SIF: units at NAV, mutual fund rules, ₹10 lakh minimum.",
+   "PMS: ₹50 lakh, shares in your name. AIF: ₹1 crore, private placement.",
+   "Read the SIF offer document for redemption terms."
+  ]
+ }
+]

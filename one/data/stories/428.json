@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A buyer pays for a bar and later finds it is not fully pure. Always check the stamp: 999 means 99.9% fine. And remember the costs: dealer premium, storage and bulk.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Holding the real thing",
+  "lines": [
+   [
+    "meena",
+    "Can I just buy silver bars?"
+   ],
+   [
+    "sikka",
+    "Yes, but check purity and costs. Investment-grade bars and coins are 999 fine. Hallmarks show purity on articles. Silver takes far more space than gold for the same value, and dealers charge a premium over the market price."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Physical silver costs, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Silver worth",
+    "₹5 lakh"
+   ],
+   [
+    "Storage",
+    "bulky, needs a secure place"
+   ],
+   [
+    "Dealer premium over spot",
+    "a few per cent above market rate"
+   ],
+   [
+    "Purity check",
+    "stamp 999 on the bar"
+   ]
+  ],
+  "note": "A hallmark on jewellery confirms its fineness."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Physical silver",
+  "stops": [
+   [
+    "999 purity means 99.9% fine",
+    true
+   ],
+   [
+    "Silver needs less storage space than gold of equal value",
+    false
+   ],
+   [
+    "Dealers charge a premium over spot",
+    true
+   ],
+   [
+    "A hallmark shows how much a dealer paid",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is the standard for bars and coins."
+   ],
+   [
+    2.2,
+    "It takes far more space."
+   ],
+   [
+    4.0,
+    "To cover making, handling and profit."
+   ],
+   [
+    5.6,
+    "It shows purity."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s428q1",
+  "h": "Check yourself",
+  "q": "What does 999 purity mean?",
+  "opts": [
+   "99.9 grams per bar",
+   "Made in 1999",
+   "99.9% fine silver",
+   "A price of ₹999"
+  ],
+  "ans": 2,
+  "why": [
+   "It is a purity measure, not a weight. It does not answer what was asked.",
+   "It is not a year. The details here point elsewhere.",
+   "It is the standard for investment-grade bars and coins.",
+   "It is not a price. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s428q2",
+  "h": "Check yourself",
+  "q": "A household holds silver worth ₹5 lakh. What practical issue arises compared with gold?",
+  "opts": [
+   "It needs a bulky, secure place",
+   "It needs no storage at all",
+   "It weighs nothing, so is light",
+   "It cannot ever be stolen"
+  ],
+  "ans": 0,
+  "why": [
+   "Silver takes far more space per unit of value.",
+   "Storage is needed. That does not match this case.",
+   "It has weight. It does not fit the facts given.",
+   "It can be stolen. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s428q3",
+  "h": "Check yourself",
+  "q": "A dealer sells a coin at a few per cent above the market rate. What is the extra called?",
+  "opts": [
+   "Tracking error of a fund",
+   "Premium over spot price",
+   "Theta, the option decay",
+   "Hallmark, the purity mark"
+  ],
+  "ans": 1,
+  "why": [
+   "Tracking error is for funds.",
+   "It covers making, handling and profit.",
+   "Theta is an options measure.",
+   "A hallmark is a purity mark."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s428q4",
+  "h": "Check yourself",
+  "q": "What does a silver hallmark let a buyer do?",
+  "opts": [
+   "Know the dealer's profit margin",
+   "Fix the price of silver itself",
+   "Avoid storage costs entirely",
+   "Verify the purity of an article"
+  ],
+  "ans": 3,
+  "why": [
+   "It does not show profit. It does not fit the facts given.",
+   "It does not set prices. It does not answer what was asked.",
+   "It does not remove storage needs. The details here point elsewhere.",
+   "It shows the fineness of silver articles. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "999 purity means 99.9% fine.",
+   "Silver takes more space than gold, and dealers charge a premium over spot.",
+   "Check the stamp or hallmark before paying."
+  ]
+ }
+]

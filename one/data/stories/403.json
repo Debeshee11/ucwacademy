@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena buys 500 shares at ₹100.40 and, a minute later, changes her mind and sells at ₹100.00. The price did not move at all, yet she lost ₹200. The gap between the two prices has a name.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The hidden cost",
+  "lines": [
+   [
+    "meena",
+    "Nothing changed, yet I lost money. How?"
+   ],
+   [
+    "sikka",
+    "Every share has two prices at any moment: what buyers offer and what sellers ask. The gap between them is a cost of trading. Liquid shares have a small gap. Thinly traded ones have a wide gap."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Meena's round trip",
+  "intro": "Made-up trade.",
+  "rows": [
+   [
+    "She buys at the ask",
+    "₹100.40"
+   ],
+   [
+    "She sells at the bid",
+    "₹100.00"
+   ],
+   [
+    "Gap per share",
+    "₹0.40"
+   ],
+   [
+    "=",
+    "Lost on 500 shares",
+    "₹200"
+   ]
+  ],
+  "note": "This is before brokerage and taxes, which come on top."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Settlement and prices",
+  "stops": [
+   [
+    "India settles most trades one working day after the trade",
+    true
+   ],
+   [
+    "The bid is what a seller asks",
+    false
+   ],
+   [
+    "A price band limits how far a share can move in a day",
+    true
+   ],
+   [
+    "Market capitalisation is the share price alone",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "T+1 means shares and money change hands on the next working day."
+   ],
+   [
+    2.2,
+    "The bid is the highest price a buyer offers. The ask is the seller's price."
+   ],
+   [
+    4.0,
+    "When a share hits its band, trading in it is halted or restricted for the day."
+   ],
+   [
+    5.6,
+    "Market capitalisation is price multiplied by the number of shares."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s403q1",
+  "h": "Check yourself",
+  "q": "Rohan buys shares on Monday. When do they usually reach his demat account under T+1?",
+  "opts": [
+   "The next working day",
+   "The same minute",
+   "After one full month",
+   "After one full year"
+  ],
+  "ans": 0,
+  "why": [
+   "Under T+1, shares and money change hands on the next working day.",
+   "The shares take a working day to settle, not a minute.",
+   "A month is far longer than the standard settlement for shares.",
+   "A year is nowhere near the usual settlement time."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s403q2",
+  "h": "Check yourself",
+  "q": "A share shows a bid of ₹100.00 and an ask of ₹100.40. Meena buys and sells at once. What happens?",
+  "opts": [
+   "She gains the gap on each share",
+   "She pays no cost at all",
+   "She loses the gap on each share",
+   "The exchange adds the gap to her demat"
+  ],
+  "ans": 2,
+  "why": [
+   "The gap works against the person who buys and sells straight away.",
+   "The gap is a real cost, though brokerage and tax come on top.",
+   "She buys at the ask and sells at the bid, so the gap is a loss on each share.",
+   "The exchange does not add the gap to her holdings."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s403q3",
+  "h": "Check yourself",
+  "q": "A stock hits its daily upper price band. What may follow?",
+  "opts": [
+   "Its price doubles in the next hour",
+   "SEBI refunds all buyers",
+   "The company is closed down",
+   "Trading in it is restricted that day"
+  ],
+  "ans": 3,
+  "why": [
+   "A band stops moves beyond a set limit, so doubling is not likely.",
+   "SEBI does not refund buyers when a stock reaches its band.",
+   "Reaching a band does not shut a company down in any way.",
+   "A band limits the move, and hitting it restricts trading."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s403q4",
+  "h": "Check yourself",
+  "q": "A company has 200 crore shares at ₹50 each. What is its market capitalisation?",
+  "opts": [
+   "₹250 crore in all",
+   "₹10,000 crore",
+   "₹50 crore in all",
+   "₹200 crore in all"
+  ],
+  "ans": 1,
+  "why": [
+   "₹250 crore adds the two numbers together, which is not how it works.",
+   "Market cap is price times shares, so 200 crore times ₹50 is ₹10,000 crore.",
+   "₹50 crore is just the price, and it ignores the number of shares.",
+   "₹200 crore is just the number of shares and ignores the price."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "T+1: shares and money change hands the next working day.",
+   "The bid-ask gap is a hidden cost of trading.",
+   "A price band limits the daily move. Market cap is price times shares."
+  ]
+ }
+]

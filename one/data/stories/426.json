@@ -1,0 +1,173 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Gold is mostly held. Silver is mostly used. More than half of all silver demand comes from factories making solar panels, electronics and batteries. That makes it a metal with two lives.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Two lives",
+  "lines": [
+   [
+    "meena",
+    "Is silver just cheaper gold?"
+   ],
+   [
+    "sikka",
+    "No. Silver is a precious metal, but over half of its demand is industrial. It swings far more than gold. And traders watch the gold-silver ratio to judge whether silver looks cheap or dear next to gold."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Where silver demand comes from (approximate)",
+  "rows": [
+   {
+    "name": "Share of silver demand",
+    "segs": [
+     [
+      "Industrial: over half",
+      55,
+      "#8EC5FF"
+     ],
+     [
+      "Jewellery, coins, other",
+      45,
+      "#FFC531"
+     ]
+    ]
+   }
+  ],
+  "alt": "A bar with industrial demand as just over half",
+  "caps": [
+   [
+    0.3,
+    "Silver is also an industrial material."
+   ],
+   [
+    2.2,
+    "Industrial use is over half of demand."
+   ],
+   [
+    4.0,
+    "Solar panels, electronics and batteries."
+   ],
+   [
+    5.6,
+    "That is why it swings more than gold."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Volatility and the ratio, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Gold gains in a year",
+    "10%"
+   ],
+   [
+    "Silver in the same year",
+    "up 30%, then down 20% in months"
+   ],
+   [
+    "Gold price ÷ silver price",
+    "85: one ounce of gold buys 85 of silver"
+   ],
+   [
+    "Reading",
+    "a swing measure, not a forecast"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s426q1",
+  "h": "Check yourself",
+  "q": "What share of silver demand is industrial?",
+  "opts": [
+   "About a tenth",
+   "Over half",
+   "Almost none",
+   "Exactly all of it"
+  ],
+  "ans": 1,
+  "why": [
+   "A tenth is far too small. It does not answer what was asked.",
+   "Industrial demand is over half of total silver demand.",
+   "Industrial use is large, not near zero. That does not match this case.",
+   "Silver is also a precious metal for investment. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s426q2",
+  "h": "Check yourself",
+  "q": "In a year when gold gains 10%, what might silver do?",
+  "opts": [
+   "Move by exactly 10% as well",
+   "Never move at all in a year",
+   "Move only downward all year",
+   "Swing much more, up and down"
+  ],
+  "ans": 3,
+  "why": [
+   "It need not match gold. The details here point elsewhere.",
+   "Prices move. That does not match this case.",
+   "It can move up as well. It does not fit the facts given.",
+   "Silver is usually far more volatile than gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s426q3",
+  "h": "Check yourself",
+  "q": "The gold price is 85 times the silver price. What is this called?",
+  "opts": [
+   "The gold-silver ratio",
+   "The lot size of a contract",
+   "The premium over spot price",
+   "The tracking error of a fund"
+  ],
+  "ans": 0,
+  "why": [
+   "It is how many ounces of silver equal one ounce of gold in price.",
+   "Lot size is a contract quantity. It does not fit the facts given.",
+   "Premium is an extra charge. It does not answer what was asked.",
+   "Tracking error is a fund's gap from its benchmark."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s426q4",
+  "h": "Check yourself",
+  "q": "Which of these is NOT an industrial use of silver?",
+  "opts": [
+   "Solar panels for power",
+   "Electronics, such as phones",
+   "A government savings account",
+   "Batteries for vehicles"
+  ],
+  "ans": 2,
+  "why": [
+   "Solar panels use silver. It does not fit the facts given.",
+   "Electronics use silver. It does not answer what was asked.",
+   "A savings account is a financial product, not an industrial use.",
+   "Batteries use silver. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver is a precious metal and an industrial material.",
+   "Industrial demand is over half of the total.",
+   "Silver swings more than gold. The gold-silver ratio is a relative measure."
+  ]
+ }
+]

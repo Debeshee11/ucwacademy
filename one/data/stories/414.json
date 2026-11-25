@@ -1,0 +1,189 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "The Nifty stands at 24,000. The one-month future trades at 24,060. Why is the future above the spot price? Because holding the asset until expiry has a cost. That cost explains the gap.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Spot, futures and carry",
+  "lines": [
+   [
+    "meena",
+    "Why does the future cost more than the index today?"
+   ],
+   [
+    "sikka",
+    "Futures price sits near spot plus the cost of carry, mostly funding cost less dividends. The gap, called basis, narrows and reaches zero at expiry. Index futures end with cash settlement, not delivery of shares."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Basis shrinks to zero, made up",
+  "vals": [
+   60,
+   40,
+   20,
+   0
+  ],
+  "labels": [
+   "Week 1",
+   "Week 2",
+   "Week 3",
+   "Expiry"
+  ],
+  "big": "60 points to 0",
+  "small": "futures minus spot",
+  "alt": "Bars of the gap between futures and spot falling to zero",
+  "caps": [
+   [
+    0.3,
+    "Futures trade 60 points above the index."
+   ],
+   [
+    2.2,
+    "The gap narrows each week."
+   ],
+   [
+    4.0,
+    "Cost of carry shrinks as expiry nears."
+   ],
+   [
+    5.6,
+    "At expiry the gap is zero."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Pricing and settlement",
+  "stops": [
+   [
+    "Basis is the futures price minus the spot price",
+    true
+   ],
+   [
+    "The basis grows larger at expiry",
+    false
+   ],
+   [
+    "Index futures are cash-settled",
+    true
+   ],
+   [
+    "Cost of carry makes futures trade below spot",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It narrows over time."
+   ],
+   [
+    2.2,
+    "It reaches zero at expiry."
+   ],
+   [
+    4.0,
+    "The price difference is paid in cash."
+   ],
+   [
+    5.6,
+    "It explains why futures trade above spot."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s414q1",
+  "h": "Check yourself",
+  "q": "An index future trades 60 points above the index. What is that gap called?",
+  "opts": [
+   "The basis",
+   "The lot size",
+   "The margin call",
+   "The open interest"
+  ],
+  "ans": 0,
+  "why": [
+   "Basis is the futures price less the spot price.",
+   "Lot size is a quantity. The details here point elsewhere.",
+   "A margin call is a demand for funds. That does not match this case.",
+   "Open interest counts open contracts. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s414q2",
+  "h": "Check yourself",
+  "q": "What happens to the basis as expiry approaches?",
+  "opts": [
+   "It doubles",
+   "It stays the same",
+   "It narrows and reaches zero",
+   "It becomes negative at once"
+  ],
+  "ans": 2,
+  "why": [
+   "It does not double. The details here point elsewhere.",
+   "It does not stay the same. That does not match this case.",
+   "It shrinks and is zero at expiry. This fits the facts given.",
+   "It does not turn negative by rule. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s414q3",
+  "h": "Check yourself",
+  "q": "What is cost of carry?",
+  "opts": [
+   "A fee paid to the exchange only",
+   "The cost of holding until expiry",
+   "The cost of buying a single lot",
+   "The tax on the dividends paid"
+  ],
+  "ans": 1,
+  "why": [
+   "It is not only an exchange fee. It does not fit the facts given.",
+   "Mainly funding cost less any dividends. That matches the case described.",
+   "It is not the price of one lot. The details here point elsewhere.",
+   "It is not a dividend tax. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s414q4",
+  "h": "Check yourself",
+  "q": "How do index futures settle at expiry?",
+  "opts": [
+   "By delivering all 50 shares to you",
+   "By delivering some gold to you",
+   "By posting a letter to the buyer",
+   "By paying the difference in cash"
+  ],
+  "ans": 3,
+  "why": [
+   "No shares are delivered. It does not answer what was asked.",
+   "Gold is not delivered. It does not answer what was asked.",
+   "Letters play no part. The details here point elsewhere.",
+   "Index futures use cash settlement. This fits the facts given."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Basis = futures price − spot price. It reaches zero at expiry.",
+   "Cost of carry is funding cost less dividends.",
+   "Index futures are cash-settled."
+  ]
+ }
+]

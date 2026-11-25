@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A PMS manager replaces half the portfolio in a year. Each sale is a taxable event, and each trade adds cost. High churn can quietly reduce what the client keeps.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Owning the shares",
+  "lines": [
+   [
+    "meena",
+    "How is tax different from a mutual fund?"
+   ],
+   [
+    "sikka",
+    "You own the shares directly, so each sale creates a gain or loss in your hands. The PMS sends a capital gains statement to help you file. Look at churn, and ask for TWRR to compare managers fairly. A custodian keeps your securities separate from the manager."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Reporting terms",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Capital gains statement",
+    "all sales, gains and losses for the return"
+   ],
+   [
+    "Churn",
+    "how often holdings are bought and sold"
+   ],
+   [
+    "TWRR",
+    "return that ignores timing of deposits and withdrawals"
+   ],
+   [
+    "Custodian",
+    "independent firm that safekeeps the securities"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Tax and reporting",
+  "stops": [
+   [
+    "High churn creates more taxable events",
+    true
+   ],
+   [
+    "TWRR depends on when each client added money",
+    false
+   ],
+   [
+    "A custodian is independent of the manager",
+    true
+   ],
+   [
+    "A capital gains statement is not needed for tax",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It also raises costs."
+   ],
+   [
+    2.2,
+    "It ignores that timing."
+   ],
+   [
+    4.0,
+    "It safekeeps securities."
+   ],
+   [
+    5.6,
+    "It is used to file returns."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s434q1",
+  "h": "Check yourself",
+  "q": "A manager replaces half the portfolio in a year. What is this called?",
+  "opts": [
+   "Hedging of holdings",
+   "Rollover of holdings",
+   "High churn of holdings",
+   "Drawdown of holdings"
+  ],
+  "ans": 2,
+  "why": [
+   "Hedging is taking an opposite position. The details here point elsewhere.",
+   "Rollover is a futures term. The details here point elsewhere.",
+   "Churn is how often holdings are bought and sold.",
+   "Drawdown is a fall from a peak. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s434q2",
+  "h": "Check yourself",
+  "q": "What does TWRR allow?",
+  "opts": [
+   "A fair manager comparison",
+   "A guarantee of future returns",
+   "A full refund of the fees",
+   "A change of the custodian"
+  ],
+  "ans": 0,
+  "why": [
+   "It ignores the timing of deposits and withdrawals.",
+   "It guarantees nothing. That does not match this case.",
+   "It does not refund fees. It does not fit the facts given.",
+   "It does not change a custodian. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s434q3",
+  "h": "Check yourself",
+  "q": "Where are the client's shares held, separate from the manager?",
+  "opts": [
+   "In the manager's own pocket",
+   "In a shop near the market",
+   "Nowhere, as shares are virtual",
+   "With an independent custodian"
+  ],
+  "ans": 3,
+  "why": [
+   "The manager does not hold them personally.",
+   "A shop is not a depository. It does not fit the facts given.",
+   "They are held somewhere, with a custodian.",
+   "The custodian safekeeps securities and settles trades."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s434q4",
+  "h": "Check yourself",
+  "q": "At year end the client receives a report of profit and loss on every sale. What is it?",
+  "opts": [
+   "A hurdle rate report card",
+   "A capital gains statement",
+   "A margin note from a broker",
+   "A strike price sheet sent"
+  ],
+  "ans": 1,
+  "why": [
+   "A hurdle is a return threshold.",
+   "It is used to file income tax returns.",
+   "A margin note belongs to futures.",
+   "A strike sheet belongs to options."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "In a PMS, each sale creates a gain or loss in the client's hands.",
+   "High churn raises cost and taxable events.",
+   "TWRR compares managers fairly. A custodian is independent."
+  ]
+ }
+]

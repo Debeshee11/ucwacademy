@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client with ₹60 lakh is told she cannot invest directly in an AIF. The minimum is ₹1 crore. AIFs are privately pooled funds for sophisticated investors. They cannot advertise to the public.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A private pool",
+  "lines": [
+   [
+    "meena",
+    "Why can't I see an advert for an AIF?"
+   ],
+   [
+    "sikka",
+    "AIFs raise money by private placement, using an information document, not a public offer. A scheme can have at most 1,000 investors, which is why it is private. SEBI regulates it, and sets a ₹1 crore minimum per investor."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "AIF basics",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "What it is",
+    "a privately pooled fund regulated by SEBI"
+   ],
+   [
+    "Minimum commitment",
+    "₹1 crore per investor"
+   ],
+   [
+    "How money is raised",
+    "private placement, no public ads"
+   ],
+   [
+    "Investor limit",
+    "at most 1,000 per scheme"
+   ]
+  ],
+  "note": "There are exceptions for certain managers' employees."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What an AIF is",
+  "stops": [
+   [
+    "An AIF is regulated by SEBI",
+    true
+   ],
+   [
+    "An AIF may advertise to the general public",
+    false
+   ],
+   [
+    "The usual minimum is ₹1 crore",
+    true
+   ],
+   [
+    "A scheme can have unlimited investors",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is for sophisticated investors."
+   ],
+   [
+    2.2,
+    "It raises money by private placement."
+   ],
+   [
+    4.0,
+    "Per investor."
+   ],
+   [
+    5.6,
+    "At most 1,000."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s436q1",
+  "h": "Check yourself",
+  "q": "A client has ₹60 lakh. Can she invest directly in an AIF?",
+  "opts": [
+   "No, the minimum is ₹1 crore",
+   "Yes, from any amount",
+   "Yes, from ₹5,000",
+   "No, the minimum is ₹50 lakh"
+  ],
+  "ans": 0,
+  "why": [
+   "The minimum commitment is ₹1 crore. That matches the case described.",
+   "SEBI sets a minimum. The details here point elsewhere.",
+   "₹5,000 is far below the rule. That does not match this case.",
+   "₹50 lakh is the PMS minimum. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s436q2",
+  "h": "Check yourself",
+  "q": "How does an AIF raise money?",
+  "opts": [
+   "By a public advertisement",
+   "By a street campaign",
+   "By private placement",
+   "By a TV show"
+  ],
+  "ans": 2,
+  "why": [
+   "It cannot advertise to the public. The details here point elsewhere.",
+   "A street campaign is a public offer. That does not match this case.",
+   "It invites selected investors using an information document.",
+   "A TV show is a public offer. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s436q3",
+  "h": "Check yourself",
+  "q": "What is the maximum number of investors in an AIF scheme?",
+  "opts": [
+   "10",
+   "1 lakh",
+   "No limit",
+   "1,000"
+  ],
+  "ans": 3,
+  "why": [
+   "10 is too few. That does not match this case.",
+   "1 lakh is far above the limit. It does not fit the facts given.",
+   "There is a limit. It does not answer what was asked.",
+   "A scheme can have at most 1,000 investors."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s436q4",
+  "h": "Check yourself",
+  "q": "Who regulates AIFs in India?",
+  "opts": [
+   "The RBI alone",
+   "SEBI",
+   "The post office",
+   "A local club"
+  ],
+  "ans": 1,
+  "why": [
+   "The RBI regulates banks.",
+   "AIFs are regulated by SEBI.",
+   "A post office is not a regulator.",
+   "A club is not a regulator."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An AIF is a privately pooled fund regulated by SEBI.",
+   "Minimum ₹1 crore; private placement; at most 1,000 investors.",
+   "No advertising to the general public."
+  ]
+ }
+]

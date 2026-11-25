@@ -1,0 +1,223 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "You commit ₹1 crore. The fund asks for 25% within 10 days, because it found an investment. The rest comes later. And you cannot withdraw until the fund ends. Money in an AIF is committed upfront, drawn over time and locked in.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Commit, call, wait",
+  "lines": [
+   [
+    "meena",
+    "Do I pay the whole ₹1 crore on day one?"
+   ],
+   [
+    "sikka",
+    "No. You commit it, and the fund calls it in parts when it finds an investment. A closed-ended fund has a fixed life, and SEBI requires a minimum tenure of three years for Category I and II. Money comes back as distributions when investments are sold."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "The life of AIF money",
+  "bw": 200,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "Commit ₹1 crore",
+    "sub": "a promise to invest",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 125,
+    "label": "Capital calls",
+    "sub": "pay in parts, e.g. 25%",
+    "col": "#8EC5FF"
+   },
+   {
+    "x": 170,
+    "y": 200,
+    "label": "Locked in",
+    "sub": "fixed tenure",
+    "col": "#FF9F7A"
+   },
+   {
+    "x": 170,
+    "y": 275,
+    "label": "Distributions",
+    "sub": "returned on exits",
+    "col": "#3CC47A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    ""
+   ],
+   [
+    1,
+    2,
+    ""
+   ],
+   [
+    2,
+    3,
+    ""
+   ]
+  ],
+  "alt": "Four steps: commit, capital calls, locked in, distributions",
+  "caps": [
+   [
+    0.3,
+    "You commit the full amount."
+   ],
+   [
+    2.2,
+    "The fund calls it in parts."
+   ],
+   [
+    4.0,
+    "Money is locked in for the tenure."
+   ],
+   [
+    5.6,
+    "Distributions return money when investments are sold."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "How an AIF works",
+  "stops": [
+   [
+    "A capital call asks for part of your commitment",
+    true
+   ],
+   [
+    "A closed-ended fund lets you withdraw any day",
+    false
+   ],
+   [
+    "SEBI requires a minimum three-year tenure for Cat I and II",
+    true
+   ],
+   [
+    "Distributions come before any investment is sold",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "When the fund finds an investment."
+   ],
+   [
+    2.2,
+    "It has a fixed life."
+   ],
+   [
+    4.0,
+    "As per the lesson."
+   ],
+   [
+    5.6,
+    "They come when it sells or earns income."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s438q1",
+  "h": "Check yourself",
+  "q": "An investor receives a notice to pay 25% of her ₹1 crore commitment within 10 days. What is it?",
+  "opts": [
+   "A dividend due",
+   "A capital call",
+   "A refund due",
+   "A margin due"
+  ],
+  "ans": 1,
+  "why": [
+   "A dividend is a payout, not a demand. The details here point elsewhere.",
+   "The fund calls part of the commitment. That matches the case described.",
+   "A refund returns money. That does not match this case.",
+   "Margin belongs to futures. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s438q2",
+  "h": "Check yourself",
+  "q": "What is a closed-ended fund?",
+  "opts": [
+   "A fund open to withdrawal every day",
+   "A fund that has no investors at all",
+   "A fund that is always listed daily",
+   "A fixed-life, locked-in fund"
+  ],
+  "ans": 3,
+  "why": [
+   "That describes an open-ended fund. The details here point elsewhere.",
+   "It has investors. That does not match this case.",
+   "It need not be listed. It does not fit the facts given.",
+   "Investors cannot withdraw until it ends or units are sold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s438q3",
+  "h": "Check yourself",
+  "q": "What minimum tenure does SEBI require for Category I and II funds?",
+  "opts": [
+   "One month",
+   "One day",
+   "Three years",
+   "Fifty years"
+  ],
+  "ans": 2,
+  "why": [
+   "One month is far too short.",
+   "One day is far too short.",
+   "Three years is the minimum tenure.",
+   "Fifty years is far too long."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s438q4",
+  "h": "Check yourself",
+  "q": "The fund sells a stake and pays investors their share of the proceeds. What is this?",
+  "opts": [
+   "A distribution",
+   "A capital call",
+   "A lock-in",
+   "A commitment"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a payment returned to investors.",
+   "A capital call asks for money.",
+   "A lock-in restricts withdrawal.",
+   "A commitment is a promise to pay."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Capital call: part of your commitment, when the fund finds an investment.",
+   "Closed-ended: fixed life, locked in. Cat I and II tenure at least three years.",
+   "Distributions return money when investments are sold."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Most futures losses come from size, not from being wrong about direction. A trader who risks 1% of capital per trade can be wrong many times and still be in the game. One who bets half the account cannot.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Discipline",
+  "lines": [
+   [
+    "meena",
+    "What matters most when trading futures?"
+   ],
+   [
+    "sikka",
+    "Position sizing: how much you risk per trade. A stop-loss limits the loss but does not guarantee the exit price. Rollover keeps exposure going past expiry. This lesson is about risk, not about calls to trade."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Sizing and stops, made up",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Capital",
+    "₹10 lakh"
+   ],
+   [
+    "Risk per trade, 1%",
+    "₹10,000 at most"
+   ],
+   [
+    "Stop-loss: exit if index falls 1% below entry",
+    "limits the loss, no exact price guarantee"
+   ],
+   [
+    "Rollover",
+    "close near-expiry, open next month's"
+   ]
+  ],
+  "note": "Index futures are cash-settled and often used to hedge a diversified portfolio."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Using futures wisely",
+  "stops": [
+   [
+    "Position sizing keeps a loss small against capital",
+    true
+   ],
+   [
+    "A stop-loss guarantees the exit price",
+    false
+   ],
+   [
+    "Rollover keeps exposure going past expiry",
+    true
+   ],
+   [
+    "Most losses come from being wrong on direction only",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "For example, risk no more than 1%."
+   ],
+   [
+    2.2,
+    "It limits risk but not the exact price."
+   ],
+   [
+    4.0,
+    "Close the old contract, open the next."
+   ],
+   [
+    5.6,
+    "Most come from size."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s415q1",
+  "h": "Check yourself",
+  "q": "A trader risks no more than 1% of capital on a contract. What is this practice?",
+  "opts": [
+   "Rollover",
+   "Cash settlement",
+   "Mark-to-market",
+   "Position sizing"
+  ],
+  "ans": 3,
+  "why": [
+   "Rollover moves to the next expiry.",
+   "Cash settlement is a way contracts end.",
+   "Mark-to-market is daily settlement.",
+   "It decides how much to risk on one trade."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s415q2",
+  "h": "Check yourself",
+  "q": "What does a stop-loss do?",
+  "opts": [
+   "Caps a loss, no exact price",
+   "Guarantees profit on every trade",
+   "Removes all risk from the trade",
+   "Cancels the margin you have paid"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a preset exit that limits loss.",
+   "No order guarantees profit.",
+   "Risk cannot be removed entirely.",
+   "It does not cancel margin."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s415q3",
+  "h": "Check yourself",
+  "q": "A hedger sells this month's contract and buys next month's. What is this?",
+  "opts": [
+   "Cash settlement",
+   "A margin call",
+   "Rollover",
+   "A dividend"
+  ],
+  "ans": 2,
+  "why": [
+   "Cash settlement ends a contract.",
+   "A margin call is a demand for funds.",
+   "It keeps the cover going past expiry.",
+   "A dividend is a payout on a share."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s415q4",
+  "h": "Check yourself",
+  "q": "A fund manager hedges a basket of shares with one market-index contract. What is it?",
+  "opts": [
+   "A bank deposit",
+   "An index future",
+   "A bonus share",
+   "A bond coupon"
+  ],
+  "ans": 1,
+  "why": [
+   "A deposit is not a hedge instrument here. It does not answer what was asked.",
+   "Index futures are used to hedge diversified portfolios.",
+   "A bonus share is a share issue. The details here point elsewhere.",
+   "A coupon is bond interest. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Most losses come from size, not direction.",
+   "Stop-loss limits a loss, with no price guarantee.",
+   "Rollover keeps exposure past expiry."
+  ]
+ }
+]

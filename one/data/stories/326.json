@@ -1,0 +1,256 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Most people pick a fund by its return. A better first question is: how big a fall can this person sit through without selling? The fund must fit the answer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Meena begins",
+  "lines": [
+   [
+    "meena",
+    "I'm nervous about equity. Where do I begin? I have ₹5 lakh."
+   ],
+   [
+    "sikka",
+    "First tell me this: if ₹5 lakh showed ₹4.4 lakh after a bad few months, would you stay put? Let us measure it, then match funds to it."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Her limit, their worst falls",
+  "a": "She can bear (%)",
+  "b": "Worst fall (%)",
+  "rows": [
+   [
+    "Conservative hybrid",
+    12,
+    5
+   ],
+   [
+    "Balanced advantage",
+    12,
+    11
+   ],
+   [
+    "Aggressive hybrid",
+    12,
+    22
+   ]
+  ],
+  "alt": "Bars comparing the fall Meena can bear, twelve percent, with the made-up worst fall of three hybrid funds",
+  "caps": [
+   [
+    0.3,
+    "Meena can bear a fall of about 12%. On ₹5 lakh that is ₹60,000."
+   ],
+   [
+    2.0,
+    "A conservative hybrid's worst fall in the made-up record is about 5%. It fits with room to spare."
+   ],
+   [
+    3.8,
+    "A balanced advantage fund's worst fall is about 11%, or ₹55,000. It fits, just."
+   ],
+   [
+    5.6,
+    "An aggressive hybrid's worst fall is about 22%, or ₹1.1 lakh. That is nearly twice her limit."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Start gently, add equity as she settles",
+  "rows": [
+   {
+    "name": "Year 1",
+    "segs": [
+     [
+      "Hybrid fund 100%",
+      100,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Year 3",
+    "segs": [
+     [
+      "Hybrid 70%",
+      70,
+      "#8EC5FF"
+     ],
+     [
+      "Equity 30%",
+      30,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "Year 5",
+    "segs": [
+     [
+      "Hybrid 50%",
+      50,
+      "#8EC5FF"
+     ],
+     [
+      "Equity fund 50%",
+      50,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars showing a hybrid fund being joined by an equity fund over five years",
+  "caps": [
+   [
+    0.3,
+    "Year 1: all in a hybrid that cushions the falls. She learns how it feels to see a dip."
+   ],
+   [
+    2.4,
+    "Year 3: she has sat through a dip without selling, so a pure equity fund takes a 30% share."
+   ],
+   [
+    4.5,
+    "Year 5: more equity, if she is still comfortable. Each step is a decision, not a hope. Shares are examples."
+   ],
+   [
+    6.2,
+    "The review each year is where this is decided."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Rules for matching",
+  "title": "Sound and unsound rules",
+  "stops": [
+   [
+    "Pick the hybrid whose worst fall fits her",
+    true
+   ],
+   [
+    "Start gently, then add equity",
+    true
+   ],
+   [
+    "Own four hybrids for safety",
+    false
+   ],
+   [
+    "Rebalance each fund by itself",
+    false
+   ]
+  ],
+  "alt": "A shield with sound and unsound rules for matching hybrids to clients",
+  "caps": [
+   [
+    0.3,
+    "Fit the fall first. Then start gently and let the client add equity as comfort grows."
+   ],
+   [
+    3.3,
+    "Several hybrids holding the same assets add cost and clutter, not safety."
+   ],
+   [
+    5.5,
+    "Rebalance the whole portfolio once a year, not fund by fund."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s326q1",
+  "h": "Check yourself",
+  "q": "Meena can bear about ₹60,000 of fall on ₹5 lakh, and wants as much equity growth as that limit allows. The worst falls in the record are about 5% for a conservative hybrid, 11% for a balanced advantage fund, 22% for an aggressive hybrid and 35% for an equity fund. Which fits?",
+  "opts": [
+   "A conservative hybrid, with a worst fall of 5%, or ₹25,000",
+   "An aggressive hybrid, with a worst fall of 22%, or ₹1.1 lakh",
+   "A balanced advantage fund, worst fall 11%, or ₹55,000",
+   "An equity fund, since its high growth will make up for the fall"
+  ],
+  "ans": 2,
+  "why": [
+   "It fits comfortably, but it leaves growth unused. She asked for as much as her limit allows, which is a larger share.",
+   "A ₹1.1 lakh fall is nearly twice what she can bear, so she would likely sell at the bottom.",
+   "It uses most of her limit: ₹55,000 of fall against ₹60,000 she can bear, so it gives the most growth that fits.",
+   "A 35% fall means ₹1.75 lakh on paper. Growth that comes later does not help a person who sold in the dip."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s326q2",
+  "h": "Check yourself",
+  "q": "Rohan has ₹8 lakh he needs in 10 months for a house deposit. He wants it to earn a little more than a savings account. Which fits best?",
+  "opts": [
+   "An aggressive hybrid, since it earns the most of any hybrid",
+   "A balanced advantage fund, since it cuts equity when risk is high",
+   "A multi asset fund, since gold and debt protect equity falls",
+   "An arbitrage fund, since the money is needed within a year"
+  ],
+  "ans": 3,
+  "why": [
+   "In ten months a fall may not recover before the money is due, so a fund with 65% to 80% equity is risky here.",
+   "It lowers equity at high prices but can still fall by double digits. Ten months is too short to wait for recovery.",
+   "It spreads risk, but equity is still part of it. Falls can still occur and cannot be waited out in ten months.",
+   "With a deadline under a year, a hedged fund that barely moves with markets fits better than one that holds real equity."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s326q3",
+  "h": "Check yourself",
+  "q": "A client holds three hybrids: two aggressive hybrids and one balanced advantage fund. All three hold many of the same large company shares. What should the adviser suggest?",
+  "opts": [
+   "Keep all three, as each fund house runs its own style of investing",
+   "Check the overlap, then keep one or two and drop the duplicates",
+   "Add a fourth hybrid so that the overlap is spread more widely",
+   "Switch all three into one conservative hybrid, to remove all risk"
+  ],
+  "ans": 1,
+  "why": [
+   "Different houses can still hold the same shares. Three funds with the same holdings are one bet, paid for three times.",
+   "Funds that hold the same assets add cost and tracking effort but little extra spread of risk. Merging them keeps it simple.",
+   "A fourth hybrid adds another cost and more overlap. The question is whether each fund does something different.",
+   "A conservative hybrid still carries equity and debt risk, so risk is not removed. It also changes the plan's mix."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s326q4",
+  "h": "Check yourself",
+  "q": "At the yearly review, Meena sees her aggressive hybrid's equity share has drifted from 72% to 68% inside the fund. She asks if she should sell units to restore it. What is the sound reply?",
+  "opts": [
+   "Yes, rebalance each fund every year or its category changes",
+   "Yes, sell units whenever the share moves more than one point",
+   "No, never review a hybrid, as the manager does everything",
+   "The manager handles it. Check the whole portfolio's mix"
+  ],
+  "ans": 3,
+  "why": [
+   "A fund stays in its category while its share is within the allowed range, here 65% to 80%, and 68% is within it.",
+   "One point of drift is normal. Selling on that basis would cost tax and effort with no gain for the plan.",
+   "A yearly check of the whole portfolio is still needed. The manager does not know her goals or other holdings.",
+   "The fund's mix inside its range is the manager's job. Her review looks at the overall split across all funds."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Match the fund's worst fall to the fall the client can bear, not to the return.",
+   "Start gently and add equity as comfort grows. Money needed within a year suits arbitrage.",
+   "Avoid stacking similar hybrids. Review once a year and rebalance the whole portfolio."
+  ]
+ }
+]

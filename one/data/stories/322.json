@@ -1,0 +1,232 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "A fund can hold shares, yet barely move when the share market does. That sounds like a trick. It is not, and the idea behind it is called arbitrage."
+ },
+ {
+  "k": "dialog",
+  "h": "Idle cash",
+  "lines": [
+   [
+    "rohan",
+    "I have ₹20 lakh lying idle for a year. Anything safer than equity but better taxed than an FD?"
+   ],
+   [
+    "sikka",
+    "There is a fund for this, but the way it earns is unusual. Watch one share first, then the tax."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "One share, two very different months",
+  "a": "Share rises to ₹1,100",
+  "b": "Share falls to ₹900",
+  "rows": [
+   [
+    "Share price at month end (₹)",
+    1100,
+    900
+   ],
+   [
+    "Futures price merges to (₹)",
+    1100,
+    900
+   ],
+   [
+    "Locked gap per share (₹)",
+    5,
+    5
+   ]
+  ],
+  "alt": "Two sets of bars showing a hedged share when the price falls and when it rises, with the same locked profit",
+  "caps": [
+   [
+    0.3,
+    "The fund buys a share at ₹1,000 in the cash market. It sells the same share in futures at ₹1,005."
+   ],
+   [
+    2.0,
+    "Case 1: the share falls to ₹900. The cash share loses ₹100. The futures sale gains ₹105."
+   ],
+   [
+    3.8,
+    "Case 2: the share rises to ₹1,100. The share gains ₹100. The futures sale loses ₹95."
+   ],
+   [
+    5.5,
+    "Either way the fund is left with the ₹5 gap it locked in. That is arbitrage."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Same idea, tax on ₹20 lakh",
+  "a": "FD at 7%",
+  "b": "Arbitrage at 6.5%",
+  "rows": [
+   [
+    "Gain before tax (₹ thousand)",
+    140.0,
+    130.0
+   ],
+   [
+    "Tax paid (₹ thousand)",
+    43.7,
+    27.0
+   ],
+   [
+    "Tax as a share of the gain (%)",
+    31.2,
+    20.8
+   ]
+  ],
+  "alt": "Two sets of bars comparing a fixed deposit and an arbitrage fund after tax for someone in the 30 percent slab",
+  "caps": [
+   [
+    0.3,
+    "Assume ₹20 lakh for a year. The FD pays 7%. The arbitrage fund returns 6.5%. Both are assumptions."
+   ],
+   [
+    2.2,
+    "FD interest is taxed at the 30% slab plus 4% cess (31.2%), so ₹43,680 goes in tax."
+   ],
+   [
+    4.0,
+    "Redeemed at 12 months, the arbitrage gain is taxed at 20% plus cess (20.8%): ₹27,040."
+   ],
+   [
+    6.0,
+    "The lower return leaves more in hand: ₹1,02,960 against ₹96,320. Rates here are assumed."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What an arbitrage fund is",
+  "title": "Fair claims, and unfair ones",
+  "stops": [
+   [
+    "Moves little with the stock market",
+    true
+   ],
+   [
+    "Taxed as an equity fund",
+    true
+   ],
+   [
+    "Can dip when futures premiums shrink",
+    true
+   ],
+   [
+    "Gives equity-like growth over time",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false statements about arbitrage funds",
+  "caps": [
+   [
+    0.3,
+    "It is hedged, so it barely moves when the stock market falls, and it is taxed as an equity fund."
+   ],
+   [
+    3.0,
+    "Its returns follow short-term rates and can dip when the futures premium narrows."
+   ],
+   [
+    5.5,
+    "It is a parking place for money, not a way to grow wealth over many years."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s322q1",
+  "h": "Check yourself",
+  "q": "An arbitrage fund buys a share at ₹1,000 and sells its futures at ₹1,005. By month end the share has fallen to ₹950 and the futures price has merged with it. What does the fund make on this share?",
+  "opts": [
+   "₹50 loss, as the share price fell and the fund owns that share",
+   "₹5 gain, as a ₹50 share loss is met by a ₹55 futures gain",
+   "₹55 gain, as the futures sale made money while the share fell",
+   "Nothing, because a hedged position never earns or loses a rupee"
+  ],
+  "ans": 1,
+  "why": [
+   "The hedge matters. The ₹50 fall on the share is offset by a profit on the futures sale it sold.",
+   "The share loses ₹50, the futures sale gains ₹55, and the locked gap of ₹5 remains.",
+   "The ₹55 futures gain is real, but the ₹50 share loss cancels most of it, leaving only ₹5.",
+   "The gap between the two prices is the profit, so a hedged position still earns that small sum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s322q2",
+  "h": "Check yourself",
+  "q": "Rohan is in the 30% slab and will redeem after 12 months. Which reply to his ₹20 lakh question is honest?",
+  "opts": [
+   "It will certainly beat an FD, since equity tax is always lower",
+   "It is exempt from tax, since equity funds are taxed unlike income",
+   "It may leave more after tax than an FD, at similar returns",
+   "It will grow like equity over the year, with a hedge as a bonus"
+  ],
+  "ans": 2,
+  "why": [
+   "If the futures premium narrows, the return can fall below an FD's, so a sure win cannot be promised.",
+   "Equity taxation is not zero. Short-term gains at 12 months or less are taxed at 20% plus cess in the example.",
+   "It claims only what the example shows: a lower tax rate helps, while the return stays near short-term rates.",
+   "A hedged fund does not chase equity growth. Its return follows short-term rates, so this promise is wrong."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s322q3",
+  "h": "Check yourself",
+  "q": "In a weak market, an arbitrage fund's returns slip from about 7% to about 5.5% a year. No stock it holds has crashed. What explains the dip?",
+  "opts": [
+   "The hedge has failed, so the fund is now losing on its stocks",
+   "The fund has moved most of its money into small caps for returns",
+   "Rates always rise when equity falls, which cuts the fund's income",
+   "Cash and futures prices drew closer, so less gap is locked in"
+  ],
+  "ans": 3,
+  "why": [
+   "A hedge that has failed would cause sharp losses, not a slow slide. This fund just earns a thinner gap.",
+   "Arbitrage funds stay hedged and do not shift into small caps. Their earnings come from the price gap.",
+   "Rates and equity markets do not move in lockstep. The dip here comes from the shrinking futures premium.",
+   "The fund earns the gap between cash and futures prices. In weak markets demand for leverage falls and the gap shrinks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s322q4",
+  "h": "Check yourself",
+  "q": "A client wants to put money in an arbitrage fund for ten years, because it is taxed as equity. What should the adviser say?",
+  "opts": [
+   "It is ideal, since equity taxation also brings equity-like returns",
+   "It suits parking cash, but a ten-year goal needs a growth fund",
+   "It works, as the futures gap grows larger each year it is held",
+   "It works only if she invests by SIP and never redeems early"
+  ],
+  "ans": 1,
+  "why": [
+   "Equity tax treatment is about tax rules, not returns. The fund still earns near short-term rates.",
+   "Returns track short-term rates, so over ten years it will trail the growth a long-term goal needs.",
+   "The gap between cash and futures is small and does not compound upward the longer the fund is held.",
+   "A SIP changes how money goes in, not what the fund earns. The return stays near short-term rates."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Arbitrage funds buy in cash, sell in futures and lock in the gap.",
+   "They are hedged and taxed as equity, but they earn near short-term rates.",
+   "Use them to park money for about a year, not to grow it for a decade."
+  ]
+ }
+]

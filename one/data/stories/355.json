@@ -1,0 +1,142 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A fund returned 12% a year. Its average investor earned around 10%. Same fund, two returns. The gap comes from when people buy and sell, not from the fund.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The behaviour gap",
+  "lines": [
+   [
+    "meena",
+    "How can investors earn less than their own fund?"
+   ],
+   [
+    "sikka",
+    "They buy after rises and sell after falls. The gap can be one or two percentage points a year, which is huge when compounded. SIPs narrow it by making the purchase automatic. Fewer reviews, fewer funds and a clear purpose help too."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Fund vs investor, made up",
+  "vals": [
+   12,
+   10
+  ],
+  "labels": [
+   "Fund",
+   "Investor"
+  ],
+  "big": "a 2-point gap",
+  "small": "a year, made-up figures",
+  "alt": "Bars of a fund return and a lower investor return",
+  "caps": [
+   [
+    0.3,
+    "The fund returns 12% a year."
+   ],
+   [
+    2.2,
+    "The investor buys after rises."
+   ],
+   [
+    4.0,
+    "And sells after falls."
+   ],
+   [
+    5.6,
+    "Result: about 10%, a gap from behaviour."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s355q1",
+  "h": "Check yourself",
+  "q": "Why do investors often earn less than their funds?",
+  "opts": [
+   "They buy after rises, sell after falls",
+   "Funds hide part of their returns",
+   "Funds charge them twice every year",
+   "Regulators cut the returns they earn"
+  ],
+  "ans": 0,
+  "why": [
+   "Timing choices create the gap. That matches the case described.",
+   "Funds do not hide returns. The details here point elsewhere.",
+   "There is no double charge. That does not match this case.",
+   "The regulator does not reduce returns. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s355q2",
+  "h": "Check yourself",
+  "q": "How can a gap of one or two points a year matter?",
+  "opts": [
+   "It is too small to notice",
+   "It cancels out after one year",
+   "It is huge when compounded",
+   "It only affects debt funds"
+  ],
+  "ans": 2,
+  "why": [
+   "Over decades it is not small. That does not match this case.",
+   "It does not cancel out. That does not match this case.",
+   "Compounding magnifies small gaps. This fits the facts given.",
+   "It affects any fund investor. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s355q3",
+  "h": "Check yourself",
+  "q": "How do SIPs narrow the gap?",
+  "opts": [
+   "They guarantee a fixed profit",
+   "They remove all market falls",
+   "They skip the exit loads fully",
+   "They make the purchase automatic"
+  ],
+  "ans": 3,
+  "why": [
+   "SIPs guarantee no profit. That does not match this case.",
+   "Falls still occur. It does not fit the facts given.",
+   "Exit loads can still apply. It does not answer what was asked.",
+   "Automation removes timing decisions. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s355q4",
+  "h": "Check yourself",
+  "q": "What is an advisor's biggest value, as per the lesson?",
+  "opts": [
+   "Picking the top fund each year",
+   "Keeping the client in their seat",
+   "Predicting the next market fall",
+   "Cutting every fee to zero"
+  ],
+  "ans": 1,
+  "why": [
+   "No one picks the top fund each year.",
+   "Staying invested protects returns.",
+   "Falls cannot be predicted.",
+   "Fees cannot be cut to zero."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Investor returns are often lower than fund returns.",
+   "SIPs narrow the gap.",
+   "Keeping clients invested is an advisor's big value."
+  ]
+ }
+]

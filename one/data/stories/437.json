@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Three AIF categories, three risk levels. Category I backs start-ups and infrastructure. Category II holds private equity and debt with no borrowing for investments. Category III uses complex strategies and leverage.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Which category?",
+  "lines": [
+   [
+    "meena",
+    "A fund goes long and short in listed shares and uses derivatives. Which category?"
+   ],
+   [
+    "sikka",
+    "Category III. It uses hedge-fund style trading and may use leverage. Category I covers start-ups, SMEs, social ventures and infrastructure, including angel funds. Category II covers private equity and private debt without leverage beyond day-to-day needs."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The three categories",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Category I",
+    "start-ups, SMEs, social ventures, infrastructure"
+   ],
+   [
+    "Category II",
+    "private equity and private debt, no leverage for investing"
+   ],
+   [
+    "Category III",
+    "hedge-fund style, leverage, derivatives"
+   ],
+   [
+    "Angel fund",
+    "sub-category of I, backs seed-stage start-ups"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "The three categories",
+  "stops": [
+   [
+    "Category I invests in start-ups and infrastructure",
+    true
+   ],
+   [
+    "Category II funds use heavy leverage",
+    false
+   ],
+   [
+    "Category III funds may use derivatives and leverage",
+    true
+   ],
+   [
+    "Angel funds are a sub-category of Category III",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "These are areas the government wants to encourage."
+   ],
+   [
+    2.2,
+    "They do not, except for daily needs."
+   ],
+   [
+    4.0,
+    "They use diverse or complex strategies."
+   ],
+   [
+    5.6,
+    "They are a sub-category of Category I."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s437q1",
+  "h": "Check yourself",
+  "q": "A fund backs young technology companies and small manufacturers. Which category?",
+  "opts": [
+   "Category II",
+   "Category III",
+   "None",
+   "Category I"
+  ],
+  "ans": 3,
+  "why": [
+   "Category II covers private equity and debt. The details here point elsewhere.",
+   "Category III uses complex strategies. The details here point elsewhere.",
+   "It fits Category I. That does not match this case. It does not fit the facts given.",
+   "Category I covers start-ups, SMEs and early-stage ventures."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s437q2",
+  "h": "Check yourself",
+  "q": "A fund buys stakes in unlisted mid-sized companies with no borrowing for investments. Which category?",
+  "opts": [
+   "Category I",
+   "Category II",
+   "Category III",
+   "Angel"
+  ],
+  "ans": 1,
+  "why": [
+   "Category I backs start-ups and infrastructure. That does not match this case.",
+   "Private equity without leverage is Category II. This fits the facts given.",
+   "Category III uses leverage. It does not fit the facts given.",
+   "Angel funds back seed-stage start-ups. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s437q3",
+  "h": "Check yourself",
+  "q": "A fund goes long and short in listed shares and uses derivatives. Which category?",
+  "opts": [
+   "Category III",
+   "Category I here",
+   "Category II here",
+   "None of the three"
+  ],
+  "ans": 0,
+  "why": [
+   "Hedge-fund style trading is Category III.",
+   "Category I backs start-ups. It does not fit the facts given.",
+   "Category II holds private equity and debt.",
+   "It fits Category III. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s437q4",
+  "h": "Check yourself",
+  "q": "A group of individuals pools funds to back a seed-stage company. What is this?",
+  "opts": [
+   "A hedge fund",
+   "A mutual fund",
+   "An angel fund",
+   "A PMS"
+  ],
+  "ans": 2,
+  "why": [
+   "A hedge fund is Category III. It does not fit the facts given.",
+   "A mutual fund is a public pool. It does not answer what was asked.",
+   "It pools money from angel investors for start-ups.",
+   "A PMS holds shares in the client's name. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Cat I: start-ups, SMEs, infrastructure. Cat II: private equity and debt, no leverage.",
+   "Cat III: complex strategies, leverage, derivatives.",
+   "Angel funds are a sub-category of Category I."
+  ]
+ }
+]

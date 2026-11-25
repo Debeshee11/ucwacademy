@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Does the manager call you before every trade? That one question splits PMS into three types. And a second question, what the manager buys, defines its investment approach.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who decides?",
+  "lines": [
+   [
+    "meena",
+    "Which PMS lets me approve each trade?"
+   ],
+   [
+    "sikka",
+    "Non-discretionary. In discretionary, the manager trades without asking. In advisory, the manager only recommends and you place the orders. The approach, such as multi cap or small cap, defines what is bought."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three types, one question",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Discretionary",
+    "manager trades without asking each time"
+   ],
+   [
+    "Non-discretionary",
+    "manager recommends, client approves each trade"
+   ],
+   [
+    "Advisory",
+    "manager recommends, client places the orders"
+   ],
+   [
+    "Investment approach",
+    "multi cap, small cap, value, growth"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Types of PMS",
+  "stops": [
+   [
+    "A discretionary manager trades without per-trade approval",
+    true
+   ],
+   [
+    "In an advisory PMS, the manager places the orders",
+    false
+   ],
+   [
+    "A non-discretionary client approves each transaction",
+    true
+   ],
+   [
+    "Investment approach has no link to what is bought",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The client is not called each time."
+   ],
+   [
+    2.2,
+    "The client places them."
+   ],
+   [
+    4.0,
+    "The manager calls before each purchase."
+   ],
+   [
+    5.6,
+    "It defines what the manager buys."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s432q1",
+  "h": "Check yourself",
+  "q": "A manager buys and sells in the client's account without calling for each trade. Which type is this?",
+  "opts": [
+   "Non-discretionary",
+   "Advisory",
+   "Pooled",
+   "Discretionary"
+  ],
+  "ans": 3,
+  "why": [
+   "Non-discretionary needs approval for each trade.",
+   "In advisory, the client places the orders.",
+   "Pooled is not a PMS type. That does not match this case.",
+   "The manager decides without asking each time."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s432q2",
+  "h": "Check yourself",
+  "q": "A firm sends buy and sell ideas and the client places the trades himself. Which type is this?",
+  "opts": [
+   "Discretionary",
+   "Advisory",
+   "Non-discretionary",
+   "Segregated"
+  ],
+  "ans": 1,
+  "why": [
+   "In discretionary, the manager executes. The details here point elsewhere.",
+   "The manager only recommends and the client executes.",
+   "In non-discretionary, the manager executes after approval.",
+   "Segregated describes account structure. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s432q3",
+  "h": "Check yourself",
+  "q": "The manager calls the client for approval before every purchase. Which type is this?",
+  "opts": [
+   "Non-discretionary type",
+   "Discretionary type only",
+   "Advisory type only",
+   "Thematic type only"
+  ],
+  "ans": 0,
+  "why": [
+   "The client approves each transaction.",
+   "Discretionary does not ask each time.",
+   "Advisory leaves execution to the client.",
+   "Thematic is an approach, not a decision type."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s432q4",
+  "h": "Check yourself",
+  "q": "A PMS focuses on a concentrated set of small companies with strong growth. What is this?",
+  "opts": [
+   "A custodian of shares",
+   "A performance fee paid",
+   "An investment approach",
+   "A margin call from a broker"
+  ],
+  "ans": 2,
+  "why": [
+   "A custodian safekeeps securities.",
+   "A performance fee is a charge.",
+   "It is the style the PMS follows.",
+   "A margin call belongs to futures."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Discretionary: manager decides. Non-discretionary: client approves each trade.",
+   "Advisory: manager recommends, client places orders.",
+   "Investment approach defines what the manager buys."
+  ]
+ }
+]

@@ -1,0 +1,330 @@
+[
+ {
+  "k": "fact",
+  "art": "growth",
+  "h": "Before you start",
+  "big": "A momentum index fund gained 40% last year. Index funds are meant to be dull, so how can one be a star? It follows a rule about which shares to hold. Rules have good years and bad years.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Chasing a star",
+  "lines": [
+   [
+    "rohan",
+    "This momentum index fund gave 40% last year. Should I switch everything into it?"
+   ],
+   [
+    "sikka",
+    "Let us see what a rule-based index does over a full decade first, and how much of your money should ever ride on one."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A rule, instead of size",
+  "rows": [
+   {
+    "name": "Size rule: biggest gets most",
+    "segs": [
+     [
+      "A 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "B 30%",
+      30,
+      "#3CC47A"
+     ],
+     [
+      "C 20%",
+      20,
+      "#FFC531"
+     ],
+     [
+      "D 10%",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Low volatility: calmest gets most",
+    "segs": [
+     [
+      "A 10%",
+      10,
+      "#8EC5FF"
+     ],
+     [
+      "B 20%",
+      20,
+      "#3CC47A"
+     ],
+     [
+      "C 30%",
+      30,
+      "#FFC531"
+     ],
+     [
+      "D 40%",
+      40,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Momentum: recent winners get most",
+    "segs": [
+     [
+      "A 15%",
+      15,
+      "#8EC5FF"
+     ],
+     [
+      "B 10%",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "C 20%",
+      20,
+      "#FFC531"
+     ],
+     [
+      "D 5%",
+      5,
+      "#D8B4FE"
+     ],
+     [
+      "E 50%",
+      50,
+      "#FFB3A5"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars of share weights: by market size, by calm movement and by recent gains",
+  "caps": [
+   [
+    0.3,
+    "A plain index gives most weight to the biggest companies. Here four made-up shares, A to D."
+   ],
+   [
+    2.2,
+    "A low volatility index gives most weight to the shares that swing the least."
+   ],
+   [
+    4.0,
+    "A momentum index leans towards shares that rose the most lately. Weights are examples."
+   ],
+   [
+    6.0,
+    "Each fund simply follows its rule. The fund is passive, but choosing the rule was an active choice."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "One rule, a made-up decade",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Market index",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     110.0,
+     123.2,
+     141.7,
+     130.4,
+     143.4,
+     160.6,
+     168.6,
+     192.2,
+     207.6,
+     232.5
+    ]
+   },
+   {
+    "name": "Momentum",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     125.0,
+     162.5,
+     227.5,
+     154.7,
+     136.1,
+     140.2,
+     147.2,
+     173.7,
+     163.3,
+     178.0
+    ]
+   },
+   {
+    "name": "Low volatility",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     107.0,
+     116.6,
+     114.3,
+     118.9,
+     133.2,
+     146.5,
+     155.3,
+     172.4,
+     186.2,
+     204.8
+    ]
+   }
+  ],
+  "alt": "Three lines for a market index, a momentum index and a low volatility index over ten years with the deepest fall of each",
+  "caps": [
+   [
+    0.3,
+    "Made-up paths. Momentum leads for three years, gaining 25%, 30% and then 40%."
+   ],
+   [
+    3.0,
+    "Then it turns. It falls 32% in one year and lags for years after."
+   ],
+   [
+    7.0,
+    "Low volatility is steadier, but never the star. The plain index sits between."
+   ],
+   [
+    8.8,
+    "Deepest falls: market -8%, momentum -40%, low volatility -2%. The best year does not repeat on demand."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "How big a slice?",
+  "a": "Half in the fund",
+  "b": "A tenth in the fund",
+  "rows": [
+   [
+    "Portfolio loss (%)",
+    20,
+    4
+   ],
+   [
+    "Loss on ₹10 lakh (₹ lakh)",
+    2,
+    0.4
+   ]
+  ],
+  "alt": "Bars comparing the loss on ten lakh rupees when half or a tenth of it is in a factor fund that falls 40 percent",
+  "caps": [
+   [
+    0.3,
+    "Say the factor fund falls 40%, as momentum did here, and the rest of the portfolio stays flat."
+   ],
+   [
+    2.4,
+    "With half the money in it, the portfolio loses 20%, which is ₹2 lakh on ₹10 lakh."
+   ],
+   [
+    4.4,
+    "With a tenth of the money in it, the portfolio loses 4%, which is ₹40,000."
+   ],
+   [
+    6.2,
+    "A small satellite lets you hold an idea without letting it decide your future."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s344q1",
+  "h": "Check yourself",
+  "q": "After a 40% year, Rohan puts ₹5 lakh into a momentum index fund. In the next two made-up years it falls 32% and then 12%. About what is his money worth?",
+  "opts": [
+   "About ₹2.8 lakh, as 32% plus 12% is a 44% fall",
+   "About ₹3.4 lakh, as only the 32% fall really counts",
+   "About ₹3.0 lakh, as each fall hits the reduced sum",
+   "About ₹4.4 lakh, as the fund still shows a 3-year gain"
+  ],
+  "ans": 2,
+  "why": [
+   "Adding the falls gives 44%, which would leave ₹2.8 lakh. A second fall acts on the reduced amount, so this is too low.",
+   "₹3.4 lakh is where the money stands after the 32% fall alone. The next 12% fall takes it lower.",
+   "₹5 lakh times 0.68 times 0.88 is about ₹2.99 lakh. The second fall applies to the smaller sum.",
+   "The 40% gain came before he invested. Only the two falls count for his ₹5 lakh, so ₹4.4 lakh is far too high."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s344q2",
+  "h": "Check yourself",
+  "q": "Meena asks what makes a momentum index fund \"smart beta\". Which description is accurate?",
+  "opts": [
+   "An active fund where a manager picks shares with good news",
+   "A plain index fund under a new name, with the same holdings",
+   "A fund that guarantees to beat the market using past winners",
+   "Passive in how it runs, active in which rule it follows"
+  ],
+  "ans": 3,
+  "why": [
+   "No manager picks shares each day. The fund follows the rule's index, and that is what makes it passive.",
+   "A plain index follows market size. A rule-based index holds different shares in different weights.",
+   "A rule based on past winners cannot promise future results. Momentum can reverse sharply.",
+   "The fund mechanically copies a rule-based index, but someone chose the rule, so an active decision sits behind it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s344q3",
+  "h": "Check yourself",
+  "q": "Rohan is excited about a factor fund and wants half of his ₹10 lakh portfolio in it. If it fell 40% and the rest stayed flat, he would lose ₹2 lakh. What should the adviser suggest?",
+  "opts": [
+   "Half is fine, since factor funds recover from every fall quickly",
+   "A small satellite slice, so a bad year cannot sink the plan",
+   "Skip all equity, since a factor fund shows equity is too risky",
+   "Put it all in, since a bigger bet earns more if the rule works"
+  ],
+  "ans": 1,
+  "why": [
+   "A factor can lag for years after a fall. Recovery is not quick or sure, so half is too large.",
+   "With about a tenth in it, the same fall costs 4% of the portfolio, or ₹40,000. He keeps the idea without staking his plan.",
+   "One factor fund does not make all equity unsuitable. The answer is to size it small, not to avoid equity.",
+   "A bigger bet also loses more when the rule fails. Factors go through long cycles, and all-in is the worst-case size."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s344q4",
+  "h": "Check yourself",
+  "q": "A new factor fund has a two-year record, charges 0.8% a year, and a plain Nifty index fund charges 0.2%. What should Meena do before buying?",
+  "opts": [
+   "Buy it, since a fee 0.6% higher shows that it is run better",
+   "Skip the check, as a rule-based fund tracks the market anyway",
+   "Learn the rule, accept possible lag, use a small slice",
+   "Wait for its best one-year return, then invest a large amount"
+  ],
+  "ans": 2,
+  "why": [
+   "Fee does not measure quality. A higher cost only means a higher hurdle for the rule to beat the plain index.",
+   "A rule-based fund can swing far from the market, as momentum did in the film, so a check is needed.",
+   "Factors have long cycles. A short record and a higher cost mean she should know the rule and keep the slice small.",
+   "Buying after the best year is chasing. Momentum reverses fast, so that is when the risk is highest."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Smart beta follows an index built on a rule, such as low volatility or momentum.",
+   "Factors go through long cycles. A star year can be followed by years of lag.",
+   "Costs are higher and records short. Use a small satellite, and know the rule first."
+  ]
+ }
+]

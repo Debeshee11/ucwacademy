@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A PMS holds 15 stocks and two fall by half. The portfolio takes a big hit. A PMS can be concentrated and expensive, so check before committing: concentration, benchmark, track record and exit load.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Before you commit",
+  "lines": [
+   [
+    "meena",
+    "One PMS had a great year. Should that decide it?"
+   ],
+   [
+    "sikka",
+    "No. One strong year says little. Look at five years and at market falls. Compare with a benchmark such as the Nifty 500. Check concentration and read the exit load terms."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Before the fall",
+  "b": "After two stocks halve",
+  "rows": [
+   [
+    "Value, ₹ lakh (15 equal stocks)",
+    100,
+    93
+   ]
+  ],
+  "h": "Concentration risk, made up",
+  "alt": "Bars showing a portfolio value before and after two of fifteen stocks halve",
+  "caps": [
+   [
+    0.3,
+    "Fifteen stocks, held equally."
+   ],
+   [
+    2.2,
+    "Two of them fall by half."
+   ],
+   [
+    4.0,
+    "The whole portfolio feels it."
+   ],
+   [
+    5.6,
+    "Fewer stocks, more risk."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Risks and diligence",
+  "stops": [
+   [
+    "Concentration risk comes from holding few stocks",
+    true
+   ],
+   [
+    "One strong year proves a track record",
+    false
+   ],
+   [
+    "A benchmark judges a manager against the market",
+    true
+   ],
+   [
+    "Exit load never applies in a PMS",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "One bad outcome hurts a lot."
+   ],
+   [
+    2.2,
+    "A long record says more."
+   ],
+   [
+    4.0,
+    "For example, the Nifty 500."
+   ],
+   [
+    5.6,
+    "It may apply in the early years."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s435q1",
+  "h": "Check yourself",
+  "q": "A portfolio holds only 15 stocks and two fall by half. What risk does this show?",
+  "opts": [
+   "Rollover risk of it",
+   "Hurdle risk of it",
+   "Custody risk of it",
+   "Concentration risk"
+  ],
+  "ans": 3,
+  "why": [
+   "Rollover is a futures term. It does not answer what was asked.",
+   "A hurdle is a return threshold. The details here point elsewhere.",
+   "Custody risk is a different matter. That does not match this case.",
+   "Few holdings mean one bad outcome hurts a lot."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s435q2",
+  "h": "Check yourself",
+  "q": "A manager's return is compared with the Nifty 500 over five years. What is the Nifty 500 here?",
+  "opts": [
+   "A benchmark",
+   "A custodian",
+   "An exit load",
+   "A hurdle fee"
+  ],
+  "ans": 0,
+  "why": [
+   "A benchmark is an index used to judge a manager.",
+   "A custodian safekeeps securities. That does not match this case.",
+   "An exit load is a charge. It does not fit the facts given.",
+   "A hurdle fee is not a benchmark. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s435q3",
+  "h": "Check yourself",
+  "q": "Why check returns over five years and in market falls?",
+  "opts": [
+   "One year is always enough to judge",
+   "A long record says more than a year",
+   "Falls never matter to the record",
+   "Only the brochure matters to judge"
+  ],
+  "ans": 1,
+  "why": [
+   "One year can be luck. That does not match this case.",
+   "A long record across cycles is more reliable.",
+   "Falls show how the manager copes. It does not answer what was asked.",
+   "A brochure shows selected data. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s435q4",
+  "h": "Check yourself",
+  "q": "A PMS charges 2% if the client withdraws within the first year. What is this?",
+  "opts": [
+   "A management fee",
+   "A hurdle rate",
+   "An exit load",
+   "A benchmark"
+  ],
+  "ans": 2,
+  "why": [
+   "A management fee is a yearly percentage.",
+   "A hurdle rate is a return threshold.",
+   "It is charged on a withdrawal made early.",
+   "A benchmark is an index for comparison."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Concentration risk: few stocks, bigger swings.",
+   "Compare with a benchmark; check a multi-year track record.",
+   "Read the exit load terms before investing."
+  ]
+ }
+]

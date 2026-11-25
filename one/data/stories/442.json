@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A fund buys a bank's shares and sells another bank's futures, expecting the first to do better. It can gain even if the market falls. That is a long-short strategy, common in SIFs.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Long and short",
+  "lines": [
+   [
+    "meena",
+    "How can a fund gain when prices fall?"
+   ],
+   [
+    "sikka",
+    "By short exposure, taken through derivatives. A SIF may use it for a limited share of its net assets. An equity long-short fund holds shares and sells futures on weaker ones. And SIF strategies carry standard names so you know what you are buying."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Long-short in a line",
+  "intro": "Made-up example.",
+  "rows": [
+   [
+    "Long",
+    "buy shares expected to rise"
+   ],
+   [
+    "Short",
+    "sell futures on shares expected to fall"
+   ],
+   [
+    "Example short exposure",
+    "index futures worth 20% of assets"
+   ],
+   [
+    "Aim",
+    "gain in both directions"
+   ]
+  ],
+  "note": "Names such as equity long-short or debt long-short tell you what the fund does."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "SIF strategies",
+  "stops": [
+   [
+    "A long-short strategy takes long and short positions",
+    true
+   ],
+   [
+    "Short exposure gains when prices rise",
+    false
+   ],
+   [
+    "Short exposure is taken through derivatives",
+    true
+   ],
+   [
+    "SIF strategies carry random names",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It aims to gain in both directions."
+   ],
+   [
+    2.2,
+    "It gains when prices fall."
+   ],
+   [
+    4.0,
+    "For a limited share of net assets."
+   ],
+   [
+    5.6,
+    "They carry standardised names."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s442q1",
+  "h": "Check yourself",
+  "q": "A manager buys one bank's shares and sells another bank's futures. What is this?",
+  "opts": [
+   "A fixed deposit plan",
+   "A bonus issue of shares",
+   "A long-short strategy",
+   "A capital call on a fund"
+  ],
+  "ans": 2,
+  "why": [
+   "A deposit is not a strategy. It does not answer what was asked.",
+   "A bonus issue gives extra shares. The details here point elsewhere.",
+   "It buys expected winners and shorts expected losers.",
+   "A capital call belongs to AIFs. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s442q2",
+  "h": "Check yourself",
+  "q": "A fund sells index futures worth 20% of its assets. What is this?",
+  "opts": [
+   "Short exposure",
+   "A dividend",
+   "A hurdle rate",
+   "A lock-in"
+  ],
+  "ans": 0,
+  "why": [
+   "It gains if the market falls. This fits the facts given.",
+   "A dividend is a payout. That does not match this case.",
+   "A hurdle rate is a return threshold. It does not fit the facts given.",
+   "A lock-in restricts withdrawal. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s442q3",
+  "h": "Check yourself",
+  "q": "What does an equity long-short fund do?",
+  "opts": [
+   "Buys only gold bars and coins",
+   "Lends only to the government now",
+   "Holds only cash in a bank account",
+   "Holds shares, shorts by futures"
+  ],
+  "ans": 3,
+  "why": [
+   "Gold is a different asset. That does not match this case.",
+   "Lending to the government is a debt fund. It does not answer what was asked.",
+   "Cash alone is not its strategy. It does not answer what was asked.",
+   "It combines long shares with short derivatives. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s442q4",
+  "h": "Check yourself",
+  "q": "Why do SIF strategies carry standardised names?",
+  "opts": [
+   "To hide the risks from investors",
+   "So investors know what they buy",
+   "To avoid all of SEBI's rules here",
+   "To raise the fees that are charged"
+  ],
+  "ans": 1,
+  "why": [
+   "They are meant to inform. It does not fit the facts given.",
+   "Names such as equity long-short give clarity.",
+   "They are part of SEBI's rules. The details here point elsewhere.",
+   "Names do not set the fees. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Long-short: buy expected winners, short expected losers.",
+   "Short exposure comes through derivatives, for a limited share of assets.",
+   "SIF strategies carry standard names."
+  ]
+ }
+]

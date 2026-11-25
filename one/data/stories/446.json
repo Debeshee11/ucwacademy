@@ -1,0 +1,181 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan is the only earner in his family. If he were gone tomorrow, the home loan, the school fees and the monthly bills would all still arrive. Insurance is how that risk is shared.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What insurance really is",
+  "lines": [
+   [
+    "rohan",
+    "I pay a premium every year, and most years nothing comes back. Is that a waste?"
+   ],
+   [
+    "sikka",
+    "Think of it as renting protection. Many people each pay a little, so the few who suffer a loss can be paid in full."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Many pay a little",
+  "intro": "A made-up pool to show the idea.",
+  "rows": [
+   [
+    "People in the pool",
+    "1,000"
+   ],
+   [
+    "Each pays a year",
+    "₹1,000"
+   ],
+   [
+    "=",
+    "Money collected",
+    "₹10 lakh"
+   ],
+   [
+    "One unlucky member's loss",
+    "₹10 lakh"
+   ],
+   [
+    "=",
+    "Paid from the pool",
+    "₹10 lakh"
+   ]
+  ],
+  "note": "Real premiums are set using claim data and costs, but the idea is the same: a small cost for many, a large payout for the few."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "How insurance works",
+  "stops": [
+   [
+    "The insurer takes on a loss in exchange for a premium",
+    true
+   ],
+   [
+    "Missing the premium has no effect on the cover",
+    false
+   ],
+   [
+    "IRDAI is the insurance regulator in India",
+    true
+   ],
+   [
+    "Premium and sum assured are the same amount",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "You pay a small premium, and the insurer carries the big risk."
+   ],
+   [
+    2.2,
+    "If you miss the premium, the policy can lapse."
+   ],
+   [
+    4.0,
+    "IRDAI licenses insurers and protects policyholders."
+   ],
+   [
+    5.6,
+    "The sum assured is what the insurer pays. The premium is what you pay."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s446q1",
+  "h": "Check yourself",
+  "q": "Rohan pays ₹12,000 a year for a ₹1 crore term cover and no claim arises for years. What did he buy?",
+  "opts": [
+   "Nothing, since no money came back to him",
+   "A saving that grows in the insurer's fund",
+   "Protection for his family during those years",
+   "A loan that the insurer will repay later"
+  ],
+  "ans": 2,
+  "why": [
+   "He bought cover against a loss. Not claiming does not mean the cover had no value.",
+   "A term plan is not a savings product. It pays only if the insured event happens.",
+   "The premium paid for protection throughout the years, whether or not a claim arose.",
+   "It is not a loan. Premiums buy risk cover, not a repayable amount."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s446q2",
+  "h": "Check yourself",
+  "q": "Meena forgets to pay her premium and the grace period ends. What is the likely result?",
+  "opts": [
+   "The policy may lapse, and the cover can stop",
+   "Nothing, since the policy runs on for the full term",
+   "The sum assured is paid to her as cash",
+   "The premium is waived for the next year"
+  ],
+  "ans": 0,
+  "why": [
+   "A lapse ends the cover, so the family would not be protected until it is revived.",
+   "Cover depends on paying the premium. Missing it past the grace period has consequences.",
+   "The sum assured is paid on the insured event, not when a premium is missed.",
+   "Premiums are not waived for missed payments, so the policy cannot continue unpaid."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s446q3",
+  "h": "Check yourself",
+  "q": "A policy promises ₹1 crore if the insured dies during the term. What is the ₹1 crore called?",
+  "opts": [
+   "The premium",
+   "The surrender value",
+   "The maturity benefit",
+   "The sum assured"
+  ],
+  "ans": 3,
+  "why": [
+   "The premium is what the policyholder pays each year, not what is paid out.",
+   "Surrender value is what you get if you stop a policy early, and it applies to savings plans.",
+   "Maturity benefit applies to plans paying on survival, which a plain term plan does not.",
+   "The sum assured is the amount paid on the insured event, here a death in the term."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s446q4",
+  "h": "Check yourself",
+  "q": "Who regulates insurers in India and handles policyholder protection?",
+  "opts": [
+   "SEBI",
+   "IRDAI",
+   "RBI alone",
+   "AMFI"
+  ],
+  "ans": 1,
+  "why": [
+   "SEBI regulates securities markets and mutual funds, not insurance companies.",
+   "IRDAI licenses insurers, sets conduct rules and protects policyholders.",
+   "RBI regulates banks. Insurance has its own regulator.",
+   "AMFI is the mutual fund industry body, not an insurance regulator."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Insurance shares a big risk among many people for a small premium.",
+   "The sum assured is what is paid out. The premium is what you pay.",
+   "Miss the premium and the policy can lapse."
+  ]
+ }
+]

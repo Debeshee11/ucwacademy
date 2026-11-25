@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An investor needs cash urgently but cannot withdraw from a closed-ended fund. A start-up's value in the fund is a model's estimate, not a market price. These are the real risks of an AIF: illiquidity and valuation, and the manager's skill.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What to check",
+  "lines": [
+   [
+    "meena",
+    "How do I choose an AIF?"
+   ],
+   [
+    "sikka",
+    "Start with the manager: experience, record, team and process. Then remember illiquidity and valuation risk. Unlisted assets have no daily price, so values rest on models. SEBI also defines accredited investors, who may get some relaxations."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Risk checklist",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Illiquidity",
+    "hard to sell before the fund ends"
+   ],
+   [
+    "Valuation risk",
+    "unlisted assets valued by models, not market prices"
+   ],
+   [
+    "Manager selection",
+    "compare experience, record, team, process"
+   ],
+   [
+    "Accredited investor",
+    "meets SEBI tests, may get relaxed minimums"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Risks and diligence",
+  "stops": [
+   [
+    "AIF units are hard to sell before the fund ends",
+    true
+   ],
+   [
+    "Unlisted assets have daily market prices",
+    false
+   ],
+   [
+    "Manager selection means comparing experience and record",
+    true
+   ],
+   [
+    "An accredited investor must meet no tests",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "That is illiquidity."
+   ],
+   [
+    2.2,
+    "Their value rests on models."
+   ],
+   [
+    4.0,
+    "Results vary widely."
+   ],
+   [
+    5.6,
+    "They must meet SEBI's income or net worth tests."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s440q1",
+  "h": "Check yourself",
+  "q": "An investor needs cash urgently but cannot withdraw from a closed-ended fund. What risk is this?",
+  "opts": [
+   "Valuation risk",
+   "Manager risk",
+   "Tax risk",
+   "Illiquidity"
+  ],
+  "ans": 3,
+  "why": [
+   "Valuation risk is about estimates. It does not answer what was asked.",
+   "Manager risk is about skill. The details here point elsewhere.",
+   "Tax risk is a different matter. That does not match this case.",
+   "It is the difficulty of selling quickly without loss."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s440q2",
+  "h": "Check yourself",
+  "q": "A start-up's value in the fund rests on a model, not a market price. What risk is this?",
+  "opts": [
+   "Valuation risk",
+   "Illiquidity risk",
+   "Churn risk now",
+   "Rollover risk now"
+  ],
+  "ans": 0,
+  "why": [
+   "Unlisted assets have no daily market price.",
+   "Illiquidity is about selling. That does not match this case.",
+   "Churn is about trading frequency. It does not fit the facts given.",
+   "Rollover is a futures term. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s440q3",
+  "h": "Check yourself",
+  "q": "An investor compares the experience and record of three managers. What is this?",
+  "opts": [
+   "Capital call now",
+   "Manager selection",
+   "Carry computation",
+   "Distribution of cash"
+  ],
+  "ans": 1,
+  "why": [
+   "A capital call is a demand for money. It does not fit the facts given.",
+   "It means judging the manager before investing.",
+   "Carry is the manager's profit share. The details here point elsewhere.",
+   "A distribution is a payout. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s440q4",
+  "h": "Check yourself",
+  "q": "Who is an accredited investor?",
+  "opts": [
+   "Anyone with a bank account here",
+   "Anyone over eighteen years here",
+   "Someone meeting SEBI's tests",
+   "Anyone with a demat account here"
+  ],
+  "ans": 2,
+  "why": [
+   "A bank account is not the test. It does not answer what was asked.",
+   "Age alone is not the test. It does not answer what was asked.",
+   "They meet the tests and may get relaxations. This fits the facts given.",
+   "A demat account alone is not the test. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Illiquidity: hard to sell before the fund ends.",
+   "Valuation risk: unlisted assets are valued by models.",
+   "Check the manager. Accredited investors meet SEBI's tests."
+  ]
+ }
+]

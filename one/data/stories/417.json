@@ -1,0 +1,194 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A call with a strike of ₹400 on a share trading at ₹450 is worth at least ₹50 right now. A call struck at ₹600 on the same share is worth only the hope that it gets there. Moneyness tells these apart.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Where is the market?",
+  "lines": [
+   [
+    "meena",
+    "What does in-the-money mean?"
+   ],
+   [
+    "sikka",
+    "Exercising now would give a profit. A call is in the money when the share is above the strike. At the money means the strike is about equal to the price. Out of the money means no gain now, so its premium is all time value."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Strike",
+  "b": "Share price",
+  "rows": [
+   [
+    "Call, ITM (₹)",
+    400,
+    450
+   ],
+   [
+    "Call, ATM (₹)",
+    500,
+    500
+   ],
+   [
+    "Call, OTM (₹)",
+    600,
+    500
+   ]
+  ],
+  "h": "Moneyness of a call, made up",
+  "alt": "Bars of strike against share price for three calls",
+  "caps": [
+   [
+    0.3,
+    "ITM: share above the strike."
+   ],
+   [
+    2.2,
+    "ATM: strike equals the price."
+   ],
+   [
+    4.0,
+    "OTM: strike above the share price."
+   ],
+   [
+    5.6,
+    "Premium = intrinsic value + time value."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Moneyness",
+  "stops": [
+   [
+    "A call is ITM when the share is above the strike",
+    true
+   ],
+   [
+    "An OTM option has intrinsic value",
+    false
+   ],
+   [
+    "An ATM option has a strike close to the price",
+    true
+   ],
+   [
+    "Intrinsic value can be negative",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Exercising would give a profit."
+   ],
+   [
+    2.2,
+    "Its premium is all time value."
+   ],
+   [
+    4.0,
+    "Strike about equal to price."
+   ],
+   [
+    5.6,
+    "It is zero or more."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s417q1",
+  "h": "Check yourself",
+  "q": "A call has a strike of ₹400 and the share trades at ₹450. What is it?",
+  "opts": [
+   "At the money",
+   "In the money",
+   "Out of the money",
+   "Expired"
+  ],
+  "ans": 1,
+  "why": [
+   "ATM needs the strike near the price. It does not answer what was asked.",
+   "The share is above the strike, so exercising gives a gain.",
+   "OTM needs no gain at the current price. That does not match this case.",
+   "Expiry depends on the date, not the price. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s417q2",
+  "h": "Check yourself",
+  "q": "What is the intrinsic value of that ₹400-strike call with the share at ₹450?",
+  "opts": [
+   "₹450",
+   "₹400",
+   "₹0",
+   "₹50"
+  ],
+  "ans": 3,
+  "why": [
+   "₹450 is the share price. The details here point elsewhere.",
+   "₹400 is the strike. That does not match this case.",
+   "It is in the money, so not zero. It does not fit the facts given.",
+   "450 less 400 gives ₹50 of immediate value. This fits the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s417q3",
+  "h": "Check yourself",
+  "q": "A call has a strike of ₹600 and the share trades at ₹500. What is its premium made of?",
+  "opts": [
+   "All time value",
+   "All intrinsic value",
+   "Half and half",
+   "Nothing"
+  ],
+  "ans": 0,
+  "why": [
+   "An OTM option has no intrinsic value.",
+   "There is no intrinsic value to count.",
+   "The split is not half and half.",
+   "A premium exists, so it is not nothing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s417q4",
+  "h": "Check yourself",
+  "q": "A call has a strike of ₹500 and the share trades at ₹500. What is it?",
+  "opts": [
+   "In the money",
+   "Out of the money",
+   "At the money",
+   "A put"
+  ],
+  "ans": 2,
+  "why": [
+   "ITM needs the share above the strike.",
+   "OTM needs the share below the strike.",
+   "Strike equals the price. This fits the facts given.",
+   "It is a call, not a put. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "ITM: exercising now gives a gain. ATM: strike ≈ price. OTM: no gain now.",
+   "Premium = intrinsic value + time value.",
+   "OTM premium is all time value."
+  ]
+ }
+]

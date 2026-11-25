@@ -1,0 +1,132 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client calls, scared, after a 12% fall. If you open with data, she hears none of it. People need to feel heard before they can hear facts.",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "A script that works",
+  "lines": [
+   [
+    "meena",
+    "What do I say first?"
+   ],
+   [
+    "sikka",
+    "Listen and name the feeling. Then restate the goal and the plan, and show that the goal has not changed. Add context from past falls and recoveries, without promising a rebound. Offer one action that fits the plan, and close with a follow-up date."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The five steps",
+  "intro": "A script for RMs.",
+  "rows": [
+   [
+    "1 Listen",
+    "name the feeling"
+   ],
+   [
+    "2 Restate",
+    "the goal and the plan"
+   ],
+   [
+    "3 Context",
+    "past falls and recoveries, no promise"
+   ],
+   [
+    "4 Action and 5 Follow-up",
+    "a review, rebalancing or SIP, then a date"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s356q1",
+  "h": "Check yourself",
+  "q": "What comes first in a hard conversation?",
+  "opts": [
+   "Show a long table of data",
+   "Promise that markets will rebound",
+   "Listen and name the feeling",
+   "Change the client's funds"
+  ],
+  "ans": 2,
+  "why": [
+   "Data first can be missed. It does not answer what was asked.",
+   "Rebounds cannot be promised. The details here point elsewhere.",
+   "Feeling heard comes before hearing facts.",
+   "Changing funds is rash. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s356q2",
+  "h": "Check yourself",
+  "q": "What should you show about the goal?",
+  "opts": [
+   "That nothing about it has changed",
+   "That it must be dropped right now",
+   "That it will surely be met in time",
+   "That it needs a much higher risk"
+  ],
+  "ans": 0,
+  "why": [
+   "Restating the goal steadies the client. This fits the facts given.",
+   "Dropping it is not the answer. It does not fit the facts given.",
+   "No goal is sure to be met. It does not fit the facts given.",
+   "Higher risk is not a cure. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s356q3",
+  "h": "Check yourself",
+  "q": "How should context be given?",
+  "opts": [
+   "A forecast of the very next rally",
+   "A tip on one particular hot stock",
+   "A comparison with a friend's gains",
+   "Past falls and recoveries, no promise"
+  ],
+  "ans": 3,
+  "why": [
+   "Forecasts are not allowed. It does not fit the facts given.",
+   "Tips are not education. It does not fit the facts given.",
+   "Comparisons stir envy. It does not answer what was asked.",
+   "History is context, not a promise. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s356q4",
+  "h": "Check yourself",
+  "q": "How should the call end?",
+  "opts": [
+   "With a new product pitch",
+   "With a follow-up date",
+   "With a guarantee of calm",
+   "With no next step at all"
+  ],
+  "ans": 1,
+  "why": [
+   "A pitch is poor timing.",
+   "A date shows you will be there.",
+   "Calm cannot be guaranteed.",
+   "A next step reassures."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Listen first, then restate the goal.",
+   "Give context without promising a rebound.",
+   "Offer a fitting action and a follow-up date."
+  ]
+ }
+]

@@ -1,0 +1,291 @@
+[
+ {
+  "k": "fact",
+  "art": "stocks",
+  "h": "Before you start",
+  "big": "Some funds hire analysts to pick winning shares. Others simply copy a list. The copying kind charges far less, and over twenty years that gap can matter more than any one pick.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A sceptic",
+  "lines": [
+   [
+    "rohan",
+    "If index funds are so cheap, why do you sell active funds?"
+   ],
+   [
+    "sikka",
+    "Fair challenge. First see what an index fund really holds and what cost does over twenty years, then I will answer."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Copying a list",
+  "rows": [
+   {
+    "name": "The index (made-up)",
+    "segs": [
+     [
+      "A 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "B 30%",
+      30,
+      "#3CC47A"
+     ],
+     [
+      "C 20%",
+      20,
+      "#FFC531"
+     ],
+     [
+      "D 10%",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Index fund: same shares, same weights",
+    "segs": [
+     [
+      "A 40%",
+      40,
+      "#8EC5FF"
+     ],
+     [
+      "B 30%",
+      30,
+      "#3CC47A"
+     ],
+     [
+      "C 20%",
+      20,
+      "#FFC531"
+     ],
+     [
+      "D 10%",
+      10,
+      "#D8B4FE"
+     ]
+    ]
+   },
+   {
+    "name": "Active fund: manager's picks",
+    "segs": [
+     [
+      "A 20%",
+      20,
+      "#8EC5FF"
+     ],
+     [
+      "B 10%",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "C 30%",
+      30,
+      "#FFC531"
+     ],
+     [
+      "D 15%",
+      15,
+      "#D8B4FE"
+     ],
+     [
+      "E 25%",
+      25,
+      "#FFB3A5"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars: an index, an index fund holding the same shares in the same shares, and an active fund holding different weights",
+  "caps": [
+   [
+    0.3,
+    "An index is a list of shares with set weights. Here is a made-up index of four shares."
+   ],
+   [
+    2.0,
+    "An index fund holds the same shares in the same weights. No analyst, no guessing."
+   ],
+   [
+    3.8,
+    "An active fund's manager picks and weights shares differently, hoping to beat the list."
+   ],
+   [
+    5.6,
+    "The index fund aims to match the index, not beat it. That is passive investing."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "What cost does in 20 years",
+  "a": "Index fund, 0.2%",
+  "b": "Active fund, 1.5%",
+  "rows": [
+   [
+    "Yearly cost on ₹10 lakh (₹ thousand)",
+    2,
+    15
+   ],
+   [
+    "Value after 20 years (₹ lakh)",
+    93.1,
+    73.7
+   ]
+  ],
+  "alt": "Bars comparing yearly cost and final value of ₹10 lakh in an index fund at 0.2 percent and an active fund at 1.5 percent",
+  "caps": [
+   [
+    0.3,
+    "Assume both funds earn 12% a year before costs. This is an assumption to isolate the effect of cost."
+   ],
+   [
+    2.2,
+    "Index fund: 0.2% a year, or ₹2,000 on ₹10 lakh. Active fund: 1.5%, or ₹15,000."
+   ],
+   [
+    4.2,
+    "After 20 years ₹10 lakh grows to about ₹93.1 lakh in the index fund and ₹73.7 lakh in the active fund."
+   ],
+   [
+    6.4,
+    "Same pre-cost return. The ₹19 lakh gap comes only from cost compounding."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "What passive does and does not mean",
+  "title": "Fair claims, and unfair ones",
+  "stops": [
+   [
+    "Copies an index, with no stock picking",
+    true
+   ],
+   [
+    "Return is about the index minus costs",
+    true
+   ],
+   [
+    "Cannot fall when the market falls",
+    false
+   ],
+   [
+    "Always beats every active fund",
+    false
+   ]
+  ],
+  "alt": "A shield with true and false claims about passive funds",
+  "caps": [
+   [
+    0.3,
+    "A passive fund copies an index and costs less, with no research team to pay."
+   ],
+   [
+    3.0,
+    "But it falls when its index falls. Passive means low cost, not low risk."
+   ],
+   [
+    5.5,
+    "And it is not guaranteed to beat active funds. In some areas a good manager has more room to add value."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s341q1",
+  "h": "Check yourself",
+  "q": "Two funds each earn 12% a year before costs. One charges 0.2% and the other 1.5%. Rohan invests ₹10 lakh in each for 20 years. About how much more does the cheaper fund leave?",
+  "opts": [
+   "About ₹2.6 lakh, which is 1.3% of ₹10 lakh for 20 years",
+   "About ₹19 lakh, since the drag compounds each year",
+   "About ₹13,000, which is one year of the cost gap",
+   "Almost nothing, as both funds earned 12% before costs"
+  ],
+  "ans": 1,
+  "why": [
+   "That adds up simple costs and misses compounding. A lower yearly return also shrinks every later year's base.",
+   "At 11.8% the index fund grows to about ₹93 lakh, and at 10.5% the active fund reaches about ₹74 lakh. Gap about ₹19 lakh.",
+   "The yearly gap is 1.3% of ₹10 lakh, which is ₹13,000 in year one. It keeps growing as the pile grows.",
+   "Costs come out of the return. Equal returns before costs do not mean equal returns after them."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s341q2",
+  "h": "Check yourself",
+  "q": "An index returned 14.0% in a year. Meena's index fund on that index returned 13.8%. Where did the 0.2% go?",
+  "opts": [
+   "The manager's poor stock picks, which pulled the fund down",
+   "The fund holds different shares from the index in a different mix",
+   "A fee charged by the stock exchange on each unit she holds",
+   "Mostly the fund's expense ratio, plus small tracking effects"
+  ],
+  "ans": 3,
+  "why": [
+   "An index fund has no stock picking to get wrong. Its shares come from the index list.",
+   "If it held different shares it would not be an index fund. It copies the index in the same weights.",
+   "The fund's costs are in the expense ratio. Nothing like a per-unit exchange fee is charged to her.",
+   "An index fund's return is the index return minus its costs and a little tracking error."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s341q3",
+  "h": "Check yourself",
+  "q": "Rohan says: \"If index funds are cheap and active funds lag, why hold any active fund?\" Which reply is sound?",
+  "opts": [
+   "Index for the core, active where managers have more room",
+   "Hold only active funds, as managers add value in every segment",
+   "Hold only index funds, since they never fall as active funds do",
+   "Index funds suit only beginners; active funds suit experts"
+  ],
+  "ans": 0,
+  "why": [
+   "Passive suits efficient areas like large caps, while active has more room in less crowded segments such as small caps.",
+   "In efficient areas such as large caps many active funds have struggled to beat their index after costs.",
+   "An index fund falls whenever its index falls. Cost is lower, but the risk of the market remains.",
+   "Skill level does not decide this. The choice is about which segment and what it costs."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s341q4",
+  "h": "Check yourself",
+  "q": "Meena has ₹10 lakh in a Nifty index fund and the Nifty falls 30%. Which sentence fits best?",
+  "opts": [
+   "Her fund will fall less, since an index fund holds only top shares",
+   "Her fund will stay near ₹10 lakh, since its costs are so low",
+   "Her fund will show about ₹7 lakh, since it falls with the index",
+   "Her fund will show a loss only if the fund manager makes errors"
+  ],
+  "ans": 2,
+  "why": [
+   "Holding top shares does not protect a fund. If the index drops 30%, those shares drop with it.",
+   "Low cost helps over many years, but it does not shield a fund from a falling market.",
+   "An index fund tracks the index, so about 30% less, minus tiny costs. Passive does not mean safe.",
+   "There is no manager error to blame. The fund is built to follow the index down as well as up."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A passive fund copies an index. Its return is about the index return minus cost.",
+   "Low cost, not low risk. An index fund falls when its index falls.",
+   "Index core for large caps, active where a manager has room."
+  ]
+ }
+]

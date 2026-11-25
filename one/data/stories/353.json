@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Meena bought a fund at ₹100 a unit. It fell to ₹70. She says, 'I will sell only when it gets back to ₹100.' Her money has been stuck for two years. The price she paid is not a reason to hold.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The first number sticks",
+  "lines": [
+   [
+    "meena",
+    "I cannot sell below what I paid. It feels like admitting a mistake."
+   ],
+   [
+    "sikka",
+    "That is anchoring. The first number sticks in the mind. A better question: if I had this money in cash today, would I buy this fund? If not, why hold it?"
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The NAV illusion",
+  "intro": "Two funds, same money.",
+  "rows": [
+   [
+    "Fund A, NAV ₹10",
+    "₹10,000 buys 1,000 units"
+   ],
+   [
+    "Fund B, NAV ₹100",
+    "₹10,000 buys 100 units"
+   ],
+   [
+    "Both rise 10%",
+    "Both become ₹11,000"
+   ],
+   [
+    "=",
+    "Lesson",
+    "A low NAV is not cheap"
+   ]
+  ],
+  "note": "NAV is just the value of one unit. It tells you nothing about whether the fund is good value."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Anchoring and NAV",
+  "stops": [
+   [
+    "Anchoring means a first number sticks in the mind",
+    true
+   ],
+   [
+    "A fund with NAV ₹10 is cheaper than ₹100",
+    false
+   ],
+   [
+    "Break-even thinking can trap money in a poor fund",
+    true
+   ],
+   [
+    "Selling below your cost is always a mistake",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A price paid becomes the number we cannot let go."
+   ],
+   [
+    2.2,
+    "NAV is value per unit and says nothing about value."
+   ],
+   [
+    4.0,
+    "Waiting to get even can lock money in a poor choice."
+   ],
+   [
+    5.6,
+    "Judge by today's facts, not by what you paid."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s353q1",
+  "h": "Check yourself",
+  "q": "Rohan will sell a fund only when it returns to the ₹100 he paid. What is this?",
+  "opts": [
+   "Diversification of funds",
+   "Rebalancing his funds",
+   "Anchoring on his price",
+   "A stop-loss order placed"
+  ],
+  "ans": 2,
+  "why": [
+   "Diversification is spreading money, which he is not doing.",
+   "Rebalancing is returning to a target mix.",
+   "He is stuck on the first number, his purchase price.",
+   "A stop-loss is an order, which he has not placed."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s353q2",
+  "h": "Check yourself",
+  "q": "A new fund has a NAV of ₹10 and an older fund a NAV of ₹100. Which is cheaper?",
+  "opts": [
+   "Neither, NAV is just per unit",
+   "The ₹10 fund, quite clearly",
+   "The ₹100 fund, quite clearly",
+   "The one with a much nicer name"
+  ],
+  "ans": 0,
+  "why": [
+   "NAV is value per unit and says nothing about price.",
+   "A lower NAV gives more units, not more value.",
+   "A higher NAV gives fewer units, not less value.",
+   "A name has no link to value, so it does not matter."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s353q3",
+  "h": "Check yourself",
+  "q": "Which question helps Meena escape break-even thinking?",
+  "opts": [
+   "What price did I pay for it?",
+   "What does my neighbour think of it?",
+   "Will it ever return to ₹100 again?",
+   "Would I buy it today with cash?"
+  ],
+  "ans": 3,
+  "why": [
+   "The price paid is the anchor, so it keeps her stuck.",
+   "A neighbour's view is not a test of the fund's fit.",
+   "Hoping for a return to ₹100 is the trap itself.",
+   "It judges the fund by today's facts, not by her price."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s353q4",
+  "h": "Check yourself",
+  "q": "Rohan puts ₹10,000 in a ₹10 NAV fund and ₹10,000 in a ₹100 NAV fund. Both rise 10%. What are they worth?",
+  "opts": [
+   "₹11,000 and ₹10,100",
+   "₹11,000 each",
+   "₹20,000 and ₹11,000",
+   "₹1,100 and ₹110"
+  ],
+  "ans": 1,
+  "why": [
+   "The NAV level does not change the percentage gain.",
+   "Each has ₹10,000 growing 10%, so each becomes ₹11,000.",
+   "The ₹10 fund does not double. It rises by the same 10%.",
+   "These numbers confuse units with rupees."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Anchoring: the first number, such as the price paid, sticks in the mind.",
+   "A ₹10 NAV is not cheaper than a ₹100 NAV.",
+   "Ask: would I buy this today with cash? If not, why hold it?"
+  ]
+ }
+]

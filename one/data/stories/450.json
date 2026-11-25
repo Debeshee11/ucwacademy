@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "doc",
+  "h": "Before you start",
+  "big": "Rohan's father passed away. The family filed a claim, and it was rejected. The reason: he had not told the insurer that he smoked. A few seconds on a form had changed everything.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Buying it right",
+  "lines": [
+   [
+    "rohan",
+    "What matters most when buying, and what happens when the family needs to claim?"
+   ],
+   [
+    "sikka",
+    "Tell the insurer everything honestly, name a nominee, keep the policy papers safe and review it after big life events."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Buying and claiming",
+  "stops": [
+   [
+    "Tell the insurer every fact that matters",
+    true
+   ],
+   [
+    "A nominee is optional and never needs updating",
+    false
+   ],
+   [
+    "You can review a new policy within a set window",
+    true
+   ],
+   [
+    "Claim settlement ratio is the only thing to check",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Material disclosure means telling the insurer every fact that could affect its decision."
+   ],
+   [
+    2.2,
+    "A nominee receives the claim, and should be updated after life events."
+   ],
+   [
+    4.0,
+    "After you receive the policy, there is a review window to cancel and get the premium back, less small deductions."
+   ],
+   [
+    5.6,
+    "A high claim ratio is a good sign, but read the terms too."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Before you buy",
+  "intro": "A short checklist.",
+  "rows": [
+   [
+    "Disclosure",
+    "Health, smoking, other policies and income, all honestly"
+   ],
+   [
+    "Nominee",
+    "Name one, and update it after marriage or a child"
+   ],
+   [
+    "Review window",
+    "At least 15 days after the policy arrives to cancel if unhappy"
+   ],
+   [
+    "Claim record",
+    "Check the claim settlement ratio, and read the terms"
+   ]
+  ],
+  "note": "The claim settlement ratio is the share of claims an insurer paid out of those received."
+ },
+ {
+  "k": "pick",
+  "id": "s450q1",
+  "h": "Check yourself",
+  "q": "Rohan smokes occasionally but ticks 'non-smoker' to get a lower premium. What is the risk?",
+  "opts": [
+   "None, since the insurer will not check",
+   "The policy simply costs a little more",
+   "The claim may be rejected later, for hiding a material fact",
+   "The sum assured is cut in half at the time of the claim"
+  ],
+  "ans": 2,
+  "why": [
+   "Insurers can investigate at claim time, so false answers are a real risk.",
+   "The consequence is not a small price rise, it can be a refusal of the claim.",
+   "Hiding a material fact such as smoking can lead to a rejected claim.",
+   "There is no automatic halving. The risk is rejection."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s450q2",
+  "h": "Check yourself",
+  "q": "Meena got married and had a child. Her policy still names her old nominee. What should she do?",
+  "opts": [
+   "Nothing, since the nominee stays valid for all time",
+   "Cancel the policy and buy a new one every time",
+   "Tell the neighbours who the nominee is",
+   "Update the nominee so the claim goes to the right person"
+  ],
+  "ans": 3,
+  "why": [
+   "Life changes, so the nomination should be kept up to date.",
+   "Cancelling restarts underwriting and costs more, and is not needed.",
+   "Telling neighbours does not change the policy record.",
+   "Updating avoids confusion and delay for the family at the time of a claim."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s450q3",
+  "h": "Check yourself",
+  "q": "Dadi receives her policy and finds the terms differ from what she was told. What can she do?",
+  "opts": [
+   "Use the review window to cancel and recover the premium",
+   "Nothing at all, since the premium has already been paid up",
+   "Wait ten years and then complain only after that long",
+   "Sell the policy on to a friend who agrees to take it"
+  ],
+  "ans": 0,
+  "why": [
+   "A review window after receipt lets her cancel and recover the premium, less small deductions.",
+   "Paying does not remove her right to review the terms after the policy arrives.",
+   "Delay makes it harder, since the review window is short and closes.",
+   "Policies are not usually sold on to friends, so the window is the proper route."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s450q4",
+  "h": "Check yourself",
+  "q": "Which insurer record is worth checking, along with reading the terms?",
+  "opts": [
+   "The number of branch offices it has in your own city today",
+   "The claim settlement ratio, claims paid versus received",
+   "The colour and the design of its printed policy brochure",
+   "The number of agents that it employs across the whole country"
+  ],
+  "ans": 1,
+  "why": [
+   "Offices do not show how claims are actually paid out to families.",
+   "A higher ratio suggests a better claim-paying record, though the terms still matter.",
+   "Design says nothing about how the insurer treats its claims.",
+   "Agent numbers do not show how the insurer handles claims."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Tell the insurer every material fact honestly when you buy.",
+   "Name a nominee and update it after life events.",
+   "Use the review window, and check the claim settlement ratio."
+  ]
+ }
+]

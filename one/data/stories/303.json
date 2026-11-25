@@ -1,0 +1,265 @@
+[
+ {
+  "k": "fact",
+  "art": "wallet",
+  "h": "Before you start",
+  "big": "Every mutual fund charges a yearly fee, and you never get a bill for it. It comes out of the fund quietly. A small number like 1% sounds like nothing. Over twenty years it is not nothing.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Direct or regular?",
+  "lines": [
+   [
+    "meena",
+    "Why should I pay more through you when direct plans are cheaper?"
+   ],
+   [
+    "sikka",
+    "The direct plan is cheaper, and that is a real saving. Let us see how big, and then what the extra cost buys."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Direct plan",
+  "b": "Regular plan",
+  "rows": [
+   [
+    "After 10 years (₹ lakh)",
+    3.0,
+    2.7
+   ],
+   [
+    "After 20 years (₹ lakh)",
+    8.8,
+    7.4
+   ],
+   [
+    "After 30 years (₹ lakh)",
+    26.2,
+    20.0
+   ]
+  ],
+  "h": "A 1% gap, compounding",
+  "alt": "Direct and regular plan growth over 10, 20 and 30 years, in lakh rupees",
+  "caps": [
+   [
+    0.3,
+    "₹1,00,000 in the same scheme, two plans. Assume the fund earns 12% a year before costs."
+   ],
+   [
+    1.8,
+    "A direct plan costs 0.5% a year (assumed), so it grows at 11.5%. The regular plan costs 1.5%, so 10.5%."
+   ],
+   [
+    4.0,
+    "After 10 years the gap is small: about ₹3.0 lakh against ₹2.7 lakh."
+   ],
+   [
+    5.8,
+    "After 20 years it is about ₹8.8 lakh against ₹7.4 lakh, which is about 16% less."
+   ],
+   [
+    7.5,
+    "After 30 years: about ₹26.2 lakh against ₹20.0 lakh. A small yearly gap compounds."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "rows": [
+   {
+    "name": "Direct plan: ₹12 earned",
+    "segs": [
+     [
+      "You keep ₹11.5",
+      11.5,
+      "#3CC47A"
+     ],
+     [
+      "",
+      0.5,
+      "#E8573D"
+     ]
+    ]
+   },
+   {
+    "name": "Regular plan: ₹12 earned",
+    "segs": [
+     [
+      "You keep ₹10.5",
+      10.5,
+      "#3CC47A"
+     ],
+     [
+      "Cost ₹1.5",
+      1.5,
+      "#E8573D"
+     ]
+    ]
+   },
+   {
+    "name": "The regular plan's ₹1.5 cost",
+    "segs": [
+     [
+      "Fund's running cost ₹0.5",
+      0.5,
+      "#FFC531"
+     ],
+     [
+      "Commission, service ₹1",
+      1.0,
+      "#FFB3A5"
+     ]
+    ]
+   }
+  ],
+  "h": "Where the fee comes from",
+  "alt": "Bars showing a year's return of 12 rupees split into what the investor keeps and the fund's cost",
+  "caps": [
+   [
+    0.3,
+    "Say the fund earns ₹12 on ₹100 in a year. Costs come out before you see the NAV."
+   ],
+   [
+    1.5,
+    "In the direct plan the cost is ₹0.5 (assumed). You keep ₹11.5."
+   ],
+   [
+    2.7,
+    "In the regular plan the cost is ₹1.5. You keep ₹10.5."
+   ],
+   [
+    4.0,
+    "The extra ₹1 pays the distributor's commission and service. The portfolio is the same."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What you pay",
+  "stops": [
+   [
+    "TER is already inside the NAV",
+    true
+   ],
+   [
+    "Direct plan has no distributor commission",
+    true
+   ],
+   [
+    "TER arrives as a separate bill",
+    false
+   ],
+   [
+    "Direct and regular hold different shares",
+    false
+   ]
+  ],
+  "h": "What you pay, and what you do not",
+  "alt": "A shield with true and false statements about fund costs",
+  "caps": [
+   [
+    0.3,
+    "The total expense ratio, or TER, is the yearly fee taken from the fund's assets."
+   ],
+   [
+    3.0,
+    "It is already inside the NAV, so there is never a separate bill. A direct plan has no commission."
+   ],
+   [
+    5.5,
+    "An exit load is different. It is charged only if you leave within the stated period."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s303q1",
+  "h": "Check yourself",
+  "q": "A fund has an exit load of 1% for redemptions within one year. Rohan redeems ₹50,000 after 8 months. How much is cut as exit load?",
+  "opts": [
+   "₹5,000, as the load applies to the whole year",
+   "₹500, which is 1% of the amount redeemed",
+   "Nothing, as the load stops after six months",
+   "₹250, as he stayed more than half the year"
+  ],
+  "ans": 1,
+  "why": [
+   "The load is 1% of the amount redeemed, not 10%. A year's period sets when it applies, not its size.",
+   "He leaves inside the one-year period, so 1% of the ₹50,000 redeemed is cut: ₹500.",
+   "The period is stated in the scheme document, here one year. Leaving at eight months is still inside it.",
+   "The load does not scale with how long he stayed. It applies in full if he leaves within the period."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s303q2",
+  "h": "Check yourself",
+  "q": "Meena sees two NAVs for one scheme: ₹52.4 for the direct plan and ₹49.0 for the regular. Is the direct plan simply a better fund?",
+  "opts": [
+   "Yes, because its manager picks better shares than the regular plan's manager",
+   "No, because the higher NAV shows the direct plan costs more",
+   "Yes, because direct plans are allowed to hold riskier shares",
+   "No, the portfolio is the same, and the NAV is higher because the cost is lower"
+  ],
+  "ans": 3,
+  "why": [
+   "Both plans have the same manager and the same holdings. The cost is the difference, not the share-picking.",
+   "A higher NAV in rupees shows lower cost built up over time here, not a higher charge.",
+   "Plans of the same scheme hold the same portfolio, so risk is the same. Only the cost differs.",
+   "Same portfolio, lower cost. The saving builds up in the direct plan's NAV over the years."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s303q3",
+  "h": "Check yourself",
+  "q": "Rohan could buy direct plans himself, but twice in a fall he sold in panic. How should he think about a regular plan's extra cost of about 1% a year?",
+  "opts": [
+   "It buys better performance, since regular plans earn more",
+   "It is a penalty for not knowing about direct plans, so he should always switch",
+   "A fee for service, worth it only if advice and discipline add more",
+   "It is zero in practice, since the NAV already includes it"
+  ],
+  "ans": 2,
+  "why": [
+   "Both plans hold the same portfolio. The regular plan earns less after cost, not more.",
+   "It is not a penalty. It pays for advice. For some investors, staying invested through a fall is worth the cost.",
+   "A regular plan pays for advice and service. The honest test is whether that is worth the cost to him.",
+   "Being inside the NAV does not make it zero. It is a real cost that lowers what he ends up with."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s303q4",
+  "h": "Check yourself",
+  "q": "₹1,00,000 grows at 11.5% in a direct plan and 10.5% in a regular plan for 20 years (assumed). About how much less does the regular plan end with?",
+  "opts": [
+   "About ₹1.45 lakh, because a 1% gap compounds year after year",
+   "About ₹20,000, as 1% of ₹1,00,000 is ₹1,000 for each of the 20 years",
+   "About ₹5 lakh, since the regular plan loses half of the direct plan's gain",
+   "About ₹10,000, as a 1% gap is a small amount in all"
+  ],
+  "ans": 0,
+  "why": [
+   "₹8.82 lakh against ₹7.37 lakh is a gap of about ₹1.45 lakh, or about 16% of the final amount.",
+   "That adds ₹1,000 a year without compounding. The gap grows because each year's cost also loses its future growth.",
+   "The regular plan loses much less than half. Its final amount is about 84% of the direct plan's.",
+   "A 1% gap looks small but compounds. Over 20 years it is far more than a few thousand rupees."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "TER is a yearly fee already inside the NAV. An exit load is charged only if you leave early.",
+   "A direct plan has no commission, so its TER is lower. The portfolio is the same.",
+   "Costs compound like returns. Ask whether the advice is worth what it costs."
+  ]
+ }
+]

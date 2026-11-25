@@ -1,0 +1,170 @@
+[
+ {
+  "k": "fact",
+  "art": "percent",
+  "h": "Before you start",
+  "big": "Every March, people buy a fund to save tax and then forget it. An ELSS comes with a three-year lock-in, and the lock works in a way many buyers do not expect."
+ },
+ {
+  "k": "dialog",
+  "h": "A March rush",
+  "lines": [
+   [
+    "rohan",
+    "I need to save tax before March. Which ELSS should I buy?"
+   ],
+   [
+    "sikka",
+    "First a question: are you on the old tax regime? Then let us watch how the lock really works."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lockin",
+  "h": "The rolling lock",
+  "alt": "Twelve monthly instalments each locked for 36 months from their own date",
+  "caps": [
+   [
+    0.3,
+    "Rohan starts an ELSS SIP. Each monthly instalment is locked for three years from its own date."
+   ],
+   [
+    4.0,
+    "Instalment 1 unlocks first, in month 37."
+   ],
+   [
+    8.0,
+    "After that, one more instalment frees up every month."
+   ],
+   [
+    11.5,
+    "A SIP is never all locked or all unlocked. It rolls."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What an ELSS gives you",
+  "stops": [
+   [
+    "Deduction under 80C in the old regime",
+    true
+   ],
+   [
+    "Each instalment locked for 3 years",
+    true
+   ],
+   [
+    "Lower market risk because of the tax benefit",
+    false
+   ],
+   [
+    "The 80C deduction in the new regime",
+    false
+   ]
+  ],
+  "h": "Fair claims, and unfair ones",
+  "alt": "A shield with four statements about ELSS",
+  "caps": [
+   [
+    0.3,
+    "The deduction and the lock-in are real."
+   ],
+   [
+    3.0,
+    "But the fund must hold at least 80% in equity, so market risk is the same as any equity fund."
+   ],
+   [
+    5.5,
+    "And under the new tax regime, there is no 80C deduction to claim."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s313q1",
+  "h": "Check yourself",
+  "q": "Rohan begins an ELSS SIP of ₹5,000 a month. In which month does his first instalment become open to redeem?",
+  "opts": [
+   "Month 12, when his first year ends",
+   "Month 24, after two years of instalments",
+   "Month 37, and then one more frees up each month",
+   "Month 48, when all twelve instalments unlock together"
+  ],
+  "ans": 2,
+  "why": [
+   "A year is too early. The lock is three years for each instalment, counted from the date it was invested.",
+   "Two years leaves one more year of lock on the first instalment. The rule is three years from each date.",
+   "Each instalment completes its own three years, so the first frees up in month 37 and the rest follow month by month.",
+   "Not all twelve unlock together. They were invested on different dates, so they unlock on different dates."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s313q2",
+  "h": "Check yourself",
+  "q": "A client on the new tax regime asks for an ELSS to save tax. What is true?",
+  "opts": [
+   "Without 80C, ELSS is only an equity fund with a lock-in attached",
+   "ELSS still gives the full 80C deduction under either of the tax regimes",
+   "ELSS can only be bought by people who pay no income tax at all",
+   "The lock-in disappears for anyone who chooses the new tax regime"
+  ],
+  "ans": 0,
+  "why": [
+   "Without the deduction, the only difference from other equity funds is the lock-in, so the choice should rest on fund quality.",
+   "The 80C deduction belongs to the old regime. Under the new one, it is not available for any investment.",
+   "ELSS can be bought by anyone. Its tax benefit applies only where the old regime and 80C apply.",
+   "The lock-in is a feature of the scheme, not of the tax regime. It stays for three years from each instalment."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s313q3",
+  "h": "Check yourself",
+  "q": "A buyer says ELSS must be safe because it saves tax. How do you reply?",
+  "opts": [
+   "It is safe, because the government stands behind the scheme",
+   "It holds at least 80% in equity, so the market risk is the same",
+   "The lock-in makes it safe, because you cannot sell in a panic",
+   "It becomes safe once the three years of lock-in are over"
+  ],
+  "ans": 1,
+  "why": [
+   "No government backing exists for a mutual fund. The tax deduction is an incentive, not a guarantee.",
+   "An ELSS must keep at least 80% in equity. The tax benefit does not reduce what the market can do to the NAV.",
+   "A lock-in stops selling. It does not stop the NAV from falling, and a fall can still show on the statement.",
+   "The NAV can fall after three years just as before. The end of the lock only means you may sell."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s313q4",
+  "h": "Check yourself",
+  "q": "Which is the better way to buy an ELSS for the year?",
+  "opts": [
+   "One lump sum in the last week of March",
+   "A SIP across the year, picking the fund for its quality",
+   "Whatever fund the bank agent mentions first",
+   "Two funds, bought on the last day, to double the deduction"
+  ],
+  "ans": 1,
+  "why": [
+   "A single March purchase puts all the money in at one price, and it is often chosen in a hurry.",
+   "A SIP spreads the entry across the year, and choosing the fund for quality means the lock-in is not a trap.",
+   "The first name offered is not a measure of quality. The fund is held for years, so it deserves a proper look.",
+   "The deduction has a cap, so a second fund does not double it. It only adds another holding."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Each ELSS instalment is locked for 3 years from its own date, so a SIP unlocks month by month.",
+   "ELSS carries full equity risk. The tax benefit does not reduce it.",
+   "Under the new regime, 80C is not available. Pick the fund, not just the deduction."
+  ]
+ }
+]

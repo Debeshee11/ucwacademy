@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Zara buys at 10 am and sells at 2 pm, the same day. Sanjay buys the same share and keeps it for five years. Same company, but two very different risks.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Time changes the game",
+  "lines": [
+   [
+    "rohan",
+    "Many people say intraday is the way to make quick money. Is it?"
+   ],
+   [
+    "sikka",
+    "It is the way to make quick losses for most people. Short-term prices move randomly, costs add up each trade, and there is no time for a business to grow. Education only, not advice."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Two ways to hold",
+  "intro": "Same share, different style.",
+  "rows": [
+   [
+    "Delivery trade",
+    "Shares go to your demat account, and you keep them as long as you like"
+   ],
+   [
+    "Intraday trade",
+    "Opened and closed the same day, with no delivery"
+   ],
+   [
+    "Nifty 50",
+    "An index of 50 large NSE companies. You cannot buy it directly"
+   ],
+   [
+    "Diversification",
+    "Spreading money so one failure does not sink the whole portfolio"
+   ]
+  ],
+  "note": "Index funds and ETFs let you hold an index. The index itself cannot be bought."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Risk basics",
+  "stops": [
+   [
+    "A delivery trade puts shares in your demat account",
+    true
+   ],
+   [
+    "Intraday trading is a safe way to make quick profits",
+    false
+   ],
+   [
+    "The Nifty 50 tracks 50 large NSE companies",
+    true
+   ],
+   [
+    "Putting all your money in one share is well diversified",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Delivery means the shares are yours to hold for as long as you wish."
+   ],
+   [
+    2.2,
+    "Intraday trades can lose money fast, and costs add up each day."
+   ],
+   [
+    4.0,
+    "The Nifty 50 is a benchmark of the market's direction."
+   ],
+   [
+    5.6,
+    "One share means one failure can hurt the whole portfolio."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s405q1",
+  "h": "Check yourself",
+  "q": "Rohan buys a share on Monday and keeps it for five years. What kind of trade is this?",
+  "opts": [
+   "An intraday trade",
+   "A stop-loss trade",
+   "A delivery trade",
+   "A bonus trade"
+  ],
+  "ans": 2,
+  "why": [
+   "Intraday means opened and closed on the same day, which is not the case.",
+   "A stop-loss is an order type, not a way of holding shares.",
+   "Shares taken into the demat account and held are a delivery trade.",
+   "A bonus is a corporate action and not a type of trade."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s405q2",
+  "h": "Check yourself",
+  "q": "Meena says the Nifty 50 rose 1% today. What does this mean?",
+  "opts": [
+   "The 50-company index rose 1%",
+   "Her own portfolio rose exactly 1%",
+   "Every share in India rose 1%",
+   "SEBI raised the market by 1%"
+  ],
+  "ans": 0,
+  "why": [
+   "The Nifty 50 tracks 50 large listed companies, and it showed a rise of 1%.",
+   "An index is a benchmark, so her own holdings can move differently.",
+   "Shares do not all move the same way on a given day.",
+   "SEBI regulates the market and does not raise it."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s405q3",
+  "h": "Check yourself",
+  "q": "Rohan puts his whole savings in one company. Which risk is greatest?",
+  "opts": [
+   "The Nifty will stop moving",
+   "One failure can sink him",
+   "SEBI will cancel his demat account",
+   "The bid-ask gap will vanish"
+  ],
+  "ans": 1,
+  "why": [
+   "The index keeps moving whatever Rohan holds or sells.",
+   "With one share, a single failure hits everything he owns.",
+   "SEBI does not cancel a demat account over holdings.",
+   "The gap between bid and ask is a market feature, and it does not vanish."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s405q4",
+  "h": "Check yourself",
+  "q": "Which choice shows diversification?",
+  "opts": [
+   "Twelve shares of one bank",
+   "Only the share that rose most last week",
+   "Only the share a friend recommended",
+   "Twelve firms across four sectors"
+  ],
+  "ans": 3,
+  "why": [
+   "Twelve shares of one bank still depend on one sector.",
+   "Chasing last week's winner is not a spread of risk.",
+   "A friend's tip is a single bet, and not a spread.",
+   "Spreading across sectors lowers the harm from one failure."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Delivery means holding shares in your demat account. Intraday closes the same day.",
+   "The Nifty 50 tracks 50 large companies. You cannot buy it directly.",
+   "Spread your money, so that one failure does not sink the portfolio."
+  ]
+ }
+]

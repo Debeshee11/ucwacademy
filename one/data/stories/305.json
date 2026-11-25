@@ -1,0 +1,212 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A client asks you for one thing: promise me at least 12% a year. It is easy to say yes and keep the client. It is also against the rules, and it can ruin the very person you are trying to help.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Can you promise 12%?",
+  "lines": [
+   [
+    "meena",
+    "Can you promise me at least 12% a year?"
+   ],
+   [
+    "sikka",
+    "I cannot, and neither can anyone honest. Watch what a smooth 12% looks like against what a real market path looks like."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Promised 12%",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     112.0,
+     125.4,
+     140.5,
+     157.4,
+     176.2,
+     197.4,
+     221.1,
+     247.6,
+     277.3,
+     310.6
+    ]
+   },
+   {
+    "name": "Made-up path",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     125.0,
+     102.5,
+     133.2,
+     149.2,
+     137.3,
+     164.8,
+     189.5,
+     166.8,
+     203.5,
+     232.0
+    ]
+   }
+  ],
+  "h": "A promise against a path",
+  "alt": "A smooth 12 percent line against a bumpy made-up equity path",
+  "caps": [
+   [
+    0.3,
+    "A smooth 12% a year turns ₹100 into about ₹311 in ten years. This is the blue line."
+   ],
+   [
+    2.5,
+    "The yellow line is a made-up equity path with ups and downs. These paths are made up."
+   ],
+   [
+    5.8,
+    "Years 2, 5 and 8 fall. The deepest drop is about 18%."
+   ],
+   [
+    8.4,
+    "It ends near ₹232, about 8.8% a year. No honest adviser can promise the blue line."
+   ],
+   [
+    10.0,
+    "Build a plan that works even if returns are lower, and review it every year."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Say it, or never say it",
+  "stops": [
+   [
+    "Market risks: read all scheme documents",
+    true
+   ],
+   [
+    "Past performance may not be sustained",
+    true
+   ],
+   [
+    "I guarantee you 12% a year",
+    false
+   ],
+   [
+    "This fund is safe",
+    false
+   ]
+  ],
+  "h": "Say it, or never say it",
+  "alt": "A shield with what must be said in mutual fund advertising and what must never be said",
+  "caps": [
+   [
+    0.3,
+    "Every mutual fund advertisement carries the standard risk statement."
+   ],
+   [
+    3.0,
+    "Past performance can be shown only within the rules, with the line that it may not be sustained."
+   ],
+   [
+    5.5,
+    "Never promise or imply a return, guarantee capital, or call a market-linked scheme safe."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s305q1",
+  "h": "Check yourself",
+  "q": "A client says: I will invest if you promise 12% a year. What is the honest reply?",
+  "opts": [
+   "I cannot promise it, but let us plan so that it works if returns are lower",
+   "I can promise it if you hold for at least ten years, as history shows",
+   "I can promise 12% only on diversified funds, not on single ones",
+   "I cannot say it aloud, but you can read it in the fund's brochure"
+  ],
+  "ans": 0,
+  "why": [
+   "No honest adviser can promise returns. A plan that survives lower returns, reviewed every year, is the fair answer.",
+   "History does not guarantee the future. A long holding period helps the odds, but it never makes a promise valid.",
+   "Diversified funds can fall as well. No type of fund carries a guaranteed return, so this promise is also false.",
+   "Brochures cannot promise returns either. Implying a return through any route is not allowed under the rules."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s305q2",
+  "h": "Check yourself",
+  "q": "Which of these is mis-selling?",
+  "opts": [
+   "Telling a client plainly that the fund's value can fall as well as rise",
+   "Showing a fund's five-year return along with the past performance line",
+   "Pushing a fund for its higher commission when a cheaper one fits better",
+   "Recording the client's goal, horizon and risk comfort before advising"
+  ],
+  "ans": 2,
+  "why": [
+   "Saying a fund can fall is an honest warning. It is the opposite of mis-selling, because it shows the risk.",
+   "Past performance may be shown within the rules and with the line that it may or may not be sustained.",
+   "Pushing a product for commission instead of the client's need is mis-selling. Suitability must come first.",
+   "Recording the goal, horizon and risk comfort is suitability. It is what the rules ask an adviser to do."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s305q3",
+  "h": "Check yourself",
+  "q": "An advertisement says, 'Our fund gave 25% last year!' and nothing else. What is missing?",
+  "opts": [
+   "The fund manager's name and photo beside the figure shown",
+   "Nothing, since a one-year figure is always allowed on its own",
+   "A guarantee that the 25% will be repeated again next year",
+   "The past performance line, and the standard market risk statement"
+  ],
+  "ans": 3,
+  "why": [
+   "A name or photo is not what the rules ask for. The risk statement and the past performance line are the missing parts.",
+   "A bare figure without the required lines is not allowed. The rules attach a disclaimer to past performance.",
+   "A guarantee would itself break the rules. Returns cannot be promised or implied, so a repeat cannot be assured.",
+   "Past performance may be shown only with the line that it may or may not be sustained, plus the standard risk statement."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s305q4",
+  "h": "Check yourself",
+  "q": "Meena, 60 and retired, needs her money in two years. She asks for the best small cap fund because her neighbour made 40%. What does suitability say you do first?",
+  "opts": [
+   "Place the order at once, since she is the client who asked for it",
+   "Record her goal, horizon and risk comfort, then judge if it fits",
+   "Choose the small cap fund that pays the adviser the highest commission",
+   "Tell her the 40% will repeat if she holds on for the two years"
+  ],
+  "ans": 1,
+  "why": [
+   "Just placing the order skips suitability. The adviser must check her goal, horizon and comfort with risk first.",
+   "Suitability comes first. A two-year goal for a retired client is a poor fit for a small cap fund, and the record shows why.",
+   "Choosing by commission is mis-selling. The client's need, not the adviser's pay, decides the recommendation.",
+   "No return can be guaranteed, and a neighbour's 40% says nothing about the next two years. Saying so breaks the rules."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Never promise or imply a return, guarantee capital or call a scheme safe.",
+   "Always carry the market risk statement, and the past performance line when showing past returns.",
+   "Suitability before sale: record the goal, horizon and risk comfort."
+  ]
+ }
+]

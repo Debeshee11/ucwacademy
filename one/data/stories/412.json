@@ -1,0 +1,165 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "A futures contract worth ₹10 lakh needs only about ₹1 lakh as a deposit. That is leverage. A 2% move in the market can change the deposit by 20%, in either direction.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Small deposit, big position",
+  "lines": [
+   [
+    "meena",
+    "Only ₹1 lakh for a ₹10 lakh position? That sounds cheap."
+   ],
+   [
+    "sikka",
+    "It is a deposit, called margin, not the price. It protects the exchange against default. Leverage magnifies gains and losses. Gains and losses are settled every day. If losses eat the deposit, a margin call asks for more money."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Move in the market",
+  "b": "Move in the deposit",
+  "rows": [
+   [
+    "Percent change",
+    2,
+    20
+   ]
+  ],
+  "h": "Leverage at ten times, made up",
+  "alt": "Bars showing a 2% market move and a 20% deposit move",
+  "caps": [
+   [
+    0.3,
+    "A ₹10 lakh contract needs a ₹1 lakh deposit."
+   ],
+   [
+    2.2,
+    "The market moves 2%."
+   ],
+   [
+    4.0,
+    "The deposit moves 20%."
+   ],
+   [
+    5.6,
+    "It works in both directions."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Mark-to-market",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Contract value",
+    "₹10 lakh"
+   ],
+   [
+    "Deposit (margin)",
+    "₹1 lakh"
+   ],
+   [
+    "Day-end price fall",
+    "account debited ₹8,000"
+   ],
+   [
+    "After three losing days",
+    "margin call: add money at once"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "pick",
+  "id": "s412q1",
+  "h": "Check yourself",
+  "q": "A trader puts ₹1 lakh aside to hold a ₹10 lakh contract. What is the ₹1 lakh?",
+  "opts": [
+   "The price of the contract",
+   "A dividend",
+   "Margin",
+   "A tax refund"
+  ],
+  "ans": 2,
+  "why": [
+   "The contract's value is ₹10 lakh. The details here point elsewhere.",
+   "It is not a dividend. The details here point elsewhere.",
+   "Margin is the deposit to hold the position. That matches the case described.",
+   "It is not a refund. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s412q2",
+  "h": "Check yourself",
+  "q": "A 2% move changes the trader's deposit by 20%. What is this effect called?",
+  "opts": [
+   "Leverage",
+   "Dividend yield",
+   "Rollover",
+   "Cash settlement"
+  ],
+  "ans": 0,
+  "why": [
+   "Leverage controls a large position with a small deposit.",
+   "Dividend yield is a cash return on price. It does not fit the facts given.",
+   "Rollover is moving to the next expiry. It does not fit the facts given.",
+   "Cash settlement is paying the difference at the end."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s412q3",
+  "h": "Check yourself",
+  "q": "What does mark-to-market do?",
+  "opts": [
+   "Settles them only once a year",
+   "Cancels all of the losses",
+   "Fixes the price for life for you",
+   "Settles gains and losses daily"
+  ],
+  "ans": 3,
+  "why": [
+   "It is daily, not yearly. That does not match this case.",
+   "Losses are not cancelled. It does not fit the facts given.",
+   "The price is not fixed for life. It does not answer what was asked.",
+   "The account is credited or debited at each day's close."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s412q4",
+  "h": "Check yourself",
+  "q": "After three losing days the broker asks for more money at once. What is this?",
+  "opts": [
+   "A dividend call",
+   "A margin call",
+   "A rollover",
+   "An expiry"
+  ],
+  "ans": 1,
+  "why": [
+   "There is no dividend call. It does not fit the facts given.",
+   "It is a demand to add funds when the deposit falls too low.",
+   "Rollover moves the position to the next expiry.",
+   "Expiry is the end date of the contract. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Margin is the deposit to hold a futures position.",
+   "Leverage magnifies both gains and losses.",
+   "Mark-to-market is daily. A margin call asks for more money."
+  ]
+ }
+]

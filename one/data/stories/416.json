@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "You pay ₹30 for the right to buy a share at ₹500, no matter how high the market goes. If the market stays low, you walk away and lose only the ₹30. That is an option: a right, not a duty.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Right, not duty",
+  "lines": [
+   [
+    "meena",
+    "So an option is like a booking fee?"
+   ],
+   [
+    "sikka",
+    "Close. The premium is the price of the right. A call is the right to buy at a fixed strike price. A put is the right to sell. The buyer can lose no more than the premium, and it is not refunded."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Call and put, made up",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Call: right to buy at",
+    "₹500 strike"
+   ],
+   [
+    "Put: right to sell at",
+    "₹400 strike"
+   ],
+   [
+    "Premium paid",
+    "₹30 per unit"
+   ],
+   [
+    "=",
+    "Buyer's maximum loss",
+    "₹30 per unit"
+   ]
+  ],
+  "note": "The strike price is the fixed price at which the holder can buy or sell if exercised."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Options basics",
+  "stops": [
+   [
+    "A call is the right to buy at a fixed price",
+    true
+   ],
+   [
+    "A put obliges the buyer to sell",
+    false
+   ],
+   [
+    "The premium is the buyer's maximum loss",
+    true
+   ],
+   [
+    "The premium is refunded if the option is unused",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The buyer has no obligation."
+   ],
+   [
+    2.2,
+    "It is a right, not a duty."
+   ],
+   [
+    4.0,
+    "Per unit, no more."
+   ],
+   [
+    5.6,
+    "It is not refunded."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s416q1",
+  "h": "Check yourself",
+  "q": "Which option gives the buyer the right to buy at a fixed price?",
+  "opts": [
+   "A put option",
+   "A premium",
+   "A call option",
+   "A strike"
+  ],
+  "ans": 2,
+  "why": [
+   "A put is the right to sell. It does not answer what was asked.",
+   "The premium is the price paid for the option.",
+   "A call is the right to buy at the strike price.",
+   "The strike is the fixed price, not the option type."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s416q2",
+  "h": "Check yourself",
+  "q": "A buyer pays ₹30 per unit for an option. What is the most per unit the buyer can lose?",
+  "opts": [
+   "₹30",
+   "₹500",
+   "Unlimited",
+   "₹0"
+  ],
+  "ans": 0,
+  "why": [
+   "The premium paid is the maximum loss.",
+   "₹500 is a strike price, not the premium.",
+   "A buyer's loss is capped at the premium.",
+   "The premium is non-refundable, so loss can be ₹30."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s416q3",
+  "h": "Check yourself",
+  "q": "An investor pays a fee for the right to sell a share at ₹400 even if the price falls lower. What is this?",
+  "opts": [
+   "A call option",
+   "A futures contract",
+   "A bonus issue",
+   "A put option"
+  ],
+  "ans": 3,
+  "why": [
+   "A call is the right to buy. That does not match this case.",
+   "A future carries an obligation to trade. It does not fit the facts given.",
+   "A bonus issue gives holders extra shares. It does not answer what was asked.",
+   "A put is the right to sell at a fixed price. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s416q4",
+  "h": "Check yourself",
+  "q": "What is the strike price?",
+  "opts": [
+   "The fee paid by the buyer up front",
+   "The fixed price to buy or sell at",
+   "The market price on the day today",
+   "The price on expiry day only"
+  ],
+  "ans": 1,
+  "why": [
+   "The fee paid is the premium. It does not fit the facts given.",
+   "It is fixed in the contract. This fits the facts given.",
+   "Market price moves; strike is fixed. The details here point elsewhere.",
+   "Strike is set at the start, not only at expiry. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "An option is a right, not a duty, to buy (call) or sell (put) at a strike price.",
+   "The premium is the price of that right and the buyer's maximum loss.",
+   "The strike price is fixed in the contract."
+  ]
+ }
+]

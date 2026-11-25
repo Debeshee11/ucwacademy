@@ -1,0 +1,177 @@
+[
+ {
+  "k": "fact",
+  "art": "pie",
+  "h": "Before you start",
+  "big": "Four funds can all be called equity funds and still be built in very different ways. The name sets the allowed range. The factsheet shows what is really inside."
+ },
+ {
+  "k": "dialog",
+  "h": "One fund, please",
+  "lines": [
+   [
+    "meena",
+    "I want just one equity fund. Which type should it be?"
+   ],
+   [
+    "sikka",
+    "Let us see how the main types are allowed to be built, and what that means for her."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "How the types are built",
+  "rows": [
+   {
+    "name": "Multi cap fund",
+    "segs": [
+     [
+      "Large 25",
+      25,
+      "#8EC5FF"
+     ],
+     [
+      "Mid 25",
+      25,
+      "#3CC47A"
+     ],
+     [
+      "Small 25",
+      25,
+      "#FFC531"
+     ],
+     [
+      "Open 25",
+      25,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Flexi cap fund",
+    "segs": [
+     [
+      "Any mix of large, mid and small cap stocks",
+      100,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Focused fund (at most 30 stocks)",
+    "segs": [
+     [
+      "Any mix, but only 30 stocks or fewer",
+      100,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ],
+  "alt": "Bars showing how a multi cap, a flexi cap and a focused fund are built",
+  "caps": [
+   [
+    0.3,
+    "A multi cap fund must keep at least 25% each in large, mid and small caps."
+   ],
+   [
+    3.0,
+    "A flexi cap fund has no minimum for each bucket, so the manager has the most freedom."
+   ],
+   [
+    5.4,
+    "A focused fund holds at most 30 stocks. A wrong pick hurts more."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s312q1",
+  "h": "Check yourself",
+  "q": "What must a multi cap fund hold at the minimum?",
+  "opts": [
+   "At least 25% each in large, mid and small caps",
+   "At least 80% in large caps and the rest in mid caps",
+   "At least 65% in small caps",
+   "At least 50% in mid caps"
+  ],
+  "ans": 0,
+  "why": [
+   "Three buckets at 25% each adds up to 75%. The remaining 25% is left to the manager's choice.",
+   "The 80% large cap floor belongs to a large cap fund. A multi cap fund must spread across all three buckets.",
+   "The 65% small cap floor belongs to a small cap fund. A multi cap fund cannot be all small caps.",
+   "No such floor exists for mid caps in a multi cap fund. The rule sets a floor for each of the three buckets."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s312q2",
+  "h": "Check yourself",
+  "q": "A client wants one equity fund for her core money and is comfortable trusting the manager. What is a reasonable choice?",
+  "opts": [
+   "A sectoral fund, since one sector is simple to follow",
+   "A flexi cap fund, with a yearly check of what it actually holds",
+   "A focused fund of 10 stocks, since fewer stocks means less risk",
+   "A small cap fund, because it can grow the fastest"
+  ],
+  "ans": 1,
+  "why": [
+   "A sector fund holds one corner of the market. It can fall hard for years when that corner is out of favour.",
+   "A manager who can move across all caps suits a one-fund core, and the yearly check catches drift from her comfort.",
+   "Fewer stocks means each one matters more. A mistake in one name can hurt the whole fund.",
+   "Small caps have deep falls. As a single fund it carries more risk than a one-fund core should."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s312q3",
+  "h": "Check yourself",
+  "q": "Which statement about a focused fund is correct?",
+  "opts": [
+   "It holds at most 30 stocks, so one wrong stock hurts more",
+   "It must hold at least 30 stocks, which makes it safer",
+   "It invests only in large caps, with no mid caps",
+   "It can hold any number of stocks, like a flexi cap fund"
+  ],
+  "ans": 0,
+  "why": [
+   "The limit is a maximum. With few stocks, the weight of each one is larger and a single failure shows in the NAV.",
+   "The number is a ceiling, not a floor. A focused fund with a high floor would not be focused at all.",
+   "A focused fund can hold stocks from any bucket. The rule limits the count, not the size of the companies.",
+   "The cap of 30 is what makes the fund focused. A flexi cap fund has no such limit on the number of stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s312q4",
+  "h": "Check yourself",
+  "q": "The fund's name says flexi cap. Where do you check how much of it is in small caps today?",
+  "opts": [
+   "The fund's name, since it states the exact mix of the fund",
+   "The factsheet, which shows the real mix by market cap",
+   "The NAV chart, which shows the mix by the colour of its line",
+   "The exit load table in the offer document of the scheme"
+  ],
+  "ans": 1,
+  "why": [
+   "A name sets the range the fund may use. Two flexi cap funds can hold quite different mixes inside it.",
+   "The factsheet lists the real mix by market cap, and the portfolio shows each stock. It is the place to look.",
+   "A NAV chart shows price over time only. It carries no information about what the fund holds.",
+   "The exit load says what you pay to leave early. It tells you nothing about the stocks inside."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Multi cap: at least 25% each in large, mid and small. Flexi cap: any mix. Focused: at most 30 stocks.",
+   "Flexi cap suits one core fund, if you trust the manager.",
+   "The label sets the range. The factsheet shows the truth, so check it every year."
+  ]
+ }
+]

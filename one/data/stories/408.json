@@ -1,0 +1,169 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A company that turns ₹100 crore of owners' money into ₹20 crore of profit every year is doing something right. Good businesses earn high returns on the money they use, year after year.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Return on the money used",
+  "lines": [
+   [
+    "meena",
+    "Is a high profit enough?"
+   ],
+   [
+    "sikka",
+    "Profit must be set against the money used. ROE is net profit over shareholders' equity. ROCE uses operating profit over all capital, equity and debt. Margins show how much of each rupee of sales is left."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "ROE and margins",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Net profit",
+    "₹20 crore"
+   ],
+   [
+    "Shareholders' equity",
+    "₹100 crore"
+   ],
+   [
+    "=",
+    "ROE",
+    "20%"
+   ],
+   [
+    "Operating profit on ₹100 of sales",
+    "₹18, so operating margin 18%"
+   ]
+  ],
+  "note": "Net margin: after all costs and tax, ₹9 kept from ₹100 of sales is 9%."
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "h": "Where ₹100 of sales goes, made up",
+  "vals": [
+   100,
+   18,
+   9
+  ],
+  "labels": [
+   "Sales",
+   "Operating",
+   "Net"
+  ],
+  "big": "18% and 9% margins",
+  "small": "operating, then net",
+  "alt": "Bars of sales, operating profit and net profit",
+  "caps": [
+   [
+    0.3,
+    "₹100 of sales."
+   ],
+   [
+    2.2,
+    "₹18 remains as operating profit."
+   ],
+   [
+    4.0,
+    "₹9 remains after interest and tax."
+   ],
+   [
+    5.6,
+    "These are the margins."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s408q1",
+  "h": "Check yourself",
+  "q": "A company earns ₹20 crore profit on ₹100 crore of owners' funds. What is the ROE?",
+  "opts": [
+   "5%",
+   "120%",
+   "80%",
+   "20%"
+  ],
+  "ans": 3,
+  "why": [
+   "5% would need only ₹5 crore of profit.",
+   "120% adds the two numbers, which is wrong.",
+   "80% subtracts the two, which is wrong.",
+   "20 ÷ 100 gives an ROE of 20%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s408q2",
+  "h": "Check yourself",
+  "q": "Which return uses both equity and debt as the capital base?",
+  "opts": [
+   "ROE",
+   "ROCE",
+   "EPS",
+   "Dividend yield"
+  ],
+  "ans": 1,
+  "why": [
+   "ROE uses only shareholders' equity. The details here point elsewhere.",
+   "ROCE divides operating profit by all capital employed.",
+   "EPS is profit per share. It does not fit the facts given.",
+   "Dividend yield is a cash payout ratio. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s408q3",
+  "h": "Check yourself",
+  "q": "A firm keeps ₹18 of operating profit from every ₹100 of sales. What is the operating margin?",
+  "opts": [
+   "1.8%",
+   "82%",
+   "18%",
+   "100%"
+  ],
+  "ans": 2,
+  "why": [
+   "1.8% would be ₹1.80 of profit. It does not fit the facts given.",
+   "82% is the cost share, not the margin. It does not answer what was asked.",
+   "18 ÷ 100 is 18%. That matches the case described.",
+   "100% would leave no costs. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s408q4",
+  "h": "Check yourself",
+  "q": "What does net profit margin tell you?",
+  "opts": [
+   "Final profit from each rupee of sales",
+   "How much debt the firm has in all",
+   "How many shares exist in the market",
+   "What the price will be next year"
+  ],
+  "ans": 0,
+  "why": [
+   "It is net profit as a share of revenue.",
+   "Debt is shown by other ratios.",
+   "Share count is not a margin.",
+   "A margin does not forecast price."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "ROE = net profit ÷ equity. ROCE = operating profit ÷ all capital.",
+   "Operating margin and net margin are profit ÷ revenue.",
+   "Good businesses earn high returns year after year."
+  ]
+ }
+]

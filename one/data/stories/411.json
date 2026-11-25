@@ -1,0 +1,211 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Two parties agree today to trade the Nifty at a fixed price one month from now. No shares change hands today. That agreement is a futures contract. Learn its parts before you go near one.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A contract with a clock",
+  "lines": [
+   [
+    "meena",
+    "So a futures contract is a promise?"
+   ],
+   [
+    "sikka",
+    "A standardised promise on an exchange. Its value comes from an underlying asset, so it is a derivative. It has a fixed lot size and an expiry date. After expiry, the contract no longer exists."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "h": "Parts of a futures contract",
+  "bw": 190,
+  "nodes": [
+   {
+    "x": 170,
+    "y": 50,
+    "label": "Underlying",
+    "sub": "share, index or commodity",
+    "col": "#8EC5FF"
+   },
+   {
+    "x": 170,
+    "y": 135,
+    "label": "Lot size",
+    "sub": "fixed quantity per contract",
+    "col": "#FFC531"
+   },
+   {
+    "x": 170,
+    "y": 220,
+    "label": "Expiry",
+    "sub": "date it ends and settles",
+    "col": "#3CC47A"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    ""
+   ],
+   [
+    1,
+    2,
+    ""
+   ]
+  ],
+  "alt": "Three boxes: underlying, lot size, expiry",
+  "caps": [
+   [
+    0.3,
+    "Value comes from an underlying asset."
+   ],
+   [
+    2.2,
+    "Each contract has a fixed lot size."
+   ],
+   [
+    4.0,
+    "It ends on an expiry date."
+   ],
+   [
+    5.6,
+    "After expiry, it no longer exists."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Futures basics",
+  "stops": [
+   [
+    "A derivative gets its value from an underlying",
+    true
+   ],
+   [
+    "Futures can be bought in any quantity",
+    false
+   ],
+   [
+    "A contract has a set expiry date",
+    true
+   ],
+   [
+    "Futures are private deals with no exchange",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "A share, an index or a commodity."
+   ],
+   [
+    2.2,
+    "You cannot trade less than one lot."
+   ],
+   [
+    4.0,
+    "After it, the contract ends."
+   ],
+   [
+    5.6,
+    "They are standardised and exchange-traded."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s411q1",
+  "h": "Check yourself",
+  "q": "What is a derivative?",
+  "opts": [
+   "A type of savings account held",
+   "A loan given by the government",
+   "A kind of share certificate issued",
+   "A contract valued off an asset"
+  ],
+  "ans": 3,
+  "why": [
+   "It is not a savings account.",
+   "It is not a government loan.",
+   "It is not a share certificate.",
+   "Its price moves with the underlying."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s411q2",
+  "h": "Check yourself",
+  "q": "A contract is for 75 units of the underlying. Can you buy 20 units of it?",
+  "opts": [
+   "Yes, in any amount you like",
+   "No, one lot is the minimum",
+   "Yes, but only on bank holidays",
+   "Yes, if you agree to pay twice"
+  ],
+  "ans": 1,
+  "why": [
+   "It cannot be split into smaller pieces.",
+   "Lot size is fixed by the exchange.",
+   "Holidays have no link to lot size.",
+   "Paying more does not change the lot."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s411q3",
+  "h": "Check yourself",
+  "q": "What happens when a futures contract expires?",
+  "opts": [
+   "It is settled, then ceases to be",
+   "It continues on for ever and ever",
+   "It turns into a share of the firm",
+   "It becomes a bank deposit for you"
+  ],
+  "ans": 0,
+  "why": [
+   "Expiry is the date on which it ends and is settled.",
+   "It does not continue past expiry. It does not fit the facts given.",
+   "It does not become a share. It does not answer what was asked.",
+   "It does not become a deposit. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s411q4",
+  "h": "Check yourself",
+  "q": "Where are futures contracts traded?",
+  "opts": [
+   "Only in private chats online",
+   "Only by post, through the mail",
+   "On an exchange, standardised",
+   "Only at a bank branch counter"
+  ],
+  "ans": 2,
+  "why": [
+   "Private chats are not the market. It does not answer what was asked.",
+   "Post is not a market. It does not answer what was asked.",
+   "They are standardised and exchange-traded. This fits the facts given.",
+   "A branch is not the exchange. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A derivative takes its value from an underlying asset.",
+   "A futures contract has a fixed lot size and an expiry date.",
+   "It is standardised and traded on an exchange."
+  ]
+ }
+]

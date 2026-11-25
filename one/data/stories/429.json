@@ -1,0 +1,184 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A silver ETF returned 14.2% while silver rose 15%. The 0.8-point gap is tracking error. Regulated silver products are easier and cheaper to buy and sell than bars. They have their own fine print.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "ETF or fund of funds",
+  "lines": [
+   [
+    "meena",
+    "Which is simpler, an ETF or a fund of funds?"
+   ],
+   [
+    "sikka",
+    "A silver ETF trades on the exchange and tracks the silver price, and you need a demat account. A silver fund of funds invests in silver ETFs and can be bought directly from the fund house, even as a SIP. Watch tracking error and any premium or discount to NAV."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Silver price",
+  "b": "Silver ETF",
+  "rows": [
+   [
+    "Return in the year (%)",
+    15,
+    14.2
+   ]
+  ],
+  "h": "Tracking error, made up",
+  "alt": "Bars showing a silver price return and a slightly lower ETF return",
+  "caps": [
+   [
+    0.3,
+    "Silver rose 15% in the year."
+   ],
+   [
+    2.2,
+    "The ETF returned 14.2%."
+   ],
+   [
+    4.0,
+    "The gap is tracking error."
+   ],
+   [
+    5.6,
+    "A smaller gap means closer tracking."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Silver ETFs and funds",
+  "stops": [
+   [
+    "A silver ETF trades like a share",
+    true
+   ],
+   [
+    "A silver fund of funds needs a demat account",
+    false
+   ],
+   [
+    "A smaller tracking error means closer tracking",
+    true
+   ],
+   [
+    "An ETF always trades exactly at NAV",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Its price tracks silver."
+   ],
+   [
+    2.2,
+    "It can be bought from the fund house."
+   ],
+   [
+    4.0,
+    "It follows the silver price better."
+   ],
+   [
+    5.6,
+    "It can trade at a premium or discount."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s429q1",
+  "h": "Check yourself",
+  "q": "Which silver product can be bought without a demat account?",
+  "opts": [
+   "A silver fund of funds",
+   "A silver ETF on the exchange",
+   "Silver mining shares only",
+   "A silver future on the exchange"
+  ],
+  "ans": 0,
+  "why": [
+   "It can be bought directly from the fund house.",
+   "A silver ETF trades on the exchange and needs demat.",
+   "Shares need demat. That does not match this case.",
+   "Futures are exchange products. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s429q2",
+  "h": "Check yourself",
+  "q": "A silver ETF returns 14.2% while silver rose 15%. What is the gap?",
+  "opts": [
+   "Premium over spot",
+   "Moneyness",
+   "Tracking error",
+   "Expiry"
+  ],
+  "ans": 2,
+  "why": [
+   "Premium over spot relates to dealer prices.",
+   "Moneyness is an options term. That does not match this case.",
+   "It is the gap between the fund's return and what it tracks.",
+   "Expiry is a contract date. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s429q3",
+  "h": "Check yourself",
+  "q": "An ETF's market price is 2% above the value of the silver it holds. What is this?",
+  "opts": [
+   "A discount to NAV",
+   "Tracking error of zero",
+   "A stop-loss",
+   "A premium to NAV"
+  ],
+  "ans": 3,
+  "why": [
+   "A discount would be below NAV. That does not match this case.",
+   "The gap shows a difference. It does not fit the facts given.",
+   "A stop-loss is an exit order. It does not answer what was asked.",
+   "The market price is above NAV, so it is at a premium."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s429q4",
+  "h": "Check yourself",
+  "q": "An investor starts a SIP in a mutual fund that buys silver ETFs. What is it?",
+  "opts": [
+   "A silver bar kept at home",
+   "A silver fund of funds",
+   "A hallmark on an article",
+   "A futures contract on silver"
+  ],
+  "ans": 1,
+  "why": [
+   "A bar is physical silver. It does not fit the facts given.",
+   "A FoF invests in silver ETFs and suits SIPs.",
+   "A hallmark is a quality mark. The details here point elsewhere.",
+   "A future is a derivative. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Silver ETF: exchange-traded, tracks silver, needs demat.",
+   "Silver FoF: invests in ETFs, no demat, SIP-friendly.",
+   "Check tracking error and premium or discount to NAV."
+  ]
+ }
+]

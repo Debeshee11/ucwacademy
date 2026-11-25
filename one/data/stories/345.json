@@ -1,0 +1,256 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Some investors own nine funds and cannot say what any of them is for. A simple core of one broad index fund, plus a little growth on top, can do the same job with less cost and less worry.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Doing nothing, on purpose",
+  "lines": [
+   [
+    "meena",
+    "I want something simple I can ignore for years."
+   ],
+   [
+    "sikka",
+    "Simple can still be well built. See the three parts of a core, how it drifts, and how cost builds up."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "A core, a drift and a reset",
+  "rows": [
+   {
+    "name": "The plan: ₹10 lakh",
+    "segs": [
+     [
+      "Large cap index 60%",
+      60,
+      "#8EC5FF"
+     ],
+     [
+      "Mid and small 40%",
+      40,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "After a rally: ₹12.4 lakh",
+    "segs": [
+     [
+      "Large 53%",
+      53.2,
+      "#8EC5FF"
+     ],
+     [
+      "Mid and small 47%",
+      46.8,
+      "#3CC47A"
+     ]
+    ]
+   },
+   {
+    "name": "After rebalancing: ₹12.4 lakh",
+    "segs": [
+     [
+      "Large cap index 60%",
+      60,
+      "#8EC5FF"
+     ],
+     [
+      "Mid and small 40%",
+      40,
+      "#3CC47A"
+     ]
+    ]
+   }
+  ],
+  "alt": "Three bars: the plan of sixty forty, the mix after a mid and small cap rally, and the mix after rebalancing",
+  "caps": [
+   [
+    0.3,
+    "The plan for ₹10 lakh: ₹6 lakh in one broad large cap index fund, ₹4 lakh in a mid and small cap fund."
+   ],
+   [
+    2.4,
+    "A year later the large cap fund is up 10% and the mid and small cap fund 45%. The money is now ₹12.4 lakh."
+   ],
+   [
+    4.6,
+    "The mix has drifted to about 53 and 47. That is nearly 7 points from the plan, past a 5 point trigger."
+   ],
+   [
+    6.4,
+    "Rebalance: ₹7.4 lakh in the large cap fund, ₹5.0 lakh in the other. Back on plan. Returns are assumed."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "h": "Why cost matters in the core",
+  "a": "Passive core, 0.6%",
+  "b": "All active, 1.2%",
+  "rows": [
+   [
+    "Yearly cost on ₹10 lakh (₹ thousand)",
+    6,
+    12
+   ],
+   [
+    "Value after 25 years (₹ lakh)",
+    148.6,
+    129.9
+   ]
+  ],
+  "alt": "Bars comparing a portfolio with a cheap index core against an all active portfolio on yearly cost and value after 25 years",
+  "caps": [
+   [
+    0.3,
+    "Passive core: 60% in an index fund at 0.2%, 40% in an active fund at 1.2%. Blended cost is 0.6%."
+   ],
+   [
+    2.4,
+    "All active at 1.2%. Cost per year on ₹10 lakh is ₹6,000 against ₹12,000."
+   ],
+   [
+    4.4,
+    "Assume both earn 12% before costs. After 25 years: about ₹149 lakh against ₹130 lakh."
+   ],
+   [
+    6.4,
+    "The difference is only cost. We still keep an active fund where a manager has room to add value."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "h": "Rules for a core you can ignore",
+  "title": "Sound and unsound rules",
+  "stops": [
+   [
+    "One broad index fund as the core",
+    true
+   ],
+   [
+    "Rebalance when the mix drifts about 5 points",
+    true
+   ],
+   [
+    "Nine funds for safety",
+    false
+   ],
+   [
+    "Rebalance on every small move",
+    false
+   ]
+  ],
+  "alt": "A shield with sound and unsound rules for building a core with passive funds",
+  "caps": [
+   [
+    0.3,
+    "One broad index fund as the core. Add active only where a manager can add value after costs."
+   ],
+   [
+    3.0,
+    "Keep the number of funds low, and review once a year."
+   ],
+   [
+    5.5,
+    "Rebalance when the mix drifts well off plan, not on every small move."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s345q1",
+  "h": "Check yourself",
+  "q": "Meena's plan is 60% in a large cap index fund and 40% in a mid and small cap fund, with a 5 point trigger. After a rally the mix is 53% and 47%. What should she do?",
+  "opts": [
+   "Do nothing, since a mid cap rally means the plan is working",
+   "Rebalance, since the 7 point drift passes her trigger",
+   "Sell the mid and small cap fund entirely, since it grew too fast",
+   "Change the plan to 50 and 50, since mid caps are winning"
+  ],
+  "ans": 1,
+  "why": [
+   "The gain is welcome but the risk is now higher than she chose. The plan exists to keep that risk in check.",
+   "The mix is about 7 points off, past the 5 point trigger. Trim the winner, or steer new money to the large cap fund.",
+   "Selling all of it overshoots the plan. Rebalancing means returning to 60 and 40, not removing the growth part.",
+   "Chasing the winner raises risk at the point where it has just risen. Changing a plan after a rally is not rebalancing."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s345q2",
+  "h": "Check yourself",
+  "q": "Rohan asks where a good active manager is most likely to beat the index after costs. What is the best answer?",
+  "opts": [
+   "In large caps, where many analysts watch every share",
+   "Everywhere equally, since skill does not depend on segment",
+   "In less efficient areas, small caps more than large caps",
+   "Nowhere, since no active fund has ever beaten an index"
+  ],
+  "ans": 2,
+  "why": [
+   "Large caps are the most heavily studied, which is why many active funds there have struggled to beat the index.",
+   "Segments differ. Efficient markets leave little room, and less crowded ones leave more.",
+   "Small companies are followed by fewer analysts, so there is more room to find mispriced shares.",
+   "Some active funds do beat their index. The point is that it is harder in efficient segments."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s345q3",
+  "h": "Check yourself",
+  "q": "A hands-off investor holds nine equity funds that overlap heavily and cannot recall why. What is the best first step?",
+  "opts": [
+   "Add a tenth fund to cover segments that none of the nine hold",
+   "Keep all nine and ignore them, since checking only adds costs",
+   "Sell everything and wait for a better time to start again",
+   "Consolidate to an index core plus one or two growth funds"
+  ],
+  "ans": 3,
+  "why": [
+   "More funds add more clutter. The hands-off aim is a few funds with clear roles, not a bigger list.",
+   "Ignoring them keeps the overlap and cost. A yearly review is the minimum for any portfolio.",
+   "Selling everything is a timing bet and may bring tax. The task is to simplify, not to go to cash.",
+   "Fewer funds with clear jobs are easier to hold for years, cost less and avoid the overlap."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s345q4",
+  "h": "Check yourself",
+  "q": "A core has 60% in an index fund charging 0.2% and 40% in an active fund charging 1.2%. What is the blended expense ratio?",
+  "opts": [
+   "0.6% a year, weighted by the money in each fund",
+   "0.7% a year, the simple average of the two rates",
+   "1.2% a year, since the active fund sets the cost",
+   "0.2% a year, since most of the money is in the index"
+  ],
+  "ans": 0,
+  "why": [
+   "0.6 times 0.2 plus 0.4 times 1.2 is 0.12 plus 0.48, which is 0.6%. Each cost is weighted by its share.",
+   "The simple average counts both funds equally. But 60% of the money sits in the cheaper fund.",
+   "The active fund holds only 40% of the money, so the blend is well below its full rate of 1.2%.",
+   "Only 60% of the money sits in the cheaper fund. The other 40% costs 1.2%, so the blend is higher."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Passive core plus a small active satellite, where a manager has room.",
+   "Rebalance once a year, or when the mix drifts about 5 points off plan.",
+   "Few funds, low cost. Simple is the plan you can actually keep."
+  ]
+ }
+]

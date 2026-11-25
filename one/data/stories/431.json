@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A client with ₹30 lakh is told she cannot open a regular PMS account. A client with ₹60 lakh can. The rule is a SEBI minimum of ₹50 lakh. What does the extra money buy? A portfolio built in your name.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "A portfolio in your name",
+  "lines": [
+   [
+    "meena",
+    "How is a PMS different from a mutual fund?"
+   ],
+   [
+    "sikka",
+    "In a PMS, a SEBI-registered portfolio manager runs your portfolio under a signed agreement. Your shares sit in a separate account in your own name, not in a pool. You can log in and see exactly what was bought for you."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "PMS basics",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Who runs it",
+    "a SEBI-registered portfolio manager"
+   ],
+   [
+    "Minimum per client",
+    "₹50 lakh (accredited investors can go lower)"
+   ],
+   [
+    "Where shares sit",
+    "a separate account in the client's name"
+   ],
+   [
+    "Basis of authority",
+    "a signed written agreement"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a PMS is",
+  "stops": [
+   [
+    "SEBI sets a ₹50 lakh PMS minimum per client",
+    true
+   ],
+   [
+    "PMS pools all clients' money into one fund",
+    false
+   ],
+   [
+    "Each client's securities sit in a segregated account",
+    true
+   ],
+   [
+    "A portfolio manager need not be registered",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Accredited investors can go lower."
+   ],
+   [
+    2.2,
+    "Holdings are in the client's own name."
+   ],
+   [
+    4.0,
+    "No pooling."
+   ],
+   [
+    5.6,
+    "It must be SEBI-registered."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s431q1",
+  "h": "Check yourself",
+  "q": "A client has ₹30 lakh. Can she open a regular PMS account?",
+  "opts": [
+   "No, the SEBI minimum is ₹50 lakh",
+   "Yes, any amount is allowed in a PMS",
+   "Yes, from ₹5,000 into a PMS plan",
+   "No, the minimum is ₹1 crore here"
+  ],
+  "ans": 0,
+  "why": [
+   "The minimum is ₹50 lakh per client.",
+   "The SEBI minimum rules out any amount.",
+   "₹5,000 is far below the rule.",
+   "₹1 crore is the usual AIF minimum."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s431q2",
+  "h": "Check yourself",
+  "q": "What is a segregated account in a PMS?",
+  "opts": [
+   "A pool of money shared by all clients",
+   "A current account kept at a bank",
+   "Securities held separately in her name",
+   "A personal account of the manager"
+  ],
+  "ans": 2,
+  "why": [
+   "A pool is how mutual funds work.",
+   "It holds securities, not only cash.",
+   "Each client's securities are held separately.",
+   "The manager does not hold them personally."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s431q3",
+  "h": "Check yourself",
+  "q": "Who may make investment decisions for PMS clients under a signed agreement?",
+  "opts": [
+   "Any friend of the client at all",
+   "A bank teller at the nearest branch",
+   "A shop owner in the local market",
+   "A SEBI-registered portfolio manager"
+  ],
+  "ans": 3,
+  "why": [
+   "A friend is not a registered manager.",
+   "A teller does not manage portfolios.",
+   "A shop owner is not a portfolio manager.",
+   "The manager must be registered with SEBI."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s431q4",
+  "h": "Check yourself",
+  "q": "A client logs in and sees the exact shares bought for her. What does this show?",
+  "opts": [
+   "She owns the manager's whole firm",
+   "Holdings are in her name, not pooled",
+   "The shares shown are not really hers",
+   "The fund is a pooled mutual fund"
+  ],
+  "ans": 1,
+  "why": [
+   "She owns shares, not the firm. It does not answer what was asked.",
+   "That is the point of a segregated account. This fits the facts given.",
+   "The shares are real holdings. The details here point elsewhere.",
+   "Mutual funds are pooled. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "PMS: a SEBI-registered manager runs a portfolio for wealthier investors.",
+   "Minimum ₹50 lakh per client; accredited investors can go lower.",
+   "Securities sit in a separate account in the client's name."
+  ]
+ }
+]

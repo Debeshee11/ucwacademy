@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "In Meena's family, gold has been passed down for generations. Prices of shares have swung up and down, yet the family's gold has kept its value over the decades. But gold is not a promise, and it has not helped in every single year.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Why gold at all",
+  "lines": [
+   [
+    "meena",
+    "My family trusts gold. Should it be a big part of my savings?"
+   ],
+   [
+    "sikka",
+    "A small part can help, because gold often moves differently from shares. A big part brings its own risks. It pays no interest, and its price can stay flat for years."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four ideas",
+  "intro": "Why people hold gold.",
+  "rows": [
+   [
+    "Store of value",
+    "Keeps buying power over very long periods"
+   ],
+   [
+    "Diversifier",
+    "Does not move in step with shares, so it can steady a portfolio"
+   ],
+   [
+    "Safe-haven demand",
+    "Investors buy gold in times of fear or stress"
+   ],
+   [
+    "Inflation hedge",
+    "Has held value over decades, but not every year"
+   ]
+  ],
+  "note": "Gold pays no interest or dividend. Its return comes only from a rise in its price."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Why hold gold",
+  "stops": [
+   [
+    "Gold often moves differently from shares",
+    true
+   ],
+   [
+    "Gold pays regular interest",
+    false
+   ],
+   [
+    "Gold demand can rise in times of fear",
+    true
+   ],
+   [
+    "Gold rises every single year",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "That difference is why a small amount can steady a portfolio."
+   ],
+   [
+    2.2,
+    "Gold pays no interest or dividend."
+   ],
+   [
+    4.0,
+    "In uncertain times, investors move into gold."
+   ],
+   [
+    5.6,
+    "Gold has had long flat or falling stretches too."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s421q1",
+  "h": "Check yourself",
+  "q": "Rohan's shares fall sharply while his gold holds steady. Which role is the gold playing?",
+  "opts": [
+   "A diversifier",
+   "A dividend payer",
+   "A loan to a company",
+   "A fixed deposit"
+  ],
+  "ans": 0,
+  "why": [
+   "Gold often moves differently from shares, so it can cushion a fall.",
+   "Gold pays no dividend. Its return comes only from price.",
+   "A loan to a company is a bond, and gold is not that.",
+   "A fixed deposit pays set interest, which gold does not."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s421q2",
+  "h": "Check yourself",
+  "q": "A friend says gold is guaranteed to rise every year. What is the honest view?",
+  "opts": [
+   "He is right, since gold never falls",
+   "Gold falls every year",
+   "It helped over decades, not every year",
+   "Gold is set by SEBI each year"
+  ],
+  "ans": 2,
+  "why": [
+   "Gold prices do fall in some years, so 'never' is false.",
+   "Gold does not fall in every year, either, so this is wrong.",
+   "Gold has held value over decades, yet it can stay flat for years.",
+   "SEBI does not set the price of gold in any year."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s421q3",
+  "h": "Check yourself",
+  "q": "A war breaks out and Meena notices gold demand rising. What is this called?",
+  "opts": [
+   "Dividend-led demand",
+   "Safe-haven demand",
+   "Premium-led demand",
+   "Surveyor demand"
+  ],
+  "ans": 1,
+  "why": [
+   "Gold pays no dividend, so this is not what drives it.",
+   "Investors move into gold in times of fear or stress.",
+   "A premium is paid for insurance, not for gold demand.",
+   "A surveyor assesses insurance losses, with no link to gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s421q4",
+  "h": "Check yourself",
+  "q": "Which is true of gold as an investment?",
+  "opts": [
+   "It pays a monthly interest on holdings",
+   "It is a loan to the government itself",
+   "It gives votes in a company itself",
+   "It pays no interest, only price changes"
+  ],
+  "ans": 3,
+  "why": [
+   "Gold does not pay interest of any kind to holders.",
+   "Lending to a government is a bond, not gold.",
+   "Votes come with shares, and not with gold itself.",
+   "Gold has no interest or dividend. Its return is price change."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Gold is a store of value and a diversifier, not a promise.",
+   "It pays no interest, so returns come only from price.",
+   "It has helped over decades, not in every year."
+  ]
+ }
+]

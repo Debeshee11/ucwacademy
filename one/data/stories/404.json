@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Rohan owns 10 shares at ₹1,000 each, worth ₹10,000. The company announces a split. Next morning he owns 20 shares at ₹500 each. He is not richer, and he is not poorer.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Same pie, more slices",
+  "lines": [
+   [
+    "rohan",
+    "The company split its shares. Should I be excited?"
+   ],
+   [
+    "sikka",
+    "A split cuts the same pie into more slices. The price per share falls and the number of shares rises. Your total value is unchanged on the day."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Before the split",
+  "b": "After the split",
+  "rows": [
+   [
+    "Shares held",
+    10,
+    20
+   ],
+   [
+    "Price per share (₹ hundred)",
+    10,
+    5
+   ],
+   [
+    "Total value (₹ thousand)",
+    10,
+    10
+   ]
+  ],
+  "h": "A 1-to-2 split",
+  "alt": "Bars showing shares doubling, price halving and total value staying the same after a split",
+  "caps": [
+   [
+    0.3,
+    "Rohan has 10 shares at ₹1,000 each."
+   ],
+   [
+    2.2,
+    "After a 1-to-2 split, he has 20 shares."
+   ],
+   [
+    4.0,
+    "The price per share halves to ₹500."
+   ],
+   [
+    5.6,
+    "His total value stays ₹10,000. Nothing was created."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four corporate actions",
+  "intro": "What each one does to you.",
+  "rows": [
+   [
+    "IPO",
+    "A company sells shares to the public for the first time"
+   ],
+   [
+    "Dividend",
+    "A share of profit, decided by the board, never guaranteed"
+   ],
+   [
+    "Stock split",
+    "More shares at a lower price, same total value"
+   ],
+   [
+    "Bonus issue",
+    "Extra shares from reserves, price adjusts down"
+   ]
+  ],
+  "note": "Bonus 1 for 2: 10 shares become 15, and the price drops by a third. Total value stays about the same."
+ },
+ {
+  "k": "pick",
+  "id": "s404q1",
+  "h": "Check yourself",
+  "q": "A company announces a 1-to-5 split. Meena has 10 shares at ₹1,000. What does she have after?",
+  "opts": [
+   "10 shares at ₹5,000 each",
+   "50 shares at ₹1,000 each",
+   "2 shares at ₹5,000 each",
+   "50 shares at ₹200 each"
+  ],
+  "ans": 3,
+  "why": [
+   "That would be a reverse of a split, where the price goes up.",
+   "The price must fall as shares rise, or value would be created from nothing.",
+   "A split raises the count of shares. It does not cut it.",
+   "Five shares for each one gives 50, and the price falls to a fifth, ₹200."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s404q2",
+  "h": "Check yourself",
+  "q": "A company has a good year. What is true about its dividend?",
+  "opts": [
+   "It must be paid every year by law",
+   "The board decides, with no guarantee",
+   "It is a fixed rate set by SEBI",
+   "It is paid only to new buyers"
+  ],
+  "ans": 1,
+  "why": [
+   "No law forces a company to pay a dividend each year.",
+   "The board decides on a dividend, and it can change or stop.",
+   "SEBI does not set a dividend rate for companies.",
+   "A dividend goes to the holders on the register, not only to new buyers."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s404q3",
+  "h": "Check yourself",
+  "q": "A company gives a bonus of 1 share for every 2 held. Rohan has 10. How many does he hold after?",
+  "opts": [
+   "12 shares",
+   "20 shares",
+   "15 shares",
+   "5 shares"
+  ],
+  "ans": 2,
+  "why": [
+   "12 would be a bonus of one for every five held.",
+   "20 would be a bonus of one for every one held.",
+   "One for every two on 10 shares gives 5 more, so 15 in all.",
+   "5 is just the bonus and leaves out the 10 he already holds."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s404q4",
+  "h": "Check yourself",
+  "q": "What is an IPO?",
+  "opts": [
+   "A first sale of shares to the public",
+   "A bank pays interest on a deposit",
+   "A sale of old shares by a broker",
+   "A new rule from SEBI on brokerage"
+  ],
+  "ans": 0,
+  "why": [
+   "An initial public offering is the first sale of shares to the public.",
+   "Bank interest is about deposits, and has no link to an IPO.",
+   "Trades in listed shares between investors are not an IPO.",
+   "A rule on brokerage is a regulation and not an IPO."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A split gives more shares at a lower price. Total value is unchanged.",
+   "A bonus issue gives extra shares from reserves, and the price adjusts.",
+   "A dividend is decided by the board and is never guaranteed."
+  ]
+ }
+]

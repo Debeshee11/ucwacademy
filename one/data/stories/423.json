@@ -1,0 +1,180 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Rohan buys a ₹1 lakh gold necklace and, after a year, finds the jeweller will buy it back for only ₹88,000. The gold did not fall. The costs of buying and selling took the rest.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The bill behind the shine",
+  "lines": [
+   [
+    "rohan",
+    "Gold is gold. Why the big difference between buying and selling?"
+   ],
+   [
+    "sikka",
+    "On jewellery you pay making charges that are not recovered, and a jeweller buys back at a lower price. Check purity too. A hallmark is your proof."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Rohan's necklace, made-up numbers",
+  "intro": "Where the value goes.",
+  "rows": [
+   [
+    "Gold value in the bill",
+    "₹90,000"
+   ],
+   [
+    "Making charges",
+    "₹8,000"
+   ],
+   [
+    "GST and other items",
+    "₹2,000"
+   ],
+   [
+    "=",
+    "Total paid",
+    "₹1,00,000"
+   ],
+   [
+    "Buyback offer, gold value less a cut",
+    "₹85,000 to ₹88,000"
+   ]
+  ],
+  "note": "These numbers are made up to show the idea. Making charges and the buyback gap vary by jeweller and design."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Physical gold",
+  "stops": [
+   [
+    "A BIS hallmark shows the purity of jewellery",
+    true
+   ],
+   [
+    "22 carat is pure gold",
+    false
+   ],
+   [
+    "Making charges are recovered when you sell",
+    false
+   ],
+   [
+    "A jeweller may buy back for less than he sells",
+    true
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "The hallmark carries a unique HUID code that you can check."
+   ],
+   [
+    2.2,
+    "22 carat is about 91.6% gold, mixed with other metals."
+   ],
+   [
+    4.0,
+    "You usually lose the making charges when you sell."
+   ],
+   [
+    5.6,
+    "That gap between buying and buyback prices is the buyback spread."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s423q1",
+  "h": "Check yourself",
+  "q": "Meena buys gold jewellery. How can she check its purity?",
+  "opts": [
+   "Trust the lighting in the shop",
+   "Ask a stranger who passes by",
+   "Look for the BIS hallmark",
+   "Weigh it on her own scale at home"
+  ],
+  "ans": 2,
+  "why": [
+   "Lighting makes jewellery look shiny, and proves no purity.",
+   "A stranger outside has no way to certify purity.",
+   "The hallmark with its HUID shows purity under BIS.",
+   "Weight shows how much it weighs, not how pure it is."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s423q2",
+  "h": "Check yourself",
+  "q": "A ring is marked 22 carat. What does that mean?",
+  "opts": [
+   "About 91.6% gold",
+   "100% pure gold, nothing else",
+   "Only 50% gold in it",
+   "It is not gold at all"
+  ],
+  "ans": 0,
+  "why": [
+   "22 carat is about 91.6% gold, mixed with other metals.",
+   "Almost pure gold is 24 carat, and not 22 carat.",
+   "22 carat is far above half gold in content.",
+   "A 22 carat ring is largely made of gold."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s423q3",
+  "h": "Check yourself",
+  "q": "Rohan sells the necklace he bought a year ago. Which cost is usually not recovered?",
+  "opts": [
+   "The gold's weight",
+   "The hallmark",
+   "His memory of it",
+   "Making charges"
+  ],
+  "ans": 3,
+  "why": [
+   "The weight is valued at the day's price when sold.",
+   "A hallmark is a mark of purity, not a cost to him.",
+   "Memory is not a cost on a bill, so it is wrong.",
+   "Making charges pay for crafting and are not recovered."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s423q4",
+  "h": "Check yourself",
+  "q": "What is the buyback spread?",
+  "opts": [
+   "A fee paid to SEBI on every sale made",
+   "Gap between buying and buyback prices",
+   "The premium on a policy for gold",
+   "A government subsidy on gold"
+  ],
+  "ans": 1,
+  "why": [
+   "SEBI does not charge a fee on gold jewellery.",
+   "It is the gap between what you pay and what you get back.",
+   "A premium belongs to insurance, not to gold buyback.",
+   "A subsidy is a government payment, unrelated to this gap."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Check the BIS hallmark and HUID before buying jewellery.",
+   "22 carat is about 91.6% gold.",
+   "Making charges and the buyback gap are real costs."
+  ]
+ }
+]

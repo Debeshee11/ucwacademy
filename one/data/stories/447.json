@@ -1,0 +1,166 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Two friends, same age, both want ₹1 crore of cover. One buys a plain term plan. The other buys a plan that returns the premiums at the end. Their yearly bills are very different.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Cheap or expensive?",
+  "lines": [
+   [
+    "meena",
+    "My agent says the return of premium plan is better, because I get the money back."
+   ],
+   [
+    "sikka",
+    "You do get back what you paid, but that costs a lot more each year. Let us compare with made-up numbers."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Plain term plan",
+  "b": "Return of premium plan",
+  "rows": [
+   [
+    "Premiums paid over 30 years (₹ lakh)",
+    3,
+    9
+   ],
+   [
+    "Money back if you survive (₹ lakh)",
+    0,
+    9
+   ]
+  ],
+  "h": "Made-up example, 30 years",
+  "alt": "Two sets of bars comparing total premiums paid and money back for two plans",
+  "caps": [
+   [
+    0.3,
+    "Made-up premiums: ₹10,000 a year for plain term and ₹30,000 for return of premium."
+   ],
+   [
+    2.4,
+    "Over thirty years the plain plan costs ₹3 lakh and the other ₹9 lakh."
+   ],
+   [
+    4.2,
+    "The second plan gives back its ₹9 lakh at the end, with no growth on it."
+   ],
+   [
+    5.8,
+    "The extra ₹6 lakh of premium would have been available to invest elsewhere."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Three words",
+  "intro": "Plain terms for a term plan.",
+  "rows": [
+   [
+    "Term plan",
+    "Pays the sum assured if you die within the term, nothing if you survive"
+   ],
+   [
+    "Policy term",
+    "How many years the cover lasts, ideally until earning years end"
+   ],
+   [
+    "Rider",
+    "An add-on, such as accidental death or critical illness, for extra premium"
+   ]
+  ],
+  "note": "A term plan should run until the earner's income years end, not just a few years."
+ },
+ {
+  "k": "pick",
+  "id": "s447q1",
+  "h": "Check yourself",
+  "q": "Rohan buys a 30-year term plan and survives the term. What does the plan pay him?",
+  "opts": [
+   "The sum assured, since the term has ended",
+   "Nothing, since a plain term plan pays only on death",
+   "All his premiums back, along with some interest",
+   "Half of the sum assured, as a loyalty benefit"
+  ],
+  "ans": 1,
+  "why": [
+   "The sum assured goes to the nominee on death in the term, not to him on survival.",
+   "A plain term plan pays only if the insured dies within the term, so survival pays nothing.",
+   "Premium refunds apply only to return of premium plans, and they carry no interest.",
+   "There is no loyalty benefit in a plain term plan. It pays only on death in the term."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s447q2",
+  "h": "Check yourself",
+  "q": "Meena is 30 and works until 60. She buys a 10-year term plan to save on premium. What is the problem?",
+  "opts": [
+   "Cover for ten years is always enough for a family",
+   "The plan pays nothing during its first ten years in force",
+   "The premium rises every single year until she turns 60",
+   "Cover ends at 40, though her family may rely on her until 60"
+  ],
+  "ans": 3,
+  "why": [
+   "A short term leaves the family uncovered in years when she is still earning.",
+   "A term plan pays on death within the term, including the first ten years.",
+   "Term premiums are usually fixed for the whole term and do not rise every year.",
+   "Cover should last until her earning years end, so a ten-year term leaves a long gap."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s447q3",
+  "h": "Check yourself",
+  "q": "Rohan compares two plans for ₹1 crore of cover. One refunds premiums at the end and costs three times as much. What should he think about?",
+  "opts": [
+   "The extra premium could be invested, so compare cover cost",
+   "Take the refund plan, since money back is always the better deal",
+   "The cheaper plan will certainly not pay out at claim time",
+   "Both plans must cost the same, since the cover is equal in size"
+  ],
+  "ans": 0,
+  "why": [
+   "The extra premium buys the refund, so compare cover cost and what else the money could do.",
+   "The refund is only his own premiums returned, so the higher cost is a real trade-off.",
+   "Price alone does not decide claim payment. Terms and honest disclosure do.",
+   "Prices differ because of the refund feature, so the plans do not cost the same."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s447q4",
+  "h": "Check yourself",
+  "q": "What is a rider on an insurance policy?",
+  "opts": [
+   "A person who sells the policy on behalf of the insurer",
+   "A rule that lets you skip premiums in any tough year",
+   "An add-on like accidental death cover, for extra premium",
+   "A clause that raises the cover by itself every single year"
+  ],
+  "ans": 2,
+  "why": [
+   "A person who sells policies is an agent or distributor, not a rider.",
+   "Riders do not let you skip premiums. Missing premiums can lapse a policy.",
+   "A rider adds a benefit such as critical illness or accidental death for an extra premium.",
+   "Automatic yearly increases are a different feature. Riders are chosen add-ons."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A plain term plan pays only on death in the term, and costs the least.",
+   "Choose a term that lasts until your earning years end.",
+   "A return of premium plan costs much more for the same cover."
+  ]
+ }
+]

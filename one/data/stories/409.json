@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "Borrowing multiplies gains and troubles. A firm with ₹200 crore of loans on ₹100 crore of equity is leaning hard on lenders. Add pledged promoter shares and a price fall can set off a chain reaction.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Debt and ownership",
+  "lines": [
+   [
+    "meena",
+    "How do I tell if a firm borrows too much?"
+   ],
+   [
+    "sikka",
+    "Look at debt-to-equity, and at interest coverage: operating profit over interest. Then look at who owns the firm. High promoter holding shows commitment. Pledged shares are a warning, since lenders can sell if the price falls."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Safety checks",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Loans",
+    "₹200 crore"
+   ],
+   [
+    "Owners' funds",
+    "₹100 crore"
+   ],
+   [
+    "=",
+    "Debt-to-equity",
+    "2 times"
+   ],
+   [
+    "Operating profit ÷ interest",
+    "6 times: comfortable cover"
+   ]
+  ],
+  "note": "Promoter holding of 60% shows commitment, but quality still matters."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Debt and ownership",
+  "stops": [
+   [
+    "A higher debt-to-equity means more borrowing",
+    true
+   ],
+   [
+    "Interest coverage compares interest with operating profit",
+    true
+   ],
+   [
+    "Pledged shares are always a good sign",
+    false
+   ],
+   [
+    "High promoter holding guarantees quality",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "More reliance on borrowed money."
+   ],
+   [
+    2.2,
+    "Higher is more comfortable."
+   ],
+   [
+    4.0,
+    "Lenders may sell if the price falls."
+   ],
+   [
+    5.6,
+    "Quality still matters."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s409q1",
+  "h": "Check yourself",
+  "q": "A firm has ₹200 crore of loans against ₹100 crore of owners' funds. What is the debt-to-equity?",
+  "opts": [
+   "2 times",
+   "0.5 times",
+   "300 times",
+   "20 times"
+  ],
+  "ans": 0,
+  "why": [
+   "200 ÷ 100 is 2 times. That matches the case described.",
+   "0.5 inverts the ratio. The details here point elsewhere.",
+   "300 adds the figures, which is wrong. That does not match this case.",
+   "20 is not supported by the numbers. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s409q2",
+  "h": "Check yourself",
+  "q": "Operating profit is six times yearly interest cost. What does that suggest?",
+  "opts": [
+   "The firm cannot pay its interest",
+   "The firm has no debt at all",
+   "Interest is easily paid",
+   "The share price must rise soon"
+  ],
+  "ans": 2,
+  "why": [
+   "Six times covers interest, so it can pay.",
+   "Interest cost means there is debt.",
+   "Coverage of six times is comfortable.",
+   "Coverage does not forecast price."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s409q3",
+  "h": "Check yourself",
+  "q": "Why are pledged promoter shares a risk?",
+  "opts": [
+   "They raise the dividend paid out",
+   "Lenders can sell if price falls",
+   "They remove debt from the books",
+   "They carry no risk at all"
+  ],
+  "ans": 1,
+  "why": [
+   "Pledging has no link to the dividend.",
+   "A fall can trigger sales that hit the price further.",
+   "Pledging is tied to a loan, not removing debt.",
+   "They carry real risk. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s409q4",
+  "h": "Check yourself",
+  "q": "A family owns 60% of a company. What does this tell you?",
+  "opts": [
+   "The company has no debt at all",
+   "The shares cannot fall in price",
+   "The company has no public investors",
+   "Holding is high, quality still counts"
+  ],
+  "ans": 3,
+  "why": [
+   "Holding says nothing about debt. It does not fit the facts given.",
+   "Shares can still fall. It does not answer what was asked.",
+   "40% may be held by public investors. The details here point elsewhere.",
+   "High holding shows commitment, not guaranteed quality."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Debt-to-equity compares loans with owners' funds.",
+   "Interest coverage = operating profit ÷ interest.",
+   "Pledged shares are a warning. Promoter holding is not a guarantee."
+  ]
+ }
+]

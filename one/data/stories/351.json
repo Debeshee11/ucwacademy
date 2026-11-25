@@ -1,0 +1,168 @@
+[
+ {
+  "k": "fact",
+  "art": "shield",
+  "h": "Before you start",
+  "big": "Rohan sees his ₹5 lakh portfolio fall 20% to ₹4 lakh. He feels the ₹1 lakh loss sharply. If it had risen ₹1 lakh instead, he would have felt happy, but not nearly as strongly. Losses hurt more than gains please.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The pain of a fall",
+  "lines": [
+   [
+    "rohan",
+    "I know it is a paper loss, but I cannot sleep. Should I sell?"
+   ],
+   [
+    "sikka",
+    "That feeling is normal. People feel a loss more strongly than an equal gain. But a fall on paper becomes a real loss only if you sell. Decide with a plan, not with the pain."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   100,
+   80,
+   100
+  ],
+  "labels": [
+   "Start",
+   "Fall",
+   "Back"
+  ],
+  "big": "+25%",
+  "small": "needed to recover from a 20% fall",
+  "h": "Portfolio value, start = 100",
+  "alt": "Bars showing a portfolio falling from one hundred to eighty and needing a rise of twenty five percent to return to one hundred",
+  "caps": [
+   [
+    0.3,
+    "A portfolio starts at 100."
+   ],
+   [
+    2.0,
+    "A 20% fall takes it to 80."
+   ],
+   [
+    3.8,
+    "To get back to 100 it needs to rise by 20, which is 25% of 80."
+   ],
+   [
+    5.2,
+    "Falls need a bigger rise to recover. That is why they scare us."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Calming the urge to sell",
+  "intro": "Four habits.",
+  "rows": [
+   [
+    "Check less often",
+    "Daily checks mean daily pain"
+   ],
+   [
+    "See the long chart",
+    "A fall looks small in ten years of data"
+   ],
+   [
+    "Set a rule early",
+    "No changes without a conversation"
+   ],
+   [
+    "Remember",
+    "A paper loss is a real loss only if you sell"
+   ]
+  ],
+  "note": "These habits help with fear. They do not remove risk, so choose an amount you can hold through a fall."
+ },
+ {
+  "k": "pick",
+  "id": "s351q1",
+  "h": "Check yourself",
+  "q": "Meena's portfolio falls 10%. She wants to sell at once to stop the pain. What is the better step?",
+  "opts": [
+   "Pause, and follow the agreed plan",
+   "Sell everything that she holds today",
+   "Check the portfolio every hour",
+   "Borrow money to invest more"
+  ],
+  "ans": 0,
+  "why": [
+   "A rule agreed earlier helps her act on facts and not on fear.",
+   "Selling in a panic can lock in the loss.",
+   "Checking hourly adds to the pain and the urge to sell.",
+   "Borrowing to invest adds risk when she is already anxious."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s351q2",
+  "h": "Check yourself",
+  "q": "A ₹4 lakh portfolio has fallen from ₹5 lakh. When does the ₹1 lakh become a real loss?",
+  "opts": [
+   "Only on the day it fell",
+   "Never, in any case",
+   "When he sells",
+   "On the first of every month"
+  ],
+  "ans": 2,
+  "why": [
+   "The loss is on paper until he sells, even on the day of the fall.",
+   "If he sells at the low price, it does become real.",
+   "A fall on paper becomes a real loss only if he sells.",
+   "Calendar dates do not turn a paper loss into a real one."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s351q3",
+  "h": "Check yourself",
+  "q": "A portfolio falls 20%. How much must it rise from there to get back to its start?",
+  "opts": [
+   "20%",
+   "25%",
+   "10%",
+   "15%"
+  ],
+  "ans": 1,
+  "why": [
+   "A 20% rise on 80 reaches only 96 in all.",
+   "From 80 to 100 is a rise of 20, or 25% of 80.",
+   "A 10% rise on 80 reaches only 88 in all.",
+   "A 15% rise on 80 reaches only 92 in all."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s351q4",
+  "h": "Check yourself",
+  "q": "Which habit helps reduce the urge to sell in a fall?",
+  "opts": [
+   "Watching the price every single minute",
+   "Reading only scary headlines",
+   "Asking friends who have sold",
+   "Viewing a long chart, checking less"
+  ],
+  "ans": 3,
+  "why": [
+   "Watching every minute only feeds the fear and the urge.",
+   "Scary headlines raise the urge to sell for no reason.",
+   "Friends who sold may be reacting to fear too.",
+   "A long chart shows a fall in context, and fewer checks calm."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Losses hurt more than equal gains please.",
+   "A fall is a real loss only if you sell.",
+   "A 20% fall needs a 25% rise to recover. Agree a rule before a fall."
+  ]
+ }
+]

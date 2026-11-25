@@ -1,0 +1,248 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "The easiest mistake in picking funds is buying many. Twelve funds feel like a spread. Often they are the same stocks, held twelve times."
+ },
+ {
+  "k": "dialog",
+  "h": "A colleague's list",
+  "lines": [
+   [
+    "meena",
+    "My colleague gave me 12 good funds. Can I buy all of them?"
+   ],
+   [
+    "sikka",
+    "Let us count how many different stocks she would really own."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   40,
+   58,
+   66,
+   72,
+   76,
+   78
+  ],
+  "labels": [
+   "1 fund",
+   "2",
+   "3",
+   "5",
+   "8",
+   "12"
+  ],
+  "big": "12 funds, only 78 different stocks",
+  "small": "Made-up holdings, same category",
+  "h": "Different stocks owned",
+  "alt": "Bars showing the number of different stocks rising slowly as funds are added",
+  "caps": [
+   [
+    0.3,
+    "One fund holds about 40 different stocks."
+   ],
+   [
+    2.6,
+    "A second adds only 18 new ones, because most of its stocks are already in the first."
+   ],
+   [
+    5.4,
+    "By twelve funds, she owns 78 different stocks. Most of the money is in the same companies."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "Many funds, or a few with jobs",
+  "rows": [
+   {
+    "name": "12 funds from one category",
+    "segs": [
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ],
+     [
+      "",
+      1,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "3 funds with different jobs",
+    "segs": [
+     [
+      "Core flexi cap",
+      60,
+      "#3CC47A"
+     ],
+     [
+      "Mid cap",
+      25,
+      "#FFC531"
+     ],
+     [
+      "Index fund",
+      15,
+      "#8EC5FF"
+     ]
+    ]
+   }
+  ],
+  "alt": "Twelve similar slices against three slices with different jobs",
+  "caps": [
+   [
+    0.3,
+    "Twelve funds from one category do one job twelve times."
+   ],
+   [
+    2.6,
+    "Three funds with different jobs spread the risk, and are easier to watch."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s316q1",
+  "h": "Check yourself",
+  "q": "A friend suggests twelve equity funds. What is the best response?",
+  "opts": [
+   "Buy all twelve, since more funds always means more spread",
+   "Check the overlap, then pick a few that do different jobs",
+   "Buy the six with the highest returns of the last year",
+   "Buy one fund from each fund house, to keep it fair"
+  ],
+  "ans": 1,
+  "why": [
+   "More names rarely mean more spread. If the funds hold the same stocks, a fall hits all of them together.",
+   "Overlap shows how many stocks repeat. A few funds with different jobs add real spread and are simple to follow.",
+   "Last year's winners are often at their peak. A one-year return says little about the next decade.",
+   "Fund houses are not a measure of spread. Two funds from different houses can hold the same stocks."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s316q2",
+  "h": "Check yourself",
+  "q": "What is the better way to compare two equity funds in the same category?",
+  "opts": [
+   "Their return in the last calendar year, taken by itself",
+   "Whichever fund house spends more on its advertising",
+   "Whichever one has the more famous fund manager running it",
+   "Rolling returns over several periods, plus downside and cost"
+  ],
+  "ans": 3,
+  "why": [
+   "A single year can be a lucky one. It hides how the fund behaved across good and bad markets.",
+   "Advertising spend has no link to how a fund performs. It is paid from fees at some level.",
+   "A famous name tells you little. Check the manager's tenure and how the fund held up in bad years.",
+   "Rolling periods show consistency, the bad-year numbers show risk, and cost shows what is kept. Together they paint a fair picture."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s316q3",
+  "h": "Check yourself",
+  "q": "In the made-up holdings, twelve funds owned only 78 different stocks. What does this suggest?",
+  "opts": [
+   "Same-category funds hold many of the same stocks, so extras add little",
+   "Every fund that is added brings an almost entirely new set of stocks",
+   "Twelve is the ideal number of funds for an investor of any kind",
+   "Overlap of holdings is a problem seen only in debt mutual funds"
+  ],
+  "ans": 0,
+  "why": [
+   "The first few funds add most of the spread. After that, more funds repeat the same companies and cost time.",
+   "The bars show the opposite. The count of new stocks grows slowly because most are already owned.",
+   "No ideal number fits everyone. The right number depends on the jobs the funds do, not a count.",
+   "Equity funds overlap often, especially in the same category where managers look at the same large companies."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s316q4",
+  "h": "Check yourself",
+  "q": "Why can a very large size hurt a mid or small cap fund?",
+  "opts": [
+   "A larger fund must pay a higher rate of tax on the gains it makes",
+   "Large funds are not allowed to hold any small company stocks at all",
+   "Large positions in thinly traded stocks move the price as they trade",
+   "The fund house is forced to close down any scheme once it gets big"
+  ],
+  "ans": 2,
+  "why": [
+   "Tax does not rise with fund size. The concern is about trading, not about a larger tax bill.",
+   "Large funds are allowed to hold small stocks. The difficulty is in trading them in volume.",
+   "Mid and small stocks trade in smaller volumes. A big fund buying or selling can push the price, which raises its costs.",
+   "A fund is not closed for being large. Some funds limit new money so that the strategy still works."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Start with the goal and horizon, then the category, then compare funds.",
+   "Compare over rolling periods. Look at consistency, bad years, concentration and cost.",
+   "Hold a few funds that do different jobs. Overlap adds paperwork, not spread."
+  ]
+ }
+]

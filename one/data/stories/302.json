@@ -1,0 +1,271 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Two funds, one gave 28% and the other gave 14% in the same year. Which is the better fund? The question hides a trap: they may not be playing the same game.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Comparing across categories",
+  "lines": [
+   [
+    "rohan",
+    "This mid cap fund gave 28% and your large cap gave 14%. Why would I hold the large cap?"
+   ],
+   [
+    "sikka",
+    "Good question. First see how SEBI sorts funds into categories, then watch both funds over a longer stretch."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Liquid",
+    "color": "#8EC5FF",
+    "vals": [
+     100.0,
+     106.0,
+     112.4,
+     119.1,
+     126.2,
+     133.8,
+     141.8,
+     150.3,
+     159.3,
+     168.9,
+     179.0
+    ]
+   },
+   {
+    "name": "Large cap",
+    "color": "#3CC47A",
+    "vals": [
+     100.0,
+     114.0,
+     123.1,
+     112.0,
+     132.2,
+     145.4,
+     136.7,
+     164.0,
+     178.8,
+     171.6,
+     199.1
+    ]
+   },
+   {
+    "name": "Mid cap",
+    "color": "#FFC531",
+    "vals": [
+     100.0,
+     128.0,
+     143.4,
+     107.6,
+     139.9,
+     160.9,
+     128.7,
+     173.7,
+     191.1,
+     156.7,
+     194.3
+    ]
+   }
+  ],
+  "h": "Not the same game",
+  "alt": "Three lines for a liquid fund, a large cap fund and a mid cap fund over ten made-up years",
+  "caps": [
+   [
+    0.3,
+    "Three made-up funds start with ₹100 each: a liquid fund, a large cap fund and a mid cap fund."
+   ],
+   [
+    2.0,
+    "In year 1 the mid cap gains 28% and the large cap 14%. This is the number Rohan saw."
+   ],
+   [
+    5.0,
+    "Then the mid cap falls harder: about 25% in year 3, against 9% for the large cap."
+   ],
+   [
+    8.4,
+    "After ten years the mid cap ended below the large cap here, after a much rougher ride."
+   ],
+   [
+    10.0,
+    "Different jobs, different risk. Compare a fund with others in its own category."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "growbars",
+  "vals": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "labels": [
+   "Low",
+   "L-M",
+   "Mod",
+   "M-H",
+   "High",
+   "V.High"
+  ],
+  "big": "Six levels of risk",
+  "small": "Overnight: Low. Small cap: Very High",
+  "h": "The riskometer",
+  "alt": "Six bars rising from low to very high risk",
+  "caps": [
+   [
+    0.3,
+    "The riskometer is a gauge on every scheme. It has six levels, from Low to Very High."
+   ],
+   [
+    1.8,
+    "It is based on what the fund actually holds, and it is updated regularly."
+   ],
+   [
+    3.6,
+    "An overnight fund sits near the left. A small cap fund sits at the right end."
+   ],
+   [
+    5.0,
+    "It shows how risky the holdings are. It does not show how much the fund will earn."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "What a category label tells you",
+  "stops": [
+   [
+    "What the fund must hold",
+    true
+   ],
+   [
+    "Who it should be compared with",
+    true
+   ],
+   [
+    "How much it will return",
+    false
+   ],
+   [
+    "That two funds earn alike",
+    false
+   ]
+  ],
+  "h": "What a category label tells you",
+  "alt": "A shield with what a SEBI category label does and does not tell you",
+  "caps": [
+   [
+    0.3,
+    "SEBI sorts schemes into categories so that funds with the same label follow the same rules."
+   ],
+   [
+    3.0,
+    "A large cap fund must keep a minimum in large caps, so it cannot drift into small caps."
+   ],
+   [
+    5.5,
+    "But the label tells you the rules, not the results. Two funds in a category can earn very differently."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s302q1",
+  "h": "Check yourself",
+  "q": "Rohan says his mid cap fund gave 28% last year and Meena's large cap gave 14%, so the large cap should go. What is the fair reply?",
+  "opts": [
+   "Different jobs: a mid cap can fall far harder, so one year decides little",
+   "Agree, since the higher return shows the mid cap is better managed",
+   "Agree, but only if the mid cap beats the large cap two years in a row",
+   "Disagree, since large cap funds are always the higher earner over time"
+  ],
+  "ans": 0,
+  "why": [
+   "The mid cap fund is built to take more risk. In the film it fell about 25% in a year, and ended below the large cap.",
+   "A higher return in one year can come from taking more risk, not from better management. The next year can reverse it.",
+   "Two years is still too short to judge. Risk shows in the falls, and a longer stretch includes them.",
+   "No category always earns more. Mid caps have done better in some stretches and worse in others."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s302q2",
+  "h": "Check yourself",
+  "q": "A scheme's riskometer reads Very High. What does it tell Meena?",
+  "opts": [
+   "The fund is expected to earn the highest returns of any scheme",
+   "The fund has been ranked best by SEBI among all schemes this year",
+   "The fund cannot be sold at all during the first year after buying",
+   "The fund's holdings carry a very high level of risk right now"
+  ],
+  "ans": 3,
+  "why": [
+   "The riskometer shows risk, not return. A Very High reading means big swings, in both directions, are possible.",
+   "SEBI does not rank funds. The riskometer is a gauge of risk and not a prize for performance or quality.",
+   "The riskometer has nothing to do with lock-ins or when you can sell. Those rules sit in the scheme document.",
+   "The riskometer reflects what the fund holds and is updated regularly. Very High means large swings are possible."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s302q3",
+  "h": "Check yourself",
+  "q": "A small cap fund returned 30% this year and a liquid fund 6.5%. Rohan calls the liquid fund poor. What is a fair comparison?",
+  "opts": [
+   "Ignore returns and compare only the fund house's name",
+   "Compare the two directly, since the higher return always wins",
+   "Compare each fund only with others in its own category",
+   "Compare them only by the size of the NAV in rupees"
+  ],
+  "ans": 2,
+  "why": [
+   "A fund house name does not tell you how the fund did against others of its kind.",
+   "A higher return from a riskier fund is not a better fund. The small cap took far more risk to earn it.",
+   "Funds in one category follow the same rules and carry similar risk, so comparing them is fair.",
+   "NAV in rupees is only the unit price. A fund with a high NAV is not better than one with a low NAV."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s302q4",
+  "h": "Check yourself",
+  "q": "Two large cap funds both follow SEBI's large cap rule. Over five years one gave 15% a year and the other 11%. What does the category label tell Meena?",
+  "opts": [
+   "That the 11% fund must now be moved to another category",
+   "That both will give 13% a year, the average of the two figures",
+   "That the 15% fund broke the rules by earning so much more",
+   "Both follow the large cap rule, though results can still differ"
+  ],
+  "ans": 3,
+  "why": [
+   "A lower return does not change the category. The category depends on what the fund holds.",
+   "Labels do not set a return, and the average has no special meaning for either fund.",
+   "Earning more does not break any rule. Both funds can follow the category rule and still earn differently.",
+   "The label sets rules for what the fund holds. How well the manager does inside those rules can differ."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Compare funds inside their own category, not across categories.",
+   "The riskometer shows risk, not return. It is based on what the fund holds.",
+   "A label tells you the rules, not the results."
+  ]
+ }
+]

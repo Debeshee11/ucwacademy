@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "An anxious client, near retirement, wants a complex long-short product because it sounds clever. A good adviser declines. Suitability comes before any product, and a SIF is for a specific investor.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Who is it for?",
+  "lines": [
+   [
+    "meena",
+    "Who should hold a SIF?"
+   ],
+   [
+    "sikka",
+    "Someone whose goals, risk capacity and understanding fit it, and who invests only surplus capital: money left after the emergency fund and goals are funded. Tax depends on the asset mix and holding period, and rules change, so check the latest. Read the scheme document first."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "A suitability check",
+  "intro": "Made-up client.",
+  "rows": [
+   [
+    "Emergency fund funded",
+    "yes, six months"
+   ],
+   [
+    "Goals funded",
+    "yes"
+   ],
+   [
+    "Surplus left over",
+    "can bear higher risk"
+   ],
+   [
+    "Reads the scheme document",
+    "before investing"
+   ]
+  ],
+  "note": "Tax: an equity-heavy and a debt-heavy SIF strategy are taxed differently. Confirm current rules."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Suitability and tax",
+  "stops": [
+   [
+    "Suitability means matching product to goals and risk capacity",
+    true
+   ],
+   [
+    "Emergency money is surplus capital",
+    false
+   ],
+   [
+    "SIF tax depends on asset mix and holding period",
+    true
+   ],
+   [
+    "Disclosure is optional for a SIF",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Before recommending."
+   ],
+   [
+    2.2,
+    "Surplus is what is left after emergencies and goals."
+   ],
+   [
+    4.0,
+    "So check the latest rules."
+   ],
+   [
+    5.6,
+    "The scheme document must be provided."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s445q1",
+  "h": "Check yourself",
+  "q": "An adviser declines to place an anxious, near-retirement client in a complex strategy. What is this?",
+  "opts": [
+   "Breaking SEBI rules",
+   "Applying suitability",
+   "Avoiding all products",
+   "Hiding information"
+  ],
+  "ans": 1,
+  "why": [
+   "It supports SEBI's expectations. The details here point elsewhere.",
+   "Suitability matches product to the investor.",
+   "Other products may still fit. That does not match this case.",
+   "It is honest advice, not hiding. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s445q2",
+  "h": "Check yourself",
+  "q": "What is surplus capital?",
+  "opts": [
+   "Money not needed for goals or needs",
+   "The emergency fund of the client",
+   "Next month's rent for the home",
+   "A loan taken from a friend"
+  ],
+  "ans": 0,
+  "why": [
+   "It is what is left after those needs are met.",
+   "The emergency fund is set aside first.",
+   "Rent is a living cost. It does not fit the facts given.",
+   "A loan is not surplus. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s445q3",
+  "h": "Check yourself",
+  "q": "Two SIF strategies, one equity-heavy and one debt-heavy, are taxed differently. Why?",
+  "opts": [
+   "Taxes are random from year to year",
+   "Tax depends on the fund's logo",
+   "Asset mix and holding period",
+   "Both are always exempt from tax"
+  ],
+  "ans": 2,
+  "why": [
+   "Taxes follow rules. That does not match this case.",
+   "A logo is not a factor. It does not fit the facts given.",
+   "The asset mix and holding period decide it.",
+   "They are not always exempt. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s445q4",
+  "h": "Check yourself",
+  "q": "Before investing, what should a client read?",
+  "opts": [
+   "A shop advert on a wall",
+   "A random post on a feed",
+   "A weather chart for the week",
+   "The scheme document"
+  ],
+  "ans": 3,
+  "why": [
+   "An advert is selective. It does not fit the facts given.",
+   "A post is not a source. It does not answer what was asked.",
+   "A chart is irrelevant. The details here point elsewhere.",
+   "It lists strategy, risks and portfolio."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Suitability: match product to goals, risk capacity and understanding.",
+   "Invest only surplus capital, after the emergency fund and goals.",
+   "Tax depends on asset mix and holding period. Check the latest rules."
+  ]
+ }
+]

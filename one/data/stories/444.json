@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "scam",
+  "h": "Before you start",
+  "big": "In a strong rally, a SIF's hedges lose money and the fund lags the market. In a sharp fall, derivative losses can grow quickly. More flexibility means more ways to lose money.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "The price of flexibility",
+  "lines": [
+   [
+    "meena",
+    "Is a SIF safer than a PMS because it has a riskometer?"
+   ],
+   [
+    "sikka",
+    "A riskometer informs you, it does not protect you. Derivatives add leverage and mispricing risk. Results depend heavily on the manager. Hedges cost money and can drag in a rally. Read the dial before investing."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Four risks",
+  "intro": "As per the lesson text. Check current SEBI rules.",
+  "rows": [
+   [
+    "Derivative risk",
+    "leverage, margin, mispricing"
+   ],
+   [
+    "Manager skill",
+    "two funds with one name can differ widely"
+   ],
+   [
+    "Hedge cost",
+    "hedges lose in a strong rally"
+   ],
+   [
+    "Riskometer",
+    "SEBI-mandated, low to very high"
+   ]
+  ],
+  "note": ""
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Risks of a SIF",
+  "stops": [
+   [
+    "Derivatives add leverage and mispricing risk",
+    true
+   ],
+   [
+    "Two funds with the same strategy name deliver the same result",
+    false
+   ],
+   [
+    "Hedges can drag returns in a rally",
+    true
+   ],
+   [
+    "A riskometer removes risk",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Losses can grow quickly."
+   ],
+   [
+    2.2,
+    "Results depend on the manager."
+   ],
+   [
+    4.0,
+    "The hedges lose money when markets rise."
+   ],
+   [
+    5.6,
+    "It only shows the risk level."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s444q1",
+  "h": "Check yourself",
+  "q": "A fund's losses grow quickly because of its futures and options positions. What risk is this?",
+  "opts": [
+   "Custody risk of it",
+   "Tax risk of the fund",
+   "Calendar risk of dates",
+   "Derivative risk"
+  ],
+  "ans": 3,
+  "why": [
+   "Custody risk is about safekeeping. It does not answer what was asked.",
+   "Tax risk is a separate matter. The details here point elsewhere.",
+   "Calendar risk is not a standard term. That does not match this case.",
+   "Derivatives add leverage, margin and mispricing risk."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s444q2",
+  "h": "Check yourself",
+  "q": "Two funds with the same strategy name deliver very different results. What does this show?",
+  "opts": [
+   "That one fund is illegal",
+   "Dependence on manager skill",
+   "That names decide returns",
+   "That risk is the same"
+  ],
+  "ans": 1,
+  "why": [
+   "Different results are not illegal. The details here point elsewhere.",
+   "Results rely on the manager's ability to pick winners and losers.",
+   "Names do not decide returns. It does not fit the facts given.",
+   "Risk differs across managers. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s444q3",
+  "h": "Check yourself",
+  "q": "In a strong rally the fund's hedges lose money and it lags the market. What is this?",
+  "opts": [
+   "A capital call",
+   "A dividend",
+   "Hedge cost",
+   "A rollover"
+  ],
+  "ans": 2,
+  "why": [
+   "A capital call is an AIF demand. That does not match this case.",
+   "A dividend is a payout. It does not fit the facts given.",
+   "Hedges cost money and can reduce returns when markets rise.",
+   "Rollover is a futures term. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s444q4",
+  "h": "Check yourself",
+  "q": "What does the riskometer show?",
+  "opts": [
+   "A scheme's risk level, low to high",
+   "The exact future return it earns",
+   "The fund manager's salary each year",
+   "The unit's price for tomorrow morning"
+  ],
+  "ans": 0,
+  "why": [
+   "It is a SEBI-mandated visual of risk level.",
+   "No exact return is shown. It does not answer what was asked.",
+   "Salary is not shown. The details here point elsewhere.",
+   "Future price cannot be shown. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Derivative risk: leverage, margin and mispricing.",
+   "Results rely heavily on the manager's skill.",
+   "Hedges cost money. The riskometer informs, it does not protect."
+  ]
+ }
+]

@@ -1,0 +1,326 @@
+[
+ {
+  "k": "fact",
+  "art": "scales",
+  "h": "Before you start",
+  "big": "Fixed deposits feel dull and equity feels scary. Hybrid funds sit in the middle, but \"hybrid\" is a family of very different funds, not one product."
+ },
+ {
+  "k": "dialog",
+  "h": "Meena's question",
+  "lines": [
+   [
+    "meena",
+    "I want something between an FD and equity. What are my options?"
+   ],
+   [
+    "sikka",
+    "There are several middle paths, and they are not the same. First see what each one must hold, then how each behaved in a bad patch."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "stack",
+  "h": "What each hybrid must hold",
+  "rows": [
+   {
+    "name": "Conservative hybrid",
+    "segs": [
+     [
+      "Eq 10%",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "to 25%",
+      15,
+      "#fff",
+      true
+     ],
+     [
+      "Mostly debt, 75% or so",
+      75,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Aggressive hybrid",
+    "segs": [
+     [
+      "Equity 65%+",
+      65,
+      "#3CC47A"
+     ],
+     [
+      "to 80%",
+      15,
+      "#fff",
+      true
+     ],
+     [
+      "Debt 20%+",
+      20,
+      "#8EC5FF"
+     ]
+    ]
+   },
+   {
+    "name": "Multi asset (three or more classes)",
+    "segs": [
+     [
+      "Eq",
+      10,
+      "#3CC47A"
+     ],
+     [
+      "Debt",
+      10,
+      "#8EC5FF"
+     ],
+     [
+      "Gold",
+      10,
+      "#FFC531"
+     ],
+     [
+      "Manager's choice, up to 70%",
+      70,
+      "#fff",
+      true
+     ]
+    ]
+   },
+   {
+    "name": "Balanced advantage",
+    "segs": [
+     [
+      "Equity share moves with valuation",
+      100,
+      "#fff",
+      true
+     ]
+    ]
+   }
+  ],
+  "alt": "Bars showing the equity, debt and gold shares that conservative, aggressive and multi asset hybrids must keep, and a dial for balanced advantage",
+  "caps": [
+   [
+    0.3,
+    "A conservative hybrid keeps only 10% to 25% in equity. The rest is mostly debt."
+   ],
+   [
+    2.3,
+    "An aggressive hybrid holds 65% to 80% in equity, so it behaves much like an equity fund."
+   ],
+   [
+    4.5,
+    "A multi asset fund must hold at least three asset classes, with at least 10% in each."
+   ],
+   [
+    6.6,
+    "A balanced advantage fund has no fixed split. A model moves its equity up and down with valuations."
+   ],
+   [
+    8.2,
+    "The category name tells you the rough mix. That mix decides how big the falls can be."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "lines",
+  "h": "Three made-up journeys",
+  "ylab": "Value of ₹100 over 10 years",
+  "series": [
+   {
+    "name": "Equity fund",
+    "color": "#FFC531",
+    "vals": [
+     100,
+     118.0,
+     132.2,
+     95.2,
+     119.0,
+     136.8,
+     147.7,
+     130.0,
+     169.0,
+     185.9,
+     211.9
+    ]
+   },
+   {
+    "name": "Aggressive hybrid",
+    "color": "#3CC47A",
+    "vals": [
+     100,
+     114.7,
+     126.7,
+     102.2,
+     122.8,
+     138.3,
+     148.9,
+     138.2,
+     170.5,
+     186.0,
+     208.1
+    ]
+   },
+   {
+    "name": "Conservative hybrid",
+    "color": "#8EC5FF",
+    "vals": [
+     100,
+     108.7,
+     117.1,
+     113.2,
+     126.1,
+     136.4,
+     146.2,
+     148.5,
+     165.3,
+     177.6,
+     191.9
+    ]
+   }
+  ],
+  "alt": "Three lines for a conservative hybrid, an aggressive hybrid and an equity fund over ten years with the deepest fall of each marked",
+  "caps": [
+   [
+    0.3,
+    "Made-up paths, same ten years. Equity fund, aggressive hybrid (70% equity), conservative hybrid (15% equity)."
+   ],
+   [
+    3.0,
+    "In year 4 equity falls hard. The debt part of each hybrid softens the blow."
+   ],
+   [
+    8.3,
+    "Deepest falls: equity -28%, aggressive hybrid -19%, conservative hybrid -3%."
+   ],
+   [
+    10.0,
+    "A smaller fall usually comes with a smaller end value. Hybrids trade growth for a smoother ride."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "The family at a glance",
+  "intro": "Rough mix, in a line each. Always read the factsheet for the live numbers.",
+  "rows": [
+   [
+    "Conservative hybrid",
+    "Equity 10% to 25%, rest mostly debt"
+   ],
+   [
+    "Aggressive hybrid",
+    "Equity 65% to 80%, rest debt"
+   ],
+   [
+    "Balanced advantage",
+    "Equity share moves with valuations"
+   ],
+   [
+    "Equity savings",
+    "Equity, arbitrage and debt"
+   ],
+   [
+    "Arbitrage",
+    "Hedged equity, steady like low-risk debt"
+   ],
+   [
+    "Multi asset",
+    "3 or more classes, 10% each at least"
+   ]
+  ],
+  "note": "The two paths above are made up. Real funds in a category can differ in how they use their range."
+ },
+ {
+  "k": "pick",
+  "id": "s321q1",
+  "h": "Check yourself",
+  "q": "A factsheet shows a fund with 50% in equity, 30% in debt and 20% in gold. Meena asks which category it is and why it is not an aggressive hybrid. What is the right answer?",
+  "opts": [
+   "Balanced advantage, since a fund with equity near half is always called dynamic",
+   "Conservative hybrid, since debt and gold together form a large share",
+   "Multi asset, since it holds three asset classes with at least 10% in each",
+   "Aggressive hybrid, since it holds more than one asset class together"
+  ],
+  "ans": 2,
+  "why": [
+   "Balanced advantage is defined by a model that moves equity with valuations, not by sitting near half equity.",
+   "Conservative hybrid keeps equity at only 10% to 25%. Here equity is 50%, so it falls outside that range.",
+   "Three classes, each at 10% or more, is the multi asset test. Aggressive needs 65% to 80% equity, which this lacks.",
+   "Holding several classes is not enough. An aggressive hybrid needs 65% to 80% in equity, and this fund has 50%."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s321q2",
+  "h": "Check yourself",
+  "q": "Meena says she will panic if ₹1 lakh ever shows less than ₹90,000. In a bad stretch like the film, only one holding keeps her above that line. Which one?",
+  "opts": [
+   "Conservative hybrid, which fell only about 3%, to roughly ₹97,000",
+   "Aggressive hybrid, whose debt part protects it against any real fall",
+   "Equity fund, since it rebounds fastest once the fall is over",
+   "Any hybrid, since every hybrid holds some debt to cushion falls"
+  ],
+  "ans": 0,
+  "why": [
+   "A 15% equity share fell only about 3% in the film. ₹1 lakh would show about ₹97,000, inside her limit.",
+   "With 70% in equity the film's aggressive hybrid fell about 19%. ₹1 lakh would show nearly ₹81,000.",
+   "The equity fund fell about 28% and left ₹72,000 on paper. A quick rebound does not stop the panic before it.",
+   "Hybrids differ widely. A 70% equity hybrid can fall nearly as far as equity, so having some debt is not enough."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s321q3",
+  "h": "Check yourself",
+  "q": "A client says: \"A hybrid gives FD-like safety with equity-like growth, so I will put my emergency money in it.\" What is the honest reply?",
+  "opts": [
+   "Hybrids are safe, as the debt part is guaranteed by the fund house",
+   "Only aggressive hybrids fall, so a conservative one is as safe as an FD",
+   "Hybrids never fall by more than 10% because of the rules set by SEBI",
+   "A hybrid can fall, and how far depends on how much equity it holds"
+  ],
+  "ans": 3,
+  "why": [
+   "No guarantee exists. Debt can fall in value when rates rise and can default, so the debt part carries risk too.",
+   "A conservative hybrid falls less, but still holds equity and risky debt. It is not an FD and can show a loss.",
+   "No rule caps a fall at 10%. Category rules set the equity range, not the loss a fund may suffer.",
+   "It admits a hybrid can fall and ties the size of the fall to the equity share, which is the useful guide."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s321q4",
+  "h": "Check yourself",
+  "q": "Rohan sees two funds both named \"Balanced\" and assumes they hold the same mix. Which check tells him what each really holds?",
+  "opts": [
+   "The fund house, since one house runs all its funds the same way",
+   "The category and the actual equity share on each factsheet",
+   "The last one-year return, since it reveals the equity share",
+   "The size of each fund, since bigger funds hold more equity"
+  ],
+  "ans": 1,
+  "why": [
+   "One house runs many funds with different mandates. The house name does not fix a fund's equity share.",
+   "The category sets the allowed range and the factsheet shows the live mix. A name alone proves nothing.",
+   "A one-year return reflects the market that year. It does not reveal what the fund actually holds.",
+   "Fund size says how much money is in the fund, not how it is split between equity and debt."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Hybrid is a family. The category tells you the rough equity share.",
+   "More equity means a bigger possible fall and more growth.",
+   "Read the factsheet mix, not the fund's name."
+  ]
+ }
+]

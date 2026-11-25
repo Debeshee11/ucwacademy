@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "Futures let you gain from a rise or a fall. They also let an investor cushion a portfolio against a fall. Which position does which?",
+  "long": false
+ },
+ {
+  "k": "dialog",
+  "h": "Long, short, hedge",
+  "lines": [
+   [
+    "meena",
+    "What does going short mean?"
+   ],
+   [
+    "sikka",
+    "Selling a contract first. A short gains when the price falls and loses when it rises, with no upper limit to the loss. A long, buying a contract, gains on a rise. Hedging means taking an opposite position to reduce an existing risk."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Long and short, made up",
+  "intro": "Made-up figures, for learning only. This is education, not a call to trade.",
+  "rows": [
+   [
+    "Long: buys an index future",
+    "gains if the index rises"
+   ],
+   [
+    "Short: sells an index future",
+    "gains if the index falls"
+   ],
+   [
+    "Short loss limit",
+    "none: price can rise without limit"
+   ],
+   [
+    "Hedge: holder of shares sells index futures",
+    "cushions a market fall"
+   ]
+  ],
+  "note": "Open interest is the number of contracts still open, for example 40 lakh at day end."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Long, short and hedging",
+  "stops": [
+   [
+    "A long position gains when the price rises",
+    true
+   ],
+   [
+    "A short position's loss is capped",
+    false
+   ],
+   [
+    "Hedging reduces the risk of an existing position",
+    true
+   ],
+   [
+    "Open interest counts settled contracts",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is buying a contract."
+   ],
+   [
+    2.2,
+    "A short has no upper limit on loss."
+   ],
+   [
+    4.0,
+    "Using an opposite position."
+   ],
+   [
+    5.6,
+    "It counts contracts still open."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s413q1",
+  "h": "Check yourself",
+  "q": "A trader buys an index future. What is this position?",
+  "opts": [
+   "Short",
+   "Long",
+   "A hedge only",
+   "A cash settlement"
+  ],
+  "ans": 1,
+  "why": [
+   "Selling a contract is short. It does not answer what was asked.",
+   "Buying a contract is a long position. That matches the case described.",
+   "A hedge depends on the purpose, not the side. It does not fit the facts given.",
+   "Cash settlement is how contracts end. It does not fit the facts given."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s413q2",
+  "h": "Check yourself",
+  "q": "Which position has no upper limit on loss in theory?",
+  "opts": [
+   "Long",
+   "A settled contract",
+   "A lot of zero",
+   "Short"
+  ],
+  "ans": 3,
+  "why": [
+   "A long's loss is limited to the price falling to zero.",
+   "A settled contract no longer exists. That does not match this case.",
+   "A lot of zero is not a position. It does not fit the facts given.",
+   "A short loses as the price rises, without a limit."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s413q3",
+  "h": "Check yourself",
+  "q": "An investor holding many shares sells index futures. What is this for?",
+  "opts": [
+   "Hedging against a market fall",
+   "Raising the dividend paid out",
+   "Buying more shares of the firm",
+   "Avoiding all taxes on gains"
+  ],
+  "ans": 0,
+  "why": [
+   "The short futures cushion a possible fall. That matches the case described.",
+   "It does not raise the dividend. It does not answer what was asked.",
+   "It does not buy shares. It does not answer what was asked.",
+   "Futures do not avoid all tax. The details here point elsewhere."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s413q4",
+  "h": "Check yourself",
+  "q": "40 lakh contracts remain outstanding at day end. What does that show?",
+  "opts": [
+   "The lot size",
+   "The expiry date",
+   "The open interest",
+   "The dividend yield"
+  ],
+  "ans": 2,
+  "why": [
+   "Lot size is the quantity per contract.",
+   "Expiry is a date. It does not answer what was asked.",
+   "Open interest counts contracts still open.",
+   "Dividend yield is a ratio of payout to price."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Long: buy a futures contract. Short: sell it.",
+   "A short's loss has no upper limit.",
+   "Hedging uses an opposite position to cut existing risk."
+  ]
+ }
+]

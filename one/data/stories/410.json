@@ -1,0 +1,176 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "A firm can report a profit and still be starved of cash. Cash generation, steady growth and clean accounting separate durable businesses from stories. Five checks help: free cash flow, growth, EV/EBITDA and the current ratio.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Cash and quality",
+  "lines": [
+   [
+    "meena",
+    "Profit is up. Is the firm healthy?"
+   ],
+   [
+    "sikka",
+    "Ask how much cash is left after machines and expansion. That is free cash flow. Look at years of steady revenue growth. Use EV/EBITDA to compare firms with different debt. Check the current ratio for short-term safety."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Free cash flow and current ratio",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Cash from operations less spending to maintain and grow",
+    "₹50 crore left over"
+   ],
+   [
+    "Sales growth",
+    "14% a year for ten years"
+   ],
+   [
+    "Current assets ÷ current liabilities",
+    "1.8 times"
+   ],
+   [
+    "=",
+    "Reading",
+    "cash positive, steady, liquid"
+   ]
+  ],
+  "note": "EV/EBITDA compares market value plus net debt with operating earnings before interest, tax and depreciation."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Cash, growth and quality",
+  "stops": [
+   [
+    "Free cash flow is cash left after spending to maintain and grow",
+    true
+   ],
+   [
+    "EV/EBITDA ignores debt",
+    false
+   ],
+   [
+    "A current ratio of 1.8 means current assets exceed short-term dues",
+    true
+   ],
+   [
+    "One year of growth proves durability",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "It is what is left for owners and lenders."
+   ],
+   [
+    2.2,
+    "It adds net debt to market value."
+   ],
+   [
+    4.0,
+    "Cash, stock and receivables beat next year's dues."
+   ],
+   [
+    5.6,
+    "Steady growth over many years does."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s410q1",
+  "h": "Check yourself",
+  "q": "What is free cash flow?",
+  "opts": [
+   "Profit before tax is deducted",
+   "Cash left after upkeep and growth",
+   "The cash at the bank on one date",
+   "The dividend paid to shareholders"
+  ],
+  "ans": 1,
+  "why": [
+   "Profit before tax is a different measure.",
+   "It is what truly remains for owners and lenders.",
+   "Cash at the bank is a balance, not a flow.",
+   "The dividend is a payout, not the measure."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s410q2",
+  "h": "Check yourself",
+  "q": "Why is EV/EBITDA useful?",
+  "opts": [
+   "It compares firms with unequal debt",
+   "It predicts the price for tomorrow",
+   "It replaces the balance sheet fully",
+   "It measures the dividends paid out"
+  ],
+  "ans": 0,
+  "why": [
+   "EV includes net debt, so debt differences are handled.",
+   "No ratio predicts tomorrow's price. That does not match this case.",
+   "It does not replace any statement. It does not fit the facts given.",
+   "It is not a dividend measure. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s410q3",
+  "h": "Check yourself",
+  "q": "A firm's current assets are 1.8 times its next-twelve-month dues. What does this show?",
+  "opts": [
+   "It has no debt at all, anywhere",
+   "It has very high growth ahead",
+   "It pays unusually high dividends",
+   "It can meet short-term dues"
+  ],
+  "ans": 3,
+  "why": [
+   "The current ratio says nothing about total debt.",
+   "It does not measure growth. It does not fit the facts given.",
+   "It does not measure dividends. It does not answer what was asked.",
+   "The current ratio of 1.8 shows short-term cover."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s410q4",
+  "h": "Check yourself",
+  "q": "Sales have grown 14% a year for ten years. What does that suggest?",
+  "opts": [
+   "A guaranteed profit next year",
+   "A high P/E is certain",
+   "Healthy, steady demand",
+   "No competition exists"
+  ],
+  "ans": 2,
+  "why": [
+   "No profit is guaranteed. It does not fit the facts given.",
+   "P/E depends on the price. It does not answer what was asked.",
+   "Steady growth over many years suggests healthy demand.",
+   "Competition may still exist. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Free cash flow = cash from operations less spending to maintain and grow.",
+   "EV/EBITDA compares firms with different debt.",
+   "Current ratio = current assets ÷ current liabilities."
+  ]
+ }
+]

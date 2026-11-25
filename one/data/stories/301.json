@@ -1,0 +1,239 @@
+[
+ {
+  "k": "fact",
+  "art": "bank",
+  "h": "Before you start",
+  "big": "Meena has put ₹1,00,000 into a mutual fund. Then she reads that a fund house has had trouble. Her first fear is simple: is my money gone with it? To answer, you must know who does what in a fund.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "What if the AMC goes bust?",
+  "lines": [
+   [
+    "meena",
+    "What happens to my money if the AMC goes bust?"
+   ],
+   [
+    "sikka",
+    "AMC means asset management company, the firm that manages the fund. Let us watch what changes for you if the AMC fails, and what does not."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "duel",
+  "a": "Before",
+  "b": "After AMC fails",
+  "rows": [
+   [
+    "AMC's own money (₹ crore)",
+    20,
+    0
+   ],
+   [
+    "Securities with custodian (₹ crore)",
+    50,
+    50
+   ],
+   [
+    "Meena's units (₹ thousand)",
+    10,
+    10
+   ]
+  ],
+  "h": "The AMC fails",
+  "alt": "Before and after bars: the AMC's own money drops to zero while the custodian's securities and the investor's units stay the same",
+  "caps": [
+   [
+    0.3,
+    "A made-up fund of ₹50 crore. Meena's ₹10,000 is a small part. The AMC has ₹20 crore of its own money."
+   ],
+   [
+    2.4,
+    "The securities the fund bought sit with a separate custodian, not with the AMC."
+   ],
+   [
+    4.2,
+    "Now the AMC fails. Its own money drops to zero."
+   ],
+   [
+    5.6,
+    "The custodian still holds ₹50 crore of securities, and Meena's units are still hers."
+   ],
+   [
+    6.8,
+    "The fund can still rise or fall with markets. But an AMC failing is not the same as her money vanishing."
+   ]
+  ]
+ },
+ {
+  "k": "anim",
+  "type": "flow",
+  "bw": 104,
+  "h": "Who does what",
+  "alt": "Boxes for sponsor, trustees, AMC, custodian and RTA joined by arrows",
+  "nodes": [
+   {
+    "label": "Sponsor",
+    "sub": "sets up the trust",
+    "x": 170,
+    "y": 38,
+    "col": "#FFE9A8"
+   },
+   {
+    "label": "Trustees",
+    "sub": "watch over the AMC",
+    "x": 170,
+    "y": 108,
+    "col": "#DDEBFF"
+   },
+   {
+    "label": "AMC",
+    "sub": "manages the money",
+    "x": 170,
+    "y": 178,
+    "col": "#E3F6EB"
+   },
+   {
+    "label": "Custodian",
+    "sub": "holds the securities",
+    "x": 72,
+    "y": 262,
+    "col": "#EFE4FF"
+   },
+   {
+    "label": "RTA",
+    "sub": "keeps unit records",
+    "x": 268,
+    "y": 262,
+    "col": "#FFE3EC"
+   }
+  ],
+  "edges": [
+   [
+    0,
+    1,
+    "sets up"
+   ],
+   [
+    1,
+    2,
+    "oversee"
+   ],
+   [
+    2,
+    3,
+    "buys through"
+   ],
+   [
+    2,
+    4,
+    "records with"
+   ]
+  ],
+  "caps": [
+   [
+    0.3,
+    "A mutual fund is a trust. The sponsor sets it up."
+   ],
+   [
+    2.4,
+    "Trustees watch over the AMC, which manages the money."
+   ],
+   [
+    3.7,
+    "A separate custodian holds the securities."
+   ],
+   [
+    5.0,
+    "The RTA keeps the unit records. SEBI writes the rules and AMFI runs the code of conduct."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s301q1",
+  "h": "Check yourself",
+  "q": "Meena's friend says: if the fund house shuts, your money goes with it. Where are the securities behind Meena's units actually held?",
+  "opts": [
+   "With the AMC, in a locked account it can use for its own bills",
+   "With AMFI, which looks after all the securities in the industry",
+   "With a custodian, which is separate from the AMC",
+   "With the registrar, which also keeps the unit records for the fund"
+  ],
+  "ans": 2,
+  "why": [
+   "The AMC manages the money but does not hold the securities. It cannot spend them on its own bills.",
+   "AMFI is an industry body for codes and registrations. It does not hold anyone's securities.",
+   "A custodian holds the securities, apart from the AMC. That separation is why an AMC failing does not wipe out her units.",
+   "The registrar and transfer agent keeps the records of who owns how many units. It does not hold the securities."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s301q2",
+  "h": "Check yourself",
+  "q": "Rohan asks: who checks the AMC's work on behalf of unit holders, inside the fund's own structure? He thinks the fund manager is accountable to nobody.",
+  "opts": [
+   "The trustees, who watch over the fund and the AMC",
+   "The custodian, because it holds the securities the manager buys",
+   "The registrar, because it sends out his account statements",
+   "The sponsor alone, because it founded the fund and may change the manager"
+  ],
+  "ans": 0,
+  "why": [
+   "The trustees watch over the fund for the unit holders. SEBI rules sit above this, and the AMC reports to them.",
+   "The custodian holds securities and settles trades. It does not oversee the AMC's decisions.",
+   "The registrar keeps the unit records and sends statements. It has no role in checking investment decisions.",
+   "The sponsor sets the trust up, but the trustees are the ones who watch over the fund once it is running."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s301q3",
+  "h": "Check yourself",
+  "q": "Dadi's statement shows how many units she holds. She asks who keeps the record of her units and sends the statement.",
+  "opts": [
+   "The trustees, who write each statement by hand once a month",
+   "The custodian, since it keeps everything about the fund safe",
+   "SEBI, since it keeps one record of every investor in the country",
+   "The registrar and transfer agent, called the RTA"
+  ],
+  "ans": 3,
+  "why": [
+   "Trustees watch over the fund. The record of units is kept by the RTA, not written by the trustees.",
+   "The custodian keeps the securities safe. The unit records are kept by a different party.",
+   "SEBI makes rules and supervises. It does not keep each investor's unit record for each scheme.",
+   "The RTA keeps the unit records for the fund and handles statements and changes to the folio."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s301q4",
+  "h": "Check yourself",
+  "q": "Rohan wants to check that the person selling him a fund is properly registered. Which body runs that registration and the industry's code of conduct?",
+  "opts": [
+   "SEBI, which is the only body that registers every distributor",
+   "The custodian, which signs off every sale it settles",
+   "AMFI, the industry body that runs the ARN registration",
+   "The sponsor, which approves each distributor it hires"
+  ],
+  "ans": 2,
+  "why": [
+   "SEBI is the regulator and writes the rules. The distributor's ARN registration is run by the industry body.",
+   "A custodian settles and holds securities. It plays no part in registering the people who sell funds.",
+   "AMFI runs the ARN registration and the code of conduct. A distributor should show the ARN on the form.",
+   "A sponsor sets up the trust. It does not run registration for distributors."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "A fund is a trust. The sponsor sets it up, trustees watch over it and the AMC manages the money.",
+   "The custodian holds the securities and the RTA keeps the unit records. The AMC's own money is separate from yours.",
+   "SEBI regulates and writes the rules. AMFI runs the ARN registration and the code of conduct."
+  ]
+ }
+]

@@ -1,0 +1,175 @@
+[
+ {
+  "k": "fact",
+  "art": "coins",
+  "h": "Before you start",
+  "big": "An AIF earns a profit. Investors get their preferred return first, say 10% a year. Only then does the manager take carry, often around 20% of further profits. Layers of fees and special tax treatment make AIFs different.",
+  "long": true
+ },
+ {
+  "k": "dialog",
+  "h": "Carry and pass-through",
+  "lines": [
+   [
+    "meena",
+    "Who pays tax in an AIF?"
+   ],
+   [
+    "sikka",
+    "For Category I and II, income is generally taxed in the investor's hands, not the fund's. That is pass-through. The manager earns carry only after investors receive the preferred return. Most AIFs are trusts run by an investment manager. Always confirm tax with a CA."
+   ]
+  ]
+ },
+ {
+  "k": "eg",
+  "h": "Carry, made up",
+  "intro": "Made-up figures, for learning only.",
+  "rows": [
+   [
+    "Preferred return (hurdle)",
+    "10% a year to investors first"
+   ],
+   [
+    "Carried interest",
+    "about 20% of profits above it"
+   ],
+   [
+    "Cat I and II tax",
+    "generally in the investor's hands"
+   ],
+   [
+    "Structure",
+    "a trust, run by an investment manager"
+   ]
+  ],
+  "note": "Tax treatment depends on structure and the Income Tax Act. Ask a CA."
+ },
+ {
+  "k": "anim",
+  "type": "guard",
+  "title": "Fees, tax and structure",
+  "stops": [
+   [
+    "Carry is the manager's share of profits above the hurdle",
+    true
+   ],
+   [
+    "The manager earns carry before investors get the preferred return",
+    false
+   ],
+   [
+    "Cat I and II AIF income is generally taxed in investors' hands",
+    true
+   ],
+   [
+    "Most AIFs are public companies",
+    false
+   ]
+  ],
+  "h": "True or false",
+  "alt": "A shield checking four statements",
+  "caps": [
+   [
+    0.4,
+    "Often around 20%."
+   ],
+   [
+    2.2,
+    "Investors get it first."
+   ],
+   [
+    4.0,
+    "That is pass-through."
+   ],
+   [
+    5.6,
+    "Most are trusts."
+   ]
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s439q1",
+  "h": "Check yourself",
+  "q": "After investors get their preferred return, the manager takes a fifth of further profits. What is this?",
+  "opts": [
+   "A management fee",
+   "An exit load",
+   "Carried interest",
+   "A dividend"
+  ],
+  "ans": 2,
+  "why": [
+   "A management fee is a fixed percentage.",
+   "An exit load is an early-exit charge.",
+   "Carry is the manager's share above the hurdle.",
+   "A dividend is a payout on a share."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s439q2",
+  "h": "Check yourself",
+  "q": "What is a preferred return?",
+  "opts": [
+   "The minimum return investors get first",
+   "A fee paid to the trustee each year",
+   "A tax rate set by the government",
+   "A bonus paid to the manager first"
+  ],
+  "ans": 0,
+  "why": [
+   "Investors get it first, also called the hurdle.",
+   "It is not a trustee fee. That does not match this case.",
+   "It is not a tax rate. It does not fit the facts given.",
+   "Carry is the manager's reward. It does not answer what was asked."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s439q3",
+  "h": "Check yourself",
+  "q": "The fund does not pay tax on its gains and investors report their share. What is this?",
+  "opts": [
+   "Fund-level tax paid",
+   "No tax at all, ever",
+   "A tax refund paid",
+   "Pass-through tax"
+  ],
+  "ans": 3,
+  "why": [
+   "Fund-level tax is the opposite. It does not fit the facts given.",
+   "Investors do report income. It does not fit the facts given.",
+   "It is not a refund. It does not answer what was asked.",
+   "Income is taxed in the investor's hands. That matches the case described."
+  ]
+ },
+ {
+  "k": "pick",
+  "id": "s439q4",
+  "h": "Check yourself",
+  "q": "How are most AIFs structured?",
+  "opts": [
+   "As banks run by the RBI",
+   "As trusts run by a manager",
+   "As post offices run by the state",
+   "As cooperative shops run locally"
+  ],
+  "ans": 1,
+  "why": [
+   "A bank is a different entity. It does not answer what was asked.",
+   "Most AIFs are trusts with a manager. This fits the facts given.",
+   "A post office is not an AIF. That does not match this case.",
+   "A shop is not an AIF. That does not match this case."
+  ]
+ },
+ {
+  "k": "remember",
+  "h": "Remember",
+  "pts": [
+   "Carry: the manager's share of profits above the hurdle, often ~20%.",
+   "Preferred return: investors first. Pass-through tax for Cat I and II.",
+   "Most AIFs are trusts. Confirm tax with a CA."
+  ]
+ }
+]
