@@ -1,2 +1,4 @@
 # Content rules
 - Never describe the Academy as free. Do not use the word free (or its Hindi/Gujarati forms), costs nothing, no charge, in any text, page, image or code. Say money lessons for everyone, or open to everyone, or no account needed. Finance terms such as free float or free-look period are fine. functions/test/wording.test.js enforces this.
+- Tax section numbers: the Income-tax Act, 2025 applies from 1 April 2026. Section 80C is now Section 123 (80D is 124). Lessons keep the familiar 80C name and mention the new number once. Slab rates and limits did not change.
+- Dated figures (repo rate, Budget numbers, SIP flows) were last checked on 25 Nov 2026: repo 5.50% (7 Oct 2026), defence ₹7.85 lakh crore, capital outlay ₹2.19 lakh crore, SIP ₹32,160 crore (Oct 2026). Recheck each quarter.
