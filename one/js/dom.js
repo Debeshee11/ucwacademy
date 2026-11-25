@@ -27,6 +27,7 @@ export const clear = el => { while (el.firstChild) el.firstChild.remove(); retur
 
 /* Icons: 24px stroke icons in currentColor. Static strings only. */
 const PATHS = {
+  play: '<path d="M7 4l13 8-13 8z" fill="currentColor"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
   book: '<path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h7M8 11h7"/>',
   bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
