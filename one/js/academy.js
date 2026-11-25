@@ -111,12 +111,12 @@ export function ledger() {
   return h("section", { class: "stack" },
     h("div", { class: "stack stack-xs" }, h("h2", { class: "h2" }, "Exams passed, by subject"), h("p", { class: "small mute" }, "Each course has three exams. Pass one in the Exams section and its box fills here.")),
     h("div", { class: "ledger", role: "table", "aria-label": "Ledger" },
-      h("div", { class: "lg-row head", role: "row" }, h("span", {}, "Subject"), SEALS.map(([, n, e]) => h("span", { title: e }, n))),
+      h("div", { class: "lg-row head", role: "row" }, h("span", { role: "columnheader" }, "Subject"), SEALS.map(([, n, e]) => h("span", { role: "columnheader", title: e }, n))),
       realms().map(r => { const cs = core().filter(c => c.sec === r.id);
-        return h("div", { class: "lg-row", role: "row" }, h("span", { class: "lg-realm" }, h("b", {}, r.name), h("small", { class: "tiny mute" }, r.blurb)),
+        return h("div", { class: "lg-row", role: "row" }, h("span", { class: "lg-realm", role: "rowheader" }, h("b", {}, r.name), h("small", { class: "tiny mute" }, r.blurb)),
           cs.length ? SEALS.map(([k]) => { const n = cs.filter(c => passed(c.id, k)).length, full = n === cs.length;
-            return h("span", { class: "lg-cell" + (full ? " full" : n ? " part" : ""), "aria-label": `${n} of ${cs.length}` }, full ? icon("check", 18) : n + "/" + cs.length); })
-            : h("span", { class: "lg-soon" }, "Courses opening soon")); })));
+            return h("span", { role: "cell", class: "lg-cell" + (full ? " full" : n ? " part" : ""), "aria-label": `${n} of ${cs.length}` }, full ? icon("check", 18) : n + "/" + cs.length); })
+            : h("span", { class: "lg-soon", role: "cell" }, "Courses opening soon")); })));
 }
 
 export function settingsCard() {

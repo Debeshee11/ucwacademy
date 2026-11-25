@@ -100,7 +100,7 @@ a.btn,a.btn:visited{color:var(--ink)}
 .stx b{font-size:15px}.stx span{font-size:13px;color:#4A3C2C;line-height:1.3}
 .stn.now .stx{background:#FFF1C2}
 .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:3px solid var(--ink);border-radius:14px;min-height:48px;padding:0 14px;font-weight:800;font-size:15px}
-.tg{font-style:normal;font-size:10px;font-weight:800;background:var(--gold);border:2px solid var(--ink);border-radius:99px;padding:1px 7px;vertical-align:middle}
+.tg{font-style:normal;color:#2B2118;font-size:10px;font-weight:800;background:var(--gold);border:2px solid var(--ink);border-radius:99px;padding:1px 7px;vertical-align:middle}
 .lnk{border:0;background:none;font-weight:800;font-size:14px;color:var(--blue);padding:8px 0;min-height:44px;text-align:left}
 .cf{position:absolute;inset:0;overflow:hidden;pointer-events:none}.cf i{position:absolute;top:-16px;left:var(--x);width:9px;height:14px;background:var(--c);border:2px solid var(--ink);border-radius:2px}
 

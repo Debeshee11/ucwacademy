@@ -29,7 +29,8 @@ export function newsFeed() {
   const chips = h("div", { class: "seg news-seg", role: "group", "aria-label": "Topic" }), hots = h("div", { class: "nw-hot" }), info = h("p", { class: "nw-info", "aria-live": "polite" });
   const isSaved = l => saved.some(s => s.link === l);
   const toggle = i => { saved = isSaved(i.link) ? saved.filter(s => s.link !== i.link) : [{ link: i.link, title: i.title, summary: i.summary, source: i.source, date: i.date, topics: i.topics }, ...saved]; putSaved(saved); pop("news:save"); paintTopics(); paintList(); };
-  document.addEventListener("keydown", ev => { if (ev.key === "/" && !/input|textarea|select/i.test(ev.target.tagName) && input.isConnected) { ev.preventDefault(); input.focus(); } });
+  const slash = ev => { if (!input.isConnected) { document.removeEventListener("keydown", slash); return; } if (ev.key === "/" && !/input|textarea|select/i.test(ev.target.tagName)) { ev.preventDefault(); input.focus(); } };
+  document.addEventListener("keydown", slash);
   seg.append(h("div", { class: "nw-search" }, icon("search", 20), input, clearBtn), chips, hots, info);
 
   function paintTopics() {

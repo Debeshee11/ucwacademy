@@ -10,7 +10,7 @@ const used = k => { try { return !!localStorage.getItem(k) && localStorage.getIt
 export const GATES = [
   { id: "rw", name: "Right or wrong", sub: "Ten quick calls. Spot the trap.", at: 40, ic: "check", href: "#/game/rw", tone: "green", was: ["uc.best.rw"] },
   { id: "surv", name: "Survival", sub: "Three hearts. How far can you go?", at: 100, ic: "shield", href: "#/game/survive", tone: "pink", was: ["uc.best.surv"] },
-  { id: "duel", name: "Duel a friend", sub: "Send a link. See who wins.", at: 150, ic: "team", href: "#/challenge", tone: "violet", was: ["uc.duels"] },
+  { id: "duel", name: "Duel a friend", sub: "Send a link. See who wins.", at: 60, ic: "team", href: "#/challenge", tone: "violet", was: ["uc.duels"] },
   { id: "tools", name: "Money calculators", sub: "SIP, EMI, emergency fund, retirement.", at: 250, ic: "trend", href: "#/tools", tone: "blue", was: [] }
 ];
 const byId = id => GATES.find(g => g.id === id);
@@ -32,7 +32,7 @@ export function earnHref() { const st = nextUp(); return st ? hrefFor(st) : "#/q
 const keySvg = (cls = "") => `<svg class="ky ${cls}" viewBox="0 0 120 64" aria-hidden="true"><g fill="none" stroke="#2B2118" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="32" r="22" fill="#FFC531"/><circle cx="32" cy="32" r="8" fill="#FFF3CF"/><path d="M54 32h58M96 32v14M82 32v10" fill="none"/></g></svg>`;
 const html = (cls, s, tag = "span") => { const e = h(tag, { class: cls }); e.innerHTML = s; return e; };
 const padlock = () => html("kp-lock", `<svg viewBox="0 0 120 140" aria-hidden="true"><path class="sh" d="M36 62V44a24 24 0 0 1 48 0v18" fill="none" stroke="#2B2118" stroke-width="9" stroke-linecap="round"/><rect x="18" y="58" width="84" height="68" rx="18" fill="#FFC531" stroke="#2B2118" stroke-width="6"/><circle cx="60" cy="88" r="9" fill="#2B2118"/><path d="M60 92v18" stroke="#2B2118" stroke-width="7" stroke-linecap="round"/></svg>`);
-const meter = g => h("div", { class: "kp-meter", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(g.at), "aria-valuenow": String(g.have) }, h("i", { style: `width:${g.pct}%` }), h("span", {}, `${g.have} / ${g.at} points`));
+const meter = g => h("div", { class: "kp-meter", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(g.at), "aria-valuenow": String(g.have), "aria-label": `Points towards ${g.name}` }, h("i", { style: `width:${g.pct}%` }), h("span", {}, `${g.have} / ${g.at} points`));
 
 /* Full-screen lock page for a route that is not open yet. */
 export function lockPage(root, id) {

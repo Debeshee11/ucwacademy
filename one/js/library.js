@@ -10,7 +10,7 @@ const lang = () => Store.get().lang || "en";
 const num = (v, d = 2) => (v == null || v === "" ? "–" : Number(v).toLocaleString("en-IN", { maximumFractionDigits: d }));
 const sgn = v => (v == null ? "–" : (v > 0 ? "+" : "") + v.toFixed(2) + "%");
 const cls = v => (v == null ? "" : v < 0 ? "down" : "up");
-const PALETTE = ["#2F7CF6", "#1FA45B", "#F08A12", "#7C5CFA", "#E5484D", "#0FA3B1", "#C98F00", "#D6409F"];
+const PALETTE = ["#2563D6", "#15803D", "#B45309", "#6D45E0", "#C7343A", "#0E7C86", "#8A6500", "#B8307F"];
 const colour = s => PALETTE[[...s].reduce((a, c) => a + c.charCodeAt(0), 0) % PALETTE.length];
 const initials = s => s.replace(/Mutual Fund|Prudential|Capital|Sun Life|Mahindra|India/g, "").trim().split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase() || s[0];
 const avatar = (house, size) => h("span", { class: "lib-av", style: "background:" + colour(house) + (size ? ";width:" + size + "px;height:" + size + "px;font-size:" + Math.round(size / 3) + "px" : "") }, initials(house));

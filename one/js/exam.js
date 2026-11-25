@@ -86,11 +86,11 @@ export async function runExam(root, cfg) {
   const top = h("div", { class: "focus-top xt" }, h("div", { class: "focus-in" }, exit, pips, html("xt-cl", CLOCK), clock, count));
   const body = h("div", { class: "read" }), dock = h("div", { class: "dock" });
   clear(root).append(top, body, dock);
-  const tickFn = () => { if (!root.isConnected) return stopClock(); clock.textContent = fmt(Date.now() - t0); };
+  const tickFn = () => { if (!body.isConnected) return stopClock(); clock.textContent = fmt(Date.now() - t0); };
   tickFn(); tick = setInterval(tickFn, 1000);
 
   function keys(ev) {
-    if (!root.isConnected || busy) return stopClock();
+    if (!body.isConnected || busy) return stopClock();
     if (ev.target.matches("input,textarea,select")) return;
     if (/^[1-4]$/.test(ev.key) && +ev.key <= qs[i].shown.length) choose(+ev.key - 1);
     else if (ev.key === "ArrowRight" && i < total - 1) go(i + 1); else if (ev.key === "ArrowLeft" && i > 0) go(i - 1);

@@ -87,6 +87,6 @@ export const widePage = (...kids) => h("main", { class: "wrap wide page stack st
 
 /* Common small parts */
 export const levelTag = lv => h("span", { class: "level" }, h("span", { class: `dot ${lv.id}` }), lv.name);
-export const bar = (p, ok) => h("div", { class: "bar" + (ok ? " ok" : ""), role: "progressbar", "aria-valuenow": p, "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${p}%` }));
+export const bar = (p, ok, label = "Progress") => h("div", { class: "bar" + (ok ? " ok" : ""), role: "progressbar", "aria-label": label, "aria-valuenow": Math.round(p), "aria-valuemin": 0, "aria-valuemax": 100 }, h("i", { style: `width:${p}%` }));
 export const checkMark = state => h("span", { class: "check " + (state === "done" ? "on" : state === "now" ? "now" : "") }, state === "done" ? icon("check") : null);
 export const notFound = msg => page(h("div", { class: "stack" }, h("h1", { class: "h1" }, "Not found"), h("p", { class: "mute" }, msg || "That page does not exist."), h("a", { class: "btn primary", href: "#/" }, "Back home")));
