@@ -1,0 +1,18 @@
+/* Readable colours: every text colour here meets 4.5:1 on its background. Loaded last. */
+:root { --mute: #6F6352; --ok-d: #0E7A45; --gold-d: #9A5B00; }
+.up, .lib-ic-meta b.up { color: #0E7A45; }
+.kpi-t span { color: #8A5F00; }
+.m-gold { --mc: #8A5F00; }
+.yn.check.next .ys { color: #8A5F00; }
+.yn.flag .yf { color: #9A5B00; }
+.gw-tier { color: #8A5F00; }
+.nwc-tag { background: color-mix(in srgb, var(--tc) 55%, #000); text-shadow: none; }
+.nwc-new { background: #C2343A; }
+.lg-cell { color: #6F6352; }
+.lg-cell.part { color: #7A4F00; }
+.lib-av { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+/* small links get a proper tap area */
+.nwc-learn, .legal a, .foot a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav a[aria-current="page"] .nav-t small { color: #4A2F00; }
+.tool-go { color: color-mix(in srgb, var(--ta, #7A4F00) 55%, #000); }
+.syl-n { color: #8A6500; }
