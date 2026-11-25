@@ -292,7 +292,10 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
 /* ---------- voice ---------- */
 const VL = { en: "en-IN", hi: "hi-IN", gu: "gu-IN" };
 let noVoice = false;
-const vlang = () => (LESSONS[S.li] && LESSONS[S.li].en ? "en" : LANG);
+/* The voice follows the language of the words being read, so Gujarati mode still speaks while lessons are English: same voice, same pace. */
+let SPK = "en";
+const langOfText = s => /[\u0A80-\u0AFF]/.test(s || "") ? "gu" : /[\u0900-\u097F]/.test(s || "") ? "hi" : "en";
+const vlang = () => SPK;
 /* Sarthi is a man, so prefer a male Indian voice when the device has one. Scores each voice: right language and region first, then male names, then anything that sounds female last. */
 const MALE = /ravi|hemant|prabhat|madhur|rishi|neel|niranjan|kabir|rahul|aarav|arjun|male|puru/i, FEMALE = /heera|kalpana|swara|neerja|lekha|priya|veena|aditi|female|google (हिन्दी|hindi)|zira|susan|hazel/i;
 const voiceFor = () => { try {
@@ -319,15 +322,15 @@ function playRec(text, done) {
     return true;
   } catch (e) { return false; }
 }
-function speak(text, done) { if (window.__ucCollect) { window.__ucCollect(vlang(), hashOf(text), text); setTimeout(() => done && done(), 0); return true; } return playRec(text, done) || speakDevice(text, done); }
+function speak(text, done) { SPK = langOfText(text); if (window.__ucCollect) { window.__ucCollect(vlang(), hashOf(text), text); setTimeout(() => done && done(), 0); return true; } return playRec(text, done) || speakDevice(text, done); }
 function speakDevice(text, done) {
   noVoice = false;
   try {
     const ss = window.speechSynthesis; if (!ss) throw 0;
     ss.cancel();
     const u = new SpeechSynthesisUtterance(text); u.lang = VL[vlang()];
-    const m = voiceFor(); if (m) u.voice = m; else if (LANG !== "en") throw 0;
-    u.rate = LANG === "en" ? 0.88 : 0.82; u.pitch = 0.9;
+    const m = voiceFor(); if (m) u.voice = m; else if (SPK !== "en") throw 0;
+    u.rate = SPK === "en" ? 0.88 : 0.82; u.pitch = 0.9;
     u.onstart = () => { speaking = true; app.classList.add("talk"); };
     const end = () => { speaking = false; app.classList.remove("talk"); if (done) done(); };
     u.onend = end; u.onerror = e => { if (e && e.error === "interrupted") { speaking = false; app.classList.remove("talk"); return; } end(); };
@@ -547,7 +550,7 @@ function bind() {
   const cp = app.querySelector("[data-copy]"); if (cp) cp.onclick = () => { const t = tx(L.title) + " — " + tx(L.sub) + "\n" + tx(U.brand) + "\nhttps://ucwacademy.in/#/story/" + L.id; try { navigator.clipboard.writeText(t).then(() => { $("#cp").textContent = tx(U.copied); }, () => { $("#cp").textContent = t; }); } catch (e) { $("#cp").textContent = t; } };
 }
 if (custom) LESSONS.push(custom.lesson);
-if (window.__ucCollect && custom) { try { custom.lesson.cards.forEach(c => { const x = spokenOf(c); if (x) window.__ucCollect(vlang(), hashOf(x), x); }); window.__ucCollect(vlang(), hashOf(tx(U.complete) + ". " + tx(custom.lesson.title)), tx(U.complete) + ". " + tx(custom.lesson.title)); } catch (e) {} }
+if (window.__ucCollect && custom) { try { custom.lesson.cards.forEach(c => { const x = spokenOf(c); if (x) window.__ucCollect(langOfText(x), hashOf(x), x); }); window.__ucCollect(langOfText(tx(U.complete)), hashOf(tx(U.complete) + ". " + tx(custom.lesson.title)), tx(U.complete) + ". " + tx(custom.lesson.title)); } catch (e) {} }
 const first = custom ? LESSONS.length - 1 : startId && LESSONS.findIndex(l => l.id === startId);
 if (first >= 0) { S.view = "play"; S.li = first; S.ci = 0; S.xp = 0; S.combo = 0; S.best = 0; S.right = 0; S.asked = 0; }
 try { window.speechSynthesis && window.speechSynthesis.getVoices(); } catch (e) {}
