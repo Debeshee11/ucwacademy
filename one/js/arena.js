@@ -1,7 +1,8 @@
 /* The Arena: Practice, redesigned as a place to play.
    Daily five on top, then game modes (Speed round, Right or wrong, Duel a friend, Weak-spot trainer, Revise),
    quiz arenas, and a workshop for calculators and tools. Personal bests are kept on this device. */
-import { h, icon, plural, shuffle, pick, toast, clear } from "./dom.js";
+import { h, icon, plural, shuffle, pick, toast, clear, isoDay, dayMs } from "./dom.js";
+import { rankOf } from "./academy.js";
 import { D, course, localize, questionsFor } from "./data.js";
 import * as Store from "./store.js";
 import { page } from "./ui.js";
@@ -185,9 +186,20 @@ export function arena() {
     : !a.d ? { href: "#/quiz/daily", ic: "bolt", cls: "m-gold", t: "Do today's Daily five", why: "Five questions that keep your streak alive.", meta: "About 2 min" }
     : { href: "#/game/speed", ic: "bolt", cls: "m-green", t: sb ? "Beat your Speed round best" : "Try a Speed round", why: sb ? `Your best is ${sb}. 60 seconds to beat it.` : "60 seconds, as many right answers as you can.", meta: "1 min" };
 
-  const hero = h("section", { class: "ar-hero" }, html("ar-m", mascot({ mood: "joy", pose: "cheer", view: "bust", px: 118 })),
-    h("div", { class: "ar-ht" }, h("h1", { class: "ar-h1" }, "Practice"), h("p", {}, "Make what you learned stick."),
-      h("div", { class: "ar-chips" }, h("span", {}, icon("flame", 16), `${streak} day streak`), a.d ? h("span", {}, icon("check", 16), "Daily five done") : null)));
+  /* one top card: who you are today, in four numbers */
+  const xp = Store.xp(), rk = rankOf(xp), acc = Store.mastery(), qs = Object.values(s.q || {}), mem = qs.length ? Math.round(100 * qs.reduce((x, e) => x + Math.min(4, e.b || 0) / 4, 0) / qs.length) : 0;
+  const now = new Date(), mon = new Date(now.getTime() - ((now.getDay() + 6) % 7) * dayMs);
+  const wkDots = ["M", "T", "W", "T", "F", "S", "S"].map((nm, k) => { const iso = isoDay(new Date(mon.getTime() + k * dayMs)), ac = (s.act || {})[iso], on = !!ac && (ac.l > 0 || ac.r || ac.d); return h("i", { class: (on ? "on " : "") + (iso === isoDay() ? "today" : ""), title: nm }); });
+  const ringK = (pct, inner, cls) => html("kp-ring " + cls, `<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="rgba(43,33,24,.12)" stroke-width="11"/><circle class="kp-arc" cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="${(263.9 * (1 - Math.max(2, Math.min(100, pct)) / 100)).toFixed(1)}" transform="rotate(-90 50 50)"/></svg><b>${inner}</b>`);
+  const kpi = (cls, vis, big, label, sub, href) => h(href ? "a" : "div", { class: "kpi " + cls, href }, vis, h("div", { class: "kpi-t" }, h("b", {}, big), h("small", {}, label), sub ? h("span", {}, sub) : null));
+  const hero = h("section", { class: "ar-top" },
+    h("div", { class: "ar-tt" }, html("ar-m", mascot({ mood: "joy", pose: "cheer", view: "bust", px: 76 })), h("div", {}, h("h1", { class: "ar-h1" }, "Practice"), h("p", {}, "Make what you learned stick."))),
+    h("div", { class: "kpis" },
+      kpi("k-fire" + (streak ? " lit" : ""), h("div", { class: "kpi-fl" }, icon("flame", 34)), String(streak), "day streak", null, "#/me"),
+      kpi("k-xp", ringK(rk.pct, `<span>₹</span>`, "c-gold"), String(xp), "points", rk.next ? `${rk.need} to ${rk.next}` : rk.title, "#/me"),
+      kpi("k-acc", ringK(acc ?? 0, "✓", "c-green"), acc == null ? "–" : acc + "%", "first-try accuracy", null),
+      kpi("k-mem", ringK(mem, "🧠", "c-blue"), mem + "%", "memory strength", null)),
+    h("div", { class: "kpi-wk", "aria-label": "This week" }, h("small", {}, "This week"), h("span", { class: "wk7" }, wkDots), h("small", {}, a.d ? "Daily five done" : "Daily five waiting")));
   const flow = h("div", { class: "ar-flow", "aria-label": "How Learn, Practice and Exams fit together" },
     [["Learn", "Lessons teach", false], ["Practice", "Practice makes it stick", true], ["Exams", "Exams prove it", false]].map(([a1, b1, on], i) => h("span", { class: "ar-step" + (on ? " on" : "") }, h("i", {}, String(i + 1)), h("b", {}, a1), h("small", {}, b1))));
   const next = h("a", { class: "ar-next " + R.cls, href: R.href }, h("span", { class: "ar-nic" }, icon(R.ic, 30)), h("div", { class: "grow" }, h("small", {}, "Your next step"), h("b", {}, R.t), h("span", {}, R.why)), h("span", { class: "ar-go" }, "Go"), h("small", { class: "ar-nm" }, R.meta));
@@ -199,6 +211,7 @@ export function arena() {
     h("div", { class: "grow" }, h("small", {}, a.d ? "Done for today" : "Every day"), h("b", {}, "Daily five"), h("span", {}, a.d ? "Come back tomorrow to keep the streak." : "Five questions, two minutes. Keeps your streak alive.")), a.d ? null : h("span", { class: "ar-go" }, "Play"));
   const modes = {
     daily: () => dailyCard(),
+    daily2: () => mode("#/quiz/daily", "m-gold", "bolt", "Daily five", a.d ? "Done. Back tomorrow." : "Five questions, two minutes.", a.d ? "Done" : "Today", "Keeps your streak"),
     revise: () => mode("#/quiz/revise", "m-orange", "flame", "Revise", due ? `${plural(due, "question")} due for review` : "Nothing due right now", a.r ? "Done" : due ? String(due) : "", "Reminds you just in time"),
     weak: () => mode("#/quiz/weak", "m-blue", "shuffle", "Weak-spot trainer", weak ? `${plural(weak, "question")} you often miss` : "Answer more to unlock", weak ? "Train" : "", "8 questions"),
     speed: () => mode("#/game/speed", "m-gold", "bolt", "Speed round", "60 seconds. Build a combo.", sb ? `Best ${sb}` : "New", "1 min"),
@@ -211,7 +224,7 @@ export function arena() {
   const renewBox = renew.length ? sec("Renew a certificate", "Your certificate needs a quick refresher.", h("div", { class: "ar-modes" }, renew.map(c => mode(`#/quiz/refresh/${c.key}`, "m-pink", "award", c.title, Creds.standing(c) === "expired" ? "Expired. Renew with 15 questions" : "Expires soon. Renew with 15 questions")))) : null;
   const more = h("div", { class: "ar-more" }, h("b", {}, "More"), [["#/quiz/place", "Find my level"], ["#/quiz/fund", "Fund quiz"], ["#/quiz/market", "Market quiz"], ["#/tools", "Calculators"], ["#/news", "Market desk"], ["#/quotes", "Quote bank"]].map(([hr, l]) => h("a", { href: hr }, l)));
   const VIEW = {
-    today: () => [renewBox, flow, K.keyCard(), sec("Keep it fresh", null, grid("revise", "weak")), dailyCard(), sec("Training grounds", "Pick a module. Ten questions. Watch the bar fill as you master it.", grounds()), more],
+    today: () => [renewBox, sec("Keep it fresh", null, grid("daily2", "revise", "weak")), K.keyCard(), h("details", { class: "ar-fold" }, h("summary", {}, h("b", {}, "Training grounds"), h("small", {}, "Train one module at a time"), icon("chev", 18)), grounds()), more],
     play: () => [sec("Games", "Each takes a few minutes.", grid("speed", "rw", "surv")), K.keyCard()],
     challenge: () => [sec("Duel a friend", "Send a link on WhatsApp. They play the same questions. See who wins.", grid("duel")), trophies(), tool("#/board", "trophy", "Leaderboard", "See where you stand"), K.keyCard()]
   };
