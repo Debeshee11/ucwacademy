@@ -269,16 +269,18 @@ const ART = {
   atm: c => `<svg viewBox="0 0 160 110" aria-hidden="true"><rect x="38" y="10" width="84" height="92" rx="12" fill="#fff" stroke="#2B2118" stroke-width="5"/><rect x="50" y="22" width="60" height="30" rx="6" fill="${c}"/><text x="80" y="43" text-anchor="middle" font-size="15" font-weight="900" fill="#fff">₹50,000</text><rect x="52" y="64" width="56" height="8" rx="4" fill="#2B2118"/><rect x="62" y="82" width="36" height="8" rx="4" fill="#E8573D" class="cfa-c"/></svg>`
 };
 
-export function hub() {
-  const prog = read(), seen = CASES.filter(c => prog[c.id]?.done).length;
+export const SCAM_IDS = ["mehta-1992", "satyam-2009", "ilfs-2018"];
+export function hub(cat) {
+  const LIST = cat === "scams" ? CASES.filter(c => SCAM_IDS.includes(c.id)) : CASES;
+  const prog = read(), seen = LIST.filter(c => prog[c.id]?.done).length;
   const card = c => { const p = prog[c.id]; return h("a", { class: "cf-card", href: `#/case/${c.id}`, style: `--c:${c.c};--bg:${c.bg}`, "aria-label": `${c.short}. ${c.min} minute film.` },
-    (() => { const a = h("div", { class: "cf-art" }); a.innerHTML = `<span class="cf-yr">${c.year}</span>` + ART[c.art](c.c); return a; })(),
+    h("div", { class: "cf-art img" }, h("img", { src: `assets/cases/${c.id}.jpg`, alt: "", loading: "lazy", width: 720, height: 450 })),
     h("div", { class: "cf-b" }, h("div", { class: "cf-tags" }, c.tags.map(t => h("span", {}, t)), h("span", { class: "cf-min" }, `${c.min} min`)),
       h("h3", {}, c.title), h("p", { class: "cf-s" }, c.short), h("p", { class: "cf-hook" }, c.hook),
       h("span", { class: "cf-go" }, p?.done ? `Watched · ${p.right}/${p.of} spotted. Watch again` : "Watch the film", icon("chev", 16)))); };
   const m = h("span", { class: "cf-m" }); m.innerHTML = mascot({ mood: "think", pose: "explain", view: "bust", px: 92 });
-  return h("main", { class: "wrap page stack cf" },
-    h("section", { class: "cf-hero" }, m, h("div", { class: "cf-ht" }, h("span", { class: "cf-k" }, "Case Files"), h("h1", { class: "h1" }, "Real events. Short films."), h("p", { class: "lead" }, "See how money stories really unfold, scene by scene. Spot the red flags. Learn what to check next time."), h("span", { class: "pill gold" }, `${seen} of ${CASES.length} watched`))),
-    h("div", { class: "cf-grid" }, CASES.map(card), h("div", { class: "cf-soon" }, h("b", {}, "More coming"), h("small", {}, "New case files are added over time."))),
+  return h("main", { class: "wrap page stack csp" },
+    h("section", { class: "cf-hero" }, m, h("div", { class: "cf-ht" }, h("span", { class: "cf-k" }, cat === "scams" ? "Scams & Frauds" : "Case Files"), h("h1", { class: "h1" }, cat === "scams" ? "How the frauds worked." : "Real events. Short films."), h("p", { class: "lead" }, "See how money stories really unfold, scene by scene. Spot the red flags. Learn what to check next time."), h("span", { class: "pill gold" }, `${seen} of ${LIST.length} watched`))),
+    h("div", { class: "cf-grid" }, LIST.map(card), h("div", { class: "cf-soon" }, h("b", {}, "More coming"), h("small", {}, "New case files are added over time."))),
     h("p", { class: "tiny mute" }, "Education only. Facts come from public records and news reports. Not investment advice."));
 }
