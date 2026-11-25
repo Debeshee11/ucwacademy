@@ -191,11 +191,12 @@ export function arena() {
   const now = new Date(), mon = new Date(now.getTime() - ((now.getDay() + 6) % 7) * dayMs);
   const wkDots = ["M", "T", "W", "T", "F", "S", "S"].map((nm, k) => { const iso = isoDay(new Date(mon.getTime() + k * dayMs)), ac = (s.act || {})[iso], on = !!ac && (ac.l > 0 || ac.r || ac.d); return h("i", { class: (on ? "on " : "") + (iso === isoDay() ? "today" : ""), title: nm }); });
   const ringK = (pct, inner, cls) => html("kp-ring " + cls, `<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="rgba(43,33,24,.12)" stroke-width="11"/><circle class="kp-arc" cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="${(263.9 * (1 - Math.max(2, Math.min(100, pct)) / 100)).toFixed(1)}" transform="rotate(-90 50 50)"/></svg><b>${inner}</b>`);
+  const fz = Store.freezeInfo();
   const kpi = (cls, vis, big, label, sub, href) => h(href ? "a" : "div", { class: "kpi " + cls, href }, vis, h("div", { class: "kpi-t" }, h("b", {}, big), h("small", {}, label), sub ? h("span", {}, sub) : null));
   const hero = h("section", { class: "ar-top" },
     h("div", { class: "ar-tt" }, html("ar-m", mascot({ mood: "joy", pose: "cheer", view: "bust", px: 76 })), h("div", {}, h("h1", { class: "ar-h1" }, "Practice"), h("p", {}, "Make what you learned stick."))),
     h("div", { class: "kpis" },
-      kpi("k-fire" + (streak ? " lit" : ""), h("div", { class: "kpi-fl" }, icon("flame", 34)), String(streak), "day streak", null, "#/me"),
+      kpi("k-fire" + (streak ? " lit" : ""), h("div", { class: "kpi-fl" }, icon("flame", 34)), String(streak), "day streak", fz.atRisk ? "Study today to keep it" : fz.ready ? "1 day of grace left" : "Freeze used this week", "#/me"),
       kpi("k-xp", ringK(rk.pct, `<span>₹</span>`, "c-gold"), String(xp), "points", rk.next ? `${rk.need} to ${rk.next}` : rk.title, "#/me"),
       kpi("k-acc", ringK(acc ?? 0, "✓", "c-green"), acc == null ? "–" : acc + "%", "first-try accuracy", null),
       kpi("k-mem", ringK(mem, "🧠", "c-blue"), mem + "%", "memory strength", null)),

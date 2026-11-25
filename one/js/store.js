@@ -150,9 +150,19 @@ const weekday = d => d.getDay() !== 0 && d.getDay() !== 6;
 const parseDay = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
 function prevWorkday(s) { let d = parseDay(s); do { d = new Date(d.getTime() - dayMs); } while (!weekday(d)); return isoDay(d); }
 
+function weekKey(iso) { const d = parseDay(iso); return isoDay(new Date(d.getTime() - ((d.getDay() + 6) % 7) * dayMs)); }
+const freezeUsed = (s, t) => s.fz === weekKey(t);
+/* weekdays strictly between last and today that had no activity */
+function missedDays(last, t) { let n = 0, d = new Date(parseDay(last).getTime() + dayMs); const end = parseDay(t); while (d < end) { if (weekday(d)) n++; d = new Date(d.getTime() + dayMs); } return n; }
+
 function touch(s) {
   const t = isoDay(), st = s.streak;
-  if (st.last !== t) s.streak = st.last && st.last >= prevWorkday(t) ? { n: st.n + 1, last: t } : { n: 1, last: t };
+  if (st.last !== t) {
+    const gap = st.last ? missedDays(st.last, t) : 99;
+    if (gap === 0) s.streak = { n: st.n + 1, last: t };
+    else if (gap === 1 && !freezeUsed(s, t)) { s.fz = weekKey(t); s.streak = { n: st.n + 1, last: t }; s.saved = t; }
+    else s.streak = { n: 1, last: t };
+  }
   s.act[t] = s.act[t] || { l: 0, r: 0, d: 0 };
   const keep = Object.keys(s.act).sort().slice(-14);
   for (const k of Object.keys(s.act)) if (!keep.includes(k)) delete s.act[k];
@@ -160,7 +170,15 @@ function touch(s) {
 export function streakNow() {
   const st = state.streak; if (!st.last) return 0;
   const t = isoDay();
-  return st.last === t || st.last >= prevWorkday(t) ? st.n : 0;
+  if (st.last === t) return st.n;
+  const g = missedDays(st.last, t);
+  return g === 0 || (g === 1 && !freezeUsed(state, t)) ? st.n : 0;
+}
+/* One missed weekday per week is forgiven (the "freeze"). */
+export function freezeInfo() {
+  const t = isoDay(), st = state.streak, used = freezeUsed(state, t);
+  const atRisk = !!st.last && st.last !== t && missedDays(st.last, t) === 1 && !used;
+  return { ready: !used, used, atRisk, savedToday: state.saved === t };
 }
 export const todayAct = () => state.act[isoDay()] || { l: 0, r: 0, d: 0 };
 

@@ -10,6 +10,7 @@ import { ask } from "./ux.js";
 import { RULES } from "./config.js";
 import { mascot } from "./mascot.js";
 import { siteUrl } from "./rate.js";
+import { shareButton } from "./share.js";
 
 const errText = e => /unauthenticated/.test(e?.code || "") ? "Please sign in again."
   : /resource-exhausted/.test(e?.code || "") ? "Please wait a few seconds and try again."
@@ -170,6 +171,7 @@ export async function runExam(root, cfg) {
         best ? h("p", { class: "xr-best" + (res.score > (prev ?? 101) ? " up" : "") }, best) : null),
       h("div", { class: "xr-sts" }, st(res.right, "right", "g"), st(wrong, "wrong", "r"), st(skipped, "blank", "y"), st(fmt(took), "time", "b")),
       out.body || null,
+      res.passed ? shareButton({ kicker: "Exam passed", big: res.score + "%", title: cfg.title || "Exam", sub: `${res.right} of ${res.total} right. Pass mark ${res.pass}%.`, tone: "gold" }, `I passed ${cfg.title || "an exam"} with ${res.score}% on UpperCrust Academy.`, "Share a picture of your result", "btn primary xr-share") : null,
       res.passed ? h("a", { class: "btn ghost xr-share", href: wa, target: "_blank", rel: "noopener noreferrer" }, "Share the news on WhatsApp") : null,
       cfg.rate && res.passed ? rateCard("exam", cfg.rate) : null,
       missed.length ? h("details", { class: "details card", style: "text-align:left" },

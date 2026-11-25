@@ -4,6 +4,7 @@ import { h, icon, plural } from "./dom.js";
 import * as Store from "./store.js";
 import { nextUp, hrefFor } from "./path.js";
 import { mascot } from "./mascot.js";
+import { shareButton } from "./share.js";
 
 const used = k => { try { return !!localStorage.getItem(k) && localStorage.getItem(k) !== "0" && localStorage.getItem(k) !== "[]"; } catch { return false; } };
 /* id, name, what it is, points to open, icon, where it lives, "already used" keys that keep it open */
@@ -73,7 +74,7 @@ export function celebrate() {
   const g = byId(fresh[0]), more = fresh.length - 1, close = () => ov.remove();
   const ov = h("div", { class: "kcel", role: "dialog", "aria-modal": "true", "aria-label": "New key unlocked" }, h("div", { class: "kcel-b" },
     html("kcel-key", keySvg("spin")), h("p", { class: "kcel-k" }, "New key unlocked"), h("h2", { class: "kcel-h" }, g.name), h("p", { class: "kcel-s" }, g.sub + (more ? ` And ${plural(more, "more door")} opened.` : "")),
-    h("a", { class: "btn primary", href: g.href, on: { click: close } }, "Try it now"), h("button", { class: "kcel-later", type: "button", on: { click: close } }, "Later")));
+    h("a", { class: "btn primary", href: g.href, on: { click: close } }, "Try it now"), shareButton({ kicker: "New key unlocked", big: "Key", title: g.name, sub: g.sub, tone: "violet" }, `I unlocked ${g.name} on UpperCrust Academy.`, "Share", "btn ghost"), h("button", { class: "kcel-later", type: "button", on: { click: close } }, "Later")));
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) { const cols = ["#FFB703", "#2F8F5B", "#D6457A", "#1F7AC4", "#6B4FD6", "#F2780C"]; for (let i = 0; i < 40; i++) ov.append(h("i", { class: "kcf", style: `left:${Math.random() * 100}%;background:${cols[i % 6]};animation-delay:${Math.random() * .6}s;--dx:${(Math.random() - .5) * 180}px;--r:${Math.random() * 720}deg` })); }
   document.body.append(ov);
 }
