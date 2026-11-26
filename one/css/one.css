@@ -966,3 +966,4 @@ a.crow:hover { border-color: var(--sc); transform: translateX(2px); }
 .sb-coin{width:58px;height:58px;border-radius:50%;background:#D8ECFF;border:3px solid #2B2118;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;flex:none}.sb-coin svg{display:block}
 .sb-t{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}.sb-t b{font-size:17px}.sb-t span{font-size:13px;line-height:1.35;opacity:.8}
 .sb-go{background:#FFC531;border:2px solid #2B2118;border-radius:99px;padding:8px 16px;font-weight:800;min-height:40px;display:inline-flex;align-items:center}
+@media (max-width: 400px) { .bar-top .brand { gap: 6px; padding: 0 2px; min-width: 0; } .bar-top .brand img { height: 20px; } .bar-top .brand .bt b { font-size: 14px; } .bar-top .brand .bt i { font-size: 9px; letter-spacing: .2em; } .bar-top { gap: 6px; padding: 0 10px; } .bar-top .btn, .bar-top .pillstat { padding-left: 8px; padding-right: 8px; } }

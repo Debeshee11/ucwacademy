@@ -44,3 +44,16 @@ a.ch-card:hover, a.ch-card:focus-visible { transform:translateY(-3px); box-shado
 .cf-art.img { height:auto; display:block; padding:0; line-height:0; } .cf-art.img img { width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; }
 .ch-art img { width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; }
 .ch-card.off .ch-art img { filter:grayscale(.35); opacity:.9; }
+.fl-poster .fl-play, .fl-poster .fl-no, .fl-poster .fl-min { display: none; }
+.fl2-t { font-size: clamp(26px, 5vw, 38px); margin: 0 0 4px; }
+.fl2-h { font-size: 20px; margin: 18px 0 10px; }
+.fl2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 640px) { .fl2-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
+@media (min-width: 1000px) { .fl2-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.fl2-card { display: block; border: 3px solid #2B2118; border-radius: 18px; overflow: hidden; box-shadow: 0 5px 0 #2B2118; background: #fff; line-height: 0; transition: transform .15s; }
+.fl2-card:hover { transform: translateY(-3px); } .fl2-card:focus-visible { outline: 3px solid #2F7CF6; outline-offset: 3px; }
+.fl2-card img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
+.fl2-page { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.fl2-stage { width: 100%; display: flex; justify-content: center; background: #0d0d0d; border-radius: 20px; padding: 0; overflow: hidden; }
+.fl2-video { display: block; width: min(100%, calc((100dvh - 215px) * 9 / 16)); aspect-ratio: 9 / 16; height: auto; max-height: calc(100dvh - 215px); object-fit: contain; background: #000; }
+@media (min-width: 900px) { .fl2-video { width: min(100%, calc((100dvh - 190px) * 9 / 16)); max-height: calc(100dvh - 190px); } }
