@@ -26,18 +26,23 @@ export const FILMS = [
 const byId = id => FILMS.find(f => f.id === id);
 const src = (f, ext) => `assets/films/${f.id}.${ext}`;
 
-export function hub() {
+const HOMES = { shocks: ["Money events", "Crashes, runs and listings"], business: ["Business stories", "How great businesses won"] };
+export function hub(cat = "shocks") {
   const card = f => h("a", { class: "fl2-card", href: `#/film/${f.id}`, "aria-label": `${f.title}. ${f.line}. ${f.min} minutes.` },
     h("img", { src: src(f, "jpg"), alt: "", loading: "lazy", width: 540, height: 960 }));
-  const sec = (t, cat) => [h("h2", { class: "fl2-h" }, t), h("div", { class: "fl2-grid" }, FILMS.filter(f => f.cat === cat).map(card))];
-  return h("main", { class: "wrap page stack csp" }, h("h1", { class: "fl2-t" }, "Case films"), ...sec("Money events", "shocks"), ...sec("Business stories", "business"));
+  return h("main", { class: "wrap page stack csp" }, h("a", { class: "btn ghost sm fl2-back", href: "#/cases" }, icon("left", 16), "All topics"),
+    h("h1", { class: "fl2-t" }, (HOMES[cat] || HOMES.shocks)[0]), h("div", { class: "fl2-grid" }, FILMS.filter(f => f.cat === cat).map(card)));
+}
+export function promo() {
+  return h("a", { class: "cs-promo", href: "#/cases" }, h("img", { src: "assets/cases/topic-shocks.jpg", alt: "", loading: "lazy", width: 720, height: 450 }),
+    h("span", { class: "cs-pt" }, h("b", {}, "Case studies"), h("small", {}, "Real money and business stories, as short films")), h("span", { class: "cs-go", "aria-hidden": "true" }, icon("play", 20)));
 }
 
 export function play(id) {
-  const f = byId(id), home = "#/cases";
+  const f = byId(id), home = f ? "#/cases/" + f.cat : "#/cases";
   if (!f) return h("main", { class: "wrap page stack" }, h("h1", { class: "h1" }, "That film does not exist."), h("a", { class: "btn primary", href: home }, "All films"));
   const v = h("video", { class: "fl2-video", controls: true, playsinline: true, preload: "metadata", poster: src(f, "jpg"), "aria-label": `${f.title}. ${f.line}` });
   v.append(h("source", { src: src(f, "mp4"), type: "video/mp4" }), "Your browser cannot play this video.");
   v.addEventListener("ended", () => mark(f.id, { done: true }));
-  return h("main", { class: "wrap page fl2-page" }, h("a", { class: "btn ghost sm", href: home }, icon("left", 16), "All films"), h("div", { class: "fl2-stage" }, v));
+  return h("main", { class: "wrap page fl2-page" }, h("a", { class: "btn ghost sm", href: home }, icon("left", 16), "Back"), h("div", { class: "fl2-stage" }, v));
 }
