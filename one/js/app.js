@@ -27,7 +27,6 @@ import * as K from "./unlock.js";
 import * as PV from "./proveit.js";
 import * as Cases from "./cases.js";
 import * as Films from "./films.js";
-import * as CaseHub from "./casehub.js";
 import * as C from "./credview.js";
 import { board } from "./board.js";
 import { review } from "./review.js";
@@ -73,11 +72,7 @@ const ROUTES = [
   [/^lab\/([\w-]+)$/, id => P.labScenario(id), "practice", "Client lab"],
   [/^nism$/, () => Nism.hub(), "assess", "NISM prep"],
   [/^nism\/([\w-]+)$/, id => Nism.examPage(id), "assess", "NISM exam"],
-  [/^cases$/, () => CaseHub.hub(), "cases", "Case studies"],
-  [/^cases\/scams$/, () => Cases.hub("scams"), "cases", "Scams and frauds"],
-  [/^cases\/files$/, () => Cases.hub(), "cases", "Case Files"],
-  [/^cases\/(?:shocks|films)$/, () => Films.hub(), "cases", "Case Films"],
-  [/^films$/, () => Films.hub(), "cases", "Case Films"],
+  [/^(?:cases|cases\/\w+|films)$/, () => Films.hub(), "cases", "Case films"],
   [/^film\/([\w-]+)$/, id => Films.play(id), "cases", "Case film"],
   [/^me$/, () => C.me(), "me", "Progress"],
   [/^privacy$/, () => legalPage("privacy"), "", "Privacy notice"],

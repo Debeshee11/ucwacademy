@@ -209,7 +209,6 @@ export function courses() {
     const rec = !filtering && door ? pathCourses(s.door).filter(c => !s.quiz["x:" + c.id]?.passed).slice(0, 3) : [];
     const cats = D.sections.filter(c => f.cat === "all" || c.id === f.cat);
     host.replaceChildren(...[
-      h("a", { class: "fl-promo", href: "#/cases" }, h("span", { class: "fl-pi", "aria-hidden": "true" }, icon("play", 22)), h("span", { class: "fl-pt" }, h("b", {}, "Case studies"), h("small", {}, "Real events in money, explained in short animated films")), icon("chev", 18)),
       h("div", { class: "stack" },
         h("div", { class: "search" }, icon("search"), search),
         h("div", { class: "chips scroll", role: "group", "aria-label": "Subject" }, chip("all", f.cat, v => (f.cat = v), "All subjects"), ...D.sections.map(c => chip(c.id, f.cat, v => (f.cat = v), c.name))),

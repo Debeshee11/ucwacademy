@@ -12,8 +12,9 @@ const ART = {
 
 export function hub() {
   const TOPICS = [
-    { id: "shocks", href: "#/cases/shocks", art: "shocks", bg: "#FFD98A", title: "Crashes, runs and listings", sub: "Yes Bank, Franklin Templeton, the March 2020 crash, Paytm, Silicon Valley Bank", tag: `${FILMS.length} films`, live: true },
+    { id: "shocks", href: "#/cases/shocks", art: "shocks", bg: "#FFD98A", title: "Crashes, runs and listings", sub: "Yes Bank, Franklin Templeton, the March 2020 crash, Paytm, Silicon Valley Bank", tag: `${FILMS.filter(f => f.cat === "shocks").length} films`, live: true },
     { id: "scams", href: "#/cases/scams", art: "scams", bg: "#FFC9C2", title: "Scams and frauds", sub: "How well-known financial frauds worked, and the red flags to spot", tag: `${SCAM_IDS.length} interactive files`, live: true },
+    { id: "business", href: "#/cases/business", art: "business", bg: "#CDEFD6", title: "Business cases", sub: "Nirma, Lijjat, IKEA, Cadbury, Lego, Netflix and more: lesser-known stories with big lessons", tag: `${FILMS.filter(f => f.cat === "business").length} films`, live: true },
     { id: "products", art: "products", bg: "#BFE0FF", title: "Products explained", sub: "Debentures, bonds, InvITs, REITs and more, told through real cases", tag: "Coming soon", live: false },
     { id: "more", art: "more", bg: "#DFF7EB", title: "More topics", sub: "New topics will appear here as we add them", tag: "Coming soon", live: false }
   ];

@@ -11,7 +11,7 @@ export const NAV = [
   ["#/", "Learn", "book", "home", "Your path, stage by stage"],
   ["#/practice", "Practice", "trophy", "practice", "Daily five, revision, calculators"],
   ["#/assess", "Exams", "award", "assess", "Stage exams and NISM prep"],
-  ["#/cases", "Cases", "play", "cases", "Real events, scams and products explained"],
+  ["#/cases", "Cases", "play", "cases", "Short films on money and business"],
   ["#/news", "News", "trend", "desk", "Headlines, funds, indices"],
   ["#/me", "Me", "star", "me", "Progress, certificates, leaderboard"]
 ];
